@@ -10,23 +10,10 @@ import { getArticleBySlug, articles } from "@/lib/articles";
 import { articleSchemaData } from "@/lib/articleSchemaData";
 import { LENDER, PRE_APPROVAL_URL, IMAGES } from "@/lib/constants";
 import { useMemo } from "react";
-import { Streamdown, defaultRehypePlugins } from "streamdown";
-import { harden } from "rehype-harden";
-
-// Override rehype-harden with defaultOrigin so relative internal links are preserved.
-// Without defaultOrigin, rehype-harden strips href from any relative path (e.g. /knowledge-base/...).
-const REHYPE_PLUGINS = [
-  [
-    harden,
-    {
-      defaultOrigin: "https://realitycents.com",
-      allowedLinkPrefixes: ["*"],
-      allowedImagePrefixes: ["*"],
-    },
-  ],
-  defaultRehypePlugins.raw,
-  defaultRehypePlugins.katex,
-] as Parameters<typeof Streamdown>["0"]["rehypePlugins"];
+import { Streamdown } from "streamdown";
+// Removed rehype-harden and defaultRehypePlugins to fix runtime crash
+// ("Expected usable value, not undefined" from incompatible plugin versions).
+// Internal links are handled by the custom <a> component override below.
 import {
   ArrowLeft,
   Clock,
@@ -279,7 +266,6 @@ export default function Article() {
 
               <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-navy prose-headings:font-normal prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-navy prose-a:text-teal prose-a:no-underline hover:prose-a:underline">
                 <Streamdown
-                  rehypePlugins={REHYPE_PLUGINS}
                   components={{
                     a: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
                       // Internal path-relative links: use wouter Link for SPA navigation
