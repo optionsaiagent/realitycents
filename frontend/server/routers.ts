@@ -21,8 +21,10 @@ import {
 import { notifyOwner } from "./_core/notification";
 import { storagePut } from "./storage";
 import { brandPdf } from "./pdfBranding";
+import { dscrRouter } from "./dscrRouter";
 
 export const appRouter = router({
+  dscr: dscrRouter,
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
