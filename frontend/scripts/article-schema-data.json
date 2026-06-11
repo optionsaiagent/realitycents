@@ -1,0 +1,590 @@
+{
+  "first-time-homebuyer-guide-hawaii": {
+    "wordCount": 2200,
+    "keywords": "first-time homebuyer Hawaii, buying a home in Honolulu, Hawaii first-time buyer programs, down payment assistance Hawaii, FHA loan Hawaii",
+    "about": [
+      {
+        "name": "First-time home buyer",
+        "sameAs": "https://en.wikipedia.org/wiki/First-time_home_buyer"
+      },
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      }
+    ]
+  },
+  "va-loans-hawaii-military": {
+    "wordCount": 2400,
+    "keywords": "VA loan Hawaii, VA home loan Honolulu, military home buying Hawaii, VA loan limits 2026, VA loan entitlement, zero down VA loan Oahu",
+    "about": [
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "United States Department of Veterans Affairs",
+        "sameAs": "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "What is a VA loan?",
+        "answer": "A VA loan is a mortgage guaranteed by the U.S. Department of Veterans Affairs for eligible service members, veterans, and surviving spouses. VA loans offer zero down payment, no PMI, and competitive interest rates."
+      },
+      {
+        "question": "What is VA loan entitlement?",
+        "answer": "VA loan entitlement is your borrowing capacity guaranteed by the VA. Most veterans have $647,200 in entitlement (2026), meaning the VA will guarantee that amount. You can use your entitlement multiple times, and it can be restored after you sell a property."
+      },
+      {
+        "question": "Can I use a VA loan to buy a home in Hawaii?",
+        "answer": "Yes. VA loans work nationwide, including Hawaii. However, the property must be VA-approved, and Hawaii has specific requirements for condos (must be on the VA-approved list) and leasehold properties (must meet VA lease term requirements)."
+      }
+    ]
+  },
+  "fha-loans-hawaii-explained": {
+    "wordCount": 1800,
+    "keywords": "FHA loan Hawaii, FHA loan limits Honolulu, FHA mortgage Oahu, low down payment Hawaii, FHA condo approval Hawaii",
+    "about": [
+      {
+        "name": "FHA insured loan",
+        "sameAs": "https://en.wikipedia.org/wiki/FHA_insured_loan"
+      },
+      {
+        "name": "Federal Housing Administration",
+        "sameAs": "https://en.wikipedia.org/wiki/Federal_Housing_Administration"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "What is an FHA loan?",
+        "answer": "An FHA loan is a mortgage insured by the Federal Housing Administration. FHA loans are popular for first-time homebuyers because they require a lower down payment (3.5% with a 580+ credit score) and are more flexible with credit requirements than conventional loans."
+      },
+      {
+        "question": "What are the FHA loan limits in Hawaii for 2026?",
+        "answer": "In 2026, the FHA loan limit for a single-family home in Honolulu County is $1,249,125. For condos, the limit is $1,249,125 for a single unit. These limits are higher than the national baseline because Hawaii is a high-cost area."
+      },
+      {
+        "question": "Can I use an FHA loan to buy a condo in Hawaii?",
+        "answer": "Yes, FHA loans can be used for condo purchases in Hawaii, but the condo project must be FHA-approved. Your lender can verify FHA approval status. Most Honolulu condo buildings are FHA-approved, but it's important to check before making an offer."
+      }
+    ]
+  },
+  "conventional-loans-hawaii": {
+    "wordCount": 1800,
+    "keywords": "conventional loan Hawaii, conforming loan limits Honolulu 2026, Fannie Mae Freddie Mac Hawaii, conventional mortgage Oahu, PMI Hawaii",
+    "about": [
+      {
+        "name": "Conventional mortgage",
+        "sameAs": "https://en.wikipedia.org/wiki/Conventional_mortgage"
+      },
+      {
+        "name": "Conforming loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Conforming_loan"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "What is a conventional loan?",
+        "answer": "A conventional loan is a mortgage not insured or guaranteed by the government. Conventional loans are offered by banks, credit unions, and mortgage companies. They typically require a higher credit score and larger down payment than FHA or VA loans, but offer competitive interest rates for well-qualified borrowers."
+      },
+      {
+        "question": "What is the conforming loan limit in Hawaii for 2026?",
+        "answer": "In 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125. Loans above this limit are considered jumbo loans and have different qualification requirements. Hawaii's limit is significantly higher than the national baseline of $806,500 because it's a high-cost state."
+      },
+      {
+        "question": "How much down payment do I need for a conventional loan in Hawaii?",
+        "answer": "Conventional loans typically require a minimum down payment of 3-5% for first-time buyers, though some lenders offer 3% down programs. With 20% down, you avoid PMI (private mortgage insurance). Down payment requirements vary based on credit score, debt-to-income ratio, and property type."
+      }
+    ]
+  },
+  "jumbo-loans-hawaii-luxury": {
+    "wordCount": 1800,
+    "keywords": "jumbo loan Hawaii, jumbo mortgage Honolulu, luxury home financing Oahu, non-conforming loan Hawaii, high-value property Hawaii",
+    "about": [
+      {
+        "name": "Jumbo mortgage",
+        "sameAs": "https://en.wikipedia.org/wiki/Jumbo_mortgage"
+      }
+    ]
+  },
+  "credit-tips-mortgage-approval": {
+    "wordCount": 1500,
+    "keywords": "credit score mortgage, credit tips home buying, improve credit for mortgage, credit mistakes to avoid, mortgage approval credit score",
+    "about": [
+      {
+        "name": "Credit score",
+        "sameAs": "https://en.wikipedia.org/wiki/Credit_score"
+      }
+    ]
+  },
+  "down-payment-assistance-hawaii": {
+    "wordCount": 1500,
+    "keywords": "down payment assistance Hawaii, HHFDC programs, Hawaii first-time buyer grants, low down payment Hawaii, USDA loan Hawaii",
+    "about": [
+      {
+        "name": "Down payment",
+        "sameAs": "https://en.wikipedia.org/wiki/Down_payment"
+      }
+    ]
+  },
+  "gift-funds-home-purchase": {
+    "wordCount": 1200,
+    "keywords": "gift funds mortgage, gift letter home purchase, family gift down payment, FHA gift funds rules, VA gift funds rules Hawaii",
+    "about": [
+      {
+        "name": "Down payment",
+        "sameAs": "https://en.wikipedia.org/wiki/Down_payment"
+      },
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      }
+    ]
+  },
+  "escrow-process-hawaii": {
+    "wordCount": 1500,
+    "keywords": "escrow process Hawaii, Hawaii escrow timeline, escrow company Honolulu, closing process Hawaii, title insurance Hawaii",
+    "about": [
+      {
+        "name": "Escrow",
+        "sameAs": "https://en.wikipedia.org/wiki/Escrow"
+      },
+      {
+        "name": "Title insurance",
+        "sameAs": "https://en.wikipedia.org/wiki/Title_insurance"
+      }
+    ]
+  },
+  "leasehold-vs-fee-simple-hawaii": {
+    "wordCount": 1800,
+    "keywords": "leasehold vs fee simple Hawaii, leasehold property Oahu, fee simple land Hawaii, Hawaii land ownership, leasehold mortgage Hawaii",
+    "about": [
+      {
+        "name": "Leasehold estate",
+        "sameAs": "https://en.wikipedia.org/wiki/Leasehold_estate"
+      },
+      {
+        "name": "Fee simple",
+        "sameAs": "https://en.wikipedia.org/wiki/Fee_simple"
+      }
+    ]
+  },
+  "hoa-considerations-hawaii-condos": {
+    "wordCount": 1500,
+    "keywords": "HOA Hawaii condo, condo HOA fees Honolulu, Hawaii condo warrantability, Fannie Mae condo approval, condo buying tips Hawaii",
+    "about": [
+      {
+        "name": "Homeowner association",
+        "sameAs": "https://en.wikipedia.org/wiki/Homeowner_association"
+      },
+      {
+        "name": "Condominium",
+        "sameAs": "https://en.wikipedia.org/wiki/Condominium"
+      }
+    ]
+  },
+  "home-inspection-tips-hawaii": {
+    "wordCount": 1500,
+    "keywords": "home inspection Hawaii, Hawaii home inspection checklist, termite inspection Oahu, property inspection tips, Hawaii home buying inspection",
+    "about": [
+      {
+        "name": "Home inspection",
+        "sameAs": "https://en.wikipedia.org/wiki/Home_inspection"
+      },
+      {
+        "name": "Termite",
+        "sameAs": "https://en.wikipedia.org/wiki/Termite"
+      }
+    ]
+  },
+  "mortgage-pre-approval-process": {
+    "wordCount": 1500,
+    "keywords": "mortgage pre-approval, pre-approval process Hawaii, pre-approval vs pre-qualification, mortgage pre-approval documents, get pre-approved Honolulu",
+    "about": [
+      {
+        "name": "Pre-approval",
+        "sameAs": "https://en.wikipedia.org/wiki/Pre-approval"
+      },
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      }
+    ]
+  },
+  "understanding-closing-costs-hawaii": {
+    "wordCount": 1500,
+    "keywords": "closing costs Hawaii, Hawaii closing costs breakdown, escrow fees Honolulu, title insurance Hawaii, buyer closing costs Oahu",
+    "about": [
+      {
+        "name": "Closing costs",
+        "sameAs": "https://en.wikipedia.org/wiki/Closing_costs"
+      },
+      {
+        "name": "Escrow",
+        "sameAs": "https://en.wikipedia.org/wiki/Escrow"
+      }
+    ]
+  },
+  "refinancing-hawaii-homeowners": {
+    "wordCount": 1500,
+    "keywords": "refinance Hawaii, refinancing mortgage Honolulu, cash-out refinance Hawaii, rate-and-term refinance, when to refinance Hawaii",
+    "about": [
+      {
+        "name": "Refinancing",
+        "sameAs": "https://en.wikipedia.org/wiki/Refinancing"
+      },
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      }
+    ]
+  },
+  "hawaii-condo-insurance-crisis": {
+    "wordCount": 2800,
+    "keywords": "Hawaii condo insurance crisis, condo insurance Honolulu 2026, special assessment Hawaii, master policy condo Hawaii, insurance costs Oahu condos",
+    "about": [
+      {
+        "name": "Condominium",
+        "sameAs": "https://en.wikipedia.org/wiki/Condominium"
+      },
+      {
+        "name": "Insurance",
+        "sameAs": "https://en.wikipedia.org/wiki/Insurance"
+      }
+    ]
+  },
+  "how-lenders-calculate-income": {
+    "wordCount": 2500,
+    "keywords": "how lenders calculate income, mortgage income calculation, DTI ratio mortgage, self-employed mortgage income, W-2 income mortgage qualification",
+    "about": [
+      {
+        "name": "Debt-to-income ratio",
+        "sameAs": "https://en.wikipedia.org/wiki/Debt-to-income_ratio"
+      }
+    ]
+  },
+  "va-assumable-loans-pros-cons": {
+    "wordCount": 2800,
+    "keywords": "VA assumable loan, VA loan assumption process, assumable mortgage Hawaii, VA loan transfer, VA assumption pros cons",
+    "about": [
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      }
+    ]
+  },
+  "ho6-insurance-hawaii-condos": {
+    "wordCount": 2200,
+    "keywords": "HO-6 insurance Hawaii, condo insurance Honolulu, walls-in coverage Hawaii, HO-6 policy requirements, condo buyer insurance Oahu",
+    "about": [
+      {
+        "name": "Condominium",
+        "sameAs": "https://en.wikipedia.org/wiki/Condominium"
+      },
+      {
+        "name": "Insurance",
+        "sameAs": "https://en.wikipedia.org/wiki/Insurance"
+      }
+    ]
+  },
+  "temporary-buydown-guide": {
+    "wordCount": 2500,
+    "keywords": "temporary buydown mortgage, 2-1 buydown Hawaii, 3-2-1 buydown explained, seller concession buydown, interest rate buydown Honolulu",
+    "about": [
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      },
+      {
+        "name": "Interest rate",
+        "sameAs": "https://en.wikipedia.org/wiki/Interest_rate"
+      }
+    ]
+  },
+  "dscr-loans-hawaii": {
+    "wordCount": 3200,
+    "keywords": "DSCR loan Hawaii, debt service coverage ratio loan, investment property loan Hawaii, vacation rental financing Oahu, DSCR loan requirements",
+    "about": [
+      {
+        "name": "Debt service coverage ratio",
+        "sameAs": "https://en.wikipedia.org/wiki/Debt_service_coverage_ratio"
+      },
+      {
+        "name": "Investment property",
+        "sameAs": "https://en.wikipedia.org/wiki/Investment_(disambiguation)"
+      }
+    ]
+  },
+  "va-funding-fee-tax-deductible": {
+    "wordCount": 1400,
+    "keywords": "VA funding fee tax deduction, VA loan tax deduction 2026, VA funding fee deductible, Schedule A VA funding fee, VA loan tax benefits Hawaii, mortgage insurance premium deduction, VA funding fee itemized deduction",
+    "about": [
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "Tax deduction",
+        "sameAs": "https://en.wikipedia.org/wiki/Tax_deduction"
+      },
+      {
+        "name": "Mortgage insurance",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_insurance"
+      },
+      {
+        "name": "Itemized deduction",
+        "sameAs": "https://en.wikipedia.org/wiki/Itemized_deduction"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "Is the VA funding fee tax deductible?",
+        "answer": "Yes, the VA funding fee can be deducted as a mortgage insurance premium on Schedule A (itemized deductions). You must itemize deductions rather than take the standard deduction to claim it."
+      },
+      {
+        "question": "What is the VA funding fee and how much is it?",
+        "answer": "The VA funding fee is a one-time charge paid to the VA to offset the cost of the loan guarantee program. For 2026, it ranges from 1.4% to 3.6% of the loan amount depending on your service history, down payment, and whether it's your first VA loan."
+      },
+      {
+        "question": "Can I deduct the VA funding fee if I pay it upfront?",
+        "answer": "Yes. If you pay the VA funding fee upfront at closing, you can deduct it in the year you paid it. If you roll it into your loan, you can deduct it over the life of the loan as part of your mortgage interest deduction."
+      }
+    ]
+  },
+  "va-loan-house-hacking-hawaii": {
+    "wordCount": 1600,
+    "keywords": "VA loan house hacking Hawaii, VA loan multi-family Hawaii, duplex VA loan Hawaii, BAH qualifying income Hawaii, VA loan Honolulu 2026, Hawaii military home buying, VA loan triplex fourplex",
+    "about": [
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "Basic Allowance for Housing",
+        "sameAs": "https://en.wikipedia.org/wiki/Basic_Allowance_for_Housing"
+      },
+      {
+        "name": "Multi-family residential",
+        "sameAs": "https://en.wikipedia.org/wiki/Multi-family_residential"
+      }
+    ]
+  },
+  "401k-loan-home-purchase": {
+    "wordCount": 1100,
+    "keywords": "401k loan home purchase, borrowing from 401k for down payment, 401k mortgage qualification, retirement savings home buying, 401k loan DTI mortgage, 401k home purchase Hawaii",
+    "about": [
+      {
+        "name": "401(k)",
+        "sameAs": "https://en.wikipedia.org/wiki/401(k)"
+      },
+      {
+        "name": "Down payment",
+        "sameAs": "https://en.wikipedia.org/wiki/Down_payment"
+      },
+      {
+        "name": "Debt-to-income ratio",
+        "sameAs": "https://en.wikipedia.org/wiki/Debt-to-income_ratio"
+      },
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      }
+    ]
+  },
+  "fema-oahu-flood-zone-maps-2026": {
+    "wordCount": 1600,
+    "keywords": "FEMA flood zone maps Oahu, Hawaii flood insurance mortgage, Special Flood Hazard Area Hawaii, NFIP Hawaii, Oahu flood maps June 2026, force-placed flood insurance, flood zone mortgage requirements Hawaii, newly mapped flood zone discount",
+    "about": [
+      {
+        "name": "Flood insurance",
+        "sameAs": "https://en.wikipedia.org/wiki/Flood_insurance"
+      },
+      {
+        "name": "Federal Emergency Management Agency",
+        "sameAs": "https://en.wikipedia.org/wiki/Federal_Emergency_Management_Agency"
+      },
+      {
+        "name": "National Flood Insurance Program",
+        "sameAs": "https://en.wikipedia.org/wiki/National_Flood_Insurance_Program"
+      },
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "Do I need flood insurance if I'm in a flood zone?",
+        "answer": "If your property is in a Special Flood Hazard Area (SFHA) and you have a federally-backed mortgage, flood insurance is required. Lenders will force-place flood insurance if you don't obtain it, which is more expensive than NFIP rates."
+      },
+      {
+        "question": "How do I check if my Oahu property is in a flood zone?",
+        "answer": "Use the FEMA Flood Map Service Center (msc.fema.gov) or the Hawaii state flood maps. Enter your address to see your flood zone designation. Many Oahu properties are in Zones A, AE, or X (low-risk)."
+      },
+      {
+        "question": "How much does flood insurance cost in Hawaii?",
+        "answer": "NFIP flood insurance premiums vary based on your flood zone, building elevation, and coverage amount. Expect $400–$1,200+ annually for standard Oahu properties. Newly mapped properties may qualify for discounts."
+      }
+    ]
+  },
+  "uhero-hawaii-housing-factbook-2026-buyers": {
+    "wordCount": 2800,
+    "keywords": "UHERO Hawaii Housing Factbook 2026, Hawaii housing affordability 2026, Hawaii median home price 2026, Oahu condo market 2026, Hawaii HOA fees, FEMA flood maps Oahu 2026, Hawaii housing supply shortage, Hawaii buyer leverage 2026, Hawaii mortgage affordability, UHERO housing data Hawaii",
+    "about": [
+      {
+        "name": "University of Hawaii Economic Research Organization",
+        "sameAs": "https://en.wikipedia.org/wiki/University_of_Hawaii_Economic_Research_Organization"
+      },
+      {
+        "name": "Housing affordability index",
+        "sameAs": "https://en.wikipedia.org/wiki/Housing_affordability_index"
+      },
+      {
+        "name": "Condominium",
+        "sameAs": "https://en.wikipedia.org/wiki/Condominium"
+      },
+      {
+        "name": "Homeowner association",
+        "sameAs": "https://en.wikipedia.org/wiki/Homeowner_association"
+      },
+      {
+        "name": "Flood insurance",
+        "sameAs": "https://en.wikipedia.org/wiki/Flood_insurance"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "How much income do you need to buy a home on Oahu in 2026?",
+        "answer": "According to UHERO's 2026 Housing Factbook, affording the median single-family home on Oahu ($1,110,000) requires more than 150% of the state median income — approximately $158,000/year gross household income assuming 20% down, 6.25% rate, and 45% DTI. Only about one in five Hawaii households currently earn enough to qualify."
+      },
+      {
+        "question": "Are Hawaii home prices going down in 2026?",
+        "answer": "Statewide single-family home prices rose just 1% in 2025, while condo prices declined 2%. UHERO's Repeat Sales Index shows existing-home values were perfectly flat (0.0% appreciation). Prices have effectively plateaued after a decade of increases, but a significant decline is unlikely given Hawaii's structural housing shortage of 60,000 units."
+      },
+      {
+        "question": "What is the average HOA fee in Honolulu?",
+        "answer": "The median advertised HOA/AOAO fee in Honolulu was $882/month in February 2026, according to UHERO's analysis of real estate listings. Hawaii has the second-highest median HOA fee nationally at $470/month, and 42% of Hawaii homeowners pay HOA fees compared to 25% nationally. An $882/month HOA has the same DTI impact as adding $158,000 to your loan amount."
+      }
+    ]
+  },
+  "hale-kamaaina-mortgage-program-hawaii": {
+    "wordCount": 2800,
+    "keywords": "Hale Kamaaina mortgage program Hawaii, HHFDC first time homebuyer Hawaii, Hawaii mortgage revenue bond program, below market rate Hawaii mortgage, 4.65 percent mortgage rate Hawaii, Hula Mae program Hawaii, HHFDC Hale Kamaaina eligibility, Hawaii first time buyer program 2026, Hale Kamaaina income limits, Hale Kamaaina purchase price limits",
+    "about": [
+      {
+        "name": "Hawaii Housing Finance and Development Corporation",
+        "sameAs": "https://en.wikipedia.org/wiki/Hawaii_Housing_Finance_and_Development_Corporation"
+      },
+      {
+        "name": "Mortgage revenue bond",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_revenue_bond"
+      },
+      {
+        "name": "FHA insured loan",
+        "sameAs": "https://en.wikipedia.org/wiki/FHA_insured_loan"
+      },
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "Down payment",
+        "sameAs": "https://en.wikipedia.org/wiki/Down_payment"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "What is the Hale Kama\\u02bb\\u0101ina Mortgage Program?",
+        "answer": "The Hale Kama\\u02bb\\u0101ina Mortgage Program is a first-time homebuyer program administered by the Hawaii Housing Finance and Development Corporation (HHFDC). It uses tax-exempt mortgage revenue bonds to offer below-market 30-year fixed rates \\u2014 4.65% for FHA/VA/USDA and 4.95% for conventional loans as of May 2026 \\u2014 plus optional down payment assistance of up to 4% of the purchase price."
+      },
+      {
+        "question": "Who qualifies for the Hale Kama\\u02bb\\u0101ina program?",
+        "answer": "To qualify, you must be a U.S. citizen or resident alien, a bona fide Hawaii resident, at least 18 years old, a first-time homebuyer (no primary residence ownership in the past 3 years), and meet household income and purchase price limits by county. Veterans and buyers in targeted census tracts are exempt from the first-time buyer requirement. Maximum DTI is 45% and a HUD-approved homebuyer education course is required."
+      },
+      {
+        "question": "What are the income limits for the Hale Kama\\u02bb\\u0101ina program on Oahu?",
+        "answer": "For Honolulu County (Oahu), the 2026 income limits are $152,000 for 1\\u20132 person households and $174,800 for 3+ person households in non-targeted areas. In targeted census tracts, limits increase to $182,400 (1\\u20132 person) and $212,800 (3+ person). Income includes all household members 18 or older who will live in the home."
+      }
+    ]
+  },
+  "seller-concessions-rate-buydown-hawaii": {
+    "wordCount": 2200,
+    "keywords": "seller concessions Hawaii, seller credits Hawaii mortgage, rate buydown Hawaii, 2-1 buydown Hawaii, discount points Hawaii, VA seller concessions Hawaii, FHA seller concessions Hawaii, conventional seller concessions Hawaii, negotiate rate buydown Hawaii, seller funded buydown Oahu 2026",
+    "about": [
+      {
+        "name": "Seller concessions",
+        "sameAs": "https://en.wikipedia.org/wiki/Closing_costs"
+      },
+      {
+        "name": "Mortgage points",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_points"
+      },
+      {
+        "name": "Buydown mortgage",
+        "sameAs": "https://en.wikipedia.org/wiki/Buydown"
+      },
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "FHA insured loan",
+        "sameAs": "https://en.wikipedia.org/wiki/FHA_insured_loan"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "How much can a seller contribute toward closing costs in Hawaii?",
+        "answer": "It depends on your loan type. VA loans allow up to 4% of the purchase price. FHA loans allow up to 6%. Conventional loans allow 3% (less than 10% down), 6% (10\\u201324.99% down), or 9% (25%+ down). These limits apply to the lower of the purchase price or appraised value."
+      },
+      {
+        "question": "Is it better to ask for a price reduction or seller concessions in Hawaii?",
+        "answer": "In most cases, seller concessions deliver more value than a price reduction. A $20,000 price reduction saves about $126/month on a $900K home at 6.5%. The same $20,000 as a 2/1 buydown saves approximately $1,000/month in Year 1 and $500/month in Year 2. For buyers who need cash flow relief in the early years, concessions almost always win."
+      },
+      {
+        "question": "Can a VA buyer ask the seller to pay the VA funding fee?",
+        "answer": "Yes. The VA funding fee can be included in the seller's 4% concession limit. On a $750,000 purchase, the first-time use funding fee is $16,125 (2.15%). The seller can cover this plus additional closing costs, all within the 4% cap of $30,000. This is one of the most powerful uses of VA seller concessions."
+      }
+    ]
+  },
+  "income-needed-buy-home-hawaii-2026": {
+    "wordCount": 3200,
+    "keywords": "income needed buy home Hawaii 2026, Hawaii home affordability, PITIA breakdown Hawaii, DTI ratio mortgage Hawaii, conventional loan income Hawaii, FHA loan income Hawaii, VA loan income Hawaii, Hawaii mortgage calculator, how much income to buy house Oahu, Hawaii housing affordability 2026",
+    "about": [
+      {
+        "name": "Mortgage loan",
+        "sameAs": "https://en.wikipedia.org/wiki/Mortgage_loan"
+      },
+      {
+        "name": "Debt-to-income ratio",
+        "sameAs": "https://en.wikipedia.org/wiki/Debt-to-income_ratio"
+      },
+      {
+        "name": "FHA insured loan",
+        "sameAs": "https://en.wikipedia.org/wiki/FHA_insured_loan"
+      },
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "Housing affordability index",
+        "sameAs": "https://en.wikipedia.org/wiki/Housing_affordability_index"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "How much income do I need to buy a $700K home in Hawaii?",
+        "answer": "To buy a $700K home with 20% down on a conventional loan at 6.1% interest, you need approximately $106,000 gross annual income (assuming 43% DTI). With FHA financing (3.5% down), you need about $127,000. With a VA loan (0% down), you need about $95,000."
+      },
+      {
+        "question": "What is DTI and why does it matter for mortgage qualification?",
+        "answer": "DTI (Debt-to-Income ratio) is your total monthly debt payments divided by gross monthly income. Most lenders allow up to 43% DTI for conventional loans, 50% for FHA, and 41% for VA loans. Your mortgage payment, property taxes, insurance, HOA, and other debts all count toward DTI."
+      },
+      {
+        "question": "Does HOA affect my mortgage qualification?",
+        "answer": "Yes. HOA fees are counted as part of your housing expense in DTI calculations. A $500/month HOA on a $700K condo purchase increases your required income by approximately $12,000–$15,000 compared to a fee-simple home."
+      }
+    ]
+  }
+}

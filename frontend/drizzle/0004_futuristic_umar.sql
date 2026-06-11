@@ -1,0 +1,1 @@
+ALTER TABLE `toolkit_agents` ADD `logoUrl` text;

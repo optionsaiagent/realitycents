@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- Primary Meta Tags -->
+    <title>RealityCents - Hawaii Mortgage Education & Lending | Jay Miller NMLS #657301</title>
+    <meta name="title" content="RealityCents - Hawaii Mortgage Education & Lending | Jay Miller NMLS #657301" />
+    <meta name="description" content="Hawaii's trusted mortgage resource. Jay Miller, NMLS #657301, CMG Home Loans — expert mortgage guidance, free homebuying guide, mortgage calculator, and 25+ years of Hawaii real estate expertise." />
+    <meta name="keywords" content="Hawaii mortgage, Hawaii home loans, mortgage lender Hawaii, Jay Miller mortgage, CMG Home Loans Hawaii, Honolulu mortgage, FHA loans Hawaii, VA loans Hawaii, first time homebuyer Hawaii, Hawaii mortgage calculator" />
+    <meta name="author" content="Jay Miller, CMG Home Loans" />
+    <meta name="robots" content="index, follow" />
+    <!-- Canonical: set immediately via inline script, then refined by React SEO component -->
+    <link rel="canonical" href="https://realitycents.com/" />
+    <script>
+      // SEO: Domain enforcement, trailing-slash normalization, and canonical tag
+      // Runs before React to ensure Googlebot sees correct signals in static HTML
+      (function() {
+        var host = location.hostname;
+        var path = location.pathname;
+        var PRIMARY = 'realitycents.com';
+        var BASE = 'https://' + PRIMARY;
+
+        // 1. Redirect www and manus.space to primary domain (301-equivalent via JS)
+        if (host !== PRIMARY && host !== 'localhost' && host !== '127.0.0.1' && !host.includes('manus.computer')) {
+          location.replace(BASE + path + location.search + location.hash);
+          return;
+        }
+
+        // 2. For non-primary domains that can't redirect (manus.space), add noindex
+        if (host !== PRIMARY && !host.includes('manus.computer') && host !== 'localhost' && host !== '127.0.0.1') {
+          var meta = document.createElement('meta');
+          meta.name = 'robots';
+          meta.content = 'noindex, nofollow';
+          document.head.appendChild(meta);
+        }
+
+        // 3. Strip trailing slash (except root /)
+        if (path.length > 1 && path.endsWith('/')) {
+          var clean = path.replace(/\/+$/, '');
+          history.replaceState(null, '', clean + location.search + location.hash);
+          path = clean;
+        }
+
+        // 4. Set canonical tag to primary domain + clean path
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+          canonical.href = BASE + (path === '/' ? '/' : path);
+        }
+      })();
+    </script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://realitycents.com/" />
+    <meta property="og:site_name" content="RealityCents" />
+    <meta property="og:title" content="RealityCents - Hawaii Mortgage Education & Lending" />
+    <meta property="og:description" content="Hawaii's trusted mortgage resource. Expert guidance, free homebuying guide, mortgage calculator, and 25+ years of Hawaii real estate expertise. Jay Miller, NMLS #657301." />
+    <meta property="og:image" content="https://realitycents.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="RealityCents - Hawaii Mortgage Education & Lending" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://realitycents.com/" />
+    <meta name="twitter:title" content="RealityCents - Hawaii Mortgage Education & Lending" />
+    <meta name="twitter:description" content="Hawaii's trusted mortgage resource. Expert guidance, free homebuying guide, mortgage calculator, and 25+ years of Hawaii real estate expertise." />
+    <meta name="twitter:image" content="https://realitycents.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="RealityCents - Hawaii Mortgage Education & Lending" />
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.region" content="US-HI" />
+    <meta name="geo.placename" content="Honolulu, Hawaii" />
+    <meta name="geo.position" content="21.3069;-157.8583" />
+    <meta name="ICBM" content="21.3069, -157.8583" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0C2340" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data: MortgageBroker (Local Business) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["MortgageBroker", "FinancialService"],
+      "@id": "https://realitycents.com/#business",
+      "name": "RealityCents — Jay Miller, CMG Home Loans",
+      "url": "https://realitycents.com",
+      "logo": "https://realitycents.com/favicon-180x180.png",
+      "image": "https://realitycents.com/og-image.jpg",
+      "description": "Hawaii mortgage education and lending services. Jay Miller, NMLS #657301, CMG Home Loans. Specializing in conventional, FHA, VA, jumbo, and USDA loans for Hawaii homebuyers.",
+      "telephone": "+18084290811",
+      "email": "jaym@cmghomeloans.com",
+      "priceRange": "Free consultation",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "500 Ala Moana Blvd, Suite 6-200",
+        "addressLocality": "Honolulu",
+        "addressRegion": "HI",
+        "postalCode": "96813",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 21.3069,
+        "longitude": -157.8583
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Hawaii" },
+        { "@type": "City", "name": "Honolulu" },
+        { "@type": "City", "name": "Kailua" },
+        { "@type": "City", "name": "Kahului" },
+        { "@type": "City", "name": "Hilo" },
+        { "@type": "City", "name": "Lihue" }
+      ],
+      "identifier": [
+        { "@type": "PropertyValue", "name": "NMLS", "value": "657301" },
+        { "@type": "PropertyValue", "name": "Company NMLS", "value": "1820" }
+      ],
+      "knowsAbout": [
+        "VA loans",
+        "Conventional loans",
+        "FHA loans",
+        "Jumbo loans",
+        "Hawaii leasehold properties",
+        "Condo warrantability",
+        "Hawaii closing costs"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Hawaii Mortgage Loan Programs",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conventional Home Loans" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "FHA Loans Hawaii" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "VA Loans Hawaii" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jumbo Loans Hawaii" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "USDA Loans Hawaii" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mortgage Pre-Approval" } }
+        ]
+      },
+      "employee": {
+        "@type": "Person",
+        "@id": "https://realitycents.com/about#jay-miller",
+        "name": "Jay Miller",
+        "jobTitle": "Mortgage Loan Originator",
+        "identifier": "NMLS #657301"
+      },
+      "sameAs": [
+        "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
+        "https://www.linkedin.com/in/jay-miller-534bb5173/",
+        "https://www.instagram.com/jaymillercmg",
+        "https://www.youtube.com/@RacingThroughMidlife"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: Person (Jay Miller — standalone entity for E-E-A-T) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://realitycents.com/about#jay-miller",
+      "name": "Jay Miller",
+      "givenName": "Jay",
+      "familyName": "Miller",
+      "jobTitle": "Mortgage Loan Originator",
+      "description": "Hawaii mortgage loan originator with 25+ years of experience. NMLS #657301. U.S. Army OIF/OEF veteran. Specializing in conventional, FHA, VA, jumbo, and USDA loans for Hawaii homebuyers across Oahu, Maui, Kauai, and the Big Island.",
+      "telephone": "+18084290811",
+      "email": "jaym@cmghomeloans.com",
+      "url": "https://realitycents.com/about",
+      "image": "https://realitycents.com/og-image.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CMG Home Loans",
+        "identifier": "NMLS #1820",
+        "url": "https://www.cmghomeloans.com"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "NMLS License #657301",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Nationwide Multistate Licensing System (NMLS)"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "Hawaii Mortgage Lending",
+        "FHA Loans",
+        "VA Loans",
+        "Conventional Loans",
+        "Jumbo Loans",
+        "USDA Loans",
+        "Hawaii Real Estate",
+        "Mortgage Pre-Approval",
+        "Leasehold Property Hawaii",
+        "Hawaii Condo Financing"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "500 Ala Moana Blvd, Suite 6-200",
+        "addressLocality": "Honolulu",
+        "addressRegion": "HI",
+        "postalCode": "96813",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
+        "https://www.linkedin.com/in/jay-miller-534bb5173/",
+        "https://www.instagram.com/jaymillercmg",
+        "https://www.youtube.com/@RacingThroughMidlife"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (enables Sitelinks Searchbox) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://realitycents.com/#website",
+      "name": "RealityCents",
+      "url": "https://realitycents.com",
+      "description": "Hawaii mortgage education, tools, and lending services by Jay Miller, NMLS #657301, CMG Home Loans.",
+      "publisher": {
+        "@id": "https://realitycents.com/#business"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://realitycents.com/knowledge-base?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+  </body>
+
+</html>

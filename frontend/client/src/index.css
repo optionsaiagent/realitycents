@@ -1,0 +1,566 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Pacific Modernism custom colors */
+  --color-navy: oklch(0.22 0.05 250);
+  --color-navy-light: oklch(0.30 0.05 250);
+  --color-teal: oklch(0.55 0.12 195);
+  --color-teal-light: oklch(0.65 0.10 195);
+  --color-teal-dark: oklch(0.45 0.12 195);
+  --color-sand: oklch(0.95 0.015 75);
+  --color-sand-dark: oklch(0.88 0.02 75);
+  --color-gold: oklch(0.72 0.10 60);
+  --color-gold-light: oklch(0.82 0.08 60);
+  --color-warm-white: oklch(0.985 0.005 75);
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.985 0.005 75);
+  --foreground: oklch(0.22 0.05 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.05 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.05 250);
+  --primary: oklch(0.55 0.12 195);
+  --primary-foreground: oklch(0.99 0.002 75);
+  --secondary: oklch(0.95 0.015 75);
+  --secondary-foreground: oklch(0.30 0.05 250);
+  --muted: oklch(0.95 0.01 75);
+  --muted-foreground: oklch(0.50 0.03 250);
+  --accent: oklch(0.72 0.10 60);
+  --accent-foreground: oklch(0.22 0.05 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.90 0.01 75);
+  --input: oklch(0.90 0.01 75);
+  --ring: oklch(0.55 0.12 195);
+  --chart-1: oklch(0.55 0.12 195);
+  --chart-2: oklch(0.72 0.10 60);
+  --chart-3: oklch(0.22 0.05 250);
+  --chart-4: oklch(0.65 0.10 195);
+  --chart-5: oklch(0.82 0.08 60);
+  --sidebar: oklch(0.22 0.05 250);
+  --sidebar-foreground: oklch(0.95 0.015 75);
+  --sidebar-primary: oklch(0.55 0.12 195);
+  --sidebar-primary-foreground: oklch(0.99 0.002 75);
+  --sidebar-accent: oklch(0.30 0.05 250);
+  --sidebar-accent-foreground: oklch(0.95 0.015 75);
+  --sidebar-border: oklch(0.35 0.04 250);
+  --sidebar-ring: oklch(0.55 0.12 195);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Wave divider */
+  .wave-divider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Frosted glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(12, 35, 64, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Font utility classes */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
+
+/* ─── Print / Save as PDF ─────────────────────────────────────────────────── */
+@media print {
+  /* ── Page setup ── */
+  @page {
+    size: letter;
+    margin: 0.35in 0.4in 0.35in 0.4in;
+  }
+
+  /* ── Reset & base ── */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0C2340 !important;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── Hide all UI chrome ── */
+  header,
+  footer,
+  nav,
+  .no-print,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  /* ── Hide main page content ── */
+  .no-print-page {
+    display: none !important;
+  }
+
+  /* ── Show print-only block ── */
+  .print-only {
+    display: block !important;
+    position: static !important;
+    left: auto !important;
+    width: auto !important;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT DOCUMENT LAYOUT
+  ════════════════════════════════════════ */
+  .print-summary {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #0C2340;
+  }
+
+  /* ── Header ── */
+  .print-summary .print-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 10pt;
+    margin-bottom: 14pt;
+    border-bottom: 3px solid #1A7A7A;
+  }
+
+  .print-summary .print-logo-text {
+    font-family: Georgia, serif;
+    font-size: 22pt;
+    font-weight: bold;
+    color: #0C2340;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .print-summary .print-logo-tagline {
+    font-size: 8.5pt;
+    color: #1A7A7A;
+    margin-top: 3pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+  }
+
+  .print-summary .print-meta {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    color: #374151;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .print-summary .print-meta .print-meta-name {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0C2340;
+  }
+
+  .print-summary .print-meta .print-meta-date {
+    color: #6b7280;
+    margin-top: 3pt;
+    font-size: 8pt;
+  }
+
+  /* ── Total Payment Highlight Banner ── */
+  .print-summary .print-highlight {
+    background: #f0fafa !important;
+    border: 1.5pt solid #1A7A7A !important;
+    border-radius: 5pt;
+    padding: 10pt 14pt;
+    margin-bottom: 14pt;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    page-break-inside: avoid;
+  }
+
+  .print-summary .print-highlight .print-highlight-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .print-summary .print-badge {
+    display: inline-block;
+    background: #1A7A7A !important;
+    color: #ffffff !important;
+    padding: 2pt 7pt;
+    border-radius: 3pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 5pt;
+    width: fit-content;
+  }
+
+  .print-summary .print-highlight .big-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 3pt;
+  }
+
+  .print-summary .print-highlight .big-number {
+    font-family: Georgia, serif;
+    font-size: 30pt;
+    color: #0C2340;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .print-summary .print-highlight .print-highlight-sub {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #6b7280;
+    margin-top: 4pt;
+  }
+
+  /* ── Section headings ── */
+  .print-summary h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0C2340;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+    padding-bottom: 3pt;
+    border-bottom: 1.5pt solid #e5e7eb;
+  }
+
+  /* ── Two-column grid for Loan Summary ── */
+  .print-summary .print-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 28pt;
+    margin-bottom: 6pt;
+  }
+
+  /* ── Data rows ── */
+  .print-summary .print-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 4pt 0;
+    border-bottom: 0.5pt solid #f0f0f0;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .print-summary .print-row .label {
+    color: #4b5563;
+    font-size: 9.5pt;
+  }
+
+  .print-summary .print-row .value {
+    font-weight: 600;
+    color: #0C2340;
+    font-size: 10pt;
+  }
+
+  /* ── Total row ── */
+  .print-summary .print-row.total {
+    border-top: 2pt solid #0C2340;
+    border-bottom: none;
+    margin-top: 4pt;
+    padding-top: 7pt;
+    padding-bottom: 2pt;
+  }
+
+  .print-summary .print-row.total .label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0C2340;
+  }
+
+  .print-summary .print-row.total .value {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #0C2340;
+  }
+
+  /* ── Loan-specific notes box ── */
+  .print-summary .print-notes-box {
+    margin-top: 10pt;
+    padding: 8pt 10pt;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+  }
+
+  .print-summary .print-notes-box .print-notes-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #0C2340;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4pt;
+  }
+
+  .print-summary .print-notes-box .print-notes-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    color: #374151;
+    line-height: 1.55;
+  }
+
+  /* ── Disclaimer ── */
+  .print-summary .print-note {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #9ca3af;
+    margin-top: 18pt;
+    border-top: 0.5pt solid #e5e7eb;
+    padding-top: 7pt;
+    line-height: 1.55;
+  }
+
+  /* ── Page break control ── */
+  .print-summary .print-section {
+    page-break-inside: avoid;
+  }
+
+  /* ── Buydown Comparison Table ── */
+  .print-summary .print-buydown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+  .print-summary .print-buydown-table thead tr {
+    background: #0C2340 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-summary .print-buydown-table thead th {
+    padding: 5pt 7pt;
+    text-align: left;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #ffffff !important;
+    border: none;
+  }
+  .print-summary .print-buydown-table thead th:not(:first-child) {
+    text-align: center;
+  }
+  .print-summary .print-buydown-table tbody tr:nth-child(even) {
+    background: #f8fafb !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-summary .print-buydown-table tbody tr.buydown-total-row {
+    background: #f0fafa !important;
+    border-top: 1.5pt solid #1A7A7A !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-summary .print-buydown-table tbody td {
+    padding: 4pt 7pt;
+    border-bottom: 0.5pt solid #e5e7eb;
+    color: #0C2340;
+    font-size: 9pt;
+  }
+  .print-summary .print-buydown-table tbody td:not(:first-child) {
+    text-align: center;
+  }
+  .print-summary .print-buydown-table tbody td.buydown-label {
+    color: #4b5563;
+    font-size: 8.5pt;
+  }
+  .print-summary .print-buydown-table tbody td.buydown-total-label {
+    font-weight: 700;
+    color: #0C2340;
+    font-size: 9.5pt;
+  }
+  .print-summary .print-buydown-table tbody td.buydown-total-value {
+    font-weight: 700;
+    color: #1A7A7A;
+    font-size: 10pt;
+  }
+  /* ── Best Option highlight box ── */
+  .print-summary .print-best-option {
+    background: #f0fafa !important;
+    border: 1.5pt solid #1A7A7A !important;
+    border-radius: 4pt;
+    padding: 8pt 10pt;
+    margin-top: 8pt;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-summary .print-best-option .best-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #1A7A7A;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3pt;
+  }
+  .print-summary .print-best-option .best-name {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #0C2340;
+  }
+  .print-summary .print-best-option .best-detail {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    color: #374151;
+    margin-top: 3pt;
+  }
+}

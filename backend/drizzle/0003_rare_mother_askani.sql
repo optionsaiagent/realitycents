@@ -1,0 +1,1 @@
+ALTER TABLE `toolkit_resources` MODIFY COLUMN `category` enum('buyer_handouts','agent_scripts','local_checklists');

@@ -1,0 +1,1 @@
+ALTER TABLE `toolkit_agents` ADD `newsletterOptIn` boolean DEFAULT true NOT NULL;
