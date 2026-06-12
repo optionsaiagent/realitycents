@@ -48,6 +48,15 @@ interface RentEstimateResponse {
 
 // ─── Router ──────────────────────────────────────────────────────────────────
 export const dscrRouter = router({
+  logAccess: publicProcedure
+    .input(z.object({ name: z.string().min(1), email: z.string().email() }))
+    .mutation(async ({ input }) => {
+      // For now, we just log to console as a simple implementation
+      // In a real scenario, this would insert into a 'leads' or 'agent_access' table
+      console.log(`[DSCR Access] ${input.name} (${input.email}) unlocked the calculator`);
+      return { success: true };
+    }),
+
   getRentEstimate: publicProcedure
     .input(z.object({ address: z.string().min(5).max(500) }))
     .query(async ({ input }) => {
