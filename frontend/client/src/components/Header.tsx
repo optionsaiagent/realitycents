@@ -6,7 +6,7 @@
  */
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, FileCheck, ChevronDown, Calculator, Sparkles, TrendingUp, Scale, TrendingDown, Shield, GitCompareArrows } from "lucide-react";
+import { Menu, X, Phone, FileCheck, ChevronDown, Calculator, Sparkles, TrendingUp, Scale, TrendingDown, Shield, GitCompareArrows, Briefcase } from "lucide-react";
 import { LENDER, IMAGES, PRE_APPROVAL_URL } from "@/lib/constants";
 
 const MAIN_NAV = [
@@ -28,6 +28,7 @@ const CALC_LINKS = [
 const AFTER_CALC_NAV = [
   { label: "Homebuying Guide", href: "/guide" },
   { label: "VA Condo Lookup", href: "/va-approved-condos-oahu" },
+  { label: "Agent Tools", href: "/agents" },
   { label: "Contact", href: "/contact" },
   { label: "FAQ", href: "/frequently-asked-questions" },
 ] as const;
@@ -62,23 +63,27 @@ export default function Header() {
   }, []);
 
   const isCalcActive = location === "/calculator" || location === "/advanced-calculator" || location === "/affordability-calculator" || location === "/rent-vs-buy" || location === "/buydown-calculator" || location === "/military-calculator" || location === "/loan-compare";
+  const isAgentActive = location === "/agents" || location === "/dscr-calculator" || location === "/assumable-calculator" || location === "/escalation-calculator";
 
-  const renderNavLink = (link: { label: string; href: string }) => (
-    <Link
-      key={link.href}
-      href={link.href}
-      className={`relative px-3 py-2 text-sm font-body font-medium transition-colors ${
-        location === link.href
-          ? "text-gold"
-          : "text-sand/80 hover:text-white"
-      }`}
-    >
-      {link.label}
-      {location === link.href && (
-        <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold rounded-full" />
-      )}
-    </Link>
-  );
+  const renderNavLink = (link: { label: string; href: string }) => {
+    const isActive =
+      location === link.href ||
+      (link.href === "/agents" && isAgentActive);
+    return (
+      <Link
+        key={link.href}
+        href={link.href}
+        className={`relative px-3 py-2 text-sm font-body font-medium transition-colors ${
+          isActive ? "text-gold" : "text-sand/80 hover:text-white"
+        }`}
+      >
+        {link.label}
+        {isActive && (
+          <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold rounded-full" />
+        )}
+      </Link>
+    );
+  };
 
   return (
     <header
@@ -232,19 +237,24 @@ export default function Header() {
             );
           })}
 
-          {AFTER_CALC_NAV.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`px-4 py-3 rounded-md text-sm font-body font-medium transition-colors ${
-                location === link.href
-                  ? "bg-teal/20 text-gold"
-                  : "text-sand/80 hover:bg-white/5 hover:text-white"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {AFTER_CALC_NAV.map((link) => {
+            const isActive =
+              location === link.href ||
+              (link.href === "/agents" && isAgentActive);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`px-4 py-3 rounded-md text-sm font-body font-medium transition-colors ${
+                  isActive
+                    ? "bg-teal/20 text-gold"
+                    : "text-sand/80 hover:bg-white/5 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
 
           <a
             href={PRE_APPROVAL_URL}

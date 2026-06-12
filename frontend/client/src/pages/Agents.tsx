@@ -76,7 +76,7 @@ export default function Agents() {
       />
       <PageHero
         title="Agent Tools"
-        subtitle="Professional-grade resources to help you and your clients make better investment decisions."
+        subtitle="Professional-grade resources to help you and your clients make smarter decisions."
         image={IMAGES.heroAgents}
         compact
       />
@@ -89,22 +89,21 @@ export default function Agents() {
                 {/* Left: Copy */}
                 <div>
                   <h2 className="font-display text-3xl lg:text-4xl text-navy mb-6">
-                    Investment Property Tools
+                    Real Estate Agent Toolkit
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                    Screen DSCR deals in seconds. Enter your info below to
-                    access our investment property analyzer and assumable loan
-                    calculator.
+                    Screen deals, structure assumptions, and win bidding wars.
+                    Enter your info below to access our full agent toolkit.
                   </p>
 
                   <ul className="space-y-4 mb-8">
                     {[
                       "DSCR Investment Property Analyzer",
                       "Assumable Loan Calculator (VA/FHA)",
+                      "\"Win the Bid\" Escalation Calculator",
                       "Instant Rent Estimates (powered by RentCast)",
                       "Full PITIA & NOI Breakdowns",
                       "Color-coded Qualification Analysis",
-                      "Hawaii-Specific Expense Guidance",
                     ].map((item, i) => (
                       <li
                         key={i}
