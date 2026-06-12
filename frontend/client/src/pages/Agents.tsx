@@ -10,6 +10,7 @@ import { IMAGES, LENDER } from "@/lib/constants";
 import { trpc } from "@/lib/trpc";
 import DSCRCalculator from "./DSCRCalculator";
 import AssumableCalculator from "./AssumableCalculator";
+import EscalationCalculator from "./EscalationCalculator";
 import {
   User,
   Mail,
@@ -18,9 +19,10 @@ import {
   ArrowRight,
   TrendingUp,
   HandCoins,
+  Flame,
 } from "lucide-react";
 
-type ActiveTool = "dscr" | "assumable";
+type ActiveTool = "dscr" | "assumable" | "escalation";
 
 export default function Agents() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -209,7 +211,18 @@ export default function Agents() {
                     }`}
                   >
                     <HandCoins className="w-4 h-4" />
-                    Assumable Loan Calculator
+                    Assumable Loan
+                  </button>
+                  <button
+                    onClick={() => setActiveTool("escalation")}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
+                      activeTool === "escalation"
+                        ? "bg-navy text-white shadow-sm"
+                        : "bg-white text-navy border border-border hover:bg-navy/5"
+                    }`}
+                  >
+                    <Flame className="w-4 h-4" />
+                    Win the Bid
                   </button>
                 </div>
                 <button
@@ -227,8 +240,10 @@ export default function Agents() {
               <div className="calculator-wrapper">
                 {activeTool === "dscr" ? (
                   <DSCRCalculator isEmbedded={true} />
-                ) : (
+                ) : activeTool === "assumable" ? (
                   <AssumableCalculator isEmbedded={true} />
+                ) : (
+                  <EscalationCalculator isEmbedded={true} />
                 )}
               </div>
             </div>
