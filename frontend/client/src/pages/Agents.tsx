@@ -1,6 +1,6 @@
 /*
  * Pacific Modernism — Agent Tools
- * Landing page for real estate agents with an email gate for the DSCR calculator.
+ * Landing page for real estate agents with an email gate for professional tools.
  */
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
@@ -9,13 +9,25 @@ import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
 import { trpc } from "@/lib/trpc";
 import DSCRCalculator from "./DSCRCalculator";
-import { User, Mail, Lock, CheckCircle, ArrowRight } from "lucide-react";
+import AssumableCalculator from "./AssumableCalculator";
+import {
+  User,
+  Mail,
+  Lock,
+  CheckCircle,
+  ArrowRight,
+  TrendingUp,
+  HandCoins,
+} from "lucide-react";
+
+type ActiveTool = "dscr" | "assumable";
 
 export default function Agents() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activeTool, setActiveTool] = useState<ActiveTool>("dscr");
 
   const logAccess = trpc.dscr.logAccess.useMutation();
 
@@ -35,10 +47,13 @@ export default function Agents() {
     try {
       // Log access to backend
       await logAccess.mutateAsync({ name, email });
-      
+
       // Save to localStorage
-      localStorage.setItem("rc_agent_info", JSON.stringify({ name, email, unlockedAt: new Date().toISOString() }));
-      
+      localStorage.setItem(
+        "rc_agent_info",
+        JSON.stringify({ name, email, unlockedAt: new Date().toISOString() })
+      );
+
       setIsUnlocked(true);
     } catch (err) {
       console.error("Failed to log access:", err);
@@ -53,9 +68,9 @@ export default function Agents() {
     <Layout>
       <SEO
         title="Agent Tools — RealityCents"
-        description="Access professional-grade real estate investment tools, including our DSCR Investment Property Analyzer. Screen deals in seconds."
+        description="Access professional-grade real estate investment tools, including our DSCR Investment Property Analyzer and Assumable Loan Calculator. Screen deals in seconds."
         url="/agents"
-        keywords="real estate agent tools, DSCR calculator, investment property analyzer, Hawaii real estate tools, mortgage tools for agents"
+        keywords="real estate agent tools, DSCR calculator, assumable loan calculator, investment property analyzer, Hawaii real estate tools, mortgage tools for agents"
       />
       <PageHero
         title="Agent Tools"
@@ -72,21 +87,27 @@ export default function Agents() {
                 {/* Left: Copy */}
                 <div>
                   <h2 className="font-display text-3xl lg:text-4xl text-navy mb-6">
-                    DSCR Investment Property Analyzer
+                    Investment Property Tools
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                    Screen DSCR deals in seconds. Our professional analyzer helps you quickly determine if a rental property pencils as a DSCR loan deal, complete with rent estimates and lender threshold checks.
+                    Screen DSCR deals in seconds. Enter your info below to
+                    access our investment property analyzer and assumable loan
+                    calculator.
                   </p>
-                  
+
                   <ul className="space-y-4 mb-8">
                     {[
+                      "DSCR Investment Property Analyzer",
+                      "Assumable Loan Calculator (VA/FHA)",
                       "Instant Rent Estimates (powered by RentCast)",
                       "Full PITIA & NOI Breakdowns",
-                      "Color-coded DSCR Ratio Analysis",
-                      "Lender Threshold Verification (1.0x, 1.1x, 1.25x)",
-                      "Hawaii-Specific Expense Guidance"
+                      "Color-coded Qualification Analysis",
+                      "Hawaii-Specific Expense Guidance",
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-navy font-body font-medium">
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-navy font-body font-medium"
+                      >
                         <CheckCircle className="w-5 h-5 text-teal shrink-0" />
                         {item}
                       </li>
@@ -101,14 +122,20 @@ export default function Agents() {
                       <Lock className="w-5 h-5 text-teal" />
                     </div>
                     <div>
-                      <h3 className="font-display text-xl text-navy">Unlock Access</h3>
-                      <p className="text-sm text-muted-foreground">Enter your info to access the tool</p>
+                      <h3 className="font-display text-xl text-navy">
+                        Unlock Access
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        Enter your info to access the tools
+                      </p>
                     </div>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label className="block text-sm font-body font-medium text-navy mb-1.5">Full Name</label>
+                      <label className="block text-sm font-body font-medium text-navy mb-1.5">
+                        Full Name
+                      </label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                         <input
@@ -123,7 +150,9 @@ export default function Agents() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-body font-medium text-navy mb-1.5">Email Address</label>
+                      <label className="block text-sm font-body font-medium text-navy mb-1.5">
+                        Email Address
+                      </label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                         <input
@@ -142,12 +171,14 @@ export default function Agents() {
                       disabled={isSubmitting}
                       className="w-full bg-navy hover:bg-navy-light text-white font-body font-semibold py-3 rounded-md transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
                     >
-                      {isSubmitting ? "Unlocking..." : "Access Analyzer"}
+                      {isSubmitting ? "Unlocking..." : "Access Tools"}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
 
                     <p className="text-[10px] text-center text-muted-foreground mt-4">
-                      By accessing this tool, you agree to receive mortgage resources from {LENDER.name} at {LENDER.company}. You can opt out at any time.
+                      By accessing these tools, you agree to receive mortgage
+                      resources from {LENDER.name} at {LENDER.company}. You can
+                      opt out at any time.
                     </p>
                   </form>
                 </div>
@@ -155,12 +186,33 @@ export default function Agents() {
             </div>
           ) : (
             <div className="animate-in fade-in duration-700">
+              {/* Tool Selector Header */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-sand/30 p-4 rounded-lg border border-border">
-                <div>
-                  <h2 className="font-display text-2xl text-navy">DSCR Investment Property Analyzer</h2>
-                  <p className="text-sm text-muted-foreground">Professional screening tool for rental property deals.</p>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    onClick={() => setActiveTool("dscr")}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
+                      activeTool === "dscr"
+                        ? "bg-navy text-white shadow-sm"
+                        : "bg-white text-navy border border-border hover:bg-navy/5"
+                    }`}
+                  >
+                    <TrendingUp className="w-4 h-4" />
+                    DSCR Analyzer
+                  </button>
+                  <button
+                    onClick={() => setActiveTool("assumable")}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
+                      activeTool === "assumable"
+                        ? "bg-navy text-white shadow-sm"
+                        : "bg-white text-navy border border-border hover:bg-navy/5"
+                    }`}
+                  >
+                    <HandCoins className="w-4 h-4" />
+                    Assumable Loan Calculator
+                  </button>
                 </div>
-                <button 
+                <button
                   onClick={() => {
                     localStorage.removeItem("rc_agent_info");
                     setIsUnlocked(false);
@@ -170,10 +222,14 @@ export default function Agents() {
                   Not you? Reset access
                 </button>
               </div>
-              
-              {/* Embed the calculator directly */}
+
+              {/* Active Tool */}
               <div className="calculator-wrapper">
-                <DSCRCalculator isEmbedded={true} />
+                {activeTool === "dscr" ? (
+                  <DSCRCalculator isEmbedded={true} />
+                ) : (
+                  <AssumableCalculator isEmbedded={true} />
+                )}
               </div>
             </div>
           )}

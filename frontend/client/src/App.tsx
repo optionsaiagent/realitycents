@@ -29,6 +29,7 @@ import BAHBuyVsRent from "./pages/BAHBuyVsRent";
 import LoanCompare from "./pages/LoanCompare";
 import ShortLink from "./pages/ShortLink";
 import DSCRCalculator from "./pages/DSCRCalculator";
+import AssumableCalculator from "./pages/AssumableCalculator";
 import Agents from "./pages/Agents";
 
 function ScrollToTop() {
@@ -70,6 +71,7 @@ function Router() {
         <Route path={"/bah-buy-vs-rent-oahu"} component={BAHBuyVsRent} />
         <Route path={"/loan-compare"} component={LoanCompare} />
         <Route path={"/dscr-calculator"} component={DSCRCalculator} />
+        <Route path={"/assumable-calculator"} component={AssumableCalculator} />
         <Route path={"/agents"} component={Agents} />
         <Route path={"/s/:id"} component={ShortLink} />
         {/* Redirect old agent routes to home */}
