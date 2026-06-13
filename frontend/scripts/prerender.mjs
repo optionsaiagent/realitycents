@@ -16,6 +16,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { marked } from "marked";
+import { STATIC_PAGE_BODIES } from "./static-page-bodies.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -660,9 +661,9 @@ function generateArticleBody(article) {
  * Customize the base HTML for a specific route by replacing meta tags in-place,
  * injecting per-page JSON-LD schema blocks, and adding semantic HTML body.
  */
-function customizeHtml(baseHtml, route, meta, articleBody = null) {
+function customizeHtml(baseHtml, route, meta, bodyContent = null) {
   const url = canonicalUrl(route);
-  const fullTitle = `${meta.title} | ${SITE_NAME}`;
+  const fullTitle = meta.title.includes(SITE_NAME) ? meta.title : `${meta.title} | ${SITE_NAME}`;
   const image = meta.image || DEFAULT_IMAGE;
   const imageAlt = meta.imageAlt || DEFAULT_IMAGE_ALT;
   const ogType = meta.type || "website";
@@ -763,8 +764,8 @@ function customizeHtml(baseHtml, route, meta, articleBody = null) {
   // Note: NMLS/compliance footer is rendered by the React Footer component — no pre-rendered injection needed.
 
   // 10. Inject semantic HTML body (before React mount point)
-  if (articleBody) {
-    const prerenderedContent = `    <div id="prerendered-content" style="display:none;">\n${articleBody}\n    </div>\n    `;
+  if (bodyContent) {
+    const prerenderedContent = `    <div id="prerendered-content" style="display:none;">\n${bodyContent}\n    </div>\n    `;
     html = html.replace(
       '    <div id="root"></div>',
       `${prerenderedContent}    <div id="root"></div>`
@@ -815,17 +816,19 @@ async function prerender() {
       const outputDir = path.resolve(distPublic, routePath);
       const outputFile = path.resolve(outputDir, "index.html");
 
-      // Find article body if this is an article route
-      let articleBody = null;
-      if (route.startsWith("/knowledge-base/")) {
+      // Find body content for this route
+      let bodyContent = null;
+      if (route.startsWith("/knowledge-base/") && route !== "/knowledge-base") {
         const slug = route.replace("/knowledge-base/", "");
         const fullArticle = articlesFull.find((a) => a.slug === slug);
         if (fullArticle) {
-          articleBody = generateArticleBody(fullArticle);
+          bodyContent = generateArticleBody(fullArticle);
         }
+      } else if (STATIC_PAGE_BODIES[route]) {
+        bodyContent = STATIC_PAGE_BODIES[route];
       }
 
-      const routeHtml = customizeHtml(baseHtml, route, meta, articleBody);
+      const routeHtml = customizeHtml(baseHtml, route, meta, bodyContent);
 
       fs.mkdirSync(outputDir, { recursive: true });
       fs.writeFileSync(outputFile, routeHtml, "utf-8");
