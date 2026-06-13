@@ -59,8 +59,6 @@ const features = [
 
 const stats = [
   { value: "25+", label: "Years Experience" },
-  { value: "1,500+", label: "Families Served" },
-  { value: "4.9", label: "Client Rating" },
   { value: "$500M+", label: "Loans Funded" },
 ];
 
