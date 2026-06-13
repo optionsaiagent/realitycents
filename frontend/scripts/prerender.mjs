@@ -252,19 +252,34 @@ const STATIC_PAGES = {
 
   // ─── Military Installation Hub Pages ─────────────────────────────────────
   "/va-loan-schofield-barracks": {
-    title: "VA Loan Guide for Schofield Barracks — Buy a Home on Oahu",
-    description: "PCS'ing to Schofield Barracks? Complete VA loan guide with 2026 BAH rates, payment scenarios by rank, best neighborhoods (Mililani, Wahiawa, Royal Kunia), and $0-down purchase options for 25th Infantry Division families.",
-    keywords: "VA loan Schofield Barracks, buying a home near Schofield Barracks, VA loan Mililani, VA loan Wahiawa, 25th Infantry Division home loan, military home buying Oahu",
+    title: "VA Loan Guide for Schofield Barracks — Buy a Home on Oahu with $0 Down",
+    description: "PCS'ing to Schofield Barracks? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Mililani, Wahiawa, Kapolei), VA condo rules, and $0-down purchase options for 25th Infantry Division families on Oahu.",
+    keywords: "VA loan Schofield Barracks, buying a home near Schofield Barracks, VA loan Wahiawa, VA loan Mililani, 25th Infantry Division home loan",
     schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://realitycents.com/#business",
+        name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
+        description: "Army veteran and Certified Mortgage Advisor specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25+ years of Hawaii mortgage lending experience.",
+        url: "https://realitycents.com/va-loan-schofield-barracks",
+        telephone: "(808) 429-0811",
+        email: "jaym@cmghomeloans.com",
+        address: { "@type": "PostalAddress", streetAddress: "500 Ala Moana Blvd, Suite 6-200", addressLocality: "Honolulu", addressRegion: "HI", postalCode: "96813", addressCountry: "US" },
+        geo: { "@type": "GeoCoordinates", latitude: 21.3069, longitude: -157.8583 },
+        areaServed: { "@type": "Place", name: "Oahu, Hawaii" },
+        priceRange: "$$",
+        image: "https://realitycents.com/og-image.jpg",
+        additionalType: "https://schema.org/MortgageLender",
+      },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "Can I use my VA loan for a 3-year tour at Schofield?", acceptedAnswer: { "@type": "Answer", text: "Yes. VA requires you to occupy the home as your primary residence for 12 months — your intent must be to live there at the time of purchase. If you receive military orders before 12 months, that satisfies the occupancy requirement. After occupancy is met, you can rent it when you PCS out. Most Hawaii assignments are 3 years, which gives you plenty of time to build equity before the next move." } },
-          { "@type": "Question", name: "Is there a VA loan limit for Oahu in 2026?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, there is no loan limit — you can buy at any price with $0 down. The $1,249,125 conforming loan limit only matters if you have reduced entitlement from a prior VA loan that hasn't been restored." } },
-          { "@type": "Question", name: "Should I buy a house or a condo near Schofield?", acceptedAnswer: { "@type": "Answer", text: "Depends on your rank and family size. E-5 and below often find condos/townhomes more realistic in the $400K–$800K range. E-6+ can stretch into single-family homes in Wahiawa or Mililani. Condos must be VA-approved — check the VA Condo Lookup tool before falling in love with a unit." } },
-          { "@type": "Question", name: "How long does a VA loan take to close in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Typically 30–45 days from accepted offer to keys. VA appraisals on Oahu currently take 7–10 business days. Jay orders the appraisal after clearing the home inspection period to protect buyers from paying for an appraisal on a home they might walk away from." } },
-          { "@type": "Question", name: "Can I buy a home before arriving on island?", acceptedAnswer: { "@type": "Answer", text: "Yes — you can get pre-approved, tour homes virtually with your agent, and even go under contract before boots hit the ground. VA allows you to close up to 60 days before reporting. Start your pre-approval as soon as you have orders in hand." } },
+          { "@type": "Question", name: "I used my VA loan on the mainland. Can I use it again at Schofield?", acceptedAnswer: { "@type": "Answer", text: "Yes — with remaining entitlement. Honolulu County's 2026 limit is $1,209,750. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference." } },
+          { "@type": "Question", name: "Can I qualify on BAH alone?", acceptedAnswer: { "@type": "Answer", text: "BAH counts as qualifying income when documented on your LES. Most lenders can gross it up 25% since it's tax-free, which meaningfully improves your DTI. Whether it's sufficient alone depends on your full debt picture." } },
+          { "@type": "Question", name: "How long does VA loan approval take? I have a short PCS window.", acceptedAnswer: { "@type": "Answer", text: "A VA loan doesn't take longer than conventional — the appraisal process is comparable. The variable is condo approval status and seller education. Jay closes VA loans on Oahu regularly and knows how to set timelines that work with PCS constraints." } },
+          { "@type": "Question", name: "Should I buy or rent if I'm only here 2–3 years?", acceptedAnswer: { "@type": "Answer", text: "It depends on when in the market cycle you're buying and where you think Hawaii appreciation goes. But historically, Oahu values have supported short holds better than most markets." } },
         ],
       },
       {
