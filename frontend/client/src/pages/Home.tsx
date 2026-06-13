@@ -57,10 +57,7 @@ const features = [
   },
 ];
 
-const stats = [
-  { value: "25+", label: "Years Experience" },
-  { value: "$500M+", label: "Loans Funded" },
-];
+
 
 const loanTypes = [
   { name: "Conventional", desc: "Traditional financing with competitive rates for qualified borrowers" },
@@ -192,21 +189,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-warm-white to-transparent" />
       </section>
 
-      {/* ===== STATS BAR ===== */}
-      <section className="relative -mt-12 z-20">
-        <div className="container">
-          <div className="glass rounded-xl shadow-xl shadow-navy/5 p-6 lg:p-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="font-display text-3xl lg:text-4xl text-navy mb-1">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground font-body">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* ===== FEATURES ===== */}
       <section className="py-20 lg:py-28">
