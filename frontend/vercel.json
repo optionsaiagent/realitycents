@@ -1,10 +1,9 @@
 {
-  "buildCommand": "pnpm run build",
+  "buildCommand": "pnpm run build && node scripts/prerender.mjs",
   "outputDirectory": "dist",
   "framework": "vite",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "trailingSlash": false,
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -15,14 +14,16 @@
   ],
   "redirects": [
     { "source": "/faq", "destination": "/frequently-asked-questions", "statusCode": 301 },
-    { "source": "/agents", "destination": "/", "statusCode": 301 },
-    { "source": "/agent-hub", "destination": "/", "statusCode": 301 },
-    { "source": "/agent-toolkit", "destination": "/", "statusCode": 301 },
-    { "source": "/agent-toolkit/admin", "destination": "/", "statusCode": 301 },
-    { "source": "/for-agents", "destination": "/", "statusCode": 301 },
-    { "source": "/dealsync", "destination": "/", "statusCode": 301 },
-    { "source": "/real-estate-agents", "destination": "/", "statusCode": 301 },
-    { "source": "/realtor-tools", "destination": "/", "statusCode": 301 },
-    { "source": "/realtor-tools/:path*", "destination": "/", "statusCode": 301 }
+    { "source": "/agent-hub", "destination": "/agents", "statusCode": 301 },
+    { "source": "/agent-toolkit", "destination": "/agents", "statusCode": 301 },
+    { "source": "/agent-toolkit/admin", "destination": "/agents", "statusCode": 301 },
+    { "source": "/for-agents", "destination": "/agents", "statusCode": 301 },
+    { "source": "/dealsync", "destination": "/agents", "statusCode": 301 },
+    { "source": "/real-estate-agents", "destination": "/agents", "statusCode": 301 },
+    { "source": "/realtor-tools", "destination": "/agents", "statusCode": 301 },
+    { "source": "/realtor-tools/:path*", "destination": "/agents", "statusCode": 301 }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

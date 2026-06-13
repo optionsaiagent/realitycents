@@ -19,7 +19,7 @@ import { marked } from "marked";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
-const distPublic = path.resolve(projectRoot, "dist/public");
+const distPublic = path.resolve(projectRoot, "dist");
 const indexHtmlPath = path.resolve(distPublic, "index.html");
 
 const BASE_URL = "https://realitycents.com";
@@ -443,6 +443,71 @@ const STATIC_PAGES = {
       },
     ],
   },
+  "/agents": {
+    title: "Agent Tools — Real Estate Agent Toolkit",
+    description: "Professional-grade tools for real estate agents: DSCR Investment Property Analyzer, Assumable Loan Calculator, and Win the Bid Escalation Calculator. Screen deals, structure assumptions, and win bidding wars.",
+    keywords: "real estate agent tools, DSCR calculator, assumable loan calculator, escalation calculator, Hawaii real estate tools, mortgage tools for agents, investment property analyzer",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Real Estate Agent Toolkit",
+        url: `${BASE_URL}/agents`,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        description: "Professional tools for real estate agents: DSCR analyzer, assumable loan calculator, and escalation calculator.",
+      },
+    ],
+  },
+  "/dscr-calculator": {
+    title: "DSCR Investment Property Analyzer — Hawaii Rental Calculator",
+    description: "Screen rental properties for DSCR loan qualification. Get rent estimates, calculate debt service coverage ratio, and determine if a deal pencils for Hawaii investment properties.",
+    keywords: "DSCR calculator Hawaii, debt service coverage ratio, rental property analyzer, DSCR loan qualification, investment property calculator Hawaii, rent estimate",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "DSCR Investment Property Analyzer",
+        url: `${BASE_URL}/dscr-calculator`,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      },
+    ],
+  },
+  "/assumable-calculator": {
+    title: "Assumable Loan Calculator — VA/FHA Loan Assumption Analysis",
+    description: "Compare assuming an existing VA or FHA loan vs. new financing. Calculate monthly savings, gap financing needs, and total interest savings for Hawaii real estate.",
+    keywords: "assumable loan calculator, VA loan assumption, FHA loan assumption, Hawaii assumable mortgage, loan assumption vs new financing, gap financing calculator",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Assumable Loan Calculator",
+        url: `${BASE_URL}/assumable-calculator`,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      },
+    ],
+  },
+  "/escalation-calculator": {
+    title: "Win the Bid — Escalation Calculator | Hawaii Real Estate",
+    description: "Reframe bidding wars into real monthly costs. See what each escalation truly costs per month, analyze appraisal gap exposure, and understand the cost of not winning.",
+    keywords: "escalation calculator, bidding war calculator, Hawaii real estate offer, appraisal gap, win the bid, offer strategy calculator, monthly cost of escalation",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Win the Bid Escalation Calculator",
+        url: `${BASE_URL}/escalation-calculator`,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      },
+    ],
+  },
 };
 
 // ─── Build article page metadata ────────────────────────────────────────────
@@ -701,8 +766,8 @@ function customizeHtml(baseHtml, route, meta, articleBody = null) {
   if (articleBody) {
     const prerenderedContent = `    <div id="prerendered-content" style="display:none;">\n${articleBody}\n    </div>\n    `;
     html = html.replace(
-      '<div id="root"></div>',
-      `${prerenderedContent}<div id="root"></div>`
+      '    <div id="root"></div>',
+      `${prerenderedContent}    <div id="root"></div>`
     );
 
     // Add inline script to show prerendered content before React hydrates
@@ -719,7 +784,8 @@ function customizeHtml(baseHtml, route, meta, articleBody = null) {
         }, 100);
       });
     </script>\n    `;
-    html = html.replace('    <script type="module" src="/src/main.tsx"></script>', showScript + '    <script type="module" src="/src/main.tsx"></script>');
+    // In built HTML, the script tag is a hashed module — inject before </body> instead
+    html = html.replace('  </body>', showScript + '  </body>');
   }
 
   return html;
