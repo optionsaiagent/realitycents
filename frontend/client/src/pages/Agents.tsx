@@ -1,6 +1,6 @@
 /*
- * Pacific Modernism — Agent Tools
- * Landing page for real estate agents with an email gate for professional tools.
+ * Pacific Modernism — Agent Partnership & Tools
+ * DealSync-first landing page for real estate agents with email gate.
  */
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
@@ -20,6 +20,12 @@ import {
   TrendingUp,
   HandCoins,
   Flame,
+  Eye,
+  FileText,
+  Share2,
+  AlertTriangle,
+  Phone,
+  ExternalLink,
 } from "lucide-react";
 
 type ActiveTool = "dscr" | "assumable" | "escalation";
@@ -47,19 +53,14 @@ export default function Agents() {
 
     setIsSubmitting(true);
     try {
-      // Log access to backend
       await logAccess.mutateAsync({ name, email });
-
-      // Save to localStorage
       localStorage.setItem(
         "rc_agent_info",
         JSON.stringify({ name, email, unlockedAt: new Date().toISOString() })
       );
-
       setIsUnlocked(true);
     } catch (err) {
       console.error("Failed to log access:", err);
-      // Still unlock even if logging fails (UX first)
       setIsUnlocked(true);
     } finally {
       setIsSubmitting(false);
@@ -69,14 +70,14 @@ export default function Agents() {
   return (
     <Layout>
       <SEO
-        title="Agent Tools — RealityCents"
-        description="Access professional-grade real estate investment tools, including our DSCR Investment Property Analyzer and Assumable Loan Calculator. Screen deals in seconds."
+        title="Partner With Me — DealSync & Agent Tools — RealityCents"
+        description="Real-time deal visibility, instant pre-approval letters, and professional agent tools. Partner with Jay Miller at CMG Home Loans and get free DealSync access."
         url="/agents"
-        keywords="real estate agent tools, DSCR calculator, assumable loan calculator, investment property analyzer, Hawaii real estate tools, mortgage tools for agents"
+        keywords="DealSync, real estate agent partnership, deal tracking, pre-approval letters, DSCR calculator, assumable loan calculator, Hawaii real estate tools, mortgage tools for agents"
       />
       <PageHero
-        title="Agent Tools"
-        subtitle="Professional-grade resources to help you and your clients make smarter decisions."
+        title="Agent Partnership"
+        subtitle="Real-time deal visibility, instant letters, and professional tools — built for agents who refer with confidence."
         image={IMAGES.heroAgents}
         compact
       />
@@ -84,26 +85,28 @@ export default function Agents() {
       <section className="py-16 lg:py-24">
         <div className="container">
           {!isUnlocked ? (
+            /* ─── EMAIL GATE ─── */
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left: Copy */}
                 <div>
                   <h2 className="font-display text-3xl lg:text-4xl text-navy mb-6">
-                    Real Estate Agent Toolkit
+                    Partner With Me
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                    Screen deals, structure assumptions, and win bidding wars.
-                    Enter your info below to access our full agent toolkit.
+                    Get real-time deal visibility through DealSync, instant
+                    pre-approval letters, and professional agent tools — all at
+                    no cost when you partner with me.
                   </p>
 
                   <ul className="space-y-4 mb-8">
                     {[
+                      "DealSync — Real-time shared deal room",
+                      "Instant Pre-Approval & VOF Letters",
+                      "Borrower Status Portal for your buyers",
                       "DSCR Investment Property Analyzer",
                       "Assumable Loan Calculator (VA/FHA)",
                       "\"Win the Bid\" Escalation Calculator",
-                      "Instant Rent Estimates (powered by RentCast)",
-                      "Full PITIA & NOI Breakdowns",
-                      "Color-coded Qualification Analysis",
                     ].map((item, i) => (
                       <li
                         key={i}
@@ -127,7 +130,7 @@ export default function Agents() {
                         Unlock Access
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        Enter your info to access the tools
+                        Enter your info to access partnership details & tools
                       </p>
                     </div>
                   </div>
@@ -172,7 +175,7 @@ export default function Agents() {
                       disabled={isSubmitting}
                       className="w-full bg-navy hover:bg-navy-light text-white font-body font-semibold py-3 rounded-md transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
                     >
-                      {isSubmitting ? "Unlocking..." : "Access Tools"}
+                      {isSubmitting ? "Unlocking..." : "Access Partnership Details"}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
 
@@ -186,64 +189,250 @@ export default function Agents() {
               </div>
             </div>
           ) : (
+            /* ─── UNLOCKED CONTENT ─── */
             <div className="animate-in fade-in duration-700">
-              {/* Tool Selector Header */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-sand/30 p-4 rounded-lg border border-border">
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setActiveTool("dscr")}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
-                      activeTool === "dscr"
-                        ? "bg-navy text-white shadow-sm"
-                        : "bg-white text-navy border border-border hover:bg-navy/5"
-                    }`}
-                  >
-                    <TrendingUp className="w-4 h-4" />
-                    DSCR Analyzer
-                  </button>
-                  <button
-                    onClick={() => setActiveTool("assumable")}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
-                      activeTool === "assumable"
-                        ? "bg-navy text-white shadow-sm"
-                        : "bg-white text-navy border border-border hover:bg-navy/5"
-                    }`}
-                  >
-                    <HandCoins className="w-4 h-4" />
-                    Assumable Loan
-                  </button>
-                  <button
-                    onClick={() => setActiveTool("escalation")}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
-                      activeTool === "escalation"
-                        ? "bg-navy text-white shadow-sm"
-                        : "bg-white text-navy border border-border hover:bg-navy/5"
-                    }`}
-                  >
-                    <Flame className="w-4 h-4" />
-                    Win the Bid
-                  </button>
+              {/* ═══ SECTION 1: How We Work Together (DealSync) ═══ */}
+              <div className="max-w-5xl mx-auto mb-20">
+                <div className="text-center mb-12">
+                  <h2 className="font-display text-3xl lg:text-4xl text-navy mb-4">
+                    Partner With Me — Get Real-Time Deal Visibility, Instant
+                    Letters, and Zero Guesswork
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    When you refer a client to me, you don't lose visibility. You
+                    gain it.
+                  </p>
                 </div>
-                <button
-                  onClick={() => {
-                    localStorage.removeItem("rc_agent_info");
-                    setIsUnlocked(false);
-                  }}
-                  className="text-xs text-teal hover:underline font-body font-medium self-start md:self-center"
-                >
-                  Not you? Reset access
-                </button>
+
+                {/* Value Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                  {/* Card 1 */}
+                  <div className="bg-card rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                    <div className="w-11 h-11 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+                      <Eye className="w-5 h-5 text-teal" />
+                    </div>
+                    <h3 className="font-display text-lg text-navy mb-2">
+                      Real-Time Deal Tracking
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      See exactly where every referred client stands. No more
+                      texting "any update?" — you'll know before they ask you.
+                    </p>
+                  </div>
+
+                  {/* Card 2 */}
+                  <div className="bg-card rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                    <div className="w-11 h-11 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+                      <FileText className="w-5 h-5 text-teal" />
+                    </div>
+                    <h3 className="font-display text-lg text-navy mb-2">
+                      Instant Pre-Approval & VOF Letters
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Need a letter for a bidding war? Click "Re-issue," update
+                      the price, get a fresh letter in under 60 seconds. No
+                      waiting on me to be at my desk.
+                    </p>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="bg-card rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                    <div className="w-11 h-11 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+                      <Share2 className="w-5 h-5 text-teal" />
+                    </div>
+                    <h3 className="font-display text-lg text-navy mb-2">
+                      Borrower Status Portal
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Share a live status link with your buyers. They see
+                      plain-English milestones (Pre-Approved → Appraisal In →
+                      Clear to Close). You look organized. They stop calling you
+                      for updates.
+                    </p>
+                  </div>
+
+                  {/* Card 4 */}
+                  <div className="bg-card rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                    <div className="w-11 h-11 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+                      <AlertTriangle className="w-5 h-5 text-teal" />
+                    </div>
+                    <h3 className="font-display text-lg text-navy mb-2">
+                      Stalled-Deal Alerts
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      If a deal hasn't moved in a week, you'll know. No more
+                      deals dying in silence.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Clarifying paragraph */}
+                <p className="text-center text-muted-foreground max-w-3xl mx-auto text-sm leading-relaxed">
+                  This isn't a CRM replacement — it's the layer between your CRM
+                  and mine. You keep your systems. I keep mine. DealSync is the
+                  shared space where nothing falls through the cracks.
+                </p>
               </div>
 
-              {/* Active Tool */}
-              <div className="calculator-wrapper">
-                {activeTool === "dscr" ? (
-                  <DSCRCalculator isEmbedded={true} />
-                ) : activeTool === "assumable" ? (
-                  <AssumableCalculator isEmbedded={true} />
-                ) : (
-                  <EscalationCalculator isEmbedded={true} />
-                )}
+              {/* ═══ SECTION 2: Try DealSync Free CTA ═══ */}
+              <div className="max-w-4xl mx-auto mb-20">
+                <div className="bg-navy rounded-2xl p-8 md:p-12 text-center">
+                  <h3 className="font-display text-2xl lg:text-3xl text-white mb-4">
+                    DealSync is Free for Partner Agents — Forever
+                  </h3>
+                  <p className="text-sand/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+                    When you partner with me, you get full access to DealSync at
+                    no cost. Unlimited deals, real-time tracking, instant letters,
+                    mobile access. No credit card, no trial period, no catch.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                      href="mailto:jaym@cmghomeloans.com?subject=DealSync%20Partner%20Access%20Request"
+                      className="inline-flex items-center gap-2 bg-teal hover:bg-teal/90 text-white font-body font-semibold px-6 py-3 rounded-md transition-colors"
+                    >
+                      Request Partner Access
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://www.dealsync.me"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sand/80 hover:text-white font-body font-medium text-sm transition-colors"
+                    >
+                      Learn more about DealSync
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* ═══ SECTION 3: Agent Tools (Calculators) ═══ */}
+              <div className="max-w-5xl mx-auto mb-20">
+                <div className="text-center mb-8">
+                  <h2 className="font-display text-2xl lg:text-3xl text-navy mb-3">
+                    Agent-Only Tools
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    These tools are built for agents working Hawaii investment and
+                    VA deals. Use them to run scenarios with your clients before we
+                    even talk.
+                  </p>
+                </div>
+
+                {/* Tool Selector */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-sand/30 p-4 rounded-lg border border-border">
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={() => setActiveTool("dscr")}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
+                        activeTool === "dscr"
+                          ? "bg-navy text-white shadow-sm"
+                          : "bg-white text-navy border border-border hover:bg-navy/5"
+                      }`}
+                    >
+                      <TrendingUp className="w-4 h-4" />
+                      DSCR Analyzer
+                    </button>
+                    <button
+                      onClick={() => setActiveTool("assumable")}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
+                        activeTool === "assumable"
+                          ? "bg-navy text-white shadow-sm"
+                          : "bg-white text-navy border border-border hover:bg-navy/5"
+                      }`}
+                    >
+                      <HandCoins className="w-4 h-4" />
+                      Assumable Loan
+                    </button>
+                    <button
+                      onClick={() => setActiveTool("escalation")}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-body font-semibold transition-all ${
+                        activeTool === "escalation"
+                          ? "bg-navy text-white shadow-sm"
+                          : "bg-white text-navy border border-border hover:bg-navy/5"
+                      }`}
+                    >
+                      <Flame className="w-4 h-4" />
+                      Win the Bid
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => {
+                      localStorage.removeItem("rc_agent_info");
+                      setIsUnlocked(false);
+                    }}
+                    className="text-xs text-teal hover:underline font-body font-medium self-start md:self-center"
+                  >
+                    Not you? Reset access
+                  </button>
+                </div>
+
+                {/* Active Tool */}
+                <div className="calculator-wrapper">
+                  {activeTool === "dscr" ? (
+                    <DSCRCalculator isEmbedded={true} />
+                  ) : activeTool === "assumable" ? (
+                    <AssumableCalculator isEmbedded={true} />
+                  ) : (
+                    <EscalationCalculator isEmbedded={true} />
+                  )}
+                </div>
+              </div>
+
+              {/* ═══ SECTION 4: Why Agents Choose to Partner With Me ═══ */}
+              <div className="max-w-4xl mx-auto mb-20">
+                <h2 className="font-display text-2xl lg:text-3xl text-navy text-center mb-10">
+                  Why Agents Choose to Partner With Me
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    "25 years closing VA and conventional loans on Oahu — I know what passes appraisal and what doesn't.",
+                    "Same-day pre-approvals, not 48-hour callbacks.",
+                    "I educate your buyers so you don't have to explain DTI ratios at the showing.",
+                    "When the deal gets complicated — VA entitlement restoration, condo approval, leasehold — I handle it. You keep selling.",
+                  ].map((statement, i) => (
+                    <div
+                      key={i}
+                      className="bg-sand/20 border border-border rounded-lg p-5"
+                    >
+                      <p className="text-navy font-body text-sm leading-relaxed">
+                        "{statement}"
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ═══ SECTION 5: Final CTA ═══ */}
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="font-display text-2xl lg:text-3xl text-navy mb-6">
+                  Ready to Partner?
+                </h2>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                  <a
+                    href="mailto:jaym@cmghomeloans.com?subject=DealSync%20Partner%20Access%20Request"
+                    className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-body font-semibold px-6 py-3 rounded-md transition-colors"
+                  >
+                    Request DealSync Access
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="tel:808-429-0811"
+                    className="inline-flex items-center gap-2 bg-white border border-border text-navy font-body font-semibold px-6 py-3 rounded-md hover:bg-sand/30 transition-colors"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call/Text: 808-429-0811
+                  </a>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Or email directly:{" "}
+                  <a
+                    href="mailto:jaym@cmghomeloans.com"
+                    className="text-teal hover:underline"
+                  >
+                    jaym@cmghomeloans.com
+                  </a>
+                </p>
               </div>
             </div>
           )}
