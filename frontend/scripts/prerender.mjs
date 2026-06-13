@@ -658,6 +658,51 @@ function generateArticleBody(article) {
 }
 
 /**
+ * Generate the knowledge base hub page with a full article listing.
+ * Groups articles by category and includes hard <a> links for crawlers.
+ */
+function generateKnowledgeBaseHub(articleList) {
+  // Group articles by category
+  const byCategory = {};
+  for (const article of articleList) {
+    const cat = article.category || "General";
+    if (!byCategory[cat]) byCategory[cat] = [];
+    byCategory[cat].push(article);
+  }
+
+  const categoryBlocks = Object.entries(byCategory)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([category, catArticles]) => {
+      const articleLinks = catArticles
+        .map(
+          (a) =>
+            `          <li>
+            <a href="${BASE_URL}/knowledge-base/${a.slug}">${escapeHtml(a.title)}</a>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: #666;">${escapeHtml(a.excerpt)}</p>
+          </li>`
+        )
+        .join("\n");
+      return `      <section>
+        <h2>${escapeHtml(category)}</h2>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+${articleLinks}
+        </ul>
+      </section>`;
+    })
+    .join("\n");
+
+  return `
+    <main>
+      <h1>Hawaii Mortgage Knowledge Base</h1>
+      <p>Expert articles on Hawaii mortgages, home loans, and the homebuying process. Written by Jay Miller, CMA, NMLS #657301, with 25+ years of Hawaii lending experience. Topics include VA loans, FHA loans, conventional financing, down payment assistance, leasehold vs. fee simple, and more.</p>
+      <p>${articleList.length} articles covering every aspect of buying a home in Hawaii.</p>
+
+${categoryBlocks}
+    </main>
+  `;
+}
+
+/**
  * Customize the base HTML for a specific route by replacing meta tags in-place,
  * injecting per-page JSON-LD schema blocks, and adding semantic HTML body.
  */
@@ -800,7 +845,19 @@ async function prerender() {
     process.exit(1);
   }
 
-  const baseHtml = fs.readFileSync(indexHtmlPath, "utf-8");
+  // Read the base HTML and strip any previously injected prerendered-content
+  // to prevent double-injection when the script is run multiple times
+  let baseHtml = fs.readFileSync(indexHtmlPath, "utf-8");
+  // Remove any existing prerendered-content div (from a prior run)
+  baseHtml = baseHtml.replace(
+    /\s*<div id="prerendered-content"[\s\S]*?<\/div>\s*(?=\s*<div id="root">)/g,
+    "\n    "
+  );
+  // Also remove the show/hide script that was injected before </body>
+  baseHtml = baseHtml.replace(
+    /\s*<script>\s*\/\/ Show prerendered content until React takes over[\s\S]*?<\/script>\s*(?=\s*<\/body>)/g,
+    "\n  "
+  );
   const registry = buildRouteRegistry();
   const routes = Object.keys(registry);
 
@@ -818,7 +875,10 @@ async function prerender() {
 
       // Find body content for this route
       let bodyContent = null;
-      if (route.startsWith("/knowledge-base/") && route !== "/knowledge-base") {
+      if (route === "/knowledge-base") {
+        // Generate the hub page with a full article listing and hard <a> links
+        bodyContent = generateKnowledgeBaseHub(articles);
+      } else if (route.startsWith("/knowledge-base/")) {
         const slug = route.replace("/knowledge-base/", "");
         const fullArticle = articlesFull.find((a) => a.slug === slug);
         if (fullArticle) {
