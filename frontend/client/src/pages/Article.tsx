@@ -264,6 +264,30 @@ export default function Article() {
                 />
               </div>
 
+              {/* Author Byline — E-E-A-T Signal */}
+              <div className="flex items-center gap-3 mb-8 pb-4 border-b border-border">
+                <img
+                  src={IMAGES.headshot}
+                  alt="Jay Miller"
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-body font-semibold text-navy leading-tight">
+                    Jay Miller, CMA
+                    <span className="font-normal text-muted-foreground"> · NMLS #657301</span>
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Last updated:{" "}
+                    {new Date(article.lastUpdated || article.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                    {" · "}{article.readTime} read
+                  </p>
+                </div>
+              </div>
+
               <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-navy prose-headings:font-normal prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-navy prose-a:text-teal prose-a:no-underline hover:prose-a:underline">
                 <Streamdown
                   components={{

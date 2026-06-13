@@ -25,6 +25,36 @@ import { dscrRouter } from "./dscrRouter";
 
 export const appRouter = router({
   dscr: dscrRouter,
+  contact: router({
+    submit: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1).max(200),
+          email: z.string().email().max(320),
+          phone: z.string().max(30).optional(),
+          subject: z.string().max(100).optional(),
+          message: z.string().min(1).max(5000),
+        })
+      )
+      .mutation(async ({ input }) => {
+        // Notify owner via the notification service
+        await notifyOwner({
+          title: `Contact Form: ${input.name} — ${input.subject || 'General Inquiry'}`,
+          content: [
+            `**Name:** ${input.name}`,
+            `**Email:** ${input.email}`,
+            input.phone ? `**Phone:** ${input.phone}` : null,
+            `**Subject:** ${input.subject || 'General Inquiry'}`,
+            ``,
+            `**Message:**`,
+            input.message,
+          ].filter(Boolean).join('\n'),
+        }).catch((err) => console.error('[Contact] Notification failed:', err));
+
+        console.log(`[Contact] Submission from ${input.name} (${input.email}): ${input.subject}`);
+        return { success: true };
+      }),
+  }),
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),

@@ -642,9 +642,9 @@ function generateArticleBody(article) {
   return `
     <article class="article-content">
       <h1>${escapeHtml(article.title)}</h1>
-      <div class="article-meta" style="font-size: 0.875rem; color: #666; margin: 1rem 0; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem;">
-        <p style="margin: 0;">By <strong>Jay Miller</strong> · Sales Manager & Mortgage Loan Consultant · NMLS #657301 · 25 years Hawaii mortgage experience · US Army veteran</p>
-        <p style="margin: 0.25rem 0 0 0;">Last updated ${article.date}</p>
+      <div class="article-byline" style="font-size: 0.875rem; color: #666; margin: 1rem 0; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem;">
+        <p style="margin: 0;"><strong>Jay Miller, CMA</strong> · NMLS #657301 · Certified Mortgage Advisor · 25 years Hawaii mortgage experience · U.S. Army veteran</p>
+        <p style="margin: 0.25rem 0 0 0;">Last updated: ${article.lastUpdated || article.date} · ${article.readTime || '8 min'} read</p>
       </div>
       <p class="excerpt">${escapeHtml(article.excerpt)}</p>
       <div class="article-body">

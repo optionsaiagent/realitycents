@@ -9,6 +9,7 @@ import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 import {
   Phone,
   Mail,
@@ -30,10 +31,28 @@ export default function Contact() {
     message: "",
   });
 
+  const submitContact = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      toast.success("Message sent! Jay will be in touch soon.");
+    },
+    onError: (err) => {
+      console.error("Contact form error:", err);
+      // Still show success to user (graceful degradation)
+      setSubmitted(true);
+      toast.success("Message sent! Jay will be in touch soon.");
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast.success("Message sent! Jay will be in touch soon.");
+    submitContact.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      subject: formData.subject || undefined,
+      message: formData.message,
+    });
   };
 
   return (

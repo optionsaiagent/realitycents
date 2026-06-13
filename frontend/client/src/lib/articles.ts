@@ -38,7 +38,7 @@ const allArticles: Article[] = [
     date: "2026-02-15",
     lastUpdated: "March 2026",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hawaii-first-time-buyer-KfMc2iyJYMwq3zUw3At8yV.webp",
-    content: `Buying your first home in Hawaii is an exciting milestone, but it comes with unique challenges that mainland buyers rarely encounter. The Hawaiian real estate market operates differently from most U.S. markets, and understanding these differences is crucial to a successful purchase.
+    content: `**The first step to buying a home in Hawaii is getting pre-approved for a mortgage — this establishes your budget, signals to sellers you're serious, and should happen 6–12 months before you plan to buy.** Buying your first home in Hawaii is an exciting milestone, but it comes with unique challenges that mainland buyers rarely encounter. The Hawaiian real estate market operates differently from most U.S. markets, and understanding these differences is crucial to a successful purchase.
 
 ## Understanding Hawaii's Market
 
@@ -93,7 +93,7 @@ Explore [down payment assistance programs available in Hawaii](/knowledge-base/d
     date: "2026-02-10",
     lastUpdated: "March 2026",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/va-military-hawaii-QrzYCAdrfCRd6MfkUnwqXK.webp",
-    content: `Hawaii is home to some of the largest military installations in the Pacific, including Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, and several other facilities. For the thousands of service members and veterans stationed in or retiring to Hawaii, VA loans represent one of the most powerful tools for achieving homeownership.
+    content: `**Yes, eligible veterans and active-duty military can buy a home in Hawaii with zero down payment using a VA loan — there is no loan limit with full entitlement, meaning you can purchase at any price with $0 down and no PMI.** Hawaii is home to some of the largest military installations in the Pacific, including Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, and several other facilities. For the thousands of service members and veterans stationed in or retiring to Hawaii, VA loans represent one of the most powerful tools for achieving homeownership.
 
 ## What Makes VA Loans Special in Hawaii
 
@@ -2742,7 +2742,7 @@ For more on Hawaii's condo market challenges, read our coverage of [the condo in
 
 *Last Updated: June 2026*
 
-If you are a military family PCSing to Hawaii this summer, you are probably looking at 30-year fixed VA mortgage rates hovering around 6% and thinking: *I'll just rent for a year and wait for rates to come down.*
+**Waiting for lower rates in Hawaii will likely cost you more than today's rate — when rates drop (projected to ~5.125% by late 2026), pent-up demand floods Hawaii's supply-constrained market, driving prices $40K–$80K higher and erasing any monthly payment savings.** If you are a military family PCSing to Hawaii this summer, you are probably looking at 30-year fixed VA mortgage rates hovering around 6% and thinking: *I'll just rent for a year and wait for rates to come down.*
 
 It sounds like the responsible, conservative financial move. It is also the exact strategy that is going to cost you tens of thousands of dollars in lost equity and purchasing power.
 
@@ -2883,7 +2883,7 @@ Every PCS timeline and budget is different. If you want to see exactly how the m
 
 *By Jay Miller | June 2026*
 
-There is a piece of conventional financial wisdom that has been passed down for generations: *save a 20% down payment before buying a house so you can avoid paying Private Mortgage Insurance (PMI).*
+**You do not need 20% down to buy a home in Hawaii — PMI on a 5%-down conventional loan costs roughly $200–$350/month, while waiting to save 20% means losing $30,000–$50,000+ in appreciation annually on an $850K home.** There is a piece of conventional financial wisdom that has been passed down for generations: *save a 20% down payment before buying a house so you can avoid paying Private Mortgage Insurance (PMI).*
 
 If you live in Ohio or Indiana, that might be reasonable advice. If you live in Hawaii, following it is one of the most expensive financial mistakes you can make.
 
@@ -3025,7 +3025,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 *Last Updated: June 2026*
 
-If you are buying a home in Hawaii right now, you are probably staring at a 30-year fixed mortgage rate somewhere around **6.5%**. On an $800,000 Honolulu condo or a $1.15 million Oahu single-family home, that number translates into a monthly payment that makes even high-earning professionals pause.
+**An adjustable-rate mortgage makes sense in Hawaii when you know you'll sell or refinance within 5–7 years — the VA 5-Year ARM at 5.375% saves ~$285/month vs. the 30-year fixed, with a conservative 1%/year cap structure that limits risk.** If you are buying a home in Hawaii right now, you are probably staring at a 30-year fixed mortgage rate somewhere around **6.5%**. On an $800,000 Honolulu condo or a $1.15 million Oahu single-family home, that number translates into a monthly payment that makes even high-earning professionals pause.
 
 So it is no surprise that more buyers are asking me about Adjustable-Rate Mortgages (ARMs). They see a 5-year ARM at 6.0% or a 7-year ARM at 6.125% and wonder if the lower payment is worth the risk.
 
