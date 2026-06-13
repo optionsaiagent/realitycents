@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import {
   DollarSign,
@@ -374,7 +375,10 @@ export default function AffordabilityCalculator() {
                 </div>
               )}
 
-              {/* CTA */}
+              {/* Email Results */}
+                <EmailResults calculator="affordability" />
+
+                {/* CTA */}
               <div className="bg-navy rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-gold/20">
                 <div>
                   <p className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-gold mb-1">Know Your Number?</p>

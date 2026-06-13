@@ -10,6 +10,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import {
   type PayGrade,
   PAY_GRADE_OPTIONS,
@@ -1186,6 +1187,9 @@ export default function MilitaryCalculator() {
                   </Link>
                 </div>
               </div>
+
+              {/* Email Results */}
+              <EmailResults calculator="military-buying-power" />
 
               {/* Disclaimer */}
               <div className="bg-sand/30 rounded-lg p-4 border border-border">

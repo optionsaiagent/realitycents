@@ -9,6 +9,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import {
   BarChart,
   Bar,
@@ -752,6 +753,12 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
             This calculator provides estimates for educational purposes only. Actual costs depend on final loan terms, property taxes, insurance, and lender requirements. Consult with your lender before making offer decisions.
           </p>
         </div>
+
+        {/* Email Results */}
+        <EmailResults
+          calculator="escalation-win-the-bid"
+          resultSummary={escalationData.length > 2 ? `List: ${fmt(listPrice)} | +$25K = ${fmt(escalationData.find(d => d.escalation === 25000)?.monthlyIncrease || 0)}/mo more | Cost of losing: ${fmt(costOfLosing.monthlyDiff)}/mo forever` : undefined}
+        />
 
         {/* CTA */}
         <div className="bg-navy rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-gold/20">

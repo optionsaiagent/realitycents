@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
+import ShareGuide from "@/components/ShareGuide";
 import { LENDER, IMAGES } from "@/lib/constants";
 import {
   Phone,
@@ -400,6 +401,16 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Share This Guide */}
+      <section className="py-8">
+        <div className="container max-w-4xl">
+          <ShareGuide
+            installationName={data.installationName}
+            url={`https://realitycents.com/${data.slug}`}
+          />
         </div>
       </section>
 

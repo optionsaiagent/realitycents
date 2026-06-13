@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import {
   BarChart,
   Bar,
@@ -773,6 +774,12 @@ export default function AssumableCalculator({ isEmbedded = false }: { isEmbedded
             for guidance on {loanType} loan assumptions and gap financing options.
           </p>
         </div>
+
+        {/* Email Results */}
+        <EmailResults
+          calculator="assumable-loan"
+          resultSummary={`Monthly savings: ${fmt(result.monthlySavings)} | Assumed: ${fmt(result.totalAssumedPayment)} vs New: ${fmt(result.newPI)} | Gap: ${fmt(gapCash)}`}
+        />
 
         {/* CTA */}
         <div className="bg-navy rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-gold/20">

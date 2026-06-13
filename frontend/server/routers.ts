@@ -25,6 +25,21 @@ import { dscrRouter } from "./dscrRouter";
 
 export const appRouter = router({
   dscr: dscrRouter,
+  leads: router({
+    captureCalculatorLead: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1).max(200),
+          email: z.string().email().max(320),
+          calculator: z.string().min(1).max(100),
+          resultSummary: z.string().max(2000).optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        console.log(`[Lead] ${input.calculator} | ${input.name} (${input.email})`);
+        return { success: true };
+      }),
+  }),
   contact: router({
     submit: publicProcedure
       .input(

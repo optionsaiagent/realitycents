@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -669,6 +670,9 @@ export default function BuydownCalculator() {
             <div className="best-name">2/1 Buydown — Most Popular Choice</div>
             <div className="best-detail">Seller credit needed: {fmt(buydowns[1]?.totalSellerCredit || 0)} · Year 1 savings: {fmtExact(buydowns[1]?.year1MonthlySavings || 0)}/mo · Year 1 rate: {fmtPct(buydowns[1]?.years[0]?.buydownRate || 0)}</div>
           </div>
+
+          {/* Email Results */}
+          <EmailResults calculator="buydown" />
 
           {/* Disclaimer */}
           <div className="print-note">

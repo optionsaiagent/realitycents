@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import { trpc } from "@/lib/trpc";
+import EmailResults from "@/components/EmailResults";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import {
   DollarSign,
@@ -992,6 +993,14 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
               this deal.
             </p>
           </div>
+        )}
+
+        {/* Email Results */}
+        {result && (
+          <EmailResults
+            calculator="dscr-analyzer"
+            resultSummary={`DSCR: ${result.dscr.toFixed(2)}x | Rent: ${fmt(activeRent)} | PITIA: ${fmt(result.pitia)} | NOI: ${fmt(result.noi)}`}
+          />
         )}
 
         {/* CTA */}

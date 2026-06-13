@@ -25,6 +25,32 @@ import { dscrRouter } from "./dscrRouter";
 
 export const appRouter = router({
   dscr: dscrRouter,
+  leads: router({
+    captureCalculatorLead: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1).max(200),
+          email: z.string().email().max(320),
+          calculator: z.string().min(1).max(100),
+          resultSummary: z.string().max(2000).optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        // Log the lead capture
+        console.log(`[Lead] Calculator: ${input.calculator} | ${input.name} (${input.email})`);
+        // Notify owner (fire-and-forget)
+        notifyOwner({
+          title: `Calculator Lead: ${input.name} — ${input.calculator}`,
+          content: [
+            `**Name:** ${input.name}`,
+            `**Email:** ${input.email}`,
+            `**Calculator:** ${input.calculator}`,
+            input.resultSummary ? `\n**Summary:** ${input.resultSummary}` : null,
+          ].filter(Boolean).join('\n'),
+        }).catch((err) => console.error('[Lead] Notification failed:', err));
+        return { success: true };
+      }),
+  }),
   contact: router({
     submit: publicProcedure
       .input(

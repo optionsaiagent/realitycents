@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import { Phone, Mail, ArrowRight, DollarSign, Home as HomeIcon, TrendingUp, MapPin, Calculator } from "lucide-react";
 
 const BAH_DATA = [
@@ -350,6 +351,13 @@ export default function BAHBuyVsRent() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email Results */}
+      <section className="py-8">
+        <div className="container max-w-3xl">
+          <EmailResults calculator="bah-buy-vs-rent" />
         </div>
       </section>
 

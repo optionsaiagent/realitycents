@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as ReTooltip,
   ResponsiveContainer, ReferenceLine, Legend,
@@ -536,6 +537,9 @@ export default function RentVsBuyCalculator() {
               </div>
             </div>
           </div>
+
+          {/* Email Results */}
+          <EmailResults calculator="rent-vs-buy" />
 
           {/* CTA */}
           <div className="bg-navy rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-gold/20 mt-12">

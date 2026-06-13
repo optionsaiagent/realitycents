@@ -9,6 +9,7 @@ import { useSearch } from "wouter";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import EmailResults from "@/components/EmailResults";
 import {
   type ScenarioInput,
   type ScenarioResult,
@@ -2652,6 +2653,12 @@ export default function LoanCompare() {
               </button>
             </div>
           )}
+
+          {/* Email Results */}
+          <EmailResults
+            calculator="loan-comparison"
+            resultSummary={results.length > 0 ? results.map(r => `${r.label}: ${fmt(r.monthlyPITIA)}/mo`).join(' | ') : undefined}
+          />
 
           {/* Disclaimer & Contact */}
           <div className="mt-12 p-6 bg-slate-800/60 border border-slate-700 rounded-lg">
