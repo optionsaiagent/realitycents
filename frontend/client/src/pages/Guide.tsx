@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import { toast } from "sonner";
 import { subscribeToMailchimp } from "@/lib/mailchimp";
 import {
@@ -279,30 +280,12 @@ export default function Guide() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-sand">
-        <div className="container text-center">
-          <h2 className="font-display text-2xl md:text-3xl text-navy mb-3">
-            Questions About Buying in Hawaii?
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-            Jay Miller is here to provide personalized guidance for your unique situation.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={`tel:${LENDER.phone}`}
-              className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white px-6 py-3 rounded-md font-body font-semibold text-sm transition-all"
-            >
-              {LENDER.phone}
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-white hover:bg-white/80 text-navy px-6 py-3 rounded-md font-body font-semibold text-sm transition-all border border-navy/10"
-            >
-              Contact Jay <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <ContactActions
+        variant="full"
+        background="sand"
+        headline="Questions About Buying in Hawaii?"
+        subtext="Jay Miller is here to provide personalized guidance for your unique situation."
+      />
     </Layout>
   );
 }

@@ -6,11 +6,12 @@
  */
 import { useState, useMemo } from "react";
 import { Link } from "wouter";
-import { ChevronDown, HelpCircle, FileCheck, Phone, ArrowRight } from "lucide-react";
+import { ChevronDown, HelpCircle, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { LENDER, IMAGES, PRE_APPROVAL_URL } from "@/lib/constants";
+import { LENDER, IMAGES } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 
 /* ─── FAQ Data ─── */
 interface FAQItem {
@@ -505,36 +506,13 @@ export default function FrequentlyAskedQuestions() {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy py-16">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display text-3xl md:text-4xl text-white mb-4">
-              Still Have Questions?
-            </h2>
-            <p className="text-sand/70 font-body mb-8 leading-relaxed">
-              Hawaii's mortgage market has unique nuances that generic answers can't fully address. Get personalized guidance from a local expert with 25 years of Hawaii mortgage experience.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={PRE_APPROVAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-8 py-4 rounded-md font-body font-bold text-base transition-all hover:shadow-xl hover:shadow-gold/40"
-              >
-                <FileCheck className="w-5 h-5" />
-                Start Your Pre-Approval
-              </a>
-              <a
-                href={`tel:${LENDER.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-4 rounded-md font-body font-semibold text-base transition-all border border-white/20"
-              >
-                <Phone className="w-5 h-5" />
-                {LENDER.phone}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactActions
+        variant="full"
+        headline="Still Have Questions?"
+        subtext="Hawaii's mortgage market has unique nuances that generic answers can't fully address. Get personalized guidance from a local expert with 25 years of Hawaii mortgage experience."
+        preApprovalLabel="Start Your Pre-Approval"
+        hideEmail
+      />
     </Layout>
   );
 }

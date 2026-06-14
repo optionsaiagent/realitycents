@@ -7,16 +7,13 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import {
-  Phone,
-  Mail,
   MapPin,
-  ExternalLink,
   Clock,
-  Shield,
   Send,
   CheckCircle,
 } from "lucide-react";
@@ -181,91 +178,32 @@ export default function Contact() {
 
             {/* Contact info sidebar */}
             <div className="lg:col-span-2">
-              <div className="bg-navy rounded-xl p-6 lg:p-8 sticky top-28">
-                <div className="flex justify-center mb-5">
-                  <img src={IMAGES.cmgLogo} alt="CMG Home Loans" className="h-8 object-contain brightness-0 invert opacity-80" />
-                </div>
-                <h3 className="font-display text-xl text-white mb-6">Contact Information</h3>
+              <div className="sticky top-28">
+                <ContactActions
+                  variant="compact"
+                  headline="Contact Information"
+                  subtext="Jay Miller is available for phone calls, text messages, and in-person meetings."
+                  showNmls
+                />
 
-                <div className="space-y-5 mb-8">
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-teal/20 flex items-center justify-center shrink-0">
-                      <Phone className="w-4 h-4 text-teal" />
+                <div className="mt-6 bg-white/5 rounded-xl p-6 border border-border">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-5 h-5 text-teal shrink-0" />
+                      <div>
+                        <p className="text-sm font-body font-semibold text-navy">Office Address</p>
+                        <p className="text-sm text-muted-foreground">{LENDER.address.full}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs text-sand/50 uppercase tracking-wider mb-0.5">Phone</p>
-                      <a href={`tel:${LENDER.phone}`} className="text-white text-sm hover:text-gold transition-colors">
-                        {LENDER.phone}
-                      </a>
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-5 h-5 text-teal shrink-0" />
+                      <div>
+                        <p className="text-sm font-body font-semibold text-navy">Business Hours</p>
+                        <p className="text-sm text-muted-foreground">Mon–Fri: 8:00 AM – 6:00 PM HST</p>
+                        <p className="text-sm text-muted-foreground">Sat: By Appointment</p>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-teal/20 flex items-center justify-center shrink-0">
-                      <Mail className="w-4 h-4 text-teal" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-sand/50 uppercase tracking-wider mb-0.5">Email</p>
-                      <a href={`mailto:${LENDER.email}`} className="text-white text-sm hover:text-gold transition-colors">
-                        {LENDER.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-teal/20 flex items-center justify-center shrink-0">
-                      <MapPin className="w-4 h-4 text-teal" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-sand/50 uppercase tracking-wider mb-0.5">Office</p>
-                      <p className="text-white text-sm">{LENDER.address.street}</p>
-                      <p className="text-sand/70 text-sm">{LENDER.address.city}, {LENDER.address.state} {LENDER.address.zip}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-teal/20 flex items-center justify-center shrink-0">
-                      <ExternalLink className="w-4 h-4 text-teal" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-sand/50 uppercase tracking-wider mb-0.5">Website</p>
-                      <a
-                        href={`https://${LENDER.website}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white text-sm hover:text-gold transition-colors"
-                      >
-                        {LENDER.website}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-teal/20 flex items-center justify-center shrink-0">
-                      <Clock className="w-4 h-4 text-teal" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-sand/50 uppercase tracking-wider mb-0.5">Hours</p>
-                      <p className="text-white text-sm">Mon–Fri: 8:00 AM – 6:00 PM HST</p>
-                      <p className="text-sand/70 text-sm">Sat: By Appointment</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-white/10 pt-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Shield className="w-4 h-4 text-gold" />
-                    <span className="text-xs text-sand/50 uppercase tracking-wider">Licensing</span>
-                  </div>
-                  <p className="text-sm text-sand/70">
-                    {LENDER.name} | NMLS #{LENDER.nmls}
-                  </p>
-                  <p className="text-sm text-sand/70">
-                    CMG Mortgage, Inc. | NMLS #{LENDER.companyNmls}
-                  </p>
-                  <p className="text-sm text-sand/70">
-                    {LENDER.company} (Branch) | NMLS #{LENDER.branchNmls}
-                  </p>
                 </div>
               </div>
             </div>

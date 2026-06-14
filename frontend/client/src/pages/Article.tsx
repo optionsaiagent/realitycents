@@ -9,6 +9,7 @@ import SEO from "@/components/SEO";
 import { getArticleBySlug, articles } from "@/lib/articles";
 import { articleSchemaData } from "@/lib/articleSchemaData";
 import { LENDER, PRE_APPROVAL_URL, IMAGES } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import { useMemo } from "react";
 import { Streamdown } from "streamdown";
 // Removed rehype-harden and defaultRehypePlugins to fix runtime crash
@@ -21,7 +22,6 @@ import {
   Calendar,
   Phone,
   ArrowRight,
-  FileCheck,
   BookMarked,
   Calculator,
 } from "lucide-react";
@@ -399,49 +399,28 @@ export default function Article() {
               </div>
 
               {/* Pre-Approval CTA Banner */}
-              <div className="mt-8 p-6 rounded-xl bg-gradient-to-r from-navy to-navy/90 border border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-gold mb-1">Ready to Move Forward?</p>
-                  <h3 className="font-display text-xl text-white">Get Pre-Approved Today</h3>
-                  <p className="text-sm text-sand/70 mt-1">Takes just minutes — no commitment required.</p>
-                </div>
-                <a
-                  href={PRE_APPROVAL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-md font-body font-semibold text-sm transition-all hover:shadow-lg hover:shadow-gold/30 whitespace-nowrap"
-                >
-                  <FileCheck className="w-4 h-4" />
-                  Get Pre-Approved
-                </a>
-              </div>
+              <ContactActions
+                variant="compact"
+                kicker="Ready to Move Forward?"
+                headline="Get Pre-Approved Today"
+                subtext="Takes just minutes — no commitment required."
+                hideEmail
+                hideCall
+                className="mt-8"
+              />
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-28 space-y-6">
                 {/* CTA */}
-                <div className="bg-navy rounded-xl p-5">
-                  <h4 className="font-display text-white text-base mb-2">Ready to Buy?</h4>
-                  <p className="text-sm text-sand/60 mb-4">
-                    Start your pre-approval with Jay Miller today.
-                  </p>
-                  <a
-                    href={PRE_APPROVAL_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-4 py-2.5 rounded-md text-sm font-body font-semibold transition-all"
-                  >
-                    <FileCheck className="w-3.5 h-3.5" />
-                    Get Pre-Approved
-                  </a>
-                  <Link
-                    href="/contact"
-                    className="mt-2 w-full inline-flex items-center justify-center gap-2 bg-teal/10 hover:bg-teal/20 text-teal px-4 py-2.5 rounded-md text-sm font-body font-semibold transition-all"
-                  >
-                    Contact Jay
-                  </Link>
-                </div>
+                <ContactActions
+                  variant="compact"
+                  headline="Ready to Buy?"
+                  subtext="Start your pre-approval with Jay Miller today."
+                  hideEmail
+                  hideCall
+                />
 
                 {/* Related */}
                 {related.length > 0 && (

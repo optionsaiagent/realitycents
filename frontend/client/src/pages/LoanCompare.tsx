@@ -9,6 +9,7 @@ import { useSearch } from "wouter";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
   type ScenarioInput,
@@ -22,8 +23,6 @@ import {
 } from "@/lib/loanMath";
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from "lz-string";
 import {
-  Phone,
-  Mail,
   ArrowRight,
   Copy,
   Check,
@@ -2661,30 +2660,20 @@ export default function LoanCompare() {
           />
 
           {/* Disclaimer & Contact */}
-          <div className="mt-12 p-6 bg-slate-800/60 border border-slate-700 rounded-lg">
-            <div className="flex items-start gap-3 mb-4">
-              <Info size={18} className="text-slate-400 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-slate-400">
+          <div className="mt-12 space-y-8">
+            <div className="flex items-start gap-3 p-4 bg-slate-800/40 border border-slate-700/50 rounded-lg">
+              <Info size={16} className="text-slate-400 flex-shrink-0 mt-0.5" />
+              <p className="text-xs text-slate-400">
                 These calculations are estimates for educational purposes only. Not a commitment to lend. Actual rates, fees, and terms may vary based on your specific situation, credit profile, and market conditions.
               </p>
             </div>
-            <div className="flex flex-col md:flex-row items-center gap-6 pt-4 border-t border-slate-700">
-              <div className="text-center md:text-left">
-                <p className="text-white font-bold">{LENDER.name}</p>
-                <p className="text-xs text-slate-400">NMLS #{LENDER.nmls} | {LENDER.company} NMLS #{LENDER.companyNmls}</p>
-                <p className="text-xs text-slate-500 mt-1">Equal Housing Lender</p>
-              </div>
-              <div className="flex gap-3">
-                <a href={`tel:${LENDER.phone}`} className="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition">
-                  <Phone size={16} />
-                  {LENDER.phone}
-                </a>
-                <a href={`mailto:${LENDER.email}`} className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
-                  <Mail size={16} />
-                  Email
-                </a>
-              </div>
-            </div>
+            
+            <ContactActions
+              variant="compact"
+              headline="Ready for a Real Quote?"
+              subtext="Let’s look at your actual credit profile and market conditions to get a personalized quote."
+              hideEmail
+            />
           </div>
         </div>
       </section>

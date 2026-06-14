@@ -7,13 +7,12 @@ import { useState, useMemo, useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { IMAGES, LENDER } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import { Link } from "wouter";
 import {
   ArrowRight,
-  FileCheck,
-  Phone,
   TrendingDown,
   DollarSign,
   Info,
@@ -527,33 +526,14 @@ export default function BuydownCalculator() {
           </div>
 
           {/* CTA */}
-          <div className="mt-8 bg-navy rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-gold/20">
-            <div>
-              <p className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-gold mb-1">Need Help Structuring a Buydown?</p>
-              <h3 className="font-display text-xl text-white mb-1">Get Pre-Approved Today</h3>
-              <p className="text-sm text-sand/70">
-                Jay Miller can help you negotiate the right buydown with your seller — takes just minutes to get started.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <a
-                href={PRE_APPROVAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-md text-sm font-body font-semibold transition-all hover:shadow-lg hover:shadow-gold/30"
-              >
-                <FileCheck className="w-4 h-4" />
-                Get Pre-Approved
-              </a>
-              <a
-                href={`tel:${LENDER.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all"
-              >
-                <Phone className="w-4 h-4" />
-                Call Jay
-              </a>
-            </div>
-          </div>
+          <ContactActions
+            variant="compact"
+            kicker="Need Help Structuring a Buydown?"
+            headline="Get Pre-Approved Today"
+            subtext="Jay Miller can help you negotiate the right buydown with your seller — takes just minutes to get started."
+            hideEmail
+            className="mt-8"
+          />
         </div>
       </section>
 

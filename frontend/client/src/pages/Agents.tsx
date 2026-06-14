@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import { trpc } from "@/lib/trpc";
 import DSCRCalculator from "./DSCRCalculator";
 import AssumableCalculator from "./AssumableCalculator";
@@ -24,7 +25,6 @@ import {
   FileText,
   Share2,
   AlertTriangle,
-  Phone,
   ExternalLink,
 } from "lucide-react";
 
@@ -404,36 +404,14 @@ export default function Agents() {
               </div>
 
               {/* ═══ SECTION 5: Final CTA ═══ */}
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="font-display text-2xl lg:text-3xl text-navy mb-6">
-                  Ready to Partner?
-                </h2>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                  <a
-                    href="mailto:jaym@cmghomeloans.com?subject=DealSync%20Partner%20Access%20Request"
-                    className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-body font-semibold px-6 py-3 rounded-md transition-colors"
-                  >
-                    Request DealSync Access
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="tel:808-429-0811"
-                    className="inline-flex items-center gap-2 bg-white border border-border text-navy font-body font-semibold px-6 py-3 rounded-md hover:bg-sand/30 transition-colors"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Call/Text: 808-429-0811
-                  </a>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Or email directly:{" "}
-                  <a
-                    href="mailto:jaym@cmghomeloans.com"
-                    className="text-teal hover:underline"
-                  >
-                    jaym@cmghomeloans.com
-                  </a>
-                </p>
-              </div>
+              <ContactActions
+                variant="full"
+                background="transparent"
+                headline="Ready to Partner?"
+                subtext="Partner with Jay Miller to get full access to DealSync and a suite of tools for your clients."
+                preApprovalLabel="Request DealSync Access"
+                preApprovalUrl="mailto:jaym@cmghomeloans.com?subject=DealSync%20Partner%20Access%20Request"
+              />
             </div>
           )}
         </div>

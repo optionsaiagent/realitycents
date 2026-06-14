@@ -9,7 +9,8 @@ import { Link, useLocation, useSearch } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { LENDER } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
   type PayGrade,
@@ -24,8 +25,6 @@ import {
   Shield,
   DollarSign,
   Home,
-  Phone,
-  FileCheck,
   Info,
   ChevronRight,
   TrendingUp,
@@ -1101,40 +1100,13 @@ export default function MilitaryCalculator() {
               </div>
 
               {/* CTA Card */}
-              <div className="bg-gradient-to-br from-navy via-navy to-navy/90 rounded-xl p-6 lg:p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-teal/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gold/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-xl" />
-                <div className="relative">
-                  <h3 className="font-display text-xl lg:text-2xl text-white mb-2">
-                    Ready to See Your Real Numbers?
-                  </h3>
-                  <p className="text-sand/80 font-body text-sm leading-relaxed mb-5 max-w-lg">
-                    This calculator provides estimates based on 2026 published
-                    rates. Your actual qualifying income and purchase price
-                    depend on credit score, existing debts, residual income, and
-                    lender guidelines. Get a personalized pre-approval to know
-                    your exact buying power.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={PRE_APPROVAL_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold/90 text-navy font-display font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
-                    >
-                      <FileCheck className="w-4 h-4" />
-                      Get Pre-Approved
-                    </a>
-                    <a
-                      href={`tel:${LENDER.phone}`}
-                      className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-display font-medium px-6 py-3 rounded-lg transition-colors text-sm border border-white/20"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call Jay
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <ContactActions
+                variant="compact"
+                kicker="Ready to See Your Real Numbers?"
+                headline="Get Pre-Approved Today"
+                subtext="This calculator provides estimates based on 2026 published rates. Get a personalized pre-approval to know your exact buying power."
+                hideEmail
+              />
 
               {/* Cross-link to Advanced Calculator */}
               <Link

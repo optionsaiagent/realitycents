@@ -9,6 +9,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import condoData from "@/data/va-approved-condos-oahu.json";
 import {
   Search,
@@ -25,7 +26,6 @@ import {
   HelpCircle,
   ArrowRight,
   Building2,
-  Phone,
 } from "lucide-react";
 
 type Condo = (typeof condoData.condos)[number];
@@ -623,32 +623,13 @@ export default function VAApprovedCondos() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-20 bg-navy text-white">
-        <div className="container text-center">
-          <h2 className="font-display text-3xl lg:text-4xl mb-4">
-            Found a Condo You Like?
-          </h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-            Let's check your VA eligibility and get you pre-approved. Jay Miller has helped hundreds of military families buy condos on Oahu with $0 down.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              Get Pre-Approved
-            </Link>
-            <Link
-              href="/military-calculator"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/30 hover:border-white/60 text-white font-semibold rounded-lg transition-colors"
-            >
-              Military Buying Power Calculator
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ContactActions
+        variant="full"
+        headline="Found a Condo You Like?"
+        subtext="Let’s check your VA eligibility and get you pre-approved. Jay Miller has helped hundreds of military families buy condos on Oahu with $0 down."
+        preApprovalLabel="Get Pre-Approved"
+        hideEmail
+      />
     </Layout>
   );
 }

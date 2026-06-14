@@ -9,13 +9,13 @@ import WaveDivider from "@/components/WaveDivider";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import { getFeaturedArticles } from "@/lib/articles";
 import {
   Calculator,
   BookOpen,
   Users,
   MapPin,
-  Phone,
   ArrowRight,
   Shield,
   Star,
@@ -463,33 +463,13 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT BAR ===== */}
-      <section className="bg-sand py-16">
-        <div className="container text-center">
-          <div className="flex justify-center mb-6">
-            <img src={IMAGES.cmgLogo} alt="CMG Home Loans" className="h-10 object-contain opacity-80" />
-          </div>
-          <h2 className="font-display text-2xl md:text-3xl text-navy mb-3">Ready to Get Started?</h2>
-          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-            Contact Jay Miller today for a free consultation and personalized mortgage guidance.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={`tel:${LENDER.phone}`}
-              className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white px-6 py-3 rounded-md font-body font-semibold text-sm transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              {LENDER.phone}
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-white hover:bg-white/80 text-navy px-6 py-3 rounded-md font-body font-semibold text-sm transition-all border border-navy/10"
-            >
-              Send a Message
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ContactActions
+        variant="full"
+        background="sand"
+        headline="Ready to Get Started?"
+        subtext="Contact Jay Miller today for a free consultation and personalized mortgage guidance."
+        preApprovalLabel="Start Your Pre-Approval"
+      />
     </Layout>
   );
 }

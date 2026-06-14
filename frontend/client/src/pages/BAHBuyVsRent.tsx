@@ -8,8 +8,9 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
-import { Phone, Mail, ArrowRight, DollarSign, Home as HomeIcon, TrendingUp, MapPin, Calculator } from "lucide-react";
+import { ArrowRight, DollarSign, Home as HomeIcon, TrendingUp, MapPin, Calculator } from "lucide-react";
 
 const BAH_DATA = [
   { rank: "E-5", bah: 3663, rent: 3300, purchasePrice: 555000, piti: 3652, totalRent: 198000, principalPaid: 41034, appreciation: 136631, netEquity: 124234 },
@@ -362,39 +363,13 @@ export default function BAHBuyVsRent() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-teal to-teal-dark text-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Run Your Numbers?</h2>
-            <p className="text-lg text-teal-100 mb-8 leading-relaxed">
-              Send me your orders, your rank, and whether you have dependents. I'll put together a real pre-approval scenario — usually same day — so you know exactly what you're working with before you start touring homes.
-            </p>
-
-            <div className="bg-white/10 backdrop-blur p-8 rounded-lg border border-white/20 mb-8">
-              <p className="text-teal-100 mb-4">
-                <strong>{LENDER.name}</strong> | NMLS #{LENDER.nmls}
-              </p>
-              <p className="text-sm text-teal-100 mb-6">Army veteran, 25 years doing VA loans on Oahu</p>
-
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <a href={`tel:${LENDER.phone}`} className="inline-flex items-center justify-center gap-2 bg-white text-teal hover:bg-slate-100 px-6 py-3 rounded-lg font-semibold transition">
-                  <Phone size={20} />
-                  {LENDER.phone}
-                </a>
-                <a href={`mailto:${LENDER.email}`} className="inline-flex items-center justify-center gap-2 bg-white text-teal hover:bg-slate-100 px-6 py-3 rounded-lg font-semibold transition">
-                  <Mail size={20} />
-                  {LENDER.email}
-                </a>
-              </div>
-            </div>
-
-            <a href={PRE_APPROVAL_URL} className="inline-flex items-center gap-2 bg-white text-teal hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition">
-              Start Your Pre-Approval
-              <ArrowRight size={24} />
-            </a>
-          </div>
-        </div>
-      </section>
+      <ContactActions
+        variant="full"
+        headline="Ready to Run Your Numbers?"
+        subtext="Send me your orders, your rank, and whether you have dependents. I’ll put together a real pre-approval scenario — usually same day — so you know exactly what you’re working with before you start touring homes."
+        preApprovalLabel="Start Your Pre-Approval"
+        showNmls
+      />
     </Layout>
   );
 }

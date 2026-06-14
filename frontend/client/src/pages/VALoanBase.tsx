@@ -8,17 +8,15 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import ShareGuide from "@/components/ShareGuide";
-import { LENDER, IMAGES } from "@/lib/constants";
+import { LENDER, IMAGES, PRE_APPROVAL_URL } from "@/lib/constants";
+import ContactActions from "@/components/ContactActions";
 import {
-  Phone,
-  Mail,
   MapPin,
   Shield,
   Clock,
   DollarSign,
   Home,
   ExternalLink,
-  ArrowRight,
   CheckCircle2,
   Building2,
   Calculator,
@@ -26,7 +24,7 @@ import {
   Star,
 } from "lucide-react";
 
-const PRE_APPROVAL_URL = "https://www.cmghomeloans.com/mysite/jay-miller";
+// PRE_APPROVAL_URL now imported from constants
 
 // Shared BAH table data — 2026 Honolulu County
 const BAH_TABLE = [
@@ -415,60 +413,13 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-navy text-white">
-        <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready to Run the Numbers?
-          </h2>
-          <p className="text-lg text-sand/80 font-body max-w-2xl mx-auto mb-4">
-            Send me your orders, your rank, and whether you have dependents. I'll put together a real pre-approval scenario — usually same day — so you know exactly what you're working with before you start touring homes.
-          </p>
-          <p className="text-sm text-sand/60 font-body mb-8">
-            Jay Miller | Army Veteran | 25 years doing VA loans on Oahu<br />
-            My wife Michelle also served — we chose to plant roots in Hawaii. I'm not a mainland call center. I live here, I know these neighborhoods, and I know what VA appraisers flag.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <a
-              href={`tel:${LENDER.phone}`}
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-lg text-base font-body font-bold transition-all hover:shadow-lg hover:shadow-gold/30"
-            >
-              <Phone className="w-5 h-5" />
-              (808) 429-0811
-            </a>
-            <a
-              href={`mailto:${LENDER.email}`}
-              className="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white px-6 py-3 rounded-lg text-base font-body font-semibold transition-all hover:shadow-lg"
-            >
-              <Mail className="w-5 h-5" />
-              jaym@cmghomeloans.com
-            </a>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href={PRE_APPROVAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-navy px-5 py-2.5 rounded-lg text-sm font-body font-semibold transition-all"
-            >
-              Start Your Pre-Approval
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <Link
-              href="/military-calculator"
-              className="inline-flex items-center gap-2 border-2 border-sand/30 text-sand/80 hover:border-teal hover:text-teal px-5 py-2.5 rounded-lg text-sm font-body font-semibold transition-all"
-            >
-              <Calculator className="w-4 h-4" />
-              Military Buying Power Calculator
-            </Link>
-          </div>
-
-          <p className="mt-8 text-xs text-sand/50 font-body">
-            NMLS #{LENDER.nmls} | CMG Home Loans NMLS #{LENDER.branchNmls} | {LENDER.address.full}
-          </p>
-        </div>
-      </section>
+      <ContactActions
+        variant="full"
+        headline="Ready to Run the Numbers?"
+        subtext="Send me your orders, your rank, and whether you have dependents. I’ll put together a real pre-approval scenario — usually same day — so you know exactly what you’re working with before you start touring homes."
+        preApprovalLabel="Start Your Pre-Approval"
+        showNmls
+      />
 
       {/* External Resources */}
       <section className="py-8 border-t border-border">
