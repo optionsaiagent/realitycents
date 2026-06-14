@@ -62,35 +62,35 @@ export default function ContactActions({
   preApprovalUrl,
 }: ContactActionsProps) {
   // ─── Button definitions ────────────────────────────────────────────────────
-  const preApprovalBtn = !hidePreApproval && (
+  const preApprovalBtn = (isFullWidth = false) => !hidePreApproval && (
     <a
       href={preApprovalUrl || PRE_APPROVAL_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-md text-sm font-body font-semibold transition-all hover:shadow-lg hover:shadow-gold/30"
+      className={`inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-md text-sm font-body font-semibold transition-all hover:shadow-lg hover:shadow-gold/30 ${isFullWidth ? "w-full" : ""}`}
     >
-      <FileCheck className="w-4 h-4" />
-      {preApprovalLabel}
+      <FileCheck className="w-4 h-4 shrink-0" />
+      <span className={isFullWidth ? "truncate" : ""}>{preApprovalLabel}</span>
     </a>
   );
 
-  const textBtn = !hideText && (
+  const textBtn = (isFullWidth = false) => !hideText && (
     <a
       href={SMS_LINK}
-      className="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all hover:shadow-lg hover:shadow-teal/25"
+      className={`inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all hover:shadow-lg hover:shadow-teal/25 ${isFullWidth ? "w-full" : ""}`}
     >
-      <MessageSquare className="w-4 h-4" />
-      Text Jay
+      <MessageSquare className="w-4 h-4 shrink-0" />
+      <span>Text Jay</span>
     </a>
   );
 
-  const callBtn = !hideCall && (
+  const callBtn = (isFullWidth = false) => !hideCall && (
     <a
       href={`tel:${LENDER.phone}`}
-      className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all border border-white/20"
+      className={`inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all border border-white/20 ${isFullWidth ? "w-full" : ""}`}
     >
-      <Phone className="w-4 h-4" />
-      Call Jay
+      <Phone className="w-4 h-4 shrink-0" />
+      <span>Call Jay</span>
     </a>
   );
 
@@ -134,9 +134,9 @@ export default function ContactActions({
   if (variant === "inline") {
     return (
       <div className={`flex flex-col sm:flex-row items-center justify-center gap-3 ${className}`}>
-        {preApprovalBtn}
-        {textBtn}
-        {callBtn}
+        {preApprovalBtn()}
+        {textBtn()}
+        {callBtn()}
         {!hideEmail && emailBtn}
       </div>
     );
@@ -145,25 +145,25 @@ export default function ContactActions({
   // ─── Compact variant (calculator/article inline cards) ─────────────────────
   if (variant === "compact") {
     return (
-      <div className={`rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border ${background === "navy" ? "bg-navy border-gold/20" : "bg-white/5 border-border"} ${className}`}>
-        <div className="flex-1">
+      <div className={`rounded-xl p-6 flex flex-col items-start gap-5 border overflow-hidden ${background === "navy" ? "bg-navy border-gold/20" : "bg-white/5 border-border"} ${className}`}>
+        <div className="w-full text-left">
           {kicker && (
             <p className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-gold mb-1">
               {kicker}
             </p>
           )}
-          <h3 className="font-display text-xl text-white mb-1">{headline}</h3>
-          {subtext && <p className="text-sm text-sand/70">{subtext}</p>}
+          <h3 className="font-display text-xl text-white mb-1 leading-tight">{headline}</h3>
+          {subtext && <p className="text-sm text-sand/70 leading-relaxed">{subtext}</p>}
           {showNmls && (
             <div className="mt-4 pt-4 border-t border-white/10">
               {nmlsFooter}
             </div>
           )}
         </div>
-        <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-          {preApprovalBtn}
-          {textBtn}
-          {callBtn}
+        <div className="flex flex-col gap-3 w-full shrink-0">
+          {preApprovalBtn(true)}
+          {textBtn(true)}
+          {callBtn(true)}
         </div>
       </div>
     );
@@ -179,26 +179,8 @@ export default function ContactActions({
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">{subtext}</p>
           )}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {!hidePreApproval && (
-              <a
-                href={preApprovalUrl || PRE_APPROVAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-md font-body font-semibold text-sm transition-all hover:shadow-lg hover:shadow-gold/30"
-              >
-                <FileCheck className="w-4 h-4" />
-                {preApprovalLabel}
-              </a>
-            )}
-            {!hideText && (
-              <a
-                href={SMS_LINK}
-                className="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all hover:shadow-lg hover:shadow-teal/25"
-              >
-                <MessageSquare className="w-4 h-4" />
-                Text Jay
-              </a>
-            )}
+            {preApprovalBtn()}
+            {textBtn()}
             {callBtnLight}
             {emailBtnLight}
           </div>
@@ -217,9 +199,9 @@ export default function ContactActions({
           <p className="text-lg text-sand/80 font-body max-w-2xl mx-auto mb-8">{subtext}</p>
         )}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {preApprovalBtn}
-          {textBtn}
-          {callBtn}
+          {preApprovalBtn()}
+          {textBtn()}
+          {callBtn()}
           {emailBtn}
         </div>
         {nmlsFooter}
