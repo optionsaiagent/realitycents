@@ -87,6 +87,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0C2340" />
 
+    <!-- FOUC Prevention: hide root until React hydrates and CSS is applied -->
+    <style>
+      #root {
+        opacity: 0;
+        transition: opacity 0.15s ease-in;
+      }
+      #root.hydrated {
+        opacity: 1;
+      }
+    </style>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

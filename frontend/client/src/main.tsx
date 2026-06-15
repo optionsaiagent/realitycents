@@ -54,10 +54,19 @@ const trpcClient = trpc.createClient({
   ],
 });
 
-createRoot(document.getElementById("root")!).render(
+const rootEl = document.getElementById("root")!;
+createRoot(rootEl).render(
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
     <QueryClientProvider client={queryClient}>
       <App />
     </QueryClientProvider>
   </trpc.Provider>
 );
+
+// Mark root as hydrated so the FOUC-prevention opacity rule is lifted
+// Uses requestAnimationFrame to ensure the first painted frame is fully styled
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    rootEl.classList.add("hydrated");
+  });
+});
