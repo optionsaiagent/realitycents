@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-06-09",
+  "lastUpdated": "2026-06-15",
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "Honolulu",
   "state": "Hawaii",
-  "totalApproved": 1379,
-  "withoutConditions": 1134,
+  "totalApproved": 1381,
+  "withoutConditions": 1136,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -11798,6 +11798,20 @@
       "neighborhood": "Aiea"
     },
     {
+      "id": 643950,
+      "vaId": "000661",
+      "name": "LEOLUA GARDENS",
+      "address": "94-054 LEOLUA ST",
+      "city": "WAIPAHU",
+      "state": "HI",
+      "zipCode": "96797",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": null,
+      "approvalRequestDate": null,
+      "neighborhood": "Waipahu"
+    },
+    {
       "id": 600260,
       "vaId": "001648",
       "name": "LEOLUA REGENT",
@@ -11809,6 +11823,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "2018-04-26",
       "approvalRequestDate": "2018-03-12",
+      "neighborhood": "Waipahu"
+    },
+    {
+      "id": 643951,
+      "vaId": "000545",
+      "name": "LEOLUA VISTA",
+      "address": "94-030 LEOLUA ST",
+      "city": "WAIPAHU",
+      "state": "HI",
+      "zipCode": "96797",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": null,
+      "approvalRequestDate": null,
       "neighborhood": "Waipahu"
     },
     {

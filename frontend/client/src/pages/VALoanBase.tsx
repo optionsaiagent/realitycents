@@ -319,7 +319,7 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
             Condos can be a smart entry point — especially for E-5s and below where single-family homes near {data.installationName} are out of reach. But not every condo is VA-eligible. The project must be on the VA's approved list.
           </p>
           <p className="text-foreground/70 font-body mb-6">
-            I maintain a searchable database of all <strong>1,379 VA-approved condos on Oahu</strong> — updated regularly from the VA's own records. Before you fall in love with a condo, send me the address. I'll check VA approval status before you write an offer.
+            I maintain a searchable database of all <strong>1,381 VA-approved condos on Oahu</strong> — updated regularly from the VA's own records. Before you fall in love with a condo, send me the address. I'll check VA approval status before you write an offer.
           </p>
 
           <div className="flex flex-wrap gap-3">

@@ -20,7 +20,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>Free Mortgage Calculators</strong> — Basic, Advanced, Affordability, Rent vs. Buy, Buydown, Military Buying Power, and Loan Comparison tools</li>
           <li><strong>Knowledge Base</strong> — 30+ expert articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
           <li><strong>Agent Tools</strong> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
-          <li><strong>VA Condo Lookup</strong> — Searchable directory of 1,379 VA-approved condo projects on Oahu</li>
+          <li><strong>VA Condo Lookup</strong> — Searchable directory of 1,381 VA-approved condo projects on Oahu</li>
           <li><strong>Free Homebuying Guide</strong> — Comprehensive step-by-step guide to buying a home in Hawaii</li>
         </ul>
       </section>
@@ -217,7 +217,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>Can I use a VA loan in Hawaii?</dt>
           <dd>Yes. VA loans work in all 50 states including Hawaii. With full entitlement, there is no loan limit — you can buy at any price with $0 down. The VA funding fee is 2.15% for first-time use (waived for disabled veterans).</dd>
           <dt>Can I use a VA loan for a condo in Hawaii?</dt>
-          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check — there are 1,379 approved projects on Oahu alone.</dd>
+          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check — there are 1,381 approved projects on Oahu alone.</dd>
         </dl>
       </section>
       <section>
@@ -234,12 +234,12 @@ export const STATIC_PAGE_BODIES = {
 
   "/va-approved-condos-oahu": `
     <main>
-      <h1>VA-Approved Condos on Oahu — 1,379 Projects</h1>
-      <p>Searchable directory of all 1,379 VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Data sourced from the VA LGY Hub, updated May 2026.</p>
+      <h1>VA-Approved Condos on Oahu — 1,381 Projects</h1>
+      <p>Searchable directory of all 1,381 VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Data sourced from the VA LGY Hub, updated June 2026.</p>
       <section>
         <h2>Approval Status Breakdown</h2>
         <ul>
-          <li><strong>1,134 projects:</strong> Accepted Without Conditions — fully meets all VA requirements</li>
+          <li><strong>1,136 projects:</strong> Accepted Without Conditions — fully meets all VA requirements</li>
           <li><strong>245 projects:</strong> Accepted With Conditions — approved with noted informational items</li>
         </ul>
         <p>Both statuses allow VA financing. The difference is administrative — in practice, there is almost never anything that needs to be resolved for "With Conditions" projects.</p>

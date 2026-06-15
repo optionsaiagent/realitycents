@@ -1,6 +1,6 @@
 /*
  * Pacific Modernism — VA-Approved Condos on Oahu
- * Searchable, filterable directory of 1,379 VA-approved condo projects
+ * Searchable, filterable directory of 1,381 VA-approved condo projects
  * Data sourced from VA LGY Hub (lgy.va.gov)
  */
 import { useState, useMemo } from "react";
