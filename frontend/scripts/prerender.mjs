@@ -213,15 +213,15 @@ const STATIC_PAGES = {
     ],
   },
   "/va-approved-condos-oahu": {
-    title: "VA-Approved Condos on Oahu — 1,381 Projects",
-    description: "Searchable directory of all 1,381 VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Updated June 2026. Data from VA LGY Hub.",
+    title: "VA-Approved Condos on Oahu — 1,745 Projects",
+    description: "Searchable directory of all 1,745 VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Updated June 2026. Data from VA LGY Hub.",
     keywords: "VA approved condos Oahu, VA approved condos Hawaii, VA condo list Honolulu, VA eligible condos Waikiki, VA loan condo Hawaii, VA approved condo projects Oahu 2026, VA condo approval list",
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "Dataset",
         name: "VA-Approved Condo Projects on Oahu, Hawaii",
-        description: "Complete directory of 1,381 VA-approved condominium projects in Honolulu County (Oahu), Hawaii, sourced from the VA LGY Hub. Includes project name, address, approval status, review date, and VA ID.",
+        description: "Complete directory of 1,745 VA-approved condominium projects in Honolulu County (Oahu), Hawaii, sourced from the VA LGY Hub. Includes project name, address, approval status, review date, and VA ID.",
         url: `${BASE_URL}/va-approved-condos-oahu`,
         creator: { "@type": "Organization", name: "U.S. Department of Veterans Affairs" },
         dateModified: "2026-06-15",
@@ -236,7 +236,7 @@ const STATIC_PAGES = {
           { "@type": "Question", name: "What is the difference between Accepted Without Conditions and Accepted With Conditions?", acceptedAnswer: { "@type": "Answer", text: "Accepted Without Conditions means the project fully meets all VA requirements with no additional stipulations. Accepted With Conditions means the project is approved but the VA identified items to be noted. Both statuses allow VA financing. In practice, there is almost never anything that needs to be resolved — the lender may simply require the Veteran to acknowledge and accept the noted conditions, which are informational in nature." } },
           { "@type": "Question", name: "What if the condo I want is not on the VA-approved list?", acceptedAnswer: { "@type": "Answer", text: "Your lender can submit the full project approval package to the Regional VA Loan Center as part of your purchase transaction — this is called Lender Submitted Condo Approval and typically takes 2–3 weeks, well within a standard 45-day contract. Alternatively, the HOA board or seller can submit a full project approval application directly to the VA, which approves the entire building for all future VA buyers." } },
           { "@type": "Question", name: "Can I use a VA loan for a Waikiki condotel?", acceptedAnswer: { "@type": "Answer", text: "Generally no. The VA does not approve projects that operate primarily as hotels or where units are part of a mandatory rental pool. Some Waikiki buildings that are primarily residential (not hotel-operated) are VA-approved — check the directory to verify." } },
-          { "@type": "Question", name: "How many VA-approved condos are on Oahu?", acceptedAnswer: { "@type": "Answer", text: "As of June 2026, there are 1,381 VA-approved condo projects on Oahu — 1,136 Accepted Without Conditions and 245 Accepted With Conditions — spread across 28 neighborhoods from Waikiki to Ewa Beach." } },
+          { "@type": "Question", name: "How many VA-approved condos are on Oahu?", acceptedAnswer: { "@type": "Answer", text: "As of June 2026, there are 1,745 VA-approved condo projects on Oahu — 1,498 Accepted Without Conditions and 247 Accepted With Conditions — spread across 27 neighborhoods from Waikiki to Ewa Beach." } },
         ],
       },
       {
