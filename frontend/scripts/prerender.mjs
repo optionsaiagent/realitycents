@@ -891,22 +891,10 @@ function customizeHtml(baseHtml, route, meta, bodyContent = null) {
       `${prerenderedContent}    <div id="root"></div>`
     );
 
-    // Add inline script to show prerendered content before React hydrates
-    const showScript = `    <script>
-      // Show prerendered content until React takes over
-      document.getElementById('prerendered-content').style.display = 'block';
-      // Hide it once React hydrates
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(() => {
-          const prerendered = document.getElementById('prerendered-content');
-          if (prerendered && document.getElementById('root').children.length > 0) {
-            prerendered.style.display = 'none';
-          }
-        }, 100);
-      });
-    </script>\n    `;
-    // In built HTML, the script tag is a hashed module — inject before </body> instead
-    html = html.replace('  </body>', showScript + '  </body>');
+    // Note: prerendered-content starts with display:none and is NEVER shown visually.
+    // It exists solely for search engine crawlers (Googlebot renders JS but also reads
+    // the static HTML). The #root opacity fix in index.html handles the FOUC for real users.
+    // DO NOT add any script that sets display:block on prerendered-content.
   }
 
   return html;

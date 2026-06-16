@@ -87,11 +87,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0C2340" />
 
-    <!-- FOUC Prevention: hide root until React hydrates and CSS is applied -->
+    <!-- FOUC Prevention: hide all visible content until React hydrates and CSS is applied -->
+    <!-- prerendered-content is SEO-only (display:none always); #root fades in after hydration -->
     <style>
+      /* Keep prerendered SEO content permanently invisible to users */
+      #prerendered-content {
+        display: none !important;
+      }
+      /* Hide React root until hydration completes */
       #root {
         opacity: 0;
-        transition: opacity 0.15s ease-in;
+        transition: opacity 0.2s ease-in;
       }
       #root.hydrated {
         opacity: 1;
