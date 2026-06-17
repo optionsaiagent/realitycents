@@ -287,7 +287,9 @@ export default function Agents() {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
-                      href="mailto:jaym@cmghomeloans.com?subject=DealSync%20Partner%20Access%20Request"
+                      href="https://app.dealsync.me/partner/jaymiller"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-teal hover:bg-teal/90 text-white font-body font-semibold px-6 py-3 rounded-md transition-colors"
                     >
                       Request Partner Access
@@ -410,7 +412,7 @@ export default function Agents() {
                 headline="Ready to Partner?"
                 subtext="Partner with Jay Miller to get full access to DealSync and a suite of tools for your clients."
                 preApprovalLabel="Request DealSync Access"
-                preApprovalUrl="mailto:jaym@cmghomeloans.com?subject=DealSync%20Partner%20Access%20Request"
+                preApprovalUrl="https://app.dealsync.me/partner/jaymiller"
               />
             </div>
           )}

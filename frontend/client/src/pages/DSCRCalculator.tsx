@@ -139,11 +139,18 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
   const [fetchAddress, setFetchAddress] = useState<string | null>(null);
   const [rentOverride, setRentOverride] = useState<number | null>(null);
 
+  // Check if rent estimates are available (API key configured on backend)
+  const statusQuery = trpc.dscr.getStatus.useQuery(undefined, {
+    retry: false,
+    refetchOnWindowFocus: false,
+  });
+  const rentAvailable = statusQuery.data?.rentEstimatesAvailable ?? true;
+
   // tRPC query for rent estimate
   const rentQuery = trpc.dscr.getRentEstimate.useQuery(
     { address: fetchAddress || "" },
     {
-      enabled: !!fetchAddress,
+      enabled: !!fetchAddress && rentAvailable,
       retry: false,
       refetchOnWindowFocus: false,
     }
@@ -302,7 +309,7 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
                   <button
                     onClick={handleFetchRent}
                     disabled={
-                      address.trim().length < 5 || rentQuery.isFetching
+                      address.trim().length < 5 || rentQuery.isFetching || !rentAvailable
                     }
                     className="px-4 py-2.5 rounded-md bg-teal text-white text-sm font-body font-semibold hover:bg-teal/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-1.5 shrink-0"
                   >
@@ -314,6 +321,15 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
                   Full address with city, state, and zip
                 </p>
               </div>
+
+              {/* API Not Configured State */}
+              {!rentAvailable && !statusQuery.isLoading && (
+                <div className="bg-amber-50 rounded-lg p-3 border border-amber-200">
+                  <p className="text-sm text-amber-800">
+                    <strong>Rent lookup not configured.</strong> Set <code className="bg-amber-100 px-1 rounded text-xs">RENTCAST_API_KEY</code> in Railway environment variables to enable automatic rent estimates. Enter rent manually below.
+                  </p>
+                </div>
+              )}
 
               {/* Loading State */}
               {rentQuery.isFetching && (

@@ -57,6 +57,12 @@ export const dscrRouter = router({
       return { success: true };
     }),
 
+  // Health check — lets the frontend know if rent estimates are available
+  getStatus: publicProcedure.query(() => {
+    const hasKey = !!process.env.RENTCAST_API_KEY;
+    return { rentEstimatesAvailable: hasKey };
+  }),
+
   getRentEstimate: publicProcedure
     .input(z.object({ address: z.string().min(5).max(500) }))
     .query(async ({ input }) => {
