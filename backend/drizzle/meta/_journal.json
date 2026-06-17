@@ -43,6 +43,13 @@
       "when": 1780074503726,
       "tag": "0005_right_gladiator",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1781728074774,
+      "tag": "0006_equal_eternals",
+      "breakpoints": true
     }
   ]
 }

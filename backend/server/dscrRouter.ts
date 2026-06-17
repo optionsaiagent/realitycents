@@ -5,6 +5,7 @@
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
+import { upsertAgentLead } from "./db";
 
 // ─── In-Memory Cache (24-hour TTL) ──────────────────────────────────────────
 interface CacheEntry {
@@ -51,9 +52,14 @@ export const dscrRouter = router({
   logAccess: publicProcedure
     .input(z.object({ name: z.string().min(1), email: z.string().email() }))
     .mutation(async ({ input }) => {
-      // For now, we just log to console as a simple implementation
-      // In a real scenario, this would insert into a 'leads' or 'agent_access' table
       console.log(`[DSCR Access] ${input.name} (${input.email}) unlocked the calculator`);
+      // Persist lead to database (upsert by email)
+      try {
+        await upsertAgentLead(input.name, input.email);
+      } catch (err) {
+        // Non-fatal: log but don't fail the mutation
+        console.error("[DSCR Access] Failed to persist lead:", err);
+      }
       return { success: true };
     }),
 

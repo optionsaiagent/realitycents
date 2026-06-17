@@ -1,7 +1,7 @@
 import { eq, sql, desc, count } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, shortUrls, toolkitAgents, toolkitResources, toolkitDownloads } from "../drizzle/schema";
-import type { ToolkitAgent, ToolkitResource } from "../drizzle/schema";
+import { InsertUser, users, shortUrls, toolkitAgents, toolkitResources, toolkitDownloads, agentLeads } from "../drizzle/schema";
+import type { ToolkitAgent, ToolkitResource, AgentLead } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -202,4 +202,35 @@ export async function getNewsletterSubscribers(): Promise<ToolkitAgent[]> {
     .from(toolkitAgents)
     .where(eq(toolkitAgents.newsletterOptIn, true))
     .orderBy(desc(toolkitAgents.createdAt));
+}
+
+// ─── Agent Leads helpers ──────────────────────────────────────────────────────
+/**
+ * Upsert an agent lead from the /agents page email gate.
+ * If the email already exists, updates name and lastSeenAt.
+ * If it's new, inserts a fresh row.
+ */
+export async function upsertAgentLead(name: string, email: string): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot upsert agent lead: database not available");
+    return;
+  }
+  const normalizedEmail = email.toLowerCase().trim();
+  try {
+    // Try insert first
+    await db.insert(agentLeads).values({ name, email: normalizedEmail });
+  } catch (_insertErr) {
+    // Duplicate email — update name and let lastSeenAt auto-update via ON UPDATE
+    await db
+      .update(agentLeads)
+      .set({ name, lastSeenAt: new Date() })
+      .where(eq(agentLeads.email, normalizedEmail));
+  }
+}
+
+export async function getAgentLeads(): Promise<AgentLead[]> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  return db.select().from(agentLeads).orderBy(desc(agentLeads.createdAt));
 }

@@ -52,19 +52,23 @@ export default function Agents() {
     if (!name || !email) return;
 
     setIsSubmitting(true);
+
+    // Persist to localStorage FIRST — before the API call.
+    // This guarantees the gate is remembered even if the backend is
+    // unreachable, cold-starting, or throws an error.
+    const gateData = JSON.stringify({ name, email, unlockedAt: new Date().toISOString() });
     try {
-      await logAccess.mutateAsync({ name, email });
-      localStorage.setItem(
-        "rc_agent_info",
-        JSON.stringify({ name, email, unlockedAt: new Date().toISOString() })
-      );
-      setIsUnlocked(true);
-    } catch (err) {
-      console.error("Failed to log access:", err);
-      setIsUnlocked(true);
-    } finally {
-      setIsSubmitting(false);
+      localStorage.setItem("rc_agent_info", gateData);
+    } catch (_storageErr) {
+      // Storage quota exceeded or private browsing — proceed anyway
     }
+
+    // Unlock the UI immediately (don't wait for the API)
+    setIsUnlocked(true);
+    setIsSubmitting(false);
+
+    // Fire-and-forget: log to backend for lead capture (non-blocking)
+    logAccess.mutate({ name, email });
   };
 
   return (

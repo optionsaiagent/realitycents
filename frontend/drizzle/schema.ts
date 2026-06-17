@@ -84,3 +84,17 @@ export const toolkitDownloads = mysqlTable("toolkit_downloads", {
 
 export type ToolkitDownload = typeof toolkitDownloads.$inferSelect;
 export type InsertToolkitDownload = typeof toolkitDownloads.$inferInsert;
+
+/**
+ * Agent leads — visitors who submit the /agents page email gate.
+ * Deduplicated by email (upsert on conflict updates lastSeenAt).
+ */
+export const agentLeads = mysqlTable("agent_leads", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  lastSeenAt: timestamp("lastSeenAt").defaultNow().onUpdateNow().notNull(),
+});
+export type AgentLead = typeof agentLeads.$inferSelect;
+export type InsertAgentLead = typeof agentLeads.$inferInsert;
