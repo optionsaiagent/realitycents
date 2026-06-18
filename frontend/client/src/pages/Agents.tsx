@@ -233,9 +233,9 @@ export default function Agents() {
                       Instant Pre-Approval & VOF Letters
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Need a letter for a bidding war? Click "Re-issue," update
-                      the price, get a fresh letter in under 60 seconds. No
-                      waiting on me to be at my desk.
+                      Need a letter for a bidding war? Submit a request right
+                      from the app — no waiting on me to be at my desk. Fast
+                      turnaround so you never lose momentum.
                     </p>
                   </div>
 
@@ -250,8 +250,8 @@ export default function Agents() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Share a live status link with your buyers. They see
                       plain-English milestones (Pre-Approved → Appraisal In →
-                      Clear to Close). You look organized. They stop calling you
-                      for updates.
+                      Clear to Close). You look organized. Your clients feel
+                      informed and confident every step of the way.
                     </p>
                   </div>
 
