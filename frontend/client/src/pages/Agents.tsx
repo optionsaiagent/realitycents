@@ -25,7 +25,6 @@ import {
   FileText,
   Share2,
   AlertTriangle,
-  ExternalLink,
 } from "lucide-react";
 
 type ActiveTool = "dscr" | "assumable" | "escalation";
@@ -199,12 +198,11 @@ export default function Agents() {
               <div className="max-w-5xl mx-auto mb-20">
                 <div className="text-center mb-12">
                   <h2 className="font-display text-3xl lg:text-4xl text-navy mb-4">
-                    Partner With Me — Get Real-Time Deal Visibility, Instant
-                    Letters, and Zero Guesswork
+                    When You Partner With Me, You Get DealSync — Free
                   </h2>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    When you refer a client to me, you don't lose visibility. You
-                    gain it.
+                    When you refer a client to me, you don't lose visibility into
+                    the deal. You gain it. Here's what that looks like for you.
                   </p>
                 </div>
 
@@ -216,11 +214,12 @@ export default function Agents() {
                       <Eye className="w-5 h-5 text-teal" />
                     </div>
                     <h3 className="font-display text-lg text-navy mb-2">
-                      Real-Time Deal Tracking
+                      Real-Time Deal Visibility
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      See exactly where every referred client stands. No more
-                      texting "any update?" — you'll know before they ask you.
+                      See exactly where every referred client stands — at any
+                      time, from your phone. No more texting me for updates. You'll
+                      know the status before your client asks.
                     </p>
                   </div>
 
@@ -230,12 +229,13 @@ export default function Agents() {
                       <FileText className="w-5 h-5 text-teal" />
                     </div>
                     <h3 className="font-display text-lg text-navy mb-2">
-                      Instant Pre-Approval & VOF Letters
+                      Request Letters From the App
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Need a letter for a bidding war? Submit a request right
-                      from the app — no waiting on me to be at my desk. Fast
-                      turnaround so you never lose momentum.
+                      Need a pre-approval or VOF letter for a bidding war? Submit
+                      the request directly through DealSync — no phone tag, no
+                      waiting on me to be at my desk. Fast turnaround so you never
+                      lose momentum on an offer.
                     </p>
                   </div>
 
@@ -245,13 +245,13 @@ export default function Agents() {
                       <Share2 className="w-5 h-5 text-teal" />
                     </div>
                     <h3 className="font-display text-lg text-navy mb-2">
-                      Borrower Status Portal
+                      A Status Link to Share With Your Buyers
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Share a live status link with your buyers. They see
-                      plain-English milestones (Pre-Approved → Appraisal In →
-                      Clear to Close). You look organized. Your clients feel
-                      informed and confident every step of the way.
+                      Share a live status link with your buyers so they always know
+                      where they stand. Plain-English milestones — Pre-Approved,
+                      Appraisal In, Clear to Close — make you look organized and
+                      keep your clients confident every step of the way.
                     </p>
                   </div>
 
@@ -261,20 +261,22 @@ export default function Agents() {
                       <AlertTriangle className="w-5 h-5 text-teal" />
                     </div>
                     <h3 className="font-display text-lg text-navy mb-2">
-                      Stalled-Deal Alerts
+                      Stall Alerts Before Deals Go Quiet
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      If a deal hasn't moved in a week, you'll know. No more
-                      deals dying in silence.
+                      If a deal hasn't moved in a week, you'll get an alert so you
+                      can follow up proactively — before your client starts to
+                      worry. No more deals dying in silence.
                     </p>
                   </div>
                 </div>
 
                 {/* Clarifying paragraph */}
                 <p className="text-center text-muted-foreground max-w-3xl mx-auto text-sm leading-relaxed">
-                  This isn't a CRM replacement — it's the layer between your CRM
-                  and mine. You keep your systems. I keep mine. DealSync is the
-                  shared space where nothing falls through the cracks.
+                  DealSync is the shared workspace between your business and mine.
+                  You keep your CRM. I keep mine. This is the layer where your
+                  referred clients are visible to both of us — and nothing falls
+                  through the cracks.
                 </p>
               </div>
 
@@ -285,9 +287,11 @@ export default function Agents() {
                     DealSync is Free for Partner Agents — Forever
                   </h3>
                   <p className="text-sand/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-                    When you partner with me, you get full access to DealSync at
-                    no cost. Unlimited deals, real-time tracking, instant letters,
-                    mobile access. No credit card, no trial period, no catch.
+                    Partner with me and you get full DealSync access at no cost —
+                    no credit card, no trial period, no catch. Real-time deal
+                    tracking, letter requests, buyer status links, and stall
+                    alerts, all from your phone. The only requirement is that your
+                    clients work with me on their financing.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
@@ -298,15 +302,6 @@ export default function Agents() {
                     >
                       Request Partner Access
                       <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <a
-                      href="https://www.dealsync.me"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sand/80 hover:text-white font-body font-medium text-sm transition-colors"
-                    >
-                      Learn more about DealSync
-                      <ExternalLink className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
