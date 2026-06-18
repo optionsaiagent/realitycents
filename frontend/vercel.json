@@ -24,6 +24,7 @@
     { "source": "/realtor-tools/:path*", "destination": "/agents", "statusCode": 301 }
   ],
   "rewrites": [
+    { "source": "/s/:code", "destination": "/s/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

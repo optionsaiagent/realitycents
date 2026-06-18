@@ -22,6 +22,7 @@ import { notifyOwner } from "./_core/notification";
 import { storagePut } from "./storage";
 import { brandPdf } from "./pdfBranding";
 import { dscrRouter } from "./dscrRouter";
+import { sendCalculatorResultsEmail } from "./email";
 
 export const appRouter = router({
   dscr: dscrRouter,
@@ -48,6 +49,13 @@ export const appRouter = router({
             input.resultSummary ? `\n**Summary:** ${input.resultSummary}` : null,
           ].filter(Boolean).join('\n'),
         }).catch((err) => console.error('[Lead] Notification failed:', err));
+        // Send results email to the user (fire-and-forget)
+        sendCalculatorResultsEmail({
+          to: input.email,
+          name: input.name,
+          calculator: input.calculator,
+          resultSummary: input.resultSummary,
+        }).catch((err) => console.error('[Lead] Email send failed:', err));
         return { success: true };
       }),
   }),
