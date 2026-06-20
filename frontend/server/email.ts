@@ -18,6 +18,19 @@ function getResend(): Resend | null {
 
 const FROM_ADDRESS = process.env.EMAIL_FROM || "RealityCents <results@realitycents.com>";
 
+export interface EmailScenario {
+  label: string;
+  loanType: string;
+  rate: number;
+  termYears: number;
+  monthlyPI: number;
+  monthlyPITI: number;
+  cashToClose: number;
+  discountPoints?: number;
+  discountPointsCost?: number;
+  apr?: number;
+}
+
 /**
  * Send calculator results email to the user.
  */
@@ -26,6 +39,7 @@ export async function sendCalculatorResultsEmail(params: {
   name: string;
   calculator: string;
   resultSummary?: string;
+  scenarios?: EmailScenario[];
 }): Promise<{ success: boolean; error?: string }> {
   const resend = getResend();
   if (!resend) {
@@ -33,12 +47,14 @@ export async function sendCalculatorResultsEmail(params: {
     return { success: false, error: "Email service not configured" };
   }
 
-  const { to, name, calculator, resultSummary } = params;
+  const { to, name, calculator, resultSummary, scenarios } = params;
 
   const calculatorLabel = formatCalculatorName(calculator);
   const subject = `Your ${calculatorLabel} Results — RealityCents`;
 
-  const html = buildResultsEmailHtml({ name, calculatorLabel, resultSummary });
+  const html = scenarios && scenarios.length > 0
+    ? buildRichEmailHtml({ name, calculatorLabel, scenarios })
+    : buildFallbackEmailHtml({ name, calculatorLabel, resultSummary });
 
   try {
     const { error } = await resend.emails.send({
@@ -72,7 +88,189 @@ function formatCalculatorName(calculator: string): string {
   return map[calculator] || calculator.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function buildResultsEmailHtml(params: {
+function fmt(n: number): string {
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+
+function fmtExact(n: number): string {
+  return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+const LOAN_TYPE_LABELS: Record<string, string> = {
+  va: "VA",
+  fha: "FHA",
+  conventional: "Conv.",
+  usda: "USDA",
+};
+
+// ─── Rich Email Template (with structured scenario data) ──────────────────────
+
+function buildRichEmailHtml(params: {
+  name: string;
+  calculatorLabel: string;
+  scenarios: EmailScenario[];
+}): string {
+  const { name, calculatorLabel, scenarios } = params;
+
+  // Card colors matching the PDF
+  const CARD_BG = ["#0C2340", "#0E4F5C", "#1A3A1A"];
+  const CARD_ACCENT = "#C9A84C";
+
+  // Build scenario cards
+  const scenarioCards = scenarios.map((s, i) => {
+    const bg = CARD_BG[i % CARD_BG.length];
+    const loanLabel = LOAN_TYPE_LABELS[s.loanType] || s.loanType;
+    const hasPoints = s.discountPointsCost && s.discountPointsCost > 0;
+    return `
+      <td style="width:${scenarios.length === 3 ? '33' : '50'}%;vertical-align:top;padding:0 ${i < scenarios.length - 1 ? '6' : '0'}px 0 ${i > 0 ? '6' : '0'}px;">
+        <div style="background:${bg};border-radius:8px;padding:16px;color:#ffffff;">
+          <p style="margin:0 0 2px;font-size:10px;font-weight:700;color:${CARD_ACCENT};text-transform:uppercase;letter-spacing:0.08em;">Option ${i + 1}</p>
+          <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#ffffff;">${s.termYears}-Yr ${loanLabel}</p>
+          <p style="margin:0 0 12px;font-size:13px;font-weight:600;color:${CARD_ACCENT};">${s.rate.toFixed(3)}% Rate${s.apr ? ` · ${s.apr.toFixed(3)}% APR` : ''}</p>
+          <table style="width:100%;border-collapse:collapse;">
+            <tr>
+              <td style="padding:4px 0;font-size:11px;color:#CBD5E1;">Monthly PITI</td>
+              <td style="padding:4px 0;font-size:14px;font-weight:700;color:#ffffff;text-align:right;">${fmtExact(s.monthlyPITI)}</td>
+            </tr>
+            <tr style="border-top:1px solid rgba(255,255,255,0.15);">
+              <td style="padding:4px 0;font-size:11px;color:#CBD5E1;">Cash to Close</td>
+              <td style="padding:4px 0;font-size:14px;font-weight:700;color:#ffffff;text-align:right;">${fmt(s.cashToClose)}</td>
+            </tr>
+            ${hasPoints ? `
+            <tr style="border-top:1px solid rgba(255,255,255,0.15);">
+              <td style="padding:4px 0;font-size:11px;color:#CBD5E1;">Discount Points</td>
+              <td style="padding:4px 0;font-size:12px;font-weight:600;color:${CARD_ACCENT};text-align:right;">${fmt(s.discountPointsCost!)}</td>
+            </tr>` : ''}
+          </table>
+        </div>
+      </td>`;
+  }).join("");
+
+  // Breakeven analysis (if applicable)
+  let breakevenHtml = "";
+  if (scenarios.length >= 2) {
+    // Check if scenarios share the same term (breakeven only makes sense for same-term comparisons)
+    const sameTerm = scenarios.every(s => s.termYears === scenarios[0].termYears);
+    if (sameTerm) {
+      const sorted = [...scenarios].sort((a, b) => a.rate - b.rate);
+      const pairs: { lowRate: number; highRate: number; cost: number; savings: number; months: number }[] = [];
+      for (let i = 0; i < sorted.length; i++) {
+        for (let j = i + 1; j < sorted.length; j++) {
+          const lowCash = sorted[i].cashToClose;
+          const highCash = sorted[j].cashToClose;
+          const diff = lowCash - highCash;
+          const save = sorted[j].monthlyPI - sorted[i].monthlyPI;
+          if (diff > 0 && save > 0) {
+            pairs.push({ lowRate: sorted[i].rate, highRate: sorted[j].rate, cost: diff, savings: save, months: Math.ceil(diff / save) });
+          }
+        }
+      }
+      if (pairs.length > 0) {
+        const pairRows = pairs.map(p => `
+          <tr>
+            <td style="padding:8px 12px;font-size:13px;color:#1e293b;border-bottom:1px solid #f1f5f9;">
+              <strong>${p.lowRate.toFixed(3)}%</strong> vs <strong>${p.highRate.toFixed(3)}%</strong>
+            </td>
+            <td style="padding:8px 12px;font-size:13px;color:#dc2626;text-align:center;border-bottom:1px solid #f1f5f9;font-weight:600;">
+              ${fmt(p.cost)}
+            </td>
+            <td style="padding:8px 12px;font-size:13px;color:#059669;text-align:center;border-bottom:1px solid #f1f5f9;font-weight:600;">
+              ${fmtExact(p.savings)}/mo
+            </td>
+            <td style="padding:8px 12px;font-size:15px;color:#d97706;text-align:right;border-bottom:1px solid #f1f5f9;font-weight:700;">
+              ${p.months} mo <span style="font-size:11px;color:#94a3b8;font-weight:400;">(${(p.months / 12).toFixed(1)} yrs)</span>
+            </td>
+          </tr>`).join("");
+
+        breakevenHtml = `
+        <div style="margin:24px 0 0;border:2px solid #d97706;border-radius:8px;overflow:hidden;">
+          <div style="background:#fffbeb;padding:12px 16px;border-bottom:1px solid #fde68a;">
+            <p style="margin:0;font-size:14px;font-weight:700;color:#92400e;">&#8595; Points Recovery / Breakeven Analysis</p>
+            <p style="margin:4px 0 0;font-size:11px;color:#a16207;">Buying down the rate costs more upfront but saves monthly. How long to recover?</p>
+          </div>
+          <table style="width:100%;border-collapse:collapse;background:#ffffff;">
+            <thead>
+              <tr style="background:#fefce8;">
+                <th style="padding:8px 12px;font-size:10px;text-transform:uppercase;color:#78350f;text-align:left;letter-spacing:0.05em;">Comparison</th>
+                <th style="padding:8px 12px;font-size:10px;text-transform:uppercase;color:#78350f;text-align:center;letter-spacing:0.05em;">Extra Cost</th>
+                <th style="padding:8px 12px;font-size:10px;text-transform:uppercase;color:#78350f;text-align:center;letter-spacing:0.05em;">Monthly Savings</th>
+                <th style="padding:8px 12px;font-size:10px;text-transform:uppercase;color:#78350f;text-align:right;letter-spacing:0.05em;">Breakeven</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${pairRows}
+            </tbody>
+          </table>
+        </div>`;
+      }
+    }
+  }
+
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/></head>
+<body style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="max-width:640px;margin:0 auto;padding:32px 16px;">
+    <div style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+      <!-- Header Bar -->
+      <div style="background:#0C2340;padding:20px 24px;">
+        <table style="width:100%;">
+          <tr>
+            <td>
+              <h1 style="margin:0;color:#ffffff;font-size:20px;font-weight:700;">RealityCents</h1>
+              <p style="margin:3px 0 0;color:#94a3b8;font-size:11px;">Loan Comparison Results</p>
+            </td>
+            <td style="text-align:right;">
+              <p style="margin:0;color:${CARD_ACCENT};font-size:11px;font-weight:600;">Jay Miller · NMLS #657301</p>
+              <p style="margin:2px 0 0;color:#94a3b8;font-size:10px;">CMG Home Loans · Honolulu, HI</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Body -->
+      <div style="padding:24px;">
+        <p style="color:#1e293b;font-size:15px;line-height:1.6;margin:0 0 20px;">
+          Hi ${name}, here's your <strong>${calculatorLabel}</strong> breakdown:
+        </p>
+
+        <!-- Scenario Cards -->
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            ${scenarioCards}
+          </tr>
+        </table>
+
+        ${breakevenHtml}
+
+        <!-- CTA -->
+        <div style="text-align:center;margin:28px 0 8px;">
+          <a href="https://realitycents.com/loan-compare" style="display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;">
+            Re-run or Adjust Scenarios
+          </a>
+        </div>
+        <p style="text-align:center;color:#94a3b8;font-size:11px;margin:8px 0 0;">
+          Bookmark the calculator to compare new rate sheets anytime.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 24px;text-align:center;">
+        <p style="color:#64748b;font-size:11px;line-height:1.5;margin:0;">
+          Estimates for educational purposes only. Not a commitment to lend.<br/>
+          Jay Miller · Certified Mortgage Advisor · NMLS #657301 · CMG Home Loans NMLS #2475890<br/>
+          <a href="https://realitycents.com" style="color:#0f766e;text-decoration:none;">realitycents.com</a> · (808) 429-0811
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+}
+
+// ─── Fallback Email Template (text summary only) ──────────────────────────────
+
+function buildFallbackEmailHtml(params: {
   name: string;
   calculatorLabel: string;
   resultSummary?: string;
@@ -95,7 +293,7 @@ function buildResultsEmailHtml(params: {
     <div style="background:#ffffff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
       <!-- Header -->
       <div style="text-align:center;margin-bottom:24px;">
-        <h1 style="margin:0;color:#1e3a5f;font-size:22px;font-weight:700;">RealityCents</h1>
+        <h1 style="margin:0;color:#0C2340;font-size:22px;font-weight:700;">RealityCents</h1>
         <p style="margin:4px 0 0;color:#64748b;font-size:13px;">Hawaii's Mortgage Education Resource</p>
       </div>
 
@@ -109,13 +307,9 @@ function buildResultsEmailHtml(params: {
 
       ${summarySection}
 
-      <p style="color:#1e293b;font-size:15px;line-height:1.6;margin:20px 0 16px;">
-        Want to run the numbers again or compare different scenarios? Visit the calculator anytime:
-      </p>
-
       <div style="text-align:center;margin:24px 0;">
         <a href="https://realitycents.com/loan-compare" style="display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;">
-          Open Loan Comparison Calculator
+          Open Calculator
         </a>
       </div>
 

@@ -1289,196 +1289,73 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
               })}
             </div>
 
-            {/* Monthly Payment Bar Chart */}
-            <div style={{ marginBottom: "14px" }}>
-              <p style={{ fontSize: "8pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 6px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>Monthly Payment Comparison (PITI + HOA)</p>
-              <div style={{ display: "flex", flexDirection: "column" as const, gap: "6px" }}>
-                {results.map((r, i) => {
-                  const c = CARD_COLORS[i % CARD_COLORS.length];
-                  const s = scenarios[i];
-                  const loanLabel = s?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
-                  const barPct = maxPITI > 0 ? (r.monthly.totalPITI / maxPITI) * 100 : 100;
-                  return (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <div style={{ width: "130px", flexShrink: 0, fontSize: "7.5pt", color: "#0C2340", fontWeight: "bold" }}>
-                        {r.termYears}-Yr {loanLabel}
-                      </div>
-                      <div style={{ flex: 1, backgroundColor: "#f1f5f9", borderRadius: "3px", height: "18px", position: "relative" as const, overflow: "hidden" }}>
-                        <div style={{ width: `${barPct}%`, height: "100%", backgroundColor: c.bg, borderRadius: "3px", display: "flex", alignItems: "center", paddingLeft: "6px", boxSizing: "border-box" as const }}>
-                          <span style={{ fontSize: "7.5pt", fontWeight: "bold", color: "white", whiteSpace: "nowrap" as const }}>{fmtExact(r.monthly.totalPITI)}/mo</span>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
 
-            {/* Cash to Close Bar Chart */}
-            <div style={{ marginBottom: "14px" }}>
-              <p style={{ fontSize: "8pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 6px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>Cash to Close Comparison</p>
-              <div style={{ display: "flex", flexDirection: "column" as const, gap: "6px" }}>
-                {results.map((r, i) => {
-                  const c = CARD_COLORS[i % CARD_COLORS.length];
-                  const s = scenarios[i];
-                  const loanLabel = s?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
-                  const barPct = maxCash > 0 ? (r.cashToClose / maxCash) * 100 : 100;
-                  return (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <div style={{ width: "130px", flexShrink: 0, fontSize: "7.5pt", color: "#0C2340", fontWeight: "bold" }}>
-                        {r.termYears}-Yr {loanLabel}
-                      </div>
-                      <div style={{ flex: 1, backgroundColor: "#f1f5f9", borderRadius: "3px", height: "18px", position: "relative" as const, overflow: "hidden" }}>
-                        <div style={{ width: `${barPct}%`, height: "100%", backgroundColor: c.bg, borderRadius: "3px", display: "flex", alignItems: "center", paddingLeft: "6px", boxSizing: "border-box" as const }}>
-                          <span style={{ fontSize: "7.5pt", fontWeight: "bold", color: "white", whiteSpace: "nowrap" as const }}>{fmt(r.cashToClose)}</span>
-                        </div>
-                      </div>
-                      {r.closingCosts.discountPointsCost > 0 && (
-                        <span style={{ fontSize: "7pt", color: "#d97706", flexShrink: 0 }}>incl. {fmt(r.closingCosts.discountPointsCost)} pts</span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Monthly Savings & 60-Month Savings Bar Charts */}
-            {results.length > 1 && (() => {
-              // Baseline = Option 1 (index 0)
-              const baselinePITI = results[0].monthly.totalPITI;
-              // Monthly savings vs Option 1 (positive = cheaper than Option 1)
-              const monthlySavingsArr = results.map((r) => baselinePITI - r.monthly.totalPITI);
-              const savings60Arr = monthlySavingsArr.map((s) => s * 60);
-              const maxMonthly = Math.max(...monthlySavingsArr, 1);
-              const max60 = Math.max(...savings60Arr, 1);
-
-              // Chart height in px (the bar area)
-              const CHART_H = 80;
-              // Navy-to-purple gradient stops per option
-              const BAR_COLORS = [
-                "#0C2340", // navy (Option 1 baseline)
-                "#1A3A6E", // mid navy-blue
-                "#2E4A8A", // blue-purple
-                "#3D3580", // purple
-              ];
-              const GOLD = "#C9A84C";
-
-              // Y-axis tick helper
-              function yTicks(maxVal: number, count = 5): number[] {
-                const raw = maxVal / (count - 1);
-                const mag = Math.pow(10, Math.floor(Math.log10(raw || 1)));
-                const step = Math.ceil(raw / mag) * mag;
-                return Array.from({ length: count }, (_, i) => i * step);
+            {/* Points Recovery / Breakeven Analysis */}
+            {/* Points Recovery Analysis (Print) — Prominent Section */}
+            {(() => {
+              const sameType = results.every((r) => r.loanType === results[0].loanType);
+              const sameTerm = results.every((r) => r.termYears === results[0].termYears);
+              const sameLoan = results.every((r) => Math.abs(r.baseLoanAmount - results[0].baseLoanAmount) < 1);
+              if (!sameType || !sameTerm || !sameLoan) return null;
+              const sorted = [...results].sort((a, b) => a.rate - b.rate);
+              const pairs: { lowRate: number; highRate: number; cost: number; savings: number; months: number; netSavings: number }[] = [];
+              for (let i = 0; i < sorted.length; i++) {
+                for (let j = i + 1; j < sorted.length; j++) {
+                  const lowUpfront = sorted[i].closingCosts.total + sorted[i].prepaids.total;
+                  const highUpfront = sorted[j].closingCosts.total + sorted[j].prepaids.total;
+                  const diff = lowUpfront - highUpfront;
+                  const save = sorted[j].monthly.principalInterest - sorted[i].monthly.principalInterest;
+                  if (diff > 0 && save > 0) {
+                    const netSavings = save * (yearsInHome * 12) - diff;
+                    pairs.push({ lowRate: sorted[i].rate, highRate: sorted[j].rate, cost: diff, savings: save, months: Math.ceil(diff / save), netSavings });
+                  }
+                }
               }
-
-              const monthlyTicks = yTicks(maxMonthly);
-              const ticks60 = yTicks(max60);
-              const topMonthly = monthlyTicks[monthlyTicks.length - 1] || 1;
-              const top60 = ticks60[ticks60.length - 1] || 1;
-
-              function BarChart({ title, valuesArr, topVal, ticks, fmtFn }: {
-                title: string;
-                valuesArr: number[];
-                topVal: number;
-                ticks: number[];
-                fmtFn: (v: number) => string;
-              }) {
-                const barW = results.length <= 2 ? 52 : 36;
-                const barGap = results.length <= 2 ? 16 : 10;
-                const chartW = results.length * (barW + barGap) - barGap + 36; // 36 = y-axis label area
-                return (
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <p style={{ fontSize: "7.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 6px 0", textTransform: "uppercase" as const, letterSpacing: "0.05em", textAlign: "center" as const }}>{title}</p>
-                    <div style={{ display: "flex", justifyContent: "center" as const }}>
-                      <div style={{ position: "relative" as const, width: `${chartW}px`, height: `${CHART_H + 36}px` }}>
-                        {/* Y-axis ticks & gridlines */}
-                        {ticks.map((t) => {
-                          const yPos = CHART_H - (t / topVal) * CHART_H;
-                          return (
-                            <div key={t} style={{ position: "absolute" as const, left: 0, top: `${yPos}px`, width: "100%", display: "flex", alignItems: "center" as const }}>
-                              <span style={{ fontSize: "5.5pt", color: "#888", width: "32px", textAlign: "right" as const, flexShrink: 0, lineHeight: 1 }}>{fmtFn(t)}</span>
-                              <div style={{ flex: 1, borderTop: "1px dashed #dde3ec", marginLeft: "2px" }} />
-                            </div>
-                          );
-                        })}
-                        {/* Bars */}
-                        <div style={{ position: "absolute" as const, left: "36px", top: 0, display: "flex", alignItems: "flex-end" as const, height: `${CHART_H}px`, gap: `${barGap}px` }}>
-                          {valuesArr.map((v, i) => {
-                            const s = scenarios[i];
-                            const barH = topVal > 0 ? Math.max((v / topVal) * CHART_H, v > 0 ? 4 : 0) : 0;
-                            const color = BAR_COLORS[i % BAR_COLORS.length];
-                            // X-axis label: use scenario label if set, else fallback
-                            const xLabel = (s?.label && s.label.trim()) ? s.label.trim() : `Option ${i + 1}`;
-                            // Wrap label at 12 chars per line
-                            const words = xLabel.split(/[\s\-]+/);
-                            const lines: string[] = [];
-                            let cur = "";
-                            for (const w of words) {
-                              if ((cur + (cur ? " " : "") + w).length > 12) {
-                                if (cur) lines.push(cur);
-                                cur = w;
-                              } else {
-                                cur = cur ? cur + " " + w : w;
-                              }
-                            }
-                            if (cur) lines.push(cur);
-                            return (
-                              <div key={i} style={{ width: `${barW}px`, display: "flex", flexDirection: "column" as const, alignItems: "center" as const }}>
-                                {/* Dollar label on top of bar */}
-                                <span style={{ fontSize: "6pt", fontWeight: "bold", color: i === 0 ? "#888" : "#0C2340", marginBottom: "2px", whiteSpace: "nowrap" as const }}>
-                                  {i === 0 ? "baseline" : (v >= 0 ? "+" : "") + fmtFn(v)}
-                                </span>
-                                {/* Bar */}
-                                <div style={{
-                                  width: `${barW}px`,
-                                  height: `${barH}px`,
-                                  background: i === 0
-                                    ? `repeating-linear-gradient(45deg, #c8d4e4 0px, #c8d4e4 3px, #e8edf5 3px, #e8edf5 6px)`
-                                    : `linear-gradient(180deg, ${color}cc 0%, ${color} 100%)`,
-                                  borderRadius: "3px 3px 0 0",
-                                  border: i === 0 ? "1px solid #b0bdd0" : `1px solid ${color}`,
-                                  boxSizing: "border-box" as const,
-                                }} />
-                                {/* X-axis label */}
-                                <div style={{ marginTop: "3px", width: `${barW + 4}px`, textAlign: "center" as const }}>
-                                  {lines.map((ln, li) => (
-                                    <div key={li} style={{ fontSize: "5.5pt", color: "#0C2340", lineHeight: 1.2, fontWeight: li === 0 ? "bold" : "normal" }}>{ln}</div>
-                                  ))}
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                        {/* X-axis baseline */}
-                        <div style={{ position: "absolute" as const, left: "36px", top: `${CHART_H}px`, right: 0, borderTop: "1.5px solid #0C2340" }} />
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
-
+              if (pairs.length === 0) return null;
               return (
-                <div style={{ marginBottom: "10px" }}>
-                  <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" as const }}>
-                    <BarChart
-                      title="Monthly Savings vs. Option 1"
-                      valuesArr={monthlySavingsArr}
-                      topVal={topMonthly}
-                      ticks={monthlyTicks}
-                      fmtFn={(v) => v >= 1000 ? `$${(v / 1000).toFixed(1)}k` : `$${Math.round(v)}`}
-                    />
-                    <BarChart
-                      title="Savings over 60 Months vs. Option 1"
-                      valuesArr={savings60Arr}
-                      topVal={top60}
-                      ticks={ticks60}
-                      fmtFn={(v) => v >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${Math.round(v)}`}
-                    />
+                <div style={{ marginTop: "6px", padding: "6px 8px", border: "1.5px solid #d97706", borderRadius: "4px", backgroundColor: "#fffbeb" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "4px" }}>
+                    <div style={{ width: "14px", height: "14px", backgroundColor: "#d97706", borderRadius: "3px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <span style={{ color: "white", fontSize: "8pt", fontWeight: "bold" }}>↓</span>
+                    </div>
+                    <h2 style={{ fontSize: "8.5pt", fontWeight: "bold", color: "#0C2340", margin: 0 }}>Points Recovery / Breakeven Analysis</h2>
                   </div>
-                  <p style={{ fontSize: "6pt", color: "#999", margin: "4px 0 0 0", fontStyle: "italic" }}>Savings calculated vs. Option 1 (baseline). Positive values indicate a lower monthly payment than Option 1.</p>
+                  {pairs.map((p, i) => (
+                    <div key={i} style={{ marginBottom: i < pairs.length - 1 ? "4px" : "0", padding: "4px 6px", backgroundColor: "white", border: "1px solid #e5e7eb", borderRadius: "3px" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "3px" }}>
+                        <div>
+                          <p style={{ fontSize: "8pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 1px 0" }}>
+                            {p.lowRate.toFixed(3)}% vs {p.highRate.toFixed(3)}%
+                          </p>
+                          <p style={{ fontSize: "7pt", color: "#666", margin: 0 }}>Buying down the rate costs more upfront but saves monthly</p>
+                        </div>
+                        <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "8px" }}>
+                          <p style={{ fontSize: "11pt", fontWeight: "bold", color: "#d97706", margin: 0 }}>{p.months} months</p>
+                          <p style={{ fontSize: "7pt", color: "#666", margin: 0 }}>({(p.months / 12).toFixed(1)} yrs) to break even</p>
+                        </div>
+                      </div>
+                      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7pt" }}>
+                        <tbody>
+                          <tr style={{ borderBottom: "1px solid #f0f0f0" }}>
+                            <td style={{ padding: "1px 0", color: "#666" }}>Extra Upfront Cost</td>
+                            <td style={{ padding: "1px 0", textAlign: "right", fontWeight: "bold", color: "#dc2626" }}>{fmt(p.cost)}</td>
+                          </tr>
+                          <tr style={{ borderBottom: "1px solid #f0f0f0" }}>
+                            <td style={{ padding: "1px 0", color: "#666" }}>Monthly P&I Savings</td>
+                            <td style={{ padding: "1px 0", textAlign: "right", fontWeight: "bold", color: "#059669" }}>{fmtExact(p.savings)}/mo</td>
+                          </tr>
+                          <tr>
+                            <td style={{ padding: "1px 0", color: "#666" }}>Net Savings Over {yearsInHome} Years</td>
+                            <td style={{ padding: "1px 0", textAlign: "right", fontWeight: "bold", color: p.netSavings > 0 ? "#059669" : "#dc2626" }}>{fmt(p.netSavings)}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  ))}
                 </div>
               );
             })()}
+
 
             {/* Investment summary callout if applicable */}
             {isInvMode && (
@@ -1670,70 +1547,6 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
         </div>
       )}
 
-      {/* Points Recovery Analysis (Print) — Prominent Section */}
-      {(() => {
-        const sameType = results.every((r) => r.loanType === results[0].loanType);
-        const sameTerm = results.every((r) => r.termYears === results[0].termYears);
-        const sameLoan = results.every((r) => Math.abs(r.baseLoanAmount - results[0].baseLoanAmount) < 1);
-        if (!sameType || !sameTerm || !sameLoan) return null;
-        const sorted = [...results].sort((a, b) => a.rate - b.rate);
-        const pairs: { lowRate: number; highRate: number; cost: number; savings: number; months: number; netSavings: number }[] = [];
-        for (let i = 0; i < sorted.length; i++) {
-          for (let j = i + 1; j < sorted.length; j++) {
-            const lowUpfront = sorted[i].closingCosts.total + sorted[i].prepaids.total;
-            const highUpfront = sorted[j].closingCosts.total + sorted[j].prepaids.total;
-            const diff = lowUpfront - highUpfront;
-            const save = sorted[j].monthly.principalInterest - sorted[i].monthly.principalInterest;
-            if (diff > 0 && save > 0) {
-              const netSavings = save * (yearsInHome * 12) - diff;
-              pairs.push({ lowRate: sorted[i].rate, highRate: sorted[j].rate, cost: diff, savings: save, months: Math.ceil(diff / save), netSavings });
-            }
-          }
-        }
-        if (pairs.length === 0) return null;
-        return (
-          <div style={{ marginTop: "6px", padding: "6px 8px", border: "1.5px solid #d97706", borderRadius: "4px", backgroundColor: "#fffbeb" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "4px" }}>
-              <div style={{ width: "14px", height: "14px", backgroundColor: "#d97706", borderRadius: "3px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "white", fontSize: "8pt", fontWeight: "bold" }}>↓</span>
-              </div>
-              <h2 style={{ fontSize: "8.5pt", fontWeight: "bold", color: "#0C2340", margin: 0 }}>Points Recovery / Breakeven Analysis</h2>
-            </div>
-            {pairs.map((p, i) => (
-              <div key={i} style={{ marginBottom: i < pairs.length - 1 ? "4px" : "0", padding: "4px 6px", backgroundColor: "white", border: "1px solid #e5e7eb", borderRadius: "3px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "3px" }}>
-                  <div>
-                    <p style={{ fontSize: "8pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 1px 0" }}>
-                      {p.lowRate.toFixed(3)}% vs {p.highRate.toFixed(3)}%
-                    </p>
-                    <p style={{ fontSize: "7pt", color: "#666", margin: 0 }}>Buying down the rate costs more upfront but saves monthly</p>
-                  </div>
-                  <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "8px" }}>
-                    <p style={{ fontSize: "11pt", fontWeight: "bold", color: "#d97706", margin: 0 }}>{p.months} months</p>
-                    <p style={{ fontSize: "7pt", color: "#666", margin: 0 }}>({(p.months / 12).toFixed(1)} yrs) to break even</p>
-                  </div>
-                </div>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7pt" }}>
-                  <tbody>
-                    <tr style={{ borderBottom: "1px solid #f0f0f0" }}>
-                      <td style={{ padding: "1px 0", color: "#666" }}>Extra Upfront Cost</td>
-                      <td style={{ padding: "1px 0", textAlign: "right", fontWeight: "bold", color: "#dc2626" }}>{fmt(p.cost)}</td>
-                    </tr>
-                    <tr style={{ borderBottom: "1px solid #f0f0f0" }}>
-                      <td style={{ padding: "1px 0", color: "#666" }}>Monthly P&I Savings</td>
-                      <td style={{ padding: "1px 0", textAlign: "right", fontWeight: "bold", color: "#059669" }}>{fmtExact(p.savings)}/mo</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: "1px 0", color: "#666" }}>Net Savings Over {yearsInHome} Years</td>
-                      <td style={{ padding: "1px 0", textAlign: "right", fontWeight: "bold", color: p.netSavings > 0 ? "#059669" : "#dc2626" }}>{fmt(p.netSavings)}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            ))}
-          </div>
-        );
-      })()}
 
       {/* Temporary Buydown Schedule (Print) — duplicate removed, moved above points recovery */}
       {false && results.some((r) => r.buydownType !== "none" && r.buydownSchedule.length > 0) && (
@@ -2657,6 +2470,18 @@ export default function LoanCompare() {
           <EmailResults
             calculator="loan-comparison"
             resultSummary={results.length > 0 ? results.map(r => `${r.label} (${r.rate}%): ${fmt(r.monthly.totalPITI)}/mo`).join(' | ') : undefined}
+            scenarios={results.length > 0 ? results.map(r => ({
+              label: r.label,
+              loanType: r.loanType,
+              rate: r.rate,
+              termYears: r.termYears,
+              monthlyPI: r.monthly.principalInterest,
+              monthlyPITI: r.monthly.totalPITI,
+              cashToClose: r.cashToClose,
+              discountPoints: r.discountPoints,
+              discountPointsCost: r.closingCosts.discountPointsCost,
+              apr: r.apr,
+            })) : undefined}
           />
 
           {/* Disclaimer & Contact */}

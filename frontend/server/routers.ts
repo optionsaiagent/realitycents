@@ -34,6 +34,18 @@ export const appRouter = router({
           email: z.string().email().max(320),
           calculator: z.string().min(1).max(100),
           resultSummary: z.string().max(2000).optional(),
+          scenarios: z.array(z.object({
+            label: z.string(),
+            loanType: z.string(),
+            rate: z.number(),
+            termYears: z.number(),
+            monthlyPI: z.number(),
+            monthlyPITI: z.number(),
+            cashToClose: z.number(),
+            discountPoints: z.number().optional(),
+            discountPointsCost: z.number().optional(),
+            apr: z.number().optional(),
+          })).max(4).optional(),
         })
       )
       .mutation(async ({ input }) => {
@@ -44,6 +56,7 @@ export const appRouter = router({
           name: input.name,
           calculator: input.calculator,
           resultSummary: input.resultSummary,
+          scenarios: input.scenarios,
         }).catch((err) => console.error('[Lead] Email send failed:', err));
         return { success: true };
       }),

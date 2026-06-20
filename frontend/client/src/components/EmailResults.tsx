@@ -7,12 +7,26 @@ import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { Mail, CheckCircle, Send } from "lucide-react";
 
+export interface EmailScenario {
+  label: string;
+  loanType: string;
+  rate: number;
+  termYears: number;
+  monthlyPI: number;
+  monthlyPITI: number;
+  cashToClose: number;
+  discountPoints?: number;
+  discountPointsCost?: number;
+  apr?: number;
+}
+
 interface EmailResultsProps {
   calculator: string; // e.g., "dscr", "assumable", "escalation", "loan-compare"
   resultSummary?: string; // Optional brief summary of the calculation
+  scenarios?: EmailScenario[]; // Structured scenario data for rich email
 }
 
-export default function EmailResults({ calculator, resultSummary }: EmailResultsProps) {
+export default function EmailResults({ calculator, resultSummary, scenarios }: EmailResultsProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -30,6 +44,7 @@ export default function EmailResults({ calculator, resultSummary }: EmailResults
       email,
       calculator,
       resultSummary: resultSummary || undefined,
+      scenarios: scenarios || undefined,
     });
   };
 
