@@ -2481,7 +2481,11 @@ export default function LoanCompare() {
               discountPoints: r.discountPoints,
               discountPointsCost: r.closingCosts.discountPointsCost,
               apr: r.apr,
+              purchasePrice: r.purchasePrice,
+              downPayment: r.downPayment,
+              loanAmount: r.totalLoanAmount,
             })) : undefined}
+            shareData={results.length > 0 ? serializeScenarios(scenarios, yearsInHome) : undefined}
           />
 
           {/* Disclaimer & Contact */}

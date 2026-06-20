@@ -45,7 +45,11 @@ export const appRouter = router({
             discountPoints: z.number().optional(),
             discountPointsCost: z.number().optional(),
             apr: z.number().optional(),
+            purchasePrice: z.number().optional(),
+            downPayment: z.number().optional(),
+            loanAmount: z.number().optional(),
           })).max(4).optional(),
+          shareData: z.string().max(100000).optional(),
         })
       )
       .mutation(async ({ input }) => {
@@ -61,6 +65,18 @@ export const appRouter = router({
             input.resultSummary ? `\n**Summary:** ${input.resultSummary}` : null,
           ].filter(Boolean).join('\n'),
         }).catch((err) => console.error('[Lead] Notification failed:', err));
+        // Generate short URL for the CTA link (best-effort)
+        let shareUrl: string | undefined;
+        if (input.shareData) {
+          try {
+            const code = nanoid(6);
+            await createShortUrl(code, input.shareData);
+            shareUrl = `https://realitycents.com/s/${code}`;
+          } catch (err) {
+            console.error('[Lead] Short URL generation failed:', err);
+            shareUrl = undefined;
+          }
+        }
         // Send results email to the user (fire-and-forget)
         sendCalculatorResultsEmail({
           to: input.email,
@@ -68,6 +84,7 @@ export const appRouter = router({
           calculator: input.calculator,
           resultSummary: input.resultSummary,
           scenarios: input.scenarios,
+          shareUrl,
         }).catch((err) => console.error('[Lead] Email send failed:', err));
         return { success: true };
       }),

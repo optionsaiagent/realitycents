@@ -18,15 +18,19 @@ export interface EmailScenario {
   discountPoints?: number;
   discountPointsCost?: number;
   apr?: number;
+  purchasePrice?: number;
+  downPayment?: number;
+  loanAmount?: number;
 }
 
 interface EmailResultsProps {
   calculator: string; // e.g., "dscr", "assumable", "escalation", "loan-compare"
   resultSummary?: string; // Optional brief summary of the calculation
   scenarios?: EmailScenario[]; // Structured scenario data for rich email
+  shareData?: string; // Compressed lz-string scenario state for short link generation
 }
 
-export default function EmailResults({ calculator, resultSummary, scenarios }: EmailResultsProps) {
+export default function EmailResults({ calculator, resultSummary, scenarios, shareData }: EmailResultsProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -45,6 +49,7 @@ export default function EmailResults({ calculator, resultSummary, scenarios }: E
       calculator,
       resultSummary: resultSummary || undefined,
       scenarios: scenarios || undefined,
+      shareData: shareData || undefined,
     });
   };
 

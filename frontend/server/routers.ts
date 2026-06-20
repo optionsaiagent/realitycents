@@ -45,7 +45,11 @@ export const appRouter = router({
             discountPoints: z.number().optional(),
             discountPointsCost: z.number().optional(),
             apr: z.number().optional(),
+            purchasePrice: z.number().optional(),
+            downPayment: z.number().optional(),
+            loanAmount: z.number().optional(),
           })).max(4).optional(),
+          shareData: z.string().max(100000).optional(),
         })
       )
       .mutation(async ({ input }) => {
@@ -57,6 +61,7 @@ export const appRouter = router({
           calculator: input.calculator,
           resultSummary: input.resultSummary,
           scenarios: input.scenarios,
+          shareUrl: undefined, // short URL generation only runs on the real backend
         }).catch((err) => console.error('[Lead] Email send failed:', err));
         return { success: true };
       }),
