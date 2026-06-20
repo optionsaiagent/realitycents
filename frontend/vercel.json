@@ -64,12 +64,12 @@
   "rewrites": [
     {
       "source": "/s/:code",
-      "destination": "/index.html"
+      "destination": "https://realitycents-production.up.railway.app/r/:code"
     },
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
-  "installCommand": "npm i -g pnpm && pnpm install"
+  "framework": "vite"
 }
