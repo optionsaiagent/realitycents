@@ -2656,7 +2656,7 @@ export default function LoanCompare() {
           {/* Email Results */}
           <EmailResults
             calculator="loan-comparison"
-            resultSummary={results.length > 0 ? results.map(r => `${r.label}: ${fmt(r.monthlyPITIA)}/mo`).join(' | ') : undefined}
+            resultSummary={results.length > 0 ? results.map(r => `${r.label} (${r.rate}%): ${fmt(r.monthly.totalPITI)}/mo`).join(' | ') : undefined}
           />
 
           {/* Disclaimer & Contact */}
