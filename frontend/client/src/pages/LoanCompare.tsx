@@ -1451,7 +1451,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
       {/* ═══ PAGE 2: Equity Building & Value-Add Analysis ═══ */}
       <div style={{ pageBreakBefore: "always", paddingTop: "12px" }}>
         {/* Page 2 Header */}
-        <div style={{ borderBottom: "1.5px solid #0C2340", paddingBottom: "6px", marginBottom: "10px" }}>
+        <div style={{ borderBottom: "1.5px solid #0C2340", paddingBottom: "6px", marginBottom: "12px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
             <div>
               <h1 style={{ fontSize: "14pt", fontWeight: "bold", color: "#0C2340", margin: 0 }}>Equity Building Analysis</h1>
@@ -1466,343 +1466,200 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
           </div>
         </div>
 
-        {/* Property & Assumptions */}
-        <div style={{ marginBottom: "8px", fontSize: "8pt", color: "#333" }}>
+        {/* Assumptions line */}
+        <div style={{ marginBottom: "12px", fontSize: "7.5pt", color: "#555" }}>
           {scenarios[0]?.propertyAddress && (
             <p style={{ margin: "0 0 2px 0" }}><strong>Property:</strong> {scenarios[0].propertyAddress}</p>
           )}
-          <p style={{ margin: "0 0 2px 0" }}><strong>Purchase Price:</strong> {fmt(results[0]?.purchasePrice || 0)} | <strong>Appreciation Assumption:</strong> 4.5% annually | <strong>Time Horizon:</strong> {yearsInHome} years</p>
-          <p style={{ margin: 0, fontSize: "7pt", color: "#666" }}>Page 2 of 2</p>
+          <p style={{ margin: 0 }}>
+            <strong>Purchase Price:</strong> {fmt(results[0]?.purchasePrice || 0)}&nbsp;|&nbsp;
+            <strong>Appreciation:</strong> 3% annually&nbsp;|&nbsp;
+            <strong>Hold Period:</strong> {yearsInHome} years&nbsp;|&nbsp;
+            Page 2 of 2
+          </p>
         </div>
 
-        {/* Equity Growth Table */}
+        {/* ─── SECTION A: Equity Snapshot ─────────────────────────────────── */}
         {(() => {
-          const equityData = results.map((r) =>
-            buildEquityAnalysis(r.purchasePrice, r.totalLoanAmount, r.rate, r.termYears, 0.045, yearsInHome)
-          );
-          const milestones = equityData[0]?.map((_, i) => i) || [];
-          // Show all years if <= 7, otherwise show key milestones
-          const displayYears = yearsInHome <= 7
-            ? milestones
-            : milestones.filter((i) => {
-                const yr = i + 1;
-                return yr === 1 || yr === 3 || yr === 5 || yr === 10 || yr === yearsInHome;
-              });
+          const CARD_COLORS_P2 = [
+            { bg: "#0C2340", accent: "#C9A84C", text: "#FFFFFF", subtext: "#CBD5E1", border: "#1E3A5F" },
+            { bg: "#0E4F5C", accent: "#C9A84C", text: "#FFFFFF", subtext: "#A7C5CC", border: "#1A6B7A" },
+            { bg: "#1A3A1A", accent: "#C9A84C", text: "#FFFFFF", subtext: "#A7C5A7", border: "#2A5A2A" },
+          ];
+          const snapshots = results.map((r) => {
+            const homeValue = r.purchasePrice * Math.pow(1.03, yearsInHome);
+            // Remaining balance: walk amortization for yearsInHome years
+            const monthlyRate = r.rate / 100 / 12;
+            const totalMonths = r.termYears * 12;
+            const payment = monthlyRate > 0
+              ? r.totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1)
+              : r.totalLoanAmount / totalMonths;
+            let balance = r.totalLoanAmount;
+            const payMonths = Math.min(yearsInHome * 12, totalMonths);
+            for (let m = 0; m < payMonths; m++) {
+              const interest = balance * monthlyRate;
+              const principal = Math.min(payment - interest, balance);
+              balance = Math.max(0, balance - principal);
+            }
+            const remainingBalance = balance;
+            const totalEquity = homeValue - remainingBalance;
+            const equityFromPayments = r.totalLoanAmount - remainingBalance;
+            const equityFromAppreciation = homeValue - r.purchasePrice;
+            return { homeValue, remainingBalance, totalEquity, equityFromPayments, equityFromAppreciation };
+          });
 
           return (
-            <>
-              <h2 style={{ fontSize: "9pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>Equity Position Over Time</h2>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7.5pt", marginBottom: "10px" }}>
+            <div style={{ marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "9.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 6px 0", textTransform: "uppercase" as const, letterSpacing: "0.04em" }}>
+                A. Equity Snapshot After {yearsInHome} Years
+              </h2>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7.5pt" }}>
                 <thead>
-                  <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-                    <th style={{ textAlign: "left", padding: "2px 3px", color: "#0C2340" }}>Year</th>
-                    {results.map((r, i) => (
-                      <th key={i} colSpan={3} style={{ textAlign: "center", padding: "2px 3px", color: "#0C2340", borderLeft: "1px solid #e5e7eb" }}>
-                        {r.termYears}-Yr {LOAN_TYPE_LABELS[r.loanType]} @ {r.rate.toFixed(3)}%
-                      </th>
-                    ))}
-                  </tr>
-                  <tr style={{ borderBottom: "1px solid #ccc" }}>
-                    <th style={{ textAlign: "left", padding: "1px 3px", fontSize: "7pt", color: "#666" }}></th>
-                    {results.map((_, i) => (
-                      <React.Fragment key={i}>
-                        <th style={{ textAlign: "right", padding: "1px 3px", fontSize: "7pt", color: "#666", borderLeft: i > 0 ? "1px solid #e5e7eb" : "none" }}>Appreciation</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", fontSize: "7pt", color: "#666" }}>Principal Paid</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", fontSize: "7pt", color: "#666" }}>Total Equity</th>
-                      </React.Fragment>
-                    ))}
+                  <tr style={{ backgroundColor: "#0C2340", color: "#ffffff" }}>
+                    <th style={{ textAlign: "left", padding: "5px 8px", fontWeight: "bold" }}>Scenario</th>
+                    <th style={{ textAlign: "right", padding: "5px 8px", fontWeight: "bold" }}>Est. Home Value</th>
+                    <th style={{ textAlign: "right", padding: "5px 8px", fontWeight: "bold" }}>Remaining Balance</th>
+                    <th style={{ textAlign: "right", padding: "5px 8px", fontWeight: "bold", color: "#C9A84C" }}>Total Equity</th>
+                    <th style={{ textAlign: "right", padding: "5px 8px", fontWeight: "bold" }}>From Payments</th>
+                    <th style={{ textAlign: "right", padding: "5px 8px", fontWeight: "bold" }}>From Appreciation</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {displayYears.map((idx) => (
-                    <tr key={idx} style={{ borderBottom: "1px solid #f0f0f0" }}>
-                      <td style={{ padding: "1.5px 3px", fontWeight: "bold" }}>Year {idx + 1}</td>
-                      {equityData.map((data, i) => (
-                        <React.Fragment key={i}>
-                          <td style={{ textAlign: "right", padding: "1.5px 3px", borderLeft: i > 0 ? "1px solid #e5e7eb" : "none" }}>{fmt(data[idx].appreciation)}</td>
-                          <td style={{ textAlign: "right", padding: "1.5px 3px" }}>{fmt(data[idx].principalPaid)}</td>
-                          <td style={{ textAlign: "right", padding: "1.5px 3px", fontWeight: "bold", color: "#0C2340" }}>{fmt(data[idx].totalEquity)}</td>
-                        </React.Fragment>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {/* Net Position Summary */}
-              <h2 style={{ fontSize: "9pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>Net Position at Year {yearsInHome}</h2>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7.5pt", marginBottom: "10px" }}>
-                <thead>
-                  <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-                    <th style={{ textAlign: "left", padding: "2px 3px", color: "#0C2340" }}></th>
-                    {results.map((r, i) => (
-                      <th key={i} style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>
-                        {r.termYears}-Yr {LOAN_TYPE_LABELS[r.loanType]} @ {r.rate.toFixed(3)}%
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { label: "Home Value (w/ 4.5% appreciation)", values: equityData.map((d) => fmt(d[d.length - 1]?.homeValue || 0)) },
-                    { label: "Remaining Loan Balance", values: equityData.map((d) => fmt(d[d.length - 1]?.remainingBalance || 0)) },
-                    { label: "Total Equity Position", values: equityData.map((d) => fmt(d[d.length - 1]?.totalEquity || 0)), bold: true },
-                    { label: "Total Interest Paid", values: equityData.map((d) => fmt(d[d.length - 1]?.totalInterestPaid || 0)) },
-                    { label: "Cash Invested (Down + Closing + Prepaids)", values: results.map((r) => fmt(r.cashToClose)) },
-                  ].map((row, i) => (
-                    <tr key={i} style={{ borderBottom: "1px solid #e5e7eb" }}>
-                      <td style={{ padding: "2px 3px", fontWeight: (row as any).bold ? "bold" : "normal", color: "#0C2340" }}>{row.label}</td>
-                      {row.values.map((v, j) => (
-                        <td key={j} style={{ textAlign: "right", padding: "2px 3px", fontWeight: (row as any).bold ? "bold" : "normal" }}>{v}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {/* Wealth Position at Sale */}
-              <h2 style={{ fontSize: "9pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>Wealth Position at Sale — Year {yearsInHome}</h2>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7.5pt", marginBottom: "10px" }}>
-                <thead>
-                  <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-                    <th style={{ textAlign: "left", padding: "2px 3px", color: "#0C2340" }}></th>
-                    {results.map((r, i) => (
-                      <th key={i} style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>
-                        {r.termYears}-Yr {LOAN_TYPE_LABELS[r.loanType]} @ {r.rate.toFixed(3)}%
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {(() => {
-                    const saleRows = results.map((r, idx) => {
-                      const ed = equityData[idx];
-                      const lastRow = ed[ed.length - 1];
-                      const homeVal = lastRow?.homeValue || 0;
-                      const sellingCosts = homeVal * 0.05;
-                      const remainBal = lastRow?.remainingBalance || 0;
-                      const netProceeds = homeVal - sellingCosts - remainBal;
-                      return { homeVal, sellingCosts, remainBal, netProceeds };
-                    });
-                    return [
-                      { label: "Appreciated Home Value", values: saleRows.map((s) => fmt(s.homeVal)) },
-                      { label: "Less: Selling Costs (~5%)", values: saleRows.map((s) => "-" + fmt(s.sellingCosts)) },
-                      { label: "Less: Remaining Loan Balance", values: saleRows.map((s) => "-" + fmt(s.remainBal)) },
-                      { label: "Estimated Net Proceeds at Sale", values: saleRows.map((s) => fmt(s.netProceeds)), bold: true },
-                    ].map((row, i) => (
-                      <tr key={i} style={{ borderBottom: "1px solid #e5e7eb" }}>
-                        <td style={{ padding: "2px 3px", fontWeight: (row as any).bold ? "bold" : "normal", color: (row as any).bold ? "#059669" : "#0C2340" }}>{row.label}</td>
-                        {row.values.map((v, j) => (
-                          <td key={j} style={{ textAlign: "right", padding: "2px 3px", fontWeight: (row as any).bold ? "bold" : "normal", color: (row as any).bold ? "#059669" : "inherit" }}>{v}</td>
-                        ))}
+                  {results.map((r, i) => {
+                    const s = snapshots[i];
+                    const c = CARD_COLORS_P2[i % CARD_COLORS_P2.length];
+                    const loanLabel = scenarios[i]?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
+                    return (
+                      <tr key={i} style={{ borderBottom: "1px solid #e2e8f0", backgroundColor: i % 2 === 0 ? "#f8fafc" : "#ffffff" }}>
+                        <td style={{ padding: "6px 8px", fontWeight: "bold", color: c.bg }}>
+                          {r.termYears}-Yr {loanLabel} @ {r.rate.toFixed(3)}%
+                        </td>
+                        <td style={{ padding: "6px 8px", textAlign: "right" }}>{fmt(s.homeValue)}</td>
+                        <td style={{ padding: "6px 8px", textAlign: "right", color: "#dc2626" }}>{fmt(s.remainingBalance)}</td>
+                        <td style={{ padding: "6px 8px", textAlign: "right", fontWeight: "bold", color: "#059669" }}>{fmt(s.totalEquity)}</td>
+                        <td style={{ padding: "6px 8px", textAlign: "right" }}>{fmt(s.equityFromPayments)}</td>
+                        <td style={{ padding: "6px 8px", textAlign: "right" }}>{fmt(s.equityFromAppreciation)}</td>
                       </tr>
-                    ));
-                  })()}
+                    );
+                  })}
                 </tbody>
               </table>
+            </div>
+          );
+        })()}
 
-              {/* Conditional: Investment Cash Flow OR Rent vs Own */}
-              {scenarios.some((s) => s.isInvestment) ? (
-                <>
-                  <h2 style={{ fontSize: "9pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>Investment Cash Flow Analysis</h2>
-                  <p style={{ fontSize: "7pt", color: "#666", margin: "0 0 4px 0" }}>
-                    Rental income vs. PITI + HOA expenses. Rent increases at specified annual rate. HOA increases 4%/yr.
-                    {scenarios.some((s) => s.isInvestment && s.docType === "dscr") && " DSCR scenarios include prepayment penalty terms."}
-                  </p>
-                  {/* DSCR Factor & Doc Type Summary */}
-                  <div style={{ marginBottom: "6px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                    {scenarios.map((s, idx) => {
-                      if (!s.isInvestment) return null;
-                      const r = results[idx];
-                      const price = parseFloat(s.purchasePrice) || 0;
-                      const dpPct = parseFloat(s.downPaymentPct) || 0;
-                      const loanAmt = price * (1 - dpPct / 100);
-                      const rate = parseFloat(s.rate) || 0;
-                      const term = s.termYears;
-                      const pi = monthlyPI(loanAmt, rate, term);
-                      const propTax = parseFloat(s.propertyTaxOverride) > 0
-                        ? parseFloat(s.propertyTaxOverride)
-                        : (price * parseFloat(s.propertyTaxRate) / 100) / 12;
-                      const ins = parseFloat(s.insurance) || 0;
-                      const hoa = parseFloat(s.hoa) || 0;
-                      const totalPITIHOA = pi + propTax + ins + hoa;
-                      const rent = parseFloat(s.expectedRent) || 0;
-                      const dscr = totalPITIHOA > 0 ? rent / totalPITIHOA : 0;
-                      return (
-                        <div key={idx} style={{ flex: "1", minWidth: "180px", padding: "4px 8px", backgroundColor: "#f8fafc", border: "1px solid #e5e7eb", borderRadius: "3px" }}>
-                          <p style={{ fontSize: "7.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 2px 0" }}>
-                            {r.termYears}-Yr {LOAN_TYPE_LABELS[r.loanType]} @ {r.rate.toFixed(3)}%
-                          </p>
-                          <p style={{ fontSize: "7pt", color: "#666", margin: 0 }}>
-                            Doc Type: <strong>{s.docType === "dscr" ? "DSCR" : "Full Doc"}</strong>
-                            {s.docType === "dscr" && <> | Prepay Penalty: <strong>{s.prepayPenaltyYears} yr{s.prepayPenaltyYears > 1 ? "s" : ""}</strong></>}
-                            {" | "} DSCR Factor: <strong style={{ color: dscr >= 1 ? "#059669" : "#dc2626" }}>{dscr.toFixed(3)}</strong>
-                          </p>
+        {/* ─── SECTION B: Total Cost of Ownership ─────────────────────────── */}
+        {(() => {
+          const CARD_COLORS_P2 = [
+            { bg: "#0C2340", accent: "#C9A84C", text: "#FFFFFF", subtext: "#CBD5E1", border: "#1E3A5F" },
+            { bg: "#0E4F5C", accent: "#C9A84C", text: "#FFFFFF", subtext: "#A7C5CC", border: "#1A6B7A" },
+            { bg: "#1A3A1A", accent: "#C9A84C", text: "#FFFFFF", subtext: "#A7C5A7", border: "#2A5A2A" },
+          ];
+          const cardWidth = results.length === 3 ? "32%" : "48%";
+          return (
+            <div style={{ marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "9.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 6px 0", textTransform: "uppercase" as const, letterSpacing: "0.04em" }}>
+                B. Total Cost of Ownership — {yearsInHome} Years
+              </h2>
+              <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+                {results.map((r, i) => {
+                  const c = CARD_COLORS_P2[i % CARD_COLORS_P2.length];
+                  const loanLabel = scenarios[i]?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
+                  const totalPaid = r.monthly.totalPITI * 12 * yearsInHome;
+                  return (
+                    <div key={i} style={{ width: cardWidth, backgroundColor: c.bg, borderRadius: "6px", padding: "12px 14px", color: c.text, border: `1px solid ${c.border}`, boxSizing: "border-box" as const, textAlign: "center" as const }}>
+                      <p style={{ fontSize: "7pt", fontWeight: "bold", color: c.accent, textTransform: "uppercase" as const, letterSpacing: "0.08em", margin: "0 0 3px 0" }}>
+                        Option {i + 1}
+                      </p>
+                      <p style={{ fontSize: "9pt", fontWeight: "bold", color: c.text, margin: "0 0 2px 0" }}>
+                        {r.termYears}-Yr {loanLabel}
+                      </p>
+                      <p style={{ fontSize: "8pt", color: c.accent, margin: "0 0 8px 0" }}>{r.rate.toFixed(3)}%</p>
+                      <p style={{ fontSize: "7pt", color: c.subtext, margin: "0 0 2px 0" }}>Total Payments ({yearsInHome} yrs)</p>
+                      <p style={{ fontSize: "14pt", fontWeight: "bold", color: c.accent, margin: "0 0 4px 0" }}>{fmt(totalPaid)}</p>
+                      <p style={{ fontSize: "6.5pt", color: c.subtext, margin: 0 }}>{fmtExact(r.monthly.totalPITI)}/mo × {yearsInHome * 12} payments</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* ─── SECTION C: Equity Composition Bar Chart ─────────────────────── */}
+        {(() => {
+          const snapshots = results.map((r) => {
+            const homeValue = r.purchasePrice * Math.pow(1.03, yearsInHome);
+            const monthlyRate = r.rate / 100 / 12;
+            const totalMonths = r.termYears * 12;
+            const payment = monthlyRate > 0
+              ? r.totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1)
+              : r.totalLoanAmount / totalMonths;
+            let balance = r.totalLoanAmount;
+            const payMonths = Math.min(yearsInHome * 12, totalMonths);
+            for (let m = 0; m < payMonths; m++) {
+              const interest = balance * monthlyRate;
+              const principal = Math.min(payment - interest, balance);
+              balance = Math.max(0, balance - principal);
+            }
+            const equityFromPayments = r.totalLoanAmount - balance;
+            const equityFromAppreciation = homeValue - r.purchasePrice;
+            return { equityFromPayments, equityFromAppreciation, total: equityFromPayments + equityFromAppreciation };
+          });
+          const maxTotal = Math.max(...snapshots.map(s => s.total), 1);
+          const CARD_COLORS_P2 = [
+            { bg: "#0C2340", accent: "#C9A84C" },
+            { bg: "#0E4F5C", accent: "#C9A84C" },
+            { bg: "#1A3A1A", accent: "#C9A84C" },
+          ];
+          return (
+            <div style={{ marginBottom: "14px" }}>
+              <h2 style={{ fontSize: "9.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 8px 0", textTransform: "uppercase" as const, letterSpacing: "0.04em" }}>
+                C. Equity Composition at Year {yearsInHome}
+              </h2>
+              {/* Legend */}
+              <div style={{ display: "flex", gap: "16px", marginBottom: "8px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                  <div style={{ width: "12px", height: "12px", backgroundColor: "#0C2340", borderRadius: "2px" }} />
+                  <span style={{ fontSize: "7pt", color: "#555" }}>Principal Paid Down</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                  <div style={{ width: "12px", height: "12px", backgroundColor: "#C9A84C", borderRadius: "2px" }} />
+                  <span style={{ fontSize: "7pt", color: "#555" }}>Appreciation</span>
+                </div>
+              </div>
+              {/* Bars */}
+              <div style={{ display: "flex", flexDirection: "column" as const, gap: "8px" }}>
+                {results.map((r, i) => {
+                  const s = snapshots[i];
+                  const c = CARD_COLORS_P2[i % CARD_COLORS_P2.length];
+                  const loanLabel = scenarios[i]?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
+                  const totalBarPct = (s.total / maxTotal) * 100;
+                  const payPct = s.total > 0 ? (s.equityFromPayments / s.total) * 100 : 50;
+                  const appPct = 100 - payPct;
+                  return (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <div style={{ width: "140px", flexShrink: 0, fontSize: "7pt", color: "#0C2340", fontWeight: "bold" }}>
+                        {r.termYears}-Yr {loanLabel}
+                      </div>
+                      <div style={{ flex: 1, backgroundColor: "#f1f5f9", borderRadius: "3px", height: "20px", overflow: "hidden" }}>
+                        <div style={{ width: `${totalBarPct}%`, height: "100%", display: "flex" }}>
+                          <div style={{ width: `${payPct}%`, backgroundColor: c.bg, height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            {payPct > 15 && <span style={{ fontSize: "6.5pt", color: "#fff", fontWeight: "bold", whiteSpace: "nowrap" as const }}>{fmt(s.equityFromPayments)}</span>}
+                          </div>
+                          <div style={{ width: `${appPct}%`, backgroundColor: c.accent, height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            {appPct > 15 && <span style={{ fontSize: "6.5pt", color: "#0C2340", fontWeight: "bold", whiteSpace: "nowrap" as const }}>{fmt(s.equityFromAppreciation)}</span>}
+                          </div>
                         </div>
-                      );
-                    })}
-                  </div>
-                  {/* Cash Flow Table */}
-                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7pt", marginBottom: "10px" }}>
-                    <thead>
-                      <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-                        <th style={{ textAlign: "left", padding: "2px 3px", color: "#0C2340" }}>Year</th>
-                        {results.map((r, i) => {
-                          if (!scenarios[i].isInvestment) return null;
-                          return (
-                            <React.Fragment key={i}>
-                              <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340", borderLeft: i > 0 ? "1px solid #e5e7eb" : "none" }}>Rent/mo</th>
-                              <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Expense/mo</th>
-                              <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Net/mo</th>
-                              <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Annual CF</th>
-                              <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Cumulative</th>
-                            </React.Fragment>
-                          );
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {(() => {
-                        const milestoneYrs = [1, 2, 3, 5, 7, 10, 15, 20].filter((yr) => yr <= yearsInHome);
-                        if (!milestoneYrs.includes(yearsInHome)) milestoneYrs.push(yearsInHome);
-                        milestoneYrs.sort((a, b) => a - b);
-                        // Track cumulative per scenario
-                        const cumulatives = results.map(() => 0);
-                        let prevYr = 0;
-                        return milestoneYrs.map((yr) => {
-                          const row = (
-                            <tr key={yr} style={{ borderBottom: "1px solid #f0f0f0" }}>
-                              <td style={{ padding: "1.5px 3px", fontWeight: "bold" }}>Yr {yr}</td>
-                              {results.map((r, i) => {
-                                if (!scenarios[i].isInvestment) return null;
-                                const s = scenarios[i];
-                                const rentIncrease = (parseFloat(s.annualRentIncrease) || 3) / 100;
-                                const baseRent = parseFloat(s.expectedRent) || 0;
-                                const rentAtYear = baseRent * Math.pow(1 + rentIncrease, yr - 1);
-                                const hoaAtYear = r.monthly.hoa * Math.pow(1.04, yr - 1);
-                                const expense = r.monthly.principalInterest + r.monthly.propertyTax + r.monthly.insurance + hoaAtYear + r.monthly.mortgageInsurance;
-                                const netMonthly = rentAtYear - expense;
-                                // Accumulate from prevYr+1 to yr
-                                for (let y = prevYr + 1; y <= yr; y++) {
-                                  const rent = baseRent * Math.pow(1 + rentIncrease, y - 1);
-                                  const hoa = r.monthly.hoa * Math.pow(1.04, y - 1);
-                                  const exp = r.monthly.principalInterest + r.monthly.propertyTax + r.monthly.insurance + hoa + r.monthly.mortgageInsurance;
-                                  cumulatives[i] += (rent - exp) * 12;
-                                }
-                                return (
-                                  <React.Fragment key={i}>
-                                    <td style={{ textAlign: "right", padding: "1.5px 3px", borderLeft: i > 0 ? "1px solid #e5e7eb" : "none" }}>{fmtExact(rentAtYear)}</td>
-                                    <td style={{ textAlign: "right", padding: "1.5px 3px" }}>{fmtExact(expense)}</td>
-                                    <td style={{ textAlign: "right", padding: "1.5px 3px", fontWeight: "bold", color: netMonthly >= 0 ? "#059669" : "#dc2626" }}>{netMonthly >= 0 ? "+" : ""}{fmtExact(netMonthly)}</td>
-                                    <td style={{ textAlign: "right", padding: "1.5px 3px", color: netMonthly >= 0 ? "#059669" : "#dc2626" }}>{netMonthly >= 0 ? "+" : ""}{fmt(netMonthly * 12)}</td>
-                                    <td style={{ textAlign: "right", padding: "1.5px 3px", fontWeight: "bold", color: cumulatives[i] >= 0 ? "#059669" : "#dc2626" }}>{cumulatives[i] >= 0 ? "+" : ""}{fmt(cumulatives[i])}</td>
-                                  </React.Fragment>
-                                );
-                              })}
-                            </tr>
-                          );
-                          prevYr = yr;
-                          return row;
-                        });
-                      })()}
-                    </tbody>
-                  </table>
-                  <p style={{ fontSize: "7pt", color: "#666", margin: "0 0 6px 0", fontStyle: "italic" }}>
-                    Net cash flow = expected rent minus full PITI + HOA. Positive values indicate rental income exceeds carrying costs.
-                    DSCR Factor = Monthly Rent ÷ (PITI + HOA). A factor ≥ 1.000 means rental income covers the full payment.
-                  </p>
-                </>
-              ) : includeRentInPdf ? (
-                <>
-                  <h2 style={{ fontSize: "9pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>Monthly Cost: Owning vs. Renting</h2>
-                  <p style={{ fontSize: "7pt", color: "#666", margin: "0 0 4px 0" }}>
-                    Rent: {comparableRent ? `$${Number(comparableRent).toLocaleString()}/mo (manual)` : `0.45% of purchase price ($${Math.round(results[0].purchasePrice * 0.0045).toLocaleString()}/mo)`}, appreciating 4%/yr. HOA increases 4%/yr. Ownership includes 0.5%/yr maintenance. Tax savings at 24% bracket (interest capped at $750K loan, + property taxes).
-                  </p>
-                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7pt", marginBottom: "10px" }}>
-                    <thead>
-                      <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-                        <th style={{ textAlign: "left", padding: "2px 3px", color: "#0C2340" }}>Year</th>
-                        {results.map((r, i) => (
-                          <React.Fragment key={i}>
-                            <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340", borderLeft: i > 0 ? "1px solid #e5e7eb" : "none" }}>PITI+HOA</th>
-                            <th style={{ textAlign: "right", padding: "2px 3px", color: "#059669" }}>Tax Sav.</th>
-                            <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Eff. Own</th>
-                            <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Rent</th>
-                            <th style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>Savings</th>
-                          </React.Fragment>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {(() => {
-                        const milestoneYrs = [1, 3, 5, 7, 10, 15, 20].filter((yr) => yr <= yearsInHome);
-                        if (!milestoneYrs.includes(yearsInHome)) milestoneYrs.push(yearsInHome);
-                        milestoneYrs.sort((a, b) => a - b);
-                        return milestoneYrs.map((yr) => (
-                          <tr key={yr} style={{ borderBottom: "1px solid #f0f0f0" }}>
-                            <td style={{ padding: "1.5px 3px", fontWeight: "bold" }}>Yr {yr}</td>
-                            {results.map((r, i) => {
-                              const hoaAtYear = r.monthly.hoa * Math.pow(1.04, yr - 1);
-                              const monthlyMaintenance = r.purchasePrice * 0.005 / 12;
-                              const ownCostGross = r.monthly.principalInterest + r.monthly.propertyTax + r.monthly.insurance + hoaAtYear + r.monthly.mortgageInsurance + monthlyMaintenance;
-                              const amortRow = r.amortization[yr - 1];
-                              const annualInterest = amortRow ? amortRow.totalInterest : r.monthly.principalInterest * 12 * 0.8;
-                              const deductibleInterest = r.totalLoanAmount > 750000
-                                ? annualInterest * (750000 / r.totalLoanAmount)
-                                : annualInterest;
-                              const annualPropertyTax = r.monthly.propertyTax * 12;
-                              const monthlyTaxSavings = (deductibleInterest + annualPropertyTax) * 0.24 / 12;
-                              const effectiveOwnCost = ownCostGross - monthlyTaxSavings;
-                              const baseRent = comparableRent ? Number(comparableRent) : r.purchasePrice * 0.0045;
-                              const rentAtYear = baseRent * Math.pow(1.04, yr - 1);
-                              const savings = rentAtYear - effectiveOwnCost;
-                              return (
-                                <React.Fragment key={i}>
-                                  <td style={{ textAlign: "right", padding: "1.5px 3px", borderLeft: i > 0 ? "1px solid #e5e7eb" : "none" }}>{fmtExact(ownCostGross)}</td>
-                                  <td style={{ textAlign: "right", padding: "1.5px 3px", color: "#059669" }}>-{fmtExact(monthlyTaxSavings)}</td>
-                                  <td style={{ textAlign: "right", padding: "1.5px 3px" }}>{fmtExact(effectiveOwnCost)}</td>
-                                  <td style={{ textAlign: "right", padding: "1.5px 3px" }}>{fmtExact(rentAtYear)}</td>
-                                  <td style={{ textAlign: "right", padding: "1.5px 3px", fontWeight: "bold", color: savings > 0 ? "#059669" : "#dc2626" }}>{savings > 0 ? "+" : ""}{fmtExact(savings)}</td>
-                                </React.Fragment>
-                              );
-                            })}
-                          </tr>
-                        ));
-                      })()}
-                    </tbody>
-                  </table>
-                  <p style={{ fontSize: "7pt", color: "#666", margin: "0 0 6px 0", fontStyle: "italic" }}>
-                    Positive savings = owning costs less than renting after tax benefits. Ownership includes 0.5%/yr maintenance ({results[0] ? fmtExact(results[0].purchasePrice * 0.005 / 12) : ""}/mo). Fixed-rate P&I stays constant while rent climbs 4% annually. Tax savings: 24% bracket; mortgage interest deduction capped at $750K loan per IRC §163(h); property taxes fully deductible.
-                  </p>
-                </>
-              ) : null}
-
-              {/* Amortization Snapshot */}
-              <h2 style={{ fontSize: "9pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>Amortization Snapshot — Remaining Balance</h2>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7.5pt", marginBottom: "10px" }}>
-                <thead>
-                  <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-                    <th style={{ textAlign: "left", padding: "2px 3px", color: "#0C2340" }}>Milestone</th>
-                    {results.map((r, i) => (
-                      <th key={i} style={{ textAlign: "right", padding: "2px 3px", color: "#0C2340" }}>
-                        {r.termYears}-Yr {LOAN_TYPE_LABELS[r.loanType]} @ {r.rate.toFixed(3)}%
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[1, 3, 5, 10, 15, 20].filter((yr) => yr <= results[0]?.termYears).map((yr) => (
-                    <tr key={yr} style={{ borderBottom: "1px solid #f0f0f0" }}>
-                      <td style={{ padding: "1.5px 3px" }}>Year {yr}</td>
-                      {results.map((r, i) => {
-                        const row = r.amortization[yr - 1];
-                        return <td key={i} style={{ textAlign: "right", padding: "1.5px 3px" }}>{row ? fmt(row.endBalance) : "—"}</td>;
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </>
+                      </div>
+                      <div style={{ width: "70px", flexShrink: 0, textAlign: "right" as const, fontSize: "8pt", fontWeight: "bold", color: "#059669" }}>
+                        {fmt(s.total)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           );
         })()}
 
@@ -1810,7 +1667,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
         <div style={{ marginTop: "10px", padding: "6px 8px", border: "1px solid #ccc", borderRadius: "3px", fontSize: "7pt", color: "#666" }}>
           <p style={{ margin: "0 0 3px 0", fontWeight: "bold" }}>Assumptions & Disclaimer</p>
           <p style={{ margin: 0 }}>
-            Appreciation rate of 4.5% annually is based on Oahu's long-term historical average and is not guaranteed. Actual home values may vary.
+            Appreciation rate of 3% annually is a conservative estimate and is not guaranteed. Actual home values may vary.
             These calculations are estimates for educational purposes only. Not a commitment to lend.
             Contact {LENDER.name} (NMLS #{LENDER.nmls}) at {LENDER.phone} or {LENDER.email} for a personalized quote.
             {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Lender.
@@ -1845,7 +1702,7 @@ export default function LoanCompare() {
       const decoded = deserializeScenarios(dataParam);
       if (decoded) return decoded.yearsInHome;
     }
-    return 5;
+    return 8;
   });
 
   const [copied, setCopied] = useState(false);
