@@ -1194,7 +1194,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                     <p style={{ margin: "0 0 1px 0", fontWeight: "bold", color: "#0C2340", fontSize: "8pt" }}>{scenarios[0].propertyAddress}</p>
                   )}
                   {results[0] && (
-                    <p style={{ margin: 0 }}>Purchase Price: <strong style={{ color: "#0C2340" }}>{fmt(results[0].purchasePrice)}</strong> &nbsp;|&nbsp; Page 1 of 3</p>
+                    <p style={{ margin: 0 }}>Purchase Price: <strong style={{ color: "#0C2340" }}>{fmt(results[0].purchasePrice)}</strong> &nbsp;|&nbsp; Page 1 of 2</p>
                   )}
                 </div>
               </div>
@@ -1226,34 +1226,62 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                       <p style={{ fontSize: "9pt", color: c.accent, margin: 0, fontWeight: "bold" }}>{r.rate.toFixed(3)}% Note Rate &nbsp;·&nbsp; {pct(r.apr)} APR</p>
                     </div>
                     {/* Key Numbers */}
-                    <div style={{ display: "flex", flexDirection: "column" as const, gap: "5px" }}>
+                    <div style={{ display: "flex", flexDirection: "column" as const, gap: "4px" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Monthly P&amp;I</span>
-                        <span style={{ fontSize: "10pt", fontWeight: "bold", color: c.text }}>{fmtExact(r.monthly.principalInterest)}</span>
+                        <span style={{ fontSize: "9pt", fontWeight: "bold", color: c.text }}>{fmtExact(r.monthly.principalInterest)}</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                        <span style={{ fontSize: "7pt", color: c.subtext }}>Property Taxes</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmtExact(r.monthly.propertyTax)}</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                        <span style={{ fontSize: "7pt", color: c.subtext }}>Homeowner's Insurance</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmtExact(r.monthly.insurance)}</span>
+                      </div>
+                      {r.monthly.hoa > 0 && (
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                          <span style={{ fontSize: "7pt", color: c.subtext }}>HOA Dues</span>
+                          <span style={{ fontSize: "8pt", color: c.text }}>{fmtExact(r.monthly.hoa)}</span>
+                        </div>
+                      )}
+                      {r.monthly.mortgageInsurance > 0 && (
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                          <span style={{ fontSize: "7pt", color: c.subtext }}>PMI/Mortgage Insurance</span>
+                          <span style={{ fontSize: "8pt", color: c.text }}>{fmtExact(r.monthly.mortgageInsurance)}</span>
+                        </div>
+                      )}
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Total Monthly (PITI+HOA)</span>
-                        <span style={{ fontSize: "11pt", fontWeight: "bold", color: c.accent }}>{fmtExact(r.monthly.totalPITI)}</span>
+                        <span style={{ fontSize: "10pt", fontWeight: "bold", color: c.accent }}>{fmtExact(r.monthly.totalPITI)}</span>
                       </div>
                       <div style={{ height: "1px", backgroundColor: c.border, margin: "2px 0" }} />
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Purchase Price</span>
-                        <span style={{ fontSize: "8.5pt", color: c.text }}>{fmt(r.purchasePrice)}</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.purchasePrice)}</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Down Payment</span>
-                        <span style={{ fontSize: "8.5pt", color: c.text }}>{fmt(r.downPayment)}</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.downPayment)}</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Loan Amount</span>
-                        <span style={{ fontSize: "8.5pt", color: c.text }}>{fmt(r.totalLoanAmount)}</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.totalLoanAmount)}</span>
                       </div>
                       <div style={{ height: "1px", backgroundColor: c.border, margin: "2px 0" }} />
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Discount Points</span>
-                        <span style={{ fontSize: "8.5pt", color: c.text }}>
+                        <span style={{ fontSize: "8pt", color: c.text }}>
                           {r.closingCosts.discountPointsCost > 0 ? `${fmt(r.closingCosts.discountPointsCost)} (${r.discountPoints.toFixed(3)}%)` : "None"}
                         </span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                        <span style={{ fontSize: "7pt", color: c.subtext }}>Closing Costs</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.closingCosts.total - r.closingCosts.discountPointsCost)}</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                        <span style={{ fontSize: "7pt", color: c.subtext }}>Prepaid Items</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.prepaids.total)}</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Cash to Close</span>
@@ -1289,6 +1317,12 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
               })}
             </div>
 
+            {/* Closing Costs & Prepaids Footnote */}
+            <div style={{ padding: "5px 8px", backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "3px", marginBottom: "10px" }}>
+              <p style={{ margin: 0, fontSize: "6.5pt", color: "#64748b", lineHeight: 1.4 }}>
+                Closing costs include lender fees, appraisal, title &amp; escrow fees, and HOA transfer fees. Prepaid items include upfront property taxes, upfront insurance, HOA dues, and mortgage interest.
+              </p>
+            </div>
 
             {/* Points Recovery / Breakeven Analysis */}
             {/* Points Recovery Analysis (Print) — Prominent Section */}
@@ -1414,210 +1448,9 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
         );
       })()}
 
-      {/* ═══ PAGE 2: Detailed Breakdown (was Page 1) ═══ */}
-      <div style={{ pageBreakBefore: "always", paddingTop: "4px" }}>
-      {/* Header */}
-      <div style={{ borderBottom: "1.5px solid #0C2340", paddingBottom: "4px", marginBottom: "5px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-          <div>
-            <h1 style={{ fontSize: "12pt", fontWeight: "bold", color: "#0C2340", margin: 0 }}>Loan Comparison</h1>
-            <p style={{ fontSize: "7.5pt", color: "#666", margin: "1px 0 0 0" }}>
-              Prepared by {LENDER.name} | NMLS #{LENDER.nmls} | {LENDER.company}
-            </p>
-          </div>
-          <div style={{ textAlign: "right", fontSize: "7pt", color: "#666" }}>
-            <p style={{ margin: 0 }}>{LENDER.phone}</p>
-            <p style={{ margin: 0 }}>{LENDER.email}</p>
-            <p style={{ margin: "2px 0 0 0", color: "#999" }}>Page 2 of 3</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Property Address */}
-      {scenarios[0]?.propertyAddress && (
-        <div style={{ marginBottom: "4px", fontSize: "7.5pt", color: "#333" }}>
-          <p style={{ margin: 0 }}><strong>Property:</strong> {scenarios[0].propertyAddress}</p>
-        </div>
-      )}
-
-      {/* Comparison Table */}
-      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7.5pt", marginBottom: "5px" }}>
-        <thead>
-          <tr style={{ borderBottom: "1.5px solid #0C2340" }}>
-            <th style={{ textAlign: "left", padding: "1.5px 3px", color: "#0C2340", fontSize: "8pt" }}></th>
-            {results.map((r, i) => (
-              <th key={i} style={{ textAlign: "right", padding: "1.5px 3px", color: "#0C2340", fontWeight: "bold", fontSize: "8pt" }}>
-                {r.termYears}-Year {LOAN_TYPE_LABELS[r.loanType]}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {[
-            { label: "Loan Type", values: results.map((r, i) => scenarios[i]?.isInvestment === true && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType]) },
-            { label: "Purchase Price", values: results.map((r) => fmt(r.purchasePrice)) },
-            { label: "Down Payment", values: results.map((r) => fmt(r.downPayment)) },
-            { label: "Loan Amount", values: results.map((r) => fmt(r.totalLoanAmount)) },
-            { label: "Note Rate", values: results.map((r) => r.rate.toFixed(3) + "%") },
-            { label: "APR", values: results.map((r) => pct(r.apr)) },
-            { label: "MONTHLY PAYMENT", values: results.map(() => ""), bold: true },
-            { label: "Principal & Interest", values: results.map((r) => fmtExact(r.monthly.principalInterest)) },
-            { label: "Property Tax", values: results.map((r) => fmtExact(r.monthly.propertyTax)) },
-            { label: "Insurance", values: results.map((r) => fmtExact(r.monthly.insurance)) },
-            { label: "HOA", values: results.map((r) => r.monthly.hoa > 0 ? fmtExact(r.monthly.hoa) : "\u2014") },
-            { label: "Mortgage Insurance", values: results.map((r) => r.monthly.mortgageInsurance > 0 ? fmtExact(r.monthly.mortgageInsurance) : "\u2014") },
-            { label: "Total PITI", values: results.map((r) => fmtExact(r.monthly.totalPITI)), bold: true },
-            { label: "COSTS", values: results.map(() => ""), bold: true },
-            { label: "Discount Points", values: results.map((r) => r.closingCosts.discountPointsCost > 0 ? fmt(r.closingCosts.discountPointsCost) + " (" + r.discountPoints.toFixed(3) + "%)" : "\u2014") },
-            { label: "Other Closing Costs (lender fees, appraisal, title & escrow)", values: results.map((r) => fmt(r.closingCosts.total - r.closingCosts.discountPointsCost - r.buydownCost + r.closingCosts.lenderCredits)) },
-            { label: "Lender Credits", values: results.map((r) => r.closingCosts.lenderCredits > 0 ? "-" + fmt(r.closingCosts.lenderCredits) : "\u2014") },
-            ...(results.some((r) => r.buydownCost > 0) ? [{ label: "Temporary Buydown Cost", values: results.map((r) => r.buydownCost > 0 ? fmt(r.buydownCost) + " (" + r.buydownType + ")" : "\u2014") }] : []),
-            { label: "Total Closing Costs", values: results.map((r) => fmt(r.closingCosts.total)), bold: true },
-            { label: "Prepaids (property taxes, insurance, HOA dues & mtg interest)", values: results.map((r) => fmt(r.prepaids.total)) },
-            ...(results.some((r) => r.sellerCredit > 0) ? [{ label: "Seller Credit", values: results.map((r) => r.sellerCredit > 0 ? "-" + fmt(r.sellerCredit) : "\u2014") }] : []),
-            { label: "Cash to Close", values: results.map((r) => fmt(r.cashToClose)), bold: true },
-          ].map((row, i) => (
-            <tr key={i} style={{ borderBottom: row.label ? "1px solid #e5e7eb" : "none" }}>
-              <td style={{ padding: "1px 3px", fontWeight: row.bold ? "bold" : "normal", color: "#0C2340", fontSize: row.bold ? "7.5pt" : "7.5pt" }}>
-                {row.label}
-              </td>
-              {row.values.map((v, j) => (
-                <td key={j} style={{ textAlign: "right", padding: "1px 3px", fontWeight: row.bold ? "bold" : "normal", fontSize: "7.5pt" }}>
-                  {v}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Temporary Buydown Schedule (Print) — shown BEFORE points recovery when buydowns present */}
-      {results.some((r) => r.buydownType !== "none" && r.buydownSchedule.length > 0) && (
-        <div style={{ marginTop: "6px", padding: "6px 8px", border: "1.5px solid #0891b2", borderRadius: "4px", backgroundColor: "#f0fdfa" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "4px" }}>
-            <div style={{ width: "14px", height: "14px", backgroundColor: "#0891b2", borderRadius: "3px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "white", fontSize: "8pt", fontWeight: "bold" }}>%</span>
-            </div>
-            <h2 style={{ fontSize: "8.5pt", fontWeight: "bold", color: "#0C2340", margin: 0 }}>Temporary Buydown Schedule</h2>
-          </div>
-          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-            {results.map((r, idx) => {
-              if (r.buydownType === "none" || r.buydownSchedule.length === 0) return null;
-              return (
-                <div key={idx} style={{ flex: "1", minWidth: "180px", padding: "4px 6px", backgroundColor: "white", border: "1px solid #e5e7eb", borderRadius: "3px" }}>
-                  <p style={{ fontSize: "7.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 3px 0" }}>
-                    Scenario {idx + 1}: {r.buydownType.toUpperCase()} Buydown at {r.rate.toFixed(3)}%
-                  </p>
-                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7pt" }}>
-                    <thead>
-                      <tr style={{ borderBottom: "1px solid #d1d5db" }}>
-                        <th style={{ textAlign: "left", padding: "1px 3px", color: "#666" }}>Period</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", color: "#666" }}>Rate</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", color: "#666" }}>P&I</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", color: "#666" }}>Savings/mo</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {r.buydownSchedule.map((s) => (
-                        <tr key={s.year} style={{ borderBottom: "1px solid #f0f0f0" }}>
-                          <td style={{ padding: "1px 3px" }}>{s.savings > 0 ? `Year ${s.year}` : `Year ${s.year}+`}</td>
-                          <td style={{ padding: "1px 3px", textAlign: "right" }}>{s.rate.toFixed(3)}%</td>
-                          <td style={{ padding: "1px 3px", textAlign: "right" }}>{fmtExact(s.pi)}</td>
-                          <td style={{ padding: "1px 3px", textAlign: "right", color: s.savings > 0 ? "#059669" : "#666" }}>
-                            {s.savings > 0 ? fmtExact(s.savings) : "\u2014"}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div style={{ marginTop: "3px", paddingTop: "2px", borderTop: "1px solid #e5e7eb", display: "flex", justifyContent: "space-between", fontSize: "7.5pt" }}>
-                    <span style={{ color: "#666" }}>Total Buydown Cost:</span>
-                    <span style={{ fontWeight: "bold", color: "#0891b2" }}>{fmt(r.buydownCost)}</span>
-                  </div>
-                  {r.sellerCredit > 0 && (
-                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: "7.5pt", marginTop: "1px" }}>
-                      <span style={{ color: "#666" }}>Seller Credit Applied:</span>
-                      <span style={{ fontWeight: "bold", color: "#059669" }}>-{fmt(Math.min(r.sellerCredit, r.buydownCost))}</span>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-
-      {/* Temporary Buydown Schedule (Print) — duplicate removed, moved above points recovery */}
-      {false && results.some((r) => r.buydownType !== "none" && r.buydownSchedule.length > 0) && (
-        <div style={{ marginTop: "6px", padding: "6px 8px", border: "1.5px solid #0891b2", borderRadius: "4px", backgroundColor: "#f0fdfa" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "4px" }}>
-            <div style={{ width: "14px", height: "14px", backgroundColor: "#0891b2", borderRadius: "3px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "white", fontSize: "8pt", fontWeight: "bold" }}>%</span>
-            </div>
-            <h2 style={{ fontSize: "8.5pt", fontWeight: "bold", color: "#0C2340", margin: 0 }}>Temporary Buydown Schedule</h2>
-          </div>
-          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-            {results.map((r, idx) => {
-              if (r.buydownType === "none" || r.buydownSchedule.length === 0) return null;
-              return (
-                <div key={idx} style={{ flex: "1", minWidth: "180px", padding: "4px 6px", backgroundColor: "white", border: "1px solid #e5e7eb", borderRadius: "3px" }}>
-                  <p style={{ fontSize: "7.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 3px 0" }}>
-                    Scenario {idx + 1}: {r.buydownType.toUpperCase()} Buydown at {r.rate.toFixed(3)}%
-                  </p>
-                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "7pt" }}>
-                    <thead>
-                      <tr style={{ borderBottom: "1px solid #d1d5db" }}>
-                        <th style={{ textAlign: "left", padding: "1px 3px", color: "#666" }}>Period</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", color: "#666" }}>Rate</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", color: "#666" }}>P&I</th>
-                        <th style={{ textAlign: "right", padding: "1px 3px", color: "#666" }}>Savings/mo</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {r.buydownSchedule.map((s) => (
-                        <tr key={s.year} style={{ borderBottom: "1px solid #f0f0f0" }}>
-                          <td style={{ padding: "1px 3px" }}>{s.savings > 0 ? `Year ${s.year}` : `Year ${s.year}+`}</td>
-                          <td style={{ padding: "1px 3px", textAlign: "right" }}>{s.rate.toFixed(3)}%</td>
-                          <td style={{ padding: "1px 3px", textAlign: "right" }}>{fmtExact(s.pi)}</td>
-                          <td style={{ padding: "1px 3px", textAlign: "right", color: s.savings > 0 ? "#059669" : "#666" }}>
-                            {s.savings > 0 ? fmtExact(s.savings) : "\u2014"}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div style={{ marginTop: "3px", paddingTop: "2px", borderTop: "1px solid #e5e7eb", display: "flex", justifyContent: "space-between", fontSize: "7.5pt" }}>
-                    <span style={{ color: "#666" }}>Total Buydown Cost:</span>
-                    <span style={{ fontWeight: "bold", color: "#0891b2" }}>{fmt(r.buydownCost)}</span>
-                  </div>
-                  {r.sellerCredit > 0 && (
-                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: "7.5pt", marginTop: "1px" }}>
-                      <span style={{ color: "#666" }}>Seller Credit Applied:</span>
-                      <span style={{ fontWeight: "bold", color: "#059669" }}>-{fmt(Math.min(r.sellerCredit, r.buydownCost))}</span>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* Disclaimer */}
-      <div style={{ marginTop: "6px", padding: "4px 6px", border: "1px solid #ccc", borderRadius: "3px", fontSize: "6.5pt", color: "#666" }}>
-        <p style={{ margin: "0 0 2px 0", fontWeight: "bold", fontSize: "7pt" }}>Disclaimer</p>
-        <p style={{ margin: 0 }}>
-          These calculations are estimates for educational purposes only. Not a commitment to lend. Actual rates, fees, and terms may vary.
-          Contact {LENDER.name} (NMLS #{LENDER.nmls}) at {LENDER.phone} or {LENDER.email} for a personalized quote.
-          {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Lender.
-        </p>
-      </div>
-      </div>
-
-      {/* ═══ PAGE 3: Equity Building & Value-Add Analysis ═══ */}
+      {/* ═══ PAGE 2: Equity Building & Value-Add Analysis ═══ */}
       <div style={{ pageBreakBefore: "always", paddingTop: "12px" }}>
-        {/* Page 3 Header */}
+        {/* Page 2 Header */}
         <div style={{ borderBottom: "1.5px solid #0C2340", paddingBottom: "6px", marginBottom: "10px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
             <div>
@@ -1639,7 +1472,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
             <p style={{ margin: "0 0 2px 0" }}><strong>Property:</strong> {scenarios[0].propertyAddress}</p>
           )}
           <p style={{ margin: "0 0 2px 0" }}><strong>Purchase Price:</strong> {fmt(results[0]?.purchasePrice || 0)} | <strong>Appreciation Assumption:</strong> 4.5% annually | <strong>Time Horizon:</strong> {yearsInHome} years</p>
-          <p style={{ margin: 0, fontSize: "7pt", color: "#666" }}>Page 3 of 3</p>
+          <p style={{ margin: 0, fontSize: "7pt", color: "#666" }}>Page 2 of 2</p>
         </div>
 
         {/* Equity Growth Table */}
