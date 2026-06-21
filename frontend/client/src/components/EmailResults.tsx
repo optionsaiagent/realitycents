@@ -2,10 +2,11 @@
  * Pacific Modernism — "Email Yourself These Results" Lead Capture
  * Lightweight, non-intrusive component shown after calculator results.
  * Captures name + email + calculator context for lead nurturing.
+ * Re-opens automatically when scenario data changes after sending.
  */
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
-import { Mail, CheckCircle, Send } from "lucide-react";
+import { Mail, CheckCircle, Send, RefreshCw } from "lucide-react";
 
 export interface EmailScenario {
   label: string;
@@ -34,11 +35,25 @@ export default function EmailResults({ calculator, resultSummary, scenarios, sha
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const lastSentSummaryRef = useRef<string | undefined>(undefined);
 
   const captureLeadMutation = trpc.leads.captureCalculatorLead.useMutation({
-    onSuccess: () => setSubmitted(true),
-    onError: () => setSubmitted(true), // Graceful degradation
+    onSuccess: () => {
+      setSubmitted(true);
+      lastSentSummaryRef.current = resultSummary;
+    },
+    onError: () => {
+      setSubmitted(true);
+      lastSentSummaryRef.current = resultSummary;
+    },
   });
+
+  // Re-open the form when scenario data changes after a successful send
+  useEffect(() => {
+    if (submitted && resultSummary && lastSentSummaryRef.current && resultSummary !== lastSentSummaryRef.current) {
+      setSubmitted(false);
+    }
+  }, [resultSummary, submitted]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,9 +72,13 @@ export default function EmailResults({ calculator, resultSummary, scenarios, sha
     return (
       <div className="mt-8 bg-teal/5 border border-teal/20 rounded-xl p-6 text-center">
         <CheckCircle className="w-8 h-8 text-teal mx-auto mb-3" />
-        <p className="font-body font-semibold text-navy text-sm">Results saved!</p>
+        <p className="font-body font-semibold text-navy text-sm">Results sent!</p>
         <p className="text-xs text-muted-foreground mt-1">
           Check your inbox for a copy of this breakdown.
+        </p>
+        <p className="text-xs text-muted-foreground mt-3 flex items-center justify-center gap-1">
+          <RefreshCw className="w-3 h-3" />
+          Make changes above and this will re-open to send updated results.
         </p>
       </div>
     );
