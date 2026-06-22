@@ -18,17 +18,17 @@ export interface ArticleSchemaMeta {
 
 export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
   "dti-killing-hawaii-mortgage-applications": {
-    wordCount: 1100,
-    keywords: "DTI ratio mortgage Hawaii, Debt-to-Income Hawaii, front-end vs back-end DTI, student loans mortgage Hawaii, VA loan residual income, DTI creep mortgage, grossing up BAH, how to lower DTI for mortgage",
+    wordCount: 1200,
+    keywords: "DTI ratio mortgage Hawaii, Debt-to-Income Hawaii, front-end vs back-end DTI, student loans mortgage Hawaii, VA loan residual income, DTI creep mortgage, how to lower DTI for mortgage, FHA DTI limits, conventional DTI limits Hawaii",
     about: [
       { name: "Debt-to-income ratio", sameAs: "https://en.wikipedia.org/wiki/Debt-to-income_ratio" },
       { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
-      { name: "Basic Allowance for Housing", sameAs: "https://en.wikipedia.org/wiki/Basic_Allowance_for_Housing" },
+      { name: "FHA insured loan", sameAs: "https://en.wikipedia.org/wiki/FHA_insured_loan" },
     ],
     faqSchema: [
-      { question: "What is the difference between front-end and back-end DTI?", answer: "Front-end DTI is your proposed housing payment (PITIA) divided by your gross monthly income. Back-end DTI is your proposed housing payment plus all other monthly debt obligations (car loans, student loans, credit cards) divided by your gross monthly income." },
+      { question: "What is the difference between front-end and back-end DTI?", answer: "Front-end DTI is your proposed housing payment (PITIA) divided by your gross monthly income. Back-end DTI adds all other monthly debt obligations. For most loan types (conventional, FHA, VA), only the back-end ratio meaningfully impacts qualification. USDA is the only program where front-end ratio is a significant factor." },
       { question: "How are deferred student loans calculated for a mortgage?", answer: "It depends on the loan type. VA allows excluding them if deferred 12+ months. FHA requires using 0.5% of the balance as a monthly payment. Conventional typically uses 1% of the balance or a calculated payment." },
-      { question: "How does BAH affect my DTI ratio?", answer: "Because BAH is non-taxable income, lenders can 'gross it up' (typically by 25%) when calculating your gross monthly income. This significantly lowers your DTI ratio and increases your purchasing power." }
+      { question: "What is the maximum DTI for a conventional loan in Hawaii?", answer: "Conventional financing typically allows a back-end DTI of 45% to 50%. FHA can go as high as 55% with compensating factors. VA loans have no hard DTI cap — qualification is based on residual income rather than a fixed ratio." }
     ],
   },
   "first-time-homebuyer-guide-hawaii": {

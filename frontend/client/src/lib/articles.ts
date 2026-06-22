@@ -38,7 +38,7 @@ const allArticles: Article[] = [
     date: "2026-06-21",
     featured: true,
     lastUpdated: "June 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/rPqXGrGhTtCqkxUg.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/bahqaMPcKestkFyH.jpg",
     content: `# Your DTI Is the New Credit Score — How Debt-to-Income Ratio Is Quietly Killing Hawaii Mortgage Applications
 
 *Last Updated: June 2026*
@@ -47,7 +47,7 @@ const allArticles: Article[] = [
 
 That killer is your Debt-to-Income (DTI) ratio.
 
-In a normal market, DTI is just one of many underwriting metrics. But in Hawaii — where the median single-family home price pushes $1.1 million and even modest condos command premium prices — buyers are forced to stretch their borrowing capacity to the absolute limit. When you are pushing the 43% to 45% DTI ceiling just to get into the market, even a minor miscalculation can cause your entire application to collapse.
+In a normal market, DTI is just one of many underwriting metrics. But in Hawaii — where the median single-family home price pushes $1.1 million and even modest condos command premium prices — buyers are forced to stretch their borrowing capacity to the absolute limit. When you are pushing the 45% to 50% DTI ceiling just to get into the market, even a minor miscalculation can cause your entire application to collapse.
 
 Here is what you need to understand about how DTI works, how different loan programs calculate your debts, and how to protect your pre-approval from "DTI creep."
 
@@ -55,13 +55,13 @@ Here is what you need to understand about how DTI works, how different loan prog
 
 ## The Iceberg: Front-End vs. Back-End DTI
 
-When lenders look at your application, they are actually calculating two different DTI ratios. Understanding the difference is critical.
+When lenders look at your application, they are actually calculating two different DTI ratios — but only one of them matters for most loan types.
 
-**Front-End DTI (The Housing Ratio):** This is your proposed new housing payment divided by your gross monthly income. Your housing payment isn't just principal and interest — it is the full PITIA (Principal, Interest, Taxes, Insurance, and HOA fees). In Hawaii, high HOA fees on condos often blow up the front-end DTI before we even look at your other debts.
+**Front-End DTI (The Housing Ratio):** This is your proposed new housing payment divided by your gross monthly income. Your housing payment isn't just principal and interest — it is the full PITIA (Principal, Interest, Taxes, Insurance, and HOA fees). The front-end ratio is largely a formality for conventional, FHA, and VA loans. The only loan type where front-end DTI meaningfully impacts qualification is USDA.
 
-**Back-End DTI (The Total Debt Ratio):** This is your proposed housing payment *plus* all your other monthly debt obligations (car loans, student loans, minimum credit card payments, personal loans) divided by your gross monthly income.
+**Back-End DTI (The Total Debt Ratio):** This is your proposed housing payment *plus* all your other monthly debt obligations (car loans, student loans, minimum credit card payments, personal loans) divided by your gross monthly income. This is the number that matters.
 
-When a lender says "you need a 43% DTI to qualify," they are almost always talking about the back-end ratio. That means your *total* monthly debt obligations cannot exceed 43% of your gross (pre-tax) income.
+When a lender says "you need to be under 50% DTI to qualify," they are talking about the back-end ratio. That means your *total* monthly debt obligations cannot exceed that threshold of your gross (pre-tax) income. For conventional financing, the ceiling is typically 45% to 50%. FHA can go as high as 55% with compensating factors. And VA has no hard cap at all — more on that below.
 
 ---
 
@@ -79,52 +79,51 @@ If you have $50,000 in deferred student loans, an FHA underwriter will hit your 
 
 ---
 
-## The Military Advantage: Grossing Up BAH
-
-For active-duty military buyers using a VA loan in Hawaii, DTI calculations come with a massive advantage.
-
-Your Basic Allowance for Housing (BAH), Basic Allowance for Subsistence (BAS), and Cost of Living Allowance (COLA) are non-taxable income. Because mortgage qualification is based on gross (pre-tax) income, lenders are allowed to "gross up" this non-taxable military income — typically by 25%.
-
-If your Hawaii BAH is $3,500 a month, we don't use $3,500 in your DTI calculation. We gross it up to $4,375. This mathematical adjustment significantly lowers your DTI and dramatically increases your purchasing power in Hawaii's expensive market.
-
----
-
 ## DTI Creep: How to Lose Your Clear-to-Close
 
 "DTI creep" happens when a buyer's debt ratio slowly inches upward during the escrow process until it crosses the maximum allowable threshold, killing the loan just days before closing. In Hawaii, where buyers are already pushing the absolute limits of affordability, DTI creep is fatal.
 
 Here is how it happens:
 
-1. **The New Car Trap:** You get pre-approved, find a house, and enter escrow. Then, you decide to buy a new car for the new house. That $600/month car payment hits your credit report, spikes your DTI from 42% to 48%, and your mortgage is denied. *Never open new credit during escrow.*
-2. **The HOA Surprise:** You were pre-approved based on an estimated $500/month HOA fee. You find a condo you love, but the actual HOA fee is $850/month. That extra $350 pushes your DTI over the limit.
-3. **The Property Tax Underestimation:** Your lender estimated property taxes based on the current owner's homeowner exemption. But as an investor or second-home buyer, you won't get that exemption, and your taxes will be higher.
+1. **The New Debt Trap:** You get pre-approved, find a house, and enter escrow. Then you decide to buy a new car for the new house, or finance furniture, or open a new credit card. That $600/month car payment hits your credit report, spikes your DTI from 48% to 54%, and your mortgage is denied. *Never open new credit or take on new debt during escrow. Period.*
+2. **The Flood Zone Discovery:** During the loan process, it is discovered that the property sits in a flood zone. Now you need flood insurance — which in Hawaii can be extremely expensive — and that additional monthly cost pushes your total housing payment over the DTI threshold.
+3. **The HOA Increase:** In rare cases, a homeowners association raises maintenance fees during your transaction. This is uncommon — most HOAs update fees only in January and the increase is typically known months in advance so the lender can account for it — but when it does happen mid-escrow, it can push a borderline DTI over the edge.
 
 ---
 
 ## Strategies to Fix a Borderline DTI
 
-If your DTI is sitting at 46% and you need to get it down to 43% to qualify for that Hawaii home, you have options. But the strategies are different depending on your loan type.
+If your DTI is sitting at 52% and you need to get it down to 50% to qualify for that Hawaii home on a conventional loan, you have options. But the strategies are different depending on your loan type.
 
 **1. Pay Down the Right Debt (Not Just Any Debt)**
 Don't just throw cash at your largest balance. To lower your DTI, you need to eliminate *monthly payments*. Paying off a $5,000 credit card with a $150 minimum payment improves your DTI much faster than putting $5,000 toward a $30,000 car loan where the $500 payment remains exactly the same.
 
-**2. The VA Residual Income Exception**
-VA loans are unique because they don't have a hard DTI cap. While lenders prefer to see a DTI under 41%, the VA actually cares more about "residual income" — the actual cash you have left over each month after paying all debts and living expenses. If your residual income exceeds the VA's minimum requirement by at least 20%, you can often get approved with a DTI of 50% or higher.
+**2. The VA Residual Income Advantage**
+VA loans are unique because they have no hard cap on back-end DTI. The VA cares about "residual income" — the actual cash you have left over each month after paying all debts and living expenses. Residual income takes into account the whole credit picture: your expenses, your assets remaining after closing, and all other compensating factors. If your residual income meets the VA's minimum requirement for your family size and region, you can get approved well above 50% DTI. For VA borrowers, DTI is really not an issue unless you are truly not qualified for the loan.
 
-**3. Remove a Co-Signer Debt**
+**3. Switch to FHA**
+If you are tight on conventional financing at the 50% back-end ceiling, FHA can be a lifeline. FHA allows back-end DTI up to approximately 55% with compensating factors. That extra 5% of headroom can be the difference between approved and denied — especially in Hawaii where high housing costs push even strong earners to the edge.
+
+**4. Remove a Co-Signer Debt**
 If you co-signed a car loan for your child or a sibling, that payment hits your DTI. However, if you can prove (with 12 months of canceled checks or bank statements) that the *other* person has been making the payments on time, we can exclude that debt from your DTI calculation entirely.
 
 ---
 
 ## The Bottom Line
 
-In Hawaii, your credit score gets you to the table, but your DTI dictates whether you get to eat. Before you fall in love with a property, you need a lender who will run a rigorous, fully documented DTI calculation upfront — not an estimate that falls apart in underwriting.
+In Hawaii, your credit score gets you to the table, but your DTI dictates whether you get to eat.
+
+We make sure every buyer is fully qualified before they even put in an offer on a property. We don't do generic pre-approvals based on a purchase price the way a lot of mainland lenders operate. We take into account the absolute maximum total monthly housing payment — PITIA including everything — for the specific property you are targeting.
+
+Here is why that matters: when you are looking at condos, one unit at $600,000 may have an $800 maintenance fee and the one right next door might have a $1,400 maintenance fee. You will qualify for one but not the other. That $600/month difference in HOA fees has the same DTI impact as adding roughly $100,000 to your loan amount.
+
+This is why it is critical to have a good local lender who gets you pre-approved upfront with real numbers — so you are not going into contract, having home inspections done, and spending money on a property you are not going to qualify for.
 
 ---
 
 ## Ready to See Your Real Numbers?
 
-If you are planning to buy in Hawaii and want to know exactly where your DTI stands, do not rely on online calculators that use mainland assumptions. I can review your income, debts, and Hawaii-specific housing costs to give you a bulletproof pre-approval.
+If you are planning to buy in Hawaii and want to know exactly where your DTI stands, do not rely on online calculators that use mainland assumptions. I can review your income, debts, and Hawaii-specific housing costs to give you a bulletproof pre-approval — one that accounts for the actual PITIA of the properties you are targeting.
 
 [**Get Pre-Approved with Jay Miller →**](https://www.jay-miller.com)
 
