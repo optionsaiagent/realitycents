@@ -17,6 +17,20 @@ export interface ArticleSchemaMeta {
 }
 
 export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
+  "dti-killing-hawaii-mortgage-applications": {
+    wordCount: 1100,
+    keywords: "DTI ratio mortgage Hawaii, Debt-to-Income Hawaii, front-end vs back-end DTI, student loans mortgage Hawaii, VA loan residual income, DTI creep mortgage, grossing up BAH, how to lower DTI for mortgage",
+    about: [
+      { name: "Debt-to-income ratio", sameAs: "https://en.wikipedia.org/wiki/Debt-to-income_ratio" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Basic Allowance for Housing", sameAs: "https://en.wikipedia.org/wiki/Basic_Allowance_for_Housing" },
+    ],
+    faqSchema: [
+      { question: "What is the difference between front-end and back-end DTI?", answer: "Front-end DTI is your proposed housing payment (PITIA) divided by your gross monthly income. Back-end DTI is your proposed housing payment plus all other monthly debt obligations (car loans, student loans, credit cards) divided by your gross monthly income." },
+      { question: "How are deferred student loans calculated for a mortgage?", answer: "It depends on the loan type. VA allows excluding them if deferred 12+ months. FHA requires using 0.5% of the balance as a monthly payment. Conventional typically uses 1% of the balance or a calculated payment." },
+      { question: "How does BAH affect my DTI ratio?", answer: "Because BAH is non-taxable income, lenders can 'gross it up' (typically by 25%) when calculating your gross monthly income. This significantly lowers your DTI ratio and increases your purchasing power." }
+    ],
+  },
   "first-time-homebuyer-guide-hawaii": {
     wordCount: 2200,
     keywords: "first-time homebuyer Hawaii, buying a home in Honolulu, Hawaii first-time buyer programs, down payment assistance Hawaii, FHA loan Hawaii",

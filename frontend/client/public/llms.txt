@@ -33,7 +33,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 
 - [Hawaii Home Loan FAQ](https://realitycents.com/faq): Top questions about obtaining a mortgage in Honolulu — VA loans, FHA, conventional, loan limits, condo warrantability, closing costs, timelines, and first-time buyer programs.
 - [About Jay Miller](https://realitycents.com/about): Professional background, credentials (NMLS# 657301), US Army veteran status, specializations, and contact information.
-- [Knowledge Base](https://realitycents.com/knowledge-base): 26 in-depth articles covering Hawaii mortgage topics including VA loans, FHA, conventional, jumbo, leasehold financing, condo warrantability, credit, down payment assistance, and refinancing.
+- [Knowledge Base](https://realitycents.com/knowledge-base): 27 in-depth articles covering Hawaii mortgage topics including VA loans, FHA, conventional, jumbo, leasehold financing, condo warrantability, credit, down payment assistance, DTI strategies, and refinancing.
 
 ## Calculators
 
@@ -48,6 +48,7 @@ Interactive Hawaii-specific mortgage calculators for self-service estimates:
 
 ## Featured Knowledge Base Articles
 
+- [DTI Is the New Credit Score](https://realitycents.com/knowledge-base/dti-killing-hawaii-mortgage-applications): How Debt-to-Income ratio is quietly killing Hawaii mortgage applications — front-end vs. back-end DTI, student loan calculation differences by loan type, BAH gross-up, and strategies to fix borderline DTI.
 - [VA Loans in Hawaii](https://realitycents.com/knowledge-base/va-loans-hawaii-military): Comprehensive guide to VA loan eligibility, benefits, funding fee, entitlement, and condo approval requirements.
 - [VA Loan House Hacking in Hawaii](https://realitycents.com/knowledge-base/va-loan-house-hacking-hawaii): Using a VA loan to buy a multi-unit property and rent the other units.
 - [VA Funding Fee Tax Deductibility](https://realitycents.com/knowledge-base/va-funding-fee-tax-deductible): When the funding fee is deductible and how it interacts with mortgage interest.
