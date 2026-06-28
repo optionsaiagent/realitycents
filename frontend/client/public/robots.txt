@@ -3,6 +3,10 @@ User-agent: *
 Allow: /
 Disallow: /s/
 Disallow: /api/
+Disallow: /cdn-cgi/
+Disallow: /wp-content/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
 
 # AI crawlers — explicitly allowed
 User-agent: GPTBot

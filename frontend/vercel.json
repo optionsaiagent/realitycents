@@ -12,6 +12,15 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/410.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -59,9 +68,43 @@
       "source": "/realtor-tools/:path*",
       "destination": "/agents",
       "statusCode": 301
+    },
+    {
+      "source": "/buy-versus-rent-calculator-plus",
+      "destination": "/rent-vs-buy",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/va-house-hacking-hawaii",
+      "destination": "/knowledge-base/va-loan-house-hacking-hawaii",
+      "statusCode": 301
     }
   ],
   "rewrites": [
+    {
+      "source": "/cdn-cgi/:path*",
+      "destination": "/410.html"
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/410.html"
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/410.html"
+    },
+    {
+      "source": "/wp-includes/:path*",
+      "destination": "/410.html"
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/410.html"
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/410.html"
+    },
     {
       "source": "/s/:code",
       "destination": "https://realitycents-production.up.railway.app/r/:code"
@@ -69,6 +112,38 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/cdn-cgi/(.*)",
+      "status": 410,
+      "dest": "/410.html"
+    },
+    {
+      "src": "/wp-content/(.*)",
+      "status": 410,
+      "dest": "/410.html"
+    },
+    {
+      "src": "/wp-admin/(.*)",
+      "status": 410,
+      "dest": "/410.html"
+    },
+    {
+      "src": "/wp-includes/(.*)",
+      "status": 410,
+      "dest": "/410.html"
+    },
+    {
+      "src": "/wp-login\\.php",
+      "status": 410,
+      "dest": "/410.html"
+    },
+    {
+      "src": "/xmlrpc\\.php",
+      "status": 410,
+      "dest": "/410.html"
     }
   ],
   "framework": "vite"

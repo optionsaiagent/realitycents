@@ -30,6 +30,7 @@ const STATIC_PAGES = [
   { loc: "/about",                   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/contact",                 changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/guide",                   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
+  { loc: "/agents",                  changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/calculator",              changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/advanced-calculator",     changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/affordability-calculator", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
@@ -44,6 +45,9 @@ const STATIC_PAGES = [
   { loc: "/va-loan-tripler",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
   { loc: "/bah-buy-vs-rent-oahu",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
   { loc: "/loan-compare",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
+  { loc: "/dscr-calculator",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
+  { loc: "/assumable-calculator",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
+  { loc: "/escalation-calculator",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
   { loc: "/knowledge-base",          changefreq: "weekly",  priority: "0.9",  lastmod: TODAY },
   { loc: "/frequently-asked-questions", changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
 ];
@@ -72,7 +76,7 @@ for (const article of articles) {
   entries.push(
     urlEntry({
       loc: `/knowledge-base/${article.slug}`,
-      lastmod: article.date, // actual publish date
+      lastmod: article.lastUpdated || article.date, // prefer lastUpdated over publish date
       changefreq: "monthly",
       priority: "0.8",
     })
