@@ -185,68 +185,121 @@
     }
     </script>
 
-    <!-- Structured Data: Person (Jay Miller — standalone entity for E-E-A-T) -->
+    <!-- Structured Data: @graph — Person + Book + WebSite + Organization (Knowledge Panel signals) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://realitycents.com/about#jay-miller",
-      "name": "Jay Miller",
-      "givenName": "Jay",
-      "familyName": "Miller",
-      "jobTitle": "Mortgage Loan Originator",
-      "description": "Hawaii mortgage loan originator with 25+ years of experience. NMLS #657301. U.S. Army OIF/OEF veteran. Specializing in conventional, FHA, VA, jumbo, and USDA loans for Hawaii homebuyers across Oahu, Maui, Kauai, and the Big Island.",
-      "telephone": "+18084290811",
-      "email": "jaym@cmghomeloans.com",
-      "url": "https://realitycents.com/about",
-      "image": "https://realitycents.com/og-image.jpg",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "CMG Home Loans",
-        "identifier": "NMLS #1820",
-        "url": "https://www.cmghomeloans.com"
-      },
-      "hasCredential": [
+      "@graph": [
         {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "license",
-          "name": "NMLS License #657301",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "Nationwide Multistate Licensing System (NMLS)"
-          }
+          "@type": "Person",
+          "@id": "https://realitycents.com/#jaymiller",
+          "name": "Jay Miller",
+          "givenName": "Jay",
+          "familyName": "Miller",
+          "alternateName": "jaymiller_hawaii",
+          "url": "https://realitycents.com/",
+          "image": "https://realitycents.com/og-image.jpg",
+          "description": "Sales Manager and Certified Mortgage Advisor (CMA) at CMG Home Loans in Honolulu, Hawaii. 25 years of mortgage lending experience. U.S. Army OIF/OEF veteran. NMLS #657301. Author of Zero Down in Paradise.",
+          "jobTitle": "Sales Manager / Certified Mortgage Advisor",
+          "gender": "Male",
+          "nationality": {"@type": "Country", "name": "United States"},
+          "homeLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "500 Ala Moana Blvd, Suite 6-200",
+              "addressLocality": "Honolulu",
+              "addressRegion": "HI",
+              "postalCode": "96813",
+              "addressCountry": "US"
+            }
+          },
+          "telephone": "+18084290811",
+          "email": "jaym@cmghomeloans.com",
+          "knowsAbout": [
+            "Mortgage Lending",
+            "VA Loans",
+            "Hawaii Real Estate",
+            "FHA Loans",
+            "Conventional Financing",
+            "Jumbo Loans",
+            "Hawaii Condo Financing",
+            "Leasehold Property Hawaii"
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "license",
+              "name": "NMLS License #657301",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "Nationwide Multistate Licensing System (NMLS)"
+              }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "certification",
+              "name": "Certified Mortgage Advisor (CMA)"
+            }
+          ],
+          "affiliation": [
+            {
+              "@type": "OrganizationRole",
+              "roleName": "Sales Manager",
+              "memberOf": {
+                "@type": "Organization",
+                "name": "CMG Home Loans",
+                "url": "https://www.cmghomeloans.com/mysite/jay-miller",
+                "identifier": "NMLS #1820"
+              }
+            },
+            {
+              "@type": "OrganizationRole",
+              "roleName": "Founder",
+              "memberOf": {
+                "@type": "Organization",
+                "@id": "https://realitycents.com/#org",
+                "name": "RealityCents",
+                "url": "https://realitycents.com/",
+                "description": "Hawaii's Mortgage Education Resource",
+                "founder": {"@id": "https://realitycents.com/#jaymiller"}
+              }
+            }
+          ],
+          "sameAs": [
+            "https://www.jay-miller.com/",
+            "https://x.com/realitycents",
+            "https://www.linkedin.com/in/jay-miller-534bb5173",
+            "https://www.instagram.com/jaymiller_hawaii/",
+            "https://www.youtube.com/@RacingThroughMidlife",
+            "https://www.amazon.com/stores/Jay-Miller/author/A3G97QOILJIZB0",
+            "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301"
+          ]
+        },
+        {
+          "@type": "Book",
+          "@id": "https://realitycents.com/#book-zerodown",
+          "name": "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers",
+          "url": "https://www.amazon.com/dp/9798996355303",
+          "isbn": "979-8-9963553-0-3",
+          "description": "A comprehensive guide for military homebuyers navigating the Hawaii real estate market using VA loans with zero down payment.",
+          "inLanguage": "en",
+          "author": {"@id": "https://realitycents.com/#jaymiller"}
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://realitycents.com/#website",
+          "url": "https://realitycents.com/",
+          "name": "RealityCents",
+          "description": "Hawaii's Mortgage Education Resource",
+          "author": {"@id": "https://realitycents.com/#jaymiller"},
+          "publisher": {"@id": "https://realitycents.com/#org"}
         }
-      ],
-      "knowsAbout": [
-        "Hawaii Mortgage Lending",
-        "FHA Loans",
-        "VA Loans",
-        "Conventional Loans",
-        "Jumbo Loans",
-        "USDA Loans",
-        "Hawaii Real Estate",
-        "Mortgage Pre-Approval",
-        "Leasehold Property Hawaii",
-        "Hawaii Condo Financing"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "500 Ala Moana Blvd, Suite 6-200",
-        "addressLocality": "Honolulu",
-        "addressRegion": "HI",
-        "postalCode": "96813",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
-        "https://www.linkedin.com/in/jay-miller-534bb5173/",
-        "https://www.instagram.com/jaymillercmg",
-        "https://www.youtube.com/@RacingThroughMidlife"
       ]
     }
     </script>
 
-    <!-- Structured Data: WebSite (enables Sitelinks Searchbox) -->
+    <!-- Structured Data: WebSite SearchAction (Sitelinks Searchbox) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -255,8 +308,9 @@
       "name": "RealityCents",
       "url": "https://realitycents.com",
       "description": "Hawaii mortgage education, tools, and lending services by Jay Miller, NMLS #657301, CMG Home Loans.",
+      "author": {"@id": "https://realitycents.com/#jaymiller"},
       "publisher": {
-        "@id": "https://realitycents.com/#business"
+        "@id": "https://realitycents.com/#org"
       },
       "potentialAction": {
         "@type": "SearchAction",
