@@ -17,6 +17,24 @@ export interface ArticleSchemaMeta {
 }
 
 export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
+  "seller-concessions-closing-costs-hawaii": {
+    wordCount: 2400,
+    keywords: "seller concessions Hawaii, seller credits closing costs Hawaii, VA loan seller pays closing costs, how to get seller to pay closing costs Hawaii, seller concession limits VA FHA conventional, zero out of pocket VA loan Hawaii, Oahu condo buyer market 2026, Hawaii closing costs negotiation, military buyer zero closing costs Hawaii",
+    about: [
+      { name: "Closing costs", sameAs: "https://en.wikipedia.org/wiki/Closing_costs" },
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "FHA insured loan", sameAs: "https://en.wikipedia.org/wiki/FHA_insured_loan" },
+      { name: "Conventional mortgage", sameAs: "https://en.wikipedia.org/wiki/Conventional_mortgage" },
+      { name: "Real estate appraisal", sameAs: "https://en.wikipedia.org/wiki/Real_estate_appraisal" },
+    ],
+    faqSchema: [
+      { question: "Can seller concessions be used for the down payment in Hawaii?", answer: "No. Seller concessions can only be used for closing costs, prepaid items (taxes and insurance), discount points, and the VA funding fee. You must still provide your own down payment — unless you are using a 0% down VA loan, which requires no down payment at all." },
+      { question: "What is the maximum seller concession on a VA loan?", answer: "On a VA loan, the seller can pay ALL of the buyer's normal closing costs with no limit. On top of that, the seller can contribute up to 4% of the property's reasonable value in additional concessions covering the VA funding fee, prepaids, discount points, and even buyer debts. This means a VA buyer can potentially close with zero out-of-pocket costs." },
+      { question: "What happens if the seller credit exceeds my actual closing costs?", answer: "You cannot receive cash back at closing. If your closing costs total $15,000 and the seller agreed to a $20,000 credit, the remaining $5,000 must be applied to discount points (to buy down your interest rate) or the credit must be reduced to match your actual costs." },
+      { question: "Does asking for seller concessions make my offer weaker?", answer: "It depends on the market. In a multiple-offer situation, a clean offer with no concession request is stronger. But in today's Oahu condo market where inventory is rising and properties are sitting longer, a full-price offer with a reasonable seller credit is often accepted without pushback. The key is structuring it so the seller's net proceeds remain competitive." },
+      { question: "Do seller concessions affect the home appraisal?", answer: "Appraisers note seller concessions in their report and may adjust comparable sales that also included concessions. The property must still justify the gross purchase price based on comparable sales. Large concessions above 3-6% may receive additional scrutiny from the appraiser." },
+    ],
+  },
   "dti-killing-hawaii-mortgage-applications": {
     wordCount: 1200,
     keywords: "DTI ratio mortgage Hawaii, Debt-to-Income Hawaii, front-end vs back-end DTI, student loans mortgage Hawaii, VA loan residual income, DTI creep mortgage, how to lower DTI for mortgage, FHA DTI limits, conventional DTI limits Hawaii",

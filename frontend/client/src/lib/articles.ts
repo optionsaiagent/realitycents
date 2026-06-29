@@ -30,6 +30,266 @@ export const CATEGORIES = [
 
 const allArticles: Article[] = [
   {
+    slug: "seller-concessions-closing-costs-hawaii",
+    title: "What Hawaii Buyers Don't Know About Closing Costs — And How to Get the Seller to Pay Them",
+    excerpt: "In May 2026, 46% of home sellers nationally gave concessions to buyers — the highest rate in years. Yet most Hawaii buyers still don't know how to structure the ask. Here's the exact playbook for getting the seller to cover your closing costs, by loan type.",
+    category: "Process & Tips",
+    readTime: "9 min",
+    date: "2026-06-28",
+    featured: true,
+    lastUpdated: "June 2026",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/closing-costs-hawaii-PuKwVnpj5vue5FQh2GWZ3N.webp",
+    content: `# What Hawaii Buyers Don't Know About Closing Costs — And How to Get the Seller to Pay Them
+
+*Last Updated: June 2026*
+
+**In May 2026, 46% of home sellers nationally gave concessions to buyers — the highest rate on record for that time of year, according to Redfin. Yet in Hawaii, where closing costs are the second-biggest barrier to homeownership after the down payment, most buyers are still leaving the table without asking the seller to cover them. If you know how to structure the ask — especially with a VA loan — you can effectively walk into a Hawaii home with zero out-of-pocket costs.**
+
+Most Hawaii homebuyers obsess over two numbers: the purchase price and the down payment. They spend months saving $20,000 to $40,000 for a down payment, finally get under contract, and then get hit with a reality check three days before closing.
+
+That reality check is the Closing Disclosure — and it shows another $12,000 to $20,000 in closing costs that they somehow have to come up with in cash.
+
+In Hawaii, closing costs are the silent killer of real estate transactions. But right now, the market is shifting. On Oahu, condo inventory is rising and the market is moving decisively into buyer's territory. Harcourts Island Real Estate's June 2026 market analysis shows condos sliding toward a buyer's market while single-family homes remain competitive. Nationally, nearly half of all sellers are offering concessions to get deals done.
+
+The move for Hawaii buyers right now is not just negotiating the price — it is negotiating the cash to close. Here is exactly how seller concessions work, what the limits are for each loan type, and the specific strategy to get the seller to pay your closing costs in today's Hawaii market.
+
+---
+
+## What You Are Actually Paying For
+
+For a full breakdown of what closing costs include, see our guide to [understanding closing costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii). But here is the summary: when you buy a home in Hawaii, your closing costs will run between **2% and 4% of the purchase price**. On an $800,000 property, that is $16,000 to $32,000 in cash you need *on top of* your down payment.
+
+These costs fall into two categories:
+
+**Non-Recurring Costs (one-time fees):** Loan origination fee (typically 0.5–1% of loan amount), appraisal ($600–$1,000), title insurance, escrow fees, recording fees, and credit report fees.
+
+**Prepaids and Impounds:** Prorated property taxes, first year of homeowner's insurance (and hurricane insurance if required), prepaid mortgage interest from closing to month-end, and initial HOA dues.
+
+Hawaii has some unique advantages here. Our property taxes are among the lowest in the nation — the effective rate for owner-occupants in Honolulu is approximately 0.35%, compared to 1.0%+ in most mainland states. That keeps your prepaid tax burden relatively low. Hawaii also has no state transfer tax for buyers — the conveyance tax is paid entirely by the seller.
+
+However, Hawaii's high purchase prices mean that percentage-based fees translate into massive dollar amounts. And if you are buying a condo — which most first-time buyers on Oahu are — you may face HOA fees ranging from $400 to $1,400 per month, with several months prepaid at closing.
+
+The distinction between leasehold and fee simple properties also matters here. Leasehold condos often have lower purchase prices but come with additional lease rent obligations that affect your total closing cost picture. Fee simple properties have cleaner closing cost structures but higher purchase prices.
+
+---
+
+## What Are Seller Concessions?
+
+A seller concession (also called a seller credit or seller contribution) is when the seller agrees to pay a portion of your closing costs from their proceeds at closing.
+
+It does not change the purchase price of the home. If you buy a house for $800,000 with a $15,000 seller credit, the house still costs $800,000. Your loan amount is still based on $800,000. But at the closing table, the seller gives up $15,000 of their profit, and that money is credited directly to your closing cost bill.
+
+In a competitive seller's market, asking for concessions will get your offer thrown in the trash. But in a shifting market — like Oahu's condo market in summer 2026 — sellers are increasingly willing to offer credits rather than drop their list price. Why? Because a $15,000 credit costs the seller the exact same amount as a $15,000 price reduction, but it maintains the comparable sales (comps) in the neighborhood. Sellers and their agents care about this because it protects the value of surrounding properties.
+
+For the buyer, the difference is massive. A $15,000 price reduction saves you about $90 a month on your mortgage payment. A $15,000 seller credit keeps $15,000 of cash in your bank account today. In a high-cost market like Hawaii, that liquidity can be the difference between closing and not closing.
+
+---
+
+## Seller Concession Limits by Loan Type
+
+Every loan program has a strict cap on how much the seller can contribute. Asking for more than the limit is not allowed — any excess must be reduced before closing.
+
+| Loan Type | Maximum Seller Contribution | On a $750,000 Home | Key Notes |
+|---|---|---|---|
+| **VA** | All closing costs + 4% additional concessions | $15K+ costs + $30,000 | Closing costs are UNLIMITED; 4% cap is for extras only |
+| **FHA** | 6% of purchase price | $45,000 | One of the most generous limits |
+| **Conventional (<10% down)** | 3% of purchase price | $22,500 | Most restrictive tier |
+| **Conventional (10–25% down)** | 6% of purchase price | $45,000 | Most common scenario |
+| **Conventional (>25% down)** | 9% of purchase price | $67,500 | Rarely a binding constraint |
+
+---
+
+## VA Loans: The Ultimate Concession Strategy
+
+For military buyers in Hawaii, the VA loan rules regarding seller concessions are arguably the most powerful — and least understood — benefit of the entire program.
+
+Here is what most people do not realize: under VA guidelines (VA Pamphlet 26-7), the seller can pay **ALL** of the buyer's normal closing costs with **no cap**. Appraisal, title insurance, escrow fees, recording fees, credit report, loan origination — the seller can cover every single one of these without any of it counting toward the VA's concession limit.
+
+*On top of that*, the seller can contribute up to **4% of the property's reasonable value** in additional seller concessions. These concessions can cover:
+
+- The VA Funding Fee (2.15% for first-time use, 3.3% for subsequent use)
+- Prepaid property taxes and insurance
+- Discount points to permanently buy down the interest rate
+- Payment of the buyer's debts or judgments to help them qualify
+
+### Real Example: $800,000 Oahu Home, VA Loan, First-Time Use
+
+| Item | Amount | Who Pays |
+|---|---|---|
+| Standard closing costs (title, escrow, appraisal, origination) | ~$15,000 | Seller (no cap) |
+| VA Funding Fee (2.15% of $800,000) | $17,200 | Seller (from 4% concession) |
+| Prepaid taxes + insurance | ~$4,500 | Seller (from 4% concession) |
+| Prepaid interest (15 days) | ~$2,200 | Seller (from 4% concession) |
+| **Total seller pays** | **~$38,900** | — |
+| **Total buyer pays out of pocket** | **$0** | Zero down + zero closing costs |
+
+The 4% concession cap on an $800,000 home is $32,000 — more than enough to cover the funding fee ($17,200), prepaids ($4,500), and prepaid interest ($2,200), with room to spare for discount points.
+
+This is not a theoretical scenario. This is how we structure VA purchases for military buyers at Pearl Harbor, Schofield Barracks, Marine Corps Base Hawaii, and Joint Base Pearl Harbor-Hickam every month. A Hawaii military buyer who knows how to structure this ask can effectively walk into a home with zero out-of-pocket costs.
+
+---
+
+## FHA Loans: The 6% Cap
+
+FHA loans allow the seller to contribute up to **6% of the purchase price** toward the buyer's closing costs, prepaids, and discount points. On a $600,000 Oahu condo, that is a maximum credit of $36,000.
+
+Because closing costs in Hawaii rarely reach 6% of the purchase price (they typically run 2–4%), FHA buyers often have room to use the excess credit to buy down their interest rate — a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
+
+### Real Example: $650,000 Oahu Condo, FHA Loan, 3.5% Down
+
+| Item | Amount |
+|---|---|
+| Purchase price | $650,000 |
+| Down payment (3.5%) | $22,750 |
+| Maximum seller concession (6%) | $39,000 |
+| Estimated closing costs + prepaids | ~$18,000 |
+| Remaining credit available for rate buydown | ~$21,000 |
+
+With $21,000 in remaining credit, an FHA buyer could purchase approximately 3 discount points — potentially reducing their rate from 6.5% to approximately 5.75%, saving over $300 per month for the life of the loan.
+
+The FHA limit applies to the appraised value or purchase price, whichever is lower. If the property appraises below the purchase price, the concession cap is calculated on the appraised value.
+
+---
+
+## Conventional Loans: Tiered by Down Payment
+
+Conventional loans (Fannie Mae/Freddie Mac) tie the maximum seller concession to your down payment amount:
+
+- **Less than 10% down:** Maximum 3% of purchase price
+- **10% to 24.99% down:** Maximum 6% of purchase price
+- **25% or more down:** Maximum 9% of purchase price
+
+For most Hawaii first-time buyers using conventional financing with 5% down, the effective limit is 3%. On a $700,000 home, that is $21,000 — usually just enough to cover standard closing costs and prepaids, but not enough for a meaningful rate buydown.
+
+If you can stretch to 10% down, the limit jumps to 6% ($42,000 on a $700,000 home), which opens up significantly more room for rate buydowns or covering higher-than-expected costs.
+
+### Real Example: $750,000 Oahu Home, Conventional, 10% Down
+
+| Item | Amount |
+|---|---|
+| Purchase price | $750,000 |
+| Down payment (10%) | $75,000 |
+| Maximum seller concession (6%) | $45,000 |
+| Estimated closing costs + prepaids | ~$20,000 |
+| Remaining credit for rate buydown | ~$25,000 |
+
+---
+
+## How to Structure the Ask: The Negotiation Strategy
+
+You do not just blindly ask for $20,000. You have to structure the offer so the seller sees the net math — and so the deal makes sense to the appraiser.
+
+### Strategy 1: Full Price Offer + Seller Credit
+
+If a home is listed at $800,000 and has been sitting on the market for 30+ days, the seller is likely considering a price drop. Instead of offering $780,000, you offer the full $800,000 but ask for a $20,000 seller credit toward closing costs.
+
+To the seller, the net is exactly the same: they walk away with $780,000 before their own fees.
+
+To you, the buyer, the difference is life-changing. If you offered $780,000, you would still have to drain your savings to pay $20,000 in closing costs. By offering $800,000 with a $20,000 credit, you finance that $20,000 into your 30-year mortgage. Your monthly payment goes up about $126 per month, but you keep your $20,000 cash reserve intact for emergencies, furniture, or renovations.
+
+### Strategy 2: Slight Over-Ask with Credit
+
+In a buyer's market, you can sometimes offer below list price AND ask for a seller credit. If the home is listed at $800,000 and comparable sales support $770,000, you might offer $785,000 with a $15,000 seller credit. The seller's net is $770,000 — exactly what the comps support — and you get your closing costs covered.
+
+### Strategy 3: The VA "Zero Out-of-Pocket" Structure
+
+For VA buyers, work with your lender to calculate the exact total of closing costs + funding fee + prepaids. Then write the offer at full price (or slightly above if the market supports it) with a seller credit for that exact amount. The contract language should read something like:
+
+> "Seller to contribute up to $XX,XXX toward buyer's closing costs, prepaid items, and VA funding fee."
+
+The key word is "up to" — this protects both parties if the actual costs come in lower than estimated.
+
+---
+
+## The Appraisal Caveat
+
+There is one critical catch: the home must appraise for the full purchase price. If you offer $800,000 with a $20,000 credit, but the home only appraises for $780,000, your lender will base the loan on the $780,000 value. The seller concession percentage is then recalculated based on the appraised value, which may reduce the available credit.
+
+This is why it is essential to work with a local lender who can review comparable sales before you write the offer. If the comps do not support your offer price, the appraisal will kill the deal — or at minimum force a renegotiation.
+
+---
+
+## When Sellers Say Yes (and When They Don't)
+
+Sellers are most likely to agree to concessions when:
+
+- The property has been on the market 30+ days
+- Inventory in the neighborhood is rising
+- The seller has already purchased their next home and needs to close
+- The property has condition issues that limit the buyer pool
+- It is a condo in a building with multiple active listings
+
+Sellers are least likely to agree when:
+
+- The property just hit the market and has multiple showings
+- It is a single-family home in a desirable neighborhood with limited inventory
+- The seller has no urgency to close
+
+In Oahu's current market (June 2026), condos are firmly in buyer's territory. Single-family homes remain more competitive, but even there, properties sitting beyond 30 days are increasingly negotiable. The 46% national concession rate tells you the trend — and Hawaii is following it.
+
+---
+
+## Common Mistakes to Avoid
+
+**Asking for more than your actual closing costs.** If your estimated closing costs are $15,000 and you ask for $25,000, the excess cannot be returned to you as cash. It must either be applied to discount points or the credit must be reduced. Work with your lender to get an accurate estimate before writing the offer.
+
+**Ignoring the appraisal.** If the property does not appraise at the purchase price, your seller concession is recalculated based on the appraised value. This can reduce the available credit at closing.
+
+**Not specifying what the credit covers.** The purchase contract should clearly state that the seller credit is toward "buyer's closing costs, prepaids, and/or discount points." Vague language creates problems at closing.
+
+**Forgetting about the loan type limits.** If you are putting 5% down on a conventional loan, your maximum is 3%. Asking for 4% will not work — the lender will reject it regardless of what the seller agrees to.
+
+---
+
+## The Bottom Line
+
+In a shifting market, cash is king. Do not drain your life savings to pay title fees and prepaid taxes if the seller is willing to pay them for you.
+
+The math is simple: if a seller is willing to drop their price by $20,000, they should be equally willing to give you a $20,000 credit instead. The net to them is identical. But the impact on your financial position is dramatically different.
+
+Work with a lender who understands the exact concession limits for your loan type, and have your real estate agent write the credit into the purchase contract from the beginning. Do not try to negotiate it after the fact — it is much harder to add a seller credit during escrow than to include it in the original offer.
+
+---
+
+## Ready to Structure Your Offer?
+
+If you are buying in Hawaii and want to know exactly how much seller credit you can ask for — and how to structure the offer so the seller says yes — I can run the numbers for your specific situation. Every loan type has different limits, and the optimal strategy depends on your down payment, the property type, and how long the home has been on the market.
+
+[**Get Pre-Approved with Jay Miller →**](https://www.jay-miller.com)
+
+---
+
+### Frequently Asked Questions
+
+**Can seller concessions be used for the down payment?**
+No. Seller concessions can only be used for closing costs, prepaid items (taxes and insurance), discount points, and the VA funding fee. You must still provide your own down payment — unless you are using a 0% down VA loan, which requires no down payment at all.
+
+**What happens if the seller credit exceeds my actual closing costs?**
+You cannot receive cash back at closing. If your closing costs total $15,000 and the seller agreed to a $20,000 credit, the remaining $5,000 must be applied to discount points (to buy down your interest rate) or the credit must be reduced to match your actual costs.
+
+**Does asking for seller concessions make my offer weaker?**
+It depends on the market. In a multiple-offer situation, yes — a clean offer with no concession request is stronger. But in today's Oahu condo market, where inventory is rising and properties are sitting longer, a full-price offer with a reasonable seller credit is often accepted without pushback. The key is structuring it so the seller's net proceeds remain competitive.
+
+**Can the seller pay the buyer's agent commission as a concession?**
+Following the 2024 NAR settlement, buyer's agent compensation is fully negotiable. Whether a seller-paid buyer's agent fee counts toward the concession cap depends on the loan type and how the contract is structured. On VA loans, the seller can pay the buyer's agent fee without it counting toward the 4% concession cap. On conventional and FHA loans, it may count toward the cap depending on how it is documented.
+
+**Do seller concessions affect the appraisal?**
+Appraisers note seller concessions in their report and may adjust comparable sales that also included concessions. The property must still justify the gross purchase price based on comparable sales. Large concessions (above 3–6%) may receive additional scrutiny from the appraiser.
+
+---
+
+### Related Articles
+- [Understanding Closing Costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii)
+- [How to Use Seller Concessions to Buy Down Your Rate in Hawaii](/knowledge-base/seller-concessions-rate-buydown-hawaii)
+- [Understanding VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
+- [FHA Loans in Hawaii Explained](/knowledge-base/fha-loans-hawaii-explained)
+- [Conventional Loans in Hawaii](/knowledge-base/conventional-loans-hawaii)
+
+---
+
+*Published by Jay Miller, CMA | NMLS #657301 | CMG Home Loans, Honolulu, Hawaii | RealityCents.com*`,
+  },
+  {
     slug: "dti-killing-hawaii-mortgage-applications",
     title: "Your DTI Is the New Credit Score — How Debt-to-Income Ratio Is Quietly Killing Hawaii Mortgage Applications",
     excerpt: "Everyone obsesses over credit scores, but DTI is what's actually killing deals in Hawaii's high-price market. The fix strategies are different for VA, FHA, and conventional — and most buyers don't know until it's too late.",
