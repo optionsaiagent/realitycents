@@ -29,7 +29,7 @@ export const LENDER = {
 } as const;
 
 export const IMAGES = {
-  heroHome: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hero-home-4JRPinHnv5jNZE8MSKhrhe.webp",
+  heroHome: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/LwWrAiqUAqXXtoPV.webp",
   heroAbout: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hero-about-EsnkFiRvVsBcaRW2EoCfyF.webp",
   heroCalculator: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hero-calculator-ns6YWqEans9Dy2XHepWyYa.webp",
   heroGuide: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hero-guide-HnGwhxkwfPL9fhRJh8qtra.webp",
