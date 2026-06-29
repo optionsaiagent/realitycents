@@ -45,11 +45,9 @@ const allArticles: Article[] = [
 
 **In May 2026, 46% of home sellers nationally gave concessions to buyers — the highest rate on record for that time of year, according to Redfin. Yet in Hawaii, where closing costs are the second-biggest barrier to homeownership after the down payment, most buyers are still leaving the table without asking the seller to cover them. If you know how to structure the ask — especially with a VA loan — you can effectively walk into a Hawaii home with zero out-of-pocket costs.**
 
-Most Hawaii homebuyers obsess over two numbers: the purchase price and the down payment. They spend months saving $20,000 to $40,000 for a down payment, finally get under contract, and then get hit with a reality check three days before closing.
+Most Hawaii homebuyers obsess over two numbers: the purchase price and the down payment. They spend months saving for a down payment, get pre-approved, and then — when the lender issues the Loan Estimate within three business days of a live purchase transaction — they see the full picture for the first time: closing costs and prepaids that can add another $12,000 to $16,000 on top of their down payment.
 
-That reality check is the Closing Disclosure — and it shows another $12,000 to $20,000 in closing costs that they somehow have to come up with in cash.
-
-In Hawaii, closing costs are the silent killer of real estate transactions. But right now, the market is shifting. On Oahu, condo inventory is rising and the market is moving decisively into buyer's territory. Harcourts Island Real Estate's June 2026 market analysis shows condos sliding toward a buyer's market while single-family homes remain competitive. Nationally, nearly half of all sellers are offering concessions to get deals done.
+That number is not a surprise if you plan for it. But most buyers don't plan for it, because nobody told them to. And right now, the market is shifting. On Oahu, condo inventory is rising and the market is moving decisively into buyer's territory. Harcourts Island Real Estate's June 2026 market analysis shows condos sliding toward a buyer's market while single-family homes remain competitive. Nationally, nearly half of all sellers are offering concessions to get deals done.
 
 The move for Hawaii buyers right now is not just negotiating the price — it is negotiating the cash to close. Here is exactly how seller concessions work, what the limits are for each loan type, and the specific strategy to get the seller to pay your closing costs in today's Hawaii market.
 
@@ -57,7 +55,7 @@ The move for Hawaii buyers right now is not just negotiating the price — it is
 
 ## What You Are Actually Paying For
 
-For a full breakdown of what closing costs include, see our guide to [understanding closing costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii). But here is the summary: when you buy a home in Hawaii, your closing costs will run between **2% and 4% of the purchase price**. On an $800,000 property, that is $16,000 to $32,000 in cash you need *on top of* your down payment.
+For a full breakdown of what closing costs include, see our guide to [understanding closing costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii). But here is the summary: when you buy a home in Hawaii, your total closing costs and prepaids typically run between **1.5% and 2% of the purchase price**. On an $800,000 property, that is approximately $12,000 to $16,000 in cash you need *on top of* your down payment.
 
 These costs fall into two categories:
 
@@ -116,14 +114,14 @@ Here is what most people do not realize: under VA guidelines (VA Pamphlet 26-7),
 
 | Item | Amount | Who Pays |
 |---|---|---|
-| Standard closing costs (title, escrow, appraisal, origination) | ~$15,000 | Seller (no cap) |
+| Standard closing costs (title, escrow, appraisal, origination) | ~$12,000 | Seller (no cap) |
 | VA Funding Fee (2.15% of $800,000) | $17,200 | Seller (from 4% concession) |
-| Prepaid taxes + insurance | ~$4,500 | Seller (from 4% concession) |
+| Prepaid taxes + insurance | ~$2,800 | Seller (from 4% concession) |
 | Prepaid interest (15 days) | ~$2,200 | Seller (from 4% concession) |
-| **Total seller pays** | **~$38,900** | — |
+| **Total seller pays** | **~$34,200** | — |
 | **Total buyer pays out of pocket** | **$0** | Zero down + zero closing costs |
 
-The 4% concession cap on an $800,000 home is $32,000 — more than enough to cover the funding fee ($17,200), prepaids ($4,500), and prepaid interest ($2,200), with room to spare for discount points.
+The 4% concession cap on an $800,000 home is $32,000 — more than enough to cover the funding fee ($17,200), prepaids ($2,800), and prepaid interest ($2,200), with room to spare for discount points or paying down buyer debts.
 
 This is not a theoretical scenario. This is how we structure VA purchases for military buyers at Pearl Harbor, Schofield Barracks, Marine Corps Base Hawaii, and Joint Base Pearl Harbor-Hickam every month. A Hawaii military buyer who knows how to structure this ask can effectively walk into a home with zero out-of-pocket costs.
 
@@ -133,7 +131,7 @@ This is not a theoretical scenario. This is how we structure VA purchases for mi
 
 FHA loans allow the seller to contribute up to **6% of the purchase price** toward the buyer's closing costs, prepaids, and discount points. On a $600,000 Oahu condo, that is a maximum credit of $36,000.
 
-Because closing costs in Hawaii rarely reach 6% of the purchase price (they typically run 2–4%), FHA buyers often have room to use the excess credit to buy down their interest rate — a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
+Because closing costs and prepaids in Hawaii typically run only 1.5–2% of the purchase price, FHA buyers almost always have significant room left within the 6% cap to buy down their interest rate — a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
 
 ### Real Example: $650,000 Oahu Condo, FHA Loan, 3.5% Down
 
@@ -142,10 +140,10 @@ Because closing costs in Hawaii rarely reach 6% of the purchase price (they typi
 | Purchase price | $650,000 |
 | Down payment (3.5%) | $22,750 |
 | Maximum seller concession (6%) | $39,000 |
-| Estimated closing costs + prepaids | ~$18,000 |
-| Remaining credit available for rate buydown | ~$21,000 |
+| Estimated closing costs + prepaids | ~$11,000 |
+| Remaining credit available for rate buydown | ~$28,000 |
 
-With $21,000 in remaining credit, an FHA buyer could purchase approximately 3 discount points — potentially reducing their rate from 6.5% to approximately 5.75%, saving over $300 per month for the life of the loan.
+With $28,000 in remaining credit, an FHA buyer could purchase approximately 4 discount points — potentially reducing their rate from 6.5% to approximately 5.5%, saving over $400 per month for the life of the loan.
 
 The FHA limit applies to the appraised value or purchase price, whichever is lower. If the property appraises below the purchase price, the concession cap is calculated on the appraised value.
 
@@ -159,7 +157,7 @@ Conventional loans (Fannie Mae/Freddie Mac) tie the maximum seller concession to
 - **10% to 24.99% down:** Maximum 6% of purchase price
 - **25% or more down:** Maximum 9% of purchase price
 
-For most Hawaii first-time buyers using conventional financing with 5% down, the effective limit is 3%. On a $700,000 home, that is $21,000 — usually just enough to cover standard closing costs and prepaids, but not enough for a meaningful rate buydown.
+For most Hawaii first-time buyers using conventional financing with 5% down, the effective limit is 3%. On a $700,000 home, that is $21,000 — more than enough to cover standard closing costs and prepaids (which typically run $10,500–$14,000), with some room left for a modest rate buydown.
 
 If you can stretch to 10% down, the limit jumps to 6% ($42,000 on a $700,000 home), which opens up significantly more room for rate buydowns or covering higher-than-expected costs.
 
@@ -170,8 +168,8 @@ If you can stretch to 10% down, the limit jumps to 6% ($42,000 on a $700,000 hom
 | Purchase price | $750,000 |
 | Down payment (10%) | $75,000 |
 | Maximum seller concession (6%) | $45,000 |
-| Estimated closing costs + prepaids | ~$20,000 |
-| Remaining credit for rate buydown | ~$25,000 |
+| Estimated closing costs + prepaids | ~$13,500 |
+| Remaining credit for rate buydown | ~$31,500 |
 
 ---
 
@@ -193,11 +191,11 @@ In a buyer's market, you can sometimes offer below list price AND ask for a sell
 
 ### Strategy 3: The VA "Zero Out-of-Pocket" Structure
 
-For VA buyers, work with your lender to calculate the exact total of closing costs + funding fee + prepaids. Then write the offer at full price (or slightly above if the market supports it) with a seller credit for that exact amount. The contract language should read something like:
+For VA buyers, work with your lender to calculate the exact total of closing costs + funding fee + prepaids. Then write the offer at full price (or slightly above if the market supports it) with a seller credit for that exact amount. The contract language should read:
 
-> "Seller to contribute up to $XX,XXX toward buyer's closing costs, prepaid items, and VA funding fee."
+> "Seller to contribute $XX,XXX through escrow at closing to be used toward buyer's discount points, closing costs, prepaid items, and any other item as determined between buyer and lender per VA guidelines."
 
-The key word is "up to" — this protects both parties if the actual costs come in lower than estimated.
+This language is intentionally broad. The VA is the **only loan program** that allows excess seller credit to be applied toward paying down or paying off the buyer's existing debts — car loans, credit cards, student loans — at closing. No other loan type permits this. On a conventional or FHA loan, if your seller credit exceeds your closing costs, the excess must be reduced or applied to discount points. On a VA loan, that surplus can go directly toward eliminating a monthly debt obligation, which simultaneously lowers your DTI and improves your residual income. In a high-cost market like Hawaii where buyers are often stretching to qualify, this is a meaningful advantage that most buyers — and many real estate agents — don't know exists.
 
 ---
 
