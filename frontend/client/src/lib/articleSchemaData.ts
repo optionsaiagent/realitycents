@@ -17,6 +17,23 @@ export interface ArticleSchemaMeta {
 }
 
 export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
+  "first-lien-heloc-vs-traditional-mortgage-hawaii": {
+    wordCount: 2100,
+    keywords: "first lien HELOC Hawaii, daily balance mortgage calculation, sweep checking account mortgage, pay off mortgage faster Hawaii, variable rate HELOC vs fixed mortgage, home equity liquidity Hawaii, alternative mortgage structures",
+    about: [
+      { name: "Home equity line of credit", sameAs: "https://en.wikipedia.org/wiki/Home_equity_line_of_credit" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Interest", sameAs: "https://en.wikipedia.org/wiki/Interest" },
+      { name: "Amortization calculator", sameAs: "https://en.wikipedia.org/wiki/Amortization_calculator" },
+    ],
+    faqSchema: [
+      { question: "What is a first-lien HELOC?", answer: "A first-lien HELOC replaces your primary mortgage with a large Home Equity Line of Credit. Instead of a traditional amortized loan, it functions as a revolving credit line in the first lien position on your home's title." },
+      { question: "How does a sweep-checking account work with a mortgage?", answer: "In this structure, your primary checking account is integrated directly with your loan. Your income is deposited straight into the loan, immediately reducing the principal balance. As you pay bills, you draw from the available credit line. This keeps your average daily balance as low as possible, reducing the interest charged." },
+      { question: "Is the interest rate fixed or variable?", answer: "First-lien HELOCs typically use variable interest rates tied to a major index (like SOFR). While the rate can fluctuate, the rapid principal reduction driven by the sweep account often offsets the risk of a higher rate, resulting in less total interest paid over time." },
+      { question: "Can I access my equity if I pay down the balance?", answer: "Yes. This is the primary liquidity advantage. Unlike a traditional mortgage where extra principal payments are trapped in the home, every dollar you pay down on a first-lien HELOC remains available to you as an open line of credit for emergencies or investments." },
+      { question: "Who should avoid a first-lien HELOC?", answer: "Homeowners who live paycheck-to-paycheck, those who lack spending discipline, and those who require the absolute payment certainty of a fixed 30-year rate should stick to traditional mortgages. The strategy relies entirely on having positive monthly cash flow to suppress the daily balance." },
+    ],
+  },
   "seller-concessions-closing-costs-hawaii": {
     wordCount: 2400,
     keywords: "seller concessions Hawaii, seller credits closing costs Hawaii, VA loan seller pays closing costs, how to get seller to pay closing costs Hawaii, seller concession limits VA FHA conventional, zero out of pocket VA loan Hawaii, Oahu condo buyer market 2026, Hawaii closing costs negotiation, military buyer zero closing costs Hawaii",
