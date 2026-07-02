@@ -18,20 +18,22 @@ export interface ArticleSchemaMeta {
 
 export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
   "first-lien-heloc-vs-traditional-mortgage-hawaii": {
-    wordCount: 2100,
-    keywords: "first lien HELOC Hawaii, daily balance mortgage calculation, sweep checking account mortgage, pay off mortgage faster Hawaii, variable rate HELOC vs fixed mortgage, home equity liquidity Hawaii, alternative mortgage structures",
+    wordCount: 2400,
+    keywords: "first lien HELOC Hawaii, offset mortgage Hawaii, daily balance mortgage calculation, sweep checking account mortgage, pay off mortgage faster Hawaii, variable rate HELOC vs fixed mortgage, home equity liquidity Hawaii, total interest paid mortgage, alternative mortgage structures Hawaii",
     about: [
       { name: "Home equity line of credit", sameAs: "https://en.wikipedia.org/wiki/Home_equity_line_of_credit" },
       { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
-      { name: "Interest", sameAs: "https://en.wikipedia.org/wiki/Interest" },
+      { name: "Offset mortgage", sameAs: "https://en.wikipedia.org/wiki/Offset_mortgage" },
       { name: "Amortization calculator", sameAs: "https://en.wikipedia.org/wiki/Amortization_calculator" },
     ],
     faqSchema: [
-      { question: "What is a first-lien HELOC?", answer: "A first-lien HELOC replaces your primary mortgage with a large Home Equity Line of Credit. Instead of a traditional amortized loan, it functions as a revolving credit line in the first lien position on your home's title." },
-      { question: "How does a sweep-checking account work with a mortgage?", answer: "In this structure, your primary checking account is integrated directly with your loan. Your income is deposited straight into the loan, immediately reducing the principal balance. As you pay bills, you draw from the available credit line. This keeps your average daily balance as low as possible, reducing the interest charged." },
-      { question: "Is the interest rate fixed or variable?", answer: "First-lien HELOCs typically use variable interest rates tied to a major index (like SOFR). While the rate can fluctuate, the rapid principal reduction driven by the sweep account often offsets the risk of a higher rate, resulting in less total interest paid over time." },
-      { question: "Can I access my equity if I pay down the balance?", answer: "Yes. This is the primary liquidity advantage. Unlike a traditional mortgage where extra principal payments are trapped in the home, every dollar you pay down on a first-lien HELOC remains available to you as an open line of credit for emergencies or investments." },
-      { question: "Who should avoid a first-lien HELOC?", answer: "Homeowners who live paycheck-to-paycheck, those who lack spending discipline, and those who require the absolute payment certainty of a fixed 30-year rate should stick to traditional mortgages. The strategy relies entirely on having positive monthly cash flow to suppress the daily balance." },
+      { question: "What is a first-lien HELOC?", answer: "It's a home equity line of credit that replaces your primary mortgage, sitting in first lien position on your home's title. Instead of a traditional amortized loan, it functions as a revolving credit line \u2014 often paired with integrated banking features and available for both purchases and refinances." },
+      { question: "How does a sweep-checking account work with a mortgage?", answer: "Your income is deposited directly into an account integrated with the loan, immediately reducing the principal balance. The money remains available for bills and everyday expenses through debit card, checks, and bill pay \u2014 but until you spend it, it's lowering the balance your daily interest is calculated on." },
+      { question: "How is interest calculated on a first-lien HELOC?", answer: "On products built for this strategy, interest is computed daily on the outstanding balance \u2014 often each day's ending balance \u2014 then totaled and billed monthly. This is what makes balance suppression so powerful compared to a traditional mortgage's monthly amortization schedule." },
+      { question: "Is the rate fixed or variable on a first-lien HELOC?", answer: "Variable \u2014 an index plus a margin. Product features vary, so ask any specific lender about lifetime rate caps, whether the margin is fixed for the life of the loan, initial fixed-rate options, prepayment penalties, and balloon payments before you commit." },
+      { question: "Can I access my equity after I pay the balance down?", answer: "Yes \u2014 that's the core liquidity advantage. Principal you pay down remains available as open credit during the draw period, subject to your credit limit. Draw period length varies significantly by product, so confirm how long yours lasts and when the available credit begins to reduce." },
+      { question: "Who should avoid a first-lien HELOC?", answer: "Households without consistent positive monthly cash flow, borrowers who lack spending discipline, and anyone who needs the absolute payment certainty of a fixed-rate mortgage. The strategy only works with a genuine monthly surplus." },
+      { question: "How do I find out if a first-lien HELOC makes sense for me?", answer: "Ask a licensed loan officer to run a side-by-side simulation using your actual balance, income, and spending \u2014 comparing total interest paid and payoff timeline against a traditional mortgage. That comparison, not the note rate, is the decision." },
     ],
   },
   "seller-concessions-closing-costs-hawaii": {
