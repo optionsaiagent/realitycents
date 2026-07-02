@@ -89,7 +89,7 @@ This structure is not magic. It is pure math, and it requires a specific variabl
 
 The first-lien HELOC strategy is designed for disciplined savers who spend significantly less than they earn. The bigger the gap between your income and your expenses, the more powerful the daily sweep effect becomes. 
 
-This is particularly relevant in Hawaii, where median home prices between $600,000 and $900,000 mean mortgage balances are large. The larger the balance, the more impactful the interest savings. Military families stationed on Oahu are often ideal candidates for this structure because they have highly predictable, strong cash flow from base pay plus BAH (Basic Allowance for Housing), which provides a steady, sizable deposit to suppress the daily balance.
+This is particularly relevant in Hawaii, where median home prices between $600,000 and $900,000 mean mortgage balances are large. The larger the balance, the more impactful the interest savings. The ideal candidates are dual-income professional households, high earners in fields like medicine, law, or technology, and small business owners with consistent monthly distributions — anyone whose take-home income reliably and significantly exceeds their monthly expenses.
 
 ### A Realistic Hawaii Scenario
 
