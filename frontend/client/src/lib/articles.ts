@@ -38,7 +38,7 @@ const allArticles: Article[] = [
     date: "2026-07-01",
     featured: true,
     lastUpdated: "July 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hawaii-first-time-buyer-KfMc2iyJYMwq3zUw3At8yV.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/yDelxnYooqZLUnRx.png",
     content: `# First-Lien HELOCs vs. Traditional Mortgages: Why the Interest Rate Isn't the Number That Matters
 
 *Last Updated: July 2026*
@@ -60,6 +60,10 @@ A traditional mortgage uses an amortized schedule. Interest is front-loaded: in 
 A first-lien HELOC works differently. It's not a closed-end mortgage at all — it's a home equity line of credit sitting in first lien position on your home's title. Instead of a fixed amortization schedule, interest is calculated on your actual outstanding balance as it moves. On the products built for this strategy, interest is computed daily — often on each day's ending balance — then totaled and billed once a month.
 
 That daily calculation is the whole game. If you can keep your daily balance suppressed, you directly reduce the interest charged that month — without changing your rate and without changing your budget.
+
+![Infographic comparing traditional mortgage amortization vs first-lien HELOC with sweep account showing accelerated payoff timeline](https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/yDelxnYooqZLUnRx.png)
+
+*Same income. Same expenses. Different math engine. Different outcome.*
 
 ---
 
