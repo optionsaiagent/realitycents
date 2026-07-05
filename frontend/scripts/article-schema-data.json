@@ -100,8 +100,8 @@
     ]
   },
   "dti-killing-hawaii-mortgage-applications": {
-    "wordCount": 1200,
-    "keywords": "DTI ratio mortgage Hawaii, Debt-to-Income Hawaii, front-end vs back-end DTI, student loans mortgage Hawaii, VA loan residual income, DTI creep mortgage, how to lower DTI for mortgage, FHA DTI limits, conventional DTI limits Hawaii",
+    "wordCount": 2200,
+    "keywords": "DTI ratio mortgage Hawaii, debt-to-income Hawaii, HOA fees mortgage qualification Hawaii, PITIA Hawaii condo, student loans mortgage DTI, VA residual income Hawaii, DTI creep escrow, how to lower DTI Hawaii, FHA DTI limits, conventional DTI limits Hawaii, Fannie Mae Freddie Mac student loans",
     "about": [
       {
         "name": "Debt-to-income ratio",
@@ -114,20 +114,40 @@
       {
         "name": "FHA insured loan",
         "sameAs": "https://en.wikipedia.org/wiki/FHA_insured_loan"
+      },
+      {
+        "name": "VA loan",
+        "sameAs": "https://en.wikipedia.org/wiki/VA_loan"
+      },
+      {
+        "name": "Homeowner association",
+        "sameAs": "https://en.wikipedia.org/wiki/Homeowner_association"
       }
     ],
     "faqSchema": [
       {
-        "question": "What is the difference between front-end and back-end DTI?",
-        "answer": "Front-end DTI is your proposed housing payment (PITIA) divided by your gross monthly income. Back-end DTI adds all other monthly debt obligations. For most loan types (conventional, FHA, VA), only the back-end ratio meaningfully impacts qualification. USDA is the only program where front-end ratio is a significant factor."
+        "question": "What is debt-to-income ratio (DTI)?",
+        "answer": "DTI is your total monthly debt obligations divided by your gross monthly income. Lenders use it to determine how much mortgage payment you can handle. In Hawaii, where home prices push most buyers near program limits, DTI is often the deciding factor in qualification."
       },
       {
-        "question": "How are deferred student loans calculated for a mortgage?",
-        "answer": "It depends on the loan type. VA allows excluding them if deferred 12+ months. FHA requires using 0.5% of the balance as a monthly payment. Conventional typically uses 1% of the balance or a calculated payment."
+        "question": "What counts toward my DTI?",
+        "answer": "Your proposed full housing payment (PITIA \\u2014 principal, interest, taxes, insurance, and association/HOA fees) plus all recurring monthly obligations: car loans, student loans, minimum credit card payments, personal loans, and co-signed debts. It does not include utilities, groceries, or subscriptions."
       },
       {
-        "question": "What is the maximum DTI for a conventional loan in Hawaii?",
-        "answer": "Conventional financing typically allows a back-end DTI of 45% to 50%. FHA can go as high as 55% with compensating factors. VA loans have no hard DTI cap — qualification is based on residual income rather than a fixed ratio."
+        "question": "How do student loans affect my DTI in Hawaii?",
+        "answer": "It depends entirely on your loan program and documentation. Conventional (Fannie Mae) may count $0 for a documented IDR plan, while the same loan in deferment counts at 1% of the balance. FHA uses 0.5% if the payment is $0. VA can exclude deferred loans entirely under certain conditions. The program you choose can swing your DTI by hundreds of dollars per month."
+      },
+      {
+        "question": "What is the maximum DTI for a mortgage?",
+        "answer": "Conventional loans cap at 50% (Fannie Mae DU). FHA can approve up to 56.99% with strong compensating factors. VA has no hard DTI cap \\u2014 it underwrites to residual income instead. The right program choice depends on your full financial picture."
+      },
+      {
+        "question": "Why do HOA fees matter so much for Hawaii condos?",
+        "answer": "Because HOA/maintenance fees are included in your PITIA and directly increase your DTI. In Hawaii, condo maintenance fees commonly range from $400 to $1,800+ per month. A $600/month difference in fees has roughly the same qualification impact as adding $100,000 to your loan amount."
+      },
+      {
+        "question": "How can I lower my DTI before buying?",
+        "answer": "Focus on eliminating monthly payments, not just reducing balances. Pay off small debts with fixed payments (credit cards, personal loans). Document IDR student loan payments. Remove co-signed debts by proving 12 months of payments by the other party. And choose the loan program that calculates your specific debts most favorably."
       }
     ]
   },
