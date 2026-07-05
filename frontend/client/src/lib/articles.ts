@@ -30,6 +30,209 @@ export const CATEGORIES = [
 
 const allArticles: Article[] = [
   {
+    slug: "zero-down-home-buying-hawaii",
+    title: "The Zero-Down Playbook: How Hawaii Buyers Are Purchasing Homes With Nothing Out of Pocket",
+    excerpt: "Most people believe you need $60K–$200K cash to buy in Hawaii. The reality: multiple legitimate paths exist to purchase with nothing out of pocket — if you know how to structure the deal.",
+    category: "First-Time Buyers",
+    readTime: "9 min",
+    date: "2026-07-04",
+    featured: true,
+    lastUpdated: "July 2026",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hawaii-first-time-buyer-KfMc2iyJYMwq3zUw3At8yV.webp",
+    content: `# The Zero-Down Playbook: How Hawaii Buyers Are Purchasing Homes With Nothing Out of Pocket
+
+*Last Updated: July 2026*
+
+**Most people believe you need 10–20% down to buy a home in Hawaii. At $600,000 to $1 million+, that's $60,000 to $200,000 in cash that most buyers simply don't have. The reality: multiple legitimate paths exist to purchase with nothing — or near-nothing — out of pocket. Here's what actually works, what doesn't, and how to structure the deal.**
+
+Every week, someone sits across from me and says some version of the same thing: "I know I can't buy yet — I don't have the down payment saved."
+
+And every week, I show them that they're wrong.
+
+Not because there's some secret loophole or too-good-to-be-true scheme. But because the mortgage industry offers several legitimate, well-established paths to homeownership that don't require you to drain your savings account. Some require no down payment at all. Others combine low down payments with assistance programs and seller credits to get the total cash-to-close to zero.
+
+These aren't theoretical. We close these deals in Hawaii every month. Here's how each path works, who qualifies, and what the real trade-offs are.
+
+---
+
+## The Misconception: "I Need $100K to Buy in Hawaii"
+
+When the median Oahu condo is around $500,000 and the median single-family home pushes $1.1 million, the mental math is brutal. Twenty percent of $500,000 is $100,000. Twenty percent of $1.1 million is $220,000.
+
+But 20% down hasn't been a requirement for decades. It's what you need to *avoid PMI on a conventional loan* — that's it. The actual minimum down payments are:
+
+- **VA Loan:** 0% (zero down payment)
+- **USDA Loan:** 0% (limited to eligible rural areas — parts of the Big Island and Maui qualify)
+- **FHA Loan:** 3.5% ($17,500 on a $500,000 home)
+- **Conventional:** 3–5% ($15,000–$25,000 on a $500,000 home)
+
+And when you layer in down payment assistance programs, gift funds, and seller concessions to cover closing costs, the actual cash a buyer needs to bring to the table can be reduced to zero.
+
+---
+
+## Path 1: VA Loans — The Gold Standard of Zero Down
+
+If you are a veteran, active-duty service member, National Guard/Reserve member with qualifying service, or a surviving spouse, the VA loan is the single most powerful zero-down tool in the mortgage market. Full stop.
+
+Here's what VA gives you:
+
+- **Zero down payment** — on any loan amount up to the conforming limit ($1,249,125 in Hawaii for 2026)
+- **No private mortgage insurance (PMI)** — ever
+- **Competitive interest rates** — typically at or below conventional rates
+- **Unlimited seller-paid closing costs** — the seller can pay ALL of your normal closing costs with no cap
+- **Up to 4% in additional seller concessions** — covering the VA funding fee, prepaids, discount points, and even paying off buyer debts
+
+The math: on an $800,000 home, a VA buyer can purchase with $0 down. If the seller agrees to cover closing costs (no cap) plus 4% in concessions ($32,000), the buyer can walk into the home with literally nothing out of pocket.
+
+This isn't theoretical. Hawaii has one of the largest military populations in the country — Pearl Harbor, Schofield Barracks, Marine Corps Base Hawaii, Joint Base Pearl Harbor-Hickam, Tripler Army Medical Center. We structure these zero-out-of-pocket VA purchases every month.
+
+The one cost to be aware of: the **VA Funding Fee** (2.15% for first-time use, 3.3% for subsequent use). This can be financed into the loan or paid by the seller as part of the 4% concession. Veterans with a service-connected disability are exempt from the funding fee entirely.
+
+For the full breakdown of how VA seller concessions work, see our guide to [getting the seller to pay your closing costs](/knowledge-base/seller-concessions-closing-costs-hawaii).
+
+---
+
+## Path 2: Down Payment Assistance Programs
+
+For non-VA buyers, Hawaii offers several down payment assistance (DPA) programs that can cover part or all of your down payment and closing costs. These programs change frequently — funding runs out, new programs launch, income limits adjust — so always verify current availability with your lender. But here's what has been available:
+
+**HHFDC Hale Kama\u02BBaina Program:** Administered by the Hawaii Housing Finance and Development Corporation, this program offers below-market interest rates (recently around 4.65% for FHA/VA, 4.95% for conventional) plus optional down payment assistance of up to 4% of the purchase price as a silent second mortgage. Income limits apply (approximately $152,000 for 1–2 person households on Oahu in 2026). First-time buyers only, with some exceptions for veterans and targeted census tracts.
+
+**County-Level Programs:** Honolulu, Maui, and Hawaii County have periodically offered their own assistance programs, often funded through federal HOME or CDBG allocations. These tend to be smaller dollar amounts but can stack with other strategies.
+
+**Employer Assistance Programs:** Some large Hawaii employers (military-adjacent contractors, healthcare systems, state/county government) offer homebuyer assistance as an employee benefit. Always worth asking HR.
+
+The key insight: DPA programs don't have to cover your entire down payment to be useful. If you need 3.5% down on an FHA loan ($17,500 on a $500,000 condo) and a DPA program covers 3–4% ($15,000–$20,000), you're at or near zero out of pocket for the down payment. Combine that with seller concessions covering your closing costs, and you're in the home with minimal cash.
+
+---
+
+## Path 3: Seller Concessions — Let the Seller Pay Your Way In
+
+Even if you have a down payment covered (through VA, DPA, or savings), you still face closing costs — typically 1.5–2% of the purchase price in Hawaii. On a $700,000 home, that's $10,500–$14,000.
+
+Seller concessions can eliminate this entirely. In today's market, 46% of sellers nationally are offering concessions to buyers — the highest rate in years. On Oahu, the condo market has shifted firmly into buyer's territory, making concession requests increasingly successful.
+
+The limits by loan type:
+
+| Loan Type | Maximum Seller Concession |
+|---|---|
+| VA | All closing costs (no limit) + 4% additional |
+| FHA | 6% of purchase price |
+| Conventional (<10% down) | 3% of purchase price |
+| Conventional (10–25% down) | 6% of purchase price |
+
+The strategy is simple: offer at or near list price, but include a seller credit toward your closing costs in the purchase contract. The seller's net proceeds are the same as a lower offer without a credit — but you keep your cash.
+
+For the full breakdown of how to structure this ask, including exact contract language and negotiation strategies, see our detailed guide: [What Hawaii Buyers Don't Know About Closing Costs — And How to Get the Seller to Pay Them](/knowledge-base/seller-concessions-closing-costs-hawaii).
+
+---
+
+## Path 4: FHA + Gift Funds + Seller Concessions
+
+FHA loans allow your **entire 3.5% down payment** to come from gift funds — money given to you by a family member, employer, or approved organization. The gift does not need to be repaid.
+
+Here's how a zero-out-of-pocket FHA purchase can work:
+
+1. **Down payment (3.5%):** Covered by a gift from a family member
+2. **Closing costs + prepaids:** Covered by a seller concession (FHA allows up to 6%)
+3. **Cash from buyer:** $0
+
+The requirements: the gift donor must provide a signed gift letter confirming the funds are a gift (not a loan), plus documentation of the transfer. The donor cannot be someone with a financial interest in the transaction (like the seller or real estate agent).
+
+This path works particularly well for first-time buyers whose parents or grandparents want to help but whose help wouldn't cover a full 20% down payment. At 3.5%, a gift of $17,500–$25,000 (depending on purchase price) combined with seller concessions gets the buyer into the home with nothing from their own savings.
+
+---
+
+## Path 5: Combining Strategies for True Zero
+
+The most powerful zero-down purchases combine multiple strategies:
+
+**VA + Seller Concessions:**
+- Down payment: $0 (VA benefit)
+- Closing costs: Seller pays all (no VA cap on normal closing costs)
+- Funding fee + prepaids: Seller pays from 4% concession allowance
+- **Total buyer cash: $0**
+
+**FHA + DPA + Seller Concessions:**
+- Down payment: Covered by Hale Kama\u02BBaina or county DPA (3–4%)
+- Closing costs: Seller concession (up to 6% allowed on FHA)
+- **Total buyer cash: $0 or near-zero**
+
+**Conventional + DPA + Seller Concessions:**
+- Down payment: Covered by DPA program (3–5%)
+- Closing costs: Seller concession (3% allowed with <10% down)
+- **Total buyer cash: $0 or near-zero** (tighter because conventional's 3% cap is smaller)
+
+---
+
+## The Trade-Offs: What Zero Down Actually Costs
+
+Zero down doesn't mean zero cost. It means the costs are structured differently. Here's what you're trading:
+
+**Higher monthly payments.** Less money down means a larger loan balance, which means higher monthly payments. On a $600,000 home, the difference between 0% down and 20% down is roughly $750–$800 per month in additional P&I.
+
+**Mortgage insurance (non-VA).** FHA loans carry mortgage insurance premium (MIP) for the life of the loan — currently 0.55% annually on most loans. On a $580,000 FHA loan, that's approximately $266/month. Conventional loans with less than 20% down carry PMI, which can be removed once you reach 20% equity. VA loans have no mortgage insurance at all — one of their biggest advantages.
+
+**The VA Funding Fee.** First-time VA users pay 2.15% of the loan amount ($17,200 on $800,000). Subsequent use is 3.3%. This can be financed into the loan or paid by the seller, but it increases your total loan balance. Disabled veterans are exempt.
+
+**Potentially higher rates on DPA programs.** Some down payment assistance programs come with interest rates slightly above market. The Hale Kama\u02BBaina program is an exception — its rates are typically *below* market — but other programs may carry a premium.
+
+**Less equity cushion.** If the market dips, a zero-down buyer is underwater faster than someone who put 20% down. In Hawaii's historically appreciating market this has rarely been a long-term problem, but it's a real short-term risk if you might need to sell within 2–3 years.
+
+The honest assessment: for most Hawaii buyers, the alternative to buying with zero down isn't buying with 20% down — it's *not buying at all* and continuing to rent while prices appreciate. In a market that has historically gained 3–5% annually, every year you wait to save a larger down payment is a year the target moves further away.
+
+---
+
+## Going Deeper: The Full Playbook
+
+This article covers the framework, but every buyer's situation is different. The specific strategy that works for you depends on your eligibility (VA vs. civilian), your income and DTI, the property type, the seller's motivation, and which assistance programs are currently funded.
+
+I wrote an entire book on this — [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](https://www.amazon.com/dp/B0H7P4DSRN) — because the strategies are too detailed for a single article. It covers every zero-down path available to Hawaii buyers, with step-by-step breakdowns, real scenarios, and the exact language to use in purchase contracts. If you're serious about buying in Hawaii without draining your savings, it's the playbook.
+
+---
+
+## Ready to Run Your Numbers?
+
+If you want to know which zero-down path works for your specific situation — VA eligibility, DPA program qualification, how much seller concession you can realistically ask for in today's market — I'm happy to walk through it. Every buyer's path is different, and the right structure depends on your income, debts, property type, and timeline.
+
+Reach out anytime at \ud83d\udcde 808-429-0811 or \ud83d\udce7 jaym@cmghomeloans.com. No pressure, no obligation — just your real options.
+
+---
+
+### Frequently Asked Questions
+
+**Can you really buy a home in Hawaii with zero down payment?**
+Yes. VA loans require zero down payment on homes up to $1,249,125 in Hawaii (2026 conforming limit). USDA loans also offer zero down in eligible rural areas. For non-VA/USDA buyers, combining FHA's 3.5% minimum with gift funds or down payment assistance programs can achieve the same result.
+
+**What is the VA funding fee and can it be avoided?**
+The VA funding fee is 2.15% of the loan amount for first-time use (3.3% for subsequent use). It can be financed into the loan or paid by the seller as part of the 4% concession allowance. Veterans with any service-connected disability rating are fully exempt from the funding fee.
+
+**Do I have to be active-duty military to use a VA loan?**
+No. VA loan eligibility extends to veterans who have separated from service (with qualifying service length), National Guard and Reserve members (with qualifying service), and surviving spouses of service members who died in the line of duty or from a service-connected disability.
+
+**What down payment assistance programs are available in Hawaii?**
+The primary program is HHFDC's Hale Kama\u02BBaina, which offers below-market rates plus up to 4% DPA. County programs exist but funding varies. Programs change frequently, so verify current availability with your lender. Income and purchase price limits apply.
+
+**Can I use gift money for my entire down payment?**
+On FHA loans, yes — your entire 3.5% down payment can come from gift funds from a family member or approved source. On conventional loans, gift funds are also allowed but may require the buyer to contribute some of their own funds depending on the down payment amount and property type.
+
+**What's the catch with zero-down buying?**
+Higher monthly payments (larger loan balance), mortgage insurance on FHA/conventional loans, the VA funding fee, and less equity cushion if the market dips. Zero down doesn't mean free — it means structuring the deal so cash doesn't leave your pocket at closing. The costs are spread over time rather than paid upfront.
+
+---
+
+### Related Articles
+- [What Hawaii Buyers Don't Know About Closing Costs — And How to Get the Seller to Pay Them](/knowledge-base/seller-concessions-closing-costs-hawaii)
+- [Understanding VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
+- [Down Payment Assistance Programs in Hawaii](/knowledge-base/down-payment-assistance-hawaii)
+- [FHA Loans in Hawaii Explained](/knowledge-base/fha-loans-hawaii-explained)
+- [The Hale Kama\u02BBaina Mortgage Program](/knowledge-base/hale-kamaaina-mortgage-program-hawaii)
+
+---
+
+*Published by Jay Miller, CMA | NMLS #657301 | CMG Home Loans, Honolulu, Hawaii | RealityCents.com*`,
+  },
+  {
     slug: "first-lien-heloc-vs-traditional-mortgage-hawaii",
     title: "First-Lien HELOCs vs. Traditional Mortgages: Why the Interest Rate Isn't the Number That Matters",
     excerpt: "Most Hawaii homeowners focus on the interest rate. But for disciplined savers, a first-lien HELOC with a sweep account can save hundreds of thousands in interest while keeping equity liquid.",

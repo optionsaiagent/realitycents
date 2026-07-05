@@ -17,6 +17,25 @@ export interface ArticleSchemaMeta {
 }
 
 export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
+  "zero-down-home-buying-hawaii": {
+    wordCount: 2300,
+    keywords: "zero down payment Hawaii, buy home no money down Hawaii, VA loan zero down Hawaii, down payment assistance Hawaii 2026, seller concessions closing costs Hawaii, FHA gift funds down payment, Hale Kamaaina program, zero out of pocket home purchase Hawaii, military home buying Hawaii",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "Down payment", sameAs: "https://en.wikipedia.org/wiki/Down_payment" },
+      { name: "FHA insured loan", sameAs: "https://en.wikipedia.org/wiki/FHA_insured_loan" },
+      { name: "Closing costs", sameAs: "https://en.wikipedia.org/wiki/Closing_costs" },
+      { name: "Hawaii Housing Finance and Development Corporation", sameAs: "https://en.wikipedia.org/wiki/Hawaii_Housing_Finance_and_Development_Corporation" },
+    ],
+    faqSchema: [
+      { question: "Can you really buy a home in Hawaii with zero down payment?", answer: "Yes. VA loans require zero down payment on homes up to $1,249,125 in Hawaii (2026 conforming limit). USDA loans also offer zero down in eligible rural areas. For non-VA/USDA buyers, combining FHA's 3.5% minimum with gift funds or down payment assistance programs can achieve the same result." },
+      { question: "What is the VA funding fee and can it be avoided?", answer: "The VA funding fee is 2.15% of the loan amount for first-time use (3.3% for subsequent use). It can be financed into the loan or paid by the seller as part of the 4% concession allowance. Veterans with any service-connected disability rating are fully exempt from the funding fee." },
+      { question: "Do I have to be active-duty military to use a VA loan?", answer: "No. VA loan eligibility extends to veterans who have separated from service (with qualifying service length), National Guard and Reserve members (with qualifying service), and surviving spouses of service members who died in the line of duty or from a service-connected disability." },
+      { question: "What down payment assistance programs are available in Hawaii?", answer: "The primary program is HHFDC's Hale Kama\u02BBaina, which offers below-market rates plus up to 4% DPA. County programs exist but funding varies. Programs change frequently, so verify current availability with your lender. Income and purchase price limits apply." },
+      { question: "Can I use gift money for my entire down payment?", answer: "On FHA loans, yes \u2014 your entire 3.5% down payment can come from gift funds from a family member or approved source. On conventional loans, gift funds are also allowed but may require the buyer to contribute some of their own funds depending on the down payment amount and property type." },
+      { question: "What's the catch with zero-down buying?", answer: "Higher monthly payments (larger loan balance), mortgage insurance on FHA/conventional loans, the VA funding fee, and less equity cushion if the market dips. Zero down doesn't mean free \u2014 it means structuring the deal so cash doesn't leave your pocket at closing. The costs are spread over time rather than paid upfront." },
+    ],
+  },
   "first-lien-heloc-vs-traditional-mortgage-hawaii": {
     wordCount: 2400,
     keywords: "first lien HELOC Hawaii, offset mortgage Hawaii, daily balance mortgage calculation, sweep checking account mortgage, pay off mortgage faster Hawaii, variable rate HELOC vs fixed mortgage, home equity liquidity Hawaii, total interest paid mortgage, alternative mortgage structures Hawaii",
