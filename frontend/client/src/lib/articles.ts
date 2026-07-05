@@ -38,7 +38,7 @@ const allArticles: Article[] = [
     date: "2026-07-04",
     featured: true,
     lastUpdated: "July 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hawaii-first-time-buyer-KfMc2iyJYMwq3zUw3At8yV.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/ELJvTrvviBfERHEo.jpg",
     content: `# The Zero-Down Playbook: How Hawaii Buyers Are Purchasing Homes With Nothing Out of Pocket
 
 *Last Updated: July 2026*
