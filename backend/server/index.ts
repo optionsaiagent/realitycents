@@ -46,7 +46,7 @@ async function startServer() {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
 
-  // Short URL redirect: /r/:code → 302 to /loan-compare?d=...
+  // Short URL redirect: /r/:code → 302 to appropriate calculator
   app.get("/r/:code", async (req, res) => {
     const { code } = req.params;
     if (!code || code.length !== 6) {
@@ -55,6 +55,9 @@ async function startServer() {
     try {
       const data = await resolveShortUrl(code);
       if (data) {
+        if (data.startsWith("adv:")) {
+          return res.redirect(302, `https://realitycents.com/advanced-calculator?${data.slice(4)}`);
+        }
         return res.redirect(302, `https://realitycents.com/loan-compare?d=${data}`);
       }
     } catch (e) {
