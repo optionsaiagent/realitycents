@@ -30,7 +30,11 @@ export default function ShortLink() {
 
   useEffect(() => {
     if (data?.data) {
-      window.location.replace(`/loan-compare?d=${data.data}`);
+      if (data.data.startsWith("adv:")) {
+        window.location.replace(`/advanced-calculator?${data.data.slice(4)}`);
+      } else {
+        window.location.replace(`/loan-compare?d=${data.data}`);
+      }
     }
   }, [data]);
 

@@ -5,6 +5,7 @@
  * Features: Comparison Mode, Share Results via URL
  */
 import { useState, useMemo, useEffect, useCallback } from "react";
+import { trpc } from "@/lib/trpc";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
@@ -417,6 +418,10 @@ function ResultCard({ calc, inputs, highlight }: { calc: CalcResult; inputs: Loa
       </p>
 
       {/* Summary Stats */}
+      <div className="mb-2">
+        <p className="text-xs text-sand/50 mb-0.5">Purchase Price</p>
+        <p className="text-white text-sm font-body font-medium">{fmt(inputs.homePrice)}</p>
+      </div>
       <div className="grid grid-cols-3 gap-3 mb-4">
         <div><p className="text-xs text-sand/50 mb-0.5">Base Loan</p><p className="text-white text-sm font-body font-medium">{fmt(calc.baseLoanAmount)}</p></div>
         <div><p className="text-xs text-sand/50 mb-0.5">Total Loan</p><p className="text-white text-sm font-body font-medium">{fmt(calc.totalLoanAmount)}</p></div>
@@ -616,14 +621,25 @@ export default function AdvancedCalculator() {
     window.open(`mailto:?subject=${subject}&body=${body}`, "_self");
   }, [inputs, calc]);
 
-  const handleShare = useCallback(() => {
+  const createShortUrlMutation = trpc.shortUrl.create.useMutation();
+  const handleShare = useCallback(async () => {
     const encoded = encodeInputsToURL(inputs);
-    const url = `${window.location.origin}${window.location.pathname}?${encoded}`;
-    navigator.clipboard.writeText(url).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    });
-  }, [inputs]);
+    try {
+      const result = await createShortUrlMutation.mutateAsync({ data: `adv:${encoded}` });
+      const url = `${window.location.origin}/s/${result.code}`;
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      });
+    } catch {
+      // Fallback to long URL if short URL creation fails
+      const url = `${window.location.origin}${window.location.pathname}?${encoded}`;
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      });
+    }
+  }, [inputs, createShortUrlMutation]);
 
   const lowerPayment = compareMode ? (calc.totalMonthly <= calc2.totalMonthly ? 1 : 2) : 0;
 
