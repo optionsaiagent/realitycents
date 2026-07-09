@@ -1084,128 +1084,7 @@ export default function AdvancedCalculator() {
             </div>
           )}
 
-          {/* ─── PRINT-ONLY SUMMARY (hidden on screen, shown when printing) ─── */}
-          <div className="print-only hidden" id="print-summary-content">
-            <div className="print-summary">
 
-              {/* ── Header ── */}
-              <div className="print-header">
-                <div>
-                  <div className="print-logo-text">RealityCents</div>
-                  <div className="print-logo-tagline">Hawaii Mortgage Education &amp; Lending</div>
-                </div>
-                <div className="print-meta">
-                  <div className="print-meta-name">Jay Miller — NMLS #657301</div>
-                  <div>CMG Home Loans — Branch NMLS #2475890</div>
-                  <div>(808) 429-0811 · jaym@cmghomeloans.com</div>
-                  <div>www.realitycents.com</div>
-                  <div className="print-meta-date">Generated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</div>
-                </div>
-              </div>
-
-              {/* ── Total Payment Highlight Banner ── */}
-              <div className="print-highlight print-section">
-                <div className="print-highlight-left">
-                  <div className="print-badge">{loanTypeLabels[inputs.loanType]} Loan</div>
-                  <div className="big-label">Estimated Total Monthly Payment</div>
-                  <div className="big-number">{fmt(calc.totalMonthly)}</div>
-                  <div className="print-highlight-sub">Principal &amp; Interest: {fmt(calc.monthlyPI)} · Rate: {fmtPct(inputs.interestRate, 3)} · {inputs.loanTerm}-Year Fixed</div>
-                </div>
-                <div style={{ textAlign: "right", fontSize: "8.5pt", color: "#6b7280", fontFamily: "Arial, sans-serif" }}>
-                  <div style={{ fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Loan Amount</div>
-                  <div style={{ fontSize: "14pt", fontWeight: 700, color: "#1A7A7A", fontFamily: "Georgia, serif" }}>{fmt(calc.totalLoanAmount)}</div>
-                  <div style={{ marginTop: "6pt", fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Purchase Price</div>
-                  <div style={{ fontSize: "11pt", fontWeight: 600, color: "#374151", fontFamily: "Georgia, serif" }}>{fmt(inputs.homePrice)}</div>
-                </div>
-              </div>
-
-              {/* ── Loan Summary ── */}
-              <div className="print-section">
-                <h2>Loan Summary</h2>
-                <div className="print-grid">
-                  <div>
-                    <div className="print-row"><span className="label">Home Purchase Price</span><span className="value">{fmt(inputs.homePrice)}</span></div>
-                    <div className="print-row"><span className="label">Down Payment</span><span className="value">{fmt(calc.dpDollar)} ({fmtPct(calc.dpPercent, 1)})</span></div>
-                    <div className="print-row"><span className="label">Base Loan Amount</span><span className="value">{fmt(calc.baseLoanAmount)}</span></div>
-                    {calc.vaFundingFee > 0 && <div className="print-row"><span className="label">VA Funding Fee (financed)</span><span className="value">{fmt(calc.vaFundingFee)}</span></div>}
-                    {calc.fhaUfmip > 0 && <div className="print-row"><span className="label">FHA UFMIP (financed)</span><span className="value">{fmt(calc.fhaUfmip)}</span></div>}
-                    <div className="print-row"><span className="label">Total Loan Amount</span><span className="value">{fmt(calc.totalLoanAmount)}</span></div>
-                  </div>
-                  <div>
-                    <div className="print-row"><span className="label">Interest Rate</span><span className="value">{fmtPct(inputs.interestRate, 3)}</span></div>
-                    <div className="print-row"><span className="label">Loan Term</span><span className="value">{inputs.loanTerm} Years Fixed</span></div>
-                    <div className="print-row"><span className="label">Loan Type</span><span className="value">{loanTypeLabels[inputs.loanType]}</span></div>
-                    <div className="print-row"><span className="label">LTV Ratio</span><span className="value">{fmtPct(calc.ltv, 1)}</span></div>
-                    {(inputs.loanType === "conventional" || inputs.loanType === "fha") && <div className="print-row"><span className="label">FICO Score</span><span className="value">{inputs.ficoScore}</span></div>}
-                    <div className="print-row"><span className="label">Total Interest Paid</span><span className="value">{fmt(calc.totalInterest)}</span></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* ── Monthly Payment Breakdown ── */}
-              <div className="print-section">
-                <h2>Monthly Payment Breakdown</h2>
-                <div className="print-row"><span className="label">Principal &amp; Interest</span><span className="value">{fmt(calc.monthlyPI)}</span></div>
-                {calc.monthlyPmi > 0 && <div className="print-row"><span className="label">PMI (Best available rate: {fmtPct(calc.pmiAnnualRate * 100)} annual)</span><span className="value">{fmt(calc.monthlyPmi)}</span></div>}
-                {calc.monthlyMip > 0 && <div className="print-row"><span className="label">FHA Monthly MIP</span><span className="value">{fmt(calc.monthlyMip)}</span></div>}
-                {inputs.propertyTax > 0 && <div className="print-row"><span className="label">Property Tax (est.)</span><span className="value">{fmt(inputs.propertyTax)}</span></div>}
-                {inputs.insurance > 0 && <div className="print-row"><span className="label">Homeowner's Insurance (est.)</span><span className="value">{fmt(inputs.insurance)}</span></div>}
-                {inputs.hoaFees > 0 && <div className="print-row"><span className="label">HOA Fees</span><span className="value">{fmt(inputs.hoaFees)}</span></div>}
-                <div className="print-row total"><span className="label">Total Monthly Payment</span><span className="value">{fmt(calc.totalMonthly)}</span></div>
-              </div>
-
-              {/* ── Loan-Specific Notes ── */}
-              {inputs.loanType === "va" && (
-                <div className="print-section">
-                  <div className="print-notes-box" style={{ background: "#f0fafa", border: "1pt solid #1A7A7A" }}>
-                    <div className="print-notes-title">VA Loan Notes</div>
-                    <div className="print-notes-body">
-                      {calc.vaFundingFeeWaived
-                        ? "VA Funding Fee waived — borrower has a 10%+ service-connected disability rating."
-                        : `VA Funding Fee: ${fmt(calc.vaFundingFee)} (${fmtPct(calc.vaFundingFeeRate * 100)} of base loan) — financed into the loan. Usage: ${inputs.vaFirstUse ? "First Use" : "Subsequent Use"}. No monthly mortgage insurance required.`
-                      }
-                    </div>
-                  </div>
-                </div>
-              )}
-              {inputs.loanType === "conventional" && calc.monthlyPmi > 0 && (
-                <div className="print-section">
-                  <div className="print-notes-box" style={{ background: "#fffbf0", border: "1pt solid #C4956A" }}>
-                    <div className="print-notes-title">PMI Notes</div>
-                    <div className="print-notes-body">
-                      PMI rate of {fmtPct(calc.pmiAnnualRate * 100)} per year ({fmt(calc.monthlyPmi)}/mo) is sourced from the best available rate across MGIC, Radian, and Arch MI for FICO {inputs.ficoScore} at {fmtPct(calc.ltv, 1)} LTV. Annual PMI cost: {fmt(calc.monthlyPmi * 12)}. PMI can be removed once equity reaches 20% (80% LTV).
-                    </div>
-                  </div>
-                </div>
-              )}
-              {inputs.loanType === "fha" && (
-                <div className="print-section">
-                  <div className="print-notes-box" style={{ background: "#f0fafa", border: "1pt solid #1A7A7A" }}>
-                    <div className="print-notes-title">FHA Loan Notes</div>
-                    <div className="print-notes-body">
-                      FHA Upfront MIP (UFMIP) of {fmt(calc.fhaUfmip)} (1.75% of base loan) is financed into the total loan amount. Annual MIP of {fmt(calc.monthlyMip * 12)} ({fmt(calc.monthlyMip)}/mo) applies for the life of the loan when LTV exceeds 90% at origination.
-                    </div>
-                  </div>
-                </div>
-              )}
-              {inputs.loanType === "jumbo" && (
-                <div className="print-section">
-                  <div className="print-notes-box" style={{ background: "#f8f9fa", border: "1pt solid #d1d5db" }}>
-                    <div className="print-notes-title">Jumbo Loan Notes</div>
-                    <div className="print-notes-body">
-                      This loan exceeds the 2026 Honolulu County conforming limit of $1,249,125 and is classified as a jumbo loan. Jumbo loans typically require stronger credit, larger reserves, and may carry slightly higher rates. Contact Jay Miller for current jumbo pricing.
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* ── Disclaimer ── */}
-              <div className="print-note">
-                This estimate is for informational purposes only and does not constitute a loan commitment, pre-approval, or guarantee of financing. Actual interest rates, fees, and payment amounts may vary based on credit profile, property type, occupancy status, market conditions, and other underwriting factors. Property taxes and insurance are estimates only. Contact Jay Miller, NMLS #657301, for a personalized rate quote and pre-approval. CMG Mortgage, Inc. dba CMG Home Loans — NMLS #1820. Licensed in Hawaii. Equal Housing Opportunity. www.realitycents.com
-              </div>
-
-            </div>
-          </div>
 
           {/* Buydown Calculator Link */}
           <div className="bg-gold/5 border border-gold/25 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 no-print">
@@ -1238,6 +1117,128 @@ export default function AdvancedCalculator() {
           />
         </div>
       </section>
+      {/* ─── PRINT-ONLY SUMMARY (hidden on screen, shown when printing) ─── */}
+      <div className="print-only hidden" id="print-summary-content">
+        <div className="print-summary">
+
+          {/* ── Header ── */}
+          <div className="print-header">
+            <div>
+              <div className="print-logo-text">RealityCents</div>
+              <div className="print-logo-tagline">Hawaii Mortgage Education &amp; Lending</div>
+            </div>
+            <div className="print-meta">
+              <div className="print-meta-name">Jay Miller — NMLS #657301</div>
+              <div>CMG Home Loans — Branch NMLS #2475890</div>
+              <div>(808) 429-0811 · jaym@cmghomeloans.com</div>
+              <div>www.realitycents.com</div>
+              <div className="print-meta-date">Generated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</div>
+            </div>
+          </div>
+
+          {/* ── Total Payment Highlight Banner ── */}
+          <div className="print-highlight print-section">
+            <div className="print-highlight-left">
+              <div className="print-badge">{loanTypeLabels[inputs.loanType]} Loan</div>
+              <div className="big-label">Estimated Total Monthly Payment</div>
+              <div className="big-number">{fmt(calc.totalMonthly)}</div>
+              <div className="print-highlight-sub">Principal &amp; Interest: {fmt(calc.monthlyPI)} · Rate: {fmtPct(inputs.interestRate, 3)} · {inputs.loanTerm}-Year Fixed</div>
+            </div>
+            <div style={{ textAlign: "right", fontSize: "8.5pt", color: "#6b7280", fontFamily: "Arial, sans-serif" }}>
+              <div style={{ fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Loan Amount</div>
+              <div style={{ fontSize: "14pt", fontWeight: 700, color: "#1A7A7A", fontFamily: "Georgia, serif" }}>{fmt(calc.totalLoanAmount)}</div>
+              <div style={{ marginTop: "6pt", fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Purchase Price</div>
+              <div style={{ fontSize: "11pt", fontWeight: 600, color: "#374151", fontFamily: "Georgia, serif" }}>{fmt(inputs.homePrice)}</div>
+            </div>
+          </div>
+
+          {/* ── Loan Summary ── */}
+          <div className="print-section">
+            <h2>Loan Summary</h2>
+            <div className="print-grid">
+              <div>
+                <div className="print-row"><span className="label">Home Purchase Price</span><span className="value">{fmt(inputs.homePrice)}</span></div>
+                <div className="print-row"><span className="label">Down Payment</span><span className="value">{fmt(calc.dpDollar)} ({fmtPct(calc.dpPercent, 1)})</span></div>
+                <div className="print-row"><span className="label">Base Loan Amount</span><span className="value">{fmt(calc.baseLoanAmount)}</span></div>
+                {calc.vaFundingFee > 0 && <div className="print-row"><span className="label">VA Funding Fee (financed)</span><span className="value">{fmt(calc.vaFundingFee)}</span></div>}
+                {calc.fhaUfmip > 0 && <div className="print-row"><span className="label">FHA UFMIP (financed)</span><span className="value">{fmt(calc.fhaUfmip)}</span></div>}
+                <div className="print-row"><span className="label">Total Loan Amount</span><span className="value">{fmt(calc.totalLoanAmount)}</span></div>
+              </div>
+              <div>
+                <div className="print-row"><span className="label">Interest Rate</span><span className="value">{fmtPct(inputs.interestRate, 3)}</span></div>
+                <div className="print-row"><span className="label">Loan Term</span><span className="value">{inputs.loanTerm} Years Fixed</span></div>
+                <div className="print-row"><span className="label">Loan Type</span><span className="value">{loanTypeLabels[inputs.loanType]}</span></div>
+                <div className="print-row"><span className="label">LTV Ratio</span><span className="value">{fmtPct(calc.ltv, 1)}</span></div>
+                {(inputs.loanType === "conventional" || inputs.loanType === "fha") && <div className="print-row"><span className="label">FICO Score</span><span className="value">{inputs.ficoScore}</span></div>}
+                <div className="print-row"><span className="label">Total Interest Paid</span><span className="value">{fmt(calc.totalInterest)}</span></div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Monthly Payment Breakdown ── */}
+          <div className="print-section">
+            <h2>Monthly Payment Breakdown</h2>
+            <div className="print-row"><span className="label">Principal &amp; Interest</span><span className="value">{fmt(calc.monthlyPI)}</span></div>
+            {calc.monthlyPmi > 0 && <div className="print-row"><span className="label">PMI (Best available rate: {fmtPct(calc.pmiAnnualRate * 100)} annual)</span><span className="value">{fmt(calc.monthlyPmi)}</span></div>}
+            {calc.monthlyMip > 0 && <div className="print-row"><span className="label">FHA Monthly MIP</span><span className="value">{fmt(calc.monthlyMip)}</span></div>}
+            {inputs.propertyTax > 0 && <div className="print-row"><span className="label">Property Tax (est.)</span><span className="value">{fmt(inputs.propertyTax)}</span></div>}
+            {inputs.insurance > 0 && <div className="print-row"><span className="label">Homeowner's Insurance (est.)</span><span className="value">{fmt(inputs.insurance)}</span></div>}
+            {inputs.hoaFees > 0 && <div className="print-row"><span className="label">HOA Fees</span><span className="value">{fmt(inputs.hoaFees)}</span></div>}
+            <div className="print-row total"><span className="label">Total Monthly Payment</span><span className="value">{fmt(calc.totalMonthly)}</span></div>
+          </div>
+
+          {/* ── Loan-Specific Notes ── */}
+          {inputs.loanType === "va" && (
+            <div className="print-section">
+              <div className="print-notes-box" style={{ background: "#f0fafa", border: "1pt solid #1A7A7A" }}>
+                <div className="print-notes-title">VA Loan Notes</div>
+                <div className="print-notes-body">
+                  {calc.vaFundingFeeWaived
+                    ? "VA Funding Fee waived — borrower has a 10%+ service-connected disability rating."
+                    : `VA Funding Fee: ${fmt(calc.vaFundingFee)} (${fmtPct(calc.vaFundingFeeRate * 100)} of base loan) — financed into the loan. Usage: ${inputs.vaFirstUse ? "First Use" : "Subsequent Use"}. No monthly mortgage insurance required.`
+                  }
+                </div>
+              </div>
+            </div>
+          )}
+          {inputs.loanType === "conventional" && calc.monthlyPmi > 0 && (
+            <div className="print-section">
+              <div className="print-notes-box" style={{ background: "#fffbf0", border: "1pt solid #C4956A" }}>
+                <div className="print-notes-title">PMI Notes</div>
+                <div className="print-notes-body">
+                  PMI rate of {fmtPct(calc.pmiAnnualRate * 100)} per year ({fmt(calc.monthlyPmi)}/mo) is sourced from the best available rate across MGIC, Radian, and Arch MI for FICO {inputs.ficoScore} at {fmtPct(calc.ltv, 1)} LTV. Annual PMI cost: {fmt(calc.monthlyPmi * 12)}. PMI can be removed once equity reaches 20% (80% LTV).
+                </div>
+              </div>
+            </div>
+          )}
+          {inputs.loanType === "fha" && (
+            <div className="print-section">
+              <div className="print-notes-box" style={{ background: "#f0fafa", border: "1pt solid #1A7A7A" }}>
+                <div className="print-notes-title">FHA Loan Notes</div>
+                <div className="print-notes-body">
+                  FHA Upfront MIP (UFMIP) of {fmt(calc.fhaUfmip)} (1.75% of base loan) is financed into the total loan amount. Annual MIP of {fmt(calc.monthlyMip * 12)} ({fmt(calc.monthlyMip)}/mo) applies for the life of the loan when LTV exceeds 90% at origination.
+                </div>
+              </div>
+            </div>
+          )}
+          {inputs.loanType === "jumbo" && (
+            <div className="print-section">
+              <div className="print-notes-box" style={{ background: "#f8f9fa", border: "1pt solid #d1d5db" }}>
+                <div className="print-notes-title">Jumbo Loan Notes</div>
+                <div className="print-notes-body">
+                  This loan exceeds the 2026 Honolulu County conforming limit of $1,249,125 and is classified as a jumbo loan. Jumbo loans typically require stronger credit, larger reserves, and may carry slightly higher rates. Contact Jay Miller for current jumbo pricing.
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ── Disclaimer ── */}
+          <div className="print-note">
+            This estimate is for informational purposes only and does not constitute a loan commitment, pre-approval, or guarantee of financing. Actual interest rates, fees, and payment amounts may vary based on credit profile, property type, occupancy status, market conditions, and other underwriting factors. Property taxes and insurance are estimates only. Contact Jay Miller, NMLS #657301, for a personalized rate quote and pre-approval. CMG Mortgage, Inc. dba CMG Home Loans — NMLS #1820. Licensed in Hawaii. Equal Housing Opportunity. www.realitycents.com
+          </div>
+
+        </div>
+      </div>
     </Layout>
   );
 }
