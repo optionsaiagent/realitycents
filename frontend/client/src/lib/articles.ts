@@ -3170,7 +3170,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
     lastUpdated: "May 2026",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
     featured: true,
-    draft: true, // HIDDEN: pending compliance review — set draft: false to re-enable
+    draft: false,
     content: `On May 7, 2026, three Hawaii families closed on their homes at 4.65% on a 30-year fixed mortgage. Not a teaser rate. Not a 2/1 buydown that expires in Year 3. Not a variable-rate product. A genuine 30-year fixed rate that is 1.28 percentage points below the current market rate for FHA and VA loans — and 1.45 points below market for conventional.
 
 The program making this possible is the **Hale Kamaʻāina Mortgage Program**, launched by the Hawaii Housing Finance and Development Corporation (HHFDC) in December 2025. It is the revival of a program that was dormant for 12 years — the former Hula Mae Single Family Mortgage Program — now reborn with modern underwriting standards and a $30 million bond allocation.
@@ -3330,7 +3330,9 @@ The program launched in December 2025. As of May 7, 2026 — five months later �
 
 For context on how much income you need to qualify at these price points, see our analysis of [what income you actually need to buy a home in Hawaii in 2026](/knowledge-base/income-needed-buy-home-hawaii-2026). For buyers using FHA financing, our [FHA loans Hawaii guide](/knowledge-base/fha-loans-hawaii-explained) covers the full underwriting requirements. For military buyers, the [VA loans Hawaii guide](/knowledge-base/va-loans-hawaii-military) explains how to combine VA benefits with the Hale Kamaʻāina rate. For buyers considering down payment assistance alongside seller concessions, see our [down payment assistance Hawaii guide](/knowledge-base/down-payment-assistance-hawaii).
 
-If you want to explore whether you qualify, [contact Jay Miller at CMG Home Loans](/contact) — NMLS #657301 — for a no-obligation review of your eligibility and a rate comparison at your specific purchase price and loan type.
+The Hale Kamaʻāina program is offered through participating lenders enrolled with HHFDC. For the current list of approved lenders and to confirm fund availability, visit [dbedt.hawaii.gov/hhfdc/hk-mortgage-program/](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/).
+
+For all other Hawaii loan options — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) for a no-obligation rate comparison at your specific purchase price and loan type.
 
 ---
 *Sources: Hawaii Housing Finance and Development Corporation (HHFDC), Maui Now (May 10, 2026), eHousingPlus HHFDC Income and Purchase Price Limits (January 30, 2026), HHFDC Eligibility Requirements (January 15, 2026), Team Wong Hawaii (November 2025), NCSHA (February 2026)*
