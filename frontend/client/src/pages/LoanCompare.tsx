@@ -1050,7 +1050,9 @@ function ArmScenarioBlock({
   const [showTrajectory, setShowTrajectory] = useState(false);
   const milestones = armMilestoneYears(arm.fixedYears, termYears);
   const worstPI = arm.worstCase.maxPI;
-  const histPI = arm.historical.maxPI;
+  // Use the post-fixed-period stabilized P&I, not maxPI (which equals initial P&I when historical rate < note rate)
+  const histTrajectoryRow = arm.historical.trajectory[arm.fixedYears];
+  const histPI = histTrajectoryRow ? histTrajectoryRow.pi : arm.historical.maxPI;
 
   return (
     <div className="mt-3 p-3 bg-indigo-500/10 border border-indigo-400/30 rounded-lg">
@@ -1521,7 +1523,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                         <>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                             <span style={{ fontSize: "7pt", color: c.subtext }}>P&amp;I — Historical Avg (max)</span>
-                            <span style={{ fontSize: "8pt", fontWeight: "bold", color: "#4ade80" }}>{fmtExact(r.arm.historical.maxPI)} @ {r.arm.historical.maxRate.toFixed(3)}%</span>
+                            <span style={{ fontSize: "8pt", fontWeight: "bold", color: "#4ade80" }}>{fmtExact(r.arm.historical.trajectory[r.arm.fixedYears]?.pi || r.arm.historical.maxPI)} @ {r.arm.expectedRate.toFixed(3)}%</span>
                           </div>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                             <span style={{ fontSize: "7pt", color: c.subtext }}>P&amp;I — Worst Case (max)</span>
@@ -1618,7 +1620,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                       </p>
                       <div style={{ display: "flex", gap: "10px", marginBottom: "3px" }}>
                         <p style={{ fontSize: "7pt", color: "#444", margin: 0 }}>Initial P&amp;I: <strong>{fmtExact(r.monthly.principalInterest)}</strong> (yrs 1–{arm.fixedYears})</p>
-                        <p style={{ fontSize: "7pt", color: "#15803d", margin: 0 }}>Historical avg: <strong>{fmtExact(arm.historical.maxPI)}</strong> @ {arm.expectedRate.toFixed(3)}%</p>
+                        <p style={{ fontSize: "7pt", color: "#15803d", margin: 0 }}>Historical avg: <strong>{fmtExact(arm.historical.trajectory[arm.fixedYears]?.pi || arm.historical.maxPI)}</strong> @ {arm.expectedRate.toFixed(3)}%</p>
                         <p style={{ fontSize: "7pt", color: "#dc2626", margin: 0 }}>Worst case: <strong>{fmtExact(arm.worstCase.maxPI)}</strong> @ {arm.worstCase.maxRate.toFixed(3)}%</p>
                       </div>
                       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "6.5pt" }}>
