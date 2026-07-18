@@ -584,6 +584,33 @@ const STATIC_PAGES = {
       },
     ],
   },
+  "/heloc-sweep-calculator": {
+    title: "First-Lien HELOC Sweep Calculator — Mortgage Acceleration Analysis | RealityCents",
+    description: "Simulate a first-lien HELOC with a sweep checking account. See day-by-day how depositing your income against your balance changes payoff time and total interest vs. a traditional 30-year mortgage.",
+    keywords: "first lien HELOC calculator, HELOC sweep account, mortgage acceleration calculator, all in one loan calculator, velocity banking calculator, HELOC vs mortgage Hawaii",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "First-Lien HELOC Sweep Calculator",
+        description: "Day-by-day simulation of a first-lien HELOC with an integrated sweep checking account, compared against a traditional fixed-rate mortgage.",
+        url: `${BASE_URL}/heloc-sweep-calculator`,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        author: { "@type": "Person", name: "Jay Miller", url: `${BASE_URL}/about` },
+        publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "HELOC Sweep Calculator", item: `${BASE_URL}/heloc-sweep-calculator` },
+        ],
+      },
+    ],
+  },
 };
 
 // ─── Build article page metadata ────────────────────────────────────────────

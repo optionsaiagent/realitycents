@@ -31,6 +31,7 @@ import ShortLink from "./pages/ShortLink";
 import DSCRCalculator from "./pages/DSCRCalculator";
 import AssumableCalculator from "./pages/AssumableCalculator";
 import EscalationCalculator from "./pages/EscalationCalculator";
+import HelocSweepCalculator from "./pages/HelocSweepCalculator";
 import Agents from "./pages/Agents";
 
 function ScrollToTop() {
@@ -74,6 +75,7 @@ function Router() {
         <Route path={"/dscr-calculator"} component={DSCRCalculator} />
         <Route path={"/assumable-calculator"} component={AssumableCalculator} />
         <Route path={"/escalation-calculator"} component={EscalationCalculator} />
+        <Route path={"/heloc-sweep-calculator"} component={HelocSweepCalculator} />
         <Route path={"/agents"} component={Agents} />
         <Route path={"/s/:id"} component={ShortLink} />
         {/* Redirect old agent routes to home */}

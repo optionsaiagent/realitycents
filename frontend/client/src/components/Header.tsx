@@ -6,7 +6,7 @@
  */
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, FileCheck, ChevronDown, Calculator, Sparkles, TrendingUp, Scale, TrendingDown, Shield, GitCompareArrows, Briefcase } from "lucide-react";
+import { Menu, X, Phone, FileCheck, ChevronDown, Calculator, Sparkles, TrendingUp, Scale, TrendingDown, Shield, GitCompareArrows, Briefcase, Wallet } from "lucide-react";
 import { LENDER, IMAGES, PRE_APPROVAL_URL } from "@/lib/constants";
 
 const MAIN_NAV = [
@@ -23,6 +23,7 @@ const CALC_LINKS = [
   { label: "Buydown Calculator", href: "/buydown-calculator", icon: TrendingDown, desc: "Compare 1/1, 2/1 & 3/2/1 buydowns" },
   { label: "Military Buying Power", href: "/military-calculator", icon: Shield, desc: "VA loan purchase power for Hawaii military" },
   { label: "Loan Comparison", href: "/loan-compare", icon: GitCompareArrows, desc: "Compare rate & cost scenarios side-by-side" },
+  { label: "HELOC Sweep Calculator", href: "/heloc-sweep-calculator", icon: Wallet, desc: "First-lien HELOC vs. traditional mortgage" },
 ] as const;
 
 const AFTER_CALC_NAV = [

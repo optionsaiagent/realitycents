@@ -322,6 +322,25 @@ export const STATIC_PAGE_BODIES = {
     </main>
   `,
 
+  "/heloc-sweep-calculator": `
+    <main>
+      <h1>First-Lien HELOC + Sweep Checking Calculator</h1>
+      <p>Simulate a first-lien HELOC with an integrated sweep checking account. Your net income is deposited directly against the loan balance, suppressing the balance interest is calculated on — starting the day it lands. Expenses draw from the line throughout the month, creating a "sawtooth" daily balance pattern. This calculator runs a true day-by-day simulation and compares the result against a traditional fixed-rate mortgage.</p>
+      <section>
+        <h2>How the Sweep Mechanism Works</h2>
+        <p>With an all-in-one first-lien HELOC, your checking account and mortgage are the same account. Every paycheck immediately reduces the balance that daily interest accrues on. As you pay bills during the month, the balance rises back up — but the surplus you don't spend becomes a permanent principal paydown each month. Because interest is calculated on the average daily balance, even money that sits in the account for two weeks before being spent reduces your interest cost.</p>
+      </section>
+      <section>
+        <h2>The Honest Math</h2>
+        <p>The strategy only works with positive monthly cash flow. On a $600,000 balance at 7.55%, interest starts around $3,775/month — if your surplus is smaller than that, the balance grows instead of shrinking. And because first-lien HELOC rates typically run about 1% higher than fixed rates, a disciplined borrower making the same extra principal payments on a traditional mortgage often comes out ahead. The calculator shows both trajectories so you can see exactly where the crossover is for your numbers.</p>
+      </section>
+      <section>
+        <h2>What You Can Model</h2>
+        <p>Inputs include starting balance, HELOC rate (default SOFR + 3.25%), deposit frequency (weekly, bi-weekly, semi-monthly, or monthly), total monthly expenses, one-time or annually recurring extra deposits (bonus, tax refund, property sale proceeds), and a traditional fixed-rate comparison. Outputs include payoff time, total interest, interest and time saved, a balance-over-time chart, a daily "sawtooth" detail view, a year-by-year breakdown table, and available credit during the draw period.</p>
+      </section>
+    </main>
+  `,
+
   "/bah-buy-vs-rent-oahu": `
     <main>
       <h1>Using Your BAH to Buy vs. Rent on Oahu — The Real Math</h1>
