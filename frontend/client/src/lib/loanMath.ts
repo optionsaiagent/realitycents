@@ -7,6 +7,33 @@
 
 export type LoanType = "va" | "fha" | "conventional";
 
+// ─── ARM Types ───────────────────────────────────────────────────────────────
+
+export type ArmFixedYears = 3 | 5 | 7 | 10;
+
+/**
+ * 20-year historical average of the short-term index (1-month LIBOR through 2021,
+ * SOFR thereafter), used as the "expected" index value after the fixed period.
+ */
+export const ARM_HISTORICAL_INDEX = 2.33;
+
+/** Default ARM margins by loan type (Conventional 2.75%, VA 2.00%). */
+export function defaultArmMargin(loanType: LoanType): number {
+  return loanType === "va" ? 2.0 : 2.75;
+}
+
+/**
+ * Default cap structure by loan type:
+ * - Conventional: 5/1/5 caps, semi-annual adjustments (every 6 months)
+ * - VA: 1/1/5 caps, annual adjustments (every 12 months)
+ */
+export function defaultArmCaps(loanType: LoanType): { initialCap: number; periodicCap: number; lifetimeCap: number; adjustmentFrequency: 6 | 12 } {
+  if (loanType === "va") {
+    return { initialCap: 1, periodicCap: 1, lifetimeCap: 5, adjustmentFrequency: 12 };
+  }
+  return { initialCap: 5, periodicCap: 1, lifetimeCap: 5, adjustmentFrequency: 6 };
+}
+
 export interface ScenarioInput {
   label: string;
   loanType: LoanType;
@@ -39,6 +66,14 @@ export interface ScenarioInput {
   sellerCredit: number; // dollar amount of seller credit
   // Optional
   propertyAddress: string; // optional property address for printout
+  // ARM (Adjustable Rate Mortgage)
+  isARM: boolean;               // false = fixed rate (default)
+  armFixedYears: ArmFixedYears; // initial fixed period: 3, 5, 7, or 10 years
+  armMargin: number;            // margin over index (default 2.75 conv, 2.0 VA)
+  armInitialCap: number;        // first adjustment cap (default 5 conv, 1 VA)
+  armPeriodicCap: number;       // per-adjustment cap after first (default 1)
+  armLifetimeCap: number;       // lifetime cap over initial rate (default 5)
+  armAdjustmentFrequency: 6 | 12; // months between adjustments (6 conv, 12 VA)
 }
 
 export interface MonthlyBreakdown {
@@ -88,6 +123,43 @@ export interface BuydownSchedule {
   savings: number; // monthly savings vs full rate
 }
 
+// ─── ARM Result Types ────────────────────────────────────────────────────────
+
+/** One row of the year-by-year ARM payment trajectory. */
+export interface ArmTrajectoryRow {
+  year: number;
+  rate: number;      // rate in effect at the start of that year (weighted if it changes mid-year, this is the starting rate)
+  pi: number;        // monthly P&I at the start of that year
+  maxRate: number;   // highest rate in effect during that year
+  maxPI: number;     // highest monthly P&I during that year
+}
+
+/** Full amortization + payment outputs for a single ARM rate path. */
+export interface ArmPathResult {
+  amortization: AmortizationRow[];       // yearly amortization reflecting rate changes
+  trajectory: ArmTrajectoryRow[];        // year-by-year rate/payment path
+  maxRate: number;                       // highest rate reached on this path
+  maxPI: number;                         // highest monthly P&I reached on this path
+  totalInterest: number;                 // lifetime interest on this path
+  monthlyRates: number[];                // rate (annual %) in effect for each month index
+  monthlyPayments: number[];             // P&I payment for each month index
+}
+
+/** Combined ARM analysis: worst-case and historical-average scenarios. */
+export interface ArmAnalysis {
+  fixedYears: ArmFixedYears;
+  margin: number;
+  initialCap: number;
+  periodicCap: number;
+  lifetimeCap: number;
+  adjustmentFrequency: 6 | 12;
+  floorRate: number;          // = margin
+  historicalIndex: number;    // ARM_HISTORICAL_INDEX
+  expectedRate: number;       // capped fully-indexed rate under the historical scenario
+  worstCase: ArmPathResult;
+  historical: ArmPathResult;
+}
+
 export interface ScenarioResult {
   label: string;
   loanType: LoanType;
@@ -111,6 +183,9 @@ export interface ScenarioResult {
   buydownCost: number;
   buydownSchedule: BuydownSchedule[];
   sellerCredit: number;
+  // ARM analysis (null for fixed-rate scenarios)
+  isARM: boolean;
+  arm: ArmAnalysis | null;
 }
 
 // ─── Hawaii County Tax Rates ─────────────────────────────────────────────────
@@ -154,6 +229,13 @@ export function defaultScenario(label: string, idx: number): ScenarioInput {
     buydownType: "none",
     sellerCredit: 0,
     propertyAddress: "",
+    isARM: false,
+    armFixedYears: 5,
+    armMargin: defaultArmMargin(loanType),
+    armInitialCap: defaultArmCaps(loanType).initialCap,
+    armPeriodicCap: defaultArmCaps(loanType).periodicCap,
+    armLifetimeCap: defaultArmCaps(loanType).lifetimeCap,
+    armAdjustmentFrequency: defaultArmCaps(loanType).adjustmentFrequency,
   };
 }
 
@@ -326,6 +408,193 @@ export function buildEquityAnalysis(
   return rows;
 }
 
+// ─── ARM Rate Path & Amortization ────────────────────────────────────────────
+
+/**
+ * Build the annual-rate-by-month path for an ARM.
+ * @param noteRate   initial quoted rate during the fixed period (annual %)
+ * @param termMonths total loan term in months
+ * @param fixedMonths months in the initial fixed period
+ * @param adjFreq    months between adjustments (6 or 12)
+ * @param initialCap max change (up or down) at the first adjustment
+ * @param periodicCap max change at each subsequent adjustment
+ * @param lifetimeCap max increase over the initial note rate
+ * @param targetRate the fully-indexed rate the ARM moves toward (index + margin);
+ *                   for the worst case pass Infinity (rate rises to the lifetime cap)
+ * @param floorRate  minimum rate (= margin)
+ */
+export function buildArmRatePath(
+  noteRate: number,
+  termMonths: number,
+  fixedMonths: number,
+  adjFreq: 6 | 12,
+  initialCap: number,
+  periodicCap: number,
+  lifetimeCap: number,
+  targetRate: number,
+  floorRate: number
+): number[] {
+  const ceiling = noteRate + lifetimeCap;
+  const floor = Math.max(0, floorRate);
+  const rates: number[] = new Array(termMonths);
+  let currentRate = noteRate;
+  let adjustmentCount = 0;
+
+  for (let m = 0; m < termMonths; m++) {
+    if (m >= fixedMonths && (m - fixedMonths) % adjFreq === 0) {
+      // Adjustment date: move toward targetRate, limited by caps/floor/ceiling
+      adjustmentCount++;
+      const cap = adjustmentCount === 1 ? initialCap : periodicCap;
+      const bounded = Math.min(Math.max(targetRate, floor), ceiling);
+      const delta = bounded - currentRate;
+      const step = Math.max(-cap, Math.min(cap, delta));
+      currentRate = Math.min(Math.max(currentRate + step, floor), ceiling);
+    }
+    rates[m] = currentRate;
+  }
+  return rates;
+}
+
+/**
+ * Amortize a loan along a month-by-month rate path.
+ * At each rate change the payment is recast over the remaining term
+ * (standard ARM behavior), producing yearly amortization rows and a
+ * year-by-year payment trajectory.
+ */
+export function amortizeArmPath(
+  loanAmount: number,
+  monthlyRatesAnnualPct: number[],
+  termMonths: number
+): ArmPathResult {
+  const amortization: AmortizationRow[] = [];
+  const trajectory: ArmTrajectoryRow[] = [];
+  const monthlyPayments: number[] = new Array(termMonths).fill(0);
+
+  let balance = loanAmount;
+  let payment = 0;
+  let prevRate = -1;
+  let maxRate = 0;
+  let maxPI = 0;
+  let totalInterest = 0;
+
+  const totalYears = Math.ceil(termMonths / 12);
+  for (let year = 1; year <= totalYears; year++) {
+    const beginBalance = balance;
+    let yearPrincipal = 0;
+    let yearInterest = 0;
+    let yearStartRate = 0;
+    let yearStartPI = 0;
+    let yearMaxRate = 0;
+    let yearMaxPI = 0;
+
+    for (let k = 0; k < 12; k++) {
+      const m = (year - 1) * 12 + k;
+      if (m >= termMonths || balance <= 0.005) break;
+      const annualRate = monthlyRatesAnnualPct[m];
+      if (annualRate !== prevRate) {
+        // Recast payment over remaining term at the new rate
+        const remaining = termMonths - m;
+        const r = annualRate / 100 / 12;
+        payment = r > 0
+          ? balance * (r * Math.pow(1 + r, remaining)) / (Math.pow(1 + r, remaining) - 1)
+          : balance / remaining;
+        prevRate = annualRate;
+      }
+      if (k === 0 || yearStartPI === 0) {
+        if (yearStartPI === 0) {
+          yearStartRate = annualRate;
+          yearStartPI = payment;
+        }
+      }
+      yearMaxRate = Math.max(yearMaxRate, annualRate);
+      yearMaxPI = Math.max(yearMaxPI, payment);
+      maxRate = Math.max(maxRate, annualRate);
+      maxPI = Math.max(maxPI, payment);
+
+      const r = annualRate / 100 / 12;
+      const interest = balance * r;
+      const principal = Math.min(payment - interest, balance);
+      yearPrincipal += principal;
+      yearInterest += interest;
+      totalInterest += interest;
+      balance -= principal;
+      monthlyPayments[m] = payment;
+    }
+
+    amortization.push({
+      year,
+      beginBalance,
+      totalPrincipal: yearPrincipal,
+      totalInterest: yearInterest,
+      endBalance: Math.max(0, balance),
+    });
+    trajectory.push({
+      year,
+      rate: yearStartRate,
+      pi: yearStartPI,
+      maxRate: yearMaxRate,
+      maxPI: yearMaxPI,
+    });
+    if (balance <= 0.005) {
+      // Fill remaining years with zeros for consistent table lengths
+      for (let y = year + 1; y <= totalYears; y++) {
+        amortization.push({ year: y, beginBalance: 0, totalPrincipal: 0, totalInterest: 0, endBalance: 0 });
+        trajectory.push({ year: y, rate: 0, pi: 0, maxRate: 0, maxPI: 0 });
+      }
+      break;
+    }
+  }
+
+  return { amortization, trajectory, maxRate, maxPI, totalInterest, monthlyRates: monthlyRatesAnnualPct, monthlyPayments };
+}
+
+/** Build the full worst-case + historical-average ARM analysis. */
+export function buildArmAnalysis(
+  loanAmount: number,
+  noteRate: number,
+  termYears: number,
+  fixedYears: ArmFixedYears,
+  margin: number,
+  initialCap: number,
+  periodicCap: number,
+  lifetimeCap: number,
+  adjustmentFrequency: 6 | 12
+): ArmAnalysis {
+  const termMonths = termYears * 12;
+  const fixedMonths = Math.min(fixedYears * 12, termMonths);
+  const floorRate = margin;
+
+  // Worst case: rate rises at the maximum cap every adjustment until the lifetime cap
+  const worstRates = buildArmRatePath(
+    noteRate, termMonths, fixedMonths, adjustmentFrequency,
+    initialCap, periodicCap, lifetimeCap, Infinity, floorRate
+  );
+  const worstCase = amortizeArmPath(loanAmount, worstRates, termMonths);
+
+  // Historical average: rate moves toward historical index + margin (subject to caps/floor)
+  const fullyIndexed = ARM_HISTORICAL_INDEX + margin;
+  const histRates = buildArmRatePath(
+    noteRate, termMonths, fixedMonths, adjustmentFrequency,
+    initialCap, periodicCap, lifetimeCap, fullyIndexed, floorRate
+  );
+  const historical = amortizeArmPath(loanAmount, histRates, termMonths);
+  const expectedRate = Math.min(Math.max(fullyIndexed, floorRate), noteRate + lifetimeCap);
+
+  return {
+    fixedYears,
+    margin,
+    initialCap,
+    periodicCap,
+    lifetimeCap,
+    adjustmentFrequency,
+    floorRate,
+    historicalIndex: ARM_HISTORICAL_INDEX,
+    expectedRate,
+    worstCase,
+    historical,
+  };
+}
+
 // ─── Full Scenario Calculator ────────────────────────────────────────────────────────────────────
 
 export function calculateScenario(input: ScenarioInput): ScenarioResult {
@@ -459,14 +728,53 @@ export function calculateScenario(input: ScenarioInput): ScenarioResult {
     aprFinanceCharges
   );
 
-  // Amortization
-  const amortization = buildAmortization(totalLoan, rate, termYears);
+  // ARM analysis (worst-case + historical-average paths)
+  const isARM = input.isARM === true;
+  const arm = isARM
+    ? buildArmAnalysis(
+        totalLoan,
+        rate,
+        termYears,
+        input.armFixedYears || 5,
+        input.armMargin > 0 ? input.armMargin : defaultArmMargin(loanType),
+        input.armInitialCap > 0 ? input.armInitialCap : defaultArmCaps(loanType).initialCap,
+        input.armPeriodicCap > 0 ? input.armPeriodicCap : defaultArmCaps(loanType).periodicCap,
+        input.armLifetimeCap > 0 ? input.armLifetimeCap : defaultArmCaps(loanType).lifetimeCap,
+        input.armAdjustmentFrequency === 6 || input.armAdjustmentFrequency === 12
+          ? input.armAdjustmentFrequency
+          : defaultArmCaps(loanType).adjustmentFrequency
+      )
+    : null;
 
-  // Total cost function
+  // Amortization — for ARMs, the primary schedule uses the historical-average path
+  const amortization = arm ? arm.historical.amortization : buildAmortization(totalLoan, rate, termYears);
+
+  // Non-P&I monthly carrying costs (tax, insurance, HOA, MI)
+  const monthlyEscrows = monthlyTax + input.insurance + input.hoa + mi;
+
+  // Total cost function — reflects ARM payment changes on the historical path
   const totalCostAtYear = (years: number): number => {
     const months = years * 12;
-    const totalPayments = monthly.totalPITI * months;
     const closingAndPrepaids = cashToClose;
+    if (arm) {
+      let totalPI = 0;
+      let principalPaid = 0;
+      const path = arm.historical;
+      const capMonths = Math.min(months, termYears * 12);
+      let bal = totalLoan;
+      for (let m = 0; m < capMonths; m++) {
+        const pay = path.monthlyPayments[m] || 0;
+        const r = (path.monthlyRates[m] || 0) / 100 / 12;
+        const interest = bal * r;
+        const principal = Math.min(pay - interest, bal);
+        totalPI += pay;
+        principalPaid += principal;
+        bal -= principal;
+      }
+      const totalPayments = totalPI + monthlyEscrows * months;
+      return totalPayments + closingAndPrepaids - principalPaid;
+    }
+    const totalPayments = monthly.totalPITI * months;
     // Subtract remaining equity (principal paid down)
     let principalPaid = 0;
     const r = rate / 100 / 12;
@@ -502,5 +810,7 @@ export function calculateScenario(input: ScenarioInput): ScenarioResult {
     buydownCost,
     buydownSchedule,
     sellerCredit,
+    isARM,
+    arm,
   };
 }

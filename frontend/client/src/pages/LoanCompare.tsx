@@ -15,10 +15,15 @@ import {
   type ScenarioInput,
   type ScenarioResult,
   type LoanType,
+  type ArmFixedYears,
+  type ArmAnalysis,
   defaultScenario,
   calculateScenario,
   buildEquityAnalysis,
   monthlyPI,
+  defaultArmMargin,
+  defaultArmCaps,
+  ARM_HISTORICAL_INDEX,
   HAWAII_TAX_RATES,
 } from "@/lib/loanMath";
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from "lz-string";
@@ -117,6 +122,14 @@ interface ScenarioStrings {
   prepayPenaltyYears: number; // 1-5
   expectedRent: string;
   annualRentIncrease: string; // default "3"
+  // ARM fields
+  isARM: boolean;
+  armFixedYears: ArmFixedYears;
+  armMargin: string;         // "" = use loan-type default
+  armInitialCap: string;
+  armPeriodicCap: string;
+  armLifetimeCap: string;
+  armAdjustmentFrequency: 6 | 12;
 }
 
 function toStrings(s: ScenarioInput): ScenarioStrings {
@@ -153,7 +166,26 @@ function toStrings(s: ScenarioInput): ScenarioStrings {
     prepayPenaltyYears: 3,
     expectedRent: "",
     annualRentIncrease: "3",
+    // ARM defaults
+    isARM: s.isARM || false,
+    armFixedYears: s.armFixedYears || 5,
+    armMargin: "",
+    armInitialCap: "",
+    armPeriodicCap: "",
+    armLifetimeCap: "",
+    armAdjustmentFrequency: s.armAdjustmentFrequency || defaultArmCaps(s.loanType).adjustmentFrequency,
   };
+}
+
+// Resolve effective ARM parameters (string overrides fall back to loan-type defaults)
+function effectiveArmParams(s: ScenarioStrings) {
+  const caps = defaultArmCaps(s.loanType);
+  const margin = s.armMargin !== "" && num(s.armMargin) > 0 ? num(s.armMargin) : defaultArmMargin(s.loanType);
+  const initialCap = s.armInitialCap !== "" && num(s.armInitialCap) > 0 ? num(s.armInitialCap) : caps.initialCap;
+  const periodicCap = s.armPeriodicCap !== "" && num(s.armPeriodicCap) > 0 ? num(s.armPeriodicCap) : caps.periodicCap;
+  const lifetimeCap = s.armLifetimeCap !== "" && num(s.armLifetimeCap) > 0 ? num(s.armLifetimeCap) : caps.lifetimeCap;
+  const adjustmentFrequency = s.loanType === "va" ? 12 : 6;
+  return { margin, initialCap, periodicCap, lifetimeCap, adjustmentFrequency: adjustmentFrequency as 6 | 12 };
 }
 
 function toInput(s: ScenarioStrings): ScenarioInput {
@@ -184,6 +216,14 @@ function toInput(s: ScenarioStrings): ScenarioInput {
     buydownType: s.buydownType || "none",
     sellerCredit: num(s.sellerCredit),
     propertyAddress: s.propertyAddress || "",
+    // ARM
+    isARM: s.isARM === true,
+    armFixedYears: s.armFixedYears || 5,
+    armMargin: effectiveArmParams(s).margin,
+    armInitialCap: effectiveArmParams(s).initialCap,
+    armPeriodicCap: effectiveArmParams(s).periodicCap,
+    armLifetimeCap: effectiveArmParams(s).lifetimeCap,
+    armAdjustmentFrequency: effectiveArmParams(s).adjustmentFrequency,
   };
 }
 
@@ -232,6 +272,15 @@ function serializeScenarios(scenarios: ScenarioStrings[], yearsInHome: number): 
     if (s.isInvestment && s.docType === "dscr" && s.prepayPenaltyYears !== 3) obj.ppy = s.prepayPenaltyYears;
     if (s.isInvestment && s.expectedRent) obj.er = s.expectedRent;
     if (s.isInvestment && s.annualRentIncrease !== "3") obj.ari = s.annualRentIncrease;
+    // ARM fields
+    if (s.isARM) {
+      obj.arm = true;
+      if (s.armFixedYears !== 5) obj.afy = s.armFixedYears;
+      if (s.armMargin !== "") obj.amg = s.armMargin;
+      if (s.armInitialCap !== "") obj.aic = s.armInitialCap;
+      if (s.armPeriodicCap !== "") obj.apc = s.armPeriodicCap;
+      if (s.armLifetimeCap !== "") obj.alc = s.armLifetimeCap;
+    }
     return obj;
   });
   const data = { s: compact, y: yearsInHome };
@@ -281,6 +330,14 @@ function deserializeScenarios(encoded: string): { scenarios: ScenarioStrings[]; 
         prepayPenaltyYears: (obj.ppy as number) || 3,
         expectedRent: (obj.er as string) || "",
         annualRentIncrease: (obj.ari as string) || "3",
+        // ARM fields
+        isARM: obj.arm === true,
+        armFixedYears: ([3, 5, 7, 10].includes(obj.afy as number) ? (obj.afy as ArmFixedYears) : 5),
+        armMargin: (obj.amg as string) || "",
+        armInitialCap: (obj.aic as string) || "",
+        armPeriodicCap: (obj.apc as string) || "",
+        armLifetimeCap: (obj.alc as string) || "",
+        armAdjustmentFrequency: ((obj.t as LoanType) === "va" ? 12 : 6) as 6 | 12,
       };
     });
     return { scenarios, yearsInHome: data.y || 5 };
@@ -793,6 +850,78 @@ function ScenarioPanel({
         </div>
       )}
 
+      {/* ARM (Adjustable Rate Mortgage) */}
+      {scenario.loanType !== "fha" && (
+        <div className="space-y-2">
+          <label className="flex items-center gap-2 text-sm text-slate-300 cursor-pointer p-3 bg-slate-700/30 border border-slate-600/50 rounded-lg hover:border-slate-500 transition">
+            <input
+              type="checkbox"
+              checked={scenario.isARM}
+              onChange={(e) => update("isARM", e.target.checked)}
+              className="rounded border-slate-600 text-teal focus:ring-teal"
+            />
+            <span className="font-medium">Adjustable Rate Mortgage (ARM)</span>
+          </label>
+          {scenario.isARM && (() => {
+            const eff = effectiveArmParams(scenario);
+            return (
+              <div className="p-3 bg-indigo-500/5 border border-indigo-400/20 rounded-lg space-y-3">
+                <p className="text-xs font-semibold text-indigo-300">ARM Options</p>
+                {/* Fixed Period */}
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1.5">Initial Fixed Period</label>
+                  <div className="grid grid-cols-4 gap-2">
+                    {([3, 5, 7, 10] as ArmFixedYears[]).map((fy) => (
+                      <button
+                        key={fy}
+                        onClick={() => update("armFixedYears", fy)}
+                        className={`py-2 px-2 rounded-lg text-xs font-semibold transition ${
+                          scenario.armFixedYears === fy
+                            ? "bg-indigo-500/20 text-indigo-300 border border-indigo-400"
+                            : "bg-slate-700/50 text-slate-400 border border-slate-600 hover:border-slate-500"
+                        }`}
+                      >
+                        {fy}-Yr
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-xs text-slate-500 mt-1.5">
+                    Rate is fixed at {num(scenario.rate) > 0 ? `${num(scenario.rate).toFixed(3)}%` : "the note rate"} for {scenario.armFixedYears} years, then adjusts {scenario.loanType === "va" ? "annually" : "every 6 months"} based on SOFR + margin.
+                  </p>
+                </div>
+                {/* Margin */}
+                <InputField
+                  label={`Margin (default ${defaultArmMargin(scenario.loanType).toFixed(2)}% for ${scenario.loanType === "va" ? "VA" : "Conventional"})`}
+                  value={scenario.armMargin}
+                  onChange={(v) => update("armMargin", v)}
+                  suffix="%"
+                  placeholder={defaultArmMargin(scenario.loanType).toFixed(2)}
+                />
+                {/* Cap structure display */}
+                <div className="bg-slate-700/40 rounded-lg p-3 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-slate-400">Adjustment Caps</span>
+                    <span className="text-sm font-bold text-indigo-300">
+                      {eff.initialCap}/{eff.periodicCap}/{eff.lifetimeCap}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-500">
+                    First adjustment ±{eff.initialCap}% · subsequent ±{eff.periodicCap}% · lifetime +{eff.lifetimeCap}% over note rate.
+                    Floor: {eff.margin.toFixed(2)}% (the margin). Adjusts {scenario.loanType === "va" ? "annually" : "semi-annually"}.
+                  </p>
+                  {num(scenario.rate) > 0 && (
+                    <div className="flex justify-between text-xs pt-1 border-t border-slate-600/50">
+                      <span className="text-slate-400">Max lifetime rate</span>
+                      <span className="text-amber-300 font-semibold">{(num(scenario.rate) + eff.lifetimeCap).toFixed(3)}%</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
       {/* Temporary Buydown */}
       <div className="space-y-2">
         <label className="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
@@ -896,6 +1025,120 @@ function ScenarioPanel({
   );
 }
 
+// ─── ARM Scenario Block ──────────────────────────────────────────────────────
+
+/** Pick milestone years for the ARM trajectory table: fixed period end, adjustments, and spread. */
+function armMilestoneYears(fixedYears: number, termYears: number): number[] {
+  const years = new Set<number>([1]);
+  years.add(Math.min(fixedYears, termYears));
+  for (let y = fixedYears + 1; y <= Math.min(fixedYears + 5, termYears); y++) years.add(y);
+  [10, 15, 20, 25, 30].forEach((y) => { if (y > fixedYears + 5 && y <= termYears) years.add(y); });
+  return Array.from(years).sort((a, b) => a - b);
+}
+
+function ArmScenarioBlock({
+  arm,
+  initialPI,
+  escrows,
+  termYears,
+}: {
+  arm: ArmAnalysis;
+  initialPI: number;
+  escrows: number;
+  termYears: number;
+}) {
+  const [showTrajectory, setShowTrajectory] = useState(false);
+  const milestones = armMilestoneYears(arm.fixedYears, termYears);
+  const worstPI = arm.worstCase.maxPI;
+  const histPI = arm.historical.maxPI;
+
+  return (
+    <div className="mt-3 p-3 bg-indigo-500/10 border border-indigo-400/30 rounded-lg">
+      <p className="text-xs font-semibold text-indigo-300 mb-2">
+        ARM Payment Scenarios — After the {arm.fixedYears}-Year Fixed Period
+      </p>
+
+      {/* Three-way payment comparison */}
+      <div className="grid grid-cols-3 gap-2 mb-3">
+        <div className="bg-slate-800/60 rounded-lg p-2 text-center">
+          <p className="text-[10px] text-slate-400 mb-0.5">Initial P&amp;I</p>
+          <p className="text-sm font-bold text-white">{fmtExact(initialPI)}</p>
+          <p className="text-[10px] text-slate-500">Yrs 1–{arm.fixedYears}</p>
+        </div>
+        <div className="bg-slate-800/60 rounded-lg p-2 text-center border border-emerald-500/20">
+          <p className="text-[10px] text-slate-400 mb-0.5">Historical Avg</p>
+          <p className="text-sm font-bold text-emerald-400">{fmtExact(histPI)}</p>
+          <p className="text-[10px] text-slate-500">@ {arm.expectedRate.toFixed(3)}%</p>
+        </div>
+        <div className="bg-slate-800/60 rounded-lg p-2 text-center border border-red-500/20">
+          <p className="text-[10px] text-slate-400 mb-0.5">Worst Case</p>
+          <p className="text-sm font-bold text-red-400">{fmtExact(worstPI)}</p>
+          <p className="text-[10px] text-slate-500">@ {arm.worstCase.maxRate.toFixed(3)}%</p>
+        </div>
+      </div>
+
+      <p className="text-[10px] text-slate-500 mb-2 leading-relaxed">
+        Historical average assumes the index returns to its 20-year average of {arm.historicalIndex.toFixed(2)}% (index + {arm.margin.toFixed(2)}% margin = {(arm.historicalIndex + arm.margin).toFixed(2)}% fully indexed, subject to caps).
+        Worst case assumes the rate hits every cap until the lifetime ceiling. Floor: {arm.floorRate.toFixed(2)}%.
+      </p>
+
+      {/* Payment trajectory toggle */}
+      <button
+        onClick={() => setShowTrajectory(!showTrajectory)}
+        className="flex items-center gap-1.5 text-xs text-indigo-300 hover:text-indigo-200 transition w-full"
+      >
+        {showTrajectory ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+        Payment Trajectory (Year by Year)
+      </button>
+      {showTrajectory && (
+        <div className="mt-2 overflow-x-auto">
+          <table className="w-full text-[11px]">
+            <thead>
+              <tr className="border-b border-slate-700">
+                <th className="text-left py-1.5 px-1.5 text-slate-400">Year</th>
+                <th className="text-right py-1.5 px-1.5 text-emerald-400">Hist. Rate</th>
+                <th className="text-right py-1.5 px-1.5 text-emerald-400">Hist. P&amp;I</th>
+                <th className="text-right py-1.5 px-1.5 text-red-400">Worst Rate</th>
+                <th className="text-right py-1.5 px-1.5 text-red-400">Worst P&amp;I</th>
+              </tr>
+            </thead>
+            <tbody>
+              {milestones.map((yr) => {
+                const h = arm.historical.trajectory[yr - 1];
+                const w = arm.worstCase.trajectory[yr - 1];
+                if (!h || !w) return null;
+                const isAdjusting = yr > arm.fixedYears;
+                return (
+                  <tr key={yr} className={`border-b border-slate-700/50 ${yr === arm.fixedYears ? "border-b-indigo-400/40" : ""}`}>
+                    <td className="py-1 px-1.5 text-slate-300">
+                      {yr}{yr === arm.fixedYears ? " ◂ fixed ends" : ""}
+                    </td>
+                    <td className="text-right py-1 px-1.5 text-slate-300">{h.maxRate.toFixed(3)}%</td>
+                    <td className={`text-right py-1 px-1.5 ${isAdjusting ? "text-emerald-400" : "text-slate-300"}`}>{fmtExact(h.maxPI)}</td>
+                    <td className="text-right py-1 px-1.5 text-slate-300">{w.maxRate.toFixed(3)}%</td>
+                    <td className={`text-right py-1 px-1.5 ${isAdjusting ? "text-red-400" : "text-slate-300"}`}>{fmtExact(w.maxPI)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <p className="text-[10px] text-slate-500 mt-1.5">
+            Rates/payments shown are the highest in effect during each year. Total PITI adds {fmtExact(escrows)}/mo in taxes, insurance, HOA &amp; MI.
+          </p>
+          <div className="flex justify-between text-[11px] mt-2 pt-2 border-t border-slate-700">
+            <span className="text-slate-400">Lifetime interest</span>
+            <span>
+              <span className="text-emerald-400">{fmt(arm.historical.totalInterest)} hist.</span>
+              <span className="text-slate-500"> · </span>
+              <span className="text-red-400">{fmt(arm.worstCase.totalInterest)} worst</span>
+            </span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Result Card ─────────────────────────────────────────────────────────────
 
 function ResultCard({
@@ -933,14 +1176,21 @@ function ResultCard({
       {/* Header — dynamically reflects actual loan type, term, and rate */}
       <div className={`${bgColors[index]} px-5 py-4 border-b ${borderColors[index]}`}>
         <h3 className={`font-bold text-lg ${colors[index]}`}>
-          {result.termYears}-Year {scenario?.isInvestment && result.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[result.loanType]}
+          {result.isARM && result.arm
+            ? `${result.arm.fixedYears}/${result.arm.adjustmentFrequency === 6 ? "6mo" : "1yr"} ARM — ${scenario?.isInvestment && result.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[result.loanType]}`
+            : `${result.termYears}-Year ${scenario?.isInvestment && result.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[result.loanType]}`}
         </h3>
         <p className="text-xs text-slate-400 mt-1">
           {fmt(result.purchasePrice)} price · {fmt(result.downPayment)} down · {fmt(result.totalLoanAmount)} loan
         </p>
         <p className="text-xs text-slate-400 mt-0.5">
-          {result.rate.toFixed(3)}% Note Rate · {pct(result.apr)} APR
+          {result.rate.toFixed(3)}% {result.isARM ? "Initial Rate" : "Note Rate"} · {pct(result.apr)} APR
         </p>
+        {result.isARM && result.arm && (
+          <p className="text-xs text-indigo-300 mt-0.5">
+            Fixed {result.arm.fixedYears} yrs · SOFR + {result.arm.margin.toFixed(2)}% margin · {result.arm.initialCap}/{result.arm.periodicCap}/{result.arm.lifetimeCap} caps
+          </p>
+        )}
       </div>
 
       <div className="p-5 space-y-5">
@@ -996,6 +1246,10 @@ function ResultCard({
               <span>{fmtExact(result.monthly.totalPITI)}</span>
             </div>
           </div>
+          {/* ARM Payment Scenarios */}
+          {result.isARM && result.arm && (
+            <ArmScenarioBlock arm={result.arm} initialPI={result.monthly.principalInterest} escrows={result.monthly.totalPITI - result.monthly.principalInterest} termYears={result.termYears} />
+          )}
           {/* Buydown schedule */}
           {result.buydownType !== "none" && result.buydownSchedule.length > 0 && (
             <div className="mt-3 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
@@ -1130,7 +1384,7 @@ function ResultCard({
           className="flex items-center gap-2 text-sm text-slate-400 hover:text-teal transition w-full"
         >
           {showAmort ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-          Amortization Schedule
+          Amortization Schedule{result.isARM ? " (Historical-Average ARM Path)" : ""}
         </button>
         {showAmort && (
           <div className="overflow-x-auto max-h-72 overflow-y-auto">
@@ -1205,7 +1459,10 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
               {results.map((r, i) => {
                 const c = CARD_COLORS[i % CARD_COLORS.length];
                 const s = scenarios[i];
-                const loanLabel = s?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
+                const baseLoanLabel = s?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
+                const loanLabel = r.isARM && r.arm
+                  ? `${r.arm.fixedYears}/${r.arm.adjustmentFrequency === 6 ? "6mo" : "1yr"} ARM ${baseLoanLabel}`
+                  : baseLoanLabel;
                 // DSCR factor for investment scenarios
                 let dscrFactor: number | null = null;
                 let netCashFlow: number | null = null;
@@ -1223,7 +1480,12 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                         Option {i + 1}{s?.docType === "dscr" ? " · DSCR" : s?.isInvestment ? " · Full Doc" : ""}
                       </p>
                       <p style={{ fontSize: "11pt", fontWeight: "bold", color: c.text, margin: "0 0 1px 0" }}>{r.termYears}-Year {loanLabel}</p>
-                      <p style={{ fontSize: "9pt", color: c.accent, margin: 0, fontWeight: "bold" }}>{r.rate.toFixed(3)}% Note Rate &nbsp;·&nbsp; {pct(r.apr)} APR</p>
+                      <p style={{ fontSize: "9pt", color: c.accent, margin: 0, fontWeight: "bold" }}>{r.rate.toFixed(3)}% {r.isARM ? "Initial Rate" : "Note Rate"} &nbsp;·&nbsp; {pct(r.apr)} APR</p>
+                      {r.isARM && r.arm && (
+                        <p style={{ fontSize: "6.5pt", color: c.subtext, margin: "2px 0 0 0" }}>
+                          Fixed {r.arm.fixedYears} yrs · SOFR + {r.arm.margin.toFixed(2)}% margin · {r.arm.initialCap}/{r.arm.periodicCap}/{r.arm.lifetimeCap} caps · adjusts {r.arm.adjustmentFrequency === 6 ? "semi-annually" : "annually"}
+                        </p>
+                      )}
                     </div>
                     {/* Key Numbers */}
                     <div style={{ display: "flex", flexDirection: "column" as const, gap: "4px" }}>
@@ -1255,6 +1517,18 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Total Monthly (PITI+HOA)</span>
                         <span style={{ fontSize: "10pt", fontWeight: "bold", color: c.accent }}>{fmtExact(r.monthly.totalPITI)}</span>
                       </div>
+                      {r.isARM && r.arm && (
+                        <>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                            <span style={{ fontSize: "7pt", color: c.subtext }}>P&amp;I — Historical Avg (max)</span>
+                            <span style={{ fontSize: "8pt", fontWeight: "bold", color: "#4ade80" }}>{fmtExact(r.arm.historical.maxPI)} @ {r.arm.historical.maxRate.toFixed(3)}%</span>
+                          </div>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                            <span style={{ fontSize: "7pt", color: c.subtext }}>P&amp;I — Worst Case (max)</span>
+                            <span style={{ fontSize: "8pt", fontWeight: "bold", color: "#f87171" }}>{fmtExact(r.arm.worstCase.maxPI)} @ {r.arm.worstCase.maxRate.toFixed(3)}%</span>
+                          </div>
+                        </>
+                      )}
                       <div style={{ height: "1px", backgroundColor: c.border, margin: "2px 0" }} />
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Purchase Price</span>
@@ -1323,6 +1597,64 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                 Closing costs include lender fees, appraisal, title &amp; escrow fees, and HOA transfer fees. Prepaid items include upfront property taxes, upfront insurance, HOA dues, and mortgage interest.
               </p>
             </div>
+
+            {/* ARM Payment Trajectory (Print) */}
+            {results.some((r) => r.isARM && r.arm) && (
+              <div style={{ marginBottom: "10px", padding: "6px 8px", border: "1.5px solid #4f46e5", borderRadius: "4px", backgroundColor: "#eef2ff" }}>
+                <h2 style={{ fontSize: "8.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 4px 0" }}>ARM Payment Scenarios &amp; Trajectory</h2>
+                {results.map((r, i) => {
+                  if (!r.isARM || !r.arm) return null;
+                  const arm = r.arm;
+                  const milestones = (() => {
+                    const ys = new Set<number>([1, Math.min(arm.fixedYears, r.termYears)]);
+                    for (let y = arm.fixedYears + 1; y <= Math.min(arm.fixedYears + 5, r.termYears); y++) ys.add(y);
+                    [10, 15, 20, 25, 30].forEach((y) => { if (y > arm.fixedYears + 5 && y <= r.termYears) ys.add(y); });
+                    return Array.from(ys).sort((a, b) => a - b);
+                  })();
+                  return (
+                    <div key={i} style={{ marginBottom: "6px", padding: "4px 6px", backgroundColor: "white", border: "1px solid #e5e7eb", borderRadius: "3px" }}>
+                      <p style={{ fontSize: "7.5pt", fontWeight: "bold", color: "#0C2340", margin: "0 0 2px 0" }}>
+                        Option {i + 1}: {arm.fixedYears}/{arm.adjustmentFrequency === 6 ? "6mo" : "1yr"} ARM — {r.rate.toFixed(3)}% initial · SOFR + {arm.margin.toFixed(2)}% margin · {arm.initialCap}/{arm.periodicCap}/{arm.lifetimeCap} caps · floor {arm.floorRate.toFixed(2)}%
+                      </p>
+                      <div style={{ display: "flex", gap: "10px", marginBottom: "3px" }}>
+                        <p style={{ fontSize: "7pt", color: "#444", margin: 0 }}>Initial P&amp;I: <strong>{fmtExact(r.monthly.principalInterest)}</strong> (yrs 1–{arm.fixedYears})</p>
+                        <p style={{ fontSize: "7pt", color: "#15803d", margin: 0 }}>Historical avg: <strong>{fmtExact(arm.historical.maxPI)}</strong> @ {arm.expectedRate.toFixed(3)}%</p>
+                        <p style={{ fontSize: "7pt", color: "#dc2626", margin: 0 }}>Worst case: <strong>{fmtExact(arm.worstCase.maxPI)}</strong> @ {arm.worstCase.maxRate.toFixed(3)}%</p>
+                      </div>
+                      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "6.5pt" }}>
+                        <thead>
+                          <tr style={{ backgroundColor: "#0C2340", color: "#fff" }}>
+                            <th style={{ textAlign: "left", padding: "2px 4px" }}>Year</th>
+                            {milestones.map((y) => (
+                              <th key={y} style={{ textAlign: "right", padding: "2px 4px" }}>{y}{y === arm.fixedYears ? "*" : ""}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr style={{ borderBottom: "1px solid #f0f0f0" }}>
+                            <td style={{ padding: "2px 4px", color: "#15803d", fontWeight: "bold" }}>Hist. P&amp;I</td>
+                            {milestones.map((y) => {
+                              const t = arm.historical.trajectory[y - 1];
+                              return <td key={y} style={{ textAlign: "right", padding: "2px 4px" }}>{t ? fmt(t.maxPI) : "—"}</td>;
+                            })}
+                          </tr>
+                          <tr>
+                            <td style={{ padding: "2px 4px", color: "#dc2626", fontWeight: "bold" }}>Worst P&amp;I</td>
+                            {milestones.map((y) => {
+                              const t = arm.worstCase.trajectory[y - 1];
+                              return <td key={y} style={{ textAlign: "right", padding: "2px 4px" }}>{t ? fmt(t.maxPI) : "—"}</td>;
+                            })}
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p style={{ fontSize: "6pt", color: "#888", margin: "2px 0 0 0" }}>
+                        *Fixed period ends. Historical scenario assumes index at its 20-yr average ({arm.historicalIndex.toFixed(2)}%); worst case hits every cap. P&amp;I only — excludes taxes/insurance/HOA/MI.
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Points Recovery / Breakeven Analysis */}
             {/* Points Recovery Analysis (Print) — Prominent Section */}
@@ -1488,20 +1820,9 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
           ];
           const snapshots = results.map((r) => {
             const homeValue = r.purchasePrice * Math.pow(1.03, yearsInHome);
-            // Remaining balance: walk amortization for yearsInHome years
-            const monthlyRate = r.rate / 100 / 12;
-            const totalMonths = r.termYears * 12;
-            const payment = monthlyRate > 0
-              ? r.totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1)
-              : r.totalLoanAmount / totalMonths;
-            let balance = r.totalLoanAmount;
-            const payMonths = Math.min(yearsInHome * 12, totalMonths);
-            for (let m = 0; m < payMonths; m++) {
-              const interest = balance * monthlyRate;
-              const principal = Math.min(payment - interest, balance);
-              balance = Math.max(0, balance - principal);
-            }
-            const remainingBalance = balance;
+            // Remaining balance: use the amortization schedule (reflects ARM historical path when applicable)
+            const row = r.amortization[Math.min(yearsInHome, r.amortization.length) - 1];
+            const remainingBalance = row ? row.endBalance : 0;
             const totalEquity = homeValue - remainingBalance;
             const equityFromPayments = r.totalLoanAmount - remainingBalance;
             const equityFromAppreciation = homeValue - r.purchasePrice;
@@ -1565,19 +1886,26 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                 {results.map((r, i) => {
                   const c = CARD_COLORS_P2[i % CARD_COLORS_P2.length];
                   const loanLabel = scenarios[i]?.isInvestment && r.loanType === "conventional" ? "Conventional-Investor" : LOAN_TYPE_LABELS[r.loanType];
-                  const totalPaid = r.monthly.totalPITI * 12 * yearsInHome;
+                  const armLabel = r.isARM && r.arm ? `${r.arm.fixedYears}/${r.arm.adjustmentFrequency === 6 ? "6mo" : "1yr"} ARM ` : "";
+                  // For ARMs, sum actual P&I payments on the historical path + monthly escrows
+                  const escrowsMonthly = r.monthly.totalPITI - r.monthly.principalInterest;
+                  const totalPaid = r.isARM && r.arm
+                    ? r.arm.historical.monthlyPayments.slice(0, Math.min(yearsInHome * 12, r.termYears * 12)).reduce((a, b) => a + b, 0) + escrowsMonthly * 12 * yearsInHome
+                    : r.monthly.totalPITI * 12 * yearsInHome;
                   return (
                     <div key={i} style={{ width: cardWidth, backgroundColor: c.bg, borderRadius: "6px", padding: "12px 14px", color: c.text, border: `1px solid ${c.border}`, boxSizing: "border-box" as const, textAlign: "center" as const }}>
                       <p style={{ fontSize: "7pt", fontWeight: "bold", color: c.accent, textTransform: "uppercase" as const, letterSpacing: "0.08em", margin: "0 0 3px 0" }}>
                         Option {i + 1}
                       </p>
                       <p style={{ fontSize: "9pt", fontWeight: "bold", color: c.text, margin: "0 0 2px 0" }}>
-                        {r.termYears}-Yr {loanLabel}
+                        {armLabel}{r.termYears}-Yr {loanLabel}
                       </p>
-                      <p style={{ fontSize: "8pt", color: c.accent, margin: "0 0 8px 0" }}>{r.rate.toFixed(3)}%</p>
+                      <p style={{ fontSize: "8pt", color: c.accent, margin: "0 0 8px 0" }}>{r.rate.toFixed(3)}%{r.isARM ? " initial" : ""}</p>
                       <p style={{ fontSize: "7pt", color: c.subtext, margin: "0 0 2px 0" }}>Total Payments ({yearsInHome} yrs)</p>
                       <p style={{ fontSize: "14pt", fontWeight: "bold", color: c.accent, margin: "0 0 4px 0" }}>{fmt(totalPaid)}</p>
-                      <p style={{ fontSize: "6.5pt", color: c.subtext, margin: 0 }}>{fmtExact(r.monthly.totalPITI)}/mo × {yearsInHome * 12} payments</p>
+                      <p style={{ fontSize: "6.5pt", color: c.subtext, margin: 0 }}>
+                        {r.isARM ? `Historical-avg ARM path × ${yearsInHome * 12} payments` : `${fmtExact(r.monthly.totalPITI)}/mo × ${yearsInHome * 12} payments`}
+                      </p>
                     </div>
                   );
                 })}
@@ -1590,18 +1918,9 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
         {(() => {
           const snapshots = results.map((r) => {
             const homeValue = r.purchasePrice * Math.pow(1.03, yearsInHome);
-            const monthlyRate = r.rate / 100 / 12;
-            const totalMonths = r.termYears * 12;
-            const payment = monthlyRate > 0
-              ? r.totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1)
-              : r.totalLoanAmount / totalMonths;
-            let balance = r.totalLoanAmount;
-            const payMonths = Math.min(yearsInHome * 12, totalMonths);
-            for (let m = 0; m < payMonths; m++) {
-              const interest = balance * monthlyRate;
-              const principal = Math.min(payment - interest, balance);
-              balance = Math.max(0, balance - principal);
-            }
+            // Use the amortization schedule (reflects ARM historical path when applicable)
+            const row = r.amortization[Math.min(yearsInHome, r.amortization.length) - 1];
+            const balance = row ? row.endBalance : 0;
             const equityFromPayments = r.totalLoanAmount - balance;
             const equityFromAppreciation = homeValue - r.purchasePrice;
             return { equityFromPayments, equityFromAppreciation, total: equityFromPayments + equityFromAppreciation };
@@ -1907,7 +2226,9 @@ export default function LoanCompare() {
                 <Trophy size={20} className="text-emerald-400 mx-auto mb-2" />
                 <p className="text-xs text-slate-400 mb-1">Lowest Monthly Payment</p>
                 <p className="text-lg font-bold text-emerald-400">{fmtExact(results[winners.payment].monthly.totalPITI)}</p>
-                <p className="text-xs text-slate-500 mt-1">{LOAN_TYPE_LABELS[results[winners.payment].loanType]} at {results[winners.payment].rate.toFixed(3)}%</p>
+                <p className="text-xs text-slate-500 mt-1">
+                  {results[winners.payment].isARM ? "ARM " : ""}{LOAN_TYPE_LABELS[results[winners.payment].loanType]} at {results[winners.payment].rate.toFixed(3)}%{results[winners.payment].isARM ? " (initial)" : ""}
+                </p>
               </div>
               <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 text-center">
                 <DollarSign size={20} className="text-blue-400 mx-auto mb-2" />
@@ -2059,7 +2380,8 @@ export default function LoanCompare() {
             const sameType = results.every((r) => r.loanType === results[0].loanType);
             const sameTerm = results.every((r) => r.termYears === results[0].termYears);
             const sameLoan = results.every((r) => Math.abs(r.baseLoanAmount - results[0].baseLoanAmount) < 1);
-            if (!sameType || !sameTerm || !sameLoan) return null;
+            const sameRateStructure = results.every((r) => r.isARM === results[0].isARM);
+            if (!sameType || !sameTerm || !sameLoan || !sameRateStructure) return null;
             const sorted = [...results].map((r, i) => ({ ...r, origIdx: i })).sort((a, b) => a.rate - b.rate);
             const pairs: { low: typeof sorted[0]; high: typeof sorted[0]; pointsCostDiff: number; monthlySavings: number; breakeven: number }[] = [];
             for (let i = 0; i < sorted.length; i++) {
@@ -2159,7 +2481,7 @@ export default function LoanCompare() {
           {/* Email Results */}
           <EmailResults
             calculator="loan-comparison"
-            resultSummary={results.length > 0 ? results.map(r => `${r.label} (${r.rate}%): ${fmt(r.monthly.totalPITI)}/mo`).join(' | ') : undefined}
+            resultSummary={results.length > 0 ? results.map(r => `${r.label}${r.isARM && r.arm ? ` ${r.arm.fixedYears}-yr ARM` : ''} (${r.rate}%${r.isARM ? ' initial' : ''}): ${fmt(r.monthly.totalPITI)}/mo${r.isARM && r.arm ? ` (worst-case P&I ${fmt(r.arm.worstCase.maxPI)})` : ''}`).join(' | ') : undefined}
             scenarios={results.length > 0 ? results.map(r => ({
               label: r.label,
               loanType: r.loanType,
