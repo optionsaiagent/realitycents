@@ -17,6 +17,7 @@ import {
   type ExtraDepositFrequency,
   compareStrategies,
   depositsPerMonth,
+  defaultLivingExpenses,
   formatMonths,
 } from "@/lib/helocSweepMath";
 import {
@@ -195,8 +196,15 @@ export default function HelocSweepCalculator() {
   const [netIncome, setNetIncome] = useState("10000");
   const [depositFrequency, setDepositFrequency] = useState<DepositFrequency>("monthly");
 
-  // Expenses
-  const [monthlyExpenses, setMonthlyExpenses] = useState("7000");
+  // Property costs — paid from the HELOC line (Hawaii defaults: ~0.35% of $750K home ≈ $219/mo tax)
+  const [monthlyPropertyTax, setMonthlyPropertyTax] = useState("219");
+  const [monthlyInsurance, setMonthlyInsurance] = useState("150");
+  const [monthlyHOA, setMonthlyHOA] = useState("0");
+
+  // Living expenses — defaults to 80% of (income − property costs − minimum interest),
+  // leaving 20% as net principal paydown. User can override with actual figures.
+  const [livingExpenses, setLivingExpenses] = useState("");
+  const [livingExpensesTouched, setLivingExpensesTouched] = useState(false);
 
   // Extra deposit
   const [extraDeposit, setExtraDeposit] = useState("0");
@@ -211,6 +219,21 @@ export default function HelocSweepCalculator() {
   const [tableExpanded, setTableExpanded] = useState(false);
   const [showSawtooth, setShowSawtooth] = useState(true);
 
+  // Derived monthly figures used for the smart living-expense default
+  const monthlyIncomeForDefault = num(netIncome) * depositsPerMonth(depositFrequency);
+  const propertyCostsTotal = num(monthlyPropertyTax) + num(monthlyInsurance) + num(monthlyHOA);
+  const suggestedLivingExpenses = defaultLivingExpenses(
+    monthlyIncomeForDefault,
+    propertyCostsTotal,
+    num(startingBalance),
+    num(helocRate)
+  );
+
+  // Use the smart default until the user overrides it
+  const effectiveLivingExpenses = livingExpensesTouched
+    ? num(livingExpenses)
+    : suggestedLivingExpenses;
+
   const inputs: HelocSweepInputs = useMemo(
     () => ({
       startingBalance: num(startingBalance),
@@ -219,7 +242,10 @@ export default function HelocSweepCalculator() {
       drawPeriodYears: Math.max(Math.round(num(drawPeriodYears)) || 10, 0),
       netIncome: num(netIncome),
       depositFrequency,
-      monthlyExpenses: num(monthlyExpenses),
+      monthlyPropertyTax: num(monthlyPropertyTax),
+      monthlyInsurance: num(monthlyInsurance),
+      monthlyHOA: num(monthlyHOA),
+      monthlyLivingExpenses: effectiveLivingExpenses,
       extraDeposit: num(extraDeposit),
       extraDepositFrequency,
       traditionalRate: num(traditionalRate),
@@ -232,7 +258,10 @@ export default function HelocSweepCalculator() {
       drawPeriodYears,
       netIncome,
       depositFrequency,
-      monthlyExpenses,
+      monthlyPropertyTax,
+      monthlyInsurance,
+      monthlyHOA,
+      effectiveLivingExpenses,
       extraDeposit,
       extraDepositFrequency,
       traditionalRate,
@@ -246,7 +275,8 @@ export default function HelocSweepCalculator() {
   }, [inputs]);
 
   const monthlyIncomeTotal = inputs.netIncome * depositsPerMonth(depositFrequency);
-  const monthlySurplus = monthlyIncomeTotal - inputs.monthlyExpenses;
+  const monthlySurplus = monthlyIncomeTotal - propertyCostsTotal - effectiveLivingExpenses;
+  const minMonthlyInterest = (inputs.startingBalance * inputs.helocRate) / 100 / 12;
 
   const avgBalanceReduction = result
     ? Math.max(inputs.startingBalance - result.heloc.avgDailyBalanceYear1, 0)
@@ -334,10 +364,11 @@ export default function HelocSweepCalculator() {
             <p className="text-sm text-slate-300 leading-relaxed">
               <span className="font-semibold text-white">How the sweep works:</span> Your net
               income is deposited directly against the HELOC balance, so every dollar suppresses
-              the balance that interest is calculated on — starting the day it lands. As you pay
-              bills throughout the month, the balance drifts back up, creating a "sawtooth"
-              pattern. Because interest accrues on the daily balance, the surplus you don't spend
-              becomes a permanent principal paydown each month.
+              the balance that interest is calculated on — starting the day it lands. Property
+              costs, living expenses, and the monthly interest charge are all paid from the line
+              (they increase the balance), creating a "sawtooth" pattern. The surplus you don't
+              spend — income minus property costs minus living expenses — becomes a permanent
+              principal paydown each month, as long as it exceeds the interest charge.
             </p>
           </div>
         </div>
@@ -395,27 +426,101 @@ export default function HelocSweepCalculator() {
                 </div>
               </InputCard>
 
-              <InputCard title="Expenses" icon={Activity}>
+              <InputCard title="Property Costs (Paid from the Line)" icon={Landmark}>
                 <Field
-                  label="Total Monthly Expenses"
-                  value={monthlyExpenses}
-                  onChange={setMonthlyExpenses}
+                  label="Monthly Property Taxes"
+                  value={monthlyPropertyTax}
+                  onChange={setMonthlyPropertyTax}
                   prefix="$"
-                  helper="Everything you spend — drawn from the line throughout the month"
+                  helper="Hawaii default: ~0.35% of a $750K home ≈ $219/mo (Honolulu County residential rate)"
                 />
+                <Field
+                  label="Monthly Homeowner's Insurance"
+                  value={monthlyInsurance}
+                  onChange={setMonthlyInsurance}
+                  prefix="$"
+                />
+                <Field
+                  label="Monthly HOA"
+                  value={monthlyHOA}
+                  onChange={setMonthlyHOA}
+                  prefix="$"
+                  helper="Hawaii condos: often $400–$1,200+/mo. Single-family: usually $0"
+                />
+                <div className="bg-slate-700/40 rounded-lg p-3 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Total Property Costs</span>
+                  <span className="text-sm font-bold text-gold">{fmt(propertyCostsTotal)}/mo</span>
+                </div>
+              </InputCard>
+
+              <InputCard title="Living Expenses" icon={Activity}>
+                <Field
+                  label="Monthly Living Expenses (excluding property costs above)"
+                  value={livingExpensesTouched ? livingExpenses : String(suggestedLivingExpenses)}
+                  onChange={(v) => {
+                    setLivingExpensesTouched(true);
+                    setLivingExpenses(v);
+                  }}
+                  prefix="$"
+                  helper="Groceries, utilities, car payments, etc. — NOT property taxes/insurance/HOA"
+                />
+                <div className="bg-slate-700/40 rounded-lg p-3">
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    {livingExpensesTouched ? (
+                      <>
+                        Using your figure.{" "}
+                        <button
+                          onClick={() => {
+                            setLivingExpensesTouched(false);
+                            setLivingExpenses("");
+                          }}
+                          className="text-teal underline underline-offset-2"
+                        >
+                          Reset to suggested {fmt(suggestedLivingExpenses)}
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-slate-300 font-medium">Suggested default:</span> 80% of
+                        what's left after property costs ({fmt(propertyCostsTotal)}) and the minimum
+                        interest payment ({fmt(minMonthlyInterest)}/mo) — leaving 20% as net principal
+                        paydown. Override with your actual spending for a more accurate result.
+                      </>
+                    )}
+                  </p>
+                </div>
+                {/* Cash-flow breakdown: how the surplus is derived */}
                 <div
-                  className={`bg-slate-700/40 rounded-lg p-3 flex items-center justify-between ${
+                  className={`bg-slate-700/40 rounded-lg p-3 space-y-1.5 ${
                     monthlySurplus <= 0 ? "border border-red-500/40" : ""
                   }`}
                 >
-                  <span className="text-xs text-slate-400">Monthly Surplus</span>
-                  <span
-                    className={`text-sm font-bold ${
-                      monthlySurplus > 0 ? "text-emerald-400" : "text-red-400"
-                    }`}
-                  >
-                    {fmt(monthlySurplus)}
-                  </span>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-slate-400">Net Income (deposits ↓ balance)</span>
+                    <span className="text-emerald-400 font-medium">+{fmt(monthlyIncomeTotal)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-slate-400">Property Costs (drawn ↑ balance)</span>
+                    <span className="text-red-400 font-medium">−{fmt(propertyCostsTotal)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-slate-400">Living Expenses (drawn ↑ balance)</span>
+                    <span className="text-red-400 font-medium">−{fmt(effectiveLivingExpenses)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-600/60">
+                    <span className="text-slate-300 font-medium">Surplus Applied to Balance</span>
+                    <span
+                      className={`text-sm font-bold ${
+                        monthlySurplus > 0 ? "text-emerald-400" : "text-red-400"
+                      }`}
+                    >
+                      {fmt(monthlySurplus)}/mo
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 pt-1">
+                    Interest (≈{fmt(minMonthlyInterest)}/mo to start) is also charged to the line —
+                    the surplus must exceed it for the balance to fall.
+                  </p>
                 </div>
               </InputCard>
 
@@ -705,7 +810,9 @@ export default function HelocSweepCalculator() {
                       <div className="bg-slate-700/40 rounded-lg p-3">
                         <p className="text-xs text-slate-400 mb-1">Monthly Surplus Applied</p>
                         <p className="text-lg font-bold text-teal">{fmt(monthlySurplus)}</p>
-                        <p className="text-[11px] text-slate-500">income − expenses</p>
+                        <p className="text-[11px] text-slate-500">
+                          income − property costs − living expenses
+                        </p>
                       </div>
                       <div className="bg-slate-700/40 rounded-lg p-3">
                         <p className="text-xs text-slate-400 mb-1">

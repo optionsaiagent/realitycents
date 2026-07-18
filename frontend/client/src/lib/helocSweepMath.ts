@@ -15,11 +15,35 @@ export interface HelocSweepInputs {
   drawPeriodYears: number;       // draw period (years)
   netIncome: number;             // net income per deposit period ($)
   depositFrequency: DepositFrequency;
-  monthlyExpenses: number;       // total monthly expenses ($)
+  monthlyPropertyTax: number;    // monthly property taxes ($) — drawn from the line
+  monthlyInsurance: number;      // monthly homeowner's insurance ($) — drawn from the line
+  monthlyHOA: number;            // monthly HOA ($) — drawn from the line
+  monthlyLivingExpenses: number; // monthly living expenses excluding property costs ($)
   extraDeposit: number;          // one-time / recurring extra deposit ($)
   extraDepositFrequency: ExtraDepositFrequency;
   traditionalRate: number;       // traditional fixed rate (%)
   traditionalTermYears: number;  // traditional term (years)
+}
+
+/** Total monthly property costs (taxes + insurance + HOA). */
+export function propertyCosts(inputs: Pick<HelocSweepInputs, "monthlyPropertyTax" | "monthlyInsurance" | "monthlyHOA">): number {
+  return inputs.monthlyPropertyTax + inputs.monthlyInsurance + inputs.monthlyHOA;
+}
+
+/**
+ * Smart default for monthly living expenses:
+ *   remaining = monthly net income − property costs − minimum monthly interest (balance × rate ÷ 12)
+ *   default living expenses = 80% of remaining (leaving 20% as net principal paydown)
+ */
+export function defaultLivingExpenses(
+  monthlyIncome: number,
+  monthlyPropertyCosts: number,
+  startingBalance: number,
+  helocRate: number
+): number {
+  const minMonthlyInterest = (startingBalance * helocRate) / 100 / 12;
+  const remaining = monthlyIncome - monthlyPropertyCosts - minMonthlyInterest;
+  return Math.max(Math.round(remaining * 0.8), 0);
 }
 
 export interface DailyPoint {
@@ -127,10 +151,13 @@ export function simulateHelocSweep(inputs: HelocSweepInputs): HelocSweepResult {
     termYears,
     netIncome,
     depositFrequency,
-    monthlyExpenses,
     extraDeposit,
     extraDepositFrequency,
   } = inputs;
+
+  // Total monthly draw from the line: living expenses + property taxes + insurance + HOA.
+  // All are paid from the HELOC (they increase the balance); income deposits decrease it.
+  const monthlyExpenses = inputs.monthlyLivingExpenses + propertyCosts(inputs);
 
   const dailyRate = helocRate / 100 / 365;
   const maxMonths = Math.max(termYears, 1) * 12;
@@ -275,7 +302,7 @@ export function compareStrategies(inputs: HelocSweepInputs): ComparisonResult {
   );
 
   const monthlyIncome = inputs.netIncome * depositsPerMonth(inputs.depositFrequency);
-  const monthlySurplus = monthlyIncome - inputs.monthlyExpenses;
+  const monthlySurplus = monthlyIncome - inputs.monthlyLivingExpenses - propertyCosts(inputs);
 
   const maxYears = Math.max(
     Math.ceil(heloc.payoffMonths / 12),
