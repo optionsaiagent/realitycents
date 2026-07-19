@@ -22,10 +22,12 @@ import { notifyOwner } from "./_core/notification";
 import { storagePut } from "./storage";
 import { brandPdf } from "./pdfBranding";
 import { dscrRouter } from "./dscrRouter";
+import { ratesRouter } from "./ratesRouter";
 import { sendCalculatorResultsEmail } from "./email";
 
 export const appRouter = router({
   dscr: dscrRouter,
+  rates: ratesRouter,
   leads: router({
     captureCalculatorLead: publicProcedure
       .input(

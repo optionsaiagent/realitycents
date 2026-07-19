@@ -33,7 +33,7 @@ export function propertyCosts(inputs: Pick<HelocSweepInputs, "monthlyPropertyTax
 /**
  * Smart default for monthly living expenses:
  *   remaining = monthly net income − property costs − minimum monthly interest (balance × rate ÷ 12)
- *   default living expenses = 80% of remaining (leaving 20% as net principal paydown)
+ *   default living expenses = 75% of remaining (leaving 25% as net principal paydown)
  */
 export function defaultLivingExpenses(
   monthlyIncome: number,
@@ -43,7 +43,7 @@ export function defaultLivingExpenses(
 ): number {
   const minMonthlyInterest = (startingBalance * helocRate) / 100 / 12;
   const remaining = monthlyIncome - monthlyPropertyCosts - minMonthlyInterest;
-  return Math.max(Math.round(remaining * 0.8), 0);
+  return Math.max(Math.round(remaining * 0.75), 0);
 }
 
 export interface DailyPoint {
@@ -92,12 +92,12 @@ export interface ComparisonResult {
   monthlySurplus: number;
   yearRows: YearRow[];
   chartData: { year: number; heloc: number | null; traditional: number | null }[];
-  sawtoothData: { day: number; balance: number }[];
+  sawtoothData: { week: number; balance: number }[]; // weekly snapshots over year 1
   feasible: boolean;             // surplus > 0 means the strategy can work
 }
 
 const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const SAWTOOTH_DAYS = 92; // ~3 months of daily detail
+const SAWTOOTH_DAYS = 365; // 1 year of daily detail (downsampled to weeks for the chart)
 
 function daysInMonth(monthIndex: number): number {
   // Ignore leap years for simplicity — negligible effect on a simulation like this
@@ -365,7 +365,14 @@ export function compareStrategies(inputs: HelocSweepInputs): ComparisonResult {
     monthlySurplus,
     yearRows,
     chartData,
-    sawtoothData: heloc.dailyPoints.map((p) => ({ day: p.day + 1, balance: p.balance })),
+    // Downsample year-1 daily points to weekly snapshots (weeks 1–52).
+    // Use the minimum balance within each week so payday dips stay visible.
+    sawtoothData: Array.from({ length: 52 }, (_, w) => {
+      const slice = heloc.dailyPoints.slice(w * 7, w * 7 + 7);
+      if (slice.length === 0) return null;
+      const balance = Math.min(...slice.map((p) => p.balance));
+      return { week: w + 1, balance };
+    }).filter((p): p is { week: number; balance: number } => p !== null),
     feasible: monthlySurplus > 0,
   };
 }

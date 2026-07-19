@@ -7,8 +7,9 @@
  * Matches existing RealityCents dark theme (LoanCompare) — dark slate,
  * teal/gold accents.
  */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
+import { trpc } from "@/lib/trpc";
 import SEO from "@/components/SEO";
 import ContactActions from "@/components/ContactActions";
 import {
@@ -61,6 +62,11 @@ function fmt(n: number): string {
     maximumFractionDigits: 0,
   }).format(n);
 }
+
+// SOFR fallback used until the live rate loads (backend caches the NY Fed API weekly).
+// Update periodically if the API ever changes: https://markets.newyorkfed.org/api/rates/secured/sofr/last/1.json
+const SOFR_FALLBACK = 3.631;
+const HELOC_MARGIN = 3.25;
 
 const DEPOSIT_FREQUENCY_OPTIONS: { value: DepositFrequency; label: string }[] = [
   { value: "monthly", label: "Monthly" },
@@ -188,7 +194,8 @@ function StatCard({
 export default function HelocSweepCalculator() {
   // Loan details
   const [startingBalance, setStartingBalance] = useState("600000");
-  const [helocRate, setHelocRate] = useState("7.55");
+  const [helocRate, setHelocRate] = useState(String(SOFR_FALLBACK + HELOC_MARGIN)); // SOFR + margin
+  const helocRateTouched = useRef(false);
   const [termYears, setTermYears] = useState("30");
   const [drawPeriodYears, setDrawPeriodYears] = useState("10");
 
@@ -218,6 +225,20 @@ export default function HelocSweepCalculator() {
   // UI state
   const [tableExpanded, setTableExpanded] = useState(false);
   const [showSawtooth, setShowSawtooth] = useState(true);
+
+  // Live SOFR: fetched from the backend (cached weekly from the NY Fed API).
+  // Until the user edits the rate manually, default it to live SOFR + margin.
+  const sofrQuery = trpc.rates.getSofr.useQuery(undefined, {
+    staleTime: 60 * 60 * 1000,
+    retry: 1,
+    refetchOnWindowFocus: false,
+  });
+  const liveSofr = sofrQuery.data?.rate ?? SOFR_FALLBACK;
+  useEffect(() => {
+    if (sofrQuery.data && !helocRateTouched.current) {
+      setHelocRate((sofrQuery.data.rate + HELOC_MARGIN).toFixed(3).replace(/0+$/, "").replace(/\.$/, ""));
+    }
+  }, [sofrQuery.data]);
 
   // Derived monthly figures used for the smart living-expense default
   const monthlyIncomeForDefault = num(netIncome) * depositsPerMonth(depositFrequency);
@@ -277,6 +298,7 @@ export default function HelocSweepCalculator() {
   const monthlyIncomeTotal = inputs.netIncome * depositsPerMonth(depositFrequency);
   const monthlySurplus = monthlyIncomeTotal - propertyCostsTotal - effectiveLivingExpenses;
   const minMonthlyInterest = (inputs.startingBalance * inputs.helocRate) / 100 / 12;
+  const netSurplusToPrincipal = monthlySurplus - minMonthlyInterest;
 
   const avgBalanceReduction = result
     ? Math.max(inputs.startingBalance - result.heloc.avgDailyBalanceYear1, 0)
@@ -390,9 +412,14 @@ export default function HelocSweepCalculator() {
                 <Field
                   label="HELOC Interest Rate"
                   value={helocRate}
-                  onChange={setHelocRate}
+                  onChange={(v) => {
+                    helocRateTouched.current = true;
+                    setHelocRate(v);
+                  }}
                   suffix="%"
-                  helper="Default assumes SOFR ~4.30% + 3.25% margin. Variable — verify with your lender."
+                  helper={`Default: current SOFR ${liveSofr.toFixed(3)}%${
+                    sofrQuery.data?.effectiveDate ? ` (as of ${sofrQuery.data.effectiveDate})` : ""
+                  } + ${HELOC_MARGIN.toFixed(2)}% margin. Variable — verify with your lender.`}
                 />
                 <div className="grid grid-cols-2 gap-3">
                   <Field label="Loan Term" value={termYears} onChange={setTermYears} suffix="yrs" />
@@ -481,9 +508,9 @@ export default function HelocSweepCalculator() {
                       </>
                     ) : (
                       <>
-                        <span className="text-slate-300 font-medium">Suggested default:</span> 80% of
+                        <span className="text-slate-300 font-medium">Suggested default:</span> 75% of
                         what's left after property costs ({fmt(propertyCostsTotal)}) and the minimum
-                        interest payment ({fmt(minMonthlyInterest)}/mo) — leaving 20% as net principal
+                        interest payment ({fmt(minMonthlyInterest)}/mo) — leaving 25% as net principal
                         paydown. Override with your actual spending for a more accurate result.
                       </>
                     )}
@@ -507,19 +534,23 @@ export default function HelocSweepCalculator() {
                     <span className="text-slate-400">Living Expenses (drawn ↑ balance)</span>
                     <span className="text-red-400 font-medium">−{fmt(effectiveLivingExpenses)}</span>
                   </div>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-slate-400">Interest Charged (monthly, to balance)</span>
+                    <span className="text-red-400 font-medium">−{fmt(minMonthlyInterest)}</span>
+                  </div>
                   <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-600/60">
-                    <span className="text-slate-300 font-medium">Surplus Applied to Balance</span>
+                    <span className="text-slate-300 font-medium">Net Surplus Applied to Principal</span>
                     <span
                       className={`text-sm font-bold ${
-                        monthlySurplus > 0 ? "text-emerald-400" : "text-red-400"
+                        netSurplusToPrincipal > 0 ? "text-emerald-400" : "text-red-400"
                       }`}
                     >
-                      {fmt(monthlySurplus)}/mo
+                      {fmt(netSurplusToPrincipal)}/mo
                     </span>
                   </div>
                   <p className="text-[11px] text-slate-500 pt-1">
-                    Interest (≈{fmt(minMonthlyInterest)}/mo to start) is also charged to the line —
-                    the surplus must exceed it for the balance to fall.
+                    Interest shown is the first month's charge — it falls as the balance falls,
+                    so the net paydown accelerates over time.
                   </p>
                 </div>
               </InputCard>
@@ -735,10 +766,11 @@ export default function HelocSweepCalculator() {
                     >
                       <div className="text-left">
                         <h3 className="font-bold text-sm text-white mb-1">
-                          The "Sawtooth" — First 3 Months, Day by Day
+                          The "Sawtooth" — First Year, Week by Week
                         </h3>
                         <p className="text-xs text-slate-400">
-                          Sharp drop on payday, gradual climb as expenses draw from the line
+                          Sharp drop on payday, gradual climb as expenses draw from the line —
+                          trending down all year
                         </p>
                       </div>
                       {showSawtooth ? (
@@ -756,12 +788,13 @@ export default function HelocSweepCalculator() {
                           >
                             <CartesianGrid stroke="rgba(148,163,184,0.1)" vertical={false} />
                             <XAxis
-                              dataKey="day"
+                              dataKey="week"
                               stroke="#94A3B8"
                               fontSize={11}
                               tickLine={false}
+                              interval={3}
                               label={{
-                                value: "Day",
+                                value: "Week",
                                 position: "insideBottom",
                                 offset: -2,
                                 fill: "#64748B",
@@ -777,8 +810,8 @@ export default function HelocSweepCalculator() {
                               domain={["dataMin - 2000", "dataMax + 2000"]}
                             />
                             <Tooltip
-                              formatter={(value: number) => [fmt(value), "Daily Balance"]}
-                              labelFormatter={(d) => `Day ${d}`}
+                              formatter={(value: number) => [fmt(value), "Balance"]}
+                              labelFormatter={(w) => `Week ${w}`}
                               contentStyle={{
                                 backgroundColor: "#0C2340",
                                 border: "1px solid rgba(245,230,211,0.2)",
