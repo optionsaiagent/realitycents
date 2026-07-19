@@ -197,7 +197,9 @@ export default function HelocSweepCalculator() {
   const [helocRate, setHelocRate] = useState(String(SOFR_FALLBACK + HELOC_MARGIN)); // SOFR + margin
   const helocRateTouched = useRef(false);
   const [termYears, setTermYears] = useState("30");
-  const [drawPeriodYears, setDrawPeriodYears] = useState("10");
+  // All-in-One structure: full line access for the entire term; the credit limit
+  // begins reducing by 1/240th of the original balance monthly starting at month 121.
+  const FULL_ACCESS_YEARS = 10;
 
   // Income
   const [netIncome, setNetIncome] = useState("10000");
@@ -208,8 +210,8 @@ export default function HelocSweepCalculator() {
   const [monthlyInsurance, setMonthlyInsurance] = useState("150");
   const [monthlyHOA, setMonthlyHOA] = useState("0");
 
-  // Living expenses — defaults to 80% of (income − property costs − minimum interest),
-  // leaving 20% as net principal paydown. User can override with actual figures.
+  // Living expenses — defaults to 40% of monthly net income.
+  // User can override with actual figures.
   const [livingExpenses, setLivingExpenses] = useState("");
   const [livingExpensesTouched, setLivingExpensesTouched] = useState(false);
 
@@ -240,15 +242,11 @@ export default function HelocSweepCalculator() {
     }
   }, [sofrQuery.data]);
 
-  // Derived monthly figures used for the smart living-expense default
+  // Derived monthly figures used for the living-expense default (40% of monthly income;
+  // per-deposit amounts are converted to monthly equivalent first)
   const monthlyIncomeForDefault = num(netIncome) * depositsPerMonth(depositFrequency);
   const propertyCostsTotal = num(monthlyPropertyTax) + num(monthlyInsurance) + num(monthlyHOA);
-  const suggestedLivingExpenses = defaultLivingExpenses(
-    monthlyIncomeForDefault,
-    propertyCostsTotal,
-    num(startingBalance),
-    num(helocRate)
-  );
+  const suggestedLivingExpenses = defaultLivingExpenses(monthlyIncomeForDefault);
 
   // Use the smart default until the user overrides it
   const effectiveLivingExpenses = livingExpensesTouched
@@ -260,7 +258,7 @@ export default function HelocSweepCalculator() {
       startingBalance: num(startingBalance),
       helocRate: num(helocRate),
       termYears: Math.max(Math.round(num(termYears)) || 30, 1),
-      drawPeriodYears: Math.max(Math.round(num(drawPeriodYears)) || 10, 0),
+      drawPeriodYears: FULL_ACCESS_YEARS, // full-access phase before the credit limit starts declining
       netIncome: num(netIncome),
       depositFrequency,
       monthlyPropertyTax: num(monthlyPropertyTax),
@@ -276,7 +274,6 @@ export default function HelocSweepCalculator() {
       startingBalance,
       helocRate,
       termYears,
-      drawPeriodYears,
       netIncome,
       depositFrequency,
       monthlyPropertyTax,
@@ -421,15 +418,14 @@ export default function HelocSweepCalculator() {
                     sofrQuery.data?.effectiveDate ? ` (as of ${sofrQuery.data.effectiveDate})` : ""
                   } + ${HELOC_MARGIN.toFixed(2)}% margin. Variable — verify with your lender.`}
                 />
-                <div className="grid grid-cols-2 gap-3">
-                  <Field label="Loan Term" value={termYears} onChange={setTermYears} suffix="yrs" />
-                  <Field
-                    label="Draw Period"
-                    value={drawPeriodYears}
-                    onChange={setDrawPeriodYears}
-                    suffix="yrs"
-                    helper="Years you can re-borrow"
-                  />
+                <Field label="Loan Term" value={termYears} onChange={setTermYears} suffix="yrs" />
+                <div className="p-3 bg-slate-700/30 border border-slate-600/40 rounded-lg">
+                  <p className="text-xs text-slate-300 font-medium mb-1">Line Access (All-in-One structure)</p>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Full draw access to the original credit limit for the first 10 years. Starting in
+                    year 11, the credit limit reduces by 1/240th of the original balance each month —
+                    but you retain access to the line for the full 30-year term.
+                  </p>
                 </div>
               </InputCard>
 
@@ -508,10 +504,10 @@ export default function HelocSweepCalculator() {
                       </>
                     ) : (
                       <>
-                        <span className="text-slate-300 font-medium">Suggested default:</span> 75% of
-                        what's left after property costs ({fmt(propertyCostsTotal)}) and the minimum
-                        interest payment ({fmt(minMonthlyInterest)}/mo) — leaving 25% as net principal
-                        paydown. Override with your actual spending for a more accurate result.
+                        <span className="text-slate-300 font-medium">Suggested default:</span> 40% of
+                        your monthly net income ({fmt(monthlyIncomeForDefault)}/mo
+                        {depositFrequency !== "monthly" ? ", converted from your deposit schedule" : ""}).
+                        Override with your actual spending for a more accurate result.
                       </>
                     )}
                   </p>
@@ -723,20 +719,19 @@ export default function HelocSweepCalculator() {
                               </span>
                             )}
                           />
-                          {inputs.drawPeriodYears > 0 &&
-                            inputs.drawPeriodYears < Math.max(inputs.termYears, inputs.traditionalTermYears) && (
-                              <ReferenceLine
-                                x={inputs.drawPeriodYears}
-                                stroke="rgba(245,230,211,0.3)"
-                                strokeDasharray="4 4"
-                                label={{
-                                  value: "Draw period ends",
-                                  fill: "#94A3B8",
-                                  fontSize: 10,
-                                  position: "insideTopRight",
-                                }}
-                              />
-                            )}
+                          {FULL_ACCESS_YEARS < Math.max(inputs.termYears, inputs.traditionalTermYears) && (
+                            <ReferenceLine
+                              x={FULL_ACCESS_YEARS}
+                              stroke="rgba(245,230,211,0.3)"
+                              strokeDasharray="4 4"
+                              label={{
+                                value: "Credit limit starts declining",
+                                fill: "#94A3B8",
+                                fontSize: 10,
+                                position: "insideTopRight",
+                              }}
+                            />
+                          )}
                           <Line
                             type="monotone"
                             dataKey="heloc"
@@ -858,7 +853,7 @@ export default function HelocSweepCalculator() {
                       </div>
                       <div className="bg-slate-700/40 rounded-lg p-3">
                         <p className="text-xs text-slate-400 mb-1">
-                          Available Liquidity (Draw Period)
+                          Available Liquidity
                         </p>
                         <p className="text-lg font-bold text-gold">{fmt(currentLiquidity)}</p>
                         <p className="text-[11px] text-slate-500">
@@ -883,6 +878,12 @@ export default function HelocSweepCalculator() {
                       lower than a traditional mortgage in year one — and every dollar of that
                       reduction stops accruing interest at {inputs.helocRate.toFixed(2)}% the day
                       it hits the account.
+                    </p>
+                    <p className="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-700/60">
+                      <span className="text-slate-300 font-medium">Line access:</span> Full draw
+                      access for the first 10 years. Starting in year 11, the credit limit reduces
+                      by 1/240th of the original balance each month — but you retain access to the
+                      line for the full 30-year term.
                     </p>
                   </div>
 
@@ -942,11 +943,7 @@ export default function HelocSweepCalculator() {
                                   {fmt(row.traditionalInterest)}
                                 </td>
                                 <td className="py-2 px-2 text-right text-slate-300">
-                                  {row.availableCredit === null ? (
-                                    <span className="text-slate-600">draw ended</span>
-                                  ) : (
-                                    fmt(row.availableCredit)
-                                  )}
+                                  {fmt(row.availableCredit)}
                                 </td>
                               </tr>
                             ))}

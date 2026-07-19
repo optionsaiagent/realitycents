@@ -31,19 +31,24 @@ export function propertyCosts(inputs: Pick<HelocSweepInputs, "monthlyPropertyTax
 }
 
 /**
- * Smart default for monthly living expenses:
- *   remaining = monthly net income − property costs − minimum monthly interest (balance × rate ÷ 12)
- *   default living expenses = 75% of remaining (leaving 25% as net principal paydown)
+ * Default monthly living expenses: 40% of monthly net income.
+ * `monthlyIncome` must already be the monthly equivalent (per-deposit amount ×
+ * deposits per month for bi-weekly/semi-monthly/weekly frequencies).
  */
-export function defaultLivingExpenses(
-  monthlyIncome: number,
-  monthlyPropertyCosts: number,
-  startingBalance: number,
-  helocRate: number
-): number {
-  const minMonthlyInterest = (startingBalance * helocRate) / 100 / 12;
-  const remaining = monthlyIncome - monthlyPropertyCosts - minMonthlyInterest;
-  return Math.max(Math.round(remaining * 0.75), 0);
+export function defaultLivingExpenses(monthlyIncome: number): number {
+  return Math.max(Math.round(monthlyIncome * 0.4), 0);
+}
+
+/**
+ * CMG All-in-One credit limit schedule.
+ * Months 1–120: full access to the original credit limit (starting balance).
+ * Months 121–360: the limit reduces by 1/240th of the original balance each
+ * month, reaching $0 at month 360 — but the line stays accessible the whole term.
+ */
+export function creditLimitAtMonth(originalBalance: number, month: number): number {
+  if (month <= 120) return originalBalance;
+  const monthsPast120 = Math.min(month - 120, 240);
+  return Math.max(originalBalance - (monthsPast120 * originalBalance) / 240, 0);
 }
 
 export interface DailyPoint {
@@ -64,7 +69,8 @@ export interface YearRow {
   traditionalBalance: number;    // end-of-year traditional balance
   helocInterest: number;         // HELOC interest charged that year
   traditionalInterest: number;   // traditional interest paid that year
-  availableCredit: number | null; // startingBalance - helocBalance during draw period, null after
+  creditLimit: number;           // credit limit at end of year (All-in-One schedule)
+  availableCredit: number;       // min(creditLimit, creditLimit - helocBalance), floored at 0
 }
 
 export interface HelocSweepResult {
@@ -340,14 +346,15 @@ export function compareStrategies(inputs: HelocSweepInputs): ComparisonResult {
       tradYearInterest += traditional.monthlyInterest[m];
     }
 
-    const inDrawPeriod = y <= inputs.drawPeriodYears;
+    const creditLimit = creditLimitAtMonth(inputs.startingBalance, y * 12);
     yearRows.push({
       year: y,
       helocBalance,
       traditionalBalance: tradBalance,
       helocInterest: helocYearInterest,
       traditionalInterest: tradYearInterest,
-      availableCredit: inDrawPeriod ? Math.max(inputs.startingBalance - helocBalance, 0) : null,
+      creditLimit,
+      availableCredit: Math.max(creditLimit - helocBalance, 0),
     });
 
     chartData.push({
