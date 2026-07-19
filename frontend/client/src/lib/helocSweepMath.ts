@@ -413,16 +413,20 @@ export interface PaydownSummary {
  */
 export function solveEffectiveAPR(
   principal: number,
-  months: number,
+  _months: number,   // kept for API compat but ignored — always uses 360-month basis
   targetTotalInterest: number
 ): number {
-  if (principal <= 0 || months <= 0) return 0;
+  // CMG AIO definition: the 30-year fixed rate that would produce the same total
+  // interest as the HELOC. Always solved on a 360-month amortization so the result
+  // is directly comparable to a standard 30-year mortgage rate.
+  if (principal <= 0) return 0;
   if (targetTotalInterest <= 0) return 0;
+  const MONTHS = 360;
   const totalPaid = (r: number): number => {
     const rm = r / 100 / 12;
     if (rm === 0) return principal;
-    const pmt = (principal * rm * Math.pow(1 + rm, months)) / (Math.pow(1 + rm, months) - 1);
-    return pmt * months;
+    const pmt = (principal * rm * Math.pow(1 + rm, MONTHS)) / (Math.pow(1 + rm, MONTHS) - 1);
+    return pmt * MONTHS;
   };
   const target = principal + targetTotalInterest;
   let lo = 0;

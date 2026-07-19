@@ -1048,7 +1048,7 @@ export default function HelocSweepCalculator() {
                           <MetricRow
                             label="Comparison Loan Effective APR"
                             value={result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}
-                            tooltip="The fixed rate that would produce the same total interest over the same payoff period. This translates the sweep effect into a familiar number — it is not a quoted rate."
+                            tooltip="The annual percentage rate that a 30-year fixed mortgage would need to have in order to cost the same total interest as the All-in-One HELOC — reflecting how efficiently the sweep mechanism reduces your borrowing cost."
                             accent="text-gold"
                           />
                           <MetricRow
