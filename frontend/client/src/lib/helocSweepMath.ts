@@ -384,6 +384,118 @@ export function compareStrategies(inputs: HelocSweepInputs): ComparisonResult {
   };
 }
 
+/* ------------------------------------------------------------------ */
+/* Paydown Summary metrics (CMG AIO simulator format)                  */
+/* ------------------------------------------------------------------ */
+
+export interface PaydownSummary {
+  heloc: {
+    avgMinMonthlyPayment: number;      // avg of monthly interest charges (interest-only minimum)
+    avgPrincipalMonthly: number;       // original balance / months to payoff
+    avgPrincipalAnnualPct: number;     // avgPrincipalMonthly * 12 / original balance * 100
+    interestPctOfPrincipal: number;    // total interest / principal * 100
+    effectiveAPR: number;              // equivalent fixed rate producing same total interest over same payoff period
+    breakevenRate: number | null;      // HELOC rate at which total interest matches the traditional loan (null if not found)
+  };
+  traditional: {
+    minMonthlyPayment: number;         // fixed P&I payment
+    avgPrincipalMonthly: number;
+    avgPrincipalAnnualPct: number;
+    interestPctOfPrincipal: number;
+    avgAPR: number;                    // the fixed note rate
+  };
+}
+
+/**
+ * Solve for the fixed annual rate whose fully-amortizing payment over `months`
+ * yields `targetTotalInterest` on `principal`.
+ * total paid = payment × months = principal + totalInterest → bisection on rate.
+ */
+export function solveEffectiveAPR(
+  principal: number,
+  months: number,
+  targetTotalInterest: number
+): number {
+  if (principal <= 0 || months <= 0) return 0;
+  if (targetTotalInterest <= 0) return 0;
+  const totalPaid = (r: number): number => {
+    const rm = r / 100 / 12;
+    if (rm === 0) return principal;
+    const pmt = (principal * rm * Math.pow(1 + rm, months)) / (Math.pow(1 + rm, months) - 1);
+    return pmt * months;
+  };
+  const target = principal + targetTotalInterest;
+  let lo = 0;
+  let hi = 30;
+  for (let i = 0; i < 80; i++) {
+    const mid = (lo + hi) / 2;
+    if (totalPaid(mid) < target) lo = mid;
+    else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+/**
+ * Solve for the HELOC rate at which the sweep strategy's total interest equals
+ * the traditional loan's total interest (i.e., how high the variable rate could
+ * go before the traditional wins). Bisection over the full simulation.
+ * Returns null if no crossover exists within 0–25%.
+ */
+export function solveBreakevenRate(
+  inputs: HelocSweepInputs,
+  traditionalTotalInterest: number
+): number | null {
+  const interestAt = (rate: number): number =>
+    simulateHelocSweep({ ...inputs, helocRate: rate }).totalInterest;
+  let lo = 0.01;
+  let hi = 25;
+  if (interestAt(hi) < traditionalTotalInterest) return null; // HELOC wins even at 25%
+  if (interestAt(lo) > traditionalTotalInterest) return null; // HELOC loses even near 0%
+  for (let i = 0; i < 40; i++) {
+    const mid = (lo + hi) / 2;
+    if (interestAt(mid) < traditionalTotalInterest) lo = mid;
+    else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+/** Build the Paydown Summary comparison from a completed comparison result. */
+export function buildPaydownSummary(
+  inputs: HelocSweepInputs,
+  result: ComparisonResult
+): PaydownSummary {
+  const { heloc, traditional } = result;
+  const principal = inputs.startingBalance;
+
+  const helocMonths = Math.max(heloc.payoffMonths, 1);
+  const avgMinMonthlyPayment =
+    heloc.monthlyPoints.length > 0
+      ? heloc.monthlyPoints.reduce((s, p) => s + p.interestCharged, 0) / heloc.monthlyPoints.length
+      : 0;
+  const helocAvgPrincipalMonthly = heloc.paidOff ? principal / helocMonths : 0;
+
+  const tradMonths = Math.max(traditional.payoffMonths, 1);
+  const tradAvgPrincipalMonthly = principal / tradMonths;
+
+  return {
+    heloc: {
+      avgMinMonthlyPayment,
+      avgPrincipalMonthly: helocAvgPrincipalMonthly,
+      avgPrincipalAnnualPct: principal > 0 ? ((helocAvgPrincipalMonthly * 12) / principal) * 100 : 0,
+      interestPctOfPrincipal: principal > 0 ? (heloc.totalInterest / principal) * 100 : 0,
+      effectiveAPR: heloc.paidOff ? solveEffectiveAPR(principal, helocMonths, heloc.totalInterest) : 0,
+      breakevenRate: solveBreakevenRate(inputs, traditional.totalInterest),
+    },
+    traditional: {
+      minMonthlyPayment: traditional.monthlyPayment,
+      avgPrincipalMonthly: tradAvgPrincipalMonthly,
+      avgPrincipalAnnualPct: principal > 0 ? ((tradAvgPrincipalMonthly * 12) / principal) * 100 : 0,
+      interestPctOfPrincipal: principal > 0 ? (traditional.totalInterest / principal) * 100 : 0,
+      avgAPR: inputs.traditionalRate,
+    },
+  };
+}
+
 /** Format months as "X yrs Y mos". */
 export function formatMonths(months: number): string {
   const y = Math.floor(months / 12);

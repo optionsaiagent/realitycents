@@ -19,6 +19,7 @@ import {
   compareStrategies,
   depositsPerMonth,
   defaultLivingExpenses,
+  buildPaydownSummary,
   formatMonths,
 } from "@/lib/helocSweepMath";
 import {
@@ -45,6 +46,8 @@ import {
   Repeat,
   AlertTriangle,
   Droplets,
+  Printer,
+  Scale,
 } from "lucide-react";
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -67,6 +70,42 @@ function fmt(n: number): string {
 // Update periodically if the API ever changes: https://markets.newyorkfed.org/api/rates/secured/sofr/last/1.json
 const SOFR_FALLBACK = 3.631;
 const HELOC_MARGIN = 3.25;
+
+// ─── FAQ content (rendered + FAQPage JSON-LD) ──────────────────────────────────
+const FAQ_ITEMS: { q: string; a: string }[] = [
+  {
+    q: "What is a first-lien HELOC with sweep checking?",
+    a: "It's a home equity line of credit that replaces your traditional mortgage as the first lien on your home, combined with an integrated checking account. Your paychecks deposit directly against the loan balance, and your bills are paid from the line. Because interest is calculated on your daily balance, every dollar sitting in the account \"sweeps\" down the balance that interest accrues on — your idle cash effectively earns your mortgage rate. Products like CMG's All-In-One Loan use this structure.",
+  },
+  {
+    q: "How does daily interest calculation save money compared to a traditional mortgage?",
+    a: "A traditional mortgage charges interest on the full outstanding principal each month, regardless of what's in your bank account. With a sweep HELOC, your deposited income lowers the balance the day it lands, so interest accrues on a smaller number for most of the month. The savings come from two sources: your monthly surplus permanently paying down principal, and your \"parked\" cash temporarily suppressing the average daily balance. The first effect does most of the work — which is why this only makes sense with strong positive cash flow.",
+  },
+  {
+    q: "What happens if I need to access my equity — do I have to refinance?",
+    a: "No. That's the core liquidity advantage. Every dollar of principal you pay down remains available to re-borrow through the line, up to your current credit limit — just write a check or transfer from the account. With a traditional mortgage, extra payments are locked in the house, and getting them back requires a cash-out refinance or a separate HELOC, both of which involve closing costs, underwriting, and time.",
+  },
+  {
+    q: "Is the interest rate variable? What are the risks?",
+    a: "Yes — first-lien HELOC rates are variable, typically tied to an index like SOFR or Prime plus a margin. If rates rise, your interest cost rises with them, and the math in this calculator changes. The strategy also depends on behavioral discipline: the credit line makes your home equity as accessible as a checking account, which is dangerous if you tend to spend what's available. Run the numbers with a rate 1–2% higher than today's before deciding, and be honest about your spending habits.",
+  },
+  {
+    q: "Who is the ideal candidate for this type of loan?",
+    a: "Someone with consistently strong positive cash flow — typically saving 20% or more of net income — stable income, disciplined spending, and a desire to keep equity liquid rather than locked away. Self-employed borrowers and investors who value flexible access to capital often benefit most. It is NOT a good fit for tight budgets, irregular spending, or anyone who would treat the available credit as spending money — in those cases a traditional fixed-rate mortgage is the safer instrument.",
+  },
+  {
+    q: "What is the 'effective APR' and why is it so much lower than the note rate?",
+    a: "The effective APR is the fixed mortgage rate that would produce the same total interest cost over the same payoff period. Your note rate might be 6.9%, but because your deposits keep the average daily balance suppressed and your surplus retires principal quickly, the total interest you actually pay can equal what a much lower fixed rate would cost over that shorter timeline. It's a way of translating the sweep effect into a familiar number — not a rate any lender is quoting you.",
+  },
+  {
+    q: "What happens after the 10-year draw period?",
+    a: "With the All-In-One structure this calculator models, you don't lose access to the line. For the first 10 years you can draw up to the original credit limit. Starting in year 11, the credit limit reduces by 1/240th of the original balance each month over the remaining 20 years — a gradual step-down rather than a cliff. You retain access to the declining line for the full 30-year term. Terms vary by lender, so confirm the specific product's draw schedule.",
+  },
+  {
+    q: "Can I still make this work if my income fluctuates?",
+    a: "Possibly, but with caution. The strategy needs your average surplus to comfortably exceed the monthly interest charge. Commission-based or seasonal income can work if the annual surplus is strong and you maintain a cushion for lean months — the line itself provides that buffer. But if a few slow months would push your spending above your deposits, the balance climbs instead of falls, and you'd be better served by a fixed payment you can budget around. Model your worst realistic year, not your best.",
+  },
+];
 
 const DEPOSIT_FREQUENCY_OPTIONS: { value: DepositFrequency; label: string }[] = [
   { value: "monthly", label: "Monthly" },
@@ -162,6 +201,37 @@ function InputCard({
   );
 }
 
+// ─── Metric row with optional tooltip ───────────────────────────────────────
+
+function MetricRow({
+  label,
+  value,
+  tooltip,
+  accent = "text-white",
+}: {
+  label: string;
+  value: string;
+  tooltip?: string;
+  accent?: string;
+}) {
+  return (
+    <div className="flex items-center justify-between gap-2 py-2 border-b border-slate-700/50 last:border-0">
+      <span className="flex items-center gap-1.5 text-xs text-slate-400">
+        {label}
+        {tooltip && (
+          <span className="relative group inline-flex">
+            <Info size={12} className="text-slate-500 cursor-help" />
+            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 rounded-lg bg-slate-950 border border-slate-600 p-2.5 text-[11px] leading-snug text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-xl">
+              {tooltip}
+            </span>
+          </span>
+        )}
+      </span>
+      <span className={`text-sm font-semibold ${accent} text-right`}>{value}</span>
+    </div>
+  );
+}
+
 // ─── Headline stat card ──────────────────────────────────────────────────────
 
 function StatCard({
@@ -227,6 +297,7 @@ export default function HelocSweepCalculator() {
   // UI state
   const [tableExpanded, setTableExpanded] = useState(false);
   const [showSawtooth, setShowSawtooth] = useState(true);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Live SOFR: fetched from the backend (cached weekly from the NY Fed API).
   // Until the user edits the rate manually, default it to live SOFR + margin.
@@ -312,6 +383,38 @@ export default function HelocSweepCalculator() {
       )
     : 0;
 
+  // Paydown Summary (CMG AIO simulator format)
+  const paydown = useMemo(
+    () => (result ? buildPaydownSummary(inputs, result) : null),
+    [inputs, result]
+  );
+
+  const handlePrint = () => window.print();
+
+  // Dynamic Analysis & Recommendation for the printed report
+  const recommendation = useMemo(() => {
+    if (!result || !paydown) return { p1: "", p2: "" };
+    const yearsSaved = result.monthsSaved / 12;
+    const strongWin =
+      result.heloc.paidOff && result.interestSaved > 50000 && yearsSaved >= 3 && monthlySurplus > 0;
+    if (strongWin) {
+      return {
+        p1: `Based on your income profile and spending habits, a first-lien HELOC with sweep-checking integration would reduce your total mortgage cost by ${fmt(result.interestSaved)} and accelerate your payoff by ${yearsSaved.toFixed(1)} years compared to a ${inputs.traditionalRate.toFixed(2)}% fixed mortgage. Your monthly surplus of ${fmt(monthlySurplus)} — the difference between your net deposits and total expenses — would suppress your average daily balance by approximately ${fmt(avgBalanceReduction)} in the first year, resulting in an effective interest cost equivalent to a ${paydown.heloc.effectiveAPR.toFixed(2)}% fixed-rate mortgage.`,
+        p2: `This structure is particularly well-suited to your situation because your income significantly exceeds your expenses, creating a consistent surplus that the sweep mechanism converts into aggressive principal reduction while maintaining full liquidity. Unlike extra payments on a traditional mortgage, every dollar applied remains accessible via your checking account without refinancing. ${paydown.heloc.breakevenRate !== null ? `Note that the strategy retains its advantage until the variable rate averages roughly ${paydown.heloc.breakevenRate.toFixed(2)}% over the life of the loan — a meaningful cushion above today's rate.` : "At these inputs, the strategy retains its advantage across the full range of realistic rate scenarios modeled."}`,
+      };
+    }
+    if (result.heloc.paidOff && result.monthsSaved > 0) {
+      return {
+        p1: `Based on these inputs, the first-lien HELOC would pay off in ${formatMonths(result.heloc.payoffMonths)} versus ${formatMonths(result.traditional.payoffMonths)} for the traditional loan — saving ${fmt(Math.max(result.interestSaved, 0))} in interest. However, the interest savings are modest relative to the complexity and rate risk of the product.`,
+        p2: `A traditional fixed-rate mortgage may be more appropriate unless your monthly surplus increases. The sweep strategy's advantage scales directly with surplus cash flow; at your current margin of ${fmt(monthlySurplus)}/month against a first-month interest charge of roughly ${fmt(minMonthlyInterest)}, the acceleration is real but thin. If your income rises or expenses fall, revisit this analysis — the picture can change quickly.`,
+      };
+    }
+    return {
+      p1: `Based on these inputs, the sweep strategy does not pay off the loan within the ${inputs.termYears}-year term — your monthly surplus of ${fmt(monthlySurplus)} does not sufficiently exceed the interest charge of roughly ${fmt(minMonthlyInterest)}/month at a ${inputs.helocRate.toFixed(2)}% rate.`,
+      p2: `A traditional fixed-rate mortgage is the more appropriate instrument at this cash-flow profile. The first-lien HELOC structure only works when deposits consistently and meaningfully exceed total spending. If your surplus improves, this analysis is worth revisiting.`,
+    };
+  }, [result, paydown, inputs, monthlySurplus, minMonthlyInterest, avgBalanceReduction]);
+
   const schema = [
     {
       "@context": "https://schema.org",
@@ -339,6 +442,15 @@ export default function HelocSweepCalculator() {
         },
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: FAQ_ITEMS.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
   ];
 
   return (
@@ -352,7 +464,7 @@ export default function HelocSweepCalculator() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy via-slate-900 to-navy text-white pt-28 pb-12 lg:pt-36 lg:pb-16 relative overflow-hidden">
+      <section className="no-print-page bg-gradient-to-br from-navy via-slate-900 to-navy text-white pt-28 pb-12 lg:pt-36 lg:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-96 h-96 bg-teal rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-64 h-64 bg-gold rounded-full blur-3xl"></div>
@@ -376,7 +488,7 @@ export default function HelocSweepCalculator() {
       </section>
 
       {/* How it works — brief educational section */}
-      <section className="bg-slate-900 pt-10">
+      <section className="no-print-page bg-slate-900 pt-10">
         <div className="container">
           <div className="flex items-start gap-3 p-4 bg-slate-800/60 border border-teal/20 rounded-lg">
             <Droplets size={18} className="text-teal flex-shrink-0 mt-0.5" />
@@ -394,7 +506,7 @@ export default function HelocSweepCalculator() {
       </section>
 
       {/* Main Calculator */}
-      <section className="bg-slate-900 py-10">
+      <section className="no-print-page bg-slate-900 py-10">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* ─── Inputs ──────────────────────────────────────────── */}
@@ -887,6 +999,99 @@ export default function HelocSweepCalculator() {
                     </p>
                   </div>
 
+                  {/* Paydown Summary (CMG AIO simulator format) */}
+                  {paydown && (
+                    <div className="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="font-bold text-sm text-white flex items-center gap-2">
+                          <Scale size={16} className="text-teal" />
+                          Paydown Summary
+                        </h3>
+                        <button
+                          onClick={handlePrint}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/60 border border-slate-600 text-slate-200 hover:border-teal/50 hover:text-white transition"
+                        >
+                          <Printer size={13} />
+                          Print / Save as PDF
+                        </button>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* All-In-One HELOC side */}
+                        <div className="bg-slate-700/30 border border-teal/30 rounded-lg p-4">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-teal mb-2">
+                            All-In-One HELOC
+                          </p>
+                          <MetricRow
+                            label="Avg. Minimum Monthly Payment"
+                            value={fmt(paydown.heloc.avgMinMonthlyPayment)}
+                            tooltip="The minimum payment on a HELOC is interest-only. This is the average monthly interest charge over the life of the loan — it starts near the first month's charge and falls toward zero as the balance drops."
+                            accent="text-teal"
+                          />
+                          <MetricRow
+                            label="Avg. Principal Reduced Monthly"
+                            value={result.heloc.paidOff ? fmt(paydown.heloc.avgPrincipalMonthly) : "—"}
+                            tooltip="Original balance divided by months to payoff — the average pace at which the sweep retires principal each month."
+                            accent="text-teal"
+                          />
+                          <MetricRow
+                            label="Avg. Principal Reduced Annually"
+                            value={result.heloc.paidOff ? `${paydown.heloc.avgPrincipalAnnualPct.toFixed(1)}%` : "—"}
+                            tooltip="Average annual principal reduction as a percentage of your original balance. Higher is faster."
+                            accent="text-teal"
+                          />
+                          <MetricRow
+                            label="Interest as % of Principal"
+                            value={`${paydown.heloc.interestPctOfPrincipal.toFixed(0)}%`}
+                            tooltip="Total interest paid divided by original principal. On a traditional 30-year loan at ~6.5% this exceeds 125% — you pay for the house more than twice."
+                            accent="text-teal"
+                          />
+                          <MetricRow
+                            label="Comparison Loan Effective APR"
+                            value={result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}
+                            tooltip="The fixed rate that would produce the same total interest over the same payoff period. This translates the sweep effect into a familiar number — it is not a quoted rate."
+                            accent="text-gold"
+                          />
+                          <MetricRow
+                            label="Breakeven Average Rate"
+                            value={
+                              paydown.heloc.breakevenRate !== null
+                                ? `${paydown.heloc.breakevenRate.toFixed(2)}%`
+                                : "—"
+                            }
+                            tooltip="How high the HELOC rate could average over the life of the loan before total interest matches the traditional mortgage. The gap between this and today's rate is your rate-risk cushion."
+                            accent="text-gold"
+                          />
+                        </div>
+                        {/* Traditional side */}
+                        <div className="bg-slate-700/30 border border-slate-600/50 rounded-lg p-4">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-gold mb-2">
+                            Comparison (Traditional) Loan
+                          </p>
+                          <MetricRow
+                            label="Minimum Monthly Payment"
+                            value={fmt(paydown.traditional.minMonthlyPayment)}
+                          />
+                          <MetricRow
+                            label="Avg. Principal Reduced Monthly"
+                            value={fmt(paydown.traditional.avgPrincipalMonthly)}
+                          />
+                          <MetricRow
+                            label="Avg. Principal Reduced Annually"
+                            value={`${paydown.traditional.avgPrincipalAnnualPct.toFixed(1)}%`}
+                          />
+                          <MetricRow
+                            label="Interest as % of Principal"
+                            value={`${paydown.traditional.interestPctOfPrincipal.toFixed(0)}%`}
+                          />
+                          <MetricRow
+                            label="Average Loan APR"
+                            value={`${paydown.traditional.avgAPR.toFixed(2)}%`}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Year-by-Year Table */}
                   <div className="bg-slate-800/80 border border-slate-700 rounded-xl overflow-hidden">
                     <button
@@ -967,6 +1172,31 @@ export default function HelocSweepCalculator() {
                 </p>
               </div>
 
+              {/* FAQ */}
+              <div className="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+                <h2 className="font-bold text-lg text-white mb-4">Frequently Asked Questions</h2>
+                <div className="divide-y divide-slate-700/60">
+                  {FAQ_ITEMS.map((item, i) => (
+                    <div key={i}>
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full flex items-center justify-between gap-3 py-3.5 text-left"
+                      >
+                        <span className="text-sm font-semibold text-slate-200">{item.q}</span>
+                        {openFaq === i ? (
+                          <ChevronUp size={16} className="text-teal shrink-0" />
+                        ) : (
+                          <ChevronDown size={16} className="text-slate-500 shrink-0" />
+                        )}
+                      </button>
+                      {openFaq === i && (
+                        <p className="text-sm text-slate-400 leading-relaxed pb-4 pr-6">{item.a}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* CTA */}
               <ContactActions
                 variant="compact"
@@ -978,6 +1208,132 @@ export default function HelocSweepCalculator() {
           </div>
         </div>
       </section>
+
+      {/* ─── Print-only report (sibling of no-print-page sections, inside Layout) ─── */}
+      {result && paydown && (
+        <div className="print-only hidden" id="print-summary-content">
+          <div className="print-summary">
+            {/* Header */}
+            <div className="print-header">
+              <div>
+                <div className="print-logo-text">RealityCents</div>
+                <div className="print-logo-tagline">Hawaii Mortgage Education &amp; Lending</div>
+              </div>
+              <div className="print-meta">
+                <div className="print-meta-name">Jay Miller — NMLS #657301</div>
+                <div>CMG Home Loans — Branch NMLS #2475890</div>
+                <div>(808) 429-0811 · jaym@cmghomeloans.com</div>
+                <div>www.jay-miller.com</div>
+                <div className="print-meta-date">
+                  Generated:{" "}
+                  {new Date().toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Title + Highlight banner */}
+            <div className="print-highlight print-section">
+              <div className="print-highlight-left">
+                <div className="print-badge">First-Lien HELOC Sweep Analysis</div>
+                <div className="big-label">Personalized Results</div>
+                <div className="big-number">
+                  {result.heloc.paidOff ? formatMonths(result.heloc.payoffMonths) : "No payoff in term"}
+                </div>
+                <div className="print-highlight-sub">
+                  HELOC payoff vs. {formatMonths(result.traditional.payoffMonths)} traditional ·
+                  Interest saved: {fmt(Math.max(result.interestSaved, 0))}
+                </div>
+              </div>
+              <div style={{ textAlign: "right", fontSize: "8.5pt", color: "#6b7280", fontFamily: "Arial, sans-serif" }}>
+                <div style={{ fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Interest Saved</div>
+                <div style={{ fontSize: "14pt", fontWeight: 700, color: "#1A7A7A", fontFamily: "Georgia, serif" }}>
+                  {fmt(Math.max(result.interestSaved, 0))}
+                </div>
+                <div style={{ marginTop: "6pt", fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Time Saved</div>
+                <div style={{ fontSize: "11pt", fontWeight: 600, color: "#374151", fontFamily: "Georgia, serif" }}>
+                  {result.monthsSaved > 0 ? formatMonths(result.monthsSaved) : "—"}
+                </div>
+              </div>
+            </div>
+
+            {/* Input Parameters */}
+            <div className="print-section">
+              <h2>Input Parameters</h2>
+              <div className="print-grid">
+                <div>
+                  <div className="print-row"><span className="label">Starting Balance</span><span className="value">{fmt(inputs.startingBalance)}</span></div>
+                  <div className="print-row"><span className="label">HELOC Rate (variable)</span><span className="value">{inputs.helocRate.toFixed(3)}%</span></div>
+                  <div className="print-row"><span className="label">Term</span><span className="value">{inputs.termYears} years</span></div>
+                  <div className="print-row"><span className="label">Net Income (per deposit)</span><span className="value">{fmt(inputs.netIncome)}</span></div>
+                  <div className="print-row"><span className="label">Deposit Frequency</span><span className="value">{DEPOSIT_FREQUENCY_OPTIONS.find((o) => o.value === inputs.depositFrequency)?.label ?? inputs.depositFrequency}</span></div>
+                  <div className="print-row"><span className="label">Monthly Income (equivalent)</span><span className="value">{fmt(monthlyIncomeTotal)}</span></div>
+                </div>
+                <div>
+                  <div className="print-row"><span className="label">Property Taxes</span><span className="value">{fmt(inputs.monthlyPropertyTax)}/mo</span></div>
+                  <div className="print-row"><span className="label">Homeowner's Insurance</span><span className="value">{fmt(inputs.monthlyInsurance)}/mo</span></div>
+                  <div className="print-row"><span className="label">HOA</span><span className="value">{fmt(inputs.monthlyHOA)}/mo</span></div>
+                  <div className="print-row"><span className="label">Living Expenses</span><span className="value">{fmt(inputs.monthlyLivingExpenses)}/mo</span></div>
+                  {inputs.extraDeposit > 0 && (
+                    <div className="print-row"><span className="label">Extra Deposit ({inputs.extraDepositFrequency === "annually" ? "annual" : "one-time"})</span><span className="value">{fmt(inputs.extraDeposit)}</span></div>
+                  )}
+                  <div className="print-row"><span className="label">Comparison Loan</span><span className="value">{inputs.traditionalRate.toFixed(2)}% · {inputs.traditionalTermYears}-yr fixed</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Paydown Summary */}
+            <div className="print-section">
+              <h2>Paydown Summary</h2>
+              <div className="print-grid">
+                <div>
+                  <div className="print-row" style={{ fontWeight: 700 }}><span className="label">All-In-One HELOC</span><span className="value"></span></div>
+                  <div className="print-row"><span className="label">Avg. Minimum Monthly Payment</span><span className="value">{fmt(paydown.heloc.avgMinMonthlyPayment)}</span></div>
+                  <div className="print-row"><span className="label">Avg. Principal Reduced Monthly</span><span className="value">{result.heloc.paidOff ? fmt(paydown.heloc.avgPrincipalMonthly) : "—"}</span></div>
+                  <div className="print-row"><span className="label">Avg. Principal Reduced Annually</span><span className="value">{result.heloc.paidOff ? `${paydown.heloc.avgPrincipalAnnualPct.toFixed(1)}%` : "—"}</span></div>
+                  <div className="print-row"><span className="label">Interest as % of Principal</span><span className="value">{paydown.heloc.interestPctOfPrincipal.toFixed(0)}%</span></div>
+                  <div className="print-row"><span className="label">Comparison Loan Effective APR</span><span className="value">{result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}</span></div>
+                  <div className="print-row total"><span className="label">Breakeven Average Rate</span><span className="value">{paydown.heloc.breakevenRate !== null ? `${paydown.heloc.breakevenRate.toFixed(2)}%` : "—"}</span></div>
+                </div>
+                <div>
+                  <div className="print-row" style={{ fontWeight: 700 }}><span className="label">Comparison (Traditional) Loan</span><span className="value"></span></div>
+                  <div className="print-row"><span className="label">Minimum Monthly Payment</span><span className="value">{fmt(paydown.traditional.minMonthlyPayment)}</span></div>
+                  <div className="print-row"><span className="label">Avg. Principal Reduced Monthly</span><span className="value">{fmt(paydown.traditional.avgPrincipalMonthly)}</span></div>
+                  <div className="print-row"><span className="label">Avg. Principal Reduced Annually</span><span className="value">{paydown.traditional.avgPrincipalAnnualPct.toFixed(1)}%</span></div>
+                  <div className="print-row"><span className="label">Interest as % of Principal</span><span className="value">{paydown.traditional.interestPctOfPrincipal.toFixed(0)}%</span></div>
+                  <div className="print-row total"><span className="label">Average Loan APR</span><span className="value">{paydown.traditional.avgAPR.toFixed(2)}%</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Analysis & Recommendation */}
+            <div className="print-section">
+              <div className="print-notes-box" style={{ background: "#f0fafa", border: "1pt solid #1A7A7A" }}>
+                <div className="print-notes-title">Analysis &amp; Recommendation</div>
+                <div className="print-notes-body">
+                  <p style={{ margin: "0 0 6pt 0" }}>{recommendation.p1}</p>
+                  <p style={{ margin: 0 }}>{recommendation.p2}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact + Disclaimer */}
+            <div className="print-note" style={{ fontWeight: 600, marginBottom: "4pt" }}>
+              Jay Miller | Sales Manager/CMA | CMG Home Loans | NMLS #657301 | Branch NMLS #2475890 | www.jay-miller.com
+            </div>
+            <div className="print-note">
+              This analysis is for informational and educational purposes only and does not constitute a loan
+              commitment, pre-approval, or guarantee of financing. First-lien HELOC rates are variable; actual
+              rates, terms, and product availability vary by lender and borrower profile. Results depend on
+              maintaining the modeled cash flow. CMG Mortgage, Inc. dba CMG Home Loans — NMLS #1820. Licensed in
+              Hawaii. Equal Housing Opportunity. www.realitycents.com
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }
