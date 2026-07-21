@@ -27,6 +27,7 @@ const CALC_LINKS = [
 ] as const;
 
 const AFTER_CALC_NAV = [
+  { label: "The Book", href: "/zero-down-in-paradise" },
   { label: "Homebuying Guide", href: "/guide" },
   { label: "VA Condo Lookup", href: "/va-approved-condos-oahu" },
   { label: "Agent Tools", href: "/agents" },

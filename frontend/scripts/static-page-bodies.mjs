@@ -51,6 +51,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Background &amp; Experience</h2>
         <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay brings a unique combination of military service understanding and deep Hawaii real estate expertise. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
         <p>Jay is a triathlete and passionate advocate for financial literacy. He created RealityCents to provide free, no-pressure mortgage education — because informed buyers make better decisions.</p>
+        <p>Jay is the author of <a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</a> (July 2026) — the definitive guide to buying a home in Hawaii with a VA loan, <a href="https://www.amazon.com/dp/B0H7P83W15">available on Amazon</a>.</p>
       </section>
       <section>
         <h2>Credentials</h2>
@@ -60,6 +61,7 @@ export const STATIC_PAGE_BODIES = {
           <li>Certified Mortgage Advisor (CMA)</li>
           <li>25+ years Hawaii mortgage lending</li>
           <li>U.S. Army veteran</li>
+          <li>Author of "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers" (ISBN 979-8-9963553-0-3)</li>
           <li>500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813</li>
           <li>(808) 429-0811 | jaym@cmghomeloans.com</li>
         </ul>
@@ -254,6 +256,35 @@ export const STATIC_PAGE_BODIES = {
           <dt>Can I use a VA loan for a Waikiki condotel?</dt>
           <dd>Generally no. The VA does not approve projects that operate primarily as hotels or where units are part of a mandatory rental pool.</dd>
         </dl>
+      </section>
+    </main>
+  `,
+
+  "/zero-down-in-paradise": `
+    <main>
+      <h1>Zero Down in Paradise — The Hawaii VA Loan Playbook for Military Homebuyers</h1>
+      <p>By Jay Miller — U.S. Army veteran, Sales Manager at CMG Home Loans (NMLS #657301), and 25-year Hawaii mortgage lending veteran. Published July 2026. Paperback, 164 pages, ISBN 979-8-9963553-0-3. <a href="https://www.amazon.com/dp/B0H7P83W15">Available on Amazon</a>.</p>
+      <section>
+        <h2>About the Book</h2>
+        <p>Hawaii is one of the most expensive housing markets in America. For service members arriving on PCS orders to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, or any of the islands' major installations, the sticker shock is real. Zero Down in Paradise is the definitive guide to buying a home in Hawaii using your VA loan, written by a 25-year Hawaii lending veteran who has personally helped hundreds of military families with their VA loans.</p>
+      </section>
+      <section>
+        <h2>What's Inside</h2>
+        <ul>
+          <li>How full VA entitlement removes loan limits — even in Honolulu's high-cost market</li>
+          <li>Leveraging BAH and COLA as purchasing power</li>
+          <li>Navigating Hawaii's unique VA condo approval requirements</li>
+          <li>Mastering the leasehold-versus-fee-simple distinction and the J-1 inspection contingency</li>
+          <li>Hawaii property tax exemptions every buyer must file</li>
+          <li>IRRRL refinance, cash-out refi, and assumable loan strategies that build long-term wealth</li>
+          <li>The 2026 VA funding fee tax deduction most lenders haven't told their clients about</li>
+          <li>Real stories from the closing table — what works, what fails, and how to avoid costly mistakes</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Who It's For</h2>
+        <p>Active-duty service members PCSing to Hawaii, veterans and Reserve members with VA eligibility, and first-time military buyers — whether you're an E-5 buying your first condo, an O-4 looking for a single-family home in Mililani, or a veteran returning to the islands years after your last assignment.</p>
+        <p><a href="https://www.amazon.com/dp/B0H7P83W15">Get Zero Down in Paradise on Amazon</a></p>
       </section>
     </main>
   `,

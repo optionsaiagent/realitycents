@@ -45,6 +45,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Knowledge Base", href: "/knowledge-base" },
+  { label: "The Book: Zero Down in Paradise", href: "/zero-down-in-paradise" },
   { label: "Agent Tools", href: "/agents" },
   { label: "Calculator", href: "/calculator" },
   { label: "Advanced Calculator", href: "/advanced-calculator" },

@@ -194,7 +194,7 @@ Zero down doesn't mean zero cost. It means the costs are structured differently.
 
 This article covers the framework, but every buyer's situation is different. The specific strategy that works for you depends on your eligibility (VA vs. civilian), your income and DTI, the property type, the seller's motivation, and which assistance programs are currently funded.
 
-I wrote an entire book on this — [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](https://www.amazon.com/dp/B0H7P4DSRN) — because the strategies are too detailed for a single article. It covers every zero-down path available to Hawaii buyers, with step-by-step breakdowns, real scenarios, and the exact language to use in purchase contracts. If you're serious about buying in Hawaii without draining your savings, it's the playbook.
+I wrote an entire book on this — [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](https://www.amazon.com/dp/B0H7P83W15) — because the strategies are too detailed for a single article. It covers every zero-down path available to Hawaii buyers, with step-by-step breakdowns, real scenarios, and the exact language to use in purchase contracts. If you're serious about buying in Hawaii without draining your savings, it's the playbook.
 
 ---
 

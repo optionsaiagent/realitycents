@@ -10,6 +10,7 @@ import { getArticleBySlug, articles } from "@/lib/articles";
 import { articleSchemaData } from "@/lib/articleSchemaData";
 import { LENDER, PRE_APPROVAL_URL, IMAGES } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
+import BookCallout from "@/components/BookCallout";
 import { useMemo } from "react";
 import { Streamdown } from "streamdown";
 // Removed rehype-harden and defaultRehypePlugins to fix runtime crash
@@ -25,6 +26,18 @@ import {
   BookMarked,
   Calculator,
 } from "lucide-react";
+
+
+// Book CTA: VA-loan and military-related articles that show the
+// "Want the full playbook?" callout for Zero Down in Paradise
+const BOOK_CTA_SLUGS = new Set<string>([
+  "zero-down-home-buying-hawaii",
+  "va-loans-hawaii-military",
+  "va-assumable-loans-pros-cons",
+  "va-funding-fee-tax-deductible",
+  "va-loan-house-hacking-hawaii",
+  "why-waiting-for-lower-rates-costs-hawaii-military-buyers",
+]);
 
 // Calculator tool links: articles that have a companion calculator page
 const CALCULATOR_LINKS: Record<string, { href: string; title: string; excerpt: string; label: string }> = {
@@ -324,6 +337,9 @@ export default function Article() {
                   </Link>
                 );
               })()}
+
+              {/* Book callout — "Want the full playbook?" (VA/military articles) */}
+              {BOOK_CTA_SLUGS.has(article.slug) && <BookCallout />}
 
               {/* Cross-link callout for paired articles */}
               {CROSS_LINKS[article.slug] && (() => {

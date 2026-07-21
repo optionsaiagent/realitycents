@@ -519,6 +519,43 @@ const STATIC_PAGES = {
       },
     ],
   },
+  "/zero-down-in-paradise": {
+    title: "Zero Down in Paradise — The Hawaii VA Loan Playbook | Book by Jay Miller",
+    description: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers, by Jay Miller. The definitive guide to buying a home in Hawaii with your VA loan — entitlement, BAH, condo approvals, leasehold vs. fee simple, and zero-down strategies. Available on Amazon.",
+    keywords: "Zero Down in Paradise book, Hawaii VA loan book, Jay Miller author, VA loan playbook Hawaii, military homebuying Hawaii book, buy home Hawaii zero down",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/FrzzoAsXDNbiOuRh.jpg",
+    imageAlt: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers — book cover",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        name: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers",
+        author: { "@type": "Person", name: "Jay Miller", url: `${BASE_URL}/about` },
+        isbn: "979-8-9963553-0-3",
+        numberOfPages: 164,
+        bookFormat: "https://schema.org/Paperback",
+        datePublished: "2026-07-03",
+        inLanguage: "en-US",
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/FrzzoAsXDNbiOuRh.jpg",
+        url: `${BASE_URL}/zero-down-in-paradise`,
+        offers: {
+          "@type": "Offer",
+          url: "https://www.amazon.com/dp/B0H7P83W15",
+          priceCurrency: "USD",
+          price: "19.99",
+          availability: "https://schema.org/InStock",
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "Zero Down in Paradise", item: `${BASE_URL}/zero-down-in-paradise` },
+        ],
+      },
+    ],
+  },
   "/agents": {
     title: "Agent Tools — Real Estate Agent Toolkit",
     description: "Professional-grade tools for real estate agents: DSCR Investment Property Analyzer, Assumable Loan Calculator, and Win the Bid Escalation Calculator. Screen deals, structure assumptions, and win bidding wars.",

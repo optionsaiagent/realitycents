@@ -33,6 +33,7 @@ import AssumableCalculator from "./pages/AssumableCalculator";
 import EscalationCalculator from "./pages/EscalationCalculator";
 import HelocSweepCalculator from "./pages/HelocSweepCalculator";
 import Agents from "./pages/Agents";
+import ZeroDownInParadise from "./pages/ZeroDownInParadise";
 
 function ScrollToTop() {
   const [location, setLocation] = useLocation();
@@ -77,6 +78,7 @@ function Router() {
         <Route path={"/escalation-calculator"} component={EscalationCalculator} />
         <Route path={"/heloc-sweep-calculator"} component={HelocSweepCalculator} />
         <Route path={"/agents"} component={Agents} />
+        <Route path={"/zero-down-in-paradise"} component={ZeroDownInParadise} />
         <Route path={"/s/:id"} component={ShortLink} />
         {/* Redirect old agent routes to home */}
         <Route path={"/agent-hub"} component={() => { window.location.replace("/"); return null; }} />

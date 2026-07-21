@@ -11,6 +11,7 @@ import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import { getFeaturedArticles } from "@/lib/articles";
+import { BOOK } from "@/lib/book";
 import {
   Calculator,
   BookOpen,
@@ -279,6 +280,66 @@ export default function Home() {
                     <p className="text-xs text-sand/60 leading-relaxed">{loan.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BOOK BANNER — Zero Down in Paradise ===== */}
+      <section className="bg-navy py-16 lg:py-20 relative overflow-hidden border-t border-white/5">
+        {/* Gold accent line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+        <div className="container relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+            {/* Cover */}
+            <a
+              href={BOOK.amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${BOOK.fullTitle} on Amazon`}
+              className="shrink-0"
+            >
+              <img
+                src={BOOK.cover}
+                alt={`${BOOK.fullTitle} — book cover`}
+                className="w-44 sm:w-52 lg:w-56 rounded-lg shadow-2xl shadow-black/50 ring-1 ring-white/10 hover:scale-[1.03] transition-transform duration-500"
+                loading="lazy"
+              />
+            </a>
+
+            {/* Copy */}
+            <div className="text-center lg:text-left max-w-2xl">
+              <span className="inline-flex items-center gap-2 text-xs font-body font-semibold uppercase tracking-[0.2em] text-gold mb-3">
+                <BookOpen className="w-4 h-4" />
+                New Book by Jay Miller
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-white mb-3 leading-tight">
+                Zero Down in Paradise
+              </h2>
+              <p className="text-teal-light font-body font-medium mb-4">
+                {BOOK.subtitle}
+              </p>
+              <p className="text-sand/70 leading-relaxed mb-7">
+                The definitive guide to buying a home in Hawaii with your VA loan — entitlement, BAH,
+                condo approvals, leasehold vs. fee simple, and every zero-down strategy that actually
+                works in the islands. Written from 25 years at the closing table.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
+                <a
+                  href={BOOK.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-7 py-3.5 rounded-md font-body font-bold text-base transition-all hover:shadow-xl hover:shadow-gold/40 hover:scale-105"
+                >
+                  Get It on Amazon <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link
+                  href={BOOK.pageUrl}
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3.5 rounded-md font-body font-semibold text-sm transition-all backdrop-blur-sm border border-white/20"
+                >
+                  About the Book <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>

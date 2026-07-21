@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import { BOOK } from "@/lib/book";
 import {
   Shield,
   Award,
@@ -117,6 +118,13 @@ export default function About() {
                 <p>
                   My wife, Michelle, and I are proud U.S. Army OIF and OEF Veterans who have planted roots here in beautiful Hawaii. When we're not working, you'll find us enjoying the outdoors — training for triathlons, surfing, hiking, or simply appreciating island life.
                 </p>
+                <p>
+                  I'm also the author of{" "}
+                  <Link href={BOOK.pageUrl} className="text-teal font-body font-semibold hover:underline">
+                    <em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em>
+                  </Link>{" "}
+                  (July 2026) — the definitive guide to using your VA benefit to buy a home in Hawaii, drawn from 25 years of helping military families at the closing table.
+                </p>
               </div>
 
               {/* Specialties */}
@@ -181,6 +189,53 @@ export default function About() {
                   className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white px-5 py-3 rounded-md font-body font-semibold text-sm transition-all"
                 >
                   Contact Jay <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== THE BOOK ===== */}
+      <section className="bg-navy py-16 lg:py-20 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+        <div className="container relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12 max-w-4xl mx-auto">
+            <Link href={BOOK.pageUrl} className="shrink-0">
+              <img
+                src={BOOK.cover}
+                alt={`${BOOK.fullTitle} — book cover`}
+                className="w-40 lg:w-48 rounded-lg shadow-2xl shadow-black/50 ring-1 ring-white/10 hover:scale-[1.03] transition-transform duration-500"
+                loading="lazy"
+              />
+            </Link>
+            <div className="text-center md:text-left">
+              <span className="inline-block text-xs font-body font-semibold uppercase tracking-[0.2em] text-gold mb-2">
+                Published Author
+              </span>
+              <h2 className="font-display text-2xl md:text-3xl text-white mb-3">
+                Zero Down in Paradise
+              </h2>
+              <p className="text-sm text-teal-light font-body font-medium mb-3">{BOOK.subtitle}</p>
+              <p className="text-sand/70 text-sm leading-relaxed mb-6">
+                Jay's complete playbook for buying a home in Hawaii with your VA loan — entitlement, BAH,
+                condo approvals, leasehold vs. fee simple, and the zero-down strategies that actually work
+                in the islands. Published {BOOK.published}.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3">
+                <a
+                  href={BOOK.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-navy px-6 py-3 rounded-md font-body font-bold text-sm transition-all hover:shadow-lg hover:shadow-gold/30"
+                >
+                  Get It on Amazon <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link
+                  href={BOOK.pageUrl}
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md font-body font-semibold text-sm transition-all border border-white/20"
+                >
+                  About the Book
                 </Link>
               </div>
             </div>
