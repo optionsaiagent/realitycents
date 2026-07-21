@@ -1553,12 +1553,18 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Closing Costs</span>
-                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.closingCosts.total - r.closingCosts.discountPointsCost)}</span>
+                        <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.closingCosts.total - r.closingCosts.discountPointsCost + r.closingCosts.lenderCredits)}</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: "7pt", color: c.subtext }}>Prepaid Items</span>
                         <span style={{ fontSize: "8pt", color: c.text }}>{fmt(r.prepaids.total)}</span>
                       </div>
+                      {r.closingCosts.lenderCredits > 0 && (
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                          <span style={{ fontSize: "7pt", color: c.subtext }}>Lender Credit</span>
+                          <span style={{ fontSize: "8pt", color: "#4ade80" }}>-{fmt(r.closingCosts.lenderCredits)}</span>
+                        </div>
+                      )}
                       {r.sellerCredit > 0 && (
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                           <span style={{ fontSize: "7pt", color: c.subtext }}>Seller Credit</span>
