@@ -1320,6 +1320,106 @@ export default function HelocSweepCalculator() {
               </div>
             </div>
 
+            {/* Page 2 — Charts */}
+            <div style={{ pageBreakBefore: "always", paddingTop: "12pt" }}>
+              <h2 style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "10pt", fontWeight: 700, color: "#0C2340", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6pt", paddingBottom: "3pt", borderBottom: "1.5pt solid #e5e7eb" }}>Balance Over Time</h2>
+              <p style={{ fontFamily: "Arial, sans-serif", fontSize: "8pt", color: "#6b7280", marginBottom: "8pt" }}>
+                HELOC sweep trajectory vs. traditional {inputs.traditionalTermYears}-year amortization
+              </p>
+              {(() => {
+                const data = result.chartData;
+                const maxYear = data[data.length - 1]?.year || 30;
+                const maxBal = inputs.startingBalance;
+                const chartW = 480;
+                const chartH = 180;
+                const padL = 50;
+                const padR = 10;
+                const padT = 10;
+                const padB = 25;
+                const plotW = chartW - padL - padR;
+                const plotH = chartH - padT - padB;
+                const xScale = (yr: number) => padL + (yr / maxYear) * plotW;
+                const yScale = (bal: number) => padT + plotH - (bal / maxBal) * plotH;
+                const helocPoints = data.filter(d => d.heloc !== null).map(d => `${xScale(d.year)},${yScale(d.heloc!)}`);
+                const tradPoints = data.filter(d => d.traditional !== null).map(d => `${xScale(d.year)},${yScale(d.traditional!)}`);
+                return (
+                  <svg width={chartW} height={chartH} style={{ display: "block", margin: "0 auto" }}>
+                    {/* Grid lines */}
+                    {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
+                      <line key={i} x1={padL} x2={chartW - padR} y1={padT + plotH * (1 - pct)} y2={padT + plotH * (1 - pct)} stroke="#e5e7eb" strokeWidth={0.5} />
+                    ))}
+                    {/* Y-axis labels */}
+                    {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
+                      <text key={i} x={padL - 5} y={padT + plotH * (1 - pct) + 3} textAnchor="end" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
+                        ${Math.round(maxBal * pct / 1000)}k
+                      </text>
+                    ))}
+                    {/* X-axis labels */}
+                    {Array.from({ length: Math.min(7, maxYear + 1) }, (_, i) => Math.round((i / 6) * maxYear)).map((yr, i) => (
+                      <text key={i} x={xScale(yr)} y={chartH - 5} textAnchor="middle" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
+                        Yr {yr}
+                      </text>
+                    ))}
+                    {/* HELOC line */}
+                    <polyline points={helocPoints.join(" ")} fill="none" stroke="#1A7A7A" strokeWidth={2} />
+                    {/* Traditional line */}
+                    <polyline points={tradPoints.join(" ")} fill="none" stroke="#D4A574" strokeWidth={2} />
+                    {/* Legend */}
+                    <rect x={padL + 10} y={padT + 5} width={10} height={3} fill="#1A7A7A" />
+                    <text x={padL + 24} y={padT + 9} fontSize="7pt" fill="#374151" fontFamily="Arial, sans-serif">HELOC Sweep</text>
+                    <rect x={padL + 100} y={padT + 5} width={10} height={3} fill="#D4A574" />
+                    <text x={padL + 114} y={padT + 9} fontSize="7pt" fill="#374151" fontFamily="Arial, sans-serif">Traditional Mortgage</text>
+                  </svg>
+                );
+              })()}
+
+              <div style={{ marginTop: "18pt" }}>
+                <h2 style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "10pt", fontWeight: 700, color: "#0C2340", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6pt", paddingBottom: "3pt", borderBottom: "1.5pt solid #e5e7eb" }}>The "Sawtooth" — First Year, Week by Week</h2>
+                <p style={{ fontFamily: "Arial, sans-serif", fontSize: "8pt", color: "#6b7280", marginBottom: "8pt" }}>
+                  Sharp drop on payday, gradual climb as expenses draw from the line — trending down all year
+                </p>
+                {(() => {
+                  const data = result.sawtoothData;
+                  const minBal = Math.min(...data.map(d => d.balance));
+                  const maxBalSaw = Math.max(...data.map(d => d.balance));
+                  const range = maxBalSaw - minBal || 1;
+                  const chartW = 480;
+                  const chartH = 160;
+                  const padL = 50;
+                  const padR = 10;
+                  const padT = 10;
+                  const padB = 25;
+                  const plotW = chartW - padL - padR;
+                  const plotH = chartH - padT - padB;
+                  const xScale = (wk: number) => padL + ((wk - 1) / 51) * plotW;
+                  const yScale = (bal: number) => padT + plotH - ((bal - minBal) / range) * plotH;
+                  const points = data.map(d => `${xScale(d.week)},${yScale(d.balance)}`).join(" ");
+                  return (
+                    <svg width={chartW} height={chartH} style={{ display: "block", margin: "0 auto" }}>
+                      {/* Grid lines */}
+                      {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
+                        <line key={i} x1={padL} x2={chartW - padR} y1={padT + plotH * (1 - pct)} y2={padT + plotH * (1 - pct)} stroke="#e5e7eb" strokeWidth={0.5} />
+                      ))}
+                      {/* Y-axis labels */}
+                      {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
+                        <text key={i} x={padL - 5} y={padT + plotH * (1 - pct) + 3} textAnchor="end" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
+                          ${Math.round((minBal + range * pct) / 1000)}k
+                        </text>
+                      ))}
+                      {/* X-axis labels */}
+                      {[1, 13, 26, 39, 52].map((wk, i) => (
+                        <text key={i} x={xScale(wk)} y={chartH - 5} textAnchor="middle" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
+                          Wk {wk}
+                        </text>
+                      ))}
+                      {/* Sawtooth line */}
+                      <polyline points={points} fill="none" stroke="#1A7A7A" strokeWidth={1.5} />
+                    </svg>
+                  );
+                })()}
+              </div>
+            </div>
+
             {/* Contact + Disclaimer */}
             <div className="print-note" style={{ fontWeight: 600, marginBottom: "4pt" }}>
               Jay Miller | Sales Manager/CMA | CMG Home Loans | NMLS #657301 | Branch NMLS #2475890 | www.jay-miller.com
