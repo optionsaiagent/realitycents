@@ -523,7 +523,7 @@ const STATIC_PAGES = {
     title: "Zero Down in Paradise — The Hawaii VA Loan Playbook | Book by Jay Miller",
     description: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers, by Jay Miller. The definitive guide to buying a home in Hawaii with your VA loan — entitlement, BAH, condo approvals, leasehold vs. fee simple, and zero-down strategies. Available on Amazon.",
     keywords: "Zero Down in Paradise book, Hawaii VA loan book, Jay Miller author, VA loan playbook Hawaii, military homebuying Hawaii book, buy home Hawaii zero down",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/FrzzoAsXDNbiOuRh.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/SzYBcKAOVmJmpWby.webp",
     imageAlt: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers — book cover",
     schema: [
       {
@@ -536,7 +536,7 @@ const STATIC_PAGES = {
         bookFormat: "https://schema.org/Paperback",
         datePublished: "2026-07-03",
         inLanguage: "en-US",
-        image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/FrzzoAsXDNbiOuRh.jpg",
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/SzYBcKAOVmJmpWby.webp",
         url: `${BASE_URL}/zero-down-in-paradise`,
         offers: {
           "@type": "Offer",

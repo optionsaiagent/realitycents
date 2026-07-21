@@ -11,5 +11,5 @@ export const BOOK = {
   pages: 164,
   amazonUrl: "https://www.amazon.com/dp/B0H7P83W15",
   pageUrl: "/zero-down-in-paradise",
-  cover: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/FrzzoAsXDNbiOuRh.jpg",
+  cover: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/SzYBcKAOVmJmpWby.webp",
 } as const;
