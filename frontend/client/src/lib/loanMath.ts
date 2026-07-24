@@ -675,8 +675,8 @@ export function calculateScenario(input: ScenarioInput): ScenarioResult {
   const daysRemaining = Math.max(1, 30 - input.closingDay);
   const dailyInterest = (totalLoan * (rate / 100)) / 365;
   const prepaidInterest = dailyInterest * daysRemaining;
-  const insurancePremium = input.insurance * 12;
-  const taxEscrow = monthlyTax * 6; // 6 months property tax escrow
+  const insurancePremium = input.insurance * 14; // 14 months homeowners insurance
+  const taxEscrow = monthlyTax * 8; // 8 months property tax escrow
   const hoaPrepaid = input.hoa > 0 ? input.hoa : 0; // 1 month HOA pre-paid if applicable
 
   const prepaids: Prepaids = {

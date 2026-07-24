@@ -1018,7 +1018,7 @@ function ScenarioPanel({
       {showPrepaids && (
         <div className="space-y-3 pl-2 border-l-2 border-slate-700">
           <InputField label="Est. Closing Day" value={scenario.closingDay} onChange={(v) => update("closingDay", v)} placeholder="15" />
-          <p className="text-xs text-slate-500">Prepaid interest, 12-mo insurance, 6-mo property tax escrow, and 1-mo HOA (if applicable) are calculated automatically.</p>
+          <p className="text-xs text-slate-500">Prepaid interest, 14-mo insurance, 8-mo property tax escrow, and 1-mo HOA (if applicable) are calculated automatically.</p>
         </div>
       )}
     </div>
@@ -1351,11 +1351,11 @@ function ResultCard({
                 <span className="text-slate-300">{fmt(result.prepaids.prepaidInterest)}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-slate-500">Insurance (12 mo)</span>
+                <span className="text-slate-500">Insurance (14 mo)</span>
                 <span className="text-slate-300">{fmt(result.prepaids.insurancePremium)}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-slate-500">Property Tax Escrow (6 mo)</span>
+                <span className="text-slate-500">Property Tax Escrow (8 mo)</span>
                 <span className="text-slate-300">{fmt(result.prepaids.taxEscrow)}</span>
               </div>
               {result.prepaids.hoaPrepaid > 0 && (
