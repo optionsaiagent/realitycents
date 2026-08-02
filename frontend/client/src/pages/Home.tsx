@@ -10,6 +10,7 @@ import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
+import FeaturedVideo from "@/components/FeaturedVideo";
 import { getFeaturedArticles } from "@/lib/articles";
 import { BOOK } from "@/lib/book";
 import {
@@ -345,6 +346,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== FEATURED VIDEO — First-Lien HELOC deep dive ===== */}
+      <FeaturedVideo />
 
       {/* ===== FEATURED ARTICLES — curated must-reads ===== */}
       {(() => {
