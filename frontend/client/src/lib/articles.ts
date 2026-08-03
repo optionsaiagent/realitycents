@@ -4046,6 +4046,18 @@ If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. Bu
 
 ---
 
+## Consider a Product That Works With Rate Volatility, Not Against It
+
+One option worth exploring in a volatile rate environment: a first-lien HELOC (sometimes called an All-In-One or AIO mortgage). Unlike a traditional 30-year fixed, a first-lien HELOC carries a variable rate tied to an index like SOFR. That means when rates eventually decline — as most forecasters expect — your rate drops automatically. No refinance application, no closing costs, no appraisal, no waiting.
+
+The tradeoff is real: your rate moves both directions, and today's starting rate may be higher than a fixed loan. But for buyers who believe rates are near a peak and heading lower, a first-lien HELOC lets you capture every basis point of decline without lifting a finger. It also functions as an active line of credit, allowing you to use your equity for future investments or large purchases throughout the life of the loan.
+
+This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. But in an environment where the consensus is that rates are more likely to fall than rise, it is worth understanding how the product works.
+
+[**Learn How a First-Lien HELOC Works →**](/knowledge-base/first-lien-heloc-sweep-calculator)
+
+---
+
 ## The Bottom Line
 
 Mortgage rates are volatile, and the July spike to 6.67% is frustrating. But in Hawaii real estate, the math consistently favors action over hesitation — as long as you can afford the payment today.
