@@ -20,7 +20,7 @@ export interface VideoChapter {
 
 export const FEATURED_VIDEO = {
   /** ⬇⬇⬇  REPLACE THIS with the real YouTube video ID  ⬇⬇⬇ */
-  youtubeId: "REPLACE_ME",
+  youtubeId: "fF1JsWsWfEs",
 
   title:
     "First-Lien HELOC Explained: How an $800,000 Loan Gets Paid Off in 14 Years",
