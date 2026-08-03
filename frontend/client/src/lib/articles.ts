@@ -3964,15 +3964,9 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
 
 *By Jay Miller | Last Updated: August 2026*
 
-**The 30-year fixed mortgage rate just hit 6.67% — the highest level since July 2025. On a $1.2M Hawaii loan, a 30 basis point rate increase costs $216 per month permanently — $77,760 over 30 years. Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers.**
+The 30-year fixed mortgage rate just hit 6.67% for the week ending July 30 — the highest level since July 2025. If you were pre-approved in June at 6.3%, that 37 basis point increase costs you $266 per month on a $1.2M Hawaii loan — $95,760 in additional interest over 30 years.
 
-The 30-year fixed mortgage rate just hit 6.67% for the week ending July 30 — the highest level since July 2025. The 15-year fixed crossed 6% for the first time since January 2025.
-
-If you were pre-approved in June at 6.3%, you are now looking at a significantly different monthly payment. On a $1.2M Hawaii loan, that 37 basis point increase costs you $266 per month. Over 30 years, that is $95,760 in additional interest.
-
-The immediate reaction for most buyers is to pause, wait for the Federal Reserve to "fix it," or hope rates drop back down next week. But in Hawaii's constrained market — where the median single-family home just hit a record $1.24 million and homes are selling in 13 days — waiting without a strategy is the most expensive decision you can make.
-
-Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers who are under contract, shopping, or sitting on the sidelines right now.
+The instinct is to pause and wait for the Fed to "fix it." But in Hawaii's constrained market — median single-family homes at a record $1.24 million, selling in 13 days — waiting without a strategy is the most expensive decision you can make. Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers right now.
 
 ---
 
@@ -4038,9 +4032,9 @@ Use the [Loan Comparison Calculator at RealityCents](/loan-compare) to run side-
 
 If you paused your search because rates hit 6.67%, you are falling into the classic cost-of-waiting trap.
 
-Let us assume Barry Habib is right, and rates drop to 5.6% by December 2026. When that happens, an estimated 1.4 million pent-up national households will flood the market simultaneously. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that surge in demand will drive prices higher.
+Let us assume Barry Habib is right, and rates drop to 5.6% by December 2026. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that drop in rates will bring sidelined buyers flooding back into an already competitive market, driving prices higher.
 
-If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But you will likely pay $30,000 to $50,000 more for the house — and you will be competing against a wave of buyers who are all re-entering the market at the same time.
+If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But you will likely pay $30,000 to $50,000 more for the house — and you will be competing against every other buyer who was also waiting for rates to improve.
 
 **The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. When rates drop to 5.6% next year, you refinance into the lower rate — capturing both the lower price and the lower rate. You can change your mortgage rate. You cannot change your purchase price.
 
@@ -4051,6 +4045,8 @@ If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. Bu
 One option worth exploring in a volatile rate environment: a first-lien HELOC (sometimes called an All-In-One or AIO mortgage). Unlike a traditional 30-year fixed, a first-lien HELOC carries a variable rate tied to an index like SOFR. That means when rates eventually decline — as most forecasters expect — your rate drops automatically. No refinance application, no closing costs, no appraisal, no waiting.
 
 The tradeoff is real: your rate moves both directions, and today's starting rate may be higher than a fixed loan. But for buyers who believe rates are near a peak and heading lower, a first-lien HELOC lets you capture every basis point of decline without lifting a finger. It also functions as an active line of credit, allowing you to use your equity for future investments or large purchases throughout the life of the loan.
+
+Here is what surprises most people: even at a higher stated rate, a first-lien HELOC can save hundreds of thousands of dollars in total mortgage interest compared to a traditional 30-year fixed. The reason is structural. Because your income sweeps directly into the loan balance every pay period, you are reducing principal daily — not monthly. Interest is calculated on a lower average daily balance, and the compounding effect over time is dramatic. Many borrowers pay off their home in under 15 years while paying a fraction of the total interest a 30-year fixed would have cost them — even though the rate on paper is higher.
 
 This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. But in an environment where the consensus is that rates are more likely to fall than rise, it is worth understanding how the product works.
 
