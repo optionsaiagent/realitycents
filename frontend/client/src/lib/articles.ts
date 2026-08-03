@@ -3950,6 +3950,118 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
 
 *Published by Jay Miller, NMLS #657301 | CMG Home Loans, Honolulu, Hawaii | RealityCents.com*`,
   },
+  {
+    slug: "mortgage-rates-2026-high-hawaii-buyers",
+    title: "Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now",
+    excerpt: "The 30-year fixed rate just hit 6.67% — the highest since July 2025. Here is why rates spiked (oil, inflation, bond market — not the Fed), what forecasters say about the rest of 2026, and the specific decision framework for Hawaii buyers who are under contract, shopping, or on the sidelines.",
+    category: "Market Insights",
+    readTime: "6 min",
+    date: "2026-08-03",
+    featured: true,
+    lastUpdated: "August 2026",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/UXoNXxMdnEfwzJZD.jpg",
+    content: `# Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now
+
+*By Jay Miller | Last Updated: August 2026*
+
+**The 30-year fixed mortgage rate just hit 6.67% — the highest level since July 2025. On a $1.2M Hawaii loan, a 30 basis point rate increase costs $216 per month permanently — $77,760 over 30 years. Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers.**
+
+The 30-year fixed mortgage rate just hit 6.67% for the week ending July 30 — the highest level since July 2025. The 15-year fixed crossed 6% for the first time since January 2025.
+
+If you were pre-approved in June at 6.3%, you are now looking at a significantly different monthly payment. On a $1.2M Hawaii loan, that 37 basis point increase costs you $266 per month. Over 30 years, that is $95,760 in additional interest.
+
+The immediate reaction for most buyers is to pause, wait for the Federal Reserve to "fix it," or hope rates drop back down next week. But in Hawaii's constrained market — where the median single-family home just hit a record $1.24 million and homes are selling in 13 days — waiting without a strategy is the most expensive decision you can make.
+
+Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers who are under contract, shopping, or sitting on the sidelines right now.
+
+---
+
+## Why Rates Spiked (Hint: It Is Not the Fed)
+
+When mortgage rates jump, the common assumption is that the Federal Reserve raised interest rates. That is not what happened here.
+
+The Fed controls the short-term federal funds rate, which directly impacts credit cards and auto loans. Mortgage rates are driven by an entirely different mechanism: the bond market — specifically, the yield on the 10-year Treasury note.
+
+The bond market reacts to two primary forces: inflation expectations and economic uncertainty. In July 2026, both flared up simultaneously.
+
+**Rising Oil Prices.** Oil is a foundational input for almost every good and service in the economy. When oil prices rise, the cost of manufacturing, shipping, food production, and travel rises with it. The bond market sees rising oil as a leading indicator of future inflation — and in July, oil prices climbed meaningfully. The Locations Hawaii CEO confirmed this on Hawaii News Now this week: "Mortgage rates have moved higher in recent weeks due to persistent inflation and rising oil prices."
+
+**Persistent Inflation Data.** While headline inflation has cooled significantly from its 2022 peak, the "last mile" of getting inflation down to the Fed's 2% target has proven stubbornly difficult. The bond market, which hates inflation because it erodes the value of fixed returns, demanded higher yields to compensate for the risk. Higher Treasury yields translate directly into higher mortgage rates.
+
+**The Key Insight:** The Fed did not cause this spike. The bond market did. And the bond market can reverse course just as quickly when inflation data improves — which brings us to the forecasts.
+
+---
+
+## What the Forecasts Say
+
+Despite the July spike, the macro forecast for the second half of 2026 remains cautiously optimistic.
+
+Barry Habib — one of the most accurate mortgage rate forecasters in the industry — maintains his target of rates reaching 5.6% by the end of 2026. His thesis relies on a critical insight: true inflation is actually much lower than reported inflation (1.51% vs. 3.3%) due to a 12-to-18-month lag in how the government measures shelter costs.
+
+As that lagging shelter data finally catches up to reality in the second half of 2026, headline inflation should drop meaningfully, bringing bond yields and mortgage rates down with it.
+
+Forbes' July 2026 forecast projects the 30-year fixed will hover around 6.4% for the remainder of 2026, with a gradual decline into 2027. The consensus among economists is that rates have likely peaked — but the path down will be volatile, not smooth.
+
+**What this means for you:** Rates are more likely to be lower six months from now than higher. But "likely" is not "guaranteed," and the path between here and there will include weeks like this one where rates spike on bad data.
+
+---
+
+## The Decision Framework for Hawaii Buyers
+
+If you are navigating the Hawaii market right now, you need a specific strategy based on your current position — not generic advice about "waiting for rates to come down."
+
+### If You Are Under Contract: Lock Your Rate
+
+If you have an accepted offer and are scheduled to close within 30 to 45 days, the decision is straightforward: **lock your rate today.**
+
+In a volatile market, floating your rate (waiting to lock in hopes that rates drop before closing) is a gamble with asymmetric risk. If rates drop 0.125%, you save a modest amount. If rates spike another 0.25% because of a bad inflation report or geopolitical event, you could lose your loan approval entirely due to debt-to-income (DTI) limits.
+
+On a $1.2M Hawaii loan, a 0.25% rate increase means $180 more per month. That $180 could push your DTI above the qualifying threshold and kill your deal.
+
+**The Move:** Lock your rate to secure your approval. Ask your lender if they offer a float-down option — this allows you to lock now to protect against increases, but gives you a one-time option to drop your rate if the market improves significantly before closing. Not all lenders offer this, and some charge a fee. But in this environment, it is worth asking.
+
+### If You Are Actively Shopping: Recalibrate Your Numbers
+
+If you are pre-approved and actively submitting offers, you need to recalibrate your purchasing power. A pre-approval letter from June based on a 6.3% rate is no longer accurate at 6.67%.
+
+**The math:** On an $850,000 loan at 6.3%, your principal and interest payment is $5,274/month. At 6.67%, that same loan costs $5,474/month — $200 more per month. If that $200 pushes your DTI above your qualifying limit, you no longer qualify for that price point.
+
+**The Move:** Call your lender today and ask them to run your numbers at 6.75% (build in a small buffer). You need to know exactly what your monthly payment looks like at today's rates, and you need to confirm that your DTI still qualifies for the homes you are targeting. If the higher rate pushes your payment out of your comfort zone, you have three options:
+
+1. **Target homes priced $25,000 to $50,000 lower.** In Hawaii's market, this might mean Ewa Beach instead of Kailua, or a townhome instead of a single-family.
+2. **Negotiate seller concessions to buy down your interest rate.** A seller-paid 2-1 buydown or permanent buydown can reduce your effective rate in the critical first years of ownership. In today's market, nearly half of sellers nationally are offering concessions — and Hawaii's condo market is shifting toward buyer's territory.
+3. **Increase your down payment to reduce the loan amount.** Every $10,000 in additional down payment reduces your monthly payment by approximately $65 at current rates.
+
+Use the [Loan Comparison Calculator at RealityCents](/loan-compare) to run side-by-side scenarios at different rates and price points.
+
+### If You Are on the Sidelines: Understand the Cost of Waiting
+
+If you paused your search because rates hit 6.67%, you are falling into the classic cost-of-waiting trap.
+
+Let us assume Barry Habib is right, and rates drop to 5.6% by December 2026. When that happens, an estimated 1.4 million pent-up national households will flood the market simultaneously. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that surge in demand will drive prices higher.
+
+If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But you will likely pay $30,000 to $50,000 more for the house — and you will be competing against a wave of buyers who are all re-entering the market at the same time.
+
+**The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. When rates drop to 5.6% next year, you refinance into the lower rate — capturing both the lower price and the lower rate. You can change your mortgage rate. You cannot change your purchase price.
+
+---
+
+## The Bottom Line
+
+Mortgage rates are volatile, and the July spike to 6.67% is frustrating. But in Hawaii real estate, the math consistently favors action over hesitation — as long as you can afford the payment today.
+
+Know your numbers. Negotiate aggressively for seller concessions. Focus on the price of the home, not just the cost of the money. And remember: every rate environment in history has eventually produced a refinance opportunity. The buyers who win in Hawaii are the ones who secure the asset first and optimize the financing later.
+
+---
+
+[**Compare Loan Scenarios at Different Rates →**](/loan-compare)
+
+[**Get Pre-Approved at Today's Rates →**](https://www.jay-miller.com)
+
+---
+
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
+  },
 ];
 /** All published (non-draft) articles — use this everywhere public-facing */
 export const articles: Article[] = allArticles.filter((a) => !a.draft);

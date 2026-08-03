@@ -33,7 +33,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 
 - [Hawaii Home Loan FAQ](https://realitycents.com/faq): Top questions about obtaining a mortgage in Honolulu — VA loans, FHA, conventional, loan limits, condo warrantability, closing costs, timelines, and first-time buyer programs.
 - [About Jay Miller](https://realitycents.com/about): Professional background, credentials (NMLS# 657301), US Army veteran status, specializations, and contact information.
-- [Knowledge Base](https://realitycents.com/knowledge-base): 27 in-depth articles covering Hawaii mortgage topics including VA loans, FHA, conventional, jumbo, leasehold financing, condo warrantability, credit, down payment assistance, DTI strategies, and refinancing.
+- [Knowledge Base](https://realitycents.com/knowledge-base): 28 in-depth articles covering Hawaii mortgage topics including VA loans, FHA, conventional, jumbo, leasehold financing, condo warrantability, credit, down payment assistance, DTI strategies, and refinancing.
 
 ## Calculators
 
@@ -61,6 +61,7 @@ Interactive Hawaii-specific mortgage calculators for self-service estimates:
 - [FEMA Oahu Flood Zone Maps 2026](https://realitycents.com/knowledge-base/fema-oahu-flood-zone-maps-2026): Updated flood zones and how they affect mortgage qualification, insurance, and cost.
 - [Temporary Buydown Guide](https://realitycents.com/knowledge-base/temporary-buydown-guide): How seller-paid 2/1 and 3/2/1 buydowns work and when they make sense.
 - [How Lenders Calculate Income](https://realitycents.com/knowledge-base/how-lenders-calculate-income): Variable income, self-employment, BAH gross-up, and other underwriting nuances.
+- [Mortgage Rates 2026 High](https://realitycents.com/knowledge-base/mortgage-rates-2026-high-hawaii-buyers): Why the 30-year fixed hit 6.67% (oil, inflation, bond market — not the Fed), rate forecasts for late 2026, and the decision framework for Hawaii buyers under contract, shopping, or on the sidelines.
 
 ## Hawaii-Specific Topics
 
