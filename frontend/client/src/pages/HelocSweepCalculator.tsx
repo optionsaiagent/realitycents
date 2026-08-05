@@ -948,54 +948,66 @@ export default function HelocSweepCalculator() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                       <div className="bg-slate-700/40 rounded-lg p-3">
-                        <p className="text-xs text-slate-400 mb-1">Monthly Surplus Applied</p>
-                        <p className="text-lg font-bold text-teal">{fmt(monthlySurplus)}</p>
+                        <p className="text-xs text-slate-400 mb-1">Your Effective Borrowing Cost</p>
+                        <p className="text-lg font-bold text-emerald-400">
+                          {paydown && result?.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}
+                        </p>
                         <p className="text-[11px] text-slate-500">
-                          income − property costs − living expenses
+                          equivalent fixed rate — your {inputs.helocRate.toFixed(2)}% performs like this
                         </p>
                       </div>
                       <div className="bg-slate-700/40 rounded-lg p-3">
-                        <p className="text-xs text-slate-400 mb-1">
-                          Effective Daily Balance Reduction
+                        <p className="text-xs text-slate-400 mb-1">Rate Cushion Before You Lose</p>
+                        <p className="text-lg font-bold text-gold">
+                          {paydown?.heloc.breakevenRate != null
+                            ? `${(paydown.heloc.breakevenRate - inputs.helocRate).toFixed(2)}%`
+                            : "—"}
                         </p>
-                        <p className="text-lg font-bold text-teal">{fmt(avgBalanceReduction)}</p>
                         <p className="text-[11px] text-slate-500">
-                          avg. year-1 daily balance vs. starting balance
+                          how much rates can rise before the traditional loan wins
                         </p>
                       </div>
                       <div className="bg-slate-700/40 rounded-lg p-3">
-                        <p className="text-xs text-slate-400 mb-1">
-                          Available Liquidity
+                        <p className="text-xs text-slate-400 mb-1">Interest Cost as % of Loan</p>
+                        <p className="text-lg font-bold text-teal">
+                          {paydown ? `${paydown.heloc.interestPctOfPrincipal.toFixed(0)}%` : "—"}
                         </p>
-                        <p className="text-lg font-bold text-gold">{fmt(currentLiquidity)}</p>
                         <p className="text-[11px] text-slate-500">
-                          re-borrowable after month 1 — grows as balance falls
+                          vs. {paydown ? `${paydown.traditional.interestPctOfPrincipal.toFixed(0)}%` : "—"} on the traditional loan
                         </p>
                       </div>
                       <div className="bg-slate-700/40 rounded-lg p-3">
-                        <p className="text-xs text-slate-400 mb-1">Deposits Per Month</p>
-                        <p className="text-lg font-bold text-white">
-                          {depositsPerMonth(depositFrequency).toFixed(2).replace(/\.00$/, "")}
-                        </p>
+                        <p className="text-xs text-slate-400 mb-1">Your Surplus Working For You</p>
+                        <p className="text-lg font-bold text-teal">{fmt(monthlySurplus)}/mo</p>
                         <p className="text-[11px] text-slate-500">
-                          {DEPOSIT_FREQUENCY_OPTIONS.find((o) => o.value === depositFrequency)?.label}
+                          reduces interest by ~{fmt(Math.round((monthlySurplus * inputs.helocRate / 100 / 12) * 15))}/mo avg
                         </p>
                       </div>
                     </div>
-                    <p className="text-sm text-slate-300 leading-relaxed">
-                      Your surplus of{" "}
-                      <span className="font-semibold text-teal">{fmt(monthlySurplus)}/month</span>{" "}
-                      means your average daily balance is roughly{" "}
-                      <span className="font-semibold text-teal">{fmt(avgBalanceReduction)}</span>{" "}
-                      lower than a traditional mortgage in year one — and every dollar of that
-                      reduction stops accruing interest at {inputs.helocRate.toFixed(2)}% the day
-                      it hits the account.
-                    </p>
+                    {result?.heloc.paidOff && paydown ? (
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        Your{" "}
+                        <span className="font-semibold text-teal">{fmt(monthlySurplus)}/month</span>{" "}
+                        surplus means your {inputs.helocRate.toFixed(2)}% HELOC effectively costs you the same as a{" "}
+                        <span className="font-semibold text-emerald-400">{paydown.heloc.effectiveAPR.toFixed(2)}% fixed-rate mortgage</span>
+                        {" "}— saving{" "}
+                        <span className="font-semibold text-emerald-400">{fmt(result.interestSaved)}</span>{" "}
+                        in interest and paying off{" "}
+                        <span className="font-semibold text-emerald-400">{(result.monthsSaved / 12).toFixed(1)} years early</span>.
+                      </p>
+                    ) : (
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        Your surplus of{" "}
+                        <span className="font-semibold text-teal">{fmt(monthlySurplus)}/month</span>{" "}
+                        suppresses your daily balance, but a higher surplus or lower rate would
+                        strengthen the payoff acceleration.
+                      </p>
+                    )}
                     <p className="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-700/60">
                       <span className="text-slate-300 font-medium">Line access:</span> Full draw
                       access for the first 10 years. Starting in year 11, the credit limit reduces
                       by 1/240th of the original balance each month — but you retain access to the
-                      line for the full 30-year term.
+                      line for the full 30-year term. It never converts to an amortizing loan.
                     </p>
                   </div>
 
