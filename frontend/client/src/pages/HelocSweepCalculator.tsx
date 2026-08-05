@@ -48,6 +48,8 @@ import {
   Droplets,
   Printer,
   Scale,
+  TrendingUp,
+  History,
 } from "lucide-react";
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -70,6 +72,265 @@ function fmt(n: number): string {
 // Update periodically if the API ever changes: https://markets.newyorkfed.org/api/rates/secured/sofr/last/1.json
 const SOFR_FALLBACK = 3.631;
 const HELOC_MARGIN = 3.25;
+
+// ─── Scenario analysis assumptions ───────────────────────────────────────────
+// 25-year average of the Federal Funds Effective Rate (FRED series FEDFUNDS,
+// monthly averages of daily figures), calendar years 2001–2025 = 1.84%.
+// The long zero-rate stretches (2008–2015 and 2020–2022) pull this well below
+// the pre-2001 norm. Source: https://fred.stlouisfed.org/series/FEDFUNDS
+const FED_FUNDS_25YR_AVG = 1.84;
+// Margin added to the index for the optimistic first-lien HELOC rate.
+const OPTIMISTIC_MARGIN = 4.0;
+const OPTIMISTIC_RATE = FED_FUNDS_25YR_AVG + OPTIMISTIC_MARGIN; // 5.84%
+// Pessimistic case: the user's rate averages this much higher over the loan life.
+const PESSIMISTIC_RATE_BUMP = 2.0;
+
+// ─── Print stylesheet ────────────────────────────────────────────────────────
+// Injected with the component so the printed report renders correctly regardless
+// of what the global stylesheet defines. Screen rules keep the report hidden;
+// print rules hide every interactive element and show the light-background report.
+const PRINT_STYLES = `
+#heloc-print-report { display: none; }
+
+@media print {
+  @page { size: letter portrait; margin: 0.5in; }
+
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide the entire interactive UI: hero, calculator, charts, inputs, buttons,
+     nav and footer chrome supplied by Layout. */
+  body .no-print-page,
+  body header,
+  body nav,
+  body footer,
+  body button,
+  body input,
+  body select,
+  body textarea { display: none !important; }
+
+  /* Show the report */
+  #heloc-print-report {
+    display: block !important;
+    position: static !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  #heloc-print-report * {
+    background: transparent;
+    box-shadow: none !important;
+  }
+
+  /* Header / footer */
+  .hpr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2pt solid #0C2340;
+    padding-bottom: 6pt;
+    margin-bottom: 10pt;
+  }
+  .hpr-brand {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17pt;
+    font-weight: 700;
+    color: #0C2340;
+    letter-spacing: -0.01em;
+  }
+  .hpr-brand-sub {
+    font-size: 7.5pt;
+    color: #6b7280;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1pt;
+  }
+  .hpr-meta { text-align: right; font-size: 7.5pt; color: #4b5563; line-height: 1.45; }
+  .hpr-meta-name { font-weight: 700; color: #0C2340; font-size: 8.5pt; }
+
+  .hpr-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14pt;
+    color: #0C2340;
+    margin: 0 0 2pt 0;
+  }
+  .hpr-subtitle { font-size: 8pt; color: #6b7280; margin: 0 0 10pt 0; }
+
+  /* Section scaffolding */
+  .hpr-section { margin-bottom: 12pt; break-inside: avoid; page-break-inside: avoid; }
+  .hpr-section h2 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0C2340;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin: 0 0 5pt 0;
+    padding-bottom: 2.5pt;
+    border-bottom: 1.5pt solid #d1d5db;
+  }
+  .hpr-note { font-size: 7.5pt; color: #6b7280; margin: 4pt 0 0 0; line-height: 1.45; }
+
+  /* Two-column key/value grids */
+  .hpr-grid { display: flex; gap: 18pt; }
+  .hpr-grid > div { flex: 1; }
+  .hpr-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8pt;
+    padding: 2pt 0;
+    border-bottom: 0.5pt solid #e5e7eb;
+    font-size: 8.5pt;
+  }
+  .hpr-row:last-child { border-bottom: none; }
+  .hpr-row .label { color: #4b5563; }
+  .hpr-row .value { color: #111827; font-weight: 600; text-align: right; white-space: nowrap; }
+  .hpr-row.head {
+    font-weight: 700;
+    color: #0C2340;
+    border-bottom: 1pt solid #9ca3af;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.05em;
+  }
+  .hpr-row.total { border-top: 1pt solid #9ca3af; border-bottom: none; font-weight: 700; }
+
+  /* Highlight banner */
+  .hpr-highlight {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1pt solid #0C2340;
+    background: #f3f6f9 !important;
+    padding: 8pt 10pt;
+    margin-bottom: 12pt;
+  }
+  .hpr-badge {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1A7A7A;
+    margin-bottom: 3pt;
+  }
+  .hpr-big-label { font-size: 8pt; color: #6b7280; }
+  .hpr-big-number {
+    font-family: Georgia, serif;
+    font-size: 18pt;
+    font-weight: 700;
+    color: #0C2340;
+    line-height: 1.1;
+  }
+  .hpr-highlight-sub { font-size: 7.5pt; color: #4b5563; margin-top: 3pt; }
+  .hpr-kpi-label { font-weight: 700; color: #0C2340; font-size: 8.5pt; }
+  .hpr-kpi-value { font-family: Georgia, serif; font-size: 13pt; font-weight: 700; color: #1A7A7A; }
+
+  /* Metric card strip (Key Insights) */
+  .hpr-cards { display: flex; gap: 8pt; }
+  .hpr-card {
+    flex: 1;
+    border: 0.75pt solid #d1d5db;
+    padding: 5pt 6pt;
+  }
+  .hpr-card-label { font-size: 7pt; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+  .hpr-card-value {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #0C2340;
+    margin: 1pt 0;
+  }
+  .hpr-card-sub { font-size: 6.5pt; color: #6b7280; line-height: 1.35; }
+
+  /* Scenario columns */
+  .hpr-scenarios { display: flex; gap: 10pt; }
+  .hpr-scenario { flex: 1; border: 0.75pt solid #d1d5db; padding: 6pt 8pt; }
+  .hpr-scenario.optimistic { border-left: 3pt solid #1A7A7A; }
+  .hpr-scenario.pessimistic { border-left: 3pt solid #B4813A; }
+  .hpr-scenario-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0C2340;
+  }
+  .hpr-scenario-rate { font-family: Georgia, serif; font-size: 14pt; font-weight: 700; color: #0C2340; }
+  .hpr-scenario-basis { font-size: 6.5pt; color: #6b7280; margin-bottom: 4pt; line-height: 1.35; }
+
+  /* Year-by-year table */
+  .hpr-page-break { page-break-before: always; break-before: page; padding-top: 6pt; }
+  table.hpr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7pt;
+  }
+  table.hpr-table th, table.hpr-table td {
+    padding: 2pt 3pt;
+    border-bottom: 0.5pt solid #e5e7eb;
+    text-align: right;
+    white-space: nowrap;
+  }
+  table.hpr-table th {
+    font-size: 6.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #374151;
+    border-bottom: 1pt solid #9ca3af;
+  }
+  table.hpr-table th.grp {
+    text-align: center;
+    font-size: 7pt;
+    color: #0C2340;
+    border-bottom: 0.75pt solid #d1d5db;
+  }
+  table.hpr-table th.grp.aio { background: #eef6f6 !important; }
+  table.hpr-table th.grp.trad { background: #faf4ea !important; }
+  table.hpr-table td.yr, table.hpr-table th.yr { text-align: center; font-weight: 700; color: #0C2340; }
+  table.hpr-table td.sep, table.hpr-table th.sep { border-left: 1pt solid #9ca3af; }
+  table.hpr-table thead { display: table-header-group; }
+  table.hpr-table tr { break-inside: avoid; page-break-inside: avoid; }
+  table.hpr-table tr.payoff td { background: #eef6f6 !important; font-weight: 700; }
+  table.hpr-table tfoot td {
+    border-top: 1pt solid #0C2340;
+    font-weight: 700;
+    color: #0C2340;
+    font-size: 7pt;
+  }
+
+  /* Recommendation + disclaimer */
+  .hpr-callout {
+    border: 1pt solid #1A7A7A;
+    background: #f0fafa !important;
+    padding: 7pt 9pt;
+  }
+  .hpr-callout-title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #0C2340;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3pt;
+  }
+  .hpr-callout-body { font-size: 8pt; color: #1f2937; line-height: 1.5; }
+  .hpr-callout-body p { margin: 0 0 5pt 0; }
+  .hpr-callout-body p:last-child { margin-bottom: 0; }
+
+  .hpr-footer {
+    border-top: 1.5pt solid #0C2340;
+    margin-top: 12pt;
+    padding-top: 5pt;
+  }
+  .hpr-footer-name { font-size: 8pt; font-weight: 700; color: #0C2340; margin-bottom: 3pt; }
+  .hpr-disclaimer { font-size: 6.5pt; color: #6b7280; line-height: 1.45; }
+}
+`;
 
 // ─── FAQ content (rendered + FAQPage JSON-LD) ──────────────────────────────────
 const FAQ_ITEMS: { q: string; a: string }[] = [
@@ -388,6 +649,85 @@ export default function HelocSweepCalculator() {
     () => (result ? buildPaydownSummary(inputs, result) : null),
     [inputs, result]
   );
+
+  // ─── Scenario analysis: optimistic vs. pessimistic rate environments ──────
+  // Both scenarios re-run the identical simulation with only the HELOC rate
+  // changed, so the comparison isolates rate risk from every other assumption.
+  const scenarios = useMemo(() => {
+    if (inputs.startingBalance <= 0 || inputs.helocRate <= 0) return null;
+
+    const build = (rate: number) => {
+      const scenarioInputs: HelocSweepInputs = { ...inputs, helocRate: rate };
+      const comparison = compareStrategies(scenarioInputs);
+      const summary = buildPaydownSummary(scenarioInputs, comparison);
+      return {
+        rate,
+        paidOff: comparison.heloc.paidOff,
+        payoffMonths: comparison.heloc.payoffMonths,
+        payoffLabel: comparison.heloc.paidOff
+          ? formatMonths(comparison.heloc.payoffMonths)
+          : `Not paid off in ${scenarioInputs.termYears} yrs`,
+        totalInterest: comparison.heloc.totalInterest,
+        interestSaved: comparison.interestSaved,
+        monthsSaved: comparison.monthsSaved,
+        effectiveAPR: comparison.heloc.paidOff ? summary.heloc.effectiveAPR : null,
+      };
+    };
+
+    return {
+      optimistic: build(OPTIMISTIC_RATE),
+      pessimistic: build(inputs.helocRate + PESSIMISTIC_RATE_BUMP),
+      // True when the user's own rate already beats the historical-average scenario.
+      alreadyBetterThanHistorical: inputs.helocRate < OPTIMISTIC_RATE,
+    };
+  }, [inputs]);
+
+  // ─── Year-by-year rows for the printed report ─────────────────────────────
+  // Derives starting/ending balances, annual principal, and cumulative interest
+  // for both strategies from the existing yearRows data. Capped at 30 years or
+  // the later of the two payoffs, whichever comes first.
+  const printYearRows = useMemo(() => {
+    if (!result) return [];
+    const maxYear = Math.min(
+      30,
+      Math.max(
+        Math.ceil(result.heloc.payoffMonths / 12),
+        Math.ceil(result.traditional.payoffMonths / 12)
+      )
+    );
+
+    let helocStart = inputs.startingBalance;
+    let tradStart = inputs.startingBalance;
+    let helocCumInterest = 0;
+    let tradCumInterest = 0;
+
+    return result.yearRows.slice(0, maxYear).map((row) => {
+      helocCumInterest += row.helocInterest;
+      tradCumInterest += row.traditionalInterest;
+
+      // Principal retired = balance change net of interest capitalized to the line.
+      const helocPrincipal = helocStart - row.helocBalance + row.helocInterest;
+      const tradPrincipal = tradStart - row.traditionalBalance;
+
+      const out = {
+        year: row.year,
+        helocStart,
+        helocInterest: row.helocInterest,
+        helocPrincipal: Math.max(helocPrincipal, 0),
+        helocEnd: row.helocBalance,
+        helocCumInterest,
+        tradStart,
+        tradInterest: row.traditionalInterest,
+        tradPrincipal: Math.max(tradPrincipal, 0),
+        tradEnd: row.traditionalBalance,
+        tradCumInterest,
+      };
+
+      helocStart = row.helocBalance;
+      tradStart = row.traditionalBalance;
+      return out;
+    });
+  }, [result, inputs.startingBalance]);
 
   const handlePrint = () => window.print();
 
@@ -1011,6 +1351,151 @@ export default function HelocSweepCalculator() {
                     </p>
                   </div>
 
+                  {/* ─── Best Case / Worst Case Scenario Analysis ─────────── */}
+                  {scenarios && (
+                    <div className="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+                      <div className="mb-4">
+                        <h3 className="font-bold text-sm text-white flex items-center gap-2 mb-1">
+                          <Scale size={16} className="text-teal" />
+                          Rate Scenario Analysis
+                        </h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">
+                          Your rate is variable, so the honest question isn't what happens at today's
+                          rate — it's what happens across a range of rate environments. Both columns
+                          re-run the identical simulation with only the rate changed.
+                        </p>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Optimistic */}
+                        <div className="bg-slate-700/30 border border-emerald-500/30 rounded-lg p-4">
+                          <div className="flex items-start gap-2 mb-1">
+                            <History size={14} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                            <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                              Optimistic — If Rates Average Historical Norms
+                            </p>
+                          </div>
+                          <p className="text-2xl font-bold text-emerald-400 mb-0.5">
+                            {OPTIMISTIC_RATE.toFixed(2)}%
+                          </p>
+                          <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+                            {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr average (2001–2025) +{" "}
+                            {OPTIMISTIC_MARGIN.toFixed(2)}% margin
+                          </p>
+                          <MetricRow
+                            label="Payoff Timeline"
+                            value={scenarios.optimistic.payoffLabel}
+                            accent="text-emerald-400"
+                          />
+                          <MetricRow
+                            label="Total Interest Paid"
+                            value={fmt(scenarios.optimistic.totalInterest)}
+                            accent="text-white"
+                          />
+                          <MetricRow
+                            label="Savings vs. Traditional"
+                            value={
+                              scenarios.optimistic.interestSaved >= 0
+                                ? fmt(scenarios.optimistic.interestSaved)
+                                : `−${fmt(Math.abs(scenarios.optimistic.interestSaved))}`
+                            }
+                            accent={
+                              scenarios.optimistic.interestSaved >= 0
+                                ? "text-emerald-400"
+                                : "text-red-400"
+                            }
+                            tooltip="Traditional loan total interest minus this scenario's total interest. A negative figure means the traditional fixed-rate loan costs less in this scenario."
+                          />
+                          <MetricRow
+                            label="Effective APR"
+                            value={
+                              scenarios.optimistic.effectiveAPR !== null
+                                ? `${scenarios.optimistic.effectiveAPR.toFixed(2)}%`
+                                : "—"
+                            }
+                            accent="text-gold"
+                            tooltip="The 30-year fixed rate that would produce the same total interest as this scenario."
+                          />
+                        </div>
+
+                        {/* Pessimistic */}
+                        <div className="bg-slate-700/30 border border-amber-500/30 rounded-lg p-4">
+                          <div className="flex items-start gap-2 mb-1">
+                            <TrendingUp size={14} className="text-amber-400 flex-shrink-0 mt-0.5" />
+                            <p className="text-xs font-semibold uppercase tracking-wider text-amber-400">
+                              Pessimistic — If Rates Average 2% Higher Than Today
+                            </p>
+                          </div>
+                          <p className="text-2xl font-bold text-amber-400 mb-0.5">
+                            {scenarios.pessimistic.rate.toFixed(2)}%
+                          </p>
+                          <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+                            Your {inputs.helocRate.toFixed(2)}% starting rate +{" "}
+                            {PESSIMISTIC_RATE_BUMP.toFixed(2)}% sustained over the loan life
+                          </p>
+                          <MetricRow
+                            label="Payoff Timeline"
+                            value={scenarios.pessimistic.payoffLabel}
+                            accent="text-amber-400"
+                          />
+                          <MetricRow
+                            label="Total Interest Paid"
+                            value={fmt(scenarios.pessimistic.totalInterest)}
+                            accent="text-white"
+                          />
+                          <MetricRow
+                            label={
+                              scenarios.pessimistic.interestSaved >= 0
+                                ? "Savings vs. Traditional"
+                                : "Extra Cost vs. Traditional"
+                            }
+                            value={
+                              scenarios.pessimistic.interestSaved >= 0
+                                ? fmt(scenarios.pessimistic.interestSaved)
+                                : `−${fmt(Math.abs(scenarios.pessimistic.interestSaved))}`
+                            }
+                            accent={
+                              scenarios.pessimistic.interestSaved >= 0
+                                ? "text-emerald-400"
+                                : "text-red-400"
+                            }
+                            tooltip="Traditional loan total interest minus this scenario's total interest. A negative figure means the traditional fixed-rate loan costs less in this scenario."
+                          />
+                          <MetricRow
+                            label="Effective APR"
+                            value={
+                              scenarios.pessimistic.effectiveAPR !== null
+                                ? `${scenarios.pessimistic.effectiveAPR.toFixed(2)}%`
+                                : "—"
+                            }
+                            accent="text-gold"
+                            tooltip="The 30-year fixed rate that would produce the same total interest as this scenario."
+                          />
+                        </div>
+                      </div>
+
+                      {scenarios.alreadyBetterThanHistorical && (
+                        <div className="flex items-start gap-2 mt-4 p-3 bg-emerald-950/30 border border-emerald-500/30 rounded-lg">
+                          <Info size={14} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                          <p className="text-xs text-emerald-200 leading-relaxed">
+                            Your current rate of {inputs.helocRate.toFixed(2)}% is already below the{" "}
+                            {OPTIMISTIC_RATE.toFixed(2)}% historical-average scenario — today's pricing
+                            is better than the 25-year norm, not worse. Treat the optimistic column as
+                            a floor you are already beating rather than an upside case.
+                          </p>
+                        </div>
+                      )}
+
+                      <p className="text-[11px] text-slate-500 leading-relaxed mt-3 pt-3 border-t border-slate-700/60">
+                        Both scenarios hold the rate constant at the stated level for the full term —
+                        a modeling simplification, not a forecast. Actual first-lien HELOC rates move
+                        with their index (SOFR or Prime) plus your margin and can change monthly.
+                        Fed Funds 25-year average computed from FRED series FEDFUNDS, calendar years
+                        2001–2025.
+                      </p>
+                    </div>
+                  )}
+
                   {/* Paydown Summary (CMG AIO simulator format) */}
                   {paydown && (
                     <div className="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
@@ -1221,227 +1706,514 @@ export default function HelocSweepCalculator() {
         </div>
       </section>
 
-      {/* ─── Print-only report (sibling of no-print-page sections, inside Layout) ─── */}
+
+      {/* ─── Print-only report ────────────────────────────────────────────────
+          Sibling of the no-print-page sections so the print CSS can hide the
+          interactive UI and reveal this light-background report instead. */}
+      <style dangerouslySetInnerHTML={{ __html: PRINT_STYLES }} />
+
       {result && paydown && (
-        <div className="print-only hidden" id="print-summary-content">
-          <div className="print-summary">
-            {/* Header */}
-            <div className="print-header">
+        <div id="heloc-print-report">
+          {/* ── Header ── */}
+          <div className="hpr-header">
+            <div>
+              <div className="hpr-brand">RealityCents.com</div>
+              <div className="hpr-brand-sub">Hawaii Mortgage Education &amp; Analysis</div>
+            </div>
+            <div className="hpr-meta">
+              <div className="hpr-meta-name">Jay Miller — Sales Manager / CMA</div>
+              <div>NMLS #657301 · CMG Home Loans · Branch NMLS #2475890</div>
+              <div>(808) 429-0811 · www.jay-miller.com</div>
               <div>
-                <div className="print-logo-text">RealityCents</div>
-                <div className="print-logo-tagline">Hawaii Mortgage Education &amp; Lending</div>
+                Generated:{" "}
+                {new Date().toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </div>
-              <div className="print-meta">
-                <div className="print-meta-name">Jay Miller — NMLS #657301</div>
-                <div>CMG Home Loans — Branch NMLS #2475890</div>
-                <div>(808) 429-0811 · jaym@cmghomeloans.com</div>
-                <div>www.jay-miller.com</div>
-                <div className="print-meta-date">
-                  Generated:{" "}
-                  {new Date().toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+            </div>
+          </div>
+
+          <h1 className="hpr-title">First-Lien HELOC Sweep Analysis</h1>
+          <p className="hpr-subtitle">
+            Day-by-day simulation of an all-in-one first-lien HELOC with sweep checking, compared
+            against a {inputs.traditionalRate.toFixed(2)}% {inputs.traditionalTermYears}-year fixed
+            mortgage on the same balance.
+          </p>
+
+          {/* ── Headline results banner ── */}
+          <div className="hpr-highlight">
+            <div>
+              <div className="hpr-badge">Personalized Results</div>
+              <div className="hpr-big-label">HELOC Payoff Timeline</div>
+              <div className="hpr-big-number">
+                {result.heloc.paidOff
+                  ? formatMonths(result.heloc.payoffMonths)
+                  : `No payoff within ${inputs.termYears} yrs`}
+              </div>
+              <div className="hpr-highlight-sub">
+                vs. {formatMonths(result.traditional.payoffMonths)} on the traditional loan
+                {result.monthsSaved > 0
+                  ? ` · ${(result.monthsSaved / 12).toFixed(1)} years sooner`
+                  : ""}
+              </div>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div className="hpr-kpi-label">Interest Saved</div>
+              <div className="hpr-kpi-value">{fmt(Math.max(result.interestSaved, 0))}</div>
+              <div className="hpr-highlight-sub">
+                {fmt(result.heloc.totalInterest)} HELOC vs. {fmt(result.traditional.totalInterest)}{" "}
+                traditional
+              </div>
+            </div>
+          </div>
+
+          {/* ── Input summary ── */}
+          <div className="hpr-section">
+            <h2>Input Summary</h2>
+            <div className="hpr-grid">
+              <div>
+                <div className="hpr-row">
+                  <span className="label">Loan Amount (Starting Balance)</span>
+                  <span className="value">{fmt(inputs.startingBalance)}</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">HELOC Rate (variable)</span>
+                  <span className="value">{inputs.helocRate.toFixed(3)}%</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Loan Term</span>
+                  <span className="value">{inputs.termYears} years</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Net Income (per deposit)</span>
+                  <span className="value">{fmt(inputs.netIncome)}</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Deposit Frequency</span>
+                  <span className="value">
+                    {DEPOSIT_FREQUENCY_OPTIONS.find((o) => o.value === inputs.depositFrequency)
+                      ?.label ?? inputs.depositFrequency}
+                  </span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Monthly Income (equivalent)</span>
+                  <span className="value">{fmt(monthlyIncomeTotal)}</span>
+                </div>
+              </div>
+              <div>
+                <div className="hpr-row">
+                  <span className="label">Property Taxes</span>
+                  <span className="value">{fmt(inputs.monthlyPropertyTax)}/mo</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Homeowner's Insurance</span>
+                  <span className="value">{fmt(inputs.monthlyInsurance)}/mo</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">HOA</span>
+                  <span className="value">{fmt(inputs.monthlyHOA)}/mo</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Living Expenses</span>
+                  <span className="value">{fmt(inputs.monthlyLivingExpenses)}/mo</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">
+                    Extra Deposit
+                    {inputs.extraDeposit > 0
+                      ? ` (${inputs.extraDepositFrequency === "annually" ? "annual" : "one-time"})`
+                      : ""}
+                  </span>
+                  <span className="value">{fmt(inputs.extraDeposit)}</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Comparison Loan</span>
+                  <span className="value">
+                    {inputs.traditionalRate.toFixed(2)}% · {inputs.traditionalTermYears}-yr fixed
+                  </span>
                 </div>
               </div>
             </div>
-
-            {/* Title + Highlight banner */}
-            <div className="print-highlight print-section">
-              <div className="print-highlight-left">
-                <div className="print-badge">First-Lien HELOC Sweep Analysis</div>
-                <div className="big-label">Personalized Results</div>
-                <div className="big-number">
-                  {result.heloc.paidOff ? formatMonths(result.heloc.payoffMonths) : "No payoff in term"}
-                </div>
-                <div className="print-highlight-sub">
-                  HELOC payoff vs. {formatMonths(result.traditional.payoffMonths)} traditional ·
-                  Interest saved: {fmt(Math.max(result.interestSaved, 0))}
+            <div className="hpr-grid" style={{ marginTop: "6pt" }}>
+              <div>
+                <div className="hpr-row total">
+                  <span className="label">Monthly Surplus (income − all expenses)</span>
+                  <span className="value">{fmt(monthlySurplus)}/mo</span>
                 </div>
               </div>
-              <div style={{ textAlign: "right", fontSize: "8.5pt", color: "#6b7280", fontFamily: "Arial, sans-serif" }}>
-                <div style={{ fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Interest Saved</div>
-                <div style={{ fontSize: "14pt", fontWeight: 700, color: "#1A7A7A", fontFamily: "Georgia, serif" }}>
-                  {fmt(Math.max(result.interestSaved, 0))}
-                </div>
-                <div style={{ marginTop: "6pt", fontWeight: 600, color: "#0C2340", fontSize: "9.5pt" }}>Time Saved</div>
-                <div style={{ fontSize: "11pt", fontWeight: 600, color: "#374151", fontFamily: "Georgia, serif" }}>
-                  {result.monthsSaved > 0 ? formatMonths(result.monthsSaved) : "—"}
+              <div>
+                <div className="hpr-row total">
+                  <span className="label">Traditional P&amp;I Payment</span>
+                  <span className="value">{fmt(result.traditional.monthlyPayment)}/mo</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Input Parameters */}
-            <div className="print-section">
-              <h2>Input Parameters</h2>
-              <div className="print-grid">
-                <div>
-                  <div className="print-row"><span className="label">Starting Balance</span><span className="value">{fmt(inputs.startingBalance)}</span></div>
-                  <div className="print-row"><span className="label">HELOC Rate (variable)</span><span className="value">{inputs.helocRate.toFixed(3)}%</span></div>
-                  <div className="print-row"><span className="label">Term</span><span className="value">{inputs.termYears} years</span></div>
-                  <div className="print-row"><span className="label">Net Income (per deposit)</span><span className="value">{fmt(inputs.netIncome)}</span></div>
-                  <div className="print-row"><span className="label">Deposit Frequency</span><span className="value">{DEPOSIT_FREQUENCY_OPTIONS.find((o) => o.value === inputs.depositFrequency)?.label ?? inputs.depositFrequency}</span></div>
-                  <div className="print-row"><span className="label">Monthly Income (equivalent)</span><span className="value">{fmt(monthlyIncomeTotal)}</span></div>
+          {/* ── Key insights ── */}
+          <div className="hpr-section">
+            <h2>Key Insights</h2>
+            <div className="hpr-cards">
+              <div className="hpr-card">
+                <div className="hpr-card-label">Effective Borrowing Cost</div>
+                <div className="hpr-card-value">
+                  {result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}
                 </div>
-                <div>
-                  <div className="print-row"><span className="label">Property Taxes</span><span className="value">{fmt(inputs.monthlyPropertyTax)}/mo</span></div>
-                  <div className="print-row"><span className="label">Homeowner's Insurance</span><span className="value">{fmt(inputs.monthlyInsurance)}/mo</span></div>
-                  <div className="print-row"><span className="label">HOA</span><span className="value">{fmt(inputs.monthlyHOA)}/mo</span></div>
-                  <div className="print-row"><span className="label">Living Expenses</span><span className="value">{fmt(inputs.monthlyLivingExpenses)}/mo</span></div>
-                  {inputs.extraDeposit > 0 && (
-                    <div className="print-row"><span className="label">Extra Deposit ({inputs.extraDepositFrequency === "annually" ? "annual" : "one-time"})</span><span className="value">{fmt(inputs.extraDeposit)}</span></div>
-                  )}
-                  <div className="print-row"><span className="label">Comparison Loan</span><span className="value">{inputs.traditionalRate.toFixed(2)}% · {inputs.traditionalTermYears}-yr fixed</span></div>
+                <div className="hpr-card-sub">
+                  equivalent fixed rate — your {inputs.helocRate.toFixed(2)}% performs like this
+                </div>
+              </div>
+              <div className="hpr-card">
+                <div className="hpr-card-label">Rate Cushion Before You Lose</div>
+                <div className="hpr-card-value">
+                  {paydown.heloc.breakevenRate != null
+                    ? `${(paydown.heloc.breakevenRate - inputs.helocRate).toFixed(2)}%`
+                    : "—"}
+                </div>
+                <div className="hpr-card-sub">
+                  how far rates can rise before the traditional loan wins
+                </div>
+              </div>
+              <div className="hpr-card">
+                <div className="hpr-card-label">Interest Cost as % of Loan</div>
+                <div className="hpr-card-value">
+                  {paydown.heloc.interestPctOfPrincipal.toFixed(0)}%
+                </div>
+                <div className="hpr-card-sub">
+                  vs. {paydown.traditional.interestPctOfPrincipal.toFixed(0)}% traditional
+                </div>
+              </div>
+              <div className="hpr-card">
+                <div className="hpr-card-label">Surplus Working For You</div>
+                <div className="hpr-card-value">{fmt(monthlySurplus)}</div>
+                <div className="hpr-card-sub">
+                  per month applied against the daily balance
+                </div>
+              </div>
+              <div className="hpr-card">
+                <div className="hpr-card-label">Liquidity After Month 1</div>
+                <div className="hpr-card-value">{fmt(currentLiquidity)}</div>
+                <div className="hpr-card-sub">
+                  principal paid down and re-borrowable from the line
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Paydown Summary */}
-            <div className="print-section">
-              <h2>Paydown Summary</h2>
-              <div className="print-grid">
-                <div>
-                  <div className="print-row" style={{ fontWeight: 700 }}><span className="label">All-In-One HELOC</span><span className="value"></span></div>
-                  <div className="print-row"><span className="label">Avg. Minimum Monthly Payment</span><span className="value">{fmt(paydown.heloc.avgMinMonthlyPayment)}</span></div>
-                  <div className="print-row"><span className="label">Avg. Principal Reduced Monthly</span><span className="value">{result.heloc.paidOff ? fmt(paydown.heloc.avgPrincipalMonthly) : "—"}</span></div>
-                  <div className="print-row"><span className="label">Avg. Principal Reduced Annually</span><span className="value">{result.heloc.paidOff ? `${paydown.heloc.avgPrincipalAnnualPct.toFixed(1)}%` : "—"}</span></div>
-                  <div className="print-row"><span className="label">Interest as % of Principal</span><span className="value">{paydown.heloc.interestPctOfPrincipal.toFixed(0)}%</span></div>
-                  <div className="print-row"><span className="label">Comparison Loan Effective APR</span><span className="value">{result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}</span></div>
-                  <div className="print-row total"><span className="label">Breakeven Average Rate</span><span className="value">{paydown.heloc.breakevenRate !== null ? `${paydown.heloc.breakevenRate.toFixed(2)}%` : "—"}</span></div>
+          {/* ── Scenario analysis ── */}
+          {scenarios && (
+            <div className="hpr-section">
+              <h2>Rate Scenario Analysis</h2>
+              <div className="hpr-scenarios">
+                <div className="hpr-scenario optimistic">
+                  <div className="hpr-scenario-title">Optimistic — Rates Average Historical Norms</div>
+                  <div className="hpr-scenario-rate">{OPTIMISTIC_RATE.toFixed(2)}%</div>
+                  <div className="hpr-scenario-basis">
+                    {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr average (2001–2025) +{" "}
+                    {OPTIMISTIC_MARGIN.toFixed(2)}% margin
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Payoff Timeline</span>
+                    <span className="value">{scenarios.optimistic.payoffLabel}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Total Interest</span>
+                    <span className="value">{fmt(scenarios.optimistic.totalInterest)}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">
+                      {scenarios.optimistic.interestSaved >= 0
+                        ? "Savings vs. Traditional"
+                        : "Extra Cost vs. Traditional"}
+                    </span>
+                    <span className="value">
+                      {fmt(Math.abs(scenarios.optimistic.interestSaved))}
+                    </span>
+                  </div>
+                  <div className="hpr-row total">
+                    <span className="label">Effective APR</span>
+                    <span className="value">
+                      {scenarios.optimistic.effectiveAPR !== null
+                        ? `${scenarios.optimistic.effectiveAPR.toFixed(2)}%`
+                        : "—"}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <div className="print-row" style={{ fontWeight: 700 }}><span className="label">Comparison (Traditional) Loan</span><span className="value"></span></div>
-                  <div className="print-row"><span className="label">Minimum Monthly Payment</span><span className="value">{fmt(paydown.traditional.minMonthlyPayment)}</span></div>
-                  <div className="print-row"><span className="label">Avg. Principal Reduced Monthly</span><span className="value">{fmt(paydown.traditional.avgPrincipalMonthly)}</span></div>
-                  <div className="print-row"><span className="label">Avg. Principal Reduced Annually</span><span className="value">{paydown.traditional.avgPrincipalAnnualPct.toFixed(1)}%</span></div>
-                  <div className="print-row"><span className="label">Interest as % of Principal</span><span className="value">{paydown.traditional.interestPctOfPrincipal.toFixed(0)}%</span></div>
-                  <div className="print-row total"><span className="label">Average Loan APR</span><span className="value">{paydown.traditional.avgAPR.toFixed(2)}%</span></div>
+                <div className="hpr-scenario pessimistic">
+                  <div className="hpr-scenario-title">Pessimistic — Rates Average 2% Higher</div>
+                  <div className="hpr-scenario-rate">{scenarios.pessimistic.rate.toFixed(2)}%</div>
+                  <div className="hpr-scenario-basis">
+                    Your {inputs.helocRate.toFixed(2)}% starting rate +{" "}
+                    {PESSIMISTIC_RATE_BUMP.toFixed(2)}% sustained over the loan life
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Payoff Timeline</span>
+                    <span className="value">{scenarios.pessimistic.payoffLabel}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Total Interest</span>
+                    <span className="value">{fmt(scenarios.pessimistic.totalInterest)}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">
+                      {scenarios.pessimistic.interestSaved >= 0
+                        ? "Savings vs. Traditional"
+                        : "Extra Cost vs. Traditional"}
+                    </span>
+                    <span className="value">
+                      {fmt(Math.abs(scenarios.pessimistic.interestSaved))}
+                    </span>
+                  </div>
+                  <div className="hpr-row total">
+                    <span className="label">Effective APR</span>
+                    <span className="value">
+                      {scenarios.pessimistic.effectiveAPR !== null
+                        ? `${scenarios.pessimistic.effectiveAPR.toFixed(2)}%`
+                        : "—"}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Analysis & Recommendation */}
-            <div className="print-section">
-              <div className="print-notes-box" style={{ background: "#f0fafa", border: "1pt solid #1A7A7A" }}>
-                <div className="print-notes-title">Analysis &amp; Recommendation</div>
-                <div className="print-notes-body">
-                  <p style={{ margin: "0 0 6pt 0" }}>{recommendation.p1}</p>
-                  <p style={{ margin: 0 }}>{recommendation.p2}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Page 2 — Charts */}
-            <div style={{ pageBreakBefore: "always", paddingTop: "12pt" }}>
-              <h2 style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "10pt", fontWeight: 700, color: "#0C2340", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6pt", paddingBottom: "3pt", borderBottom: "1.5pt solid #e5e7eb" }}>Balance Over Time</h2>
-              <p style={{ fontFamily: "Arial, sans-serif", fontSize: "8pt", color: "#6b7280", marginBottom: "8pt" }}>
-                HELOC sweep trajectory vs. traditional {inputs.traditionalTermYears}-year amortization
-              </p>
-              {(() => {
-                const data = result.chartData;
-                const maxYear = data[data.length - 1]?.year || 30;
-                const maxBal = inputs.startingBalance;
-                const chartW = 480;
-                const chartH = 180;
-                const padL = 50;
-                const padR = 10;
-                const padT = 10;
-                const padB = 25;
-                const plotW = chartW - padL - padR;
-                const plotH = chartH - padT - padB;
-                const xScale = (yr: number) => padL + (yr / maxYear) * plotW;
-                const yScale = (bal: number) => padT + plotH - (bal / maxBal) * plotH;
-                const helocPoints = data.filter(d => d.heloc !== null).map(d => `${xScale(d.year)},${yScale(d.heloc!)}`);
-                const tradPoints = data.filter(d => d.traditional !== null).map(d => `${xScale(d.year)},${yScale(d.traditional!)}`);
-                return (
-                  <svg width={chartW} height={chartH} style={{ display: "block", margin: "0 auto" }}>
-                    {/* Grid lines */}
-                    {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
-                      <line key={i} x1={padL} x2={chartW - padR} y1={padT + plotH * (1 - pct)} y2={padT + plotH * (1 - pct)} stroke="#e5e7eb" strokeWidth={0.5} />
-                    ))}
-                    {/* Y-axis labels */}
-                    {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
-                      <text key={i} x={padL - 5} y={padT + plotH * (1 - pct) + 3} textAnchor="end" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
-                        ${Math.round(maxBal * pct / 1000)}k
-                      </text>
-                    ))}
-                    {/* X-axis labels */}
-                    {Array.from({ length: Math.min(7, maxYear + 1) }, (_, i) => Math.round((i / 6) * maxYear)).map((yr, i) => (
-                      <text key={i} x={xScale(yr)} y={chartH - 5} textAnchor="middle" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
-                        Yr {yr}
-                      </text>
-                    ))}
-                    {/* HELOC line */}
-                    <polyline points={helocPoints.join(" ")} fill="none" stroke="#1A7A7A" strokeWidth={2} />
-                    {/* Traditional line */}
-                    <polyline points={tradPoints.join(" ")} fill="none" stroke="#D4A574" strokeWidth={2} />
-                    {/* Legend */}
-                    <rect x={padL + 10} y={padT + 5} width={10} height={3} fill="#1A7A7A" />
-                    <text x={padL + 24} y={padT + 9} fontSize="7pt" fill="#374151" fontFamily="Arial, sans-serif">HELOC Sweep</text>
-                    <rect x={padL + 100} y={padT + 5} width={10} height={3} fill="#D4A574" />
-                    <text x={padL + 114} y={padT + 9} fontSize="7pt" fill="#374151" fontFamily="Arial, sans-serif">Traditional Mortgage</text>
-                  </svg>
-                );
-              })()}
-
-              <div style={{ marginTop: "18pt" }}>
-                <h2 style={{ fontFamily: "Arial, Helvetica, sans-serif", fontSize: "10pt", fontWeight: 700, color: "#0C2340", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6pt", paddingBottom: "3pt", borderBottom: "1.5pt solid #e5e7eb" }}>The "Sawtooth" — First Year, Week by Week</h2>
-                <p style={{ fontFamily: "Arial, sans-serif", fontSize: "8pt", color: "#6b7280", marginBottom: "8pt" }}>
-                  Sharp drop on payday, gradual climb as expenses draw from the line — trending down all year
+              {scenarios.alreadyBetterThanHistorical && (
+                <p className="hpr-note">
+                  Note: the modeled rate of {inputs.helocRate.toFixed(2)}% is already below the{" "}
+                  {OPTIMISTIC_RATE.toFixed(2)}% historical-average scenario, so current pricing is
+                  better than the 25-year norm. Treat the optimistic column as a floor already being
+                  beaten rather than an upside case.
                 </p>
-                {(() => {
-                  const data = result.sawtoothData;
-                  const minBal = Math.min(...data.map(d => d.balance));
-                  const maxBalSaw = Math.max(...data.map(d => d.balance));
-                  const range = maxBalSaw - minBal || 1;
-                  const chartW = 480;
-                  const chartH = 160;
-                  const padL = 50;
-                  const padR = 10;
-                  const padT = 10;
-                  const padB = 25;
-                  const plotW = chartW - padL - padR;
-                  const plotH = chartH - padT - padB;
-                  const xScale = (wk: number) => padL + ((wk - 1) / 51) * plotW;
-                  const yScale = (bal: number) => padT + plotH - ((bal - minBal) / range) * plotH;
-                  const points = data.map(d => `${xScale(d.week)},${yScale(d.balance)}`).join(" ");
-                  return (
-                    <svg width={chartW} height={chartH} style={{ display: "block", margin: "0 auto" }}>
-                      {/* Grid lines */}
-                      {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
-                        <line key={i} x1={padL} x2={chartW - padR} y1={padT + plotH * (1 - pct)} y2={padT + plotH * (1 - pct)} stroke="#e5e7eb" strokeWidth={0.5} />
-                      ))}
-                      {/* Y-axis labels */}
-                      {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
-                        <text key={i} x={padL - 5} y={padT + plotH * (1 - pct) + 3} textAnchor="end" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
-                          ${Math.round((minBal + range * pct) / 1000)}k
-                        </text>
-                      ))}
-                      {/* X-axis labels */}
-                      {[1, 13, 26, 39, 52].map((wk, i) => (
-                        <text key={i} x={xScale(wk)} y={chartH - 5} textAnchor="middle" fontSize="7pt" fill="#6b7280" fontFamily="Arial, sans-serif">
-                          Wk {wk}
-                        </text>
-                      ))}
-                      {/* Sawtooth line */}
-                      <polyline points={points} fill="none" stroke="#1A7A7A" strokeWidth={1.5} />
-                    </svg>
-                  );
-                })()}
+              )}
+              <p className="hpr-note">
+                Each scenario re-runs the identical simulation with only the rate changed and holds
+                that rate constant for the full term — a modeling simplification, not a forecast.
+                Fed Funds average computed from FRED series FEDFUNDS (Federal Funds Effective Rate),
+                calendar years 2001–2025.
+              </p>
+            </div>
+          )}
+
+          {/* ── Paydown summary ── */}
+          <div className="hpr-section">
+            <h2>Paydown Summary</h2>
+            <div className="hpr-grid">
+              <div>
+                <div className="hpr-row head">
+                  <span className="label">All-In-One HELOC</span>
+                  <span className="value"></span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Avg. Minimum Monthly Payment</span>
+                  <span className="value">{fmt(paydown.heloc.avgMinMonthlyPayment)}</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Avg. Principal Reduced Monthly</span>
+                  <span className="value">
+                    {result.heloc.paidOff ? fmt(paydown.heloc.avgPrincipalMonthly) : "—"}
+                  </span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Avg. Principal Reduced Annually</span>
+                  <span className="value">
+                    {result.heloc.paidOff
+                      ? `${paydown.heloc.avgPrincipalAnnualPct.toFixed(1)}%`
+                      : "—"}
+                  </span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Interest as % of Principal</span>
+                  <span className="value">{paydown.heloc.interestPctOfPrincipal.toFixed(0)}%</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Comparison Loan Effective APR</span>
+                  <span className="value">
+                    {result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}
+                  </span>
+                </div>
+                <div className="hpr-row total">
+                  <span className="label">Breakeven Average Rate</span>
+                  <span className="value">
+                    {paydown.heloc.breakevenRate !== null
+                      ? `${paydown.heloc.breakevenRate.toFixed(2)}%`
+                      : "—"}
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div className="hpr-row head">
+                  <span className="label">Comparison (Traditional) Loan</span>
+                  <span className="value"></span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Minimum Monthly Payment</span>
+                  <span className="value">{fmt(paydown.traditional.minMonthlyPayment)}</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Avg. Principal Reduced Monthly</span>
+                  <span className="value">{fmt(paydown.traditional.avgPrincipalMonthly)}</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Avg. Principal Reduced Annually</span>
+                  <span className="value">
+                    {paydown.traditional.avgPrincipalAnnualPct.toFixed(1)}%
+                  </span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Interest as % of Principal</span>
+                  <span className="value">
+                    {paydown.traditional.interestPctOfPrincipal.toFixed(0)}%
+                  </span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label">Total Interest Paid</span>
+                  <span className="value">{fmt(result.traditional.totalInterest)}</span>
+                </div>
+                <div className="hpr-row total">
+                  <span className="label">Average Loan APR</span>
+                  <span className="value">{paydown.traditional.avgAPR.toFixed(2)}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Analysis & recommendation ── */}
+          <div className="hpr-section">
+            <div className="hpr-callout">
+              <div className="hpr-callout-title">Analysis &amp; Recommendation</div>
+              <div className="hpr-callout-body">
+                <p>{recommendation.p1}</p>
+                <p>{recommendation.p2}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Year-by-year detail (own page) ── */}
+          <div className="hpr-page-break">
+            <div className="hpr-header">
+              <div>
+                <div className="hpr-brand">RealityCents.com</div>
+                <div className="hpr-brand-sub">Year-by-Year Detail</div>
+              </div>
+              <div className="hpr-meta">
+                <div className="hpr-meta-name">Jay Miller — NMLS #657301</div>
+                <div>CMG Home Loans · Branch NMLS #2475890</div>
               </div>
             </div>
 
-            {/* Contact + Disclaimer */}
-            <div className="print-note" style={{ fontWeight: 600, marginBottom: "4pt" }}>
-              Jay Miller | Sales Manager/CMA | CMG Home Loans | NMLS #657301 | Branch NMLS #2475890 | www.jay-miller.com
+            <h2
+              style={{
+                fontSize: "9.5pt",
+                fontWeight: 700,
+                color: "#0C2340",
+                textTransform: "uppercase",
+                letterSpacing: "0.07em",
+                margin: "0 0 5pt 0",
+                paddingBottom: "2.5pt",
+                borderBottom: "1.5pt solid #d1d5db",
+              }}
+            >
+              Year-by-Year Breakdown
+            </h2>
+            <p className="hpr-note" style={{ marginBottom: "6pt" }}>
+              All-In-One HELOC vs. the {inputs.traditionalRate.toFixed(2)}%{" "}
+              {inputs.traditionalTermYears}-year fixed comparison loan. HELOC principal reflects the
+              balance reduction after that year's interest is capitalized to the line.
+            </p>
+
+            <table className="hpr-table">
+              <thead>
+                <tr>
+                  <th className="yr" rowSpan={2}>
+                    Yr
+                  </th>
+                  <th className="grp aio sep" colSpan={5}>
+                    All-In-One HELOC
+                  </th>
+                  <th className="grp trad sep" colSpan={5}>
+                    Traditional Mortgage
+                  </th>
+                </tr>
+                <tr>
+                  <th className="sep">Start Bal.</th>
+                  <th>Interest</th>
+                  <th>Principal</th>
+                  <th>End Bal.</th>
+                  <th>Cum. Int.</th>
+                  <th className="sep">Start Bal.</th>
+                  <th>Interest</th>
+                  <th>Principal</th>
+                  <th>End Bal.</th>
+                  <th>Cum. Int.</th>
+                </tr>
+              </thead>
+              <tbody>
+                {printYearRows.map((row) => {
+                  const isPayoff =
+                    result.heloc.paidOff && row.year === Math.ceil(result.heloc.payoffMonths / 12);
+                  return (
+                    <tr key={row.year} className={isPayoff ? "payoff" : undefined}>
+                      <td className="yr">{row.year}</td>
+                      <td className="sep">{fmt(row.helocStart)}</td>
+                      <td>{fmt(row.helocInterest)}</td>
+                      <td>{fmt(row.helocPrincipal)}</td>
+                      <td>{fmt(row.helocEnd)}</td>
+                      <td>{fmt(row.helocCumInterest)}</td>
+                      <td className="sep">{fmt(row.tradStart)}</td>
+                      <td>{fmt(row.tradInterest)}</td>
+                      <td>{fmt(row.tradPrincipal)}</td>
+                      <td>{fmt(row.tradEnd)}</td>
+                      <td>{fmt(row.tradCumInterest)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td className="yr">Tot</td>
+                  <td className="sep">—</td>
+                  <td>
+                    {fmt(printYearRows.reduce((s, r) => s + r.helocInterest, 0))}
+                  </td>
+                  <td>
+                    {fmt(printYearRows.reduce((s, r) => s + r.helocPrincipal, 0))}
+                  </td>
+                  <td>—</td>
+                  <td>
+                    {fmt(printYearRows[printYearRows.length - 1]?.helocCumInterest ?? 0)}
+                  </td>
+                  <td className="sep">—</td>
+                  <td>{fmt(printYearRows.reduce((s, r) => s + r.tradInterest, 0))}</td>
+                  <td>{fmt(printYearRows.reduce((s, r) => s + r.tradPrincipal, 0))}</td>
+                  <td>—</td>
+                  <td>
+                    {fmt(printYearRows[printYearRows.length - 1]?.tradCumInterest ?? 0)}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <p className="hpr-note">
+              Line access: full draw access to the original credit limit for the first 10 years.
+              Starting in year 11, the credit limit reduces by 1/240th of the original balance each
+              month, while access to the declining line continues for the full 30-year term.
+            </p>
+          </div>
+
+          {/* ── Footer / compliance ── */}
+          <div className="hpr-footer">
+            <div className="hpr-footer-name">
+              Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890
             </div>
-            <div className="print-note">
-              This analysis is for informational and educational purposes only and does not constitute a loan
-              commitment, pre-approval, or guarantee of financing. First-lien HELOC rates are variable; actual
-              rates, terms, and product availability vary by lender and borrower profile. Results depend on
-              maintaining the modeled cash flow. CMG Mortgage, Inc. dba CMG Home Loans — NMLS #1820. Licensed in
-              Hawaii. Equal Housing Opportunity. www.realitycents.com
+            <div className="hpr-disclaimer">
+              Educational tool only — not a commitment to lend. Rates, terms, and eligibility vary.
+              Actual results depend on income, spending patterns, and rate environment. Consult a
+              licensed professional.
+            </div>
+            <div className="hpr-disclaimer" style={{ marginTop: "3pt" }}>
+              First-lien HELOC rates are variable and tied to an index (typically SOFR or Prime) plus
+              a margin; a rate increase changes these results materially. CMG Mortgage, Inc. dba CMG
+              Home Loans — NMLS #1820. Licensed in Hawaii. Equal Housing Opportunity. ·
+              www.realitycents.com · www.jay-miller.com
             </div>
           </div>
         </div>
