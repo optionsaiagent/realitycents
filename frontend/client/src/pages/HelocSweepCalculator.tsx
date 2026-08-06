@@ -1373,7 +1373,7 @@ export default function HelocSweepCalculator() {
                           <div className="flex items-start gap-2 mb-1">
                             <History size={14} className="text-emerald-400 flex-shrink-0 mt-0.5" />
                             <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-                              Best Case
+                              Optimistic
                             </p>
                           </div>
                           <p className="text-2xl font-bold text-emerald-400 mb-0.5">
@@ -1474,7 +1474,7 @@ export default function HelocSweepCalculator() {
                           <div className="flex items-start gap-2 mb-1">
                             <TrendingUp size={14} className="text-amber-400 flex-shrink-0 mt-0.5" />
                             <p className="text-xs font-semibold uppercase tracking-wider text-amber-400">
-                              Worst Case
+                              Pessimistic
                             </p>
                           </div>
                           <p className="text-2xl font-bold text-amber-400 mb-0.5">
@@ -2046,7 +2046,7 @@ export default function HelocSweepCalculator() {
               <h2>Rate Scenario Analysis</h2>
               <div className="hpr-scenarios">
                 <div className="hpr-scenario optimistic">
-                  <div className="hpr-scenario-title">Best Case — Rates Average Historical Norms</div>
+                  <div className="hpr-scenario-title">Optimistic — Rates Average Historical Norms</div>
                   <div className="hpr-scenario-rate">{OPTIMISTIC_RATE.toFixed(2)}%</div>
                   <div className="hpr-scenario-basis">
                     {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr avg (2001–2025) +{" "}
@@ -2113,7 +2113,7 @@ export default function HelocSweepCalculator() {
                   </div>
                 </div>
                 <div className="hpr-scenario pessimistic">
-                  <div className="hpr-scenario-title">Worst Case — Rates Average 2% Higher</div>
+                  <div className="hpr-scenario-title">Pessimistic — Rates Average 2% Higher</div>
                   <div className="hpr-scenario-rate">{scenarios.pessimistic.rate.toFixed(2)}%</div>
                   <div className="hpr-scenario-basis">
                     Your {inputs.helocRate.toFixed(2)}% rate +{" "}
