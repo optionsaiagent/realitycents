@@ -676,6 +676,7 @@ export default function HelocSweepCalculator() {
 
     return {
       optimistic: build(OPTIMISTIC_RATE),
+      current: build(inputs.helocRate),
       pessimistic: build(inputs.helocRate + PESSIMISTIC_RATE_BUMP),
       // True when the user's own rate already beats the historical-average scenario.
       alreadyBetterThanHistorical: inputs.helocRate < OPTIMISTIC_RATE,
@@ -1317,18 +1318,18 @@ export default function HelocSweepCalculator() {
                         </p>
                       </div>
                       <div className="bg-slate-700/40 rounded-lg p-3">
-                        <p className="text-xs text-slate-400 mb-1">Your Surplus Working For You</p>
-                        <p className="text-lg font-bold text-teal">{fmt(monthlySurplus)}/mo</p>
+                        <p className="text-xs text-slate-400 mb-1">Net Surplus After Interest</p>
+                        <p className={`text-lg font-bold ${netSurplusToPrincipal > 0 ? "text-teal" : "text-red-400"}`}>{fmt(netSurplusToPrincipal)}/mo</p>
                         <p className="text-[11px] text-slate-500">
-                          reduces interest by ~{fmt(Math.round((monthlySurplus * inputs.helocRate / 100 / 12) * 15))}/mo avg
+                          {fmt(monthlySurplus)} surplus − ~{fmt(Math.round(minMonthlyInterest))} interest (auto-debited 21st)
                         </p>
                       </div>
                     </div>
                     {result?.heloc.paidOff && paydown ? (
                       <p className="text-sm text-slate-300 leading-relaxed">
                         Your{" "}
-                        <span className="font-semibold text-teal">{fmt(monthlySurplus)}/month</span>{" "}
-                        surplus means your {inputs.helocRate.toFixed(2)}% HELOC effectively costs you the same as a{" "}
+                        <span className="font-semibold text-teal">{fmt(netSurplusToPrincipal)}/month</span>{" "}
+                        net surplus (after ~{fmt(Math.round(minMonthlyInterest))} interest auto-debited on the 21st) means your {inputs.helocRate.toFixed(2)}% HELOC effectively costs you the same as a{" "}
                         <span className="font-semibold text-emerald-400">{paydown.heloc.effectiveAPR.toFixed(2)}% fixed-rate mortgage</span>
                         {" "}— saving{" "}
                         <span className="font-semibold text-emerald-400">{fmt(result.interestSaved)}</span>{" "}
@@ -1337,10 +1338,10 @@ export default function HelocSweepCalculator() {
                       </p>
                     ) : (
                       <p className="text-sm text-slate-300 leading-relaxed">
-                        Your surplus of{" "}
-                        <span className="font-semibold text-teal">{fmt(monthlySurplus)}/month</span>{" "}
-                        suppresses your daily balance, but a higher surplus or lower rate would
-                        strengthen the payoff acceleration.
+                        Your net surplus after interest is{" "}
+                        <span className="font-semibold text-teal">{fmt(netSurplusToPrincipal)}/month</span>{" "}
+                        ({fmt(monthlySurplus)} income surplus minus ~{fmt(Math.round(minMonthlyInterest))} interest auto-debited on the 21st).
+                        A higher surplus or lower rate would strengthen the payoff acceleration.
                       </p>
                     )}
                     <p className="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-700/60">
@@ -1366,20 +1367,20 @@ export default function HelocSweepCalculator() {
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {/* Optimistic */}
                         <div className="bg-slate-700/30 border border-emerald-500/30 rounded-lg p-4">
                           <div className="flex items-start gap-2 mb-1">
                             <History size={14} className="text-emerald-400 flex-shrink-0 mt-0.5" />
                             <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-                              Optimistic — If Rates Average Historical Norms
+                              Best Case
                             </p>
                           </div>
                           <p className="text-2xl font-bold text-emerald-400 mb-0.5">
                             {OPTIMISTIC_RATE.toFixed(2)}%
                           </p>
                           <p className="text-[11px] text-slate-500 mb-3 leading-snug">
-                            {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr average (2001–2025) +{" "}
+                            {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr avg +{" "}
                             {OPTIMISTIC_MARGIN.toFixed(2)}% margin
                           </p>
                           <MetricRow
@@ -1404,7 +1405,6 @@ export default function HelocSweepCalculator() {
                                 ? "text-emerald-400"
                                 : "text-red-400"
                             }
-                            tooltip="Traditional loan total interest minus this scenario's total interest. A negative figure means the traditional fixed-rate loan costs less in this scenario."
                           />
                           <MetricRow
                             label="Effective APR"
@@ -1414,7 +1414,58 @@ export default function HelocSweepCalculator() {
                                 : "—"
                             }
                             accent="text-gold"
-                            tooltip="The 30-year fixed rate that would produce the same total interest as this scenario."
+                          />
+                        </div>
+
+                        {/* Current Rate */}
+                        <div className="bg-slate-700/30 border border-teal/50 rounded-lg p-4">
+                          <div className="flex items-start gap-2 mb-1">
+                            <Activity size={14} className="text-teal flex-shrink-0 mt-0.5" />
+                            <p className="text-xs font-semibold uppercase tracking-wider text-teal">
+                              Current Rate
+                            </p>
+                          </div>
+                          <p className="text-2xl font-bold text-teal mb-0.5">
+                            {scenarios.current.rate.toFixed(2)}%
+                          </p>
+                          <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+                            Today's rate held constant over the loan life
+                          </p>
+                          <MetricRow
+                            label="Payoff Timeline"
+                            value={scenarios.current.payoffLabel}
+                            accent="text-teal"
+                          />
+                          <MetricRow
+                            label="Total Interest Paid"
+                            value={fmt(scenarios.current.totalInterest)}
+                            accent="text-white"
+                          />
+                          <MetricRow
+                            label={
+                              scenarios.current.interestSaved >= 0
+                                ? "Savings vs. Traditional"
+                                : "Extra Cost vs. Traditional"
+                            }
+                            value={
+                              scenarios.current.interestSaved >= 0
+                                ? fmt(scenarios.current.interestSaved)
+                                : `−${fmt(Math.abs(scenarios.current.interestSaved))}`
+                            }
+                            accent={
+                              scenarios.current.interestSaved >= 0
+                                ? "text-emerald-400"
+                                : "text-red-400"
+                            }
+                          />
+                          <MetricRow
+                            label="Effective APR"
+                            value={
+                              scenarios.current.effectiveAPR !== null
+                                ? `${scenarios.current.effectiveAPR.toFixed(2)}%`
+                                : "—"
+                            }
+                            accent="text-gold"
                           />
                         </div>
 
@@ -1423,15 +1474,15 @@ export default function HelocSweepCalculator() {
                           <div className="flex items-start gap-2 mb-1">
                             <TrendingUp size={14} className="text-amber-400 flex-shrink-0 mt-0.5" />
                             <p className="text-xs font-semibold uppercase tracking-wider text-amber-400">
-                              Pessimistic — If Rates Average 2% Higher Than Today
+                              Worst Case
                             </p>
                           </div>
                           <p className="text-2xl font-bold text-amber-400 mb-0.5">
                             {scenarios.pessimistic.rate.toFixed(2)}%
                           </p>
                           <p className="text-[11px] text-slate-500 mb-3 leading-snug">
-                            Your {inputs.helocRate.toFixed(2)}% starting rate +{" "}
-                            {PESSIMISTIC_RATE_BUMP.toFixed(2)}% sustained over the loan life
+                            Your {inputs.helocRate.toFixed(2)}% rate +{" "}
+                            {PESSIMISTIC_RATE_BUMP.toFixed(2)}% sustained
                           </p>
                           <MetricRow
                             label="Payoff Timeline"
@@ -1459,7 +1510,6 @@ export default function HelocSweepCalculator() {
                                 ? "text-emerald-400"
                                 : "text-red-400"
                             }
-                            tooltip="Traditional loan total interest minus this scenario's total interest. A negative figure means the traditional fixed-rate loan costs less in this scenario."
                           />
                           <MetricRow
                             label="Effective APR"
@@ -1469,7 +1519,6 @@ export default function HelocSweepCalculator() {
                                 : "—"
                             }
                             accent="text-gold"
-                            tooltip="The 30-year fixed rate that would produce the same total interest as this scenario."
                           />
                         </div>
                       </div>
@@ -1839,8 +1888,14 @@ export default function HelocSweepCalculator() {
             <div className="hpr-grid" style={{ marginTop: "6pt" }}>
               <div>
                 <div className="hpr-row total">
-                  <span className="label">Monthly Surplus (income − all expenses)</span>
-                  <span className="value">{fmt(monthlySurplus)}/mo</span>
+                  <span className="label">Net Surplus After Interest</span>
+                  <span className="value">{fmt(netSurplusToPrincipal)}/mo</span>
+                </div>
+                <div className="hpr-row">
+                  <span className="label" style={{ fontStyle: "italic", fontSize: "7pt" }}>
+                    ({fmt(monthlySurplus)} income surplus − ~{fmt(Math.round(minMonthlyInterest))} interest auto-debited on the 21st)
+                  </span>
+                  <span className="value"></span>
                 </div>
               </div>
               <div>
@@ -1886,10 +1941,10 @@ export default function HelocSweepCalculator() {
                 </div>
               </div>
               <div className="hpr-card">
-                <div className="hpr-card-label">Surplus Working For You</div>
-                <div className="hpr-card-value">{fmt(monthlySurplus)}</div>
+                <div className="hpr-card-label">Net Surplus After Interest</div>
+                <div className="hpr-card-value">{fmt(netSurplusToPrincipal)}</div>
                 <div className="hpr-card-sub">
-                  per month applied against the daily balance
+                  {fmt(monthlySurplus)} surplus − ~{fmt(Math.round(minMonthlyInterest))} interest (auto-debited 21st)
                 </div>
               </div>
               <div className="hpr-card">
@@ -1902,98 +1957,7 @@ export default function HelocSweepCalculator() {
             </div>
           </div>
 
-          {/* ── Scenario analysis ── */}
-          {scenarios && (
-            <div className="hpr-section">
-              <h2>Rate Scenario Analysis</h2>
-              <div className="hpr-scenarios">
-                <div className="hpr-scenario optimistic">
-                  <div className="hpr-scenario-title">Optimistic — Rates Average Historical Norms</div>
-                  <div className="hpr-scenario-rate">{OPTIMISTIC_RATE.toFixed(2)}%</div>
-                  <div className="hpr-scenario-basis">
-                    {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr average (2001–2025) +{" "}
-                    {OPTIMISTIC_MARGIN.toFixed(2)}% margin
-                  </div>
-                  <div className="hpr-row">
-                    <span className="label">Payoff Timeline</span>
-                    <span className="value">{scenarios.optimistic.payoffLabel}</span>
-                  </div>
-                  <div className="hpr-row">
-                    <span className="label">Total Interest</span>
-                    <span className="value">{fmt(scenarios.optimistic.totalInterest)}</span>
-                  </div>
-                  <div className="hpr-row">
-                    <span className="label">
-                      {scenarios.optimistic.interestSaved >= 0
-                        ? "Savings vs. Traditional"
-                        : "Extra Cost vs. Traditional"}
-                    </span>
-                    <span className="value">
-                      {fmt(Math.abs(scenarios.optimistic.interestSaved))}
-                    </span>
-                  </div>
-                  <div className="hpr-row total">
-                    <span className="label">Effective APR</span>
-                    <span className="value">
-                      {scenarios.optimistic.effectiveAPR !== null
-                        ? `${scenarios.optimistic.effectiveAPR.toFixed(2)}%`
-                        : "—"}
-                    </span>
-                  </div>
-                </div>
-                <div className="hpr-scenario pessimistic">
-                  <div className="hpr-scenario-title">Pessimistic — Rates Average 2% Higher</div>
-                  <div className="hpr-scenario-rate">{scenarios.pessimistic.rate.toFixed(2)}%</div>
-                  <div className="hpr-scenario-basis">
-                    Your {inputs.helocRate.toFixed(2)}% starting rate +{" "}
-                    {PESSIMISTIC_RATE_BUMP.toFixed(2)}% sustained over the loan life
-                  </div>
-                  <div className="hpr-row">
-                    <span className="label">Payoff Timeline</span>
-                    <span className="value">{scenarios.pessimistic.payoffLabel}</span>
-                  </div>
-                  <div className="hpr-row">
-                    <span className="label">Total Interest</span>
-                    <span className="value">{fmt(scenarios.pessimistic.totalInterest)}</span>
-                  </div>
-                  <div className="hpr-row">
-                    <span className="label">
-                      {scenarios.pessimistic.interestSaved >= 0
-                        ? "Savings vs. Traditional"
-                        : "Extra Cost vs. Traditional"}
-                    </span>
-                    <span className="value">
-                      {fmt(Math.abs(scenarios.pessimistic.interestSaved))}
-                    </span>
-                  </div>
-                  <div className="hpr-row total">
-                    <span className="label">Effective APR</span>
-                    <span className="value">
-                      {scenarios.pessimistic.effectiveAPR !== null
-                        ? `${scenarios.pessimistic.effectiveAPR.toFixed(2)}%`
-                        : "—"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {scenarios.alreadyBetterThanHistorical && (
-                <p className="hpr-note">
-                  Note: the modeled rate of {inputs.helocRate.toFixed(2)}% is already below the{" "}
-                  {OPTIMISTIC_RATE.toFixed(2)}% historical-average scenario, so current pricing is
-                  better than the 25-year norm. Treat the optimistic column as a floor already being
-                  beaten rather than an upside case.
-                </p>
-              )}
-              <p className="hpr-note">
-                Each scenario re-runs the identical simulation with only the rate changed and holds
-                that rate constant for the full term — a modeling simplification, not a forecast.
-                Fed Funds average computed from FRED series FEDFUNDS (Federal Funds Effective Rate),
-                calendar years 2001–2025.
-              </p>
-            </div>
-          )}
-
-          {/* ── Paydown summary ── */}
+          {/* ── Paydown summary ── (moved above scenarios per user request) */}
           <div className="hpr-section">
             <h2>Paydown Summary</h2>
             <div className="hpr-grid">
@@ -2075,6 +2039,127 @@ export default function HelocSweepCalculator() {
               </div>
             </div>
           </div>
+
+          {/* ── Scenario analysis ── */}
+          {scenarios && (
+            <div className="hpr-section">
+              <h2>Rate Scenario Analysis</h2>
+              <div className="hpr-scenarios">
+                <div className="hpr-scenario optimistic">
+                  <div className="hpr-scenario-title">Best Case — Rates Average Historical Norms</div>
+                  <div className="hpr-scenario-rate">{OPTIMISTIC_RATE.toFixed(2)}%</div>
+                  <div className="hpr-scenario-basis">
+                    {FED_FUNDS_25YR_AVG.toFixed(2)}% Fed Funds 25-yr avg (2001–2025) +{" "}
+                    {OPTIMISTIC_MARGIN.toFixed(2)}% margin
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Payoff Timeline</span>
+                    <span className="value">{scenarios.optimistic.payoffLabel}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Total Interest</span>
+                    <span className="value">{fmt(scenarios.optimistic.totalInterest)}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">
+                      {scenarios.optimistic.interestSaved >= 0
+                        ? "Savings vs. Traditional"
+                        : "Extra Cost vs. Traditional"}
+                    </span>
+                    <span className="value">
+                      {fmt(Math.abs(scenarios.optimistic.interestSaved))}
+                    </span>
+                  </div>
+                  <div className="hpr-row total">
+                    <span className="label">Effective APR</span>
+                    <span className="value">
+                      {scenarios.optimistic.effectiveAPR !== null
+                        ? `${scenarios.optimistic.effectiveAPR.toFixed(2)}%`
+                        : "—"}
+                    </span>
+                  </div>
+                </div>
+                <div className="hpr-scenario" style={{ borderLeft: "3pt solid #1A7A7A" }}>
+                  <div className="hpr-scenario-title">Current Rate</div>
+                  <div className="hpr-scenario-rate">{scenarios.current.rate.toFixed(2)}%</div>
+                  <div className="hpr-scenario-basis">
+                    Today's rate held constant over the loan life
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Payoff Timeline</span>
+                    <span className="value">{scenarios.current.payoffLabel}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Total Interest</span>
+                    <span className="value">{fmt(scenarios.current.totalInterest)}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">
+                      {scenarios.current.interestSaved >= 0
+                        ? "Savings vs. Traditional"
+                        : "Extra Cost vs. Traditional"}
+                    </span>
+                    <span className="value">
+                      {fmt(Math.abs(scenarios.current.interestSaved))}
+                    </span>
+                  </div>
+                  <div className="hpr-row total">
+                    <span className="label">Effective APR</span>
+                    <span className="value">
+                      {scenarios.current.effectiveAPR !== null
+                        ? `${scenarios.current.effectiveAPR.toFixed(2)}%`
+                        : "—"}
+                    </span>
+                  </div>
+                </div>
+                <div className="hpr-scenario pessimistic">
+                  <div className="hpr-scenario-title">Worst Case — Rates Average 2% Higher</div>
+                  <div className="hpr-scenario-rate">{scenarios.pessimistic.rate.toFixed(2)}%</div>
+                  <div className="hpr-scenario-basis">
+                    Your {inputs.helocRate.toFixed(2)}% rate +{" "}
+                    {PESSIMISTIC_RATE_BUMP.toFixed(2)}% sustained over the loan life
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Payoff Timeline</span>
+                    <span className="value">{scenarios.pessimistic.payoffLabel}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">Total Interest</span>
+                    <span className="value">{fmt(scenarios.pessimistic.totalInterest)}</span>
+                  </div>
+                  <div className="hpr-row">
+                    <span className="label">
+                      {scenarios.pessimistic.interestSaved >= 0
+                        ? "Savings vs. Traditional"
+                        : "Extra Cost vs. Traditional"}
+                    </span>
+                    <span className="value">
+                      {fmt(Math.abs(scenarios.pessimistic.interestSaved))}
+                    </span>
+                  </div>
+                  <div className="hpr-row total">
+                    <span className="label">Effective APR</span>
+                    <span className="value">
+                      {scenarios.pessimistic.effectiveAPR !== null
+                        ? `${scenarios.pessimistic.effectiveAPR.toFixed(2)}%`
+                        : "—"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {scenarios.alreadyBetterThanHistorical && (
+                <p className="hpr-note">
+                  Note: your rate of {inputs.helocRate.toFixed(2)}% is already below the{" "}
+                  {OPTIMISTIC_RATE.toFixed(2)}% historical-average scenario — current pricing
+                  is better than the 25-year norm.
+                </p>
+              )}
+              <p className="hpr-note">
+                Each scenario holds the rate constant for the full term — a modeling simplification,
+                not a forecast. Fed Funds average from FRED series FEDFUNDS, 2001–2025.
+              </p>
+            </div>
+          )}
 
           {/* ── Analysis & recommendation ── */}
           <div className="hpr-section">
