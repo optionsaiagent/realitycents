@@ -706,8 +706,8 @@ export default function HelocSweepCalculator() {
       helocCumInterest += row.helocInterest;
       tradCumInterest += row.traditionalInterest;
 
-      // Principal retired = balance change net of interest capitalized to the line.
-      const helocPrincipal = helocStart - row.helocBalance + row.helocInterest;
+      // Principal retired = actual balance reduction this year.
+      const helocPrincipal = Math.max(helocStart - row.helocBalance, 0);
       const tradPrincipal = tradStart - row.traditionalBalance;
 
       const out = {
