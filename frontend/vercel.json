@@ -78,6 +78,51 @@
       "source": "/knowledge-base/va-house-hacking-hawaii",
       "destination": "/knowledge-base/va-loan-house-hacking-hawaii",
       "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/va-funding-fee-tax-deduction",
+      "destination": "/knowledge-base/va-funding-fee-tax-deductible",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/va-funding-fee-guide",
+      "destination": "/knowledge-base/va-funding-fee-tax-deductible",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/fema-oahu-flood-zone-maps",
+      "destination": "/knowledge-base/fema-oahu-flood-zone-maps-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/va-assumable-loans-hawaii",
+      "destination": "/knowledge-base/va-assumable-loans-pros-cons",
+      "statusCode": 301
+    },
+    {
+      "source": "/assumable-va-mortgage-pros-and-cons",
+      "destination": "/knowledge-base/va-assumable-loans-pros-cons",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-lenders-calculate-your-income-for-mortgage-qualification",
+      "destination": "/knowledge-base/how-lenders-calculate-income",
+      "statusCode": 301
+    },
+    {
+      "source": "/pre-qualification",
+      "destination": "/knowledge-base/mortgage-pre-approval-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-do-lenders-withhold-so-many-months-of-taxes-and-insurance-up-front",
+      "destination": "/knowledge-base/understanding-closing-costs-hawaii",
+      "statusCode": 301
+    },
+    {
+      "source": "/understanding-the-unique-hawaii-closing-timelines",
+      "destination": "/knowledge-base/escrow-process-hawaii",
+      "statusCode": 301
     }
   ],
   "rewrites": [
