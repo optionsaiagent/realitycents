@@ -15,9 +15,8 @@ import {
   ArrowRight,
   CheckCircle,
   Calculator,
-  Play,
 } from "lucide-react";
-import { useState } from "react";
+
 
 const ADVISOR_BENEFITS = [
   {
@@ -53,7 +52,6 @@ const KEY_STATS = [
 ];
 
 export default function Advisors() {
-  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <Layout>
@@ -120,24 +118,16 @@ export default function Advisors() {
             </p>
           </div>
 
-          {/* Video Embed — will use YouTube once uploaded */}
           <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl bg-navy">
-              {!isPlaying ? (
-                <div className="absolute inset-0 flex items-center justify-center bg-navy/90">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-teal/20 flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-teal/30 transition-colors">
-                      <Play className="w-8 h-8 text-teal ml-1" />
-                    </div>
-                    <p className="text-white font-display text-lg">AIO Advisor Briefing</p>
-                    <p className="text-sand/60 text-sm mt-1">10:21 · Full data walkthrough</p>
-                  </div>
-                </div>
-              ) : null}
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube.com/embed/bTjf-_1twVk"
+                title="AIO Advisor Briefing — How the All-In-One Creates Portfolio Capacity"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
-            <p className="text-center text-xs text-muted-foreground mt-3">
-              Video available upon request — contact Jay to receive the private link.
-            </p>
           </div>
         </div>
       </section>
