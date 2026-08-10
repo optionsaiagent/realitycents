@@ -143,7 +143,7 @@ Lenders and the VA will look at why you are buying a second home in the same gen
 To keep your first home and buy a second, you must prove to the lender that you can afford both mortgages. If you plan to rent out your first home, most lenders will allow you to use the projected rental income to offset that mortgage payment in your Debt-to-Income (DTI) ratio. Typically, the lender will require a signed lease agreement and will count 75% of the gross rent toward your qualifying income (the other 25% accounts for vacancies and maintenance). If the rental income covers the mortgage, the first home effectively "washes" out of your DTI.
 
 ### 4. The VA Funding Fee on Subsequent Use
-When you use your VA loan for the second time, the VA Funding Fee increases. For a subsequent use with less than 5% down, the fee is 3.3% of the loan amount. With 5% or more down (like the Mililani scenario above), the fee drops to 1.65%. Veterans receiving VA disability compensation for a service-connected disability are completely exempt from the funding fee.
+When you use your VA loan for the second time, the VA Funding Fee increases. For a subsequent use with less than 5% down, the fee is 3.3% of the loan amount. With 5% to 9.99% down (like the Mililani scenario above), the fee drops to 1.5%. With 10% or more down, it drops further to 1.25%. Veterans receiving VA disability compensation for a service-connected disability are completely exempt from the funding fee.
 
 ---
 
