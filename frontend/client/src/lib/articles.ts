@@ -89,7 +89,7 @@ Let us look at a real-world example.
 
 In 2021, an active-duty family bought a townhome in Ewa Beach for $450,000 using their VA loan. They locked in a 2.75% interest rate. Their monthly payment is incredibly low, and they want to keep it as a rental property.
 
-Now, in 2026, they are PCSing to Pearl Harbor (or their family has grown) and they want to buy a larger single-family home in Mililani for $950,000.
+Now, in 2026, they have been transferred from Tripler AMC up to Schofield Barracks, and they want to buy a larger single-family home in Mililani for $950,000.
 
 Can they buy the $950,000 home with zero down using their second-tier entitlement? Here is the math:
 
@@ -124,6 +124,8 @@ The VA requires a down payment equal to **25% of the difference** between the pu
 - **Required Down Payment (25% of difference): $37,719**
 
 By putting down $37,719 — roughly 4% of the total purchase price — they can buy the $950,000 home using their VA loan, secure a competitive VA interest rate, avoid Private Mortgage Insurance (PMI), and keep their 2.75% Ewa Beach property as a cash-flowing rental.
+
+**Pro tip:** By increasing the down payment slightly to 5% ($47,500 — only $9,781 more), they drop the VA Funding Fee from 3.3% to 1.5%. On a $902,500 loan amount, that saves over $16,200 in funding fee costs. A small increase in cash at closing can significantly reduce the overall cost of the loan.
 
 Compare that to a conventional loan on a primary residence, which would require 5% down ($47,500) plus PMI until you reach 20% equity. The second-tier VA strategy saves cash at closing and eliminates PMI entirely.
 
