@@ -30,6 +30,163 @@ export const CATEGORIES = [
 
 const allArticles: Article[] = [
   {
+    slug: "va-second-tier-entitlement-hawaii",
+    title: "The Second VA Loan Strategy: How to Buy Again Without Selling Your First Home",
+    excerpt: "Most Hawaii veterans believe they must sell their current home to use their VA loan again. The reality: Second-Tier Entitlement lets you hold two VA loans simultaneously — keeping your 2.75% rate as a rental while buying your next primary residence with minimal cash down.",
+    category: "VA Loans",
+    readTime: "8 min",
+    date: "2026-08-10",
+    featured: true,
+    lastUpdated: "August 2026",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/jFSetLDVerPmZPzE.jpg",
+    content: `# The Second VA Loan Strategy: How to Buy Again Without Selling Your First Home
+
+*By Jay Miller | Last Updated: August 2026*
+
+**Most Hawaii veterans believe they must sell their current home to "unlock" their VA benefit for a new purchase. The reality is that Second-Tier Entitlement allows you to hold two VA loans simultaneously — a critical tool for families who want to keep their 2.75% rate on their first property while moving into a new one.**
+
+One of the most persistent myths in military real estate is the idea that the VA loan is a "one-and-done" benefit. If you own a home with a VA loan, conventional wisdom says you have to sell it, pay off the mortgage, and restore your entitlement before you can use the VA loan again.
+
+In a market like Hawaii, where long-term real estate appreciation is a primary wealth-building tool, that advice is costing military families hundreds of thousands of dollars in future equity.
+
+If you bought a home near Schofield Barracks in 2021 and locked in a 2.75% interest rate, selling that home today just to free up your VA benefit is financially painful. You are giving up an asset with a historically low payment that could generate significant rental income for the rest of your life.
+
+The good news is: you do not have to sell it.
+
+Through a feature called **Second-Tier Entitlement** (also known as Bonus Entitlement), the Department of Veterans Affairs allows you to have more than one active VA loan at the same time. You can keep your first home, rent it out, and buy a new primary residence using your remaining VA entitlement — often with zero down payment.
+
+Here is exactly how the math works, the specific rules you must follow, and how Hawaii military families are using this strategy to build multi-property portfolios.
+
+---
+
+## How Second-Tier Entitlement Actually Works
+
+To understand how you can have two VA loans at once, you have to understand how the VA calculates your "entitlement."
+
+Your entitlement is the dollar amount the VA guarantees to the lender if you default on the loan. For veterans with full entitlement (meaning you do not currently have an active VA loan), there is **no loan limit**. You can buy a $1.5 million home in Hawaii with zero down, provided you have the income and credit to qualify for the monthly payment.
+
+However, the moment you use a portion of your entitlement to buy a home, you fall into a different category: veterans with *reduced* entitlement.
+
+When you have reduced entitlement, the VA *does* enforce a loan limit. To figure out how much you can borrow with zero down on a second home, the VA looks at the conforming loan limit for the county where you are buying.
+
+For 2026, the Federal Housing Finance Agency (FHFA) designates Honolulu County as a high-cost area, with a conforming loan limit of **$1,249,125**. (Maui and Kalawao counties are even higher at $1,299,500.)
+
+The VA guarantees 25% of that county limit — giving you your **Maximum Guaranty**:
+
+| County | 2026 Conforming Limit | VA Maximum Guaranty (25%) |
+|---|---|---|
+| Honolulu | $1,249,125 | $312,281 |
+| Maui | $1,299,500 | $324,875 |
+| Kalawao | $1,299,500 | $324,875 |
+| Hawaii (Big Island) | $862,500 | $215,625 |
+| Kauai | $1,007,250 | $251,813 |
+
+To find your remaining entitlement, the VA takes that Maximum Guaranty and subtracts the amount of entitlement you have already used on your first home.
+
+### The Math: A Real Hawaii Scenario
+
+Let us look at a real-world example.
+
+In 2021, an active-duty family bought a townhome in Ewa Beach (near Schofield/Wheeler) for $650,000 using their VA loan. They locked in a 2.75% interest rate. Their monthly payment is incredibly low, and they want to keep it as a rental property.
+
+Now, in 2026, they are PCSing to Pearl Harbor (or their family has grown) and they want to buy a larger single-family home in Mililani for $950,000.
+
+Can they buy the $950,000 home with zero down using their second-tier entitlement? Here is the math:
+
+**Step 1: Calculate Entitlement Used on Property #1**
+The VA guarantees 25% of the original loan amount.
+- Original loan: $650,000
+- Entitlement used (25%): **$162,500**
+
+**Step 2: Calculate Remaining Entitlement**
+Take the Honolulu County Maximum Guaranty and subtract the entitlement already used.
+- Honolulu Max Guaranty: $312,281
+- Minus Entitlement Used: -$162,500
+- **Remaining Entitlement: $149,781**
+
+**Step 3: Calculate Maximum Zero-Down Purchase Price**
+Your remaining entitlement is the VA's 25% guarantee for your new loan. Multiply by 4 to find your zero-down ceiling.
+- $149,781 × 4 = **$599,124 maximum zero-down purchase**
+
+**The Result:** This family can buy a second home for up to **$599,124** with absolutely zero down payment, while keeping their first home.
+
+### What If the New Home Costs More Than the Limit?
+
+In our scenario, the family wants to buy a $950,000 home in Mililani, but their zero-down limit is only $599,124. Does that mean they cannot buy the house?
+
+No. It means they make a down payment on the difference.
+
+The VA requires a down payment equal to **25% of the difference** between the purchase price and the zero-down limit.
+
+- Purchase Price: $950,000
+- Minus Zero-Down Limit: -$599,124
+- Difference: $350,876
+- **Required Down Payment (25% of difference): $87,719**
+
+By putting down $87,719 — roughly 9.2% of the total purchase price — they can buy the $950,000 home using their VA loan, secure a competitive VA interest rate, avoid Private Mortgage Insurance (PMI), and keep their 2.75% Ewa Beach property as a cash-flowing rental.
+
+Compare that to a conventional loan on a second home, which would require 20% down ($190,000) and potentially carry a higher interest rate. The second-tier VA strategy is significantly more capital-efficient.
+
+---
+
+## The Rules You Must Follow
+
+While second-tier entitlement is a powerful tool, the VA has strict rules designed to ensure the benefit is used for primary housing, not purely for investment.
+
+### 1. The Occupancy Requirement
+You must intend to personally occupy the new home as your primary residence within 60 days of closing. You cannot use your second-tier entitlement to buy a dedicated rental property or a vacation home. You are using it to buy your *next* primary residence. The home you are leaving behind (the one with your first VA loan) is the one that becomes the rental.
+
+### 2. The Move Must Make Logical Sense
+Lenders and the VA will look at why you are buying a second home in the same general area. If you are PCSing from Schofield to Pearl Harbor, the commute reduction is a valid reason. If your family has grown and you are moving from a 2-bedroom condo to a 4-bedroom house, that is a valid reason. You generally cannot use second-tier entitlement to buy a nearly identical home right down the street from your current one.
+
+### 3. Qualifying with Two Mortgages
+To keep your first home and buy a second, you must prove to the lender that you can afford both mortgages. If you plan to rent out your first home, most lenders will allow you to use the projected rental income to offset that mortgage payment in your Debt-to-Income (DTI) ratio. Typically, the lender will require a signed lease agreement and will count 75% of the gross rent toward your qualifying income (the other 25% accounts for vacancies and maintenance). If the rental income covers the mortgage, the first home effectively "washes" out of your DTI.
+
+### 4. The VA Funding Fee on Subsequent Use
+When you use your VA loan for the second time, the VA Funding Fee increases. For a subsequent use with less than 5% down, the fee is 3.3% of the loan amount. With 5% or more down (like the Mililani scenario above), the fee drops to 1.65%. Veterans receiving VA disability compensation for a service-connected disability are completely exempt from the funding fee.
+
+---
+
+## An Alternative Strategy: The AIO First-Lien HELOC
+
+If you are keeping your first home as a rental, your primary goal on the *new* property is likely maximizing cash flow and managing your monthly obligations.
+
+While the second-tier VA loan is excellent, some Hawaii buyers with significant equity in their first home or strong cash reserves choose a different path for property number two: the **All-In-One (AIO) First-Lien HELOC**.
+
+The AIO is a unique mortgage product that replaces a traditional 30-year fixed loan with a primary-position Home Equity Line of Credit that also functions as your primary checking account. Instead of sending your paycheck to a traditional bank, your income is deposited directly into the AIO loan, immediately driving down the principal balance and reducing the daily interest calculation. When you need to pay bills, you draw from the available line of credit.
+
+There are three reasons a military family building a portfolio might choose the AIO for property number two instead of a second VA loan:
+
+**Interest Savings.** Because your idle cash sits against the loan principal 24/7, the AIO dramatically reduces the total interest paid over the life of the loan compared to a traditional amortizing mortgage. On a $950,000 Hawaii home, the savings over 10 years can be substantial for a household with strong income.
+
+**Flexibility.** Unlike a rigid 30-year fixed payment, the AIO allows you to pay down the principal aggressively when you have extra cash, but draw back on that equity instantly if you need funds for an emergency, a renovation, or another investment.
+
+**Preserving VA Entitlement.** By using an AIO for your new Hawaii home, you preserve your remaining VA entitlement for a future purchase — perhaps your forever home on the mainland when you eventually retire or PCS out of Hawaii.
+
+The AIO requires discipline — it is a tool for buyers who consistently spend less than they earn and want their idle cash to work for them. But for military families building a multi-property portfolio, it is a powerful alternative to traditional financing.
+
+---
+
+## The Bottom Line
+
+Your VA loan is not a one-time ticket. It is a lifelong benefit designed to help you secure housing wherever the military — or your post-military career — takes you.
+
+In Hawaii's high-cost market, selling a property with a 2.5% or 3% interest rate is rarely the best financial move. By understanding the math behind second-tier entitlement, you can leverage the county loan limits to keep your low-rate asset, generate rental income, and step into your next home with minimal cash out of pocket.
+
+The math can be complex, and big-box mainland lenders frequently miscalculate Hawaii's high-cost county limits when determining remaining entitlement. If you are considering this strategy, work with a local professional who understands the specific mechanics of dual VA loans in the Honolulu market.
+
+---
+
+### Related Articles
+- [VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
+- [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
+- [The Hidden Reason Hawaii Rates Are Stuck in the 6s](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers)
+
+---
+
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
+  },
+  {
     slug: "zero-down-home-buying-hawaii",
     title: "The Zero-Down Playbook: How Hawaii Buyers Are Purchasing Homes With Nothing Out of Pocket",
     excerpt: "Most people believe you need 10–20% down to buy in Hawaii. The reality: multiple legitimate paths exist to purchase with nothing out of pocket. Here's what actually works.",
