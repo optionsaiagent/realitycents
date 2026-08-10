@@ -87,7 +87,7 @@ To find your remaining entitlement, the VA takes that Maximum Guaranty and subtr
 
 Let us look at a real-world example.
 
-In 2021, an active-duty family bought a townhome in Ewa Beach (near Schofield/Wheeler) for $650,000 using their VA loan. They locked in a 2.75% interest rate. Their monthly payment is incredibly low, and they want to keep it as a rental property.
+In 2021, an active-duty family bought a townhome in Ewa Beach for $450,000 using their VA loan. They locked in a 2.75% interest rate. Their monthly payment is incredibly low, and they want to keep it as a rental property.
 
 Now, in 2026, they are PCSing to Pearl Harbor (or their family has grown) and they want to buy a larger single-family home in Mililani for $950,000.
 
@@ -95,37 +95,37 @@ Can they buy the $950,000 home with zero down using their second-tier entitlemen
 
 **Step 1: Calculate Entitlement Used on Property #1**
 The VA guarantees 25% of the original loan amount.
-- Original loan: $650,000
-- Entitlement used (25%): **$162,500**
+- Original loan: $450,000
+- Entitlement used (25%): **$112,500**
 
 **Step 2: Calculate Remaining Entitlement**
 Take the Honolulu County Maximum Guaranty and subtract the entitlement already used.
 - Honolulu Max Guaranty: $312,281
-- Minus Entitlement Used: -$162,500
-- **Remaining Entitlement: $149,781**
+- Minus Entitlement Used: -$112,500
+- **Remaining Entitlement: $199,781**
 
 **Step 3: Calculate Maximum Zero-Down Purchase Price**
 Your remaining entitlement is the VA's 25% guarantee for your new loan. Multiply by 4 to find your zero-down ceiling.
-- $149,781 × 4 = **$599,124 maximum zero-down purchase**
+- $199,781 × 4 = **$799,124 maximum zero-down purchase**
 
-**The Result:** This family can buy a second home for up to **$599,124** with absolutely zero down payment, while keeping their first home.
+**The Result:** This family can buy a second home for up to **$799,124** with absolutely zero down payment, while keeping their first home.
 
 ### What If the New Home Costs More Than the Limit?
 
-In our scenario, the family wants to buy a $950,000 home in Mililani, but their zero-down limit is only $599,124. Does that mean they cannot buy the house?
+In our scenario, the family wants to buy a $950,000 home in Mililani, but their zero-down limit is $799,124. Does that mean they cannot buy the house?
 
 No. It means they make a down payment on the difference.
 
 The VA requires a down payment equal to **25% of the difference** between the purchase price and the zero-down limit.
 
 - Purchase Price: $950,000
-- Minus Zero-Down Limit: -$599,124
-- Difference: $350,876
-- **Required Down Payment (25% of difference): $87,719**
+- Minus Zero-Down Limit: -$799,124
+- Difference: $150,876
+- **Required Down Payment (25% of difference): $37,719**
 
-By putting down $87,719 — roughly 9.2% of the total purchase price — they can buy the $950,000 home using their VA loan, secure a competitive VA interest rate, avoid Private Mortgage Insurance (PMI), and keep their 2.75% Ewa Beach property as a cash-flowing rental.
+By putting down $37,719 — roughly 4% of the total purchase price — they can buy the $950,000 home using their VA loan, secure a competitive VA interest rate, avoid Private Mortgage Insurance (PMI), and keep their 2.75% Ewa Beach property as a cash-flowing rental.
 
-Compare that to a conventional loan on a second home, which would require 20% down ($190,000) and potentially carry a higher interest rate. The second-tier VA strategy is significantly more capital-efficient.
+Compare that to a conventional loan on a primary residence, which would require 5% down ($47,500) plus PMI until you reach 20% equity. The second-tier VA strategy saves cash at closing and eliminates PMI entirely.
 
 ---
 
@@ -137,13 +137,13 @@ While second-tier entitlement is a powerful tool, the VA has strict rules design
 You must intend to personally occupy the new home as your primary residence within 60 days of closing. You cannot use your second-tier entitlement to buy a dedicated rental property or a vacation home. You are using it to buy your *next* primary residence. The home you are leaving behind (the one with your first VA loan) is the one that becomes the rental.
 
 ### 2. The Move Must Make Logical Sense
-Lenders and the VA will look at why you are buying a second home in the same general area. If you are PCSing from Schofield to Pearl Harbor, the commute reduction is a valid reason. If your family has grown and you are moving from a 2-bedroom condo to a 4-bedroom house, that is a valid reason. You generally cannot use second-tier entitlement to buy a nearly identical home right down the street from your current one.
+Lenders and the VA will look at why you are buying a second home in the same general area. For example, you were assigned to Tripler AMC and have been transferred up to Schofield Barracks — the commute change is a valid reason. If your family has grown and you are moving from a 2-bedroom condo to a 4-bedroom house, that is also a valid reason. You generally cannot use second-tier entitlement to buy a nearly identical home right down the street from your current one.
 
 ### 3. Qualifying with Two Mortgages
 To keep your first home and buy a second, you must prove to the lender that you can afford both mortgages. If you plan to rent out your first home, most lenders will allow you to use the projected rental income to offset that mortgage payment in your Debt-to-Income (DTI) ratio. Typically, the lender will require a signed lease agreement and will count 75% of the gross rent toward your qualifying income (the other 25% accounts for vacancies and maintenance). If the rental income covers the mortgage, the first home effectively "washes" out of your DTI.
 
 ### 4. The VA Funding Fee on Subsequent Use
-When you use your VA loan for the second time, the VA Funding Fee increases. For a subsequent use with less than 5% down, the fee is 3.3% of the loan amount. With 5% to 9.99% down (like the Mililani scenario above), the fee drops to 1.5%. With 10% or more down, it drops further to 1.25%. Veterans receiving VA disability compensation for a service-connected disability are completely exempt from the funding fee.
+When you use your VA loan for the second time, the VA Funding Fee increases. For a subsequent use with less than 5% down (like the Mililani scenario above), the fee is 3.3% of the loan amount. With 5% to 9.99% down, the fee drops to 1.5%. With 10% or more down, it drops further to 1.25%. Veterans receiving VA disability compensation for a service-connected disability are completely exempt from the funding fee.
 
 ---
 
