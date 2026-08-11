@@ -22,6 +22,30 @@ export interface SubscribeOptions {
   company?: string;  // maps to COMPANY (homebuyers) or MMERGE5 (agents)
 }
 
+/**
+ * Validates a name field to detect bot-generated gibberish.
+ * Returns true if the name looks human, false if it looks fake.
+ */
+export function isHumanName(name: string): boolean {
+  const trimmed = name.trim();
+  if (!trimmed) return true; // empty is handled elsewhere
+  // Reject if longer than 40 characters
+  if (trimmed.length > 40) return false;
+  // Reject if no vowels (aeiou) — gibberish like "YaabZdWtAqTjQZaHBLjPyp"
+  if (!/[aeiouAEIOU]/.test(trimmed)) return false;
+  // Reject if more than 3 consecutive consonants (common in bot strings)
+  if (/[^aeiouAEIOU\s]{4,}/i.test(trimmed)) return false;
+  // Reject if contains digits
+  if (/\d/.test(trimmed)) return false;
+  // Reject if ratio of uppercase to total letters is abnormally high (>50% and length > 3)
+  const letters = trimmed.replace(/[^a-zA-Z]/g, "");
+  if (letters.length > 3) {
+    const upperCount = (letters.match(/[A-Z]/g) || []).length;
+    if (upperCount / letters.length > 0.5) return false;
+  }
+  return true;
+}
+
 // Homebuyers audience
 const HOMEBUYERS_URL =
   "https://realitycents.us19.list-manage.com/subscribe/post-json?u=78d73687dd90474d0a8460e27&id=55d21946c8&f_id=000f8fe4f0";
@@ -64,6 +88,13 @@ export function subscribeToMailchimp(
   return new Promise((resolve) => {
     const config = MAILCHIMP_CONFIG[audience];
     const { firstName, lastName, email, phone, company } = options;
+
+    // Bot detection: validate names look human
+    if (!isHumanName(firstName) || !isHumanName(lastName)) {
+      // Silently reject — return fake success so bots don't retry
+      resolve({ success: true, message: config.successMessage });
+      return;
+    }
 
     // Build a unique JSONP callback name to avoid collisions
     const callbackName = `mc_callback_${Date.now()}`;

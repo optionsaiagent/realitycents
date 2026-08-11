@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import { toast } from "sonner";
-import { subscribeToMailchimp } from "@/lib/mailchimp";
+import { subscribeToMailchimp, isHumanName } from "@/lib/mailchimp";
 import {
   BookOpen,
   Download,
@@ -56,10 +56,23 @@ export default function Guide() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!firstName.trim() || !email.trim()) return;
+    // Honeypot check — bots fill hidden fields, humans don't
+    if (honeypot) {
+      setSubmitted(true);
+      toast.success("Check your email!");
+      return;
+    }
+    // Name validation — reject gibberish
+    if (!isHumanName(firstName) || !isHumanName(lastName)) {
+      setSubmitted(true);
+      toast.success("Check your email!");
+      return;
+    }
     setLoading(true);
     const result = await subscribeToMailchimp("homebuyers", { firstName: firstName.trim(), lastName: lastName.trim(), email: email.trim() });
     setLoading(false);
@@ -198,8 +211,8 @@ export default function Guide() {
                         type="text"
                         name="b_78d73687dd90474d0a8460e27_55d21946c8"
                         tabIndex={-1}
-                        defaultValue=""
-                        readOnly
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-3">

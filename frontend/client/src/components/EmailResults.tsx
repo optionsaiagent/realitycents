@@ -7,6 +7,7 @@
 import { useState, useEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
 import { Mail, CheckCircle, Send, RefreshCw } from "lucide-react";
+import { isHumanName } from "@/lib/mailchimp";
 
 export interface EmailScenario {
   label: string;
@@ -35,6 +36,7 @@ export default function EmailResults({ calculator, resultSummary, scenarios, sha
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [hpField, setHpField] = useState("");
   const lastSentSummaryRef = useRef<string | undefined>(undefined);
 
   const captureLeadMutation = trpc.leads.captureCalculatorLead.useMutation({
@@ -58,6 +60,11 @@ export default function EmailResults({ calculator, resultSummary, scenarios, sha
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
+    // Bot detection: honeypot + name validation
+    if (hpField || !isHumanName(name)) {
+      setSubmitted(true);
+      return;
+    }
     captureLeadMutation.mutate({
       name,
       email,
@@ -96,6 +103,16 @@ export default function EmailResults({ calculator, resultSummary, scenarios, sha
         Save these results for later — we'll send you a copy.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+        {/* Honeypot */}
+        <input
+          type="text"
+          name="b_calc_hp"
+          tabIndex={-1}
+          value={hpField}
+          onChange={(e) => setHpField(e.target.value)}
+          style={{ position: "absolute", left: "-5000px" }}
+          aria-hidden="true"
+        />
         <input
           type="text"
           required

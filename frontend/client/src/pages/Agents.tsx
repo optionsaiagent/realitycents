@@ -26,6 +26,7 @@ import {
   Share2,
   AlertTriangle,
 } from "lucide-react";
+import { isHumanName } from "@/lib/mailchimp";
 
 type ActiveTool = "dscr" | "assumable" | "escalation";
 
@@ -35,6 +36,7 @@ export default function Agents() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeTool, setActiveTool] = useState<ActiveTool>("dscr");
+  const [agentHoneypot, setAgentHoneypot] = useState("");
 
   const logAccess = trpc.dscr.logAccess.useMutation();
 
@@ -49,6 +51,11 @@ export default function Agents() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
+    // Bot detection: honeypot and name validation
+    if (agentHoneypot || !isHumanName(name)) {
+      setIsUnlocked(true);
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -139,6 +146,16 @@ export default function Agents() {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Honeypot — hidden from humans, traps bots */}
+                    <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+                      <input
+                        type="text"
+                        name="b_agent_hp"
+                        tabIndex={-1}
+                        value={agentHoneypot}
+                        onChange={(e) => setAgentHoneypot(e.target.value)}
+                      />
+                    </div>
                     <div>
                       <label className="block text-sm font-body font-medium text-navy mb-1.5">
                         Full Name
