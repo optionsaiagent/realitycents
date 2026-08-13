@@ -19,7 +19,13 @@ import { ENV } from "./env";
 
 const LOGIN_LINK_TTL_MS = 15 * 60 * 1000;
 
-const secretKey = () => new TextEncoder().encode(ENV.cookieSecret);
+const secretKey = () => {
+  if (!ENV.cookieSecret) {
+    // Refuse to sign or verify anything with an empty key — sessions would be forgeable.
+    throw new Error("JWT_SECRET is not set; auth is disabled until it is configured");
+  }
+  return new TextEncoder().encode(ENV.cookieSecret);
+};
 
 const isNonEmptyString = (value: unknown): value is string =>
   typeof value === "string" && value.length > 0;
