@@ -1,7 +1,7 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { adminProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { nanoid } from "nanoid";
 import {
@@ -55,7 +55,30 @@ export const appRouter = router({
         })
       )
       .mutation(async ({ input }) => {
-        console.log(`[Lead] ${input.calculator} | ${input.name} (${input.email})`);
+        // Log the lead capture
+        console.log(`[Lead] Calculator: ${input.calculator} | ${input.name} (${input.email})`);
+        // Notify owner (fire-and-forget)
+        notifyOwner({
+          title: `Calculator Lead: ${input.name} — ${input.calculator}`,
+          content: [
+            `**Name:** ${input.name}`,
+            `**Email:** ${input.email}`,
+            `**Calculator:** ${input.calculator}`,
+            input.resultSummary ? `\n**Summary:** ${input.resultSummary}` : null,
+          ].filter(Boolean).join('\n'),
+        }).catch((err) => console.error('[Lead] Notification failed:', err));
+        // Generate short URL for the CTA link (best-effort)
+        let shareUrl: string | undefined;
+        if (input.shareData) {
+          try {
+            const code = nanoid(6);
+            await createShortUrl(code, input.shareData);
+            shareUrl = `https://realitycents.com/s/${code}`;
+          } catch (err) {
+            console.error('[Lead] Short URL generation failed:', err);
+            shareUrl = undefined;
+          }
+        }
         // Send results email to the user (fire-and-forget)
         sendCalculatorResultsEmail({
           to: input.email,
@@ -63,7 +86,7 @@ export const appRouter = router({
           calculator: input.calculator,
           resultSummary: input.resultSummary,
           scenarios: input.scenarios,
-          shareUrl: undefined, // short URL generation only runs on the real backend
+          shareUrl,
         }).catch((err) => console.error('[Lead] Email send failed:', err));
         return { success: true };
       }),
@@ -80,7 +103,21 @@ export const appRouter = router({
         })
       )
       .mutation(async ({ input }) => {
-        console.log(`[Contact] ${input.name} (${input.email}): ${input.subject}`);
+        // Notify owner via the notification service
+        await notifyOwner({
+          title: `Contact Form: ${input.name} — ${input.subject || 'General Inquiry'}`,
+          content: [
+            `**Name:** ${input.name}`,
+            `**Email:** ${input.email}`,
+            input.phone ? `**Phone:** ${input.phone}` : null,
+            `**Subject:** ${input.subject || 'General Inquiry'}`,
+            ``,
+            `**Message:**`,
+            input.message,
+          ].filter(Boolean).join('\n'),
+        }).catch((err) => console.error('[Contact] Notification failed:', err));
+
+        console.log(`[Contact] Submission from ${input.name} (${input.email}): ${input.subject}`);
         return { success: true };
       }),
   }),
@@ -236,37 +273,29 @@ export const appRouter = router({
         }
       }),
 
-    /** Admin: list all registered agents. Password-protected. */
-    adminGetAgents: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: list all registered agents. Requires an admin session. */
+    adminGetAgents: adminProcedure
+      .query(async () => {
         const agents = await getToolkitAgents();
         return { agents };
       }),
 
-    /** Admin: get download stats per resource. Password-protected. */
-    adminGetStats: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: get download stats per resource. Requires an admin session. */
+    adminGetStats: adminProcedure
+      .query(async () => {
         const stats = await getToolkitDownloadStats();
         return stats;
       }),
 
-    /** Admin: get newsletter subscriber count. Password-protected. */
-    adminGetNewsletterStats: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: get newsletter subscriber count. Requires an admin session. */
+    adminGetNewsletterStats: adminProcedure
+      .query(async () => {
         return getNewsletterSubscriberCount();
       }),
 
-    /** Admin: export newsletter subscribers as CSV data. Password-protected. */
-    adminExportCsv: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: export newsletter subscribers as CSV data. Requires an admin session. */
+    adminExportCsv: adminProcedure
+      .query(async () => {
         const agents = await getNewsletterSubscribers();
         const rows = agents.map(a => ({
           name: a.name,

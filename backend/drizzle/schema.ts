@@ -1,4 +1,8 @@
-import { boolean, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { boolean, customType, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+
+const longblob = customType<{ data: Buffer; driverData: Buffer }>({
+  dataType: () => "longblob",
+});
 
 /**
  * Core user table backing auth flow.
@@ -98,3 +102,19 @@ export const agentLeads = mysqlTable("agent_leads", {
 });
 export type AgentLead = typeof agentLeads.$inferSelect;
 export type InsertAgentLead = typeof agentLeads.$inferInsert;
+
+/**
+ * Binary file storage — replaces the external Manus Forge storage proxy.
+ * Holds agent logos and branded toolkit PDFs, served via GET /files/:key.
+ */
+export const storedFiles = mysqlTable("stored_files", {
+  id: int("id").autoincrement().primaryKey(),
+  fileKey: varchar("fileKey", { length: 512 }).notNull().unique(),
+  mimeType: varchar("mimeType", { length: 128 }).notNull(),
+  data: longblob("data").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type StoredFile = typeof storedFiles.$inferSelect;
+export type InsertStoredFile = typeof storedFiles.$inferInsert;

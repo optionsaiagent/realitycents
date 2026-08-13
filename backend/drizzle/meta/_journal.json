@@ -50,6 +50,13 @@
       "when": 1781728074774,
       "tag": "0006_equal_eternals",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1786584117914,
+      "tag": "0007_complex_paper_doll",
+      "breakpoints": true
     }
   ]
 }

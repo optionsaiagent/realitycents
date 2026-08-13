@@ -1,7 +1,7 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { adminProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { nanoid } from "nanoid";
 import {
@@ -273,37 +273,29 @@ export const appRouter = router({
         }
       }),
 
-    /** Admin: list all registered agents. Password-protected. */
-    adminGetAgents: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: list all registered agents. Requires an admin session. */
+    adminGetAgents: adminProcedure
+      .query(async () => {
         const agents = await getToolkitAgents();
         return { agents };
       }),
 
-    /** Admin: get download stats per resource. Password-protected. */
-    adminGetStats: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: get download stats per resource. Requires an admin session. */
+    adminGetStats: adminProcedure
+      .query(async () => {
         const stats = await getToolkitDownloadStats();
         return stats;
       }),
 
-    /** Admin: get newsletter subscriber count. Password-protected. */
-    adminGetNewsletterStats: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: get newsletter subscriber count. Requires an admin session. */
+    adminGetNewsletterStats: adminProcedure
+      .query(async () => {
         return getNewsletterSubscriberCount();
       }),
 
-    /** Admin: export newsletter subscribers as CSV data. Password-protected. */
-    adminExportCsv: publicProcedure
-      .input(z.object({ password: z.string() }))
-      .query(async ({ input }) => {
-        if (input.password !== "cmg2026") throw new Error("Unauthorized");
+    /** Admin: export newsletter subscribers as CSV data. Requires an admin session. */
+    adminExportCsv: adminProcedure
+      .query(async () => {
         const agents = await getNewsletterSubscribers();
         const rows = agents.map(a => ({
           name: a.name,

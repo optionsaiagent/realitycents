@@ -5,8 +5,8 @@ import cors from "cors";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { appRouter } from "./routers";
 import { createContext } from "./_core/context";
-import { registerOAuthRoutes } from "./_core/oauth";
-import { resolveShortUrl } from "./db";
+import { registerAuthRoutes } from "./_core/session";
+import { getStoredFile, resolveShortUrl } from "./db";
 
 async function startServer() {
   const app = express();
@@ -66,8 +66,25 @@ async function startServer() {
     return res.redirect(302, "https://realitycents.com/loan-compare");
   });
 
-  // OAuth callback
-  registerOAuthRoutes(app);
+  // Admin magic-link auth
+  registerAuthRoutes(app);
+
+  // Stored files (agent logos, branded PDFs) — served from the database
+  app.get(/^\/files\/(.+)/, async (req, res) => {
+    try {
+      const key = decodeURIComponent(req.params[0] ?? "");
+      const file = key ? await getStoredFile(key) : null;
+      if (!file) {
+        return res.status(404).json({ error: "File not found" });
+      }
+      res.setHeader("Content-Type", file.mimeType);
+      res.setHeader("Cache-Control", "public, max-age=86400");
+      return res.send(file.data);
+    } catch (e) {
+      console.error("[Files] Serve failed:", e);
+      return res.status(500).json({ error: "File serve failed" });
+    }
+  });
 
   // tRPC API
   app.use(

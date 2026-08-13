@@ -319,3 +319,72 @@ function buildFallbackEmailHtml(params: {
 </body>
 </html>`;
 }
+
+/**
+ * Send an admin magic-link login email.
+ */
+export async function sendAdminLoginEmail(params: {
+  to: string;
+  loginUrl: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  if (!resend) {
+    console.warn("[Email] RESEND_API_KEY not configured — cannot send login link");
+    return { success: false, error: "Email service not configured" };
+  }
+  const { error } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to: params.to,
+    subject: "Your RealityCents admin login link",
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 480px; margin: 0 auto;">
+        <h2 style="color: #1a2744;">RealityCents Admin Login</h2>
+        <p>Click the button below to sign in. This link expires in 15 minutes.</p>
+        <p style="margin: 24px 0;">
+          <a href="${params.loginUrl}"
+             style="background: #1a2744; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block;">
+            Sign in to Admin
+          </a>
+        </p>
+        <p style="color: #666; font-size: 13px;">If you didn't request this, you can safely ignore this email.</p>
+      </div>
+    `,
+  });
+  if (error) {
+    console.error("[Email] Login link send failed:", error);
+    return { success: false, error: String(error) };
+  }
+  return { success: true };
+}
+
+/**
+ * Send an owner notification email (lead alerts). Replaces the Manus
+ * notification service.
+ */
+export async function sendOwnerNotificationEmail(params: {
+  title: string;
+  content: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  const to = (process.env.ADMIN_EMAIL ?? "").split(",")[0]?.trim();
+  if (!resend || !to) {
+    console.warn("[Email] RESEND_API_KEY or ADMIN_EMAIL not configured — skipping owner notification");
+    return { success: false, error: "Notification email not configured" };
+  }
+  const { error } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to,
+    subject: `[RealityCents] ${params.title}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto;">
+        <h2 style="color: #1a2744;">${params.title}</h2>
+        <div style="white-space: pre-wrap; color: #333;">${params.content}</div>
+      </div>
+    `,
+  });
+  if (error) {
+    console.error("[Email] Owner notification send failed:", error);
+    return { success: false, error: String(error) };
+  }
+  return { success: true };
+}
