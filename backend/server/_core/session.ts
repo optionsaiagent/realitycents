@@ -86,7 +86,9 @@ export function registerAuthRoutes(app: Express) {
         .setProtectedHeader({ alg: "HS256", typ: "JWT" })
         .setExpirationTime(Math.floor((Date.now() + LOGIN_LINK_TTL_MS) / 1000))
         .sign(secretKey());
-      const base = `${req.protocol}://${req.get("host")}`;
+      // Use the site origin so the link goes through the Vercel proxy and the
+      // session cookie is set first-party on realitycents.com.
+      const base = (process.env.FRONTEND_URL || "").split(",")[0].trim() || `${req.protocol}://${req.get("host")}`;
       await sendAdminLoginEmail({
         to: email,
         loginUrl: `${base}/api/auth/verify?token=${encodeURIComponent(token)}`,
@@ -114,7 +116,8 @@ export function registerAuthRoutes(app: Express) {
         ...getSessionCookieOptions(req),
         maxAge: ONE_YEAR_MS,
       });
-      res.redirect(302, `${process.env.FRONTEND_URL || ""}/admin`);
+      const site = (process.env.FRONTEND_URL || "").split(",")[0].trim();
+      res.redirect(302, `${site}/admin`);
     } catch {
       res.status(403).send("Invalid or expired login link.");
     }

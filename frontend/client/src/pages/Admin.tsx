@@ -6,7 +6,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { trpc } from "@/lib/trpc";
 
-const API_BASE = import.meta.env.VITE_API_URL || "";
+// In production the API is proxied through this origin (see vercel.json rewrites)
+// so the session cookie is first-party. VITE_API_URL is only for local dev.
+const API_BASE = import.meta.env.PROD ? "" : (import.meta.env.VITE_API_URL || "");
 
 function LoginForm() {
   const [email, setEmail] = useState("");
