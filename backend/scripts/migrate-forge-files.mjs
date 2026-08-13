@@ -24,7 +24,9 @@ const conn = await mysql.createConnection({
   user: decodeURIComponent(url.username),
   password: decodeURIComponent(url.password),
   database: url.pathname.slice(1),
-  ssl: url.hostname.includes("railway.internal") ? undefined : { rejectUnauthorized: true },
+  // Railway's MySQL endpoints use self-signed certs (internal DNS has no TLS,
+  // the public proxy is TLS with an unverifiable chain) — skip CA validation.
+  ssl: url.hostname.includes("railway.internal") ? undefined : { rejectUnauthorized: false },
 });
 
 async function storeFromUrl(sourceUrl, fileKey, fallbackMime) {
