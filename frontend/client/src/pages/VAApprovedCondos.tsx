@@ -102,10 +102,10 @@ export default function VAApprovedCondos() {
       const q = search.toLowerCase();
       result = result.filter(
         (c) =>
-          c.name.toLowerCase().includes(q) ||
-          c.address.toLowerCase().includes(q) ||
-          c.zipCode.includes(q) ||
-          c.neighborhood.toLowerCase().includes(q)
+          (c.name ?? "").toLowerCase().includes(q) ||
+          (c.address ?? "").toLowerCase().includes(q) ||
+          (c.zipCode ?? "").includes(q) ||
+          (c.neighborhood ?? "").toLowerCase().includes(q)
       );
     }
 

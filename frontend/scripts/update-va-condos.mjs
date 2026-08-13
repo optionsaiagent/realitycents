@@ -79,11 +79,13 @@ const condos = accepted
   .map(r => {
     const zip = (r.zipCode ?? "").slice(0, 5);
     const baseCity = titleCase((r.city ?? "").split(",")[0].trim());
+    // Coerce null text fields to "" — the page's search/filter code and
+    // consumers expect strings everywhere.
     return {
       id: r.id,
-      vaId: r.developmentBusinessId,
-      name: r.firstLineName,
-      address: r.secondLineName,
+      vaId: r.developmentBusinessId ?? "",
+      name: r.firstLineName ?? "",
+      address: r.secondLineName ?? "",
       city: (r.city ?? "").toUpperCase(),
       state: r.state,
       zipCode: zip,
