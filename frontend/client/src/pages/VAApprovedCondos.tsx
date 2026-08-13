@@ -1,6 +1,6 @@
 /*
  * Pacific Modernism — VA-Approved Condos on Oahu
- * Searchable, filterable directory of 1,745 VA-approved condo projects
+ * Searchable, filterable directory of all VA-approved condo projects
  * Data sourced from VA LGY Hub (lgy.va.gov)
  */
 import { useState, useMemo } from "react";
@@ -193,7 +193,7 @@ export default function VAApprovedCondos() {
   return (
     <Layout>
       <SEO
-        title="VA-Approved Condos on Oahu — ${condoData.totalApproved} Projects | RealityCents"
+        title={`VA-Approved Condos on Oahu — ${condoData.totalApproved.toLocaleString()} Projects | RealityCents`}
         description={`Searchable directory of all ${condoData.totalApproved} VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Updated ${condoData.lastUpdated}.`}
         url="/va-approved-condos-oahu"
         keywords="VA approved condos Oahu, VA approved condos Hawaii, VA condo list Honolulu, VA eligible condos Waikiki, VA loan condo Hawaii, VA approved condo projects Oahu 2026"

@@ -4,6 +4,7 @@
  * Deep navy/teal palette, gold accents, conversational authority
  */
 import { Link } from "wouter";
+import condoData from "@/data/va-approved-condos-oahu.json";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
@@ -27,6 +28,9 @@ import {
 // PRE_APPROVAL_URL now imported from constants
 
 // Shared BAH table data — 2026 Honolulu County
+
+const condoCount = condoData.totalApproved.toLocaleString();
+
 const BAH_TABLE = [
   { rank: "E-5", dep: "$3,663", noDep: "$2,856" },
   { rank: "E-6", dep: "$3,861", noDep: "$3,036" },
@@ -319,7 +323,7 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
             Condos can be a smart entry point — especially for E-5s and below where single-family homes near {data.installationName} are out of reach. But not every condo is VA-eligible. The project must be on the VA's approved list.
           </p>
           <p className="text-foreground/70 font-body mb-6">
-            I maintain a searchable database of all <strong>1,745 VA-approved condos on Oahu</strong> — updated regularly from the VA's own records. Before you fall in love with a condo, send me the address. I'll check VA approval status before you write an offer.
+            I maintain a searchable database of all <strong>{condoCount} VA-approved condos on Oahu</strong> — updated regularly from the VA's own records. Before you fall in love with a condo, send me the address. I'll check VA approval status before you write an offer.
           </p>
 
           <div className="flex flex-wrap gap-3">

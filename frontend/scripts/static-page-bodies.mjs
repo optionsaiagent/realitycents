@@ -8,6 +8,13 @@
 
 const BASE_URL = "https://realitycents.com";
 
+import { readFileSync } from "fs";
+const CONDO_DATA = JSON.parse(
+  readFileSync(new URL("../client/src/data/va-approved-condos-oahu.json", import.meta.url), "utf8")
+);
+const CONDO_TOTAL = CONDO_DATA.totalApproved.toLocaleString("en-US");
+const CONDO_UPDATED_MONTH = new Date(CONDO_DATA.lastUpdated + "T00:00:00").toLocaleString("en-US", { month: "long", year: "numeric" });
+
 export const STATIC_PAGE_BODIES = {
   "/": `
     <main>
@@ -20,7 +27,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>Free Mortgage Calculators</strong> — Basic, Advanced, Affordability, Rent vs. Buy, Buydown, Military Buying Power, and Loan Comparison tools</li>
           <li><strong>Knowledge Base</strong> — 30+ expert articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
           <li><strong>Agent Tools</strong> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
-          <li><strong>VA Condo Lookup</strong> — Searchable directory of 1,745 VA-approved condo projects on Oahu</li>
+          <li><strong>VA Condo Lookup</strong> — Searchable directory of ${CONDO_TOTAL} VA-approved condo projects on Oahu</li>
           <li><strong>Free Homebuying Guide</strong> — Comprehensive step-by-step guide to buying a home in Hawaii</li>
         </ul>
       </section>
@@ -219,7 +226,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>Can I use a VA loan in Hawaii?</dt>
           <dd>Yes. VA loans work in all 50 states including Hawaii. With full entitlement, there is no loan limit — you can buy at any price with $0 down. The VA funding fee is 2.15% for first-time use (waived for disabled veterans).</dd>
           <dt>Can I use a VA loan for a condo in Hawaii?</dt>
-          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check — there are 1,745 approved projects on Oahu alone.</dd>
+          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check — there are ${CONDO_TOTAL} approved projects on Oahu alone.</dd>
         </dl>
       </section>
       <section>
@@ -236,8 +243,8 @@ export const STATIC_PAGE_BODIES = {
 
   "/va-approved-condos-oahu": `
     <main>
-      <h1>VA-Approved Condos on Oahu — 1,745 Projects</h1>
-      <p>Searchable directory of all 1,745 VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Data sourced from the VA LGY Hub, updated June 2026.</p>
+      <h1>VA-Approved Condos on Oahu — ${CONDO_TOTAL} Projects</h1>
+      <p>Searchable directory of all ${CONDO_TOTAL} VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Data sourced from the VA LGY Hub, updated ${CONDO_UPDATED_MONTH}.</p>
       <section>
         <h2>Approval Status Breakdown</h2>
         <ul>
