@@ -2,6 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, router } from "./_core/trpc";
+import { clientIp, isHumanName, isLikelyBotMessage, isRateLimited } from "./botDetection";
 import { z } from "zod";
 import { nanoid } from "nanoid";
 import {
@@ -100,9 +101,27 @@ export const appRouter = router({
           phone: z.string().max(30).optional(),
           subject: z.string().max(100).optional(),
           message: z.string().min(1).max(5000),
+          // Honeypot — hidden on the real form; bots fill it, humans can't see it
+          website: z.string().max(200).optional(),
         })
       )
-      .mutation(async ({ input }) => {
+      .mutation(async ({ input, ctx }) => {
+        const ip = clientIp(ctx.req);
+        const botReason = input.website
+          ? "honeypot"
+          : !isHumanName(input.name)
+            ? "gibberish name"
+            : isLikelyBotMessage(input.message)
+              ? "junk message"
+              : isRateLimited(ip)
+                ? "rate limit"
+                : null;
+        if (botReason) {
+          // Fake success so bots don't learn and retry
+          console.log(`[Contact] Blocked submission (${botReason}) from ${ip}`);
+          return { success: true };
+        }
+
         // Notify owner via the notification service
         await notifyOwner({
           title: `Contact Form: ${input.name} — ${input.subject || 'General Inquiry'}`,

@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { webcrypto } from "node:crypto";
 // Node < 20 has no global WebCrypto; jose (JWT signing) requires it.
-if (!globalThis.crypto) (globalThis as { crypto: Crypto }).crypto = webcrypto as Crypto;
+if (!globalThis.crypto) Object.defineProperty(globalThis, "crypto", { value: webcrypto });
 import express from "express";
 import { createServer } from "http";
 import cors from "cors";

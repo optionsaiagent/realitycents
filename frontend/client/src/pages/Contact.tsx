@@ -26,6 +26,7 @@ export default function Contact() {
     phone: "",
     subject: "general",
     message: "",
+    website: "", // honeypot — stays empty for humans; bots auto-fill it
   });
 
   const submitContact = trpc.contact.submit.useMutation({
@@ -49,6 +50,7 @@ export default function Contact() {
       phone: formData.phone || undefined,
       subject: formData.subject || undefined,
       message: formData.message,
+      website: formData.website || undefined,
     });
   };
 
@@ -90,6 +92,18 @@ export default function Contact() {
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Honeypot — visually hidden from humans, autofilled by bots */}
+                    <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                      <label htmlFor="contact-website">Website</label>
+                      <input
+                        id="contact-website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      />
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-body font-medium text-navy mb-1.5">
