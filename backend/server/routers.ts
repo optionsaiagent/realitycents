@@ -3,6 +3,8 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, router } from "./_core/trpc";
 import { clientIp, isHumanName, isLikelyBotMessage, isRateLimited } from "./botDetection";
+import { sendGuideEmail } from "./email";
+import { getStoredFile } from "./db";
 import { z } from "zod";
 import { nanoid } from "nanoid";
 import {
@@ -138,6 +140,33 @@ export const appRouter = router({
 
         console.log(`[Contact] Submission from ${input.name} (${input.email}): ${input.subject}`);
         return { success: true };
+      }),
+  }),
+  guide: router({
+    /** Email the free homebuyer guide (with bot protection; fake-succeeds for bots). */
+    deliver: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1).max(200),
+          email: z.string().email().max(320),
+          website: z.string().max(200).optional(), // honeypot
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        const ip = clientIp(ctx.req);
+        if (input.website || !isHumanName(input.name) || isRateLimited(ip)) {
+          console.log(`[Guide] Blocked delivery request from ${ip}`);
+          return { success: true };
+        }
+        const file = await getStoredFile("guides/oahu-homebuyers-guide.pdf");
+        if (!file) {
+          console.error("[Guide] PDF missing from stored_files");
+          return { success: false };
+        }
+        const firstName = input.name.trim().split(/\s+/)[0];
+        const result = await sendGuideEmail({ to: input.email, firstName, pdf: file.data });
+        console.log(`[Guide] Delivery to ${input.email}: ${result.success ? "sent" : result.error}`);
+        return { success: result.success };
       }),
   }),
   system: systemRouter,

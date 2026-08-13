@@ -388,3 +388,48 @@ export async function sendOwnerNotificationEmail(params: {
   }
   return { success: true };
 }
+
+/**
+ * Send the free Oahu Homebuyer's Guide to a new subscriber, with the PDF
+ * attached and a hosted download link as fallback.
+ */
+export async function sendGuideEmail(params: {
+  to: string;
+  firstName: string;
+  pdf: Buffer;
+}): Promise<{ success: boolean; error?: string }> {
+  const resend = getResend();
+  if (!resend) {
+    console.warn("[Email] RESEND_API_KEY not configured — cannot send guide");
+    return { success: false, error: "Email service not configured" };
+  }
+  const downloadUrl = "https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf";
+  const { error } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to: params.to,
+    subject: "Your Oahu Homebuyer's Guide is here",
+    attachments: [{ filename: "Oahu-Homebuyers-Guide.pdf", content: params.pdf }],
+    html: `
+      <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; color: #1a2744; font-size: 16px; line-height: 1.6;">
+        <p>Aloha ${params.firstName || "there"},</p>
+        <p>Here's your copy of <strong>The Oahu Homebuyer's Guide</strong> — your roadmap to buying a home on Oahu, from neighborhoods and maintenance fees to VA loans and closing costs.</p>
+        <p>It's attached to this email, and you can also download it any time:</p>
+        <p style="margin: 24px 0;">
+          <a href="${downloadUrl}"
+             style="background: #1a2744; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block;">
+            Download the Guide (PDF)
+          </a>
+        </p>
+        <p>When a question comes up that the guide doesn't answer — and one always does — just reply to this email. I read every one.</p>
+        <p>Aloha,<br>Jay</p>
+        <hr style="border:none;border-top:1px solid #e2e5ea;margin:28px 0 16px;">
+        <p style="font-size: 12px; color: #6b7280;">Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | <a href="https://www.jay-miller.com" style="color:#6b7280;">www.jay-miller.com</a></p>
+      </div>
+    `,
+  });
+  if (error) {
+    console.error("[Email] Guide send failed:", error);
+    return { success: false, error: String(error) };
+  }
+  return { success: true };
+}

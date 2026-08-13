@@ -10,6 +10,7 @@ import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import { toast } from "sonner";
 import { subscribeToMailchimp, isHumanName } from "@/lib/mailchimp";
+import { trpc } from "@/lib/trpc";
 import {
   BookOpen,
   Download,
@@ -58,6 +59,8 @@ export default function Guide() {
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
 
+  const deliverGuide = trpc.guide.deliver.useMutation();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!firstName.trim() || !email.trim()) return;
@@ -75,6 +78,12 @@ export default function Guide() {
     }
     setLoading(true);
     const result = await subscribeToMailchimp("homebuyers", { firstName: firstName.trim(), lastName: lastName.trim(), email: email.trim() });
+    // Email the guide PDF via the backend (fire-and-forget; failures logged server-side)
+    deliverGuide.mutate({
+      name: `${firstName.trim()} ${lastName.trim()}`.trim(),
+      email: email.trim(),
+      website: honeypot || undefined,
+    });
     setLoading(false);
     if (result.success) {
       setSubmitted(true);
@@ -172,6 +181,14 @@ export default function Guide() {
                   <p className="text-sand/70 mb-4">
                     Your free Oahu Homebuyer's Guide is on its way to <strong className="text-white">{email}</strong>. It should arrive within a few minutes.
                   </p>
+                  <a
+                    href="https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md bg-teal px-5 py-2.5 text-sm font-body font-semibold text-white hover:bg-teal/90 transition-colors"
+                  >
+                    <Download className="w-4 h-4" /> Or download it right now
+                  </a>
                   <div className="mt-6 p-4 rounded-lg bg-gold/10 border border-gold/20">
                     <p className="text-sm font-body font-semibold text-gold mb-2">Ready to take the next step?</p>
                     <p className="text-xs text-sand/60 mb-3">Start your pre-approval with Jay Miller — it only takes a few minutes.</p>
