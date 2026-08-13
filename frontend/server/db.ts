@@ -1,7 +1,7 @@
 import { eq, sql, desc, count } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, shortUrls, toolkitAgents, toolkitResources, toolkitDownloads, agentLeads } from "../drizzle/schema";
-import type { ToolkitAgent, ToolkitResource, AgentLead } from "../drizzle/schema";
+import { InsertUser, users, shortUrls, toolkitAgents, toolkitResources, toolkitDownloads, agentLeads, storedFiles } from "../drizzle/schema";
+import type { ToolkitAgent, ToolkitResource, AgentLead, StoredFile } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -56,9 +56,6 @@ export async function upsertUser(user: InsertUser): Promise<void> {
     if (user.role !== undefined) {
       values.role = user.role;
       updateSet.role = user.role;
-    } else if (user.openId === ENV.ownerOpenId) {
-      values.role = 'admin';
-      updateSet.role = 'admin';
     }
 
     if (!values.lastSignedIn) {
@@ -233,4 +230,43 @@ export async function getAgentLeads(): Promise<AgentLead[]> {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
   return db.select().from(agentLeads).orderBy(desc(agentLeads.createdAt));
+}
+
+/** Create or refresh the admin user for magic-link login. */
+export async function upsertAdminUser(params: { openId: string; email: string; name: string }): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  try {
+    await db.insert(users).values({
+      openId: params.openId,
+      email: params.email,
+      name: params.name,
+      loginMethod: "magic-link",
+      role: "admin",
+      lastSignedIn: new Date(),
+    });
+  } catch (_insertErr) {
+    await db
+      .update(users)
+      .set({ role: "admin", lastSignedIn: new Date() })
+      .where(eq(users.openId, params.openId));
+  }
+}
+
+/** Store (or replace) a binary file. */
+export async function putStoredFile(fileKey: string, mimeType: string, data: Buffer): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  try {
+    await db.insert(storedFiles).values({ fileKey, mimeType, data });
+  } catch (_insertErr) {
+    await db.update(storedFiles).set({ mimeType, data }).where(eq(storedFiles.fileKey, fileKey));
+  }
+}
+
+export async function getStoredFile(fileKey: string): Promise<StoredFile | null> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const rows = await db.select().from(storedFiles).where(eq(storedFiles.fileKey, fileKey)).limit(1);
+  return rows[0] ?? null;
 }

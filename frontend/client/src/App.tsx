@@ -35,6 +35,7 @@ import HelocSweepCalculator from "./pages/HelocSweepCalculator";
 import Agents from "./pages/Agents";
 import Advisors from "./pages/Advisors";
 import ZeroDownInParadise from "./pages/ZeroDownInParadise";
+import Admin from "./pages/Admin";
 
 function ScrollToTop() {
   const [location, setLocation] = useLocation();
@@ -82,6 +83,7 @@ function Router() {
         <Route path={"/advisors"} component={Advisors} />
         <Route path={"/zero-down-in-paradise"} component={ZeroDownInParadise} />
         <Route path={"/s/:id"} component={ShortLink} />
+        <Route path={"/admin"} component={Admin} />
         {/* Redirect old agent routes to home */}
         <Route path={"/agent-hub"} component={() => { window.location.replace("/"); return null; }} />
         <Route path={"/agent-toolkit"} component={() => { window.location.replace("/"); return null; }} />

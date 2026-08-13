@@ -1031,7 +1031,7 @@ async function prerender() {
   // ─── SPA fallback for dynamic routes (e.g., /s/:code) ────────────────────
   // These routes are handled client-side by the React router but need an
   // index.html to exist so Vercel serves the SPA shell instead of 404.
-  const spaFallbackRoutes = ["/s"];
+  const spaFallbackRoutes = ["/s", "/admin"];
   for (const fallbackRoute of spaFallbackRoutes) {
     const fallbackDir = path.resolve(distPublic, fallbackRoute.replace(/^\//, ""));
     const fallbackFile = path.resolve(fallbackDir, "index.html");
