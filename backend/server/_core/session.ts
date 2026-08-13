@@ -72,9 +72,16 @@ export function registerAuthRoutes(app: Express) {
     const email = String(req.body?.email ?? "").trim().toLowerCase();
     // Always answer success so the endpoint can't be used to probe the allowlist.
     res.json({ ok: true });
-    if (!email || !adminEmails().includes(email)) return;
+    const allowed = adminEmails();
+    if (!email || !allowed.includes(email)) {
+      console.log(
+        `[Auth] Login link requested for non-allowlisted address (allowlist has ${allowed.length} entr${allowed.length === 1 ? "y" : "ies"}${allowed.length === 0 ? " — is ADMIN_EMAIL set?" : ""})`
+      );
+      return;
+    }
 
     try {
+      console.log("[Auth] Sending login link to allowlisted address");
       const token = await new SignJWT({ purpose: "admin-login", email })
         .setProtectedHeader({ alg: "HS256", typ: "JWT" })
         .setExpirationTime(Math.floor((Date.now() + LOGIN_LINK_TTL_MS) / 1000))
