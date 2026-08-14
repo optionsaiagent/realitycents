@@ -55,9 +55,17 @@ export const appRouter = router({
             loanAmount: z.number().optional(),
           })).max(4).optional(),
           shareData: z.string().max(100000).optional(),
+          // Honeypot — hidden on the real form; bots fill it, humans can't see it
+          website: z.string().max(200).optional(),
         })
       )
-      .mutation(async ({ input }) => {
+      .mutation(async ({ input, ctx }) => {
+        const ip = clientIp(ctx.req);
+        if (input.website || !isHumanName(input.name) || isRateLimited(ip)) {
+          // Fake success so bots don't learn and retry
+          console.log(`[Lead] Blocked calculator lead from ${ip}`);
+          return { success: true };
+        }
         // Log the lead capture
         console.log(`[Lead] Calculator: ${input.calculator} | ${input.name} (${input.email})`);
         // Notify owner (fire-and-forget)
