@@ -405,7 +405,7 @@ export async function sendGuideEmail(params: {
   }
   // Plain, personal formatting on purpose: styled buttons and heavy HTML push
   // Gmail-type clients to file the message under "Promotions".
-  const downloadUrl = "https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf?v=202608";
+  const downloadUrl = "https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf?v=202608b";
   const { error } = await resend.emails.send({
     from: FROM_ADDRESS,
     to: params.to,
