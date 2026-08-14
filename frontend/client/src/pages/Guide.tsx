@@ -40,8 +40,8 @@ const guideChapters = [
 ];
 
 const benefits = [
-  "Comprehensive 15-chapter guide covering every step",
-  "Current 2026 market data and median prices by island",
+  "Comprehensive 21-chapter guide covering every step",
+  "Current 2026 market data updated August 2026",
   "40-year Oahu appreciation analysis showing 618% growth",
   "Complete breakdown of all loan types available in Hawaii",
   "Down payment assistance programs and eligibility details",
@@ -182,7 +182,7 @@ export default function Guide() {
                     Your free Oahu Homebuyer's Guide is on its way to <strong className="text-white">{email}</strong>. It should arrive within a few minutes.
                   </p>
                   <a
-                    href="https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf"
+                    href="https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf?v=202608"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-md bg-teal px-5 py-2.5 text-sm font-body font-semibold text-white hover:bg-teal/90 transition-colors"

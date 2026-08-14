@@ -403,27 +403,21 @@ export async function sendGuideEmail(params: {
     console.warn("[Email] RESEND_API_KEY not configured — cannot send guide");
     return { success: false, error: "Email service not configured" };
   }
-  const downloadUrl = "https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf";
+  // Plain, personal formatting on purpose: styled buttons and heavy HTML push
+  // Gmail-type clients to file the message under "Promotions".
+  const downloadUrl = "https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf?v=202608";
   const { error } = await resend.emails.send({
     from: FROM_ADDRESS,
     to: params.to,
-    subject: "Your Oahu Homebuyer's Guide is here",
+    subject: "Your Oahu Homebuyer's Guide",
     attachments: [{ filename: "Oahu-Homebuyers-Guide.pdf", content: params.pdf }],
     html: `
-      <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; color: #1a2744; font-size: 16px; line-height: 1.6;">
+      <div style="font-family: Georgia, serif; max-width: 560px; color: #1a2744; font-size: 15px; line-height: 1.6;">
         <p>Aloha ${params.firstName || "there"},</p>
-        <p>Here's your copy of <strong>The Oahu Homebuyer's Guide</strong> — your roadmap to buying a home on Oahu, from neighborhoods and maintenance fees to VA loans and closing costs.</p>
-        <p>It's attached to this email, and you can also download it any time:</p>
-        <p style="margin: 24px 0;">
-          <a href="${downloadUrl}"
-             style="background: #1a2744; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block;">
-            Download the Guide (PDF)
-          </a>
-        </p>
+        <p>Your copy of The Oahu Homebuyer's Guide is attached — 46 pages covering neighborhoods, maintenance fees, loan programs, escrow, and closing on Oahu, updated August 2026.</p>
+        <p>If the attachment gives you any trouble, here's a direct link: <a href="${downloadUrl}" style="color:#16697a;">${"realitycents.com/files/guides/oahu-homebuyers-guide.pdf"}</a></p>
         <p>When a question comes up that the guide doesn't answer — and one always does — just reply to this email. I read every one.</p>
-        <p>Aloha,<br>Jay</p>
-        <hr style="border:none;border-top:1px solid #e2e5ea;margin:28px 0 16px;">
-        <p style="font-size: 12px; color: #6b7280;">Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | <a href="https://www.jay-miller.com" style="color:#6b7280;">www.jay-miller.com</a></p>
+        <p>Aloha,<br>Jay Miller<br>NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890<br>(808) 429-0811 | <a href="https://www.jay-miller.com" style="color:#6b7280;">www.jay-miller.com</a></p>
       </div>
     `,
   });
