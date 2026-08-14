@@ -61,7 +61,7 @@ export const appRouter = router({
       )
       .mutation(async ({ input, ctx }) => {
         const ip = clientIp(ctx.req);
-        if (input.website || !isHumanName(input.name) || isRateLimited(ip)) {
+        if (input.website || !isHumanName(input.name) || isRateLimited(`lead:${ip}`)) {
           // Fake success so bots don't learn and retry
           console.log(`[Lead] Blocked calculator lead from ${ip}`);
           return { success: true };
@@ -123,7 +123,7 @@ export const appRouter = router({
             ? "gibberish name"
             : isLikelyBotMessage(input.message)
               ? "junk message"
-              : isRateLimited(ip)
+              : isRateLimited(`contact:${ip}`)
                 ? "rate limit"
                 : null;
         if (botReason) {
@@ -162,7 +162,7 @@ export const appRouter = router({
       )
       .mutation(async ({ input, ctx }) => {
         const ip = clientIp(ctx.req);
-        if (input.website || !isHumanName(input.name) || isRateLimited(ip)) {
+        if (input.website || !isHumanName(input.name) || isRateLimited(`guide:${ip}`)) {
           console.log(`[Guide] Blocked delivery request from ${ip}`);
           return { success: true };
         }
