@@ -312,6 +312,40 @@ export const STATIC_PAGE_BODIES = {
     </main>
   `,
 
+  "/advisors": `
+    <main>
+      <h1>For Financial Advisors</h1>
+      <p>Your client's mortgage is the largest drag on their investable cash flow. There's a better structure.</p>
+      <section>
+        <h2>The Largest Line Item You Don't Manage</h2>
+        <p>A $600,000 mortgage at 6.25% costs your client $3,694/month for 30 years — $729,949 in total interest. That's $44K/year locked into housing during their prime earning and compounding years. The All-In-One first-lien HELOC changes that math dramatically.</p>
+      </section>
+      <section>
+        <h2>Watch the Briefing: How the AIO Creates Portfolio Capacity</h2>
+        <p>An 8-minute briefing on the mechanics, the math, the rate-risk analysis, and the suitability screen — built for advisors, not consumers. <a href="https://www.youtube.com/watch?v=inVfvRG92Uo">Watch on YouTube</a>.</p>
+      </section>
+      <section>
+        <h2>The Advisor's Edge</h2>
+        <ul>
+          <li><strong>Free Up Client Cash Flow:</strong> The average mortgage consumes $44K+/year for 30 years. The AIO pays off in 11–14 years, redirecting that payment to investable assets decades sooner.</li>
+          <li><strong>Grow Your AUM:</strong> Every dollar freed from mortgage payments is a dollar available for your management.</li>
+          <li><strong>Maintain Client Liquidity:</strong> Unlike extra payments on a fixed mortgage, every dollar paid into the AIO remains accessible on the line — no refinance needed to access equity.</li>
+          <li><strong>Holistic Financial Planning:</strong> Position yourself as the advisor who optimizes the full balance sheet — not just the investment accounts.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How the All-In-One Works</h2>
+        <ul>
+          <li><strong>Paycheck Deposits:</strong> Full income deposits into the line, immediately reducing the balance.</li>
+          <li><strong>Balance Drops Daily:</strong> Interest is calculated on the average daily balance — every idle dollar saves interest.</li>
+          <li><strong>Bills Paid as Usual:</strong> The client pays expenses from the same account. The balance rises only when money is spent.</li>
+          <li><strong>Surplus Retires Principal:</strong> The gap between income and spending automatically accelerates payoff — no extra effort.</li>
+        </ul>
+        <p>The All-In-One is a variable-rate first-lien HELOC tied to 30-day average SOFR plus a fixed margin. Suitability is narrow: it fits households with a genuine monthly surplus and stable deposits. Jay Miller, NMLS #657301, CMG Home Loans, runs the official simulator on each client's real numbers and returns a personalized comparison with every assumption on the page.</p>
+      </section>
+    </main>
+  `,
+
   "/dscr-calculator": `
     <main>
       <h1>DSCR Investment Property Analyzer — Hawaii Rental Calculator</h1>

@@ -580,6 +580,33 @@ const STATIC_PAGES = {
       },
     ],
   },
+  "/advisors": {
+    title: "Financial Advisors — Free Up Client Cash Flow with the AIO",
+    description: "The All-In-One first-lien HELOC helps your clients pay off their mortgage in 11-14 years instead of 30, freeing $44K+/year for portfolio growth. Watch the 8-minute advisor briefing and partner with Jay Miller at CMG Home Loans.",
+    keywords: "financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One loan",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: "The Largest Allocation You Don't Manage — The All-In-One Loan, for Financial Advisors",
+        description: "An 8-minute briefing for financial advisors on the All-In-One first-lien HELOC: the mechanics, the math, the rate-risk analysis, and the suitability screen.",
+        thumbnailUrl: `${BASE_URL}/aio-advisor-poster.png`,
+        uploadDate: "2026-08-22",
+        duration: "PT8M34S",
+        embedUrl: "https://www.youtube.com/embed/inVfvRG92Uo",
+        contentUrl: "https://www.youtube.com/watch?v=inVfvRG92Uo",
+        publisher: { "@type": "Organization", name: SITE_NAME, url: BASE_URL },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "For Financial Advisors", item: `${BASE_URL}/advisors` },
+        ],
+      },
+    ],
+  },
   "/dscr-calculator": {
     title: "DSCR Investment Property Analyzer — Hawaii Rental Calculator",
     description: "Screen rental properties for DSCR loan qualification. Get rent estimates, calculate debt service coverage ratio, and determine if a deal pencils for Hawaii investment properties.",
