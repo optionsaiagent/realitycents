@@ -20,37 +20,39 @@ export interface VideoChapter {
 
 export const FEATURED_VIDEO = {
   /** ⬇⬇⬇  REPLACE THIS with the real YouTube video ID  ⬇⬇⬇ */
-  youtubeId: "fF1JsWsWfEs",
+  youtubeId: "vuYeyF_63fE",
 
   title:
-    "First-Lien HELOC Explained: How an $800,000 Loan Gets Paid Off in 14 Years",
-  shortTitle: "The First-Lien HELOC Deep Dive",
-  runtime: "9:00",
+    "Your Mortgage Rate Is Not What You Pay — The All-In-One Loan, Explained",
+  shortTitle: "The All-In-One Loan, Explained",
+  runtime: "8:25",
 
-  /** Poster used until the video is live (and as a social preview image). */
-  poster:
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/WsrBFSfGiERxrFoj.png",
+  /** Poster used until the video is live (and as a social preview image). Served from /public. */
+  poster: "/aio-explainer-poster.png",
 
   description:
-    "A complete walkthrough of how a first-lien HELOC — also called an All-In-One or AIO mortgage — actually works, using real figures from a lender simulation on an $800,000 loan. Both scenarios spend the same money each month. No extra payments.",
+    "A complete walkthrough of how the All-In-One loan — a first-lien HELOC — actually works, following one sample scenario from the lender's Interactive Comparison Simulator: a $1,000,000 home, 20% down, $800,000 financed. The benefits and the risks, stated plainly. No extra payments, no tighter budget.",
 
-  /** Headline figures pulled from the simulation shown in the video. */
+  /** Headline figures pulled from the simulation shown in the video (simulator key Cw5-Yvj-3f5). */
   stats: [
-    { value: "14 yrs", label: "Payoff instead of 30" },
-    { value: "$527,401", label: "Total interest saved" },
-    { value: "3.202%", label: "Effective rate on a 6.881% loan" },
+    { value: "12.4 yrs", label: "Payoff instead of 30" },
+    { value: "$630,769", label: "Total interest saved" },
+    { value: "2.841%", label: "Effective rate on a 6.869% loan" },
   ],
 
-  /** Chapters mirror the video's scene timeline. */
+  /** Chapters mirror the video's scene timeline (v2.2, 8:25). */
   chapters: [
-    { at: 14, label: "What a first-lien HELOC actually is" },
-    { at: 67, label: "How the sweep works" },
-    { at: 117, label: "You choose your margin (2.50%–4.00%)" },
-    { at: 162, label: "Month one, head to head" },
-    { at: 276, label: "The gap accelerates" },
-    { at: 332, label: "Why a higher rate costs less" },
-    { at: 411, label: "The rate moves, you don't refinance" },
-    { at: 455, label: "What happens after year 10" },
+    { at: 0, label: "Your rate is not what you pay" },
+    { at: 43, label: "The 30-year fixed, dissected" },
+    { at: 108, label: "What the All-In-One actually is" },
+    { at: 134, label: "Day one: your paycheck drops the balance" },
+    { at: 201, label: "The engine: year-one interest vs. the average" },
+    { at: 254, label: "The rate, reframed: 6.869% sticker, ≈2.8% effective" },
+    { at: 296, label: "25 years of the index (SOFR)" },
+    { at: 340, label: "The race: $630,769 kept, paid off in 12.4 years" },
+    { at: 378, label: "Equity you can reach — access for all 30 years" },
+    { at: 408, label: "The risks, stated plainly" },
+    { at: 441, label: "Who it's for — and when to model it anyway" },
   ] as VideoChapter[],
 
   /** Where the "run your own numbers" link points. */

@@ -113,15 +113,15 @@ export default function Advisors() {
               How the AIO Creates Portfolio Capacity
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A 10-minute walkthrough of the mechanics, the math, and the rate-risk analysis —
-              built for advisors, not consumers.
+              An 8-minute briefing on the mechanics, the math, the rate-risk analysis, and the
+              suitability screen — built for advisors, not consumers.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
               <iframe
-                src="https://www.youtube.com/embed/bTjf-_1twVk"
+                src="https://www.youtube.com/embed/inVfvRG92Uo"
                 title="AIO Advisor Briefing — How the All-In-One Creates Portfolio Capacity"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
