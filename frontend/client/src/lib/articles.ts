@@ -3322,7 +3322,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
   {
     slug: "hale-kamaaina-mortgage-program-hawaii",
     title: "The Hale Kamaʻāina Mortgage Program: How Hawaii First-Time Buyers Can Get a Below-Market Rate",
-    excerpt: "On May 7, 2026, three Hawaii families closed on their homes at 4.65% — not a teaser rate, not a buydown, not a gimmick. That's the actual 30-year fixed rate available right now through the Hale Kamaʻāina Mortgage Program. Here's everything you need to know to qualify.",
+    excerpt: "HHFDC's Hale Kamaʻāina Mortgage Program uses tax-exempt bonds to offer eligible Hawaii first-time buyers a below-market 30-year fixed rate and optional down payment assistance. Here's who qualifies, the income and price limits, and how to apply.",
     category: "Hawaii Specific",
     readTime: "10 min read",
     date: "2026-05-10",
