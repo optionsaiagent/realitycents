@@ -24,11 +24,11 @@ export const STATIC_PAGE_BODIES = {
         <h2>What We Offer</h2>
         <p>RealityCents provides free mortgage education, professional calculators, and personalized lending services for Hawaii homebuyers. Whether you're a first-time buyer, military service member, or real estate investor, we have the tools and expertise to guide you through Hawaii's unique real estate market.</p>
         <ul>
-          <li><strong>Free Mortgage Calculators</strong> — Basic, Advanced, Affordability, Rent vs. Buy, Buydown, Military Buying Power, and Loan Comparison tools</li>
-          <li><strong>Knowledge Base</strong> — 30+ expert articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
-          <li><strong>Agent Tools</strong> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
-          <li><strong>VA Condo Lookup</strong> — Searchable directory of ${CONDO_TOTAL} VA-approved condo projects on Oahu</li>
-          <li><strong>Free Homebuying Guide</strong> — Comprehensive step-by-step guide to buying a home in Hawaii</li>
+          <li><a href="${BASE_URL}/calculator">Free Mortgage Calculators</a> — Basic, Advanced, Affordability, Rent vs. Buy, Buydown, <a href="${BASE_URL}/military-calculator">Military Buying Power</a>, and Loan Comparison tools</li>
+          <li><a href="${BASE_URL}/knowledge-base">Knowledge Base</a> — 30+ expert articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
+          <li><a href="${BASE_URL}/agents">Agent Tools</a> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
+          <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — Searchable directory of ${CONDO_TOTAL} VA-approved condo projects on Oahu</li>
+          <li><a href="${BASE_URL}/guide">Free Homebuying Guide</a> — Comprehensive step-by-step guide to buying a home in Hawaii</li>
         </ul>
       </section>
       <section>
@@ -40,7 +40,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Hawaii Mortgage FAQ</h2>
         <dl>
           <dt>What is the conforming loan limit in Hawaii?</dt>
-          <dd>Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $806,500.</dd>
+          <dd>Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $832,750.</dd>
           <dt>What is the minimum down payment for a home in Hawaii?</dt>
           <dd>VA loans require 0% down. FHA loans require 3.5% down with a 580+ credit score. Conventional loans can go as low as 3% down for first-time buyers.</dd>
           <dt>Can I use a VA loan to buy a condo in Hawaii?</dt>
@@ -213,7 +213,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Loan Basics</h2>
         <dl>
           <dt>What is the conforming loan limit in Hawaii for 2026?</dt>
-          <dd>The conforming loan limit for Honolulu County is $1,249,125 for a single-family home — significantly higher than the national baseline of $806,500. This means you can get a conventional loan up to this amount without jumbo pricing.</dd>
+          <dd>The conforming loan limit for Honolulu County is $1,249,125 for a single-family home — significantly higher than the national baseline of $832,750. This means you can get a conventional loan up to this amount without jumbo pricing.</dd>
           <dt>What credit score do I need to buy a home in Hawaii?</dt>
           <dd>Minimum scores vary by loan type: VA loans have no VA-mandated minimum (most lenders require 580–620), FHA requires 580 for 3.5% down (500 for 10% down), and conventional typically requires 620+. Higher scores get better rates.</dd>
           <dt>How much are closing costs in Hawaii?</dt>

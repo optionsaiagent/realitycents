@@ -33,7 +33,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 
 - [Hawaii Home Loan FAQ](https://realitycents.com/faq): Top questions about obtaining a mortgage in Honolulu — VA loans, FHA, conventional, loan limits, condo warrantability, closing costs, timelines, and first-time buyer programs.
 - [About Jay Miller](https://realitycents.com/about): Professional background, credentials (NMLS# 657301), US Army veteran status, specializations, and contact information.
-- [Knowledge Base](https://realitycents.com/knowledge-base): 28 in-depth articles covering Hawaii mortgage topics including VA loans, FHA, conventional, jumbo, leasehold financing, condo warrantability, credit, down payment assistance, DTI strategies, and refinancing.
+- [Knowledge Base](https://realitycents.com/knowledge-base): In-depth articles covering Hawaii mortgage topics including VA loans, FHA, conventional, jumbo, leasehold financing, condo warrantability, credit, down payment assistance, DTI strategies, and refinancing.
 
 ## Calculators
 
@@ -65,10 +65,10 @@ Interactive Hawaii-specific mortgage calculators for self-service estimates:
 
 ## Hawaii-Specific Topics
 
-- [Termite Inspection (PC-9)](https://realitycents.com/hawaii-guides/termite-inspection): Hawaii's mandatory wood-destroying insect inspection, PC-9 form validity periods, and VA loan-specific rules.
-- [HOA Fees and Mortgage Qualification](https://realitycents.com/hawaii-guides/hoa-fees): How Honolulu condo HOA fees impact mortgage qualification, reserve study review, and special assessment risks.
-- [Military PCS to Hawaii](https://realitycents.com/hawaii-guides/pcs-relocation): BAH rates, VA loan entitlement strategy, remote pre-approval, and ARM vs. fixed-rate considerations for 3-year tours.
-- [First-Time Buyer Programs](https://realitycents.com/hawaii-guides/first-time-buyer): Honolulu DPA loan (up to $40,000 at 0% interest), HHFDC Hale Kama'aina program, and homebuyer education requirements.
+- [Termite Inspection (PC-9)](https://realitycents.com/knowledge-base/home-inspection-tips-hawaii): Hawaii's mandatory wood-destroying insect inspection, PC-9 form validity periods, and VA loan-specific rules.
+- [HOA Fees and Mortgage Qualification](https://realitycents.com/knowledge-base/hoa-considerations-hawaii-condos): How Honolulu condo HOA fees impact mortgage qualification, reserve study review, and special assessment risks.
+- [Military PCS to Hawaii](https://realitycents.com/knowledge-base/va-loans-hawaii-military): BAH rates, VA loan entitlement strategy, remote pre-approval, and ARM vs. fixed-rate considerations for 3-year tours.
+- [First-Time Buyer Programs](https://realitycents.com/knowledge-base/first-time-homebuyer-guide-hawaii): Honolulu DPA loan (up to $40,000 at 0% interest), HHFDC Hale Kama'aina program, and homebuyer education requirements.
 
 ## Contact
 
@@ -81,6 +81,6 @@ Website: https://realitycents.com
 
 ## Optional
 
-- [Blog](https://realitycents.com/blog): Market updates, rate commentary, VA loan news, and homebuying tips for Oahu.
+- [Knowledge Base](https://realitycents.com/knowledge-base): Market updates, rate commentary, VA loan news, and homebuying tips for Oahu.
 - [Instagram](https://www.instagram.com/jaymillercmg): VA loan education content and Hawaii real estate insights.
 - [YouTube — Racing Through Midlife](https://www.youtube.com/@RacingThroughMidlife): Jay Miller's personal channel.

@@ -34,6 +34,22 @@ const BASE_URL = "https://realitycents.com";
 const SITE_NAME = "RealityCents";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 const DEFAULT_IMAGE_ALT = "RealityCents - Hawaii Mortgage Education & Lending";
+const BOOK_COVER = `${BASE_URL}/images/zero-down-in-paradise-cover.webp`;
+
+/** Fallback only: dead Manus/CloudFront URLs → default OG. Per-article heroes pass through. */
+function resolveOgImage(image) {
+  if (!image) return DEFAULT_IMAGE;
+  if (
+    image.includes("manuscdn.com") ||
+    image.includes("cloudfront.net") ||
+    image.includes("d2xsxph8kpxj0f")
+  ) {
+    return DEFAULT_IMAGE;
+  }
+  if (image.startsWith("http://") || image.startsWith("https://")) return image;
+  const path = image.startsWith("/") ? image : `/${image}`;
+  return `${BASE_URL}${path}`;
+}
 
 // ─── Load article data extracted at build time ──────────────────────────────
 const articlesFullPath = path.resolve(__dirname, "article-data-full.json");
@@ -73,7 +89,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "What is the conforming loan limit in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $806,500. Loans above this limit are considered jumbo loans and require different qualification standards." } },
+          { "@type": "Question", name: "What is the conforming loan limit in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $832,750. Loans above this limit are considered jumbo loans and require different qualification standards." } },
           { "@type": "Question", name: "What is the minimum down payment for a home in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Down payment requirements vary by loan type. VA loans (for eligible veterans and military) require 0% down. FHA loans require 3.5% down with a 580+ credit score. Conventional loans can go as low as 3% down for first-time buyers. Jumbo loans typically require 10–20% down. There are also 0% down portfolio loan options available up to $998,000 for buyers who meet certain requirements — contact Jay for details." } },
           { "@type": "Question", name: "What is a leasehold property in Hawaii and can I get a mortgage on one?", acceptedAnswer: { "@type": "Answer", text: "A leasehold property means you own the structure but lease the land from a landowner (often the Bishop Estate or other large landowners). Mortgages on leasehold properties are available but have additional requirements. For conventional loans, lenders require at least 5 years remaining on the lease term after the loan term expires — meaning a 30-year loan requires at least 35 years remaining on the lease. Some lenders restrict leasehold financing entirely. Fee simple (owning both land and structure) is generally preferred by lenders." } },
           { "@type": "Question", name: "How long does mortgage pre-approval take in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "A standard pre-approval typically takes 1 business day once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market." } },
@@ -530,7 +546,7 @@ const STATIC_PAGES = {
     title: "Zero Down in Paradise — The Hawaii VA Loan Playbook | Book by Jay Miller",
     description: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers, by Jay Miller. The definitive guide to buying a home in Hawaii with your VA loan — entitlement, BAH, condo approvals, leasehold vs. fee simple, and zero-down strategies. Available on Amazon.",
     keywords: "Zero Down in Paradise book, Hawaii VA loan book, Jay Miller author, VA loan playbook Hawaii, military homebuying Hawaii book, buy home Hawaii zero down",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/SzYBcKAOVmJmpWby.webp",
+    image: BOOK_COVER,
     imageAlt: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers — book cover",
     schema: [
       {
@@ -543,7 +559,7 @@ const STATIC_PAGES = {
         bookFormat: "https://schema.org/Paperback",
         datePublished: "2026-07-03",
         inLanguage: "en-US",
-        image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/SzYBcKAOVmJmpWby.webp",
+        image: BOOK_COVER,
         url: `${BASE_URL}/zero-down-in-paradise`,
         offers: {
           "@type": "Offer",
@@ -696,7 +712,7 @@ function buildArticleMeta(article) {
     "@id": `${BASE_URL}/knowledge-base/${article.slug}/#article`,
     headline: article.title,
     description: article.excerpt,
-    image: { "@type": "ImageObject", url: article.image, width: 1200, height: 630 },
+    image: { "@type": "ImageObject", url: resolveOgImage(article.image), width: 1600, height: 900 },
     datePublished: toHST(article.date),
     dateModified: toHST(article.date),
     wordCount: meta.wordCount || 1500,
@@ -756,7 +772,7 @@ function buildArticleMeta(article) {
     title: article.title,
     description: `${article.excerpt} Expert mortgage guidance from Jay Miller, NMLS #657301, CMG Home Loans Hawaii.`,
     keywords: meta.keywords || `${article.category}, Hawaii mortgage, ${article.title.toLowerCase()}, Jay Miller mortgage, CMG Home Loans Hawaii`,
-    image: article.image,
+    image: resolveOgImage(article.image),
     imageAlt: article.title,
     type: "article",
     schema: schemas,
@@ -882,7 +898,7 @@ ${categoryBlocks}
 function customizeHtml(baseHtml, route, meta, bodyContent = null) {
   const url = canonicalUrl(route);
   const fullTitle = meta.title.includes(SITE_NAME) ? meta.title : `${meta.title} | ${SITE_NAME}`;
-  const image = meta.image || DEFAULT_IMAGE;
+  const image = resolveOgImage(meta.image || DEFAULT_IMAGE);
   const imageAlt = meta.imageAlt || DEFAULT_IMAGE_ALT;
   const ogType = meta.type || "website";
 
@@ -973,7 +989,7 @@ function customizeHtml(baseHtml, route, meta, bodyContent = null) {
     const schemaBlocks = meta.schema
       .map(
         (s, i) =>
-          `    <script type="application/ld+json" data-page-schema="${i}">\n    ${JSON.stringify(s)}\n    </script>`
+          `    <script type="application/ld+json" data-page-schema="${i}">\n    ${JSON.stringify(s, (_k, v) => typeof v === "string" && /\.(jpe?g|png|webp)(\?|$)/i.test(v) ? resolveOgImage(v) : v)}\n    </script>`
       )
       .join("\n");
     html = html.replace("  </head>", `${schemaBlocks}\n  </head>`);
@@ -983,16 +999,14 @@ function customizeHtml(baseHtml, route, meta, bodyContent = null) {
 
   // 10. Inject semantic HTML body (before React mount point)
   if (bodyContent) {
-    const prerenderedContent = `    <div id="prerendered-content" style="display:none;">\n${bodyContent}\n    </div>\n    `;
+    const prerenderedContent = `    <div id="prerendered-content" aria-hidden="true">\n${bodyContent}\n    </div>\n    `;
     html = html.replace(
       '    <div id="root"></div>',
       `${prerenderedContent}    <div id="root"></div>`
     );
 
-    // Note: prerendered-content starts with display:none and is NEVER shown visually.
-    // It exists solely for search engine crawlers (Googlebot renders JS but also reads
-    // the static HTML). The #root opacity fix in index.html handles the FOUC for real users.
-    // DO NOT add any script that sets display:block on prerendered-content.
+    // Note: prerendered-content is visually clipped (not display:none) so crawlers
+    // can still read <a href> and article copy. It is never shown to users.
   }
 
   return html;

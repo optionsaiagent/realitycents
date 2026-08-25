@@ -136,7 +136,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     ],
     faqSchema: [
       { question: "What is a conventional loan?", answer: "A conventional loan is a mortgage not insured or guaranteed by the government. Conventional loans are offered by banks, credit unions, and mortgage companies. They typically require a higher credit score and larger down payment than FHA or VA loans, but offer competitive interest rates for well-qualified borrowers." },
-      { question: "What is the conforming loan limit in Hawaii for 2026?", answer: "In 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125. Loans above this limit are considered jumbo loans and have different qualification requirements. Hawaii's limit is significantly higher than the national baseline of $806,500 because it's a high-cost state." },
+      { question: "What is the conforming loan limit in Hawaii for 2026?", answer: "In 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125. Loans above this limit are considered jumbo loans and have different qualification requirements. Hawaii's limit is significantly higher than the national baseline of $832,750 because it's a high-cost state." },
       { question: "How much down payment do I need for a conventional loan in Hawaii?", answer: "Conventional loans typically require a minimum down payment of 3-5% for first-time buyers, though some lenders offer 3% down programs. With 20% down, you avoid PMI (private mortgage insurance). Down payment requirements vary based on credit score, debt-to-income ratio, and property type." }
     ],
   },

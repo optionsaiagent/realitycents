@@ -90,7 +90,7 @@ export default function Home() {
               "name": "What is the conforming loan limit in Hawaii?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $806,500. Loans above this limit are considered jumbo loans and require different qualification standards."
+                "text": "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $832,750. Loans above this limit are considered jumbo loans and require different qualification standards."
               }
             },
             {
@@ -491,7 +491,7 @@ export default function Home() {
               {[
                 {
                   q: "What is the conforming loan limit in Hawaii?",
-                  a: "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $806,500. Loans above this limit are jumbo loans and require different qualification standards."
+                  a: "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $832,750. Loans above this limit are jumbo loans and require different qualification standards."
                 },
                 {
                   q: "What is the minimum down payment for a home in Hawaii?",

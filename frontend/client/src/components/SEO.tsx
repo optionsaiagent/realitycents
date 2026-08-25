@@ -36,6 +36,19 @@ function toAbsoluteUrl(pathOrUrl: string): string {
   return `${BASE_URL}${path}`;
 }
 
+/** Fallback only: dead Manus/CloudFront URLs → default OG. Per-article heroes pass through. */
+function resolveOgImage(image?: string): string {
+  if (!image) return DEFAULT_IMAGE;
+  if (
+    image.includes("manuscdn.com") ||
+    image.includes("cloudfront.net") ||
+    image.includes("d2xsxph8kpxj0f")
+  ) {
+    return DEFAULT_IMAGE;
+  }
+  return toAbsoluteUrl(image);
+}
+
 function setMeta(name: string, content: string, attr: "name" | "property" = "name") {
   let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
   if (!el) {
@@ -64,7 +77,12 @@ function injectSchema(schema: object | object[]) {
     const el = document.createElement("script");
     el.setAttribute("type", "application/ld+json");
     el.setAttribute("data-page-schema", String(i));
-    el.textContent = JSON.stringify(s);
+    el.textContent = JSON.stringify(s, (_key, value) => {
+      if (typeof value === "string" && /\.(jpe?g|png|webp)(\?|$)/i.test(value)) {
+        return resolveOgImage(value);
+      }
+      return value;
+    });
     document.head.appendChild(el);
   });
 }
@@ -103,7 +121,7 @@ export default function SEO({
     setMeta("og:site_name", SITE_NAME, "property");
     setMeta("og:title", title, "property");
     setMeta("og:description", description, "property");
-    const ogImage = toAbsoluteUrl(image);
+    const ogImage = resolveOgImage(image);
 
     setMeta("og:image", ogImage, "property");
     setMeta("og:image:alt", imageAlt, "property");

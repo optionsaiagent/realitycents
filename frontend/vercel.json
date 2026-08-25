@@ -21,9 +21,80 @@
           "value": "noindex"
         }
       ]
+    },
+    {
+      "source": "/404.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ],
   "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.realitycents.com" }],
+      "destination": "https://realitycents.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.realitycents.com" }],
+      "destination": "https://realitycents.com/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-veterans-guide-to-hawaii-va-home-loans",
+      "destination": "/knowledge-base/va-loans-hawaii-military",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-veterans-guide-to-hawaii-va-home-loans/",
+      "destination": "/knowledge-base/va-loans-hawaii-military",
+      "statusCode": 301
+    },
+    {
+      "source": "/can-you-have-multiple-va-loans",
+      "destination": "/knowledge-base/va-second-tier-entitlement-hawaii",
+      "statusCode": 301
+    },
+    {
+      "source": "/can-you-have-multiple-va-loans/",
+      "destination": "/knowledge-base/va-second-tier-entitlement-hawaii",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-conventional-mortgage-loan-limits-increased",
+      "destination": "/frequently-asked-questions",
+      "statusCode": 301
+    },
+    {
+      "source": "/2025-conventional-mortgage-loan-limits-increased/",
+      "destination": "/frequently-asked-questions",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-am-i-required-to-pay-private-mortgage-insurance-pmi",
+      "destination": "/knowledge-base/down-payment-myth-hawaii-pmi-vs-appreciation",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-am-i-required-to-pay-private-mortgage-insurance-pmi/",
+      "destination": "/knowledge-base/down-payment-myth-hawaii-pmi-vs-appreciation",
+      "statusCode": 301
+    },
+    {
+      "source": "/mortgagecalcplus/va-eligibility-calculator",
+      "destination": "/military-calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/mortgagecalcplus/va-eligibility-calculator/",
+      "destination": "/military-calculator",
+      "statusCode": 301
+    },
     {
       "source": "/faq",
       "destination": "/frequently-asked-questions",

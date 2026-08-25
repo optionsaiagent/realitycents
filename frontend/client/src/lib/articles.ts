@@ -37,7 +37,7 @@ const allArticles: Article[] = [
     readTime: "8 min",
     date: "2026-08-10",
     featured: true,
-    lastUpdated: "August 2026",
+    lastUpdated: "2026-08-10",
     image: "/images/heroes/va-second-tier-entitlement-hawaii.webp",
     content: `# The Second VA Loan Strategy: How to Buy Again Without Selling Your First Home
 
@@ -1137,7 +1137,7 @@ A conventional loan is any mortgage that isn't insured or guaranteed by a govern
 
 ## Conforming vs. Non-Conforming
 
-**Conforming loans** meet the guidelines set by Fannie Mae and Freddie Mac, including loan amount limits. For 2026, the national baseline conforming loan limit is **$806,500** for a single-family home. In Honolulu County, Hawaii, the limit is set at the high-cost ceiling of **$1,249,125** — significantly higher than the national baseline, reflecting Hawaii's elevated property values.
+**Conforming loans** meet the guidelines set by Fannie Mae and Freddie Mac, including loan amount limits. For 2026, the national baseline conforming loan limit is **$832,750** for a single-family home. In Honolulu County, Hawaii, the limit is set at the high-cost ceiling of **$1,249,125** — significantly higher than the national baseline, reflecting Hawaii's elevated property values.
 
 **Non-conforming loans** (jumbo loans) exceed these limits and have different qualification requirements. Given Hawaii's property values, many buyers will need jumbo financing, which we cover in a separate article.
 
@@ -3321,12 +3321,12 @@ The data says the window is open. It doesn't say how long it stays open. If you'
   },
   {
     slug: "hale-kamaaina-mortgage-program-hawaii",
-    title: "The Hale Kamaʻāina Mortgage Program Is Now Live — Here's How Hawaii First-Time Buyers Can Get a Rate Below 5%",
+    title: "The Hale Kamaʻāina Mortgage Program: How Hawaii First-Time Buyers Can Get a Below-Market Rate",
     excerpt: "On May 7, 2026, three Hawaii families closed on their homes at 4.65% — not a teaser rate, not a buydown, not a gimmick. That's the actual 30-year fixed rate available right now through the Hale Kamaʻāina Mortgage Program. Here's everything you need to know to qualify.",
     category: "Hawaii Specific",
     readTime: "10 min read",
     date: "2026-05-10",
-    lastUpdated: "May 2026",
+    lastUpdated: "2026-08-25",
     image: "/images/heroes/hale-kamaaina-mortgage-program-hawaii.webp",
     featured: true,
     draft: false,

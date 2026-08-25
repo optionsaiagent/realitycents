@@ -60,6 +60,8 @@ export const NAV_LINKS = [
   { label: "Agent Tools", href: "/agents" },
   { label: "Calculator", href: "/calculator" },
   { label: "Advanced Calculator", href: "/advanced-calculator" },
+  { label: "Military Buying Power", href: "/military-calculator" },
+  { label: "VA Condo Lookup", href: "/va-approved-condos-oahu" },
   { label: "Homebuying Guide", href: "/guide" },
   { label: "Contact", href: "/contact" },
   { label: "FAQ", href: "/frequently-asked-questions" },
