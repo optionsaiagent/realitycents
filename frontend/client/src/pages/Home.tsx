@@ -371,11 +371,11 @@ export default function Home() {
                     href={`/knowledge-base/${article.slug}`}
                     className="group flex flex-col rounded-2xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
                   >
-                    <div className="relative h-48 lg:h-56 overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden">
                       <img
                         src={article.image}
                         alt={article.title}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="absolute inset-0 w-full h-full object-cover object-left group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
                       <div className="absolute top-4 left-4">
