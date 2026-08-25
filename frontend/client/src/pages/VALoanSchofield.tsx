@@ -208,7 +208,6 @@ export default function VALoanSchofield() {
         title="VA Loan Guide for Schofield Barracks"
         subtitle="Buy a Home on Oahu with $0 Down"
         image={HERO_IMAGE}
-        imageAlt="Military housing near Schofield Barracks, Oahu Hawaii"
       />
 
       {/* ─── Opening Section ─────────────────────────────────────────────── */}

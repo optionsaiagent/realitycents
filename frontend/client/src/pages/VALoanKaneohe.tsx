@@ -218,7 +218,6 @@ export default function VALoanKaneohe() {
         title="VA Loan Guide for MCBH Kaneohe Bay"
         subtitle="Buy a Home on Oahu with $0 Down"
         image={HERO_IMAGE}
-        imageAlt="Military housing near Marine Corps Base Hawaii, Kaneohe Bay Oahu"
       />
 
       {/* ─── Opening Section ─────────────────────────────────────────────── */}

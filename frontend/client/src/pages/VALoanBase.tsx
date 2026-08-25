@@ -9,7 +9,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import ShareGuide from "@/components/ShareGuide";
-import { LENDER, IMAGES, PRE_APPROVAL_URL } from "@/lib/constants";
+import { LENDER, IMAGES, IMAGE_ALTS, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import {
   MapPin,
@@ -117,7 +117,7 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
         title={`VA Loan Guide for ${data.installationName}`}
         subtitle={data.heroSubtitle}
         image={HERO_IMAGE}
-        imageAlt={`Military housing near ${data.installationName}, Oahu Hawaii`}
+        imageAlt={IMAGE_ALTS.heroMilitary}
       />
 
       {/* Opening */}

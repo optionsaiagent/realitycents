@@ -219,7 +219,6 @@ export default function VALoanTripler() {
         title="VA Loan Guide for Tripler Army Medical Center"
         subtitle="Buy a Home on Oahu with $0 Down"
         image={HERO_IMAGE}
-        imageAlt="Military housing near Tripler Army Medical Center, Oahu Hawaii"
       />
 
       {/* ─── Opening Section ─────────────────────────────────────────────── */}

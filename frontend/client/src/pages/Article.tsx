@@ -130,9 +130,11 @@ export default function Article() {
       description: article.excerpt,
       image: {
         "@type": "ImageObject",
-        url: article.image,
-        width: 1200,
-        height: 630,
+        url: article.image.startsWith("http")
+          ? article.image
+          : `https://realitycents.com${article.image.startsWith("/") ? article.image : `/${article.image}`}`,
+        width: 1600,
+        height: 900,
       },
       datePublished: toHST(article.date),
       dateModified,

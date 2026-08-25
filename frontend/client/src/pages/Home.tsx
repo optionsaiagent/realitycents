@@ -8,7 +8,7 @@ import Layout from "@/components/Layout";
 import WaveDivider from "@/components/WaveDivider";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { IMAGES, IMAGE_ALTS, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import FeaturedVideo from "@/components/FeaturedVideo";
 import { getFeaturedArticles } from "@/lib/articles";
@@ -78,6 +78,8 @@ export default function Home() {
         title="Hawaii Mortgage Education & Lending"
         description="Hawaii's trusted mortgage resource. Jay Miller, NMLS #657301, CMG Home Loans — expert mortgage guidance, free homebuying guide, mortgage calculator, and 25+ years of Hawaii real estate expertise. Serving Oahu, Maui, Kauai, and the Big Island."
         url="/"
+        image={IMAGES.heroHome}
+        imageAlt={IMAGE_ALTS.heroHome}
         keywords="Hawaii mortgage, Hawaii home loans, mortgage lender Honolulu, Jay Miller mortgage, CMG Home Loans Hawaii, FHA loans Hawaii, VA loans Hawaii, first time homebuyer Hawaii, Hawaii mortgage calculator, Oahu home loans"
         schema={{
           "@context": "https://schema.org",
@@ -139,7 +141,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src={IMAGES.heroHome}
-            alt="Honolulu coastline aerial view"
+            alt={IMAGE_ALTS.heroHome}
             className="w-full h-full object-cover"
             loading="eager"
           />
@@ -226,7 +228,7 @@ export default function Home() {
       {/* ===== ABOUT PREVIEW ===== */}
       <section className="bg-navy py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
-          <img src={IMAGES.heroAbout} alt="Jay Miller, Hawaii Mortgage Loan Originator, CMG Home Loans" className="w-full h-full object-cover" />
+          <img src={IMAGES.heroAbout} alt={IMAGE_ALTS.heroAbout} className="w-full h-full object-cover" />
         </div>
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -422,7 +424,7 @@ export default function Home() {
             <div className="relative rounded-xl overflow-hidden group">
               <img
                 src={IMAGES.heroGuide}
-                alt="Hawaii coastline"
+                alt={IMAGE_ALTS.heroGuide}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/60 to-navy/30" />
@@ -450,7 +452,7 @@ export default function Home() {
             <div className="relative rounded-xl overflow-hidden group">
               <img
                 src={IMAGES.heroAgents}
-                alt="Professional meeting"
+                alt={IMAGE_ALTS.heroAgents}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/60 to-navy/30" />

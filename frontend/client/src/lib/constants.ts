@@ -34,9 +34,20 @@ export const IMAGES = {
   heroCalculator: "/images/heroes/page-calculator.webp",
   heroGuide: "/images/heroes/page-guide.webp",
   heroAgents: "/images/heroes/page-agents.webp",
+  heroAdvisors: "/images/heroes/page-advisors.webp",
   headshot: "/images/jay-miller-headshot.webp",
   cmgLogo: "/images/cmg-home-loans-logo.png",
   logo: "/images/realitycents-logo.png",
+} as const;
+
+export const IMAGE_ALTS = {
+  heroHome: "Honolulu and Diamond Head seen from the water along the Waikiki coastline",
+  heroAbout: "Modest single-story Hawaii home with glowing windows at dusk, framed by palm trees",
+  heroCalculator: "Hawaii home workspace with a desk, notebook, and a window view of tropical hills",
+  heroGuide: "Hawaii beach at sunset seen from a beachfront home patio with palm trees and lounge chairs",
+  heroAgents: "Bright Hawaii home office with a laptop and potted plants looking out onto palm trees",
+  heroAdvisors: "Bright, uncluttered Hawaii home office with a white desk, black chair, and daylight through window blinds",
+  heroMilitary: "Quiet sunlit residential street in Hawaii lined with plantation-style homes and palm trees",
 } as const;
 
 export const PRE_APPROVAL_URL = "https://www.jay-miller.com";

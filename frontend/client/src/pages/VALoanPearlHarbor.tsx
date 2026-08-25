@@ -219,7 +219,6 @@ export default function VALoanPearlHarbor() {
         title="VA Loan Guide for Pearl Harbor-Hickam"
         subtitle="Buy a Home on Oahu with $0 Down"
         image={HERO_IMAGE}
-        imageAlt="Military housing near Joint Base Pearl Harbor-Hickam, Oahu Hawaii"
       />
 
       {/* ─── Opening Section ─────────────────────────────────────────────── */}
