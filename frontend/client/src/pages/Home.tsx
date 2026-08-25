@@ -421,11 +421,11 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Homebuyers CTA */}
-            <div className="relative rounded-xl overflow-hidden group">
+            <div className="relative rounded-xl overflow-hidden group lg:aspect-[16/9]">
               <img
                 src={IMAGES.heroGuide}
                 alt={IMAGE_ALTS.heroGuide}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/60 to-navy/30" />
               <div className="relative z-10 p-8 lg:p-10 flex flex-col justify-end min-h-[320px]">
@@ -449,11 +449,11 @@ export default function Home() {
             </div>
 
             {/* Agents CTA */}
-            <div className="relative rounded-xl overflow-hidden group">
+            <div className="relative rounded-xl overflow-hidden group lg:aspect-[16/9]">
               <img
                 src={IMAGES.heroAgents}
                 alt={IMAGE_ALTS.heroAgents}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/60 to-navy/30" />
               <div className="relative z-10 p-8 lg:p-10 flex flex-col justify-end min-h-[320px]">
