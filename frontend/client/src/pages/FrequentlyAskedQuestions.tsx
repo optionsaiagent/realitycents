@@ -276,7 +276,7 @@ const localBusinessSchema = {
     name: "Hawaii",
   },
   priceRange: "$$",
-  image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/jay-miller-headshot-2026_4148a98a.png",
+  image: "/images/jay-miller-headshot.webp",
 };
 
 const personSchema = {

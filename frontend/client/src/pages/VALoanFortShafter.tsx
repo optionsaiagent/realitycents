@@ -201,7 +201,7 @@ const PAGE_SCHEMA = [
 // ─── Page Component ─────────────────────────────────────────────────────────
 export default function VALoanFortShafter() {
   const HERO_IMAGE =
-    "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/military-calculator-hero-TWFMScyJuU9vBfeWbD2r8g.webp";
+    "/images/heroes/page-military-calculator.webp";
 
   return (
     <Layout>

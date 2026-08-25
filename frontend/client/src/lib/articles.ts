@@ -38,7 +38,7 @@ const allArticles: Article[] = [
     date: "2026-08-10",
     featured: true,
     lastUpdated: "August 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/jFSetLDVerPmZPzE.jpg",
+    image: "/images/heroes/va-second-tier-entitlement-hawaii.webp",
     content: `# The Second VA Loan Strategy: How to Buy Again Without Selling Your First Home
 
 *By Jay Miller | Last Updated: August 2026*
@@ -197,7 +197,7 @@ The math can be complex, and big-box mainland lenders frequently miscalculate Ha
     date: "2026-07-04",
     featured: true,
     lastUpdated: "July 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/ELJvTrvviBfERHEo.jpg",
+    image: "/images/heroes/zero-down-home-buying-hawaii.webp",
     content: `# The Zero-Down Playbook: How Hawaii Buyers Are Purchasing Homes With Nothing Out of Pocket
 
 *Last Updated: July 2026*
@@ -416,7 +416,7 @@ Higher monthly payments (larger loan balance), mortgage insurance on FHA/convent
     date: "2026-07-01",
     featured: true,
     lastUpdated: "July 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/yDelxnYooqZLUnRx.png",
+    image: "/images/heroes/first-lien-heloc-vs-traditional-mortgage-hawaii.webp",
     content: `# First-Lien HELOCs vs. Traditional Mortgages: Why the Interest Rate Isn't the Number That Matters
 
 *Last Updated: July 2026*
@@ -439,7 +439,7 @@ A first-lien HELOC works differently. It's not a closed-end mortgage at all — 
 
 That daily calculation is the whole game. If you can keep your daily balance suppressed, you directly reduce the interest charged that month — without changing your rate and without changing your budget.
 
-![Infographic comparing traditional mortgage amortization vs first-lien HELOC with sweep account showing accelerated payoff timeline](https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/yDelxnYooqZLUnRx.png)
+![Infographic comparing traditional mortgage amortization vs first-lien HELOC with sweep account showing accelerated payoff timeline](/images/articles/heloc-sweep-infographic.webp)
 
 *Same income. Same expenses. Different math engine. Different outcome.*
 
@@ -589,7 +589,7 @@ Ask a licensed loan officer to run a side-by-side simulation using your actual b
     date: "2026-06-28",
     featured: true,
     lastUpdated: "June 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/closing-costs-hawaii-PuKwVnpj5vue5FQh2GWZ3N.webp",
+    image: "/images/heroes/seller-concessions-closing-costs-hawaii.webp",
     content: `# What Hawaii Buyers Don't Know About Closing Costs — And How to Get the Seller to Pay Them
 
 *Last Updated: June 2026*
@@ -847,7 +847,7 @@ Appraisers note seller concessions in their report and may adjust comparable sal
     date: "2026-06-21",
     featured: true,
     lastUpdated: "June 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/bahqaMPcKestkFyH.jpg",
+    image: "/images/heroes/dti-killing-hawaii-mortgage-applications.webp",
     content: `# Two Identical $600K Condos. You Qualify for One of Them. Here's Why.
 
 **The number that decides what you can buy in Hawaii isn't your credit score — it's your DTI. And almost nobody explains how it actually works until a deal is already in trouble.**
@@ -965,7 +965,7 @@ Want to run your numbers against specific properties before you write an offer? 
     readTime: "8 min",
     date: "2026-02-15",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hawaii-first-time-buyer-KfMc2iyJYMwq3zUw3At8yV.webp",
+    image: "/images/heroes/first-time-homebuyer-guide-hawaii.webp",
     content: `**The first step to buying a home in Hawaii is getting pre-approved for a mortgage — this establishes your budget, signals to sellers you're serious, and should happen 6–12 months before you plan to buy.** Buying your first home in Hawaii is an exciting milestone, but it comes with unique challenges that mainland buyers rarely encounter. The Hawaiian real estate market operates differently from most U.S. markets, and understanding these differences is crucial to a successful purchase.
 
 ## Understanding Hawaii's Market
@@ -1020,7 +1020,7 @@ Explore [down payment assistance programs available in Hawaii](/knowledge-base/d
     readTime: "7 min",
     date: "2026-02-10",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/va-military-hawaii-QrzYCAdrfCRd6MfkUnwqXK.webp",
+    image: "/images/heroes/va-loans-hawaii-military.webp",
     content: `**Yes, eligible veterans and active-duty military can buy a home in Hawaii with zero down payment using a VA loan — there is no loan limit with full entitlement, meaning you can purchase at any price with $0 down and no PMI.** Hawaii is home to some of the largest military installations in the Pacific, including Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, and several other facilities. For the thousands of service members and veterans stationed in or retiring to Hawaii, VA loans represent one of the most powerful tools for achieving homeownership.
 
 ## What Makes VA Loans Special in Hawaii
@@ -1076,7 +1076,7 @@ If you are considering buying a multi-family property with your VA benefit, read
     readTime: "6 min",
     date: "2026-02-05",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/fha-hawaii-home-b9vfyNACMqRvzegJnG3Ktn.webp",
+    image: "/images/heroes/fha-loans-hawaii-explained.webp",
     content: `FHA loans have long been a gateway to homeownership for buyers who might not qualify for conventional financing. In Hawaii, where property values are among the highest in the nation, FHA loans play a particularly important role in making homeownership accessible.
 
 ## FHA Loan Basics
@@ -1128,7 +1128,7 @@ For help with the down payment, explore [Hawaii's down payment assistance progra
     category: "Loan Types",    readTime: "6 min",
     date: "2026-01-28",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/conventional-loans-hawaii-hero-T6i99KXvKLzmL8AAZLXEKy.webp",
+    image: "/images/heroes/conventional-loans-hawaii.webp",
     content: `Conventional loans remain the most popular mortgage type in the United States, and they're a strong choice for Hawaii homebuyers who have solid credit and some savings for a down payment. Understanding how conventional loans work in Hawaii's high-cost market is essential for making informed financing decisions.
 
 ## What Is a Conventional Loan?
@@ -1170,7 +1170,7 @@ For a side-by-side comparison, see our guides to [FHA loans in Hawaii](/knowledg
     category: "Loan Types",
     readTime: "6 min",
     date: "2026-01-20",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/jumbo-luxury-hawaii-E3a9evYhZmADVFmXmZsQBE.webp",
+    image: "/images/heroes/jumbo-loans-hawaii-luxury.webp",
     content: `In Hawaii, where median home prices on several islands exceed $1 million, jumbo loans are not just for luxury buyers — they're a practical necessity for many homebuyers. Understanding jumbo loan requirements and strategies is essential for navigating Hawaii's premium real estate market.
 
 ## What Is a Jumbo Loan?
@@ -1207,7 +1207,7 @@ Not all lenders offer competitive jumbo products, and Hawaii's unique property t
     readTime: "5 min",
     date: "2026-01-15",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/credit-hawaii-EnwjCF42CzKk63AE9Cp2r5.webp",
+    image: "/images/heroes/credit-tips-mortgage-approval.webp",
     content: `Your credit score is the gatekeeper to your mortgage approval, and even small missteps during the homebuying process can have outsized consequences. Here are three critical credit mistakes that Hawaii homebuyers must avoid — and what to do instead.
 
 ## Mistake #1: Making Large Purchases Before Closing
@@ -1248,7 +1248,7 @@ Your credit score is a living, breathing number that responds to your financial 
     readTime: "5 min",
     date: "2026-01-10",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/down-payment-hawaii-JXz2vinKxhUDGgndTdJJzx.webp",
+    image: "/images/heroes/down-payment-assistance-hawaii.webp",
     content: `One of the biggest barriers to homeownership in Hawaii is the down payment. With median home prices well above the national average, even a modest 3.5% down payment can represent a significant sum. Fortunately, several assistance programs exist to help bridge this gap.
 
 ## HHFDC Hale Kama'aina Mortgage Program
@@ -1287,7 +1287,7 @@ For additional strategies to fund your purchase, learn how [using gift funds fro
     readTime: "4 min",
     date: "2026-01-05",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/gift-funds-hawaii-nPV7YkskdfbBiS3zvUGaYt.webp",
+    image: "/images/heroes/gift-funds-home-purchase.webp",
     content: `Given Hawaii's high property values, many homebuyers receive financial help from family members to cover their down payment. Using gift funds is perfectly acceptable for most loan types, but there are specific rules and documentation requirements that must be followed carefully.
 
 ## Gift Fund Rules by Loan Type
@@ -1332,7 +1332,7 @@ For other ways to fund your down payment, explore [Hawaii's down payment assista
     readTime: "5 min",
     date: "2025-12-28",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/escrow-hawaii-SWJNeuGLBT6ZmpKFN4Jcek.webp",
+    image: "/images/heroes/escrow-process-hawaii.webp",
     content: `The escrow process in Hawaii is distinctly different from many mainland states, and understanding these differences is crucial for a smooth transaction. Whether you're a first-time buyer or relocating from the mainland, here's what you need to know about how escrow works in the Aloha State.
 
 ## What Is Escrow?
@@ -1383,7 +1383,7 @@ Respond promptly to requests from your escrow officer and lender. Don't make any
     readTime: "6 min",
     date: "2025-12-20",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/leasehold-hawaii-cwR4cMx5cPgMQ6DAaG4EKt.webp",
+    image: "/images/heroes/leasehold-vs-fee-simple-hawaii.webp",
     content: `If you're buying property in Hawaii, you'll encounter a concept that's rare on the mainland: leasehold ownership. Understanding the difference between leasehold and fee simple is one of the most important aspects of Hawaii real estate education.
 
 ## Fee Simple Ownership
@@ -1430,7 +1430,7 @@ Before purchasing any Hawaii property, especially leasehold, consult with a real
     readTime: "5 min",
     date: "2025-12-15",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hoa-condo-hawaii-hero-39h9PT2aHrfsFPptrQBPtN.webp",
+    image: "/images/heroes/hoa-considerations-hawaii-condos.webp",
     content: `Condominiums represent a significant portion of Hawaii's housing market, particularly on Oahu. If you're considering a condo purchase, understanding the role and impact of the Homeowners Association (HOA) is essential — it will affect your monthly costs, lifestyle, and even your ability to get financing.
 
 ## What the HOA Does
@@ -1479,7 +1479,7 @@ A well-managed HOA adds value to your condo investment by maintaining the proper
     readTime: "5 min",
     date: "2025-12-10",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/home-inspection-hawaii-BaAcntCDt6Qgdh2U5RUd3t.webp",
+    image: "/images/heroes/home-inspection-tips-hawaii.webp",
     content: `A thorough home inspection is critical anywhere, but Hawaii's tropical environment creates unique challenges that require specialized attention. Understanding what to look for — and which additional inspections to request — can save you from costly surprises after closing.
 
 ## The General Home Inspection
@@ -1532,7 +1532,7 @@ For more on how flood zone designations affect your mortgage and insurance costs
     readTime: "5 min",
     date: "2025-12-05",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/pre-approval-hawaii-VnkX2wenzycd25DGxM3uBV.webp",
+    image: "/images/heroes/mortgage-pre-approval-process.webp",
     content: `In Hawaii's competitive real estate market, a mortgage pre-approval isn't just helpful — it's essential. Sellers and their agents take pre-approved buyers more seriously, and in multiple-offer situations, a strong pre-approval can be the difference between winning and losing your dream home.
 
 ## Pre-Qualification vs. Pre-Approval
@@ -1577,7 +1577,7 @@ To understand exactly how lenders will evaluate your income during pre-approval,
     readTime: "5 min",
     date: "2025-11-28",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/closing-costs-hawaii-PuKwVnpj5vue5FQh2GWZ3N.webp",
+    image: "/images/heroes/seller-concessions-closing-costs-hawaii.webp",
     content: `Closing costs are the fees and expenses you pay to finalize your home purchase, above and beyond your down payment. In Hawaii, these costs typically range from 2-5% of the purchase price, and understanding them helps you budget accurately and avoid surprises at the closing table.
 
 ## Common Closing Costs for Hawaii Buyers
@@ -1618,7 +1618,7 @@ To understand the full escrow timeline in Hawaii, read our guide to [the escrow 
     readTime: "5 min",
     date: "2025-11-20",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/refinancing-hawaii-cAR6BEoaSZNvrZMhfVKZZr.webp",
+    image: "/images/heroes/refinancing-hawaii-homeowners.webp",
     content: `Refinancing your mortgage can be a powerful financial tool, but it's not always the right move. For Hawaii homeowners, understanding when refinancing makes sense — and when it doesn't — can save thousands of dollars over the life of your loan.
 
 ## Types of Refinancing
@@ -1660,7 +1660,7 @@ Contact your current lender and at least two others to compare refinancing offer
     category: "Hawaii Specific",
     readTime: "9 min",
     date: "2026-03-15",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/condo-insurance-crisis-f5AMRszdQLpUwsJ56a7cyB.webp",
+    image: "/images/heroes/hawaii-condo-insurance-crisis.webp",
     content: `Hawaii's condominium market is navigating one of its most significant challenges in decades. A convergence of rising reinsurance costs, insurer withdrawals, climate-related risk repricing, and deferred building maintenance has created what industry observers and state lawmakers describe as a property insurance crisis — one that directly affects mortgage lending, property values, HOA fees, and the ability of buyers to finance condo purchases across the islands.
 
 This article explains what is driving the crisis, how the state is responding, and what current and prospective condo owners should do to protect their investments.
@@ -1765,7 +1765,7 @@ Hawaii's condo insurance crisis is a complex, evolving situation driven by globa
     readTime: "8 min",
     date: "2026-03-15",
     lastUpdated: "March 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/income-calculation-mqe6CEvGvZiwsbz2wgVwGg.webp",
+    image: "/images/heroes/how-lenders-calculate-income.webp",
     content: `One of the most common questions I hear from borrowers is: "I make good money — why doesn't the lender see it that way?" The answer lies in how mortgage lenders calculate qualifying income, which is often very different from what you see on your pay stub or deposit into your bank account each month.
 
 Understanding how lenders evaluate income is critical because it directly determines how much house you can afford. This guide breaks down the income calculation methods for every major income type, explains the debt-to-income ratios that govern your approval, and highlights the mistakes that most commonly reduce a borrower's qualifying power.
@@ -1889,7 +1889,7 @@ If you have a 401k, learn how [borrowing from your retirement account](/knowledg
     category: "VA Loans",
     readTime: "9 min",
     date: "2026-03-15",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/va-assumable-loans-YAw2SiXLVZjGMsbnaXQXN4.webp",
+    image: "/images/heroes/va-assumable-loans-pros-cons.webp",
     content: `In today's mortgage rate environment, with rates hovering near 7%, the idea of taking over someone else's 2.75% or 3.25% VA loan sounds almost too good to be true. And while VA loan assumption is a real and powerful strategy, it comes with complexities that every buyer and seller should understand before pursuing it.
 
 This article explains how VA loan assumptions work, who can assume them, and the critical trade-offs involved — including the entitlement trap that catches many sellers off guard.
@@ -2015,7 +2015,7 @@ For a broader overview of VA loan benefits in Hawaii, see our [complete VA loans
     category: "Hawaii Specific",
     readTime: "7 min",
     date: "2026-03-15",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/ho6-insurance-hawaii-Y9KqdV7bgZhRKDSFg7TB2o.webp",
+    image: "/images/heroes/ho6-insurance-hawaii-condos.webp",
     content: `If you are buying a condominium in Hawaii, you will need two types of insurance protection: the master policy maintained by your condo association (known as the AOAO — Association of Apartment Owners — in Hawaii), and your personal unit-owners policy, known as an HO-6 policy. While most buyers focus on the purchase price and mortgage rate, understanding your HO-6 insurance is essential — especially in Hawaii's current insurance environment.
 
 This article is a companion to our coverage of Hawaii's condo insurance crisis and focuses specifically on the HO-6 policy that protects your individual unit.
@@ -2117,7 +2117,7 @@ For a broader view of the insurance challenges facing Hawaii condos, read our in
     readTime: "8 min read",
     date: "2026-03-16",
     excerpt: "A temporary buydown lets you negotiate a lower rate in the early years of your loan — at the seller's expense. Here's how it works and when to ask for one.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/income-calculation_d245af04.jpg",
+    image: "/images/heroes/temporary-buydown-guide.webp",
     content: `## What Is a Temporary Buydown?
 
 A **temporary buydown** is a financing arrangement in which the buyer's effective interest rate is reduced for the first one to three years of the loan, then reverts to the full note rate for the remaining term. The cost of the buydown — equal to the total monthly payment savings over the reduced-rate period — is typically paid upfront as a seller concession at closing.
@@ -2257,7 +2257,7 @@ For a complete breakdown of all the costs involved in a Hawaii home purchase, se
     readTime: "8 min",
     date: "2026-04-05",
     lastUpdated: "April 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/UWooqRnKudsWdtQp.jpg",
+    image: "/images/heroes/dscr-loans-hawaii.webp",
     content: `*Last Updated: April 2026*
 
 Hawaii is one of the most unique real estate investment markets in the United States. Driven by limited housing supply, strong tourism demand, and high rental rates, the islands offer incredible opportunities for investors. However, with median home prices routinely exceeding $800,000 to $1 million, qualifying for traditional investment property financing can be a significant hurdle.
@@ -2377,7 +2377,7 @@ For a deeper understanding of how lenders evaluate income in traditional mortgag
     readTime: "7 min read",
     date: "2026-04-10",
     featured: true,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/va-funding-fee-tax-hero-RxuHfpjwNUkTNpc4PTwf3U.webp",
+    image: "/images/heroes/va-funding-fee-tax-deductible.webp",
     content: `# Did You Know Your VA Funding Fee May Be Tax Deductible? Here's What You Need to Know This Tax Season
 
 It's tax season, and if you purchased or refinanced a home with a VA loan, there's a deduction you might be leaving on the table. Starting with tax year 2026, Veterans, service members, and surviving spouses can once again deduct the VA funding fee on their federal tax return. This is a big deal — and I want to make sure you don't miss it.
@@ -2392,7 +2392,7 @@ For a standard purchase with no money down, first-time users currently pay **2.1
 
 That's real money — and now it can work for you at tax time.
 
-![Tax documents and VA loan paperwork on a desk](https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/va-funding-fee-tax-docs-QR6vZkdZthGKf2GEGji2Sz.webp)
+![Tax documents and VA loan paperwork on a desk](/images/articles/va-tax-docs.webp)
 
 ## The Deduction Is Back
 
@@ -2445,7 +2445,7 @@ For a complete overview of VA loan benefits in Hawaii, see our [VA Loans in Hawa
     category: "VA Loans",
     readTime: "7 min",
     date: "2026-04-19",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/va-househack-hero_6e1cda1c.jpg",
+    image: "/images/heroes/va-loan-house-hacking-hawaii.webp",
     content: `If you spend any time on Instagram or TikTok looking at Hawaii real estate, you have probably seen the viral videos. A "guru" stands in front of a Honolulu duplex and claims you can use a "secret VA loan hack" to buy a 6-unit property with four buddies, zero money down, and let the rental income pay your entire mortgage while you live for free.
 
 As a licensed mortgage loan officer here in Hawaii, I need to set the record straight.
@@ -2563,7 +2563,7 @@ Want to estimate your total qualifying income right now? Use our [Military Buyin
     category: "Home Buying Process",
     readTime: "5 min",
     date: "2026-04-16",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/401k-hero-aEUjpY65PoTVtdeE8LLNVo.webp",
+    image: "/images/heroes/401k-loan-home-purchase.webp",
     content: `You've been saving for retirement. Your employer matches your contributions. The account has been quietly growing for years. What most homebuyers don't realize is that money doesn't have to just sit there while you're trying to scrape together funds to close on a house.
 
 Borrowing from your own 401k is a legitimate, IRS-recognized strategy to access cash for a home purchase — and it comes with some surprisingly favorable terms compared to other borrowing options. It's not right for everyone, but it's a tool that far too many buyers never consider because nobody told them it existed.
@@ -2651,7 +2651,7 @@ For more on how lenders evaluate your income and debts, read our guide on [how l
     date: "2026-04-13",
     lastUpdated: "April 2026",
     featured: true,
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/JoYLOffoXKfwINnV.jpg",
+    image: "/images/heroes/fema-oahu-flood-zone-maps-2026.webp",
     content: `# FEMA's New Oahu Flood Zone Maps Take Effect June 10: What Every Hawaii Buyer and Homeowner Needs to Know
 
 If you are buying a home on Oahu right now, or if you already own one near a stream or canal, you need to pay close attention to the calendar.
@@ -2738,7 +2738,7 @@ If you are buying a condo on Oahu, understand how the insurance crisis compounds
     date: "2026-04-26",
     lastUpdated: "April 2026",
     featured: true,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/hawaii-neighborhood-homes-hero-oC2wXxU5DKxHcdHJRyVjAx.webp",
+    image: "/images/heroes/income-needed-buy-home-hawaii-2026.webp",
     content: `If you spend any time on r/Hawaii, you have seen the posts. "How are we supposed to live here?" "Who can actually afford to buy?" The frustration is real, and the numbers behind it are sobering. The median single-family home on Oahu hit $1,199,500 in March 2026 — and even condos sit around $510,000.
 
 But here is the thing: the question is not really "can anyone afford it?" The question is "what does it actually take?" And once you see the real math — broken down by price point, loan type, and DTI threshold — the picture becomes clearer. Not necessarily easier, but clearer.
@@ -2909,7 +2909,7 @@ The question is not whether you can afford to buy in Hawaii. The question is whi
     readTime: "9 min read",
     date: "2026-05-03",
     lastUpdated: "May 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/seller-concessions-hawaii-hero-fjkFQhB9rF6sTKfwydUQjx.webp",
+    image: "/images/heroes/seller-concessions-rate-buydown-hawaii.webp",
     featured: true,
     content: `Most Hawaii buyers spend their negotiating energy in the wrong place.
 
@@ -3139,7 +3139,7 @@ If you are buying in Hawaii and want to explore how seller concessions could wor
     readTime: "11 min read",
     date: "2026-05-11",
     lastUpdated: "May 2026",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/uhero-factbook-2026-hero-DYYSjbuZmQKdCPDeVwBKty.webp",
+    image: "/images/heroes/uhero-hawaii-housing-factbook-2026-buyers.webp",
     featured: true,
     content: `UHERO just released its 2026 Hawaii Housing Factbook and the headline is "affordability improved for the second straight year." That sounds encouraging — until you understand what "improved" actually means in Hawaii.
 
@@ -3507,7 +3507,7 @@ For all other Hawaii loan options — VA, FHA, conventional, jumbo, or refinance
     date: "2026-05-17",
     lastUpdated: "May 2026",
     featured: true,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663400630719/hYWhTCU9MkzGTyHcA5sLWw/evfjl2Zlt5dO_92ca802f.jpg",
+    image: "/images/heroes/fannie-mae-condo-guidelines-2026-hawaii.webp",
     content: `Most buyers shopping for a condo in Hawaii right now have no idea that the financing rules are about to change underneath them. Most agents don't either. And by the time the changes take full effect, some buildings that are perfectly financeable today will no longer qualify for a conventional mortgage.
 
 This is not a distant policy abstraction. Fannie Mae issued Lender Letter LL-2026-03 on March 18, 2026, announcing sweeping changes to how lenders evaluate condominium projects. Freddie Mac issued identical guidance the same day in Bulletin 2026-C. The changes phase in across three dates — some are already in effect, others arrive August 3, 2026, and the final wave hits January 4, 2027.
@@ -3667,7 +3667,7 @@ For more on Hawaii's condo market challenges, read our coverage of [the condo in
     category: "Market Insights",
     readTime: "6 min",
     date: "2026-06-07",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/ewMeNMzgeALEAisU.jpg",
+    image: "/images/heroes/why-waiting-for-lower-rates-costs-hawaii-military-buyers.webp",
     content: `# The Hidden Reason Hawaii Mortgage Rates Are Stuck in the 6s (And Why Waiting Will Cost You)
 
 *Last Updated: June 2026*
@@ -3808,7 +3808,7 @@ Every PCS timeline and budget is different. If you want to see exactly how the m
     category: "Buying Strategy",
     readTime: "6 min",
     date: "2026-06-07",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/rPqXGrGhTtCqkxUg.jpg",
+    image: "/images/heroes/down-payment-myth-hawaii-pmi-vs-appreciation.webp",
     content: `# The 20% Down Payment Myth: Why Saving to Avoid PMI Is Costing Hawaii Buyers Tens of Thousands
 
 *By Jay Miller | June 2026*
@@ -3950,7 +3950,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
     category: "Loan Types",
     readTime: "6 min",
     date: "2026-06-01",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/hhZkKhTCDLQyTcqJ.jpg",
+    image: "/images/heroes/adjustable-rate-mortgage-hawaii.webp",
     content: `# Why an ARM Isn't a Gamble in Hawaii — It's a Timeline Tool
 
 *Last Updated: June 2026*
@@ -4118,7 +4118,7 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
     date: "2026-08-03",
     featured: true,
     lastUpdated: "August 2026",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663400630719/UXoNXxMdnEfwzJZD.jpg",
+    image: "/images/heroes/mortgage-rates-2026-high-hawaii-buyers.webp",
     content: `# Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now
 
 *By Jay Miller | Last Updated: August 2026*
