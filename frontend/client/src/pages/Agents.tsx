@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER } from "@/lib/constants";
+import { IMAGES, IMAGE_ALTS, LENDER } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import { trpc } from "@/lib/trpc";
 import DSCRCalculator from "./DSCRCalculator";
@@ -83,12 +83,15 @@ export default function Agents() {
         title="Partner With Me — DealSync & Agent Tools — RealityCents"
         description="Real-time deal visibility, instant pre-approval letters, and professional agent tools. Partner with Jay Miller at CMG Home Loans and get free DealSync access."
         url="/agents"
+        image={IMAGES.heroAgents}
+        imageAlt={IMAGE_ALTS.heroAgents}
         keywords="DealSync, real estate agent partnership, deal tracking, pre-approval letters, DSCR calculator, assumable loan calculator, Hawaii real estate tools, mortgage tools for agents"
       />
       <PageHero
         title="Agent Partnership"
         subtitle="Real-time deal visibility, instant letters, and professional tools — built for agents who refer with confidence."
         image={IMAGES.heroAgents}
+        imageAlt={IMAGE_ALTS.heroAgents}
         compact
       />
 

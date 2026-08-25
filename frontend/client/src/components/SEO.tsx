@@ -28,6 +28,14 @@ const BASE_URL = "https://realitycents.com";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 const DEFAULT_IMAGE_ALT = "RealityCents - Hawaii Mortgage Education & Lending";
 
+function toAbsoluteUrl(pathOrUrl: string): string {
+  if (pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")) {
+    return pathOrUrl;
+  }
+  const path = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`;
+  return `${BASE_URL}${path}`;
+}
+
 function setMeta(name: string, content: string, attr: "name" | "property" = "name") {
   let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
   if (!el) {
@@ -95,7 +103,9 @@ export default function SEO({
     setMeta("og:site_name", SITE_NAME, "property");
     setMeta("og:title", title, "property");
     setMeta("og:description", description, "property");
-    setMeta("og:image", image, "property");
+    const ogImage = toAbsoluteUrl(image);
+
+    setMeta("og:image", ogImage, "property");
     setMeta("og:image:alt", imageAlt, "property");
 
     // Twitter
@@ -103,7 +113,7 @@ export default function SEO({
     setMeta("twitter:url", fullUrl);
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
-    setMeta("twitter:image", image);
+    setMeta("twitter:image", ogImage);
     setMeta("twitter:image:alt", imageAlt);
 
     // JSON-LD schema

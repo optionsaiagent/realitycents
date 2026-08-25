@@ -1577,7 +1577,7 @@ To understand exactly how lenders will evaluate your income during pre-approval,
     readTime: "5 min",
     date: "2025-11-28",
     lastUpdated: "March 2026",
-    image: "/images/heroes/seller-concessions-closing-costs-hawaii.webp",
+    image: "/images/heroes/understanding-closing-costs-hawaii.webp",
     content: `Closing costs are the fees and expenses you pay to finalize your home purchase, above and beyond your down payment. In Hawaii, these costs typically range from 2-5% of the purchase price, and understanding them helps you budget accurately and avoid surprises at the closing table.
 
 ## Common Closing Costs for Hawaii Buyers
@@ -3327,7 +3327,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
     readTime: "10 min read",
     date: "2026-05-10",
     lastUpdated: "May 2026",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
+    image: "/images/heroes/hale-kamaaina-mortgage-program-hawaii.webp",
     featured: true,
     draft: false,
     content: `On May 7, 2026, three Hawaii families closed on their homes at 4.65% on a 30-year fixed mortgage. Not a teaser rate. Not a 2/1 buydown that expires in Year 3. Not a variable-rate product. A genuine 30-year fixed rate that is 1.28 percentage points below the current market rate for FHA and VA loans — and 1.45 points below market for conventional.

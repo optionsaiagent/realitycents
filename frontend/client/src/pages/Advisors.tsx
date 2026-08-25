@@ -5,7 +5,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER } from "@/lib/constants";
+import { IMAGES, IMAGE_ALTS, LENDER } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import {
   TrendingUp,
@@ -59,13 +59,16 @@ export default function Advisors() {
         title="Financial Advisors — Free Up Client Cash Flow with the AIO | RealityCents"
         description="The All-In-One first-lien HELOC helps your clients pay off their mortgage in 11-14 years instead of 30, freeing $44K+/year for portfolio growth. Partner with Jay Miller at CMG Home Loans."
         url="/advisors"
+        image={IMAGES.heroAdvisors}
+        imageAlt={IMAGE_ALTS.heroAdvisors}
         keywords="financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One loan"
       />
 
       <PageHero
         title="For Financial Advisors"
         subtitle="Your client's mortgage is the largest drag on their investable cash flow. There's a better structure."
-        image={IMAGES.heroAgents}
+        image={IMAGES.heroAdvisors}
+        imageAlt={IMAGE_ALTS.heroAdvisors}
         compact
       />
 

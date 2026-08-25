@@ -218,7 +218,6 @@ export default function VALoanFortShafter() {
         title="VA Loan Guide for Fort Shafter"
         subtitle="Buy a Home on Oahu with $0 Down"
         image={HERO_IMAGE}
-        imageAlt="Military housing near Fort Shafter, Honolulu Oahu Hawaii"
       />
 
       {/* ─── Opening Section ─────────────────────────────────────────────── */}
