@@ -364,18 +364,18 @@ export default function Home() {
                 description="Stay informed about the issues and strategies shaping Hawaii's real estate market right now."
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {featuredArticles.map((article) => (
                   <Link
                     key={article.slug}
                     href={`/knowledge-base/${article.slug}`}
-                    className="group flex flex-col rounded-2xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                    className="group flex h-full flex-col rounded-2xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
                   >
-                    <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden">
                       <img
                         src={article.image}
                         alt={article.title}
-                        className="absolute inset-0 w-full h-full object-cover object-left group-hover:scale-105 transition-transform duration-700"
+                        className="absolute inset-0 w-full h-full object-cover object-left origin-left group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
                       <div className="absolute top-4 left-4">
@@ -425,7 +425,7 @@ export default function Home() {
               <img
                 src={IMAGES.heroGuide}
                 alt={IMAGE_ALTS.heroGuide}
-                className="absolute inset-0 w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover object-left-top origin-top-left group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/60 to-navy/30" />
               <div className="relative z-10 p-8 lg:p-10 flex flex-col justify-end min-h-[320px]">
@@ -453,7 +453,7 @@ export default function Home() {
               <img
                 src={IMAGES.heroAgents}
                 alt={IMAGE_ALTS.heroAgents}
-                className="absolute inset-0 w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover object-left-top origin-top-left group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/60 to-navy/30" />
               <div className="relative z-10 p-8 lg:p-10 flex flex-col justify-end min-h-[320px]">
