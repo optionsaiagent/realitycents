@@ -18,14 +18,16 @@
     <link rel="canonical" href="https://realitycents.com/" />
     <script>
       // SEO: Domain enforcement, trailing-slash normalization, and canonical tag
-      // Runs before React to ensure Googlebot sees correct signals in static HTML
+      // Runs before React. www → apex is an HTTP 301 in vercel.json; this JS
+      // fallback only covers leftover hosts (e.g. preview/manus) that are not
+      // handled at the edge. Google does not treat location.replace as a 301.
       (function() {
         var host = location.hostname;
         var path = location.pathname;
         var PRIMARY = 'realitycents.com';
         var BASE = 'https://' + PRIMARY;
 
-        // 1. Redirect www and manus.space to primary domain (301-equivalent via JS)
+        // 1. Redirect leftover non-primary hosts (not an HTTP 301)
         if (host !== PRIMARY && host !== 'localhost' && host !== '127.0.0.1' && !host.includes('manus.computer')) {
           location.replace(BASE + path + location.search + location.hash);
           return;
@@ -87,12 +89,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0C2340" />
 
-    <!-- FOUC Prevention: hide all visible content until React hydrates and CSS is applied -->
-    <!-- prerendered-content is SEO-only (display:none always); #root fades in after hydration -->
+    <!-- FOUC Prevention: hide prerendered SEO copy from users without display:none
+         (display:none is what crawlers were skipping). clip/sr-only keeps it in the
+         HTML for Googlebot while React #root is the visual UI. -->
     <style>
-      /* Keep prerendered SEO content permanently invisible to users */
+      #crawlable-site-nav,
       #prerendered-content {
-        display: none !important;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
       /* Hide React root until hydration completes */
       #root {
@@ -323,6 +334,28 @@
   </head>
 
   <body>
+    <nav id="crawlable-site-nav" aria-label="Site">
+      <a href="/knowledge-base">Knowledge Base</a>
+      <a href="/calculator">Mortgage Calculator</a>
+      <a href="/advanced-calculator">Advanced Calculator</a>
+      <a href="/military-calculator">Military Buying Power Calculator</a>
+      <a href="/va-approved-condos-oahu">VA-Approved Condos Oahu</a>
+      <a href="/guide">Hawaii Homebuying Guide</a>
+      <a href="/agents">Agent Tools</a>
+      <a href="/about">About Jay Miller</a>
+      <a href="/frequently-asked-questions">FAQ</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <noscript>
+      <nav aria-label="Site">
+        <a href="/knowledge-base">Knowledge Base</a>
+        <a href="/calculator">Mortgage Calculator</a>
+        <a href="/military-calculator">Military Buying Power Calculator</a>
+        <a href="/va-approved-condos-oahu">VA-Approved Condos Oahu</a>
+        <a href="/guide">Hawaii Homebuying Guide</a>
+        <a href="/agents">Agent Tools</a>
+      </nav>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script

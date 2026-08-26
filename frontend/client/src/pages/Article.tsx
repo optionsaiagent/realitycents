@@ -120,7 +120,9 @@ export default function Article() {
   const meta = articleSchemaData[article.slug];
   // Convert YYYY-MM-DD to full ISO 8601 with Hawaii Standard Time offset (UTC-10)
   const toHST = (d: string) => (d.includes("T") ? d : `${d}T00:00:00-10:00`);
-  const dateModified = toHST(article.lastUpdated ? "2026-03-15" : article.date);
+  const isoDate = (value?: string) =>
+    value && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : undefined;
+  const dateModified = toHST(isoDate(article.lastUpdated) || article.date);
   const articleSchemas = useMemo(() => {
     const articleSchema: Record<string, unknown> = {
       "@context": "https://schema.org",

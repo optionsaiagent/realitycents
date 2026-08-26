@@ -22,7 +22,25 @@ const outputPath = path.resolve(projectRoot, "client/public/sitemap.xml");
 const BASE_URL = "https://realitycents.com";
 const TODAY = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
-const articles = JSON.parse(fs.readFileSync(articlesPath, "utf-8"));
+const MONTH_MAP = {
+  January: "01", February: "02", March: "03", April: "04",
+  May: "05", June: "06", July: "07", August: "08",
+  September: "09", October: "10", November: "11", December: "12",
+};
+
+/** Sitemap lastmod must be YYYY-MM-DD. Prefer ISO lastUpdated, else article.date. */
+function toIsoLastmod(lastUpdated, date) {
+  if (lastUpdated && /^\d{4}-\d{2}-\d{2}$/.test(lastUpdated)) return lastUpdated;
+  if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+  if (lastUpdated) {
+    const m = String(lastUpdated).match(/^(\w+)\s+(\d{4})$/);
+    if (m && MONTH_MAP[m[1]]) return `${m[2]}-${MONTH_MAP[m[1]]}-01`;
+  }
+  return TODAY;
+}
+
+const allArticles = JSON.parse(fs.readFileSync(articlesPath, "utf-8"));
+const articles = allArticles.filter((a) => !a.draft);
 
 // ─── Static pages with their own lastmod and priority ───────────────────────
 const STATIC_PAGES = [
@@ -31,6 +49,7 @@ const STATIC_PAGES = [
   { loc: "/contact",                 changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/guide",                   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/agents",                  changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
+  { loc: "/advisors",                changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/zero-down-in-paradise",   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/calculator",              changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/advanced-calculator",     changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
@@ -78,7 +97,7 @@ for (const article of articles) {
   entries.push(
     urlEntry({
       loc: `/knowledge-base/${article.slug}`,
-      lastmod: article.lastUpdated || article.date, // prefer lastUpdated over publish date
+      lastmod: toIsoLastmod(article.lastUpdated, article.date),
       changefreq: "monthly",
       priority: "0.8",
     })
