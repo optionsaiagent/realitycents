@@ -437,6 +437,36 @@ export default function Agents() {
           )}
         </div>
       </section>
+
+      {/* ─── AIO Explainer for Agents ─── */}
+      <section className="py-16 lg:py-20 bg-sand">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-10">
+            <p className="text-sm font-body font-semibold uppercase tracking-[0.15em] text-teal mb-3">
+              Watch the Briefing
+            </p>
+            <h2 className="font-display text-3xl lg:text-4xl text-navy mb-4">
+              You Don&rsquo;t Need Rates to Fall
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A 6-minute briefing on the All-In-One loan, built for agents — the three client
+              conversations it unlocks, the math behind it, and the risks stated plainly.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube.com/embed/lS126g4Q-M0"
+                title="You Don't Need Rates to Fall — The All-In-One Loan, for Real Estate Agents"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

@@ -309,6 +309,10 @@ export const STATIC_PAGE_BODIES = {
         </ul>
         <p>Enter your name and email to unlock access to all tools. These professional resources are provided free by Jay Miller, NMLS #657301, CMG Home Loans.</p>
       </section>
+      <section>
+        <h2>Watch: The All-In-One Loan, for Real Estate Agents</h2>
+        <p>A 6-minute briefing on the All-In-One first-lien HELOC, built for agents — the three client conversations it unlocks (the fence-sitting buyer, the locked-in seller, the investor), the math behind it, and the risks stated plainly. <a href="https://www.youtube.com/watch?v=lS126g4Q-M0">Watch on YouTube</a>.</p>
+      </section>
     </main>
   `,
 
