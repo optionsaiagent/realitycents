@@ -2113,7 +2113,7 @@ For a broader view of the insurance challenges facing Hawaii condos, read our in
   {
     slug: "temporary-buydown-guide",
     title: "What Is a Temporary Buydown and Should You Ask for One?",
-    category: "Home Buying Process",
+    category: "Loan Types",
     readTime: "8 min read",
     date: "2026-03-16",
     excerpt: "A temporary buydown lets you negotiate a lower rate in the early years of your loan — at the seller's expense. Here's how it works and when to ask for one.",
@@ -2560,7 +2560,7 @@ Want to estimate your total qualifying income right now? Use our [Military Buyin
     slug: "401k-loan-home-purchase",
     title: "Your 401k Can Help You Buy a Home — Here's How",
     excerpt: "Most buyers don't know this option exists. Here's what you need to understand about using your 401k to help buy a home.",
-    category: "Home Buying Process",
+    category: "Credit & Finance",
     readTime: "5 min",
     date: "2026-04-16",
     image: "/images/heroes/401k-loan-home-purchase.webp",
@@ -2646,7 +2646,7 @@ For more on how lenders evaluate your income and debts, read our guide on [how l
     slug: "fema-oahu-flood-zone-maps-2026",
     title: "FEMA's New Oahu Flood Zone Maps Take Effect June 10: What Every Hawaii Buyer and Homeowner Needs to Know",
     excerpt: "On June 10, 2026, FEMA's updated Flood Insurance Rate Maps take effect for Oahu, placing over 3,400 properties into high-risk flood zones for the first time. Here is exactly how this impacts your mortgage, your monthly payment, and what you need to do right now.",
-    category: "Home Buying Process",
+    category: "Hawaii Specific",
     readTime: "6 min read",
     date: "2026-04-13",
     lastUpdated: "April 2026",
@@ -2905,7 +2905,7 @@ The question is not whether you can afford to buy in Hawaii. The question is whi
     slug: "seller-concessions-rate-buydown-hawaii",
     title: "How to Use Seller Concessions to Buy Down Your Rate in Hawaii",
     excerpt: "With rates at 6.35%+ and Hawaii's extreme price-to-income ratio, a seller-funded rate buydown can be the difference between qualifying and not qualifying. Most Hawaii buyers negotiate list price when they should be negotiating the rate.",
-    category: "Buying",
+    category: "Process & Tips",
     readTime: "9 min read",
     date: "2026-05-03",
     lastUpdated: "May 2026",
@@ -3330,7 +3330,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
     image: "/images/heroes/hale-kamaaina-mortgage-program-hawaii.webp",
     featured: true,
     draft: false,
-    content: `On May 7, 2026, three Hawaii families closed on their homes at 4.65% on a 30-year fixed mortgage. Not a teaser rate. Not a 2/1 buydown that expires in Year 3. Not a variable-rate product. A genuine 30-year fixed rate that is 1.28 percentage points below the current market rate for FHA and VA loans — and 1.45 points below market for conventional.
+    content: `On May 7, 2026, three Hawaii families closed on their homes at 4.65% on a 30-year fixed mortgage — the launch-era program rate. (Rates reset with each bond issuance; as of August 27, 2026, HHFDC posts 5.62% for government loans and 5.87% for conventional.) Not a teaser rate. Not a 2/1 buydown that expires in Year 3. Not a variable-rate product. A genuine 30-year fixed rate that is 1.28 percentage points below the current market rate for FHA and VA loans — and 1.45 points below market for conventional.
 
 The program making this possible is the **Hale Kamaʻāina Mortgage Program**, launched by the Hawaii Housing Finance and Development Corporation (HHFDC) in December 2025. It is the revival of a program that was dormant for 12 years — the former Hula Mae Single Family Mortgage Program — now reborn with modern underwriting standards and a $30 million bond allocation.
 
@@ -3344,39 +3344,42 @@ This structure is not new — similar programs exist in most states — but Hawa
 
 The program offers a 30-year fixed-rate mortgage at rates set by HHFDC based on current bond market conditions, optional down payment assistance (DPA) of up to 4% of the purchase price, eligibility for FHA, VA, USDA-RD, and conventional (Fannie Mae HFA Preferred / Freddie Mac HFA Advantage) loan products, and a $3,000 closing cost incentive for the first 35 homebuyers who close (available as of February 2026).
 
-## The Rates: What 4.65% Actually Means at Hawaii Price Points
+## The Rates: What a Below-Market Rate Means at Hawaii Price Points
 
-As of May 7, 2026 — the date of the first three closings — the Hale Kamaʻāina rates are:
+As of **August 27, 2026**, HHFDC posts these Hale Kamaʻāina rates. They are set by HHFDC from bond-market conditions and reset over time — always confirm the current posting on [HHFDC's program page](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/) before making decisions:
 
-| Loan Type | Hale Kamaʻāina Rate | Current Market Rate | Rate Advantage |
-|-----------|---------------------|---------------------|----------------|
-| FHA / VA / USDA | 4.65% | 5.93% | −1.28 pts |
-| Conventional | 4.95% | 6.40% | −1.45 pts |
+| Loan Type | Hale Kamaʻāina Rate (as of 8/27/2026) |
+|-----------|----------------------------------------|
+| FHA / VA / USDA (government loans) | 5.62% |
+| Conventional | 5.87% |
+| Optional down payment assistance | adds a 0.25% rate premium |
+
+At launch in spring 2026 the posted rates were 4.65% (government) and 4.95% (conventional); the posting has risen with bond markets since. What has held is the structure: the program has consistently priced well below the prevailing market average for comparable 30-year fixed loans. The examples below use the current posted rates against an **illustrative market rate one point higher** — market rates change daily, so treat the comparison as a structure, not a quote.
 
 To understand what this means in practice, consider a buyer purchasing a $650,000 condo in Honolulu with FHA financing (3.5% down, $627,250 loan amount):
 
 | Scenario | Rate | Principal & Interest | Monthly Difference |
 |----------|------|---------------------|-------------------|
-| Hale Kamaʻāina FHA | 4.65% | $3,231/mo | — |
-| Market Rate FHA | 5.93% | $3,730/mo | +$499/mo |
+| Hale Kamaʻāina FHA | 5.62% | $3,609/mo | — |
+| Illustrative market FHA | 6.62% | $4,014/mo | +$405/mo |
 
-That is **$499 per month** — $5,988 per year — in savings on a single $650,000 purchase. Over the first five years, the savings total nearly $30,000.
+That is **$405 per month** — $4,860 per year — in savings on a single $650,000 purchase for every point of rate advantage. Over the first five years, that single point is worth roughly $24,000.
 
 For a VA buyer purchasing at $850,000 with no down payment:
 
 | Scenario | Rate | Principal & Interest | Monthly Difference |
 |----------|------|---------------------|-------------------|
-| Hale Kamaʻāina VA | 4.65% | $4,376/mo | — |
-| Market Rate VA | 5.93% | $5,049/mo | +$673/mo |
+| Hale Kamaʻāina VA | 5.62% | $4,890/mo | — |
+| Illustrative market VA | 6.62% | $5,440/mo | +$550/mo |
 
-The monthly savings of $673 on an $850,000 VA purchase translates to **$8,076 per year** — and critically, it can be the difference between qualifying and not qualifying. At 5.93%, a buyer needs approximately $148,000 in gross annual income to qualify for this payment (assuming 43% DTI and $500/month in other debts). At 4.65%, that income requirement drops to approximately $128,000 — a $20,000 difference in required income.
+The monthly savings of $550 on an $850,000 VA purchase translates to **$6,600 per year** — and critically, it can be the difference between qualifying and not qualifying. At a 43% debt-to-income ratio, every dollar of monthly payment saved lowers the gross income needed to qualify by about $28 — so a $550/month rate advantage lowers the required income by roughly $15,000.
 
 For a conventional buyer at $750,000 with 5% down ($712,500 loan):
 
 | Scenario | Rate | Principal & Interest | Monthly Difference |
 |----------|------|---------------------|-------------------|
-| Hale Kamaʻāina Conventional | 4.95% | $3,797/mo | — |
-| Market Rate Conventional | 6.40% | $4,452/mo | +$655/mo |
+| Hale Kamaʻāina Conventional | 5.87% | $4,212/mo | — |
+| Illustrative market conventional | 6.87% | $4,678/mo | +$466/mo |
 
 ## The First Three Closings: Ashley Maeshiro's Story
 
@@ -3805,7 +3808,7 @@ Every PCS timeline and budget is different. If you want to see exactly how the m
     slug: "down-payment-myth-hawaii-pmi-vs-appreciation",
     title: "The 20% Down Payment Myth: Why Saving to Avoid PMI Is Costing Hawaii Buyers Tens of Thousands",
     excerpt: "Waiting to save a 20% down payment in Hawaii is a losing strategy. See the real math: how much home appreciation you lose vs. what PMI actually costs — and why buying now with 3–5% down wins.",
-    category: "Buying Strategy",
+    category: "First-Time Buyers",
     readTime: "6 min",
     date: "2026-06-07",
     image: "/images/heroes/down-payment-myth-hawaii-pmi-vs-appreciation.webp",
