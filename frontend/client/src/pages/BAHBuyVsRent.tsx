@@ -5,6 +5,7 @@
  */
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import PCSCallout from "@/components/PCSCallout";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
@@ -124,6 +125,8 @@ export default function BAHBuyVsRent() {
           </div>
         </div>
       </section>
+
+      <PCSCallout />
 
       {/* Side-by-Side Comparison Table */}
       <section className="py-16 md:py-24 bg-white">
