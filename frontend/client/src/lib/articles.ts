@@ -3374,12 +3374,12 @@ For a VA buyer purchasing at $850,000 with no down payment:
 
 The monthly savings of $550 on an $850,000 VA purchase translates to **$6,600 per year** — and critically, it can be the difference between qualifying and not qualifying. At a 43% debt-to-income ratio, every dollar of monthly payment saved lowers the gross income needed to qualify by about $28 — so a $550/month rate advantage lowers the required income by roughly $15,000.
 
-For a conventional buyer at $750,000 with 5% down ($712,500 loan):
+For a conventional buyer at the program's Oʻahu non-targeted maximum — $809,458 with 5% down ($768,985 loan):
 
 | Scenario | Rate | Principal & Interest | Monthly Difference |
 |----------|------|---------------------|-------------------|
-| Hale Kamaʻāina Conventional | 5.87% | $4,212/mo | — |
-| Illustrative market conventional | 6.87% | $4,678/mo | +$466/mo |
+| Hale Kamaʻāina Conventional | 5.87% | $4,546/mo | — |
+| Illustrative market conventional | 6.87% | $5,049/mo | +$503/mo |
 
 ## The First Three Closings: Ashley Maeshiro's Story
 
