@@ -311,7 +311,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>Watch: The All-In-One Loan, for Real Estate Agents</h2>
-        <p>A 6-minute briefing on the All-In-One first-lien HELOC, built for agents — the three client conversations it unlocks (the fence-sitting buyer, the locked-in seller, the investor), the math behind it, and the risks stated plainly. <a href="https://www.youtube.com/watch?v=lS126g4Q-M0">Watch on YouTube</a>.</p>
+        <p>A 6-minute briefing on the All-In-One first-lien HELOC, built for agents — the three client conversations it unlocks (the fence-sitting buyer, the locked-in seller, the investor), the math behind it, and the risks stated plainly. <a href="https://www.youtube.com/watch?v=9J92UtySyR8">Watch on YouTube</a>.</p>
       </section>
     </main>
   `,
