@@ -159,13 +159,15 @@ interface LoanInputs {
   hoaFees: number;
   vaFirstUse: boolean;
   vaDisability: boolean;
+  /** Annual PMI factor in percent (e.g. 0.48 = 0.48%/yr). null = auto from FICO/LTV table. */
+  pmiOverride: number | null;
 }
 
 interface CalcResult {
   monthlyPI: number; monthlyPmi: number; monthlyMip: number; totalMonthly: number;
   totalInterest: number; totalLoanAmount: number; baseLoanAmount: number;
   vaFundingFee: number; vaFundingFeeRate: number; vaFundingFeeWaived: boolean;
-  fhaUfmip: number; pmiAnnualRate: number; loanType: LoanType;
+  fhaUfmip: number; pmiAnnualRate: number; pmiIsCustom: boolean; loanType: LoanType;
   amortization: AmortizationRow[];
   dpDollar: number; dpPercent: number; ltv: number;
 }
@@ -176,6 +178,7 @@ const defaultInputs: LoanInputs = {
   interestRate: 6.000, loanTerm: 30, ficoScore: 740,
   propertyTax: 350, insurance: 150, hoaFees: 400,
   vaFirstUse: true, vaDisability: false,
+  pmiOverride: null,
 };
 
 const loanTypeLabels: Record<LoanType, string> = {
@@ -186,7 +189,7 @@ const loanTypeLabels: Record<LoanType, string> = {
 function calculate(inputs: LoanInputs): CalcResult {
   const { loanType, homePrice, downPaymentMode, downPaymentDollar, downPaymentPercent,
     interestRate, loanTerm, ficoScore, propertyTax, insurance, hoaFees,
-    vaFirstUse, vaDisability } = inputs;
+    vaFirstUse, vaDisability, pmiOverride } = inputs;
 
   const dpDollar = downPaymentMode === "dollar" ? downPaymentDollar : Math.round(homePrice * downPaymentPercent / 100);
   const dpPercent = downPaymentMode === "percent" ? downPaymentPercent : (homePrice > 0 ? (downPaymentDollar / homePrice) * 100 : 0);
@@ -197,7 +200,7 @@ function calculate(inputs: LoanInputs): CalcResult {
   const numPayments = loanTerm * 12;
 
   let totalLoanAmount = baseLoanAmount;
-  let vaFundingFee = 0, vaFundingFeeRate = 0, fhaUfmip = 0, monthlyMip = 0, monthlyPmi = 0, pmiAnnualRate = 0;
+  let vaFundingFee = 0, vaFundingFeeRate = 0, fhaUfmip = 0, monthlyMip = 0, monthlyPmi = 0, pmiAnnualRate = 0, pmiIsCustom = false;
 
   if (loanType === "va") {
     vaFundingFeeRate = getVaFundingFeeRate(dpPercent, vaFirstUse, vaDisability);
@@ -208,12 +211,13 @@ function calculate(inputs: LoanInputs): CalcResult {
     totalLoanAmount = baseLoanAmount + fhaUfmip;
     monthlyMip = (baseLoanAmount * getFhaMipRate(ltv)) / 12;
   } else if (loanType === "conventional" && ltv > 80) {
-    pmiAnnualRate = getPmiRate(ltv, ficoScore);
+    pmiIsCustom = pmiOverride != null && pmiOverride >= 0;
+    pmiAnnualRate = pmiIsCustom ? pmiOverride! / 100 : getPmiRate(ltv, ficoScore);
     monthlyPmi = (baseLoanAmount * pmiAnnualRate) / 12;
   }
 
   if (totalLoanAmount <= 0 || monthlyRate <= 0 || numPayments <= 0) {
-    return { monthlyPI: 0, monthlyPmi: 0, monthlyMip: 0, totalMonthly: 0, totalInterest: 0, totalLoanAmount: 0, baseLoanAmount: 0, vaFundingFee: 0, vaFundingFeeRate: 0, vaFundingFeeWaived: false, fhaUfmip: 0, pmiAnnualRate: 0, loanType, amortization: [], dpDollar, dpPercent, ltv };
+    return { monthlyPI: 0, monthlyPmi: 0, monthlyMip: 0, totalMonthly: 0, totalInterest: 0, totalLoanAmount: 0, baseLoanAmount: 0, vaFundingFee: 0, vaFundingFeeRate: 0, vaFundingFeeWaived: false, fhaUfmip: 0, pmiAnnualRate: 0, pmiIsCustom: false, loanType, amortization: [], dpDollar, dpPercent, ltv };
   }
 
   const monthlyPI = (totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments))) / (Math.pow(1 + monthlyRate, numPayments) - 1);
@@ -229,7 +233,7 @@ function calculate(inputs: LoanInputs): CalcResult {
     amortization.push({ month: i, payment: monthlyPI, principal: principalPayment, interest: interestPayment, balance: Math.max(0, balance) });
   }
 
-  return { monthlyPI, monthlyPmi, monthlyMip, totalMonthly, totalInterest, totalLoanAmount, baseLoanAmount, vaFundingFee, vaFundingFeeRate, vaFundingFeeWaived: vaDisability, fhaUfmip, pmiAnnualRate, loanType, amortization, dpDollar, dpPercent, ltv };
+  return { monthlyPI, monthlyPmi, monthlyMip, totalMonthly, totalInterest, totalLoanAmount, baseLoanAmount, vaFundingFee, vaFundingFeeRate, vaFundingFeeWaived: vaDisability, fhaUfmip, pmiAnnualRate, pmiIsCustom, loanType, amortization, dpDollar, dpPercent, ltv };
 }
 
 // ─── URL Encoding/Decoding ────────────────────────────────────────────────────
@@ -246,6 +250,7 @@ function encodeInputsToURL(inputs: LoanInputs): string {
   params.set("tax", String(inputs.propertyTax));
   params.set("ins", String(inputs.insurance));
   params.set("hoa", String(inputs.hoaFees));
+  if (inputs.pmiOverride != null) params.set("pmio", String(inputs.pmiOverride));
   if (inputs.loanType === "va") {
     params.set("vfu", inputs.vaFirstUse ? "1" : "0");
     params.set("vd", inputs.vaDisability ? "1" : "0");
@@ -273,6 +278,7 @@ function decodeInputsFromURL(): LoanInputs | null {
     hoaFees: Number(params.get("hoa")) || 0,
     vaFirstUse: params.get("vfu") !== "0",
     vaDisability: params.get("vd") === "1",
+    pmiOverride: params.has("pmio") && !Number.isNaN(Number(params.get("pmio"))) ? Number(params.get("pmio")) : null,
   };
 }
 
@@ -347,6 +353,27 @@ function LoanInputPanel({ inputs, onChange, label }: { inputs: LoanInputs; onCha
           <InputField label={inputs.loanType === "fha" ? "FICO Score (for reference)" : "FICO Score"} value={inputs.ficoScore} onChange={(v) => set({ ficoScore: v })} step={10} min={300} max={850}
             helpText={inputs.loanType === "conventional" && ltv > 80 ? `Used for PMI rate lookup — best rate across MGIC, Radian & Arch MI (LTV: ${fmtPct(ltv, 1)})` : inputs.loanType === "fha" ? "FHA MIP rates are based on LTV, not FICO" : undefined} />
         )}
+
+        {/* PMI Factor — auto-generated from the FICO/LTV table, manually editable */}
+        {inputs.loanType === "conventional" && ltv > 80 && (() => {
+          const autoPct = Number((getPmiRate(ltv, inputs.ficoScore) * 100).toFixed(3));
+          const isCustom = inputs.pmiOverride != null;
+          return (
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-sm font-body font-medium text-navy">PMI Factor (annual)</label>
+                <div className="flex items-center gap-1.5">
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-body font-semibold uppercase tracking-wide ${isCustom ? "bg-gold/25 text-navy" : "bg-teal/15 text-teal"}`}>{isCustom ? "Custom" : "Auto"}</span>
+                  {isCustom && (
+                    <button onClick={() => set({ pmiOverride: null })} className="px-2 py-0.5 rounded text-[10px] font-body font-medium bg-sand text-muted-foreground hover:bg-sand-dark transition-colors">Reset to auto</button>
+                  )}
+                </div>
+              </div>
+              <InputField label="" value={isCustom ? inputs.pmiOverride! : autoPct} onChange={(v) => set({ pmiOverride: v })} suffix="%/yr" step={0.01} min={0} max={5}
+                helpText={isCustom ? `Custom factor — the auto rate for FICO ${inputs.ficoScore} / ${fmtPct(ltv, 1)} LTV would be ${autoPct}%` : "Auto from the FICO/LTV table — type over it to match a lender's MI quote"} />
+            </div>
+          );
+        })()}
 
         {/* VA-specific */}
         {inputs.loanType === "va" && (
@@ -446,7 +473,7 @@ function ResultCard({ calc, inputs, highlight }: { calc: CalcResult; inputs: Loa
       {/* Loan-specific notes */}
       <div className="mt-3 space-y-2">
         {inputs.loanType === "conventional" && calc.monthlyPmi > 0 && (
-          <div className="flex items-start gap-2 bg-gold/10 rounded-lg p-2.5"><Info className="w-3.5 h-3.5 text-gold mt-0.5 shrink-0" /><p className="text-xs text-sand/70">PMI rate sourced from best available across MGIC, Radian &amp; Arch MI for FICO {inputs.ficoScore} / {fmtPct(calc.ltv, 1)} LTV. Removable at 20% equity.</p></div>
+          <div className="flex items-start gap-2 bg-gold/10 rounded-lg p-2.5"><Info className="w-3.5 h-3.5 text-gold mt-0.5 shrink-0" /><p className="text-xs text-sand/70">{calc.pmiIsCustom ? `Custom PMI factor of ${fmtPct(calc.pmiAnnualRate * 100)} applied (manually entered). Removable at 20% equity.` : `PMI rate sourced from best available across MGIC, Radian & Arch MI for FICO ${inputs.ficoScore} / ${fmtPct(calc.ltv, 1)} LTV. Removable at 20% equity.`}</p></div>
         )}
         {inputs.loanType === "va" && (
           <div className="flex items-start gap-2 bg-teal/10 rounded-lg p-2.5"><Shield className="w-3.5 h-3.5 text-teal mt-0.5 shrink-0" /><p className="text-xs text-sand/70">{calc.vaFundingFeeWaived ? "VA Funding Fee waived (10%+ disability)." : `VA Funding Fee: ${fmt(calc.vaFundingFee)} (${fmtPct(calc.vaFundingFeeRate * 100)}) financed into loan.`}</p></div>
