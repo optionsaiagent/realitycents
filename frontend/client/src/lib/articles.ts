@@ -3326,7 +3326,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
     category: "First-Time Buyers",
     readTime: "10 min read",
     date: "2026-05-10",
-    lastUpdated: "2026-08-25",
+    lastUpdated: "2026-09-01",
     image: "/images/heroes/hale-kamaaina-mortgage-program-hawaii.webp",
     featured: true,
     draft: false,
@@ -3403,7 +3403,7 @@ To qualify for the Hale Kamaʻāina Mortgage Program, a borrower must meet all o
 6. Purchase price within program limits (see tables below)
 7. Maximum DTI of 45%
 8. Completion of a HUD-approved homebuyer education course
-9. Must occupy the home as primary residence within 60 days of closing
+9. Must occupy the home as primary residence within 60 days of closing — and keep it as your primary residence for as long as you own it during the first 9 years (see the 9-year rule below)
 
 For the down payment assistance component only, two additional requirements apply: the borrower cannot own any other residential property in Hawaii, and cannot have previously received DPA from HHFDC programs.
 
@@ -3464,11 +3464,17 @@ The Hale Kamaʻāina rate can be combined with other Hawaii homebuyer assistance
 
 **$3,000 Closing Cost Incentive**: As of February 2026, HHFDC approved an additional incentive of up to $3,000 for the first 35 homebuyers who close under the program. As of the May 7 ceremony, only three buyers had closed — meaning 32 of the 35 incentive slots remain available.
 
-## The Recapture Tax: What You Need to Know
+## The 9-Year Rule: Owner-Occupancy and the Recapture Tax
 
-Because the program is funded through federal mortgage revenue bonds, it includes a potential recapture tax if you sell within 9 years. You may owe this tax only if all three of the following conditions are met simultaneously: you sell the home within 9 years of purchase, your income at the time of sale exceeds the federal recapture income limit, and you realize a gain on the sale.
+The program carries a 9-year owner-occupancy requirement, and it is worth being precise about what that does and does not mean.
 
-If any one of these three conditions is not met, there is no recapture tax. HHFDC provides a recapture tax notice at closing that explains the calculation. For most buyers who plan to stay in their home for more than 9 years — or whose income does not increase dramatically — the recapture tax is not a practical concern.
+**What it means:** for the first 9 years, the home must remain your primary residence for as long as you own it. You cannot move out and convert the property to a rental while keeping the Hale Kamaʻāina loan — this is a subsidized owner-occupant program, not a path to an investment property.
+
+**What it does not mean:** you are not locked in for 9 years. You can sell the home at any time, including within the first 9 years, if your plans change.
+
+The one consequence of selling early is a *potential* federal recapture tax, because the program is funded through federal mortgage revenue bonds. You may owe this tax only if **all three** of the following conditions are met simultaneously: you sell the home within 9 years of purchase, your income at the time of sale exceeds the federal recapture income limit, and you realize a gain on the sale.
+
+If any one of these three conditions is not met, there is no recapture tax — and in practice, most buyers who sell early will not meet all three at once. HHFDC provides a recapture tax notice at closing that explains the calculation. For most buyers who plan to stay in their home for more than 9 years — or whose income does not increase dramatically — the recapture tax is not a practical concern at all.
 
 ## How to Apply: Step by Step
 
@@ -3476,7 +3482,7 @@ If any one of these three conditions is not met, there is no recapture tax. HHFD
 
 **Step 2: Complete a HUD-approved homebuyer education course.** This is required before closing. Courses are available online through providers like eHome America and Framework. Allow 6–8 hours to complete the course.
 
-**Step 3: Find a participating lender.** As of May 2026, approximately six lenders are enrolled and trained to originate Hale Kamaʻāina loans. American Savings Bank has confirmed participation and has already closed the first three loans. The full list of participating lenders is on the HHFDC website.
+**Step 3: Find a participating lender.** Only lenders enrolled with HHFDC can originate Hale Kamaʻāina loans. **CMG Home Loans is now an approved participating lender** (as of September 2026), which means you can pursue this program directly through this office — alongside American Savings Bank, which closed the program's first three loans, and the other enrolled lenders on the HHFDC website.
 
 **Step 4: Get pre-approved.** The lender will review your income, credit, and assets against both the standard loan guidelines (FHA, VA, conventional) and the Hale Kamaʻāina program requirements. Pre-approval under this program works the same as any other mortgage pre-approval.
 
@@ -3492,14 +3498,14 @@ The program launched in December 2025. As of May 7, 2026 — five months later �
 
 For context on how much income you need to qualify at these price points, see our analysis of [what income you actually need to buy a home in Hawaii in 2026](/knowledge-base/income-needed-buy-home-hawaii-2026). For buyers using FHA financing, our [FHA loans Hawaii guide](/knowledge-base/fha-loans-hawaii-explained) covers the full underwriting requirements. For military buyers, the [VA loans Hawaii guide](/knowledge-base/va-loans-hawaii-military) explains how to combine VA benefits with the Hale Kamaʻāina rate. For buyers considering down payment assistance alongside seller concessions, see our [down payment assistance Hawaii guide](/knowledge-base/down-payment-assistance-hawaii).
 
-The Hale Kamaʻāina program is offered through participating lenders enrolled with HHFDC. For the current list of approved lenders and to confirm fund availability, visit [dbedt.hawaii.gov/hhfdc/hk-mortgage-program/](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/).
+The Hale Kamaʻāina program is offered through participating lenders enrolled with HHFDC — and **CMG Home Loans is now one of them**. For the full list of approved lenders and to confirm fund availability, visit [dbedt.hawaii.gov/hhfdc/hk-mortgage-program/](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/).
 
-For all other Hawaii loan options — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) for a no-obligation rate comparison at your specific purchase price and loan type.
+Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
 
 ---
 *Sources: Hawaii Housing Finance and Development Corporation (HHFDC), Maui Now (May 10, 2026), eHousingPlus HHFDC Income and Purchase Price Limits (January 30, 2026), HHFDC Eligibility Requirements (January 15, 2026), Team Wong Hawaii (November 2025), NCSHA (February 2026)*
 
-*Last Updated: May 2026*`,
+*Last Updated: September 2026*`,
   },
   {
     slug: "fannie-mae-condo-guidelines-2026-hawaii",
