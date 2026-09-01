@@ -11,6 +11,7 @@ import SEO from "@/components/SEO";
 import ShareGuide from "@/components/ShareGuide";
 import { LENDER, IMAGES, IMAGE_ALTS, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
+import PCSCallout from "@/components/PCSCallout";
 import {
   MapPin,
   Shield,
@@ -407,6 +408,8 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
       </section>
 
       {/* Share This Guide */}
+      <PCSCallout baseSlug={data.slug} />
+
       <section className="py-8">
         <div className="container max-w-4xl">
           <ShareGuide

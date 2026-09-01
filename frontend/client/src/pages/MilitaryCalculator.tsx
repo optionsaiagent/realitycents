@@ -8,6 +8,7 @@ import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation, useSearch } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import PCSCallout from "@/components/PCSCallout";
 import SEO from "@/components/SEO";
 import { LENDER } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
@@ -606,6 +607,8 @@ export default function MilitaryCalculator() {
         image={HERO_IMAGE}
         compact
       />
+
+      <PCSCallout />
 
       <section className="py-16 lg:py-24">
         <div className="container">
