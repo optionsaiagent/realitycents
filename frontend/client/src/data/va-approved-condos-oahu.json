@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-08-13",
+  "lastUpdated": "2026-09-02",
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "HONOLULU",
   "state": "HI",
-  "totalApproved": 1764,
-  "withoutConditions": 1519,
+  "totalApproved": 1766,
+  "withoutConditions": 1521,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -60,7 +60,7 @@
       "zipCode": "96706",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
-      "reviewDate": "2026-12-25",
+      "reviewDate": "2026-08-20",
       "approvalRequestDate": "2026-08-10",
       "neighborhood": "Ewa Beach"
     },
@@ -11629,20 +11629,6 @@
       "neighborhood": "Waialua"
     },
     {
-      "id": 321716,
-      "vaId": "FHA015",
-      "name": "KAHE KAI I & II",
-      "address": "",
-      "city": "NANAKULI, OAHU",
-      "state": "HI",
-      "zipCode": "96792",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": null,
-      "approvalRequestDate": "2011-06-06",
-      "neighborhood": "Waianae/Makaha"
-    },
-    {
       "id": 639814,
       "vaId": "002315",
       "name": "KAHE KAI I & II",
@@ -11654,6 +11640,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "2024-11-19",
       "approvalRequestDate": "2024-11-12",
+      "neighborhood": "Waianae/Makaha"
+    },
+    {
+      "id": 321716,
+      "vaId": "FHA015",
+      "name": "KAHE KAI I & II",
+      "address": "",
+      "city": "NANAKULI, OAHU",
+      "state": "HI",
+      "zipCode": "96792",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": null,
+      "approvalRequestDate": "2011-06-06",
       "neighborhood": "Waianae/Makaha"
     },
     {
@@ -12679,6 +12679,20 @@
       "neighborhood": "Kailua"
     },
     {
+      "id": 556631,
+      "vaId": "001350",
+      "name": "KAWENA AT MEHANA",
+      "address": "460 KAMAAHA AVE",
+      "city": "KAPOLEI",
+      "state": "HI",
+      "zipCode": "96707",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2016-04-04",
+      "approvalRequestDate": "2016-03-18",
+      "neighborhood": "Kapolei"
+    },
+    {
       "id": 635240,
       "vaId": "002178",
       "name": "KAWENA AT MEHANA",
@@ -12704,20 +12718,6 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "2023-04-12",
       "approvalRequestDate": "2023-03-16",
-      "neighborhood": "Kapolei"
-    },
-    {
-      "id": 556631,
-      "vaId": "001350",
-      "name": "KAWENA AT MEHANA",
-      "address": "460 KAMAAHA AVE",
-      "city": "KAPOLEI",
-      "state": "HI",
-      "zipCode": "96707",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": "2016-04-04",
-      "approvalRequestDate": "2016-03-18",
       "neighborhood": "Kapolei"
     },
     {
@@ -14273,6 +14273,20 @@
       "reviewDate": "2018-04-26",
       "approvalRequestDate": "2018-04-06",
       "neighborhood": "Kaimuki/Kapahulu"
+    },
+    {
+      "id": 645157,
+      "vaId": "002427",
+      "name": "LAHAINA STREET CONDO",
+      "address": "84-1122 LAHAINA ST",
+      "city": "WAIANAE",
+      "state": "HI",
+      "zipCode": "96792",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-08-26",
+      "approvalRequestDate": "2026-08-20",
+      "neighborhood": "Waianae/Makaha"
     },
     {
       "id": 321021,
@@ -17255,6 +17269,20 @@
       "reviewDate": null,
       "approvalRequestDate": null,
       "neighborhood": "Waikiki"
+    },
+    {
+      "id": 645024,
+      "vaId": "002422",
+      "name": "NANAHEA AT HO'OPILI",
+      "address": "91-3475 KAMAILEHOPE STREET",
+      "city": "EWA BEACH",
+      "state": "HI",
+      "zipCode": "96706",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-08-17",
+      "approvalRequestDate": "2026-08-05",
+      "neighborhood": "Ewa Beach"
     },
     {
       "id": 449863,
