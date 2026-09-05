@@ -342,6 +342,21 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "What is the average HOA fee in Honolulu?", answer: "The median advertised HOA/AOAO fee in Honolulu was $882/month in February 2026, according to UHERO's analysis of real estate listings. Hawaii has the second-highest median HOA fee nationally at $470/month, and 42% of Hawaii homeowners pay HOA fees compared to 25% nationally. An $882/month HOA has the same DTI impact as adding $158,000 to your loan amount." },
     ],
   },
+  "fannie-mae-departing-residence-move-up-buyers-hawaii": {
+    wordCount: 1150,
+    keywords: "Fannie Mae departing residence 2026, departing residence rental income rules, convert home to rental buy new home Hawaii, move-up buyer Hawaii, keep current home buy next one, Fannie Mae B3-3.8-05, market rent 75 percent offset, departing residence reserves, SEL-2026-08, Oahu move-up buyer mortgage",
+    about: [
+      { name: "Fannie Mae", sameAs: "https://en.wikipedia.org/wiki/Fannie_Mae" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Debt-to-income ratio", sameAs: "https://en.wikipedia.org/wiki/Debt-to-income_ratio" },
+      { name: "Renting", sameAs: "https://en.wikipedia.org/wiki/Renting" },
+    ],
+    faqSchema: [
+      { question: "Do I need a signed lease to count rent from my departing residence?", answer: "No — as of Fannie Mae's September 2, 2026 update (Selling Guide B3-3.8-05), lease agreements are not permitted for a departing residence. Instead, the lender documents market rent using an appraisal with market rents, a Single-Family Comparable Rent Schedule (Form 1007), or market analysis tools like Zillow, Redfin, or the MLS with at least three comparable rentals. The rules are mandatory for applications dated November 1, 2026 or later." },
+      { question: "How much of my home's market rent counts when I convert it to a rental?", answer: "75% of documented market rent, minus your full housing payment (PITIA — principal, interest, taxes, insurance, and association dues). If 75% of rent covers the PITIA, the payment is removed from your debt-to-income ratio; any surplus does not count as additional income, and any shortfall is added to your monthly debts." },
+      { question: "What reserves do I need to convert my Hawaii home to a rental and buy another?", answer: "If you have less than 12 months of property management experience, Fannie Mae requires six months of the departing home's full PITIA in verified reserves, on top of other reserve requirements. With a year or more of landlord experience, this specific requirement does not apply. On Oahu, six months of PITIA is commonly five figures, and AOAO/HOA dues count in the number." },
+    ],
+  },
   "hale-kamaaina-mortgage-program-hawaii": {
     wordCount: 2800,
     keywords: "Hale Kamaaina mortgage program Hawaii, HHFDC first time homebuyer Hawaii, Hawaii mortgage revenue bond program, below market rate Hawaii mortgage, HHFDC mortgage rate Hawaii, Hula Mae program Hawaii, HHFDC Hale Kamaaina eligibility, Hawaii first time buyer program 2026, Hale Kamaaina income limits, Hale Kamaaina purchase price limits",

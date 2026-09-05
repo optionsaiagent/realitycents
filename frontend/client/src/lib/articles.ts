@@ -3320,6 +3320,117 @@ The data says the window is open. It doesn't say how long it stays open. If you'
 *Last Updated: May 2026*`,
   },
   {
+    slug: "fannie-mae-departing-residence-move-up-buyers-hawaii",
+    title: "Keep Your Current Home, Buy the Next One: Fannie Mae Just Changed the Rules for Hawaii Move-Up Buyers",
+    excerpt: "Fannie Mae's September 2, 2026 update ends the signed-lease requirement for departing residences. 75% of documented market rent can now offset your current housing payment — here is what changed, the Hawaii math, and the two numbers that decide whether it works.",
+    category: "Hawaii Specific",
+    readTime: "7 min read",
+    date: "2026-09-01",
+    lastUpdated: "2026-09-01",
+    image: "/images/heroes/fannie-mae-departing-residence-move-up-buyers-hawaii.webp",
+    featured: true,
+    draft: false,
+    content: `If you own a home on Oahu and you've thought about moving up, but the idea of selling your place with its low-rate mortgage made you wince, this one is for you.
+
+On September 2, 2026, Fannie Mae rewrote the rules for what lenders call a **departing residence**: the home you're leaving behind and converting to a rental when you buy your next primary home. The old approach leaned on a signed lease. The new approach doesn't allow one at all.
+
+Here's what changed, what it means for your numbers, and what I'd do in your shoes.
+
+## The Old Problem
+
+Under the previous guidelines, if you wanted the future rent on your current home to help you qualify for the new mortgage, you needed a tenant lined up with a signed lease before closing, and usually proof they'd paid a deposit or first month's rent.
+
+That created a timing trap. Most people can't hand a tenant the keys before they've moved out, and most people can't move out before they've closed on the new house. So many move-up buyers either had to qualify carrying both full payments, sell first and scramble, or walk away.
+
+## What Changed on September 2, 2026
+
+Fannie Mae's updated Selling Guide (Section B3-3.8-05) now works like this:
+
+**1. No lease. Period.**
+Lease agreements are not permitted for a departing residence. Not "optional" — not allowed. Instead, your lender documents *market rent* using one of these:
+- A full appraisal of your current home that includes market rents
+- A Single-Family Comparable Rent Schedule (Fannie Mae Form 1007)
+- Market analysis tools like Zillow, Redfin, or the MLS, with at least three comparable rentals, from the same neighborhood or building when possible
+
+**2. Rent is haircut to 75%.**
+The lender takes the documented market rent, multiplies it by 75% (a built-in vacancy and maintenance cushion), and subtracts your full housing payment on the departing home: principal, interest, taxes, insurance, and association dues (PITIA).
+
+**3. The result can only *offset* — it can't add income.**
+If 75% of rent covers your current PITIA, that payment effectively disappears from your debt-to-income ratio. But if there's money left over, it does **not** count as extra income to qualify for more house. If 75% of rent falls short, the gap is added to your debts.
+
+**4. Reserves, but only if you're new to this.**
+If you have less than 12 months of property management experience, you'll need six months of the departing home's PITIA in verified reserves, on top of any other reserve requirements. If you've been a landlord for a year or more, this specific requirement doesn't apply.
+
+**5. Timing.**
+Lenders may use the new rules now. They're mandatory for loan applications dated November 1, 2026 or later.
+
+## Why This Matters More in Hawaii Than Almost Anywhere
+
+Oahu rents are high. Many homeowners who bought or refinanced between 2019 and 2022 carry mortgages with very low rates and modest payments. Put those two facts together and the 75% haircut on a realistic rent comp often still covers the full payment — which is exactly what unlocks the move-up purchase without selling.
+
+Two Hawaii-specific things to watch:
+
+- **Association dues count.** PITIA includes your AOAO or HOA payment. On a condo or townhome, that can be $500 to $1,000+ per month, and it makes the math tighter.
+- **Six months of Honolulu PITIA is real money.** That reserve requirement — not the paperwork — is usually the gate for first-time landlords.
+
+## A Hypothetical Example
+
+*Illustrative only — not a quote or an offer. Your numbers will differ.*
+
+Say you own a Mililani townhome:
+
+| Item | Amount |
+|---|---|
+| Market rent (three Zillow/MLS comps) | $3,400 |
+| × 75% | $2,550 |
+| Your PITIA (P&I $1,600 + taxes $250 + insurance $100 + AOAO $350) | $2,300 |
+| Result | **+$250** |
+
+The departing payment is fully offset. Your $2,300 payment comes out of your debt ratio for the new purchase. The extra $250 does not count as income.
+
+Reserves if you've never been a landlord: 6 × $2,300 = **$13,800** in verified funds, in addition to your down payment, closing costs, and any other required reserves.
+
+Now change one number. Suppose comps only support $2,800 in rent:
+
+| Item | Amount |
+|---|---|
+| Market rent | $2,800 |
+| × 75% | $2,100 |
+| PITIA | $2,300 |
+| Result | **−$200** |
+
+The $200 shortfall gets added to your monthly debts. That's still far better than carrying the entire $2,300, but it's a reminder that the rent comps drive everything.
+
+## What I'd Do in Your Shoes
+
+- **Run the rent comps before you shop.** Pull three current rentals in your neighborhood or building. If 75% of that number covers your PITIA, you have a real path. If it doesn't, you'll know your shortfall before you fall in love with a listing.
+- **Know your PITIA to the dollar.** Pull your mortgage statement, property tax bill, insurance declarations page, and AOAO statement. Don't estimate.
+- **Count your reserves without rounding up.** If you'd be a first-time landlord, add six months of that PITIA to your cash-to-close planning. Retirement accounts may count toward reserves under Fannie Mae rules; confirm with your lender.
+- **Be a landlord for real.** This rule is built for people who intend to rent their home. If you qualify using market rent and then can't or don't rent it, you're carrying two payments. The 75% cushion helps, but it isn't a substitute for a plan.
+- **Ask which rule set your lender is using.** Until November 1, 2026, some lenders will still be on the old policy. Ask directly.
+
+## A Few Important Caveats
+
+- This is a **Fannie Mae conventional** change. Freddie Mac, FHA, and VA each have their own rules for departing residences, and they haven't changed with this announcement. If you're a veteran weighing a VA purchase, our [VA loans Hawaii guide](/knowledge-base/va-loans-hawaii-military) covers VA's requirements — and VA buyers have a separate path to keeping the first home through [second-tier entitlement](/knowledge-base/va-second-tier-entitlement-hawaii).
+- Individual lenders can layer on stricter requirements ("overlays"). Always confirm with the lender you're working with.
+- Everything above is educational, not a commitment to lend. Qualification depends on a complete application, credit, income, assets, and property review.
+
+## Bottom Line
+
+For the first time, a Hawaii homeowner can turn their current home into a rental on paper, using real market data instead of a signed lease, and qualify for the next home before the moving truck arrives. The rent comps and the six-month reserve are the two numbers that decide whether it works for you.
+
+To model the payment on the next home itself, run your scenario in the [Advanced Mortgage Calculator](/advanced-calculator). And if you're buying a condo, note that Fannie Mae's [condo project review rules are also changing in 2026](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) — the two updates together reshape a lot of Oahu purchase plans.
+
+Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
+
+---
+*Sources: Fannie Mae Selling Guide Announcement SEL-2026-08 (September 2, 2026); Fannie Mae Selling Guide B3-3.8-05, Rental Income from Non-Subject Property: Departing Residence (09/02/2026); B3-3.8-01, General Rental Income Information (09/02/2026); B3-6-06, Qualifying Impact of Other Real Estate Owned.*
+
+*CMG Home Loans is an Equal Housing Opportunity lender. This article is for educational purposes only and does not constitute a loan approval or commitment to lend. All loans subject to credit approval and program guidelines. Rates, terms, and guidelines are subject to change without notice.*
+
+*Last Updated: September 2026*`,
+  },
+  {
     slug: "hale-kamaaina-mortgage-program-hawaii",
     title: "The Hale Kamaʻāina Mortgage Program: How Hawaii First-Time Buyers Can Get a Below-Market Rate",
     excerpt: "HHFDC's Hale Kamaʻāina Mortgage Program uses tax-exempt bonds to offer eligible Hawaii first-time buyers a below-market 30-year fixed rate and optional down payment assistance. Here's who qualifies, the income and price limits, and how to apply.",
