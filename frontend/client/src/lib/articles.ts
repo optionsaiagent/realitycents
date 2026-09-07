@@ -1019,9 +1019,11 @@ Explore [down payment assistance programs available in Hawaii](/knowledge-base/d
     category: "VA Loans",
     readTime: "7 min",
     date: "2026-02-10",
-    lastUpdated: "March 2026",
+    lastUpdated: "September 2026",
     image: "/images/heroes/va-loans-hawaii-military.webp",
     content: `**Yes, eligible veterans and active-duty military can buy a home in Hawaii with zero down payment using a VA loan — there is no loan limit with full entitlement, meaning you can purchase at any price with $0 down and no PMI.** Hawaii is home to some of the largest military installations in the Pacific, including Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, and several other facilities. For the thousands of service members and veterans stationed in or retiring to Hawaii, VA loans represent one of the most powerful tools for achieving homeownership.
+
+**Read the full playbook — [Zero Down in Paradise](/zero-down-in-paradise)** by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, plus the free RealityCents tools that pair with it.
 
 ## What Makes VA Loans Special in Hawaii
 

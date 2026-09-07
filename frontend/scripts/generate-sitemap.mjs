@@ -51,6 +51,7 @@ const STATIC_PAGES = [
   { loc: "/agents",                  changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/advisors",                changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/zero-down-in-paradise",   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
+  { loc: "/va-eligibility-calculator", changefreq: "monthly", priority: "0.8", lastmod: TODAY },
   { loc: "/calculator",              changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/advanced-calculator",     changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/affordability-calculator", changefreq: "monthly", priority: "0.8", lastmod: TODAY },

@@ -113,7 +113,7 @@ const NEIGHBORHOODS = [
 const FAQS = [
   {
     q: "I used my VA loan at Camp Pendleton. Can I use it again at MCBH?",
-    a: "Yes — with remaining entitlement. Honolulu County's 2026 limit is $1,209,750. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference only.",
+    a: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference only. With full entitlement, there is no VA loan limit for $0 down.",
     hasLink: true,
   },
   {
@@ -123,7 +123,7 @@ const FAQS = [
   },
   {
     q: "Kailua homes are expensive. Can I still use VA with $0 down above $1M?",
-    a: "Yes — the 2026 Honolulu County VA loan limit is $1,209,750. You can buy up to that price with $0 down and full entitlement. Above that, you'd need a 25% down payment on the difference only. For a $1.3M Kailua home, that's about $22,500 down instead of the $260,000 conventional would require.",
+    a: "With full entitlement, there is no VA loan limit for $0 down — you can buy at any price a lender will approve. Honolulu County's 2026 conforming limit of $1,249,125 applies only with reduced entitlement. For a $1.3M Kailua home with reduced entitlement and little remaining capacity, you'd put 25% down on the amount above your remaining $0-down ceiling — still far less than a conventional 20% down payment.",
     hasLink: false,
   },
   {
@@ -328,10 +328,10 @@ export default function VALoanKaneohe() {
             <QuarterlyBadge label="Rate-dependent · Q1 2026" />
           </div>
           <p className="text-foreground/70 font-body mb-2">
-            The 2026 Honolulu County VA loan limit is{" "}
-            <strong className="text-foreground">$1,209,750</strong> — meaning you can buy up to
-            that price with $0 down if you have full entitlement. Here's how that maps to
-            realistic scenarios by rank.
+            With full entitlement, there is no VA loan limit for a $0-down purchase — you can buy
+            at whatever price a lender will approve. Honolulu County's 2026 single-family
+            conforming limit of <strong className="text-foreground">$1,249,125</strong> applies
+            only with reduced entitlement. Here's how BAH maps to realistic scenarios by rank.
           </p>
           <div className="flex items-center gap-2 mb-6">
             <QuarterlyBadge label="Loan limit updates Jan 2026" />

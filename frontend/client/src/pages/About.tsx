@@ -84,6 +84,17 @@ export default function About() {
         image={IMAGES.heroAbout}
       />
 
+      <section className="bg-navy border-b border-gold/20">
+        <div className="container py-4">
+          <p className="text-sm text-sand/80 text-center sm:text-left">
+            <Link href={BOOK.pageUrl} className="text-gold font-body font-semibold hover:underline">
+              Read the full playbook — <em>Zero Down in Paradise</em>
+            </Link>
+            <span className="text-sand/50"> · Hawaii VA loan playbook for military homebuyers · NMLS #{LENDER.nmls}</span>
+          </p>
+        </div>
+      </section>
+
       {/* ===== BIO SECTION ===== */}
       <section className="py-20 lg:py-28">
         <div className="container">
@@ -214,7 +225,7 @@ export default function About() {
                 Published Author
               </span>
               <h2 className="font-display text-2xl md:text-3xl text-white mb-3">
-                Zero Down in Paradise
+                Read the full playbook — Zero Down in Paradise
               </h2>
               <p className="text-sm text-teal-light font-body font-medium mb-3">{BOOK.subtitle}</p>
               <p className="text-sand/70 text-sm leading-relaxed mb-6">
@@ -235,7 +246,7 @@ export default function About() {
                   href={BOOK.pageUrl}
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md font-body font-semibold text-sm transition-all border border-white/20"
                 >
-                  About the Book
+                  Read the full playbook
                 </Link>
               </div>
             </div>

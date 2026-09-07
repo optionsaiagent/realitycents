@@ -87,12 +87,12 @@
     },
     {
       "source": "/mortgagecalcplus/va-eligibility-calculator",
-      "destination": "/military-calculator",
+      "destination": "/va-eligibility-calculator",
       "statusCode": 301
     },
     {
       "source": "/mortgagecalcplus/va-eligibility-calculator/",
-      "destination": "/military-calculator",
+      "destination": "/va-eligibility-calculator",
       "statusCode": 301
     },
     {

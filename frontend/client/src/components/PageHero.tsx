@@ -22,6 +22,7 @@ const ALT_BY_SRC: Record<string, string> = {
   [IMAGES.heroAgents]: IMAGE_ALTS.heroAgents,
   [IMAGES.heroAdvisors]: IMAGE_ALTS.heroAdvisors,
   "/images/heroes/page-military-calculator.webp": IMAGE_ALTS.heroMilitary,
+  [IMAGES.heroZeroDown]: IMAGE_ALTS.heroZeroDown,
 };
 
 export default function PageHero({ title, subtitle, image, imageAlt, children, compact, className }: PageHeroProps) {

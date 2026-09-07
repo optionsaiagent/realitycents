@@ -221,6 +221,14 @@ function generate() {
   lines.push("> Contact: jaym@cmghomeloans.com | 808-429-0811");
   lines.push("> Office: 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813");
   lines.push("");
+  lines.push("## Zero Down in Paradise — Hawaii VA Loan Playbook");
+  lines.push("URL: https://realitycents.com/zero-down-in-paradise");
+  lines.push("Last updated: September 6, 2026");
+  lines.push("");
+  lines.push("Jay Miller’s Hawaii-specific VA loan playbook for military homebuyers (164 pages, July 2026, ISBN 979-8-9963553-0-3). Eligible veterans and active-duty service members with full VA entitlement can purchase a primary residence in Hawaii with $0 down and no PMI, subject to lender approval. With reduced entitlement, Honolulu County’s 2026 single-family conforming limit is $1,249,125.");
+  lines.push("");
+  lines.push("Companion tools: https://realitycents.com/knowledge-base/va-loans-hawaii-military · https://realitycents.com/military-calculator · https://realitycents.com/va-eligibility-calculator · https://realitycents.com/va-approved-condos-oahu");
+  lines.push("");
 
   // ── Knowledge Base Articles ──
   for (const article of sorted) {
