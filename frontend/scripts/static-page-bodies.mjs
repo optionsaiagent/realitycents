@@ -546,6 +546,7 @@ const VA_BASES = {
     name: "Schofield Barracks",
     branch: "U.S. Army",
     unit: "25th Infantry Division",
+    playbookCta: true,
     opening: "You just got orders to Schofield Barracks and you're doing the math on Hawaii housing. Renting feels like the safe play — but if you have VA eligibility and you're here for a standard 3-year tour, I'd push you to run the numbers on buying first. The 25th ID has one of the highest PCS volumes on Oahu, which means there's always inventory turning over in the neighborhoods around post.",
     neighborhoods: ["Mililani (10–12 min, $400K–$1.8M)", "Wahiawa (5–10 min, $600K–$900K)", "Royal Kunia (~15 min, $750K–$1.1M)", "Waikele/Waipahu (15–20 min, $400K–$1.4M)", "Kapolei (20–30 min, $400K–$1.2M)"],
     faqs: [
@@ -558,6 +559,7 @@ const VA_BASES = {
     name: "Joint Base Pearl Harbor-Hickam",
     branch: "U.S. Navy / U.S. Air Force",
     unit: "JBPHH",
+    playbookCta: true,
     opening: "You just got orders to Joint Base Pearl Harbor-Hickam and you're weighing your options. Whether you're Navy coming to Pearl or Air Force heading to Hickam, the housing math is the same — and it often favors buying over renting if you're here for a full tour. JBPHH is centrally located on Oahu, which means you have more neighborhood options within a reasonable commute than any other installation on the island.",
     neighborhoods: ["Ewa Beach (15–20 min, $500K–$1.2M)", "Pearl City (10–15 min, $500K–$1.1M)", "Aiea (10–15 min, $400K–$900K)", "Salt Lake/Moanalua (10 min, $400K–$800K)", "Kapolei (20–25 min, $400K–$1.2M)"],
     faqs: [
@@ -611,6 +613,7 @@ for (const [route, data] of Object.entries(VA_BASES)) {
       <h1>VA Loan Guide for ${data.name} — Buy a Home on Oahu</h1>
       <p><strong>${data.branch}</strong> | ${data.unit}</p>
       <p>${data.opening}</p>
+      ${data.playbookCta ? `<p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The Hawaii VA loan playbook for military homebuyers.</p>` : ""}
       <section>
         <h2>Best Neighborhoods Near ${data.name}</h2>
         <ul>
