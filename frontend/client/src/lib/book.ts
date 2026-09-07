@@ -10,6 +10,10 @@ export const BOOK = {
   published: "July 2026",
   pages: 164,
   amazonUrl: "https://www.amazon.com/dp/B0H7P83W15",
+  asin: "B0H7P83W15",
   pageUrl: "/zero-down-in-paradise",
   cover: "/images/zero-down-in-paradise-cover.webp",
+  lastUpdated: "September 6, 2026",
+  lastUpdatedIso: "2026-09-06",
+  datePublished: "2026-07-03",
 } as const;

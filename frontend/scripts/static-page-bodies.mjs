@@ -58,7 +58,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Background &amp; Experience</h2>
         <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay brings a unique combination of military service understanding and deep Hawaii real estate expertise. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
         <p>Jay is a triathlete and passionate advocate for financial literacy. He created RealityCents to provide free, no-pressure mortgage education — because informed buyers make better decisions.</p>
-        <p>Jay is the author of <a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</a> (July 2026) — the definitive guide to buying a home in Hawaii with a VA loan, <a href="https://www.amazon.com/dp/B0H7P83W15">available on Amazon</a>.</p>
+        <p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, <a href="https://www.amazon.com/dp/B0H7P83W15">available on Amazon</a>.</p>
       </section>
       <section>
         <h2>Credentials</h2>
@@ -270,28 +270,126 @@ export const STATIC_PAGE_BODIES = {
   "/zero-down-in-paradise": `
     <main>
       <h1>Zero Down in Paradise — The Hawaii VA Loan Playbook for Military Homebuyers</h1>
-      <p>By Jay Miller — U.S. Army veteran, Sales Manager at CMG Home Loans (NMLS #657301), and 25-year Hawaii mortgage lending veteran. Published July 2026. Paperback, 164 pages, ISBN 979-8-9963553-0-3. <a href="https://www.amazon.com/dp/B0H7P83W15">Available on Amazon</a>.</p>
+      <p>By Jay Miller — U.S. Army veteran · NMLS #657301 · CMG Home Loans, Honolulu. Published July 2026. Paperback, 164 pages, ISBN 979-8-9963553-0-3. <a href="https://www.amazon.com/dp/B0H7P83W15">Get it on Amazon</a>. Last updated: September 6, 2026.</p>
       <section>
-        <h2>About the Book</h2>
-        <p>Hawaii is one of the most expensive housing markets in America. For service members arriving on PCS orders to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, or any of the islands' major installations, the sticker shock is real. Zero Down in Paradise is the definitive guide to buying a home in Hawaii using your VA loan, written by a 25-year Hawaii lending veteran who has personally helped hundreds of military families with their VA loans.</p>
+        <h2>What is Zero Down in Paradise?</h2>
+        <p><em>Zero Down in Paradise</em> is Jay Miller’s Hawaii-specific VA loan playbook for military homebuyers (164 pages, July 2026, ISBN 979-8-9963553-0-3).</p>
+        <p>Hawaii is one of the most expensive housing markets in America. For service members arriving on PCS orders to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, or other installations across the islands, the sticker shock is real. This book is the field guide to using your VA benefit in that market — written by a 25-year Hawaii lender and Army veteran who has helped hundreds of military families close VA loans here.</p>
+        <p>It is not a generic mainland VA pamphlet. It covers entitlement and loan limits in a high-cost county, BAH and COLA as purchasing power, VA condo approval, leasehold vs fee simple, the J-1 inspection contingency, property tax exemptions, IRRRL and assumable strategies, and the funding-fee rules most buyers only hear about at the closing table.</p>
+        <p><a href="https://www.amazon.com/dp/B0H7P83W15">Get Zero Down in Paradise on Amazon</a></p>
       </section>
       <section>
-        <h2>What's Inside</h2>
+        <h2>Can you buy a home in Hawaii with a VA loan and zero down?</h2>
+        <p><strong>Yes.</strong> Eligible veterans and active-duty service members with full VA entitlement can purchase a primary residence in Hawaii with $0 down and no PMI. You still need lender approval based on income, credit, residual income, and the property.</p>
+        <p>That $0-down benefit is especially powerful in Hawaii, where a conventional 20% down payment on an $800,000 home is $160,000. VA financing removes that cash hurdle when you qualify and have full entitlement. Many lenders still set their own maximum loan amount for $0-down VA purchases — ask your lender what their cap is.</p>
+        <p>For the full walkthrough, see the free companion guide: <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">VA Loans in Hawaii: A Complete Guide for Military Homebuyers</a>.</p>
+      </section>
+      <section>
+        <h2>Is there a VA loan limit in Hawaii?</h2>
+        <p><strong>With full entitlement, there is no VA loan limit for a $0-down purchase</strong> — you can buy at whatever price a lender will approve. With reduced entitlement (for example, an existing VA loan still outstanding), county conforming limits apply. For Honolulu County, the 2026 single-family conforming limit referenced in our Veterans Guide is <strong>$1,249,125</strong>; always confirm the current FHFA/VA figures for the county where you are buying.</p>
+        <p>If you are unsure how much entitlement you have left, use the <a href="${BASE_URL}/va-eligibility-calculator">VA Remaining Eligibility Calculator</a> and read the entitlement section of the <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a>.</p>
+      </section>
+      <section>
+        <h2>What’s inside the book?</h2>
         <ul>
-          <li>How full VA entitlement removes loan limits — even in Honolulu's high-cost market</li>
-          <li>Leveraging BAH and COLA as purchasing power</li>
-          <li>Navigating Hawaii's unique VA condo approval requirements</li>
-          <li>Mastering the leasehold-versus-fee-simple distinction and the J-1 inspection contingency</li>
-          <li>Hawaii property tax exemptions every buyer must file</li>
-          <li>IRRRL refinance, cash-out refi, and assumable loan strategies that build long-term wealth</li>
-          <li>The 2026 VA funding fee tax deduction most lenders haven't told their clients about</li>
-          <li>Real stories from the closing table — what works, what fails, and how to avoid costly mistakes</li>
+          <li><strong>Full entitlement and loan limits</strong> — How $0-down works even in Honolulu’s high-cost market, and what changes when entitlement is reduced.</li>
+          <li><strong>BAH and COLA as buying power</strong> — How military allowances factor into qualification in Hawaii.</li>
+          <li><strong>VA condo approval</strong> — Why you verify the project before you fall in love with the unit.</li>
+          <li><strong>Leasehold vs fee simple</strong> — Remaining lease term rules that can make or break a VA loan.</li>
+          <li><strong>J-1 inspection contingency</strong> — Hawaii-specific contract timing buyers need to respect.</li>
+          <li><strong>Property tax exemptions</strong> — Filings every Hawaii buyer should know about.</li>
+          <li><strong>IRRRL, cash-out, and assumable strategies</strong> — Ways VA financing can support long-term wealth, not just the first purchase.</li>
+          <li><strong>2026 VA funding fee tax deduction</strong> — A rule many borrowers never hear from their lender.</li>
+          <li><strong>Closing-table stories</strong> — What works, what fails, and how to avoid expensive mistakes.</li>
         </ul>
       </section>
       <section>
-        <h2>Who It's For</h2>
-        <p>Active-duty service members PCSing to Hawaii, veterans and Reserve members with VA eligibility, and first-time military buyers — whether you're an E-5 buying your first condo, an O-4 looking for a single-family home in Mililani, or a veteran returning to the islands years after your last assignment.</p>
-        <p><a href="https://www.amazon.com/dp/B0H7P83W15">Get Zero Down in Paradise on Amazon</a></p>
+        <h2>Who should read Zero Down in Paradise?</h2>
+        <p><strong>This book is for military buyers navigating Hawaii — PCS arrivals, veterans, and Reserve members with VA eligibility — not for generic mainland first-time buyers.</strong></p>
+        <ul>
+          <li>Active-duty service members PCSing to Oahu, Maui, Kauai, or the Big Island</li>
+          <li>Veterans and Reserve members using or restoring VA entitlement</li>
+          <li>First-time military buyers — from an E-5 condo purchase to an O-4 single-family home in places like Mililani</li>
+          <li>Veterans returning to the islands years after their last assignment</li>
+        </ul>
+        <p>If you want the free web overview first, start with the <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a>. If you want the full playbook in hand, get the book.</p>
+      </section>
+      <section>
+        <h2>Hawaii VA tools that pair with the book</h2>
+        <ul>
+          <li><a href="${BASE_URL}/va-eligibility-calculator">VA Remaining Eligibility Calculator</a> — estimate remaining $0-down capacity using Honolulu County’s 2026 conforming limit of $1,249,125</li>
+          <li><a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a> — BAH, BAS, COLA, and qualifying income framing</li>
+          <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — search ${CONDO_TOTAL}+ VA-approved condo projects on Oahu</li>
+          <li><a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">VA Loans in Hawaii guide</a> — free web companion to the book</li>
+          <li><a href="${BASE_URL}/va-loan-pearl-harbor-hickam">VA loan — Pearl Harbor / Hickam</a></li>
+          <li><a href="${BASE_URL}/va-loan-schofield-barracks">VA loan — Schofield Barracks</a></li>
+          <li><a href="${BASE_URL}/knowledge-base/va-loan-house-hacking-hawaii">VA loan house hacking in Hawaii</a></li>
+          <li><a href="${BASE_URL}/knowledge-base/va-assumable-loans-pros-cons">VA assumable loans</a></li>
+          <li><a href="${BASE_URL}/knowledge-base/va-funding-fee-tax-deductible">Is the VA funding fee tax deductible?</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>About the author</h2>
+        <p><strong>Jay Miller</strong> is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran, Certified Mortgage Advisor (CMA), and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
+        <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
+      </section>
+      <section>
+        <h2>FAQ</h2>
+        <dl>
+          <dt>What is Zero Down in Paradise?</dt>
+          <dd><em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em> is a 164-page paperback (July 2026, ISBN 979-8-9963553-0-3) by Jay Miller that explains how to buy a home in Hawaii using a VA loan.</dd>
+          <dt>Who is Jay Miller (NMLS #657301)?</dt>
+          <dd>Jay Miller is a U.S. Army veteran and Mortgage Loan Consultant / Sales Manager at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is a Certified Mortgage Advisor (CMA) and the author of <em>Zero Down in Paradise</em>.</dd>
+          <dt>Can I use a VA loan to buy in Hawaii with zero down?</dt>
+          <dd>Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply.</dd>
+          <dt>Is there a VA loan limit in Hawaii?</dt>
+          <dd>With full entitlement, no VA loan limit for $0 down. With reduced entitlement, county conforming limits apply. Honolulu County's 2026 single-family conforming limit is $1,249,125.</dd>
+          <dt>Are Hawaii condos VA-approved?</dt>
+          <dd>Not automatically. Many Hawaii condos are VA-approved, but you must verify the specific project before writing an offer. Use RealityCents’ <a href="${BASE_URL}/va-approved-condos-oahu">VA condo lookup</a> and have your lender confirm.</dd>
+          <dt>Can VA loans be used on Hawaii leasehold property?</dt>
+          <dd>Often yes, if the remaining lease term meets VA requirements (commonly at least 14 years beyond loan maturity). Always confirm with your lender on the specific lease.</dd>
+          <dt>Does BAH count as income for a Hawaii VA loan?</dt>
+          <dd>Yes. Basic Allowance for Housing typically counts toward qualification. Hawaii BAH is among the highest in the country, which can materially increase buying power — estimate with the <a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a>.</dd>
+          <dt>What is the VA funding fee, and who is exempt?</dt>
+          <dd>The VA funding fee is a one-time fee (often financeable) in place of PMI. First-use $0-down purchasers commonly pay a percentage of the loan amount; veterans receiving VA disability compensation are generally exempt. See the book and Veterans Guide for current percentages and exceptions.</dd>
+          <dt>Where can I buy Zero Down in Paradise?</dt>
+          <dd>On <a href="https://www.amazon.com/dp/B0H7P83W15">Amazon</a> (ASIN B0H7P83W15).</dd>
+          <dt>How is this different from generic VA loan guides?</dt>
+          <dd>It is written for Hawaii: high-cost entitlement math, BAH/COLA, VA condos, leasehold, J-1, local tax exemptions, and island closing realities — by a Hawaii-based VA lender who is also a veteran.</dd>
+          <dt>What free tools does RealityCents offer for VA buyers?</dt>
+          <dd><a href="${BASE_URL}/va-eligibility-calculator">VA remaining eligibility calculator</a>, <a href="${BASE_URL}/military-calculator">military buying power calculator</a>, <a href="${BASE_URL}/va-approved-condos-oahu">VA condo lookup</a>, and a full <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a> plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment.</dd>
+          <dt>How do I get started with a Hawaii VA loan?</dt>
+          <dd>1) Get your Certificate of Eligibility (COE). 2) Get pre-approved with a VA-experienced Hawaii lender. 3) Work with an agent who understands military / PCS timelines. 4) Verify condo approval and leasehold terms before you commit. Call (808) 429-0811 or start with the <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a>.</dd>
+        </dl>
+      </section>
+      <section>
+        <h2>Get the playbook</h2>
+        <p><a href="https://www.amazon.com/dp/B0H7P83W15">Buy Zero Down in Paradise on Amazon</a></p>
+        <p>Questions about a Hawaii VA purchase? Jay Miller, NMLS #657301 · (808) 429-0811 · jaym@cmghomeloans.com</p>
+        <p><em>Equal Housing Lender. This is educational content, not a commitment to lend. All loans subject to credit approval and property eligibility. Approvals are not guaranteed. $0-down VA purchases require full entitlement and lender approval. NMLS Consumer Access: <a href="https://www.nmlsconsumeraccess.org">nmlsconsumeraccess.org</a>.</em></p>
+      </section>
+    </main>
+  `,
+
+  "/va-eligibility-calculator": `
+    <main>
+      <h1>VA Remaining Eligibility Calculator — Hawaii 2026</h1>
+      <p>Estimate remaining VA $0-down capacity when entitlement is reduced. Honolulu County’s 2026 single-family conforming limit is <strong>$1,249,125</strong>. Educational tool by Jay Miller, NMLS #657301. Not a commitment to lend.</p>
+      <section>
+        <h2>How remaining entitlement works</h2>
+        <p>With full entitlement, there is no VA loan limit for a $0-down purchase — you can buy at whatever price a lender will approve. With reduced entitlement (for example, an existing VA loan still outstanding), county conforming limits apply.</p>
+        <p>Remaining $0-down capacity is estimated as the county conforming limit minus your outstanding VA loan balance. If the purchase price exceeds that capacity, a 25% down payment applies on the difference only.</p>
+      </section>
+      <section>
+        <h2>2026 Hawaii county conforming limits (1-unit)</h2>
+        <ul>
+          <li>Honolulu County (Oahu): $1,249,125</li>
+          <li>Maui County: $1,299,500</li>
+          <li>Kalawao County: $1,299,500</li>
+          <li>Kauai County: $1,007,250</li>
+          <li>Hawaii County (Big Island): $862,500</li>
+        </ul>
+        <p>Always confirm current FHFA/VA figures for the county where you are buying. Pair this tool with the <a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a> and the <a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise</a> playbook.</p>
       </section>
     </main>
   `,

@@ -330,10 +330,10 @@ export default function VALoanTripler() {
             <QuarterlyBadge label="Rate-dependent · Q1 2026" />
           </div>
           <p className="text-foreground/70 font-body mb-2">
-            The 2026 Honolulu County VA loan limit is{" "}
-            <strong className="text-foreground">$1,209,750</strong> — meaning you can buy up to
-            that price with $0 down if you have full entitlement. Here's how that maps to
-            realistic scenarios by rank.
+            With full entitlement, there is no VA loan limit for a $0-down purchase — you can buy
+            at whatever price a lender will approve. Honolulu County's 2026 single-family
+            conforming limit of <strong className="text-foreground">$1,249,125</strong> applies
+            only with reduced entitlement. Here's how BAH maps to realistic scenarios by rank.
           </p>
           <div className="flex items-center gap-2 mb-6">
             <QuarterlyBadge label="Loan limit updates Jan 2026" />

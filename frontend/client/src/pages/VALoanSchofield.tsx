@@ -103,7 +103,7 @@ const NEIGHBORHOODS = [
 const FAQS = [
   {
     q: "I used my VA loan on the mainland. Can I use it again at Schofield?",
-    a: "Yes — with remaining entitlement. Honolulu County's 2026 limit is $1,209,750. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference.",
+    a: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference. With full entitlement, there is no VA loan limit for $0 down.",
     hasLink: true,
   },
   {
@@ -220,7 +220,11 @@ export default function VALoanSchofield() {
             You just got orders to Schofield Barracks and you're doing the math on Hawaii housing.
             Renting feels like the safe play — but if you have VA eligibility and you're staying 2+
             years, I'd push you to run the numbers on buying first. Here's everything you need to
-            know about using your VA loan at Schofield.
+            know about using your VA loan at Schofield.{" "}
+            <Link href="/zero-down-in-paradise" className="text-teal font-semibold hover:underline">
+              Read the full playbook — <em>Zero Down in Paradise</em>
+            </Link>
+            .
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal/10 text-teal rounded-full text-sm font-body font-medium">
@@ -318,10 +322,10 @@ export default function VALoanSchofield() {
             <QuarterlyBadge label="Rate-dependent · Q1 2026" />
           </div>
           <p className="text-foreground/70 font-body mb-2">
-            The 2026 Honolulu County VA loan limit is{" "}
-            <strong className="text-foreground">$1,209,750</strong> — meaning you can buy up to
-            that price with $0 down if you have full entitlement. Here's how that maps to
-            realistic scenarios by rank.
+            With full entitlement, there is no VA loan limit for a $0-down purchase — you can buy
+            at whatever price a lender will approve. Honolulu County's 2026 single-family
+            conforming limit of <strong className="text-foreground">$1,249,125</strong> applies
+            only with reduced entitlement. Here's how BAH maps to realistic scenarios by rank.
           </p>
           <div className="flex items-center gap-2 mb-6">
             <QuarterlyBadge label="Loan limit updates Jan 2026" />
@@ -558,6 +562,17 @@ export default function VALoanSchofield() {
             More VA Loan Resources
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
+            <Link
+              href="/zero-down-in-paradise"
+              className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all"
+            >
+              <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">
+                Read the full playbook — Zero Down in Paradise
+              </h3>
+              <p className="text-xs text-foreground/60 font-body mt-1">
+                Jay Miller’s Hawaii VA loan playbook for military homebuyers.
+              </p>
+            </Link>
             <Link
               href="/knowledge-base/va-loans-hawaii-military"
               className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all"
