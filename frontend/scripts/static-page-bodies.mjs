@@ -408,7 +408,11 @@ export const STATIC_PAGE_BODIES = {
         <p>Enter your name and email to unlock access to all tools. These professional resources are provided free by Jay Miller, NMLS #657301, CMG Home Loans.</p>
       </section>
       <section>
-        <h2>Watch: The All-In-One Loan, for Real Estate Agents</h2>
+        <h2>Watch: Build the Equity, Then Use It — The All-In-One Loan for Real Estate Agents</h2>
+        <p>Your past clients from the last four years are mostly at 5.5% or higher. This seven-minute video shows what the All-In-One does to the pace of their equity, and what that means for the next property, the second home, and the move-up. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not a paid promotion, not a commitment to lend. <a href="https://www.youtube.com/watch?v=7x6JekhTmis">Watch on YouTube</a>.</p>
+      </section>
+      <section>
+        <h2>Also Watch: The Deal You Didn't Have to Lose</h2>
         <p>A 6-minute briefing on the All-In-One first-lien HELOC, built for agents — the three client conversations it unlocks (the fence-sitting buyer, the locked-in seller, the investor), the math behind it, and the risks stated plainly. <a href="https://www.youtube.com/watch?v=9J92UtySyR8">Watch on YouTube</a>.</p>
       </section>
     </main>
@@ -425,6 +429,10 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Watch the Briefing: How the AIO Creates Portfolio Capacity</h2>
         <p>An 8-minute briefing on the mechanics, the math, the rate-risk analysis, and the suitability screen — built for advisors, not consumers. <a href="https://www.youtube.com/watch?v=inVfvRG92Uo">Watch on YouTube</a>.</p>
+      </section>
+      <section>
+        <h2>Nine Questions Advisors Ask</h2>
+        <p>Nine questions financial advisors ask about the All-In-One loan, answered in order with the numbers on screen, including what happens if rates rise, three ways, and whether a client will qualify. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not investment advice. <a href="https://www.youtube.com/watch?v=fN2ipKwyREc">Watch on YouTube</a>.</p>
       </section>
       <section>
         <h2>The Advisor's Edge</h2>

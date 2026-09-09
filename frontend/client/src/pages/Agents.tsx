@@ -28,6 +28,13 @@ import {
 } from "lucide-react";
 import { isHumanName } from "@/lib/mailchimp";
 
+const AGENT_EQUITY_CHAPTERS = [
+  { t: 40, label: "The sample · 0:40" }, { t: 77, label: "How it works · 1:17" }, { t: 122, label: "The pace · 2:02" },
+  { t: 164, label: "The race · 2:44" }, { t: 200, label: "The next property · 3:20" }, { t: 257, label: "The move-up · 4:17" },
+  { t: 306, label: "If rates rise · 5:06" }, { t: 352, label: "Screen before you send · 5:52" }, { t: 385, label: "The working arrangement · 6:25" },
+];
+
+
 type ActiveTool = "dscr" | "assumable" | "escalation";
 
 export default function Agents() {
@@ -438,7 +445,7 @@ export default function Agents() {
         </div>
       </section>
 
-      {/* ─── AIO Explainer for Agents ─── */}
+      {/* ─── AIO for Agents: current piece (equity) + earlier explainer ─── */}
       <section className="py-16 lg:py-20 bg-sand">
         <div className="container max-w-5xl">
           <div className="text-center mb-10">
@@ -446,15 +453,59 @@ export default function Agents() {
               Watch the Briefing
             </p>
             <h2 className="font-display text-3xl lg:text-4xl text-navy mb-4">
-              You Don&rsquo;t Need Rates to Fall
+              Build the Equity, Then Use It
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A 6-minute briefing on the All-In-One loan, built for agents — the three client
-              conversations it unlocks, the math behind it, and the risks stated plainly.
+              Your past clients from the last four years are mostly at 5.5% or higher. This
+              seven-minute video shows what the All-In-One does to the pace of their equity, and
+              what that means for the next property, the second home, and the move-up.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/7x6JekhTmis"
+                title="Build the equity, then use it — the All-In-One loan for real estate agents"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+            <div className="flex flex-wrap justify-center gap-2 mt-5">
+              {AGENT_EQUITY_CHAPTERS.map((c) => (
+                <a
+                  key={c.t}
+                  href={`https://www.youtube.com/watch?v=7x6JekhTmis&t=${c.t}`}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-xs font-body font-medium px-3 py-1.5 rounded-full bg-white border border-border text-navy hover:border-teal hover:text-teal transition-colors"
+                >
+                  {c.label}
+                </a>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground text-center mt-5 max-w-2xl mx-auto">
+              Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not a
+              paid promotion, not a commitment to lend.
+            </p>
+          </div>
+
+          {/* ─── Earlier agent explainer (stays beneath) ─── */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <div className="text-center mb-8">
+              <p className="text-sm font-body font-semibold uppercase tracking-[0.15em] text-teal mb-3">
+                Also Watch
+              </p>
+              <h3 className="font-display text-2xl lg:text-3xl text-navy mb-4">
+                The Deal You Didn&rsquo;t Have to Lose
+              </h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                A 6-minute briefing on the All-In-One loan, built for agents — the three client
+                conversations it unlocks, the math behind it, and the risks stated plainly.
+              </p>
+            </div>
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
               <iframe
                 src="https://www.youtube.com/embed/9J92UtySyR8"

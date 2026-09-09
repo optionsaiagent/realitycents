@@ -17,6 +17,13 @@ import {
   Calculator,
 } from "lucide-react";
 
+const ADVISOR_FAQ_CHAPTERS = [
+  { t: 42, label: "Q1 · 0:42" }, { t: 97, label: "Q2 · 1:37" }, { t: 177, label: "Q3 · 2:57" },
+  { t: 219, label: "Q4 · 3:39" }, { t: 259, label: "Q5 · 4:19" }, { t: 308, label: "Q6 · 5:08" },
+  { t: 340, label: "Q7 · 5:40" }, { t: 385, label: "Q8 · 6:25" }, { t: 410, label: "Q9 · 6:50" },
+];
+
+
 
 const ADVISOR_BENEFITS = [
   {
@@ -131,6 +138,50 @@ export default function Advisors() {
                 className="absolute inset-0 w-full h-full"
               />
             </div>
+          </div>
+
+          {/* ─── Advisor FAQ video (sits beneath the explainer) ─── */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <div className="text-center mb-8">
+              <p className="text-sm font-body font-semibold uppercase tracking-[0.15em] text-teal mb-3">
+                Part Two
+              </p>
+              <h3 className="font-display text-2xl lg:text-3xl text-navy mb-4">
+                Nine questions advisors ask
+              </h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Nine questions financial advisors ask about the All-In-One loan, answered in order
+                with the numbers on screen — including what happens if rates rise, three ways, and
+                whether a client will qualify.
+              </p>
+            </div>
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/fN2ipKwyREc"
+                title="Nine questions financial advisors ask about the All-In-One loan"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+            <div className="flex flex-wrap justify-center gap-2 mt-5">
+              {ADVISOR_FAQ_CHAPTERS.map((c) => (
+                <a
+                  key={c.t}
+                  href={`https://www.youtube.com/watch?v=fN2ipKwyREc&t=${c.t}`}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-xs font-body font-medium px-3 py-1.5 rounded-full bg-white border border-border text-navy hover:border-teal hover:text-teal transition-colors"
+                >
+                  {c.label}
+                </a>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground text-center mt-5 max-w-2xl mx-auto">
+              Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not
+              investment advice.
+            </p>
           </div>
         </div>
       </section>
