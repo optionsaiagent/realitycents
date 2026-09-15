@@ -1015,7 +1015,7 @@ Explore [down payment assistance programs available in Hawaii](/knowledge-base/d
   {
     slug: "va-loans-hawaii-military",
     title: "VA Loans in Hawaii: The Complete 2026 Guide for Military Homebuyers",
-    excerpt: "$0 down with full entitlement, no PMI, the 2026 funding fee, county loan limits, BAH, condo approval, leasehold, and the steps — the answer-first guide to using a VA loan on Oahu, from a Honolulu VA lender and Army veteran.",
+    excerpt: "$0 down with full entitlement, no PMI, the 2026 funding fee, county loan limits, BAH, condo approval, why to skip leasehold, and the steps — the answer-first guide to using a VA loan on Oahu, from a Honolulu VA lender and Army veteran.",
     category: "VA Loans",
     readTime: "12 min read",
     date: "2026-02-10",
@@ -1062,7 +1062,7 @@ Yes — if the condo **project** is VA-approved. About 1,766 Oahu projects are o
 
 ## What about leasehold property?
 
-VA loans can finance Hawaii leasehold property, but the remaining lease term must extend at least 14 years beyond the loan's maturity — 44 years of remaining lease on a 30-year loan. Many Oahu leaseholds fail that test, and fee-simple property avoids the question entirely. See [leasehold vs. fee simple in Hawaii](/knowledge-base/leasehold-vs-fee-simple-hawaii).
+Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. Background on how Hawaii's leasehold system works: [leasehold vs. fee simple in Hawaii](/knowledge-base/leasehold-vs-fee-simple-hawaii).
 
 ## VA or conventional?
 
@@ -1072,7 +1072,7 @@ For most eligible primary-residence buyers, VA wins: $0 down, no PMI, and milita
 
 1. **Certificate of Eligibility.** Your lender can pull it through the VA portal in minutes; it confirms entitlement and any funding-fee exemption.
 2. **Pre-approval with a Hawaii VA lender.** Bring your LES, orders, and two years of income history. Ask the questions in [how to choose a Hawaii VA lender](/knowledge-base/how-to-choose-hawaii-va-lender).
-3. **Property screen before you offer.** Fee simple or leasehold; VA condo status; age and condition against VA minimum property requirements.
+3. **Property screen before you offer.** Fee simple (skip leasehold); VA condo status; age and condition against VA minimum property requirements.
 4. **Offer and escrow.** VA appraisal (with the Tidewater process if value comes in low), the [PC-9 termite inspection](/knowledge-base/home-inspection-tips-hawaii), and seller concessions of up to 4% for closing costs or the funding fee.
 5. **Close** — typically 30–45 days on Oahu, the same as conventional when the front-end work is done.
 
@@ -1099,7 +1099,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 **Can I use a VA loan on a Hawaii condo?** Yes, if the project is VA-approved; check the directory, or have your lender submit the building.
 
-**Can a VA loan be used on leasehold property?** Yes, when the lease runs at least 14 years past loan maturity.
+**Can a VA loan be used on leasehold property?** Almost never in practice on Oahu. Leasehold is a small share of the market; the low prices are the tell. Stick with fee simple.
 
 **Can I use my VA loan more than once?** Yes — with restored or remaining entitlement. See [the second VA loan strategy](/knowledge-base/va-second-tier-entitlement-hawaii) and [VA house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii).
 
@@ -3529,7 +3529,7 @@ The [VA Remaining Eligibility Calculator](/va-eligibility-calculator) runs this 
 ## What "no limit" does not mean
 
 - **It does not mean unlimited qualifying.** Income, debt-to-income (the VA's 41% guideline with residual-income compensating factors), and reserves still apply.
-- **It does not mean any property.** VA appraisal minimum property requirements, [VA condo project approval](/knowledge-base/va-condo-approval-vs-warrantability-hawaii), and leasehold term rules still apply.
+- **It does not mean any property.** VA appraisal minimum property requirements, [VA condo project approval](/knowledge-base/va-condo-approval-vs-warrantability-hawaii), and the fee-simple-only reality of VA financing on Oahu still apply.
 - **It does not mean the funding fee changes.** The [VA funding fee](/knowledge-base/va-funding-fee-hawaii) is a percentage of the loan regardless of size — 2.15% on first use with less than 5% down in 2026.
 
 ## Frequently asked questions
@@ -3736,7 +3736,7 @@ And since tax year 2026, the funding fee may be deductible as mortgage insurance
 | Debt-to-income | 41% guideline, residual income as compensating factor | Typically up to 45%, sometimes 50% with automated approval |
 | Occupancy | Primary residence required | Primary, second home, or investment |
 | Condo | Project must be VA-approved (or lender-submitted) | Project must be warrantable (full project review from Aug 2026) |
-| Leasehold | Lease must run 14+ years past loan maturity | Lender-specific; generally similar |
+| Leasehold | Almost never financeable in practice — stick with fee simple | Short remaining leases: short-term conventional fixed or cash only |
 | Appraisal | VA appraisal with minimum property requirements; Tidewater process on low values | Standard appraisal |
 | Seller concessions | Up to 4% plus normal closing costs | 3%–9% depending on down payment |
 | Assumable | Yes | No |
@@ -3815,7 +3815,7 @@ The reviews overlap but do not coincide. A 1970s Makiki walk-up with thin reserv
 
 1. **Condition of the unit.** VA approval is about the project; the VA appraisal still applies minimum property requirements to the unit — working systems, no exposed wiring, no active leaks, a passing [PC-9 termite inspection](/knowledge-base/home-inspection-tips-hawaii).
 2. **HOA health.** An accepted project can still carry a special assessment or an insurance gap. Read the reserve study and the [HO-6 requirements](/knowledge-base/ho6-insurance-hawaii-condos); the [Hawaii condo insurance crisis](/knowledge-base/hawaii-condo-insurance-crisis) has caught buyers in approved buildings.
-3. **Leasehold status.** Approval does not change the VA's leasehold rule: the lease must run at least 14 years beyond the loan's maturity. Confirm fee simple or the lease expiration before you offer.
+3. **Leasehold status.** VA approval of a project does not make a leasehold unit financeable. Leasehold condos are a small share of Oahu's market and, in practice, almost impossible to do with VA financing — they stand out as very nice-looking buildings at prices that seem too low. Confirm fee simple before you offer.
 
 ## If the building is not on the list
 
@@ -3915,7 +3915,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
   {
     slug: "how-to-choose-hawaii-va-lender",
     title: "How to Choose a Hawaii VA Lender: The Questions That Reveal Real Local VA Experience",
-    excerpt: "The VA does not rank lenders, and 'VA-approved' means only that a lender is allowed to make VA loans. What separates a Hawaii VA lender from a call center is fluency with condo approval, leasehold, the PC-9 inspection, the Tidewater process, and military pay \u2014 here is how to test for it.",
+    excerpt: "The VA does not rank lenders, and 'VA-approved' means only that a lender is allowed to make VA loans. What separates a Hawaii VA lender from a call center is fluency with condo approval, the PC-9 inspection, the Tidewater process, military pay — and the reflex to steer you off leasehold \u2014 here is how to test for it.",
     category: "VA Loans",
     readTime: "6 min read",
     date: "2026-09-14",
@@ -3927,13 +3927,13 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 # How to Choose a Hawaii VA Lender
 
-**The VA guarantees loans; it does not rank or endorse lenders, and every lender that says it is "VA-approved" is simply authorized to make VA loans. What matters in Hawaii is whether the person handling your file has closed VA loans on Oahu recently, understands the island-specific friction points — VA condo project approval, leasehold terms, the PC-9 termite inspection, the Tidewater appraisal process, military pay documentation — and is transparent enough that you can verify them on NMLS Consumer Access.** Here is how to test for that before you commit, with the questions I would ask any lender, myself included.
+**The VA guarantees loans; it does not rank or endorse lenders, and every lender that says it is "VA-approved" is simply authorized to make VA loans. What matters in Hawaii is whether the person handling your file has closed VA loans on Oahu recently, understands the island-specific friction points — VA condo project approval, steering you away from leasehold, the PC-9 termite inspection, the Tidewater appraisal process, military pay documentation — and is transparent enough that you can verify them on NMLS Consumer Access.** Here is how to test for that before you commit, with the questions I would ask any lender, myself included.
 
 ## What a Hawaii VA lender has to know
 
 **VA condo project approval.** Roughly 1,766 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
-**Leasehold.** A large share of Oahu condos and some single-family homes are leasehold. VA requires the remaining lease to run at least 14 years past the loan's maturity, and lenders apply their own overlays. Your lender should ask "fee simple or leasehold?" in the first conversation.
+**Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 
 **The PC-9.** Hawaii's wood-destroying insect inspection is a VA requirement with a validity window; a lender who has not managed one will let it expire and cost you a closing date.
 
@@ -3945,7 +3945,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 1. How many VA purchases did you close on Oahu in the last twelve months?
 2. Is this condo VA-approved — and if not, what is your lender-submitted approval timeline?
-3. Is the property fee simple or leasehold, and what is your leasehold overlay?
+3. This listing is leasehold — should I even look at it? (The right answer is a quick no with a reason.)
 4. How do you treat BAH and COLA in qualifying, and what gross-up do you apply?
 5. What happens if the appraisal comes in low — walk me through Tidewater.
 6. What is your NMLS number? (Then look it up: every licensed originator appears on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/) with license history and any disciplinary actions.)
@@ -3966,7 +3966,7 @@ I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loan
 
 ## Frequently asked questions
 
-**How do I choose a VA lender in Hawaii?** Test for local VA volume and fluency with condo approval, leasehold, the PC-9, Tidewater, and military pay; verify the originator on NMLS Consumer Access; ask for real numbers before you shop.
+**How do I choose a VA lender in Hawaii?** Test for local VA volume and fluency with condo approval, the PC-9, Tidewater, and military pay (and a reflex to steer you off leasehold); verify the originator on NMLS Consumer Access; ask for real numbers before you shop.
 
 **Does the VA recommend lenders?** No. "VA-approved" only means authorized to make VA loans.
 

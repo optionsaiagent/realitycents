@@ -457,7 +457,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
     ],
     faqSchema: [
-      { question: "How do I choose a VA lender in Hawaii?", answer: "Look for demonstrated local VA volume, fluency with Hawaii-specific friction points (VA condo approval, leasehold terms, the PC-9 termite inspection, the Tidewater appraisal process), NMLS transparency you can verify on NMLS Consumer Access, and a willingness to run real numbers before you shop. Ask specific questions and judge the specificity of the answers." },
+      { question: "How do I choose a VA lender in Hawaii?", answer: "Look for demonstrated local VA volume, fluency with Hawaii-specific friction points (VA condo approval, steering buyers off leasehold, the PC-9 termite inspection, the Tidewater appraisal process), NMLS transparency you can verify on NMLS Consumer Access, and a willingness to run real numbers before you shop. Ask specific questions and judge the specificity of the answers." },
       { question: "Does the VA recommend specific lenders?", answer: "No. The VA guarantees loans but does not endorse lenders. A lender describing itself as 'VA-approved' means only that it is authorized to make VA loans. Compare lenders on Hawaii experience, responsiveness, and the Loan Estimate." },
       { question: "Who is Jay Miller?", answer: "Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301, Branch NMLS #2475890), a U.S. Army veteran with 25 years of Hawaii mortgage experience, and the author of Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers." },
     ],
