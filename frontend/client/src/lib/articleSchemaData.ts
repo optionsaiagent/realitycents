@@ -111,7 +111,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     faqSchema: [
       { question: "What is a VA loan?", answer: "A VA loan is a mortgage guaranteed by the U.S. Department of Veterans Affairs for eligible service members, veterans, and surviving spouses. VA loans offer zero down payment, no PMI, and competitive interest rates." },
       { question: "What is VA loan entitlement?", answer: "VA loan entitlement is your borrowing capacity guaranteed by the VA. Most veterans have $647,200 in entitlement (2026), meaning the VA will guarantee that amount. You can use your entitlement multiple times, and it can be restored after you sell a property." },
-      { question: "Can I use a VA loan to buy a home in Hawaii?", answer: "Yes. VA loans work nationwide, including Hawaii. However, the property must be VA-approved, and Hawaii has specific requirements for condos (must be on the VA-approved list) and leasehold properties (must meet VA lease term requirements)." }
+      { question: "Can I use a VA loan to buy a home in Hawaii?", answer: "Yes. VA loans work nationwide, including Hawaii, and with full entitlement there is no VA loan limit, so an eligible buyer can purchase on Oahu with $0 down and no PMI. Two Hawaii-specific points: a condo's project must be on the VA-approved list (or be submitted for approval during escrow), and leasehold property — a small share of the market that looks like a bargain because the land is leased — is almost never financeable with VA, so stick with fee simple." }
     ],
   },
   "fha-loans-hawaii-explained": {
