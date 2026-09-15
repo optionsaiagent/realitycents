@@ -36,6 +36,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 - [Military Buying Power Calculator](https://realitycents.com/military-calculator): BAH, BAS, COLA, and VA purchase-power estimates for Honolulu County.
 - [VA Remaining Eligibility Calculator](https://realitycents.com/va-eligibility-calculator): Remaining $0-down capacity using 2026 county conforming limits (Honolulu $1,249,125).
 - [VA-Approved Condos Oahu](https://realitycents.com/va-approved-condos-oahu): Searchable directory of VA-approved condo projects on Oahu.
+- [Hawaii VA Field Note — September 2026](https://realitycents.com/knowledge-base/hawaii-va-field-note-2026-09): Monthly dated field note — Fannie departing-residence rule (VA unchanged), CMG approved for Hale Kamaʻāina, condo review changes, COLA counted at CMG. No rate quotes.
 - [VA Loan Limits in Hawaii 2026](https://realitycents.com/knowledge-base/va-loan-limits-hawaii-2026): No VA loan limit with full entitlement; Honolulu County 2026 conforming limit $1,249,125 applies with reduced entitlement.
 - [Does BAH Count for a VA Loan in Hawaii?](https://realitycents.com/knowledge-base/does-bah-count-va-loan-hawaii): Yes — how BAH, BAS, and COLA are counted, the tax-free gross-up, Honolulu 2026 BAH by rank.
 - [VA Funding Fee in Hawaii](https://realitycents.com/knowledge-base/va-funding-fee-hawaii): 2026 fee tiers (2.15% / 3.3% / 1.5% / 1.25% / 0.5% IRRRL), exemptions, Hawaii dollar examples, funding fee vs PMI.
@@ -98,7 +99,7 @@ Jay Miller — Sales Manager & Mortgage Loan Consultant
 CMG Home Loans | NMLS# 657301 | US Army Veteran
 Phone: 808-429-0811
 Email: jaym@cmghomeloans.com
-Office: 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813
+Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813
 Website: https://realitycents.com
 
 ## Optional

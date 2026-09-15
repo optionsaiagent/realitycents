@@ -383,7 +383,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     ],
     faqSchema: [
       { question: "Does BAH count as income for a VA loan?", answer: "Yes. Basic Allowance for Housing counts as qualifying income for a VA loan when it is documented on your Leave and Earnings Statement and expected to continue. Because BAH is tax-free, most VA lenders can gross it up \u2014 commonly by up to 25% \u2014 for qualifying purposes." },
-      { question: "Can I qualify for a VA loan in Hawaii on BAH alone?", answer: "BAH alone is rarely the whole picture, but it is a large part of it. Lenders combine base pay, BAH, BAS, and (when it will continue) Hawaii COLA, then test debt-to-income and VA residual income. Whether BAH alone carries a specific price depends on your other debts." },
+      { question: "Can I qualify for a VA loan in Hawaii on BAH alone?", answer: "BAH alone is rarely the whole picture, but it is a large part of it. Lenders combine base pay, BAH, BAS, and Hawaii COLA (counted in full at CMG Home Loans, with no continuance test), then test debt-to-income. Whether BAH alone carries a specific price depends on your other debts." },
       { question: "What is Honolulu BAH in 2026?", answer: "All Oahu installations use the Honolulu County rate. With dependents, 2026 monthly BAH runs from about $3,183 (E-4 and below) to $4,959 (O-5); without dependents from about $2,598 to $4,224. Verify your rate on the DoD BAH calculator." },
     ],
   },
@@ -460,6 +460,20 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "How do I choose a VA lender in Hawaii?", answer: "Look for demonstrated local VA volume, fluency with Hawaii-specific friction points (VA condo approval, leasehold terms, the PC-9 termite inspection, the Tidewater appraisal process), NMLS transparency you can verify on NMLS Consumer Access, and a willingness to run real numbers before you shop. Ask specific questions and judge the specificity of the answers." },
       { question: "Does the VA recommend specific lenders?", answer: "No. The VA guarantees loans but does not endorse lenders. A lender describing itself as 'VA-approved' means only that it is authorized to make VA loans. Compare lenders on Hawaii experience, responsiveness, and the Loan Estimate." },
       { question: "Who is Jay Miller?", answer: "Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301, Branch NMLS #2475890), a U.S. Army veteran with 25 years of Hawaii mortgage experience, and the author of Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers." },
+    ],
+  },
+  "hawaii-va-field-note-2026-09": {
+    wordCount: 800,
+    keywords: "Hawaii VA field note September 2026, Hawaii VA loan news 2026, VA loan update Hawaii, departing residence VA loan, Hale Kamaaina CMG Home Loans, VA condo approval 2026, COLA VA loan qualifying Hawaii",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "Fannie Mae", sameAs: "https://en.wikipedia.org/wiki/Fannie_Mae" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "Did the VA change its departing-residence rental income rule in September 2026?", answer: "No. The September 2, 2026 change was Fannie Mae's (Selling Guide SEL-2026-08) and applies to conventional loans: no lease, 75% of documented market rent offsets the departing PITIA, mandatory for applications dated November 1, 2026 or later. VA's treatment of a departing residence did not change with that announcement." },
+      { question: "Does CMG Home Loans offer the Hale Kamaʻāina program?", answer: "Yes. As of September 2026, CMG Home Loans is an approved participating lender for HHFDC's Hale Kamaʻāina Mortgage Program, the below-market fixed-rate program for eligible Hawaii first-time buyers. Posted rates reset with each bond issuance." },
+      { question: "Does Hawaii COLA count toward VA loan qualifying?", answer: "At CMG Home Loans, yes — Hawaii COLA is counted in full in qualifying income with no request for evidence of continuance. Some lenders apply their own continuance tests, so results can differ between lenders." },
     ],
   },
   "hale-kamaaina-mortgage-program-hawaii": {

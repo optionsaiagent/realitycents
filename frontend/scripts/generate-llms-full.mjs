@@ -219,7 +219,7 @@ function generate() {
   lines.push("> Source: https://realitycents.com/llms-full.txt");
   lines.push("> Author: Jay Miller, Sales Manager & Mortgage Loan Consultant, CMG Home Loans");
   lines.push("> Contact: jaym@cmghomeloans.com | 808-429-0811");
-  lines.push("> Office: 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813");
+  lines.push("> Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813");
   lines.push("");
   lines.push("## Zero Down in Paradise — Hawaii VA Loan Playbook");
   lines.push("URL: https://realitycents.com/zero-down-in-paradise");

@@ -1054,7 +1054,7 @@ Only with reduced entitlement. The 2026 FHFA single-family conforming limits are
 
 ## Does BAH count as income?
 
-Yes. Basic Allowance for Housing counts when documented on your LES and expected to continue, and because it is tax-free most lenders gross it up — commonly by up to 25%. Honolulu County's 2026 BAH with dependents runs from about $3,183 (E-4 and below) to $4,959 (O-5); BAS and, usually, Hawaii COLA count too. Build your full income stack in the [Military Buying Power Calculator](/military-calculator), and read [does BAH count for a VA loan in Hawaii?](/knowledge-base/does-bah-count-va-loan-hawaii) for how lenders treat each line.
+Yes. Basic Allowance for Housing counts when documented on your LES and expected to continue, and because it is tax-free most lenders gross it up — commonly by up to 25%. Honolulu County's 2026 BAH with dependents runs from about $3,183 (E-4 and below) to $4,959 (O-5); BAS and Hawaii COLA count too. Build your full income stack in the [Military Buying Power Calculator](/military-calculator), and read [does BAH count for a VA loan in Hawaii?](/knowledge-base/does-bah-count-va-loan-hawaii) for how lenders treat each line.
 
 ## Can you use a VA loan on a Hawaii condo?
 
@@ -1105,7 +1105,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 ## Related resources
 
-[VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why waiting for lower rates costs military buyers](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers) · [About Jay Miller](/about)
+[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-09) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why waiting for lower rates costs military buyers](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers) · [About Jay Miller](/about)
 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
@@ -3577,7 +3577,7 @@ A VA lender builds your qualifying income from your LES, line by line:
 | Base pay | Yes | Taxable; counted at face value |
 | BAH | Yes | Tax-free; most lenders gross up, commonly up to 25% |
 | BAS | Yes | Tax-free; typically grossed up the same way |
-| Hawaii COLA | Usually | Counted when it is expected to continue for the loan's early years; lender-specific |
+| Hawaii COLA | Yes | Counted in full at CMG Home Loans, with no request for evidence of continuance; some lenders apply their own tests |
 | Special/incentive pays | Case by case | Must be documented and likely to continue (three years is the common test) |
 
 Two things trip people up. First, the gross-up is a lender policy, not a VA mandate — the VA allows tax-free income to be grossed up, and the percentage varies by lender, so ask. Second, "expected to continue" matters more than the dollar amount: an ETS date inside the next 12 months without re-enlistment documentation is a problem; a PCS to Hawaii with three years on orders is not.
@@ -3602,7 +3602,7 @@ All Oahu installations — Schofield Barracks, Pearl Harbor-Hickam, MCBH Kaneohe
 
 ## What BAH actually buys on Oahu
 
-BAH alone rarely carries a Hawaii purchase — it is the largest piece, combined with base pay and BAS, tested against the VA's debt-to-income guideline (41%, with residual income as the compensating factor) and the VA residual income table. The [Military Buying Power Calculator](/military-calculator) builds the whole stack — base pay by grade and years of service, BAH, BAS, and Oahu COLA — and returns a purchase-price estimate; the base guides for [Schofield Barracks](/va-loan-schofield-barracks) and [Pearl Harbor-Hickam](/va-loan-pearl-harbor-hickam) show BAH-versus-payment scenarios by rank.
+BAH alone rarely carries a Hawaii purchase — it is the largest piece, combined with base pay and BAS, tested against the VA's debt-to-income guideline (41%, with residual income as the compensating factor). The [Military Buying Power Calculator](/military-calculator) builds the whole stack — base pay by grade and years of service, BAH, BAS, and Oahu COLA — and returns a purchase-price estimate; the base guides for [Schofield Barracks](/va-loan-schofield-barracks) and [Pearl Harbor-Hickam](/va-loan-pearl-harbor-hickam) show BAH-versus-payment scenarios by rank.
 
 ## Two Hawaii-specific cautions
 
@@ -3617,7 +3617,7 @@ BAH alone rarely carries a Hawaii purchase — it is the largest piece, combined
 
 **Does BAH have to cover the whole mortgage payment?** No. Many Oahu buyers carry a payment above their BAH; the difference comes from base pay and the rest of the income stack. The base guides show typical coverage ratios by rank.
 
-**Does Hawaii COLA count?** Usually, when it is expected to continue — it is location-based, so lenders look at your orders. Policies vary; ask.
+**Does Hawaii COLA count?** Yes. At CMG Home Loans, COLA is counted in full without asking for evidence that it will continue. Some lenders apply their own tests, so ask.
 
 *Read the full guide: [VA Loans in Hawaii: The Complete 2026 Guide](/knowledge-base/va-loans-hawaii-military).*
 
@@ -3973,6 +3973,60 @@ I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loan
 **Should I use a big national lender or a local one?** Either can work; what matters is the individual originator's recent Oahu VA experience and how they handle the island-specific steps above.
 
 *Read the full guide: [VA Loans in Hawaii: The Complete 2026 Guide](/knowledge-base/va-loans-hawaii-military).*
+
+---
+*Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
+
+*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+
+*Last Updated: September 14, 2026*`,
+  },
+  {
+    slug: "hawaii-va-field-note-2026-09",
+    title: "Hawaii VA Field Note — September 2026: Departing-Residence Rules, Hale Kamaʻāina at CMG, Condo Reviews, and Seven New Answer Pages",
+    excerpt: "The monthly field note for Hawaii VA and military buyers: what changed in September 2026 — Fannie Mae's departing-residence rule (VA's unchanged), CMG's Hale Kamaʻāina approval, condo review changes, COLA in qualifying — and what is coming next. No rate quotes.",
+    category: "VA Loans",
+    readTime: "5 min read",
+    date: "2026-09-14",
+    lastUpdated: "2026-09-14",
+    image: "/images/heroes/hawaii-va-field-note-2026-09.webp",
+    featured: false,
+    draft: false,
+    content: `*By Jay Miller — NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise](/zero-down-in-paradise) · Updated September 14, 2026*
+
+# Hawaii VA Field Note — September 2026
+
+**What changed for Hawaii VA and military buyers this month, in one page: Fannie Mae rewrote the departing-residence rule (VA's own rule did not change), CMG Home Loans became an approved lender for HHFDC's Hale Kamaʻāina program, Fannie Mae's full-project condo review is now in effect while VA condo approval is unaffected, and RealityCents published seven answer-first VA pages.** This is the first of a monthly series: dated, specific, and free of rate quotes, so you can rely on it the way you would a good loan officer's Monday email.
+
+## 1. Fannie Mae's departing-residence rule changed on September 2 — VA's did not
+
+If a conventional buyer keeps their current home as a rental when they buy the next one, Fannie Mae no longer allows a lease to document the rent; the lender uses market-rent comps, takes 75%, and offsets the departing PITIA. It is optional now and mandatory for applications dated November 1, 2026 or later. The full breakdown with a Mililani example is in [Fannie Mae's new departing-residence rules for Hawaii move-up buyers](/knowledge-base/fannie-mae-departing-residence-move-up-buyers-hawaii).
+
+**The VA angle:** this is a Fannie Mae conventional change. VA's treatment of rental income on a departing residence did not change with the announcement. For a VA-eligible owner, the more common Hawaii move is keeping the first home and buying again with remaining entitlement — see [the second VA loan strategy](/knowledge-base/va-second-tier-entitlement-hawaii) and the [VA Remaining Eligibility Calculator](/va-eligibility-calculator).
+
+## 2. CMG Home Loans is now an approved Hale Kamaʻāina lender
+
+HHFDC's below-market first-time-buyer program can now be originated through this office. It is a first-time-buyer program with income and price limits, and a VA-eligible first-time buyer can pair the program's rate with VA financing. Posted rates reset with each bond issuance, so they are not quoted here; the current posting and the eligibility tables are in [the Hale Kamaʻāina program guide](/knowledge-base/hale-kamaaina-mortgage-program-hawaii). One clarification that came up repeatedly this month: the program's 9-year rule means the home must stay owner-occupied, but the buyer can sell at any time.
+
+## 3. Condo reviews: Fannie Mae tightened, VA did not
+
+Since August 3, every conventional condo loan requires a full project review, and reserve requirements rise again in January 2027. VA project approval is a separate list run by a separate reviewer, and it did not change. A building can be VA-approved and non-warrantable, or the reverse. Check the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) before writing an offer, and read [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii) if the building is not listed.
+
+## 4. Three procedural reminders from this month's files
+
+- **COLA counts.** At CMG Home Loans, Hawaii COLA is counted in full in qualifying income, with no request for evidence that it will continue. Not every lender does this; if a pre-approval elsewhere came in short, that is a question worth asking. Details: [does BAH count for a VA loan in Hawaii?](/knowledge-base/does-bah-count-va-loan-hawaii)
+- **The PC-9 has a clock.** Hawaii's termite inspection is a VA requirement with a validity window. Order it once the contract is signed, not the week of closing.
+- **Send the condo address before the offer.** Lender-submitted VA approval fits inside a 45-day escrow, but only if it starts on day one.
+
+## 5. New this month on RealityCents
+
+Seven answer-first VA pages went live on September 14, each opening with the direct answer and the Hawaii numbers: [VA loan limits for 2026](/knowledge-base/va-loan-limits-hawaii-2026), [does BAH count?](/knowledge-base/does-bah-count-va-loan-hawaii), [the VA funding fee](/knowledge-base/va-funding-fee-hawaii), [VA vs. conventional](/knowledge-base/va-vs-conventional-loan-hawaii), [condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii), [the IRRRL](/knowledge-base/va-irrrl-refinance-hawaii), and [how to choose a Hawaii VA lender](/knowledge-base/how-to-choose-hawaii-va-lender). The [complete VA loans in Hawaii guide](/knowledge-base/va-loans-hawaii-military) was rewritten around them.
+
+## Looking ahead
+
+FHFA typically announces the next year's conforming loan limits in late November; when the 2027 figures publish, the county-limit page and the eligibility calculator will be updated the same week. The October field note will cover whatever changes between now and then, plus lessons from October closings.
+
+*Previous field notes: this is the first. Next: October 2026.*
 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*

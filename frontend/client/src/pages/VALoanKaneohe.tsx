@@ -148,7 +148,7 @@ const PAGE_SCHEMA = [
     email: "jaym@cmghomeloans.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "500 Ala Moana Blvd, Suite 6-200",
+      streetAddress: "500 Ala Moana Blvd, Suite 5-325",
       addressLocality: "Honolulu",
       addressRegion: "HI",
       postalCode: "96813",

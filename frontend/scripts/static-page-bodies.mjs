@@ -34,7 +34,7 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Meet Your Lender</h2>
         <p>Jay Miller is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
-        <p>NMLS #657301 | CMG Home Loans NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813</p>
+        <p>NMLS #657301 | CMG Home Loans NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</p>
       </section>
       <section>
         <h2>Hawaii Mortgage FAQ</h2>
@@ -69,7 +69,7 @@ export const STATIC_PAGE_BODIES = {
           <li>25+ years Hawaii mortgage lending</li>
           <li>U.S. Army veteran</li>
           <li>Author of "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers" (ISBN 979-8-9963553-0-3)</li>
-          <li>500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813</li>
+          <li>500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
           <li>(808) 429-0811 | jaym@cmghomeloans.com</li>
         </ul>
       </section>
@@ -86,7 +86,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>Phone:</strong> (808) 429-0811</li>
           <li><strong>Email:</strong> jaym@cmghomeloans.com</li>
           <li><strong>Website:</strong> www.jay-miller.com</li>
-          <li><strong>Office:</strong> 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813</li>
+          <li><strong>Office:</strong> 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
           <li><strong>Hours:</strong> Monday–Friday 8am–6pm HST, Weekends by appointment</li>
         </ul>
         <p>Jay Miller | NMLS #657301 | CMG Home Loans | Branch NMLS #2475890 | Company NMLS #1820</p>
@@ -345,7 +345,7 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>About the author</h2>
         <p><strong>Jay Miller</strong> is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran, Certified Mortgage Advisor (CMA), and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
-        <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
+        <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
       </section>
       <section>
         <h2>FAQ</h2>

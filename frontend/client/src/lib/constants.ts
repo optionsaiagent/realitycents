@@ -19,11 +19,11 @@ export const LENDER = {
   email: "jaym@cmghomeloans.com",
   website: "www.jay-miller.com",
   address: {
-    street: "500 Ala Moana Blvd, Suite 6-200",
+    street: "500 Ala Moana Blvd, Suite 5-325",
     city: "Honolulu",
     state: "HI",
     zip: "96813",
-    full: "500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813",
+    full: "500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813",
   },
   experience: "25+",
 } as const;
