@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #F5EDE4; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EFE5D6"/>
+      <stop offset="50%" stop-color="#F5EDE4"/>
+      <stop offset="100%" stop-color="#F8F2EA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#ground)"/>
+
+  <!-- horizon rules -->
+  <line x1="100" y1="742" x2="1500" y2="742" stroke="#061C31" stroke-opacity="0.3" stroke-width="2"/>
+
+  <!-- center divider: the split -->
+  <line x1="800" y1="220" x2="800" y2="742" stroke="#061C31" stroke-opacity="0.16" stroke-width="3" stroke-dasharray="2 14"/>
+
+  <!-- ══ LEFT: single-family house, rising ══ -->
+  <g>
+    <!-- rising trend line behind the house -->
+    <path d="M 130 700 L 250 640 L 340 660 L 430 540 L 520 420" fill="none" stroke="#00686A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.55"/>
+    <path d="M 520 420 l -30 4 l 16 -26 z" fill="#00686A" fill-opacity="0.55"/>
+
+    <!-- house body -->
+    <rect x="230" y="520" width="320" height="222" rx="6" fill="#061C31"/>
+    <!-- roof -->
+    <path d="M 200 524 L 390 388 L 580 524" fill="none" stroke="#061C31" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- windows -->
+    <rect x="266" y="558" width="54" height="54" rx="4" fill="#008687"/>
+    <rect x="460" y="558" width="54" height="54" rx="4" fill="#D39562"/>
+    <!-- door -->
+    <rect x="358" y="640" width="66" height="102" rx="4" fill="#F5EDE4" fill-opacity="0.92"/>
+
+    <!-- price tag, up -->
+    <g transform="translate(390 300)">
+      <rect x="-92" y="-34" width="184" height="68" rx="10" fill="#F5EDE4" stroke="#061C31" stroke-width="3"/>
+      <text x="0" y="10" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#061C31" text-anchor="middle">$1.24M</text>
+    </g>
+    <g transform="translate(500 250)">
+      <path d="M -14 10 L 0 -14 L 14 10" fill="none" stroke="#00686A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- ══ RIGHT: condo building, softening ══ -->
+  <g>
+    <!-- descending trend line -->
+    <path d="M 1080 460 L 1170 500 L 1250 480 L 1330 560 L 1420 620" fill="none" stroke="#061C31" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.35"/>
+    <path d="M 1420 620 l -6 -30 l -24 18 z" fill="#061C31" fill-opacity="0.35"/>
+
+    <!-- condo tower -->
+    <rect x="1060" y="486" width="280" height="256" rx="6" fill="none" stroke="#061C31" stroke-width="5"/>
+    <!-- window grid -->
+    <g fill="#008687" fill-opacity="0.85">
+      <rect x="1090" y="514" width="42" height="42" rx="3"/>
+      <rect x="1150" y="514" width="42" height="42" rx="3"/>
+      <rect x="1210" y="514" width="42" height="42" rx="3"/>
+      <rect x="1270" y="514" width="42" height="42" rx="3"/>
+      <rect x="1090" y="574" width="42" height="42" rx="3"/>
+      <rect x="1210" y="574" width="42" height="42" rx="3"/>
+      <rect x="1270" y="574" width="42" height="42" rx="3"/>
+      <rect x="1090" y="634" width="42" height="42" rx="3"/>
+      <rect x="1150" y="634" width="42" height="42" rx="3"/>
+      <rect x="1270" y="634" width="42" height="42" rx="3"/>
+    </g>
+    <!-- one dimmed window, hinting at the HOA/insurance question mark -->
+    <rect x="1150" y="574" width="42" height="42" rx="3" fill="none" stroke="#061C31" stroke-width="2.5" stroke-dasharray="3 4"/>
+    <rect x="1210" y="634" width="42" height="42" rx="3" fill="none" stroke="#061C31" stroke-width="2.5" stroke-dasharray="3 4"/>
+
+    <!-- price tag -->
+    <g transform="translate(1200 400)">
+      <rect x="-90" y="-34" width="180" height="68" rx="10" fill="#F5EDE4" stroke="#061C31" stroke-width="3"/>
+      <text x="0" y="10" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#061C31" text-anchor="middle">$510K</text>
+    </g>
+    <g transform="translate(1305 452)">
+      <path d="M -14 -10 L 0 14 L 14 -10" fill="none" stroke="#061C31" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5"/>
+    </g>
+
+    <!-- small AOAO tag near the base -->
+    <g transform="translate(1200 690)">
+      <rect x="-58" y="-20" width="116" height="40" rx="8" fill="none" stroke="#D39562" stroke-width="2.5" stroke-dasharray="4 5"/>
+      <text x="0" y="7" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#D39562" text-anchor="middle">AOAO</text>
+    </g>
+  </g>
+
+  <!-- subtle palm frond cue, bottom left -->
+  <g stroke="#00686A" stroke-opacity="0.35" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M 108 742 C 114 690 132 652 168 624"/>
+    <path d="M 110 742 C 90 700 86 660 100 616"/>
+    <path d="M 109 742 C 136 706 174 686 218 680"/>
+  </g>
+</svg>
+</body>
+</html>

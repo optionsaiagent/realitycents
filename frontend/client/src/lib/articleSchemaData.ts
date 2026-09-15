@@ -407,4 +407,19 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "Does HOA affect my mortgage qualification?", answer: "Yes. HOA fees are counted as part of your housing expense in DTI calculations. A $500/month HOA on a $700K condo purchase increases your required income by approximately $12,000–$15,000 compared to a fee-simple home." }
     ],
   },
+  "oahu-single-family-condo-price-split-2026": {
+    wordCount: 1200,
+    keywords: "Oahu home prices August 2026, single family vs condo prices Hawaii, Honolulu housing market update September 2026, condo prices dropping Hawaii, is now a good time to buy a condo in Hawaii, Oahu real estate median price 2026, Hawaii AOAO fees condo buyer, HiCentral MLS August 2026 report, Oahu single family home price record",
+    about: [
+      { name: "Condominium", sameAs: "https://en.wikipedia.org/wiki/Condominium" },
+      { name: "Real estate economics", sameAs: "https://en.wikipedia.org/wiki/Real_estate_economics" },
+      { name: "Homeowner association", sameAs: "https://en.wikipedia.org/wiki/Homeowner_association" },
+      { name: "Property insurance", sameAs: "https://en.wikipedia.org/wiki/Property_insurance" },
+    ],
+    faqSchema: [
+      { question: "Why did single-family home prices rise while condo prices fell on Oahu in August 2026?", answer: "Honolulu Board of Realtors data for August 2026 shows single-family median price up 12.2% year-over-year to $1,240,000, while the condo median fell 1% to $510,000. HBR attributes the split to carrying costs: single-family buyers weigh mainly the purchase price, while condo buyers must also weigh rising AOAO/HOA fees, insurance, and reserve funding as part of the true monthly cost of ownership (Honolulu Star-Advertiser, September 7, 2026)." },
+      { question: "Is now a good time to buy a condo on Oahu?", answer: "Condo inventory rose about 4.1% year-over-year in August 2026 and sales fell 6.6%, giving buyers more negotiating room than in the single-family market. But softer prices don't offset a weak AOAO reserve fund or a pending special assessment — buyers should review the association's reserve study, ask about planned assessments, and get an HO-6 insurance quote before writing an offer, not after." },
+      { question: "How much did Oahu single-family and condo prices change in August 2026?", answer: "Single-family median price rose 12.2% year-over-year to $1,240,000, the second-highest month on record behind June 2026's $1,242,500, with sales up 1.9% to 264. Condo median price fell 1% year-over-year to $510,000, with sales down 6.6% to 365 (Honolulu Board of Realtors/HiCentral MLS data, reported by the Honolulu Star-Advertiser, September 7, 2026)." },
+    ],
+  },
 };

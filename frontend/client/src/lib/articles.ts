@@ -4351,6 +4351,91 @@ Know your numbers. Negotiate aggressively for seller concessions. Focus on the p
 
 *Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
   },
+  {
+    slug: "oahu-single-family-condo-price-split-2026",
+    title: "Houses Near a Record High, Condos Getting Cheaper: What Oahu's Split Market Means for Your Purchase",
+    excerpt: "August 2026 data shows Oahu's single-family median jump 12.2% to a near-record $1,240,000 while condo prices fell 1% to $510,000. Here's why the market split in two, the real monthly-cost math behind it, and what buyers on each side should check before making an offer.",
+    category: "Market Insights",
+    readTime: "7 min",
+    date: "2026-09-15",
+    lastUpdated: "2026-09-15",
+    image: "/images/heroes/oahu-single-family-condo-price-split-2026.webp",
+    featured: true,
+    draft: false,
+    content: `You want a straight answer on whether now is a smart time to buy on Oahu — house or condo. The problem is the market isn't telling one story right now, it's telling two contradictory ones at once, and generic "Hawaii housing" headlines flatten them into noise that doesn't actually help you decide. Get the read wrong and the stakes are real: assume houses are too expensive and you miss the window before prices climb further, or grab a condo because it looks like a discount without pricing in the maintenance fees and insurance that come with it, and the "savings" are gone within a year.
+
+Here's what actually happened in August, and what I'd do with it depending on which side of this market you're shopping.
+
+## Two Markets, One Month, Opposite Directions
+
+The Honolulu Board of Realtors' August 2026 numbers, reported by the Star-Advertiser on September 7, show single-family homes and condos moving in genuinely opposite directions:
+
+| | August 2026 | Year-over-year |
+|---|---|---|
+| Single-family median price | $1,240,000 | +12.2% |
+| Single-family sales | 264 closings | +1.9% |
+| Condo median price | $510,000 | −1.0% |
+| Condo sales | 365 closings | −6.6% |
+
+Single-family prices didn't just rise — they landed at the second-highest month on record, just behind June 2026's $1,242,500. Condos went the other way: prices dipped, sales dropped by more than 6%, and inventory grew roughly 4.1% year-over-year, giving buyers more units to choose from and more room to negotiate.
+
+That's not two neighborhoods of the same market drifting slightly apart. That's two different buyer psychologies playing out at the same time, on the same island, in the same month.
+
+## Why the Split Is Happening
+
+The explanation HBR itself points to is simple, and it matches exactly what I'm seeing with clients: single-family buyers are mostly reacting to the purchase price. Condo buyers are reacting to the *total* monthly cost of ownership — and that number has been getting worse for reasons that have nothing to do with the sale price on the listing.
+
+Rising insurance premiums, AOAO special assessments for aging buildings, and climbing reserve-fund contributions have been squeezing condo owners for over a year now (we've covered the [condo insurance crisis](/knowledge-base/hawaii-condo-insurance-crisis) and [HO-6 coverage](/knowledge-base/ho6-insurance-hawaii-condos) in depth). August's data is the first time that pressure shows up this clearly in the price and sales numbers themselves, rather than just in board meeting minutes and anecdotes.
+
+Single-family homes carry almost none of that overhead. No AOAO, no shared building insurance policy, no special-assessment risk from a leaking parking structure three floors down. So when rates are elevated and buyers are being careful, the "known cost" of a house is more attractive than the "cost plus a question mark" of a condo — even at a much higher purchase price.
+
+## What This Actually Costs, Side by Side
+
+Here's an illustrative comparison — not a quote, just the math — using August's median prices, this month's roughly 6.76% 30-year rate, 20% down on each, and typical Oahu HOA and insurance figures:
+
+| | Single-family ($1,240,000) | Condo ($510,000) |
+|---|---|---|
+| Down payment (20%) | $248,000 | $102,000 |
+| Loan amount | $992,000 | $408,000 |
+| Principal & interest | ~$6,441/mo | ~$2,649/mo |
+| Property tax (est.) | ~$362/mo | ~$149/mo |
+| Insurance (est.) | ~$150/mo | ~$60/mo |
+| HOA/AOAO | $0 | ~$650/mo (illustrative — Honolulu medians run roughly $470–$880/mo) |
+| **Total monthly** | **~$6,950** | **~$3,510** |
+
+*Illustrative only, not a quote. Your rate, tax rate, insurance, and HOA will differ, and this ignores upfront closing costs, PMI if you put down less than 20%, or a temporary buydown.*
+
+The condo is still dramatically cheaper on a monthly basis — nearly half — even after adding a realistic HOA payment. That math hasn't changed. What's changed is that the HOA line itself has been rising and carries more uncertainty than it used to, and enough buyers are pricing that uncertainty in that it's now visible in the sales data.
+
+## What I'd Do, Depending on Which Side You're On
+
+**If you're shopping single-family:** Don't wait for a pullback based on national "housing is cooling" headlines. Oahu's single-family segment isn't cooling — it just posted its second-best month ever on record-low relative inventory. If you're financially ready, the data argues for moving rather than waiting, especially with rates likely to stay elevated a while longer (see our [rate breakdown for this week](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers)).
+
+**If you're shopping condo:** The extra inventory and softer prices are a real opening, but treat "cheaper than last year" as the start of your research, not the end of it. Before you make an offer:
+- Pull the AOAO's most recent reserve study and meeting minutes. A healthy reserve fund is worth more than a slightly lower price.
+- Ask directly about pending or discussed special assessments — not just past ones.
+- Get an HO-6 insurance quote before you're in escrow, not after ([here's what that policy actually covers](/knowledge-base/ho6-insurance-hawaii-condos)).
+- If it's a newer or non-warrantable project, check whether it clears [Fannie Mae's 2026 condo review rules](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) before you fall in love with the unit — a project that doesn't pass review can kill your financing regardless of price.
+
+## The Honest Caveat
+
+One month of data is one month of data. June 2026's single-family median was actually a touch higher than August's, so "near-record" is the accurate description — not "record," and not proof of an unstoppable trend. Medians can also move because of *which* homes sold in a given month, not just because prices moved — a heavier mix of luxury sales can push a median up without every house getting more expensive. Treat this as a real, dated signal worth acting on, not a permanent verdict on either market.
+
+## Bottom Line
+
+Oahu isn't one housing market right now — it's two, and they're moving in opposite directions for a specific, identifiable reason: carrying costs. Single-family buyers are competing hard for a shrinking, appreciating supply. Condo buyers have more room to negotiate, but only if they do the homework on HOA health and insurance before they write an offer, not after.
+
+If you want to see how either scenario actually pencils out on your income and down payment, run your numbers in the [Advanced Mortgage Calculator](/advanced-calculator), and pair it with our [income needed to buy in Hawaii](/knowledge-base/income-needed-buy-home-hawaii-2026) breakdown.
+
+Want a second set of eyes on the math for your specific situation? [Get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) — I can run both scenarios against your actual numbers in about 15 minutes.
+
+---
+*Sources: Honolulu Star-Advertiser, "Oahu condominium prices fell in August; home costs surged" (September 7, 2026), citing Honolulu Board of Realtors/HiCentral MLS data; Freddie Mac Primary Mortgage Market Survey (week ending September 10, 2026).*
+
+*CMG Home Loans is an Equal Housing Opportunity lender. This article is for educational purposes only and does not constitute a loan approval or commitment to lend. All loans subject to credit approval and program guidelines. Rates, terms, and guidelines are subject to change without notice.*
+
+*Last Updated: September 2026*`,
+  },
 ];
 /** All published (non-draft) articles — use this everywhere public-facing */
 export const articles: Article[] = allArticles.filter((a) => !a.draft);
