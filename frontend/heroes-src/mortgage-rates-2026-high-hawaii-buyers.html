@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #061C31; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#04141F"/>
+      <stop offset="55%" stop-color="#0C2340"/>
+      <stop offset="100%" stop-color="#192F46"/>
+    </linearGradient>
+    <radialGradient id="peakGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EBB890" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#D39562" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#D39562" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ridgeBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#192F46"/>
+      <stop offset="100%" stop-color="#0C2340"/>
+    </linearGradient>
+    <linearGradient id="ridgeMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00686A"/>
+      <stop offset="100%" stop-color="#0C2340"/>
+    </linearGradient>
+    <linearGradient id="ridgeFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#008687"/>
+      <stop offset="100%" stop-color="#061C31"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#dusk)"/>
+
+  <!-- dashed percent gridlines -->
+  <g stroke="#F5EDE4" stroke-opacity="0.10" stroke-width="1.5" stroke-dasharray="2 10">
+    <line x1="140" y1="240" x2="1460" y2="240"/>
+    <line x1="140" y1="340" x2="1460" y2="340"/>
+    <line x1="140" y1="440" x2="1460" y2="440"/>
+    <line x1="140" y1="540" x2="1460" y2="540"/>
+    <line x1="140" y1="640" x2="1460" y2="640"/>
+  </g>
+  <!-- left axis ticks -->
+  <g stroke="#F5EDE4" stroke-opacity="0.3" stroke-width="2">
+    <line x1="140" y1="240" x2="156" y2="240"/>
+    <line x1="140" y1="340" x2="156" y2="340"/>
+    <line x1="140" y1="440" x2="156" y2="440"/>
+    <line x1="140" y1="540" x2="156" y2="540"/>
+    <line x1="140" y1="640" x2="156" y2="640"/>
+  </g>
+
+  <!-- glow behind the summit -->
+  <circle cx="1010" cy="300" r="330" fill="url(#peakGlow)"/>
+
+  <!-- ══ RIDGE LINES: rate chart as volcanic profile, summit at x=1010 ══ -->
+  <!-- back ridge -->
+  <path d="M 100 760 L 300 660 L 460 700 L 640 580 L 820 640 L 1180 430 L 1330 560 L 1500 500 L 1600 560 L 1600 900 L 100 900 Z"
+        fill="url(#ridgeBack)"/>
+  <!-- mid ridge -->
+  <path d="M 60 800 L 260 700 L 430 730 L 620 630 L 790 680 L 1010 500 L 1150 590 L 1320 620 L 1500 570 L 1600 620 L 1600 900 L 60 900 Z"
+        fill="url(#ridgeMid)" opacity="0.9"/>
+  <!-- front ridge: the rate line itself, sharp volcanic peak -->
+  <path d="M 40 900 L 200 780 L 380 810 L 560 720 L 740 760 L 1010 296 L 1160 640 L 1340 690 L 1520 650 L 1600 690 L 1600 900 Z"
+        fill="url(#ridgeFront)"/>
+  <!-- crisp crest stroke along the front ridge -->
+  <path d="M 40 900 L 200 780 L 380 810 L 560 720 L 740 760 L 1010 296 L 1160 640 L 1340 690 L 1520 650 L 1600 690"
+        fill="none" stroke="#2CA2A2" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- data points along the crest -->
+  <g fill="#061C31" stroke="#2CA2A2" stroke-width="3.5">
+    <circle cx="200" cy="780" r="8"/>
+    <circle cx="380" cy="810" r="8"/>
+    <circle cx="560" cy="720" r="8"/>
+    <circle cx="740" cy="760" r="8"/>
+    <circle cx="1160" cy="640" r="8"/>
+    <circle cx="1340" cy="690" r="8"/>
+  </g>
+
+  <!-- ══ PEAK MARKER at the summit ══ -->
+  <line x1="1010" y1="296" x2="1010" y2="180" stroke="#D39562" stroke-width="3"/>
+  <path d="M 1010 180 l 64 22 l -64 22 z" fill="#D39562"/>
+  <circle cx="1010" cy="296" r="12" fill="#061C31" stroke="#D39562" stroke-width="5"/>
+  <circle cx="1010" cy="296" r="30" fill="none" stroke="#D39562" stroke-opacity="0.55" stroke-width="2"/>
+  <circle cx="1010" cy="296" r="52" fill="none" stroke="#D39562" stroke-opacity="0.28" stroke-width="1.5"/>
+  <!-- summit altitude rule -->
+  <line x1="700" y1="296" x2="948" y2="296" stroke="#D39562" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="8 8"/>
+
+  <!-- volcanic steam wisps above summit -->
+  <g stroke="#F5EDE4" stroke-opacity="0.28" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M 1042 246 C 1066 230 1062 208 1088 194"/>
+    <path d="M 1064 274 C 1094 262 1096 240 1128 230"/>
+  </g>
+
+  <!-- sea sparkle dots lower left -->
+  <g fill="#2CA2A2" fill-opacity="0.5">
+    <circle cx="240" cy="856" r="4"/>
+    <circle cx="320" cy="872" r="3"/>
+    <circle cx="430" cy="860" r="4"/>
+  </g>
+
+  <!-- baseline -->
+  <line x1="140" y1="820" x2="1460" y2="820" stroke="#F5EDE4" stroke-opacity="0.18" stroke-width="1.5"/>
+</svg>
+</body>
+</html>

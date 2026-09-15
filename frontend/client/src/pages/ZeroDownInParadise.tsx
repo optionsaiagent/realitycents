@@ -34,6 +34,18 @@ import {
   Shield,
 } from "lucide-react";
 
+const ANSWER_PAGES = [
+  { href: "/knowledge-base/va-loans-hawaii-military", title: "VA loans in Hawaii — the complete guide", note: "$0 down with full entitlement, no PMI, the funding fee, condos, leasehold, BAH, and the steps — the pillar page." },
+  { href: "/knowledge-base/va-loan-limits-hawaii-2026", title: "VA loan limits in Hawaii for 2026", note: "Why there is no limit with full entitlement, and how Honolulu County's $1,249,125 conforming limit applies when entitlement is reduced." },
+  { href: "/knowledge-base/does-bah-count-va-loan-hawaii", title: "Does BAH count for a VA loan in Hawaii?", note: "Yes — how BAH, BAS, and Hawaii COLA are counted, the tax-free gross-up, and what it does to buying power." },
+  { href: "/knowledge-base/va-funding-fee-hawaii", title: "The VA funding fee in Hawaii", note: "2026 percentages, who is exempt, what it costs on a Hawaii price, and why it still beats PMI." },
+  { href: "/knowledge-base/va-vs-conventional-loan-hawaii", title: "VA vs. conventional in Hawaii", note: "A side-by-side on down payment, PMI, funding fee, residual income, and condo friction — and when each wins." },
+  { href: "/knowledge-base/va-condo-approval-vs-warrantability-hawaii", title: "VA condo approval vs. warrantability", note: "Why a building can be warrantable but not VA-approved (and vice versa), with the Oahu lookup tool." },
+  { href: "/knowledge-base/va-irrrl-refinance-hawaii", title: "The VA IRRRL in Hawaii", note: "The streamline refinance: who qualifies, the 0.5% fee, the seasoning and recoupment rules, and the PCS angle." },
+  { href: "/knowledge-base/how-to-choose-hawaii-va-lender", title: "How to choose a Hawaii VA lender", note: "The questions that separate VA-fluent local lenders from call centers — condo, leasehold, PC-9, Tidewater." },
+];
+
+
 const HONOLULU_LIMIT = HONOLULU_CONFORMING_LIMIT_2026.toLocaleString("en-US");
 const CONDO_COUNT = condoData.totalApproved.toLocaleString("en-US");
 
@@ -586,6 +598,33 @@ export default function ZeroDownInParadise() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== ANSWER PAGES ===== */}
+      <section className="py-16 lg:py-20">
+        <div className="container">
+          <h2 className="font-display text-3xl md:text-4xl text-navy mb-3 text-center">
+            Hawaii VA questions, answered one page at a time
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+            The book goes deep; these free companion pages give the direct answer first, with
+            the Hawaii numbers, and link back to the chapter that covers the rest.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {ANSWER_PAGES.map((p) => (
+              <Link
+                key={p.href}
+                href={p.href}
+                className="group p-5 bg-white border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all"
+              >
+                <h3 className="font-display text-lg text-navy group-hover:text-teal transition-colors mb-1">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{p.note}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

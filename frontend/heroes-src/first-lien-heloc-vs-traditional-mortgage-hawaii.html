@@ -1,0 +1,55 @@
+<!-- first-lien-heloc-vs-traditional-mortgage-hawaii — steep sweep vs slow amortization -->
+<style>
+  html,body{margin:0;padding:0;}
+  body{width:1600px;height:900px;overflow:hidden;background:#f5ede4;}
+  svg{display:block;}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#f5ede4"/>
+
+  <!-- fine plotting grid -->
+  <g stroke="#dfd6c9" stroke-width="1.25">
+    <line x1="280" y1="140" x2="280" y2="760"/>
+    <line x1="540" y1="140" x2="540" y2="760"/>
+    <line x1="800" y1="140" x2="800" y2="760"/>
+    <line x1="1060" y1="140" x2="1060" y2="760"/>
+    <line x1="1320" y1="140" x2="1320" y2="760"/>
+    <line x1="230" y1="200" x2="1370" y2="200"/>
+    <line x1="230" y1="340" x2="1370" y2="340"/>
+    <line x1="230" y1="480" x2="1370" y2="480"/>
+    <line x1="230" y1="620" x2="1370" y2="620"/>
+  </g>
+
+  <!-- baseline -->
+  <line x1="200" y1="760" x2="1400" y2="760" stroke="#061c31" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- shared starting balance -->
+  <circle cx="300" cy="200" r="14" fill="#061c31"/>
+  <line x1="300" y1="200" x2="300" y2="760" stroke="#061c31" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
+
+  <!-- slow amortization: stays high for decades, falls late -->
+  <path d="M300 200 C 700 235, 1050 330, 1300 748"
+        fill="none" stroke="#d39562" stroke-width="11" stroke-linecap="round"/>
+  <path d="M300 200 C 700 235, 1050 330, 1300 748 L1300 760 L300 760 Z"
+        fill="#d39562" opacity="0.08"/>
+
+  <!-- steep sweep: plunges early, coasts home -->
+  <path d="M300 200 C 400 620, 620 720, 1300 752"
+        fill="none" stroke="#008687" stroke-width="11" stroke-linecap="round"/>
+  <path d="M300 200 C 400 620, 620 720, 1300 752 L1300 760 L300 760 Z"
+        fill="#008687" opacity="0.10"/>
+
+  <!-- payoff point -->
+  <circle cx="1300" cy="750" r="16" fill="#f5ede4" stroke="#061c31" stroke-width="6"/>
+
+  <!-- markers along each curve -->
+  <circle cx="700" cy="253" r="9" fill="#d39562"/>
+  <circle cx="1060" cy="382" r="9" fill="#d39562"/>
+  <circle cx="430" cy="530" r="9" fill="#008687"/>
+  <circle cx="640" cy="700" r="9" fill="#008687"/>
+
+  <!-- gap between the two paths at mid-term -->
+  <line x1="820" y1="290" x2="820" y2="726" stroke="#061c31" stroke-width="2.5" stroke-dasharray="8 9" stroke-linecap="round"/>
+  <path d="M810 302 L820 288 L830 302" fill="none" stroke="#061c31" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M810 714 L820 728 L830 714" fill="none" stroke="#061c31" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

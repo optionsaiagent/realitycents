@@ -378,11 +378,11 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">VA House Hacking in Hawaii</h3>
               <p className="text-xs text-foreground/60 font-body mt-1">Buy a multi-unit property with $0 down and let tenants cover your mortgage.</p>
             </Link>
-            <Link href="/knowledge-base/va-funding-fee-guide" className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all">
+            <Link href="/knowledge-base/va-funding-fee-hawaii" className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all">
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">VA Funding Fee Explained</h3>
               <p className="text-xs text-foreground/60 font-body mt-1">What it costs, who's exempt, and whether to finance or pay upfront.</p>
             </Link>
-            <Link href="/knowledge-base/multiple-va-loans-hawaii" className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all">
+            <Link href="/knowledge-base/va-second-tier-entitlement-hawaii" className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all">
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">Using Multiple VA Loans</h3>
               <p className="text-xs text-foreground/60 font-body mt-1">Second-tier entitlement, bonus entitlement, and how to use your VA loan more than once.</p>
             </Link>

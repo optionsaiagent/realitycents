@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2") format("woff2");
+    font-weight: 700;
+  }
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #F5EDE4; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EBB890" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#EBB890" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#EBB890" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5EDE4"/>
+      <stop offset="78%" stop-color="#F1E7DB"/>
+      <stop offset="100%" stop-color="#EADFD0"/>
+    </linearGradient>
+    <linearGradient id="riseline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D39562"/>
+      <stop offset="100%" stop-color="#B87B45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ground -->
+  <rect width="1600" height="900" fill="url(#ground)"/>
+
+  <!-- soft sun glow upper right -->
+  <circle cx="1210" cy="215" r="320" fill="url(#sun)"/>
+  <circle cx="1210" cy="215" r="118" fill="none" stroke="#D39562" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <!-- faint horizontal grid rules -->
+  <g stroke="#061C31" stroke-opacity="0.07" stroke-width="1">
+    <line x1="120" y1="300" x2="1480" y2="300"/>
+    <line x1="120" y1="400" x2="1480" y2="400"/>
+    <line x1="120" y1="500" x2="1480" y2="500"/>
+    <line x1="120" y1="600" x2="1480" y2="600"/>
+  </g>
+
+  <!-- baseline -->
+  <line x1="180" y1="700" x2="1420" y2="700" stroke="#061C31" stroke-opacity="0.35" stroke-width="2"/>
+  <g stroke="#061C31" stroke-opacity="0.25" stroke-width="1.5">
+    <line x1="300" y1="700" x2="300" y2="710"/>
+    <line x1="470" y1="700" x2="470" y2="710"/>
+    <line x1="640" y1="700" x2="640" y2="710"/>
+    <line x1="810" y1="700" x2="810" y2="710"/>
+    <line x1="980" y1="700" x2="980" y2="710"/>
+    <line x1="1150" y1="700" x2="1150" y2="710"/>
+    <line x1="1320" y1="700" x2="1320" y2="710"/>
+  </g>
+
+  <!-- neighborhood price markers: lollipop pins, height = price -->
+  <!-- below threshold: teal (attainable). above: navy (stretch) -->
+  <!-- pin 1 -->
+  <g>
+    <line x1="300" y1="700" x2="300" y2="588" stroke="#008687" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="300" cy="566" r="24" fill="#008687"/>
+    <circle cx="300" cy="566" r="9" fill="#F5EDE4"/>
+  </g>
+  <!-- pin 2 -->
+  <g>
+    <line x1="470" y1="700" x2="470" y2="536" stroke="#008687" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="470" cy="514" r="27" fill="#008687"/>
+    <circle cx="470" cy="514" r="10" fill="#F5EDE4"/>
+  </g>
+  <!-- pin 3 -->
+  <g>
+    <line x1="640" y1="700" x2="640" y2="470" stroke="#00686A" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="640" cy="448" r="30" fill="#00686A"/>
+    <circle cx="640" cy="448" r="11" fill="#F5EDE4"/>
+  </g>
+  <!-- pin 4: sits right at the line -->
+  <g>
+    <line x1="810" y1="700" x2="810" y2="452" stroke="#192F46" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="810" cy="430" r="32" fill="#192F46"/>
+    <circle cx="810" cy="430" r="12" fill="#F5EDE4"/>
+  </g>
+  <!-- pin 5 -->
+  <g>
+    <line x1="980" y1="700" x2="980" y2="392" stroke="#061C31" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="980" cy="370" r="34" fill="#061C31"/>
+    <circle cx="980" cy="370" r="12" fill="#F5EDE4"/>
+  </g>
+  <!-- pin 6 -->
+  <g>
+    <line x1="1150" y1="700" x2="1150" y2="330" stroke="#061C31" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="1150" cy="308" r="37" fill="#061C31"/>
+    <circle cx="1150" cy="308" r="13" fill="#F5EDE4"/>
+  </g>
+  <!-- pin 7 -->
+  <g>
+    <line x1="1320" y1="700" x2="1320" y2="282" stroke="#061C31" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="1320" cy="260" r="40" fill="#061C31"/>
+    <circle cx="1320" cy="260" r="14" fill="#F5EDE4"/>
+  </g>
+
+  <!-- income threshold line: rising left to right -->
+  <path d="M 210 636 L 470 590 L 700 512 L 940 448 L 1180 372 L 1364 314"
+        fill="none" stroke="url(#riseline)" stroke-width="6" stroke-linecap="round"
+        stroke-dasharray="26 16"/>
+  <!-- arrowhead -->
+  <path d="M 1364 314 l -34 -4 l 22 -22 z" fill="#B87B45" transform="rotate(14 1364 314)"/>
+  <!-- crossing dots on threshold -->
+  <circle cx="470" cy="590" r="9" fill="#F5EDE4" stroke="#D39562" stroke-width="4"/>
+  <circle cx="940" cy="448" r="9" fill="#F5EDE4" stroke="#D39562" stroke-width="4"/>
+  <circle cx="1180" cy="372" r="9" fill="#F5EDE4" stroke="#D39562" stroke-width="4"/>
+
+  <!-- thin left report spine -->
+  <line x1="180" y1="230" x2="180" y2="700" stroke="#061C31" stroke-opacity="0.3" stroke-width="2"/>
+  <g stroke="#061C31" stroke-opacity="0.2" stroke-width="1.5">
+    <line x1="172" y1="300" x2="180" y2="300"/>
+    <line x1="172" y1="400" x2="180" y2="400"/>
+    <line x1="172" y1="500" x2="180" y2="500"/>
+    <line x1="172" y1="600" x2="180" y2="600"/>
+  </g>
+</svg>
+
+<!-- single numeric accent chip -->
+<div style="position:absolute; top:172px; left:238px; font-family:'IBM Plex Mono', monospace; font-weight:700;
+            font-size:22px; letter-spacing:0.14em; color:#F5EDE4; background:#061C31;
+            padding:10px 20px; border-radius:6px;">2026</div>
+</body>
+</html>

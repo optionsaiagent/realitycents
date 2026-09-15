@@ -1,0 +1,89 @@
+<!-- Hero: down-payment-assistance-hawaii — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#F5EDE4}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="0.42" cy="0.38" r="0.75">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F5EDE4"/>
+    </radialGradient>
+    <linearGradient id="step3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2CA2A2"/>
+      <stop offset="1" stop-color="#008687"/>
+    </linearGradient>
+    <linearGradient id="step2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7FC4C4"/>
+      <stop offset="1" stop-color="#2CA2A2"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- ground -->
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- faint horizon rules -->
+  <line x1="120" y1="640" x2="1480" y2="640" stroke="#061C31" stroke-opacity="0.14" stroke-width="2"/>
+  <line x1="120" y1="652" x2="1480" y2="652" stroke="#061C31" stroke-opacity="0.05" stroke-width="1"/>
+
+  <!-- distant island chain, lower right -->
+  <g fill="#DFD6C9">
+    <ellipse cx="1220" cy="641" rx="46" ry="7"/>
+    <ellipse cx="1305" cy="641" rx="26" ry="5"/>
+    <ellipse cx="1362" cy="641" rx="15" ry="4"/>
+    <ellipse cx="1402" cy="641" rx="8" ry="3"/>
+  </g>
+
+  <!-- gold sun disc behind roof -->
+  <circle cx="1035" cy="300" r="86" fill="#EBB890" opacity="0.55" filter="url(#soft)"/>
+  <circle cx="1035" cy="300" r="64" fill="#D39562"/>
+
+  <!-- boost arc: helping-hand geometry sweeping up under the steps -->
+  <path d="M 250 780 Q 560 790 760 720 Q 950 655 992 480"
+        fill="none" stroke="#D39562" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 992 480 l -26 34 M 992 480 l 34 26" fill="none"
+        stroke="#D39562" stroke-width="7" stroke-linecap="round"/>
+  <!-- palm of the hand: cradle circle at arc origin -->
+  <circle cx="250" cy="780" r="16" fill="none" stroke="#D39562" stroke-width="6"/>
+
+  <!-- ascending steps -->
+  <rect x="500" y="580" width="160" height="60" fill="#DFD6C9"/>
+  <rect x="660" y="520" width="160" height="120" fill="url(#step2)"/>
+  <rect x="820" y="460" width="160" height="180" fill="url(#step3)"/>
+  <!-- step top edges -->
+  <line x1="500" y1="580" x2="660" y2="580" stroke="#061C31" stroke-width="3"/>
+  <line x1="660" y1="520" x2="820" y2="520" stroke="#061C31" stroke-width="3"/>
+  <line x1="820" y1="460" x2="980" y2="460" stroke="#061C31" stroke-width="3"/>
+
+  <!-- dotted ascent path over step corners -->
+  <g fill="#00686A">
+    <circle cx="540" cy="556" r="5"/>
+    <circle cx="620" cy="546" r="5"/>
+    <circle cx="700" cy="496" r="5"/>
+    <circle cx="780" cy="486" r="5"/>
+  </g>
+
+  <!-- house on the top step -->
+  <g>
+    <path d="M 830 460 L 830 360 L 900 288 L 970 360 L 970 460 Z"
+          fill="#FCFAF6" stroke="#061C31" stroke-width="6" stroke-linejoin="round"/>
+    <!-- door -->
+    <rect x="878" y="396" width="44" height="64" fill="#008687"/>
+    <!-- roof accent -->
+    <path d="M 822 368 L 900 288 L 978 368" fill="none" stroke="#061C31"
+          stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- quiet right-side detail: thin vertical rule + diamond -->
+  <line x1="1300" y1="230" x2="1300" y2="410" stroke="#061C31" stroke-opacity="0.22" stroke-width="2"/>
+  <rect x="1291" y="196" width="18" height="18" transform="rotate(45 1300 205)" fill="#D39562"/>
+
+  <!-- top hairline -->
+  <line x1="120" y1="150" x2="520" y2="150" stroke="#061C31" stroke-opacity="0.18" stroke-width="2"/>
+  <circle cx="120" cy="150" r="5" fill="#008687"/>
+</svg>

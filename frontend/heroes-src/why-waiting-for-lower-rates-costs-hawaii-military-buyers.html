@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #061C31; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C2340"/>
+      <stop offset="60%" stop-color="#061C31"/>
+      <stop offset="100%" stop-color="#04141F"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D39562" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#D39562" stop-opacity="0.04"/>
+    </linearGradient>
+    <radialGradient id="clockGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2CA2A2" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#2CA2A2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#night)"/>
+  <circle cx="600" cy="450" r="430" fill="url(#clockGlow)"/>
+
+  <!-- ══ CLOCK (left-center) ══ -->
+  <circle cx="600" cy="450" r="308" fill="none" stroke="#F5EDE4" stroke-opacity="0.9" stroke-width="3"/>
+  <circle cx="600" cy="450" r="288" fill="none" stroke="#F5EDE4" stroke-opacity="0.25" stroke-width="1.5"/>
+
+  <!-- hour ticks -->
+  <g stroke="#F5EDE4" stroke-opacity="0.75" stroke-width="3" stroke-linecap="round">
+    <line x1="600" y1="162" x2="600" y2="196"/>
+    <line x1="744" y1="200.6" x2="727" y2="230"/>
+    <line x1="849.4" y1="306" x2="820" y2="323"/>
+    <line x1="888" y1="450" x2="854" y2="450"/>
+    <line x1="849.4" y1="594" x2="820" y2="577"/>
+    <line x1="744" y1="699.4" x2="727" y2="670"/>
+    <line x1="600" y1="738" x2="600" y2="704"/>
+    <line x1="456" y1="699.4" x2="473" y2="670"/>
+    <line x1="350.6" y1="594" x2="380" y2="577"/>
+    <line x1="312" y1="450" x2="346" y2="450"/>
+    <line x1="350.6" y1="306" x2="380" y2="323"/>
+    <line x1="456" y1="200.6" x2="473" y2="230"/>
+  </g>
+
+  <!-- the waiting sweep: sector from 12 o'clock to ~4 o'clock, reaching over the bars -->
+  <path d="M 600 450 L 600 162 A 288 288 0 0 1 849.4 594 Z" fill="url(#sweep)"/>
+  <path d="M 600 162 A 288 288 0 0 1 849.4 594" fill="none" stroke="#D39562" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 14"/>
+  <path d="M 849.4 594 l 6 -35 l 24 24 z" fill="#D39562"/>
+
+  <!-- hands -->
+  <line x1="600" y1="450" x2="600" y2="238" stroke="#F5EDE4" stroke-width="9" stroke-linecap="round"/>
+  <g transform="rotate(120 600 450)">
+    <line x1="600" y1="450" x2="600" y2="300" stroke="#2CA2A2" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- service star at pivot -->
+  <g transform="translate(600 450)">
+    <circle r="42" fill="#061C31" stroke="#D39562" stroke-width="3"/>
+    <path d="M 0 -24 L 6.8 -7.9 L 24 -7.4 L 10.4 3.4 L 15.4 20 L 0 10.4 L -15.4 20 L -10.4 3.4 L -24 -7.4 L -6.8 -7.9 Z" fill="#D39562"/>
+  </g>
+
+  <!-- ══ EQUITY BARS (right), swept away under the sector ══ -->
+  <!-- baseline -->
+  <line x1="900" y1="700" x2="1460" y2="700" stroke="#F5EDE4" stroke-opacity="0.4" stroke-width="2"/>
+
+  <!-- bars grow left to right = equity that keeps building; nearest-the-clock bars faded/eroded by the sweep -->
+  <!-- eroded bars (inside sweep influence) -->
+  <g>
+    <rect x="920" y="640" width="58" height="60" rx="6" fill="#00686A" fill-opacity="0.30"/>
+    <path d="M 920 640 h 58" stroke="#D39562" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="6 8"/>
+    <rect x="920" y="560" width="58" height="8" rx="4" fill="#F5EDE4" fill-opacity="0.12"/>
+  </g>
+  <g>
+    <rect x="1006" y="600" width="58" height="100" rx="6" fill="#00686A" fill-opacity="0.45"/>
+    <path d="M 1006 600 h 58" stroke="#D39562" stroke-opacity="0.5" stroke-width="3" stroke-dasharray="6 8"/>
+    <rect x="1006" y="512" width="58" height="8" rx="4" fill="#F5EDE4" fill-opacity="0.12"/>
+  </g>
+  <!-- healthy bars: what buying now builds -->
+  <rect x="1092" y="540" width="58" height="160" rx="6" fill="#008687"/>
+  <rect x="1178" y="480" width="58" height="220" rx="6" fill="#008687"/>
+  <rect x="1264" y="416" width="58" height="284" rx="6" fill="#2CA2A2"/>
+  <g>
+    <rect x="1350" y="348" width="58" height="352" rx="6" fill="#2CA2A2"/>
+    <rect x="1350" y="348" width="58" height="14" rx="6" fill="#D39562"/>
+  </g>
+
+  <!-- ghost tops showing equity lost to waiting -->
+  <g stroke="#F5EDE4" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="7 8" fill="none">
+    <path d="M 920 560 h 58"/>
+    <path d="M 1006 512 h 58"/>
+  </g>
+
+  <!-- thin editorial rules top-right -->
+  <g stroke="#F5EDE4" stroke-opacity="0.3" stroke-width="2">
+    <line x1="1180" y1="200" x2="1440" y2="200"/>
+    <line x1="1290" y1="228" x2="1440" y2="228"/>
+  </g>
+  <circle cx="1152" cy="200" r="5" fill="#D39562"/>
+</svg>
+</body>
+</html>

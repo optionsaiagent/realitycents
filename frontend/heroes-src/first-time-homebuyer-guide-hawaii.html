@@ -1,0 +1,56 @@
+<!-- first-time-homebuyer-guide-hawaii — folded map, dotted route, first-home pin -->
+<style>
+  html,body{margin:0;padding:0;}
+  body{width:1600px;height:900px;overflow:hidden;background:#f5ede4;}
+  svg{display:block;}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#f5ede4"/>
+
+  <!-- soft shadow under the map -->
+  <ellipse cx="790" cy="686" rx="560" ry="26" fill="#dfd6c9" opacity="0.7"/>
+
+  <!-- folded map: alternating raised/dipped panels -->
+  <g stroke="#061c31" stroke-width="4" stroke-linejoin="round">
+    <path d="M300 372 L540 322 L540 632 L300 682 Z" fill="#fcfaf6"/>
+    <path d="M540 322 L780 372 L780 682 L540 632 Z" fill="#dfd6c9"/>
+    <path d="M780 372 L1020 322 L1020 632 L780 682 Z" fill="#fcfaf6"/>
+    <path d="M1020 322 L1260 372 L1260 682 L1020 632 Z" fill="#dfd6c9"/>
+  </g>
+
+  <!-- faint island contours printed on the map -->
+  <g fill="none" stroke="#2ca2a2" stroke-width="2.5" opacity="0.7">
+    <ellipse cx="430" cy="470" rx="52" ry="30" transform="rotate(-9 430 470)"/>
+    <ellipse cx="650" cy="560" rx="38" ry="22" transform="rotate(8 650 560)"/>
+    <ellipse cx="905" cy="450" rx="46" ry="26" transform="rotate(-7 905 450)"/>
+  </g>
+
+  <!-- start marker -->
+  <circle cx="360" cy="600" r="16" fill="none" stroke="#008687" stroke-width="7"/>
+  <circle cx="360" cy="600" r="4" fill="#008687"/>
+
+  <!-- dotted route across the folds -->
+  <path d="M378 590 C 470 540, 500 620, 610 580 C 720 542, 700 460, 820 470 C 930 480, 960 560, 1060 500 C 1120 462, 1140 420, 1168 392"
+        fill="none" stroke="#008687" stroke-width="7" stroke-dasharray="1 20" stroke-linecap="round"/>
+
+  <!-- destination: home pin standing above the map -->
+  <g transform="translate(1168 210)">
+    <path d="M0 96 Q0 156 0 172 L0 172" fill="none"/>
+    <path d="M0 148 L0 182" stroke="#061c31" stroke-width="6" stroke-linecap="round"/>
+    <path d="M-64 34 L0 -18 L64 34 V110 H-64 Z" fill="#d39562" stroke="#061c31" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="-13" y="62" width="26" height="48" fill="#fcfaf6" stroke="#061c31" stroke-width="5"/>
+  </g>
+
+  <!-- compass rosette, top-left of map -->
+  <g transform="translate(330 250)" stroke="#d39562" stroke-width="4" fill="none">
+    <circle r="26"/>
+    <line x1="0" y1="-26" x2="0" y2="-40"/>
+    <line x1="0" y1="26" x2="0" y2="34"/>
+    <line x1="-26" y1="0" x2="-34" y2="0"/>
+    <line x1="26" y1="0" x2="34" y2="0"/>
+  </g>
+
+  <!-- horizon hairlines -->
+  <line x1="1330" y1="250" x2="1470" y2="250" stroke="#dfd6c9" stroke-width="2.5"/>
+  <line x1="130" y1="682" x2="240" y2="682" stroke="#dfd6c9" stroke-width="2.5"/>
+</svg>

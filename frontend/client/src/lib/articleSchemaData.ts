@@ -357,6 +357,111 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "What reserves do I need to convert my Hawaii home to a rental and buy another?", answer: "If you have less than 12 months of property management experience, Fannie Mae requires six months of the departing home's full PITIA in verified reserves, on top of other reserve requirements. With a year or more of landlord experience, this specific requirement does not apply. On Oahu, six months of PITIA is commonly five figures, and AOAO/HOA dues count in the number." },
     ],
   },
+  "va-loan-limits-hawaii-2026": {
+    wordCount: 1100,
+    keywords: "VA loan limits Hawaii 2026, Honolulu County conforming limit 2026, VA loan limit Oahu, VA full entitlement no limit, VA reduced entitlement Hawaii, FHFA 2026 loan limits Hawaii, Maui Kauai Big Island loan limits 2026",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "Is there a VA loan limit in Hawaii in 2026?", answer: "Not if you have full entitlement. Since 2020, veterans with full entitlement have no VA loan limit \u2014 the loan size is set by what a lender approves, not by a VA cap. County limits only matter when entitlement is reduced (an existing VA loan still open, or a prior VA loss). Honolulu County's 2026 single-family conforming limit is $1,249,125." },
+      { question: "What are the 2026 conforming loan limits for Hawaii counties?", answer: "For reduced-entitlement VA borrowers, the FHFA 2026 single-family limits are $1,249,125 for Honolulu County, $1,299,500 for Maui and Kalawao Counties, $1,007,250 for Kauai County, and $862,500 for Hawaii County (Big Island). Above the county figure, reduced-entitlement buyers typically need 25% down on the difference only." },
+      { question: "How do I find out how much VA entitlement I have left?", answer: "Your Certificate of Eligibility shows entitlement used. RealityCents' VA Remaining Eligibility Calculator applies the 2026 county limits to estimate your $0-down ceiling, and a VA-experienced lender can confirm it with your COE." },
+    ],
+  },
+  "does-bah-count-va-loan-hawaii": {
+    wordCount: 1150,
+    keywords: "does BAH count for VA loan, BAH income VA loan Hawaii, BAH gross up VA loan, military income mortgage qualification Hawaii, BAS COLA count mortgage, Hawaii BAH 2026 Honolulu, VA loan qualify on BAH",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "Does BAH count as income for a VA loan?", answer: "Yes. Basic Allowance for Housing counts as qualifying income for a VA loan when it is documented on your Leave and Earnings Statement and expected to continue. Because BAH is tax-free, most VA lenders can gross it up \u2014 commonly by up to 25% \u2014 for qualifying purposes." },
+      { question: "Can I qualify for a VA loan in Hawaii on BAH alone?", answer: "BAH alone is rarely the whole picture, but it is a large part of it. Lenders combine base pay, BAH, BAS, and (when it will continue) Hawaii COLA, then test debt-to-income and VA residual income. Whether BAH alone carries a specific price depends on your other debts." },
+      { question: "What is Honolulu BAH in 2026?", answer: "All Oahu installations use the Honolulu County rate. With dependents, 2026 monthly BAH runs from about $3,183 (E-4 and below) to $4,959 (O-5); without dependents from about $2,598 to $4,224. Verify your rate on the DoD BAH calculator." },
+    ],
+  },
+  "va-funding-fee-hawaii": {
+    wordCount: 1200,
+    keywords: "VA funding fee Hawaii, VA funding fee 2026, VA funding fee first use 2.15, VA funding fee subsequent use 3.3, VA funding fee exemption disability, VA funding fee vs PMI, finance VA funding fee Hawaii",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "How much is the VA funding fee in 2026?", answer: "For a purchase with less than 5% down, 2.15% of the loan amount on first use and 3.3% on subsequent use. With 5% to 9.99% down it is 1.5%, and with 10% or more down it is 1.25%, regardless of prior use. An IRRRL refinance is 0.5%. These percentages have been in effect since April 2023 and apply in Hawaii the same as everywhere." },
+      { question: "Who is exempt from the VA funding fee?", answer: "Veterans receiving VA disability compensation (or entitled to it but for retirement pay), active-duty Purple Heart recipients, and eligible surviving spouses are exempt. The exemption is confirmed on your Certificate of Eligibility." },
+      { question: "Can the VA funding fee be financed?", answer: "Yes. Most Hawaii buyers finance it into the loan, so a $0-down purchase still closes with $0 down. Paying it in cash is allowed, and sellers can pay it as a concession. Since tax year 2026 the fee may also be deductible as mortgage insurance \u2014 see the RealityCents article on VA funding fee deductibility." },
+    ],
+  },
+  "va-vs-conventional-loan-hawaii": {
+    wordCount: 1250,
+    keywords: "VA vs conventional loan Hawaii, VA loan or conventional Hawaii, VA loan vs conventional comparison, no PMI VA loan Hawaii, conventional loan Hawaii condo, VA residual income Hawaii, which loan is better military buyer Hawaii",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "Is a VA loan better than a conventional loan in Hawaii?", answer: "For most eligible military buyers, yes \u2014 $0 down with full entitlement, no monthly PMI, and underwriting that recognizes BAH and residual income. Conventional can win when you have 20% down and reduced entitlement, when the condo is warrantable but not VA-approved, or when you are buying a non-primary property." },
+      { question: "Does a VA loan have PMI?", answer: "No. VA loans never carry private mortgage insurance. In its place is a one-time funding fee (2.15% on first use with less than 5% down in 2026), which can be financed and is waived for veterans with VA disability compensation." },
+      { question: "Can I use a VA loan for an investment property in Hawaii?", answer: "Not for a pure investment purchase \u2014 VA loans require owner occupancy. You can buy a 2\u20134 unit property with a VA loan if you live in one unit, and you can keep a former VA-financed home as a rental after you move. Conventional or DSCR financing covers pure investment purchases." },
+    ],
+  },
+  "va-condo-approval-vs-warrantability-hawaii": {
+    wordCount: 1150,
+    keywords: "VA condo approval Hawaii, VA approved condo vs warrantable, condo warrantability Hawaii, VA condo approval list Oahu, lender submitted condo approval VA, non-warrantable condo VA loan, Fannie Mae warrantable condo Hawaii",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "What is the difference between VA-approved and warrantable?", answer: "They are two different reviews by two different bodies. VA project approval is a Department of Veterans Affairs review of a condo project's legal documents, budget, and governance, resulting in an accepted project on the VA's list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans. A building can be on one list and not the other." },
+      { question: "Can I use a VA loan on a condo that is not VA-approved?", answer: "Often yes. Your lender can submit the project package to the VA Regional Loan Center as part of your purchase \u2014 lender-submitted approval typically takes two to three weeks, which fits inside a normal Hawaii escrow. The HOA or seller can also apply directly to approve the whole building." },
+      { question: "How do I check whether an Oahu condo is VA-approved?", answer: "Use the RealityCents VA-Approved Condos Oahu directory, which mirrors the VA's LGY Hub for Honolulu County and can be filtered by neighborhood, or check the official VA condo report. Send the address to a VA-experienced lender before writing an offer." },
+    ],
+  },
+  "va-irrrl-refinance-hawaii": {
+    wordCount: 1150,
+    keywords: "VA IRRRL Hawaii, VA streamline refinance Hawaii, IRRRL requirements 2026, VA interest rate reduction refinance loan, IRRRL funding fee 0.5, IRRRL seasoning 210 days, VA refinance Oahu",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "What is a VA IRRRL?", answer: "The Interest Rate Reduction Refinance Loan is the VA's streamline refinance: it replaces an existing VA loan with a new VA loan at a lower rate (or moves an ARM to a fixed rate), usually without a new appraisal or full income re-verification, with a reduced 0.5% funding fee." },
+      { question: "What are the IRRRL requirements?", answer: "The loan being refinanced must be a VA loan; at least 210 days must have passed since the first payment and six monthly payments made; the new fixed rate must be at least 0.5% lower than the old fixed rate (2% lower when moving from an ARM to a fixed); and closing costs must be recouped through the payment savings within 36 months. You must have previously occupied the home, but you do not need to live there now." },
+      { question: "Can I do an IRRRL on a Hawaii home I moved away from after a PCS?", answer: "Yes, if the home was your residence when you bought it with the VA loan. Prior occupancy satisfies the IRRRL rule, so a home you now rent out after PCSing off-island can still be streamlined." },
+    ],
+  },
+  "how-to-choose-hawaii-va-lender": {
+    wordCount: 1100,
+    keywords: "best VA loan lender Hawaii, how to choose VA lender Hawaii, VA lender Oahu, VA loan specialist Honolulu, VA condo approval lender Hawaii, leasehold VA loan lender, NMLS consumer access lender",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
+      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "How do I choose a VA lender in Hawaii?", answer: "Look for demonstrated local VA volume, fluency with Hawaii-specific friction points (VA condo approval, leasehold terms, the PC-9 termite inspection, the Tidewater appraisal process), NMLS transparency you can verify on NMLS Consumer Access, and a willingness to run real numbers before you shop. Ask specific questions and judge the specificity of the answers." },
+      { question: "Does the VA recommend specific lenders?", answer: "No. The VA guarantees loans but does not endorse lenders. A lender describing itself as 'VA-approved' means only that it is authorized to make VA loans. Compare lenders on Hawaii experience, responsiveness, and the Loan Estimate." },
+      { question: "Who is Jay Miller?", answer: "Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301, Branch NMLS #2475890), a U.S. Army veteran with 25 years of Hawaii mortgage experience, and the author of Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers." },
+    ],
+  },
   "hale-kamaaina-mortgage-program-hawaii": {
     wordCount: 2800,
     keywords: "Hale Kamaaina mortgage program Hawaii, HHFDC first time homebuyer Hawaii, Hawaii mortgage revenue bond program, below market rate Hawaii mortgage, HHFDC mortgage rate Hawaii, Hula Mae program Hawaii, HHFDC Hale Kamaaina eligibility, Hawaii first time buyer program 2026, Hale Kamaaina income limits, Hale Kamaaina purchase price limits",

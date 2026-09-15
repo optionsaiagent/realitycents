@@ -1,0 +1,54 @@
+<!-- seller-concessions-closing-costs-hawaii — a cost stack handed across the table divide -->
+<style>
+  html,body{margin:0;padding:0;}
+  body{width:1600px;height:900px;overflow:hidden;background:#f5ede4;}
+  svg{display:block;}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="warm" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#fcfaf6"/>
+      <stop offset="1" stop-color="#f5ede4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#f5ede4"/>
+  <rect width="1600" height="900" fill="url(#warm)"/>
+
+  <!-- table surface -->
+  <line x1="180" y1="640" x2="1420" y2="640" stroke="#061c31" stroke-width="6" stroke-linecap="round"/>
+  <line x1="240" y1="676" x2="1360" y2="676" stroke="#dfd6c9" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- the divide -->
+  <line x1="800" y1="150" x2="800" y2="622" stroke="#192f46" stroke-width="2.5" stroke-dasharray="3 14" stroke-linecap="round"/>
+
+  <!-- seller side: the cost stack -->
+  <g stroke-linejoin="round">
+    <rect x="340" y="588" width="250" height="52" rx="10" fill="#061c31"/>
+    <rect x="356" y="528" width="218" height="52" rx="10" fill="#008687"/>
+    <rect x="372" y="468" width="186" height="52" rx="10" fill="#061c31"/>
+    <rect x="388" y="408" width="154" height="52" rx="10" fill="#008687"/>
+  </g>
+
+  <!-- three concession bars arcing across the divide -->
+  <path d="M480 380 C 620 190, 980 190, 1130 372"
+        fill="none" stroke="#d39562" stroke-width="2.5" stroke-dasharray="2 12" stroke-linecap="round"/>
+  <g fill="#d39562">
+    <rect x="562" y="248" width="130" height="44" rx="9" transform="rotate(-11 627 270)"/>
+    <rect x="742" y="196" width="130" height="44" rx="9"/>
+    <rect x="924" y="242" width="130" height="44" rx="9" transform="rotate(11 989 264)"/>
+  </g>
+
+  <!-- buyer side: open receiving curve + landed credits -->
+  <path d="M1040 470 Q1160 560 1284 470" fill="none" stroke="#061c31" stroke-width="7" stroke-linecap="round"/>
+  <g>
+    <rect x="1076" y="588" width="180" height="52" rx="10" fill="#d39562"/>
+    <rect x="1092" y="528" width="148" height="52" rx="10" fill="#2ca2a2"/>
+  </g>
+
+  <!-- arrival tick -->
+  <path d="M1120 384 L1146 412 L1190 348" fill="none" stroke="#008687" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- side hairlines for balance -->
+  <line x1="180" y1="330" x2="290" y2="330" stroke="#dfd6c9" stroke-width="2.5"/>
+  <line x1="1330" y1="330" x2="1420" y2="330" stroke="#dfd6c9" stroke-width="2.5"/>
+</svg>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fema-oahu-flood-zone-maps-2026</title>
+<style>
+  @font-face {
+    font-family: "PlexMono";
+    src: url("/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2") format("woff2");
+    font-weight: 700;
+  }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1600px; height: 900px;
+    overflow: hidden; position: relative;
+    background: linear-gradient(180deg, #0a2338 0%, #061c31 100%);
+  }
+  .depth {
+    position: absolute; left: 340px; top: 60px; width: 920px; height: 780px;
+    background: radial-gradient(ellipse, rgba(0,134,135,0.16) 0%, rgba(0,134,135,0) 65%);
+  }
+  svg { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+  <div class="depth"></div>
+  <svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gLand" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f5ede4"/><stop offset="1" stop-color="#dfd6c9"/>
+      </linearGradient>
+      <pattern id="zoneHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+        <line x1="0" y1="0" x2="0" y2="12" stroke="#d39562" stroke-width="2" opacity="0.55"/>
+      </pattern>
+    </defs>
+
+    <!-- graticule -->
+    <g stroke="#f5ede4" stroke-width="1" opacity="0.07">
+      <line x1="0" y1="230" x2="1600" y2="230"/>
+      <line x1="0" y1="450" x2="1600" y2="450"/>
+      <line x1="0" y1="670" x2="1600" y2="670"/>
+      <line x1="360" y1="0" x2="360" y2="900"/>
+      <line x1="720" y1="0" x2="720" y2="900"/>
+      <line x1="1080" y1="0" x2="1080" y2="900"/>
+      <line x1="1440" y1="0" x2="1440" y2="900"/>
+    </g>
+    <g stroke="#f5ede4" stroke-width="1.5" opacity="0.22">
+      <line x1="352" y1="230" x2="368" y2="230"/><line x1="360" y1="222" x2="360" y2="238"/>
+      <line x1="1072" y1="670" x2="1088" y2="670"/><line x1="1080" y1="662" x2="1080" y2="678"/>
+      <line x1="712" y1="230" x2="728" y2="230"/><line x1="720" y1="222" x2="720" y2="238"/>
+      <line x1="1432" y1="450" x2="1448" y2="450"/><line x1="1440" y1="442" x2="1440" y2="458"/>
+    </g>
+
+    <!-- outermost dashed advisory contour -->
+    <g transform="translate(790 455) scale(1.17) translate(-790 -455)">
+      <path d="M 430 452 C 470 400, 560 340, 660 322 C 760 305, 860 296, 950 306 C 1010 312, 1060 342, 1075 386 C 1090 428, 1120 470, 1140 512 C 1152 540, 1130 566, 1096 560 C 1040 550, 1000 586, 950 596 C 900 606, 850 570, 830 584 C 810 596, 780 610, 740 604 C 680 596, 620 570, 560 536 C 510 508, 450 490, 430 452 Z"
+            fill="none" stroke="#2ca2a2" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.55"/>
+    </g>
+
+    <!-- flood-zone contour bands (stroked halos; land fill covers the inside) -->
+    <g fill="none">
+      <path d="M 430 452 C 470 400, 560 340, 660 322 C 760 305, 860 296, 950 306 C 1010 312, 1060 342, 1075 386 C 1090 428, 1120 470, 1140 512 C 1152 540, 1130 566, 1096 560 C 1040 550, 1000 586, 950 596 C 900 606, 850 570, 830 584 C 810 596, 780 610, 740 604 C 680 596, 620 570, 560 536 C 510 508, 450 490, 430 452 Z"
+            stroke="#2ca2a2" stroke-width="112" opacity="0.10"/>
+      <path d="M 430 452 C 470 400, 560 340, 660 322 C 760 305, 860 296, 950 306 C 1010 312, 1060 342, 1075 386 C 1090 428, 1120 470, 1140 512 C 1152 540, 1130 566, 1096 560 C 1040 550, 1000 586, 950 596 C 900 606, 850 570, 830 584 C 810 596, 780 610, 740 604 C 680 596, 620 570, 560 536 C 510 508, 450 490, 430 452 Z"
+            stroke="#008687" stroke-width="74" opacity="0.16"/>
+      <path d="M 430 452 C 470 400, 560 340, 660 322 C 760 305, 860 296, 950 306 C 1010 312, 1060 342, 1075 386 C 1090 428, 1120 470, 1140 512 C 1152 540, 1130 566, 1096 560 C 1040 550, 1000 586, 950 596 C 900 606, 850 570, 830 584 C 810 596, 780 610, 740 604 C 680 596, 620 570, 560 536 C 510 508, 450 490, 430 452 Z"
+            stroke="#2ca2a2" stroke-width="42" opacity="0.28"/>
+      <path d="M 430 452 C 470 400, 560 340, 660 322 C 760 305, 860 296, 950 306 C 1010 312, 1060 342, 1075 386 C 1090 428, 1120 470, 1140 512 C 1152 540, 1130 566, 1096 560 C 1040 550, 1000 586, 950 596 C 900 606, 850 570, 830 584 C 810 596, 780 610, 740 604 C 680 596, 620 570, 560 536 C 510 508, 450 490, 430 452 Z"
+            stroke="#2ca2a2" stroke-width="16" opacity="0.55"/>
+    </g>
+
+    <!-- Oahu landmass -->
+    <path d="M 430 452 C 470 400, 560 340, 660 322 C 760 305, 860 296, 950 306 C 1010 312, 1060 342, 1075 386 C 1090 428, 1120 470, 1140 512 C 1152 540, 1130 566, 1096 560 C 1040 550, 1000 586, 950 596 C 900 606, 850 570, 830 584 C 810 596, 780 610, 740 604 C 680 596, 620 570, 560 536 C 510 508, 450 490, 430 452 Z"
+          fill="url(#gLand)"/>
+
+    <!-- interior topo lines (the two ranges) -->
+    <g fill="none" stroke="#d39562" stroke-width="1.5" opacity="0.45">
+      <path d="M 540 470 C 580 430, 640 396, 700 384 C 680 420, 640 456, 596 488"/>
+      <path d="M 588 452 C 616 428, 652 408, 686 400"/>
+      <path d="M 880 360 C 950 352, 1010 372, 1040 412 C 1050 446, 1066 480, 1080 510 C 1040 496, 990 482, 950 452 C 920 428, 896 394, 880 360 Z"/>
+      <path d="M 928 392 C 970 392, 1004 412, 1022 444"/>
+    </g>
+
+    <!-- hatched special zone along the south shore -->
+    <path d="M 826 566 L 946 592 L 938 646 L 810 616 Z" fill="url(#zoneHatch)" stroke="#d39562" stroke-width="1.5" opacity="0.9"/>
+
+    <!-- compass -->
+    <g transform="translate(1330 200)" stroke="#f5ede4" fill="none" opacity="0.55">
+      <circle r="30" stroke-width="1.5"/>
+      <path d="M 0 -46 L 8 -8 L 0 0 L -8 -8 Z" fill="#f5ede4" stroke="none" opacity="0.9"/>
+      <path d="M 0 46 L 8 8 L 0 0 L -8 8 Z" fill="none" stroke-width="1.5"/>
+    </g>
+
+    <!-- year chip -->
+    <g>
+      <rect x="316" y="656" width="130" height="52" rx="10" fill="none" stroke="#2ca2a2" stroke-width="2"/>
+      <text x="381" y="691" text-anchor="middle" font-family="PlexMono, monospace" font-weight="700" font-size="28" fill="#2ca2a2">2026</text>
+    </g>
+
+    <!-- soundings: tiny depth dots in open water -->
+    <g fill="#2ca2a2" opacity="0.4">
+      <circle cx="300" cy="300" r="3"/>
+      <circle cx="250" cy="560" r="3"/>
+      <circle cx="1250" cy="330" r="3"/>
+      <circle cx="1320" cy="620" r="3"/>
+      <circle cx="620" cy="760" r="3"/>
+      <circle cx="1060" cy="180" r="3"/>
+    </g>
+  </svg>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- va-second-tier-entitlement-hawaii — one shield, two keys, two homes -->
+<style>
+  @font-face{font-family:'IBMPlexMono';src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2') format('woff2');font-weight:700;}
+  html,body{margin:0;padding:0;}
+  body{width:1600px;height:900px;overflow:hidden;background:#f5ede4;}
+  svg{display:block;}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="0.32" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#fcfaf6"/>
+      <stop offset="1" stop-color="#f5ede4" stop-opacity="0"/>
+    </radialGradient>
+    <g id="key">
+      <circle cx="0" cy="0" r="24" fill="none" stroke-width="9"/>
+      <circle cx="0" cy="0" r="6" fill="#f5ede4" stroke="none"/>
+      <line x1="24" y1="0" x2="108" y2="0" stroke-width="9" stroke-linecap="round"/>
+      <line x1="78" y1="0" x2="78" y2="17" stroke-width="9" stroke-linecap="round"/>
+      <line x1="100" y1="0" x2="100" y2="17" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g id="home">
+      <path d="M0 62 L82 0 L164 62 V170 H0 Z" stroke-width="7" stroke-linejoin="round"/>
+      <rect x="66" y="110" width="32" height="60" stroke-width="7"/>
+    </g>
+  </defs>
+
+  <!-- ground -->
+  <rect width="1600" height="900" fill="#f5ede4"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- faint oversized shield echo, background depth -->
+  <path d="M430 60 h500 v330 q0 210 -250 330 q-250 -120 -250 -330 Z"
+        fill="none" stroke="#dfd6c9" stroke-width="2"/>
+
+  <!-- horizontal hairline through composition -->
+  <line x1="120" y1="450" x2="360" y2="450" stroke="#dfd6c9" stroke-width="2"/>
+  <line x1="1440" y1="450" x2="1520" y2="450" stroke="#dfd6c9" stroke-width="2"/>
+
+  <!-- VA shield -->
+  <g>
+    <path d="M500 240 h360 v230 q0 150 -180 240 q-180 -90 -180 -240 Z"
+          fill="#fcfaf6" stroke="#061c31" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M540 278 h280 v190 q0 122 -140 196 q-140 -74 -140 -196 Z"
+          fill="none" stroke="#008687" stroke-width="3"/>
+    <!-- star -->
+    <path d="M680 330 L703 398 L775 398 L717 440 L739 508 L680 466 L621 508 L643 440 L585 398 L657 398 Z"
+          fill="#d39562"/>
+  </g>
+
+  <!-- small numeric accent -->
+  <text x="905" y="235" font-family="IBMPlexMono, monospace" font-weight="700"
+        font-size="44" fill="#008687">&#215;2</text>
+
+  <!-- branching paths: shield to two homes -->
+  <path d="M860 390 H1000 Q1040 390 1040 350 V330 Q1040 290 1080 290 H1150"
+        fill="none" stroke="#061c31" stroke-width="3"/>
+  <path d="M860 510 H1000 Q1040 510 1040 550 V570 Q1040 610 1080 610 H1150"
+        fill="none" stroke="#061c31" stroke-width="3"/>
+
+  <!-- keys riding the paths -->
+  <use href="#key" transform="translate(922 390)" stroke="#008687" fill="#008687"/>
+  <use href="#key" transform="translate(922 510)" stroke="#d39562" fill="#d39562"/>
+
+  <!-- home one: kept -->
+  <g transform="translate(1160 205)">
+    <use href="#home" stroke="#008687" fill="#008687" fill-opacity="0.10"/>
+  </g>
+  <!-- home two: bought again -->
+  <g transform="translate(1160 525)">
+    <use href="#home" stroke="#d39562" fill="#d39562" fill-opacity="0.10"/>
+  </g>
+
+  <!-- grounding rules under each home -->
+  <line x1="1140" y1="382" x2="1350" y2="382" stroke="#dfd6c9" stroke-width="3"/>
+  <line x1="1140" y1="702" x2="1350" y2="702" stroke="#dfd6c9" stroke-width="3"/>
+</svg>

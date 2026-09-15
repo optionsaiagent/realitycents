@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>va-loan-house-hacking-hawaii</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1600px; height: 900px;
+    overflow: hidden; position: relative;
+    background: linear-gradient(180deg, #f5ede4 0%, #f0e6d7 55%, #dfd6c9 100%);
+  }
+  .sun {
+    position: absolute; left: 1080px; top: 60px; width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(235,184,144,0.4) 0%, rgba(235,184,144,0) 68%);
+  }
+  svg { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+  <div class="sun"></div>
+  <svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gOwner" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#192f46"/><stop offset="1" stop-color="#061c31"/>
+      </linearGradient>
+      <linearGradient id="gTenant" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#008687"/><stop offset="1" stop-color="#00686a"/>
+      </linearGradient>
+      <marker id="aGold" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#d39562" stroke-width="2.2"/>
+      </marker>
+      <marker id="aNavy" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#192f46" stroke-width="2.2"/>
+      </marker>
+    </defs>
+
+    <!-- sun ring -->
+    <circle cx="1270" cy="250" r="104" fill="none" stroke="#d39562" stroke-width="1.5" opacity="0.55"/>
+
+    <!-- ground line -->
+    <line x1="220" y1="680" x2="1380" y2="680" stroke="#061c31" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- one house, two halves -->
+    <g>
+      <!-- owner half (left, navy) -->
+      <path d="M 794 246 L 794 400 L 794 680 L 540 680 L 540 400 L 500 400 L 794 246 Z" fill="url(#gOwner)"/>
+      <!-- tenant half (right, teal) -->
+      <path d="M 806 246 L 806 400 L 806 680 L 1060 680 L 1060 400 L 1100 400 L 806 246 Z" fill="url(#gTenant)"/>
+      <!-- split line -->
+      <line x1="800" y1="252" x2="800" y2="680" stroke="#fcfaf6" stroke-width="3" stroke-dasharray="14 10"/>
+      <!-- owner door + window -->
+      <rect x="626" y="548" width="72" height="132" fill="#f5ede4"/>
+      <circle cx="684" cy="616" r="5" fill="#061c31"/>
+      <rect x="580" y="452" width="56" height="48" fill="none" stroke="#f5ede4" stroke-width="2.5"/>
+      <!-- tenant windows, lit -->
+      <rect x="852" y="452" width="56" height="48" fill="#ebb890"/>
+      <rect x="948" y="452" width="56" height="48" fill="#ebb890"/>
+      <rect x="852" y="540" width="56" height="48" fill="#ebb890" opacity="0.7"/>
+      <rect x="948" y="540" width="56" height="48" fill="none" stroke="#f5ede4" stroke-width="2.5"/>
+    </g>
+
+    <!-- palm silhouettes flanking -->
+    <g stroke="#192f46" stroke-width="2.5" fill="none" opacity="0.45">
+      <path d="M 330 680 C 338 610, 330 560, 312 522"/>
+      <path d="M 312 522 C 288 506, 262 502, 240 510"/>
+      <path d="M 312 522 C 304 496, 312 472, 332 456"/>
+      <path d="M 312 522 C 332 506, 358 502, 380 512"/>
+    </g>
+    <g stroke="#00686a" stroke-width="2" fill="none" opacity="0.4">
+      <path d="M 1258 680 C 1252 626, 1258 588, 1272 558"/>
+      <path d="M 1272 558 C 1292 546, 1314 544, 1332 552"/>
+      <path d="M 1272 558 C 1266 538, 1272 518, 1288 506"/>
+      <path d="M 1272 558 C 1254 546, 1232 544, 1214 552"/>
+    </g>
+
+    <!-- mortgage bar under the house -->
+    <g>
+      <rect x="540" y="742" width="520" height="44" rx="10" fill="none" stroke="#061c31" stroke-width="2"/>
+      <!-- owner-paid share -->
+      <path d="M 550 746 L 838 746 L 838 782 L 550 782 A 6 6 0 0 1 544 776 L 544 752 A 6 6 0 0 1 550 746 Z" fill="#192f46"/>
+      <!-- rent-covered share -->
+      <path d="M 838 746 L 1050 746 A 6 6 0 0 1 1056 752 L 1056 776 A 6 6 0 0 1 1050 782 L 838 782 Z" fill="#d39562"/>
+      <line x1="838" y1="734" x2="838" y2="794" stroke="#061c31" stroke-width="1.5" opacity="0.5"/>
+    </g>
+
+    <!-- rent arrows: tenant half feeds the bar -->
+    <path d="M 1080 500 C 1180 560, 1180 680, 1010 736" fill="none" stroke="#d39562" stroke-width="4" stroke-dasharray="0" marker-end="url(#aGold)"/>
+    <path d="M 1000 606 C 1060 650, 1040 700, 950 738" fill="none" stroke="#d39562" stroke-width="3" opacity="0.75" marker-end="url(#aGold)"/>
+    <!-- owner payment arrow -->
+    <path d="M 560 560 C 470 620, 500 700, 600 738" fill="none" stroke="#192f46" stroke-width="3" stroke-dasharray="9 8" marker-end="url(#aNavy)"/>
+  </svg>
+</body>
+</html>

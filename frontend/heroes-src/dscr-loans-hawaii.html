@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>dscr-loans-hawaii</title>
+<style>
+  @font-face {
+    font-family: "PlexMono";
+    src: url("/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2") format("woff2");
+    font-weight: 700;
+  }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1600px; height: 900px;
+    overflow: hidden; position: relative;
+    background: linear-gradient(180deg, #0b2540 0%, #061c31 100%);
+  }
+  .glow {
+    position: absolute; left: 640px; top: 40px; width: 900px; height: 700px;
+    background: radial-gradient(ellipse, rgba(0,134,135,0.22) 0%, rgba(0,134,135,0) 65%);
+  }
+  svg { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gIncome" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2ca2a2"/><stop offset="1" stop-color="#00686a"/>
+      </linearGradient>
+      <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="14" stroke="#f5ede4" stroke-width="1.5" opacity="0.35"/>
+      </pattern>
+      <marker id="aGold" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#d39562" stroke-width="2.2"/>
+      </marker>
+      <marker id="aTealL" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#2ca2a2" stroke-width="2.2"/>
+      </marker>
+    </defs>
+
+    <!-- moon ring -->
+    <circle cx="300" cy="180" r="88" fill="none" stroke="#ebb890" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="300" cy="180" r="60" fill="#ebb890" opacity="0.1"/>
+
+    <!-- baseline -->
+    <line x1="200" y1="690" x2="1420" y2="690" stroke="#f5ede4" stroke-width="1.5" opacity="0.35"/>
+
+    <!-- ocean hint below baseline -->
+    <path d="M 200 740 C 360 726, 520 754, 680 740 C 840 726, 1000 754, 1160 740 C 1280 730, 1360 748, 1420 742"
+          fill="none" stroke="#2ca2a2" stroke-width="1.5" opacity="0.22"/>
+    <path d="M 260 780 C 420 766, 580 794, 740 780 C 900 766, 1060 794, 1220 780"
+          fill="none" stroke="#2ca2a2" stroke-width="1.5" opacity="0.12"/>
+
+    <!-- rental property -->
+    <g>
+      <rect x="380" y="350" width="210" height="340" fill="#192f46" stroke="#2ca2a2" stroke-width="2"/>
+      <line x1="368" y1="350" x2="602" y2="350" stroke="#2ca2a2" stroke-width="3"/>
+      <!-- lit windows -->
+      <g>
+        <rect x="406" y="382" width="38" height="30" fill="#008687" opacity="0.85"/>
+        <rect x="466" y="382" width="38" height="30" fill="#d39562" opacity="0.9"/>
+        <rect x="526" y="382" width="38" height="30" fill="#008687" opacity="0.55"/>
+        <rect x="406" y="440" width="38" height="30" fill="#008687" opacity="0.55"/>
+        <rect x="466" y="440" width="38" height="30" fill="#008687" opacity="0.85"/>
+        <rect x="526" y="440" width="38" height="30" fill="#d39562" opacity="0.9"/>
+        <rect x="406" y="498" width="38" height="30" fill="#d39562" opacity="0.9"/>
+        <rect x="466" y="498" width="38" height="30" fill="#008687" opacity="0.55"/>
+        <rect x="526" y="498" width="38" height="30" fill="#008687" opacity="0.85"/>
+        <rect x="406" y="556" width="38" height="30" fill="#008687" opacity="0.85"/>
+        <rect x="526" y="556" width="38" height="30" fill="#008687" opacity="0.55"/>
+      </g>
+      <rect x="462" y="614" width="46" height="76" fill="#061c31" stroke="#2ca2a2" stroke-width="1.5"/>
+      <!-- palm hint beside building -->
+      <g stroke="#2ca2a2" stroke-width="2" fill="none" opacity="0.5">
+        <path d="M 322 690 C 326 640, 320 600, 306 570"/>
+        <path d="M 306 570 C 286 556, 266 552, 248 558"/>
+        <path d="M 306 570 C 300 548, 306 528, 322 514"/>
+        <path d="M 306 570 C 322 556, 344 552, 362 560"/>
+      </g>
+    </g>
+
+    <!-- income arcs from property over to the debt column -->
+    <path d="M 500 336 C 660 150, 900 140, 1074 300 C 1102 328, 1114 372, 1116 420"
+          fill="none" stroke="#d39562" stroke-width="5" marker-end="url(#aGold)"/>
+    <path d="M 540 350 C 680 210, 880 202, 1030 330 C 1058 356, 1074 396, 1078 434"
+          fill="none" stroke="#2ca2a2" stroke-width="3.5" marker-end="url(#aTealL)" opacity="0.9"/>
+    <path d="M 580 370 C 690 270, 850 262, 980 360 C 1004 380, 1020 408, 1028 442"
+          fill="none" stroke="#008687" stroke-width="2.5" marker-end="url(#aTealL)" opacity="0.7"/>
+
+    <!-- debt column (hatched) being covered -->
+    <g>
+      <rect x="1010" y="460" width="120" height="230" fill="url(#hatch)" stroke="#f5ede4" stroke-width="2"/>
+      <!-- income pouring over the debt -->
+      <rect x="1010" y="460" width="120" height="92" fill="url(#gIncome)" opacity="0.85"/>
+    </g>
+
+    <!-- income column: taller than the debt -->
+    <rect x="1170" y="392" width="120" height="298" fill="url(#gIncome)"/>
+    <rect x="1170" y="392" width="120" height="7" fill="#fcfaf6" opacity="0.4"/>
+
+    <!-- coverage line across both columns -->
+    <line x1="960" y1="460" x2="1340" y2="460" stroke="#ebb890" stroke-width="2" stroke-dasharray="7 8" opacity="0.85"/>
+
+    <!-- the ratio -->
+    <text x="1230" y="352" text-anchor="middle" font-family="PlexMono, monospace" font-weight="700" font-size="34" fill="#ebb890">1.25&#215;</text>
+    <line x1="1180" y1="366" x2="1280" y2="366" stroke="#ebb890" stroke-width="1.5" opacity="0.5"/>
+  </svg>
+</body>
+</html>

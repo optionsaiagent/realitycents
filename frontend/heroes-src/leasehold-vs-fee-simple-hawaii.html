@@ -1,0 +1,84 @@
+<!-- Hero: leasehold-vs-fee-simple-hawaii — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#F5EDE4}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgL" cx="0.5" cy="0.4" r="0.9">
+      <stop offset="0" stop-color="#F1E7DA"/>
+      <stop offset="1" stop-color="#E7DCCD"/>
+    </radialGradient>
+    <radialGradient id="bgR" cx="0.5" cy="0.4" r="0.9">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F5EDE4"/>
+    </radialGradient>
+    <linearGradient id="landR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2CA2A2"/>
+      <stop offset="1" stop-color="#00686A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- two grounds -->
+  <rect x="0" y="0" width="800" height="900" fill="url(#bgL)"/>
+  <rect x="800" y="0" width="800" height="900" fill="url(#bgR)"/>
+  <!-- divider -->
+  <line x1="800" y1="90" x2="800" y2="810" stroke="#061C31" stroke-opacity="0.30" stroke-width="2.5"/>
+  <circle cx="800" cy="90" r="5" fill="#061C31" fill-opacity="0.4"/>
+  <circle cx="800" cy="810" r="5" fill="#061C31" fill-opacity="0.4"/>
+
+  <!-- ===== LEFT PANEL: leasehold — house separated from its land ===== -->
+  <!-- land parcel -->
+  <path d="M 230 660 L 570 660 L 610 740 L 190 740 Z" fill="#DFD6C9" stroke="#061C31" stroke-width="5" stroke-linejoin="round"/>
+  <!-- parcel hatch: land owned by someone else -->
+  <g stroke="#061C31" stroke-opacity="0.30" stroke-width="2.5">
+    <line x1="272" y1="668" x2="248" y2="732"/>
+    <line x1="332" y1="668" x2="308" y2="732"/>
+    <line x1="392" y1="668" x2="368" y2="732"/>
+    <line x1="452" y1="668" x2="428" y2="732"/>
+    <line x1="512" y1="668" x2="488" y2="732"/>
+    <line x1="566" y1="668" x2="548" y2="732"/>
+  </g>
+  <!-- gap: dashed tether between house and land -->
+  <line x1="400" y1="480" x2="400" y2="652" stroke="#061C31" stroke-opacity="0.55"
+        stroke-width="4" stroke-dasharray="8 14" stroke-linecap="round"/>
+  <!-- lease clock dial on the tether -->
+  <g>
+    <circle cx="400" cy="566" r="34" fill="#F5EDE4" stroke="#061C31" stroke-width="4.5"/>
+    <line x1="400" y1="566" x2="400" y2="544" stroke="#061C31" stroke-width="4" stroke-linecap="round"/>
+    <line x1="400" y1="566" x2="418" y2="576" stroke="#061C31" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- floating house -->
+  <g>
+    <path d="M 310 476 L 310 386 L 400 302 L 490 386 L 490 476 Z"
+          fill="#FCFAF6" stroke="#061C31" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="376" y="414" width="48" height="62" fill="#DFD6C9" stroke="#061C31" stroke-width="4"/>
+    <!-- lift shadow -->
+    <ellipse cx="400" cy="662" rx="96" ry="10" fill="#061C31" opacity="0.12"/>
+  </g>
+
+  <!-- ===== RIGHT PANEL: fee simple — house united with its land ===== -->
+  <!-- land parcel, solid teal, house seated on it -->
+  <path d="M 1030 620 L 1370 620 L 1410 740 L 990 740 Z" fill="url(#landR)"
+        stroke="#061C31" stroke-width="5" stroke-linejoin="round"/>
+  <!-- house on land -->
+  <g>
+    <path d="M 1110 620 L 1110 500 L 1200 416 L 1290 500 L 1290 620 Z"
+          fill="#FCFAF6" stroke="#061C31" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="1176" y="546" width="48" height="74" fill="#D39562" stroke="#061C31" stroke-width="4"/>
+  </g>
+  <!-- solid bond line where wall meets land -->
+  <line x1="1092" y1="620" x2="1308" y2="620" stroke="#061C31" stroke-width="7" stroke-linecap="round"/>
+  <!-- gold sun above: full ownership -->
+  <circle cx="1330" cy="270" r="54" fill="#D39562"/>
+  <circle cx="1330" cy="270" r="76" fill="none" stroke="#D39562" stroke-opacity="0.4" stroke-width="2.5"/>
+
+  <!-- shared footer baseline -->
+  <line x1="120" y1="800" x2="1480" y2="800" stroke="#061C31" stroke-opacity="0.15" stroke-width="2"/>
+
+  <!-- panel markers: open circle vs filled circle -->
+  <circle cx="400" cy="170" r="12" fill="none" stroke="#061C31" stroke-opacity="0.6" stroke-width="4"/>
+  <circle cx="1200" cy="170" r="12" fill="#008687"/>
+</svg>

@@ -11,6 +11,7 @@ import SEO from "@/components/SEO";
 import ShareGuide from "@/components/ShareGuide";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
+import PCSCallout from "@/components/PCSCallout";
 import {
   MapPin,
   Shield,
@@ -129,7 +130,7 @@ const FAQS = [
   },
   {
     q: "Should I buy or rent if I'm only here 2–3 years?",
-    a: "Honest answer: it depends on when in the market cycle you're buying and where you think Hawaii appreciation goes. But historically, Oahu values have supported short holds better than most markets. Oahu's rental market near JBPHH is extremely strong — many clients cover their full mortgage with rent when they PCS. I'll give you a straight opinion when we talk — not a sales pitch.",
+    a: "It depends on when in the market cycle you're buying and where you think Hawaii appreciation goes. But historically, Oahu values have supported short holds better than most markets. Oahu's rental market near JBPHH is extremely strong — many clients cover their full mortgage with rent when they PCS. I'll give you a straight opinion when we talk — not a sales pitch.",
     hasLink: false,
   },
 ];
@@ -469,7 +470,7 @@ export default function VALoanPearlHarbor() {
 
           <div className="mt-8 p-4 bg-navy/5 border border-navy/10 rounded-lg dark:bg-white/5 dark:border-white/10">
             <p className="text-sm font-body text-foreground/70 italic">
-              One honest note: Pearl Harbor-Hickam families have the widest neighborhood spread on
+              One note: Pearl Harbor-Hickam families have the widest neighborhood spread on
               the island. If your spouse works in town, Aiea/Salt Lake wins. If you want space and
               new construction, Ewa Beach or Kapolei. The trade-off is always commute vs. home
               size vs. school district.
@@ -531,7 +532,7 @@ export default function VALoanPearlHarbor() {
                     <>
                       {" "}
                       <Link
-                        href="/knowledge-base/multiple-va-loans-hawaii"
+                        href="/knowledge-base/va-second-tier-entitlement-hawaii"
                         className="text-teal hover:underline font-medium"
                       >
                         Learn more about using multiple VA loans →
@@ -610,7 +611,7 @@ export default function VALoanPearlHarbor() {
               </p>
             </Link>
             <Link
-              href="/knowledge-base/va-funding-fee-guide"
+              href="/knowledge-base/va-funding-fee-hawaii"
               className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all"
             >
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">
@@ -621,7 +622,7 @@ export default function VALoanPearlHarbor() {
               </p>
             </Link>
             <Link
-              href="/knowledge-base/multiple-va-loans-hawaii"
+              href="/knowledge-base/va-second-tier-entitlement-hawaii"
               className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all"
             >
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">
@@ -659,6 +660,8 @@ export default function VALoanPearlHarbor() {
           </div>
         </div>
       </section>
+
+      <PCSCallout baseSlug="va-loan-pearl-harbor-hickam" />
 
       {/* ─── Share This Guide ────────────────────────────────────────────── */}
       <section className="py-8">
@@ -714,8 +717,8 @@ export default function VALoanPearlHarbor() {
             </a>
           </div>
           <p className="text-center text-xs text-foreground/40 font-body mt-4">
-            BAH table, payment scenarios, and loan limit current as of Q1 2026. Marked for
-            quarterly review.
+            Last updated September 14, 2026. BAH table, payment scenarios, and the 2026 loan limit are
+            reviewed quarterly; the next FHFA limit update is expected January 2027.
           </p>
         </div>
       </section>

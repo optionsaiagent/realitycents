@@ -1,0 +1,85 @@
+<!-- Hero: refinancing-hawaii-homeowners — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#F5EDE4}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.35" r="0.9">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </radialGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- rate grid: faint horizontal rules like a chart -->
+  <g stroke="#061C31" stroke-width="1.5">
+    <line x1="140" y1="240" x2="1460" y2="240" stroke-opacity="0.10"/>
+    <line x1="140" y1="340" x2="1460" y2="340" stroke-opacity="0.10"/>
+    <line x1="140" y1="440" x2="1460" y2="440" stroke-opacity="0.10"/>
+    <line x1="140" y1="540" x2="1460" y2="540" stroke-opacity="0.10"/>
+    <line x1="140" y1="640" x2="1460" y2="640" stroke-opacity="0.14"/>
+  </g>
+  <!-- left axis ticks -->
+  <g stroke="#061C31" stroke-opacity="0.35" stroke-width="2.5">
+    <line x1="140" y1="240" x2="164" y2="240"/>
+    <line x1="140" y1="340" x2="164" y2="340"/>
+    <line x1="140" y1="440" x2="164" y2="440"/>
+    <line x1="140" y1="540" x2="164" y2="540"/>
+    <line x1="140" y1="640" x2="164" y2="640"/>
+  </g>
+
+  <!-- ORIGINAL loan track: climbing from left to the junction -->
+  <path d="M 150 560 C 350 540 560 480 780 402" fill="none" stroke="#061C31"
+        stroke-width="9" stroke-linecap="round"/>
+  <!-- ghost continuation of the old track (the path not taken) -->
+  <path d="M 780 402 C 980 330 1180 290 1440 258" fill="none" stroke="#061C31"
+        stroke-opacity="0.35" stroke-width="5" stroke-dasharray="16 16" stroke-linecap="round"/>
+  <path d="M 1440 258 l -36 -6 M 1440 258 l -24 26" fill="none" stroke="#061C31"
+        stroke-opacity="0.35" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- REROUTE: teal track curving down onto the lower line -->
+  <path d="M 780 402 C 920 372 1010 520 1120 590 C 1220 652 1330 640 1450 640"
+        fill="none" stroke="#008687" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 1450 640 l -38 -14 M 1450 640 l -38 14" fill="none" stroke="#008687"
+        stroke-width="10" stroke-linecap="round"/>
+
+  <!-- junction node -->
+  <circle cx="780" cy="402" r="46" fill="#EBB890" opacity="0.5" filter="url(#soft)"/>
+  <circle cx="780" cy="402" r="26" fill="#D39562" stroke="#061C31" stroke-width="5"/>
+  <circle cx="780" cy="402" r="44" fill="none" stroke="#D39562" stroke-opacity="0.6" stroke-width="3"/>
+
+  <!-- switch lever mark at junction: small angled tick pair -->
+  <line x1="742" y1="368" x2="710" y2="336" stroke="#D39562" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="704" cy="330" r="7" fill="#D39562"/>
+
+  <!-- house riding the new lower track -->
+  <g transform="translate(1188 612) rotate(4)">
+    <path d="M -44 0 L -44 -46 L 0 -88 L 44 -46 L 44 0 Z" fill="#FCFAF6"
+          stroke="#061C31" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="-12" y="-34" width="24" height="34" fill="#008687"/>
+  </g>
+
+  <!-- savings arc between old ghost line and new track, right side -->
+  <line x1="1332" y1="300" x2="1332" y2="596" stroke="#D39562" stroke-width="4"
+        stroke-dasharray="3 12" stroke-linecap="round"/>
+  <path d="M 1332 596 l -12 -24 M 1332 596 l 12 -24" fill="none" stroke="#D39562"
+        stroke-width="4" stroke-linecap="round"/>
+  <path d="M 1332 300 l -12 24 M 1332 300 l 12 24" fill="none" stroke="#D39562"
+        stroke-width="4" stroke-linecap="round"/>
+
+  <!-- quiet details -->
+  <line x1="150" y1="160" x2="470" y2="160" stroke="#061C31" stroke-opacity="0.16" stroke-width="2"/>
+  <circle cx="470" cy="160" r="5" fill="#008687"/>
+  <g fill="#DFD6C9">
+    <ellipse cx="320" cy="742" rx="42" ry="7"/>
+    <ellipse cx="394" cy="742" rx="20" ry="5"/>
+    <ellipse cx="438" cy="742" rx="10" ry="3.5"/>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<!-- Hero: mortgage-pre-approval-process — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#FCFAF6}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0.68" cy="0.36" r="0.9">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F2E9DC"/>
+    </radialGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- baseline -->
+  <line x1="140" y1="700" x2="1460" y2="700" stroke="#061C31" stroke-opacity="0.20" stroke-width="2.5"/>
+
+  <!-- threshold: the line the approved file has crossed -->
+  <line x1="920" y1="150" x2="920" y2="750" stroke="#008687" stroke-opacity="0.55"
+        stroke-width="3.5" stroke-dasharray="14 12"/>
+  <circle cx="920" cy="150" r="6" fill="#008687"/>
+  <circle cx="920" cy="750" r="6" fill="#008687"/>
+
+  <!-- waiting queue: neutral document cards, receding left -->
+  <g>
+    <g transform="translate(250 470)" opacity="0.55">
+      <rect width="150" height="210" rx="12" fill="#F5EDE4" stroke="#061C31" stroke-opacity="0.5" stroke-width="4"/>
+      <line x1="26" y1="52" x2="124" y2="52" stroke="#061C31" stroke-opacity="0.35" stroke-width="4"/>
+      <line x1="26" y1="86" x2="124" y2="86" stroke="#061C31" stroke-opacity="0.25" stroke-width="4"/>
+      <line x1="26" y1="120" x2="96" y2="120" stroke="#061C31" stroke-opacity="0.25" stroke-width="4"/>
+    </g>
+    <g transform="translate(440 452)" opacity="0.7">
+      <rect width="158" height="224" rx="12" fill="#F5EDE4" stroke="#061C31" stroke-opacity="0.55" stroke-width="4"/>
+      <line x1="28" y1="56" x2="130" y2="56" stroke="#061C31" stroke-opacity="0.35" stroke-width="4"/>
+      <line x1="28" y1="92" x2="130" y2="92" stroke="#061C31" stroke-opacity="0.25" stroke-width="4"/>
+      <line x1="28" y1="128" x2="102" y2="128" stroke="#061C31" stroke-opacity="0.25" stroke-width="4"/>
+    </g>
+    <g transform="translate(636 434)" opacity="0.85">
+      <rect width="166" height="238" rx="12" fill="#FCFAF6" stroke="#061C31" stroke-opacity="0.6" stroke-width="4"/>
+      <line x1="30" y1="60" x2="136" y2="60" stroke="#061C31" stroke-opacity="0.4" stroke-width="4"/>
+      <line x1="30" y1="98" x2="136" y2="98" stroke="#061C31" stroke-opacity="0.3" stroke-width="4"/>
+      <line x1="30" y1="136" x2="108" y2="136" stroke="#061C31" stroke-opacity="0.3" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- leap arc from queue across the threshold -->
+  <path d="M 720 420 Q 900 220 1090 300" fill="none" stroke="#D39562" stroke-width="5"
+        stroke-dasharray="2 16" stroke-linecap="round"/>
+  <path d="M 1090 300 l -34 -8 M 1090 300 l -8 -32" stroke="#D39562" stroke-width="5"
+        stroke-linecap="round" fill="none"/>
+
+  <!-- the approved file: ahead, elevated, sealed -->
+  <g transform="translate(1080 320) rotate(-5)">
+    <ellipse cx="110" cy="392" rx="130" ry="14" fill="#061C31" opacity="0.10"/>
+    <rect width="220" height="316" rx="16" fill="#FCFAF6" stroke="#061C31" stroke-width="6"/>
+    <line x1="38" y1="70" x2="182" y2="70" stroke="#061C31" stroke-width="5"/>
+    <line x1="38" y1="114" x2="182" y2="114" stroke="#061C31" stroke-opacity="0.45" stroke-width="5"/>
+    <line x1="38" y1="158" x2="142" y2="158" stroke="#061C31" stroke-opacity="0.45" stroke-width="5"/>
+    <line x1="38" y1="202" x2="182" y2="202" stroke="#061C31" stroke-opacity="0.3" stroke-width="5"/>
+  </g>
+
+  <!-- approval seal: scalloped teal rosette with check, overlapping the card -->
+  <g transform="translate(1288 596)">
+    <circle r="96" fill="#2CA2A2" opacity="0.35" filter="url(#soft)"/>
+    <!-- scalloped edge -->
+    <g fill="#008687">
+      <circle r="74"/>
+      <circle cx="0" cy="-80" r="13"/><circle cx="40" cy="-69.3" r="13"/><circle cx="69.3" cy="-40" r="13"/>
+      <circle cx="80" cy="0" r="13"/><circle cx="69.3" cy="40" r="13"/><circle cx="40" cy="69.3" r="13"/>
+      <circle cx="0" cy="80" r="13"/><circle cx="-40" cy="69.3" r="13"/><circle cx="-69.3" cy="40" r="13"/>
+      <circle cx="-80" cy="0" r="13"/><circle cx="-69.3" cy="-40" r="13"/><circle cx="-40" cy="-69.3" r="13"/>
+    </g>
+    <circle r="58" fill="none" stroke="#FCFAF6" stroke-width="4"/>
+    <path d="M -30 4 L -8 28 L 36 -26" fill="none" stroke="#FCFAF6" stroke-width="14"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- ribbon tails -->
+    <path d="M -34 66 L -58 132 L -20 112 L -8 150 L 8 78 Z" fill="#D39562"/>
+  </g>
+
+  <!-- quiet upper-left detail -->
+  <line x1="150" y1="180" x2="560" y2="180" stroke="#061C31" stroke-opacity="0.16" stroke-width="2"/>
+  <circle cx="150" cy="180" r="5" fill="#D39562"/>
+  <g fill="#DFD6C9">
+    <ellipse cx="1120" cy="760" rx="38" ry="6"/>
+    <ellipse cx="1186" cy="760" rx="16" ry="4"/>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<!-- Hero: escrow-process-hawaii — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  @font-face{
+    font-family:'IBM Plex Mono';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2') format('woff2');
+    font-weight:700;
+  }
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#FCFAF6}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F3EADF"/>
+    </radialGradient>
+    <linearGradient id="vessel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCFAF6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#DFD6C9" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- timeline through center, passing behind vessel -->
+  <line x1="150" y1="470" x2="1450" y2="470" stroke="#061C31" stroke-opacity="0.25" stroke-width="2.5"/>
+  <!-- tick marks -->
+  <g stroke="#061C31" stroke-opacity="0.30" stroke-width="2.5">
+    <line x1="360" y1="458" x2="360" y2="482"/>
+    <line x1="470" y1="461" x2="470" y2="479"/>
+    <line x1="580" y1="458" x2="580" y2="482"/>
+    <line x1="1020" y1="458" x2="1020" y2="482"/>
+    <line x1="1130" y1="461" x2="1130" y2="479"/>
+    <line x1="1240" y1="458" x2="1240" y2="482"/>
+  </g>
+
+  <!-- party nodes -->
+  <g>
+    <circle cx="250" cy="470" r="44" fill="#008687"/>
+    <circle cx="250" cy="470" r="44" fill="none" stroke="#061C31" stroke-width="5"/>
+    <circle cx="250" cy="470" r="66" fill="none" stroke="#008687" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+  <g>
+    <circle cx="1350" cy="470" r="44" fill="#061C31"/>
+    <circle cx="1350" cy="470" r="66" fill="none" stroke="#061C31" stroke-opacity="0.30" stroke-width="2"/>
+  </g>
+
+  <!-- hand-off arcs from each party to the vessel -->
+  <path d="M 250 404 Q 420 200 700 232" fill="none" stroke="#008687" stroke-width="4"
+        stroke-dasharray="12 12" stroke-linecap="round"/>
+  <path d="M 1350 404 Q 1180 200 900 232" fill="none" stroke="#061C31" stroke-opacity="0.6"
+        stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round"/>
+
+  <!-- soft halo behind vessel -->
+  <ellipse cx="800" cy="440" rx="220" ry="230" fill="#EBB890" opacity="0.30" filter="url(#soft)"/>
+
+  <!-- neutral holding vessel -->
+  <g>
+    <rect x="668" y="250" width="264" height="380" rx="36" fill="url(#vessel)"
+          stroke="#061C31" stroke-width="5"/>
+    <!-- vessel mouth -->
+    <line x1="700" y1="250" x2="900" y2="250" stroke="#FCFAF6" stroke-width="6"/>
+    <rect x="694" y="236" width="212" height="26" rx="13" fill="#DFD6C9" stroke="#061C31" stroke-width="5"/>
+    <!-- suspension line -->
+    <line x1="800" y1="262" x2="800" y2="352" stroke="#061C31" stroke-width="3.5"/>
+    <!-- the held key -->
+    <g stroke="#061C31" stroke-width="5" stroke-linejoin="round">
+      <circle cx="800" cy="392" r="42" fill="#D39562"/>
+      <circle cx="800" cy="392" r="16" fill="#FCFAF6"/>
+      <rect x="786" y="430" width="28" height="130" rx="8" fill="#D39562"/>
+      <rect x="814" y="504" width="30" height="18" rx="5" fill="#D39562"/>
+      <rect x="814" y="536" width="22" height="16" rx="5" fill="#D39562"/>
+    </g>
+    <!-- glass glint -->
+    <line x1="702" y1="300" x2="702" y2="560" stroke="#FCFAF6" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- single label chip -->
+  <g>
+    <rect x="704" y="668" width="192" height="46" rx="23" fill="#061C31"/>
+    <text x="800" y="698" text-anchor="middle" font-family="'IBM Plex Mono',monospace"
+          font-weight="700" font-size="19" letter-spacing="4" fill="#F5EDE4">IN ESCROW</text>
+  </g>
+
+  <!-- quiet wave motif at foot -->
+  <path d="M 560 796 Q 600 782 640 796 T 720 796 T 800 796 T 880 796 T 960 796 T 1040 796"
+        fill="none" stroke="#008687" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+</svg>

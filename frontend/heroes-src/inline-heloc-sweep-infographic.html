@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>inline-heloc-sweep-infographic</title>
+<style>
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/PlayfairDisplay-700.woff2') format('woff2');
+    font-weight:700;font-style:normal;
+  }
+  @font-face{
+    font-family:'Montserrat';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/Montserrat-700.woff2') format('woff2');
+    font-weight:700;font-style:normal;
+  }
+  @font-face{
+    font-family:'Montserrat';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/Montserrat-400.woff2') format('woff2');
+    font-weight:400;font-style:normal;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2') format('woff2');
+    font-weight:700;font-style:normal;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-400.woff2') format('woff2');
+    font-weight:400;font-style:normal;
+  }
+  html,body{margin:0;padding:0;width:1400px;height:1000px;overflow:hidden;background:#F1ECE2;}
+  svg{display:block;}
+  .serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;}
+  .label{font-family:'Montserrat',Arial,sans-serif;font-weight:700;}
+  .body{font-family:'Montserrat',Arial,sans-serif;font-weight:400;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:400;}
+  .monobold{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:700;}
+</style>
+</head>
+<body>
+<svg width="1400" height="1000" viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0C2340"/>
+      <stop offset="1" stop-color="#123354"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#3A3220" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- canvas -->
+  <rect width="1400" height="1000" fill="#F1ECE2"/>
+
+  <!-- title strip -->
+  <rect x="0" y="0" width="1400" height="112" fill="url(#header)"/>
+  <text x="700" y="64" text-anchor="middle" class="serif" font-size="40" fill="#F1ECE2" letter-spacing="1">TWO WAYS TO PAY FOR THE SAME HOME</text>
+  <rect x="620" y="82" width="160" height="3" fill="#C9995F"/>
+  <text x="52" y="66" class="mono" font-size="13" fill="#4E9C9C" letter-spacing="3">01</text>
+  <text x="1348" y="66" text-anchor="end" class="mono" font-size="13" fill="#4E9C9C" letter-spacing="3">02</text>
+
+  <!-- ============ LEFT PANEL: 30-YEAR FIXED ============ -->
+  <rect x="48" y="150" width="628" height="766" rx="14" fill="#FFFFFF" filter="url(#cardShadow)"/>
+  <path d="M 48 164 Q 48 150 62 150 L 662 150 Q 676 150 676 164 L 676 172 L 48 172 Z" fill="#0C2340"/>
+
+  <text x="108" y="222" class="label" font-size="24" fill="#0C2340" letter-spacing="2.5">30-YEAR FIXED MORTGAGE</text>
+  <text x="108" y="250" class="mono" font-size="13" fill="#1A7A7A" letter-spacing="2">PAY ON A SCHEDULE</text>
+
+  <!-- balance chart -->
+  <g>
+    <!-- gridlines -->
+    <g stroke="#E4DFD2" stroke-width="1.5">
+      <line x1="108" y1="290" x2="616" y2="290"/>
+      <line x1="108" y1="352" x2="616" y2="352"/>
+      <line x1="108" y1="415" x2="616" y2="415"/>
+      <line x1="108" y1="477" x2="616" y2="477"/>
+    </g>
+    <line x1="108" y1="540" x2="616" y2="540" stroke="#0C2340" stroke-width="2"/>
+    <line x1="108" y1="282" x2="108" y2="540" stroke="#0C2340" stroke-width="2"/>
+
+    <!-- slow amortization curve: barely moves for years, falls late -->
+    <path d="M 108 292 C 300 306, 470 372, 616 534" fill="none" stroke="#0C2340" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 108 292 C 300 306, 470 372, 616 534 L 616 540 L 108 540 Z" fill="#0C2340" opacity="0.07"/>
+
+    <!-- halfway-in-time marker -->
+    <line x1="362" y1="336" x2="362" y2="540" stroke="#C9995F" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+    <circle cx="362" cy="336" r="6" fill="#C9995F"/>
+    <circle cx="362" cy="336" r="6" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="376" y="330" class="mono" font-size="12" fill="#8F6B3F" letter-spacing="1">HALFWAY IN TIME</text>
+    <text x="376" y="348" class="mono" font-size="12" fill="#8F6B3F" letter-spacing="1">&#8800; HALFWAY PAID</text>
+
+    <!-- axis labels -->
+    <text x="108" y="276" class="label" font-size="12" fill="#7A756A" letter-spacing="2">LOAN BALANCE</text>
+    <text x="108" y="566" class="mono" font-size="12" fill="#7A756A" letter-spacing="1">YEAR 0</text>
+    <text x="616" y="566" text-anchor="end" class="mono" font-size="12" fill="#7A756A" letter-spacing="1">YEAR 30</text>
+  </g>
+
+  <!-- payment split bar -->
+  <text x="108" y="620" class="label" font-size="13" fill="#0C2340" letter-spacing="2.5">MONTH ONE &#183; WHERE THE PAYMENT GOES</text>
+  <g>
+    <rect x="108" y="634" width="508" height="46" rx="6" fill="#EDE8DC"/>
+    <path d="M 114 634 L 545 634 L 545 680 L 114 680 Q 108 680 108 674 L 108 640 Q 108 634 114 634 Z" fill="#C9995F"/>
+    <rect x="545" y="634" width="2" height="46" fill="#FFFFFF"/>
+    <path d="M 547 634 L 610 634 Q 616 634 616 640 L 616 674 Q 616 680 610 680 L 547 680 Z" fill="#1A7A7A"/>
+    <text x="128" y="664" class="monobold" font-size="22" fill="#FFFFFF">86%</text>
+    <text x="196" y="662" class="label" font-size="12" fill="#FFFFFF" letter-spacing="2">INTEREST</text>
+    <text x="547" y="700" class="mono" font-size="12" fill="#1A7A7A" letter-spacing="1">14% PRINCIPAL</text>
+  </g>
+  <text x="108" y="726" class="mono" font-size="13" fill="#8F6B3F" letter-spacing="0.5">86% of payment one is interest</text>
+
+  <line x1="108" y1="756" x2="616" y2="756" stroke="#E4DFD2" stroke-width="2"/>
+  <text x="108" y="796" class="body" font-size="16" fill="#3D4A5C">Same payment every month. Interest is front-loaded,</text>
+  <text x="108" y="822" class="body" font-size="16" fill="#3D4A5C">so the balance drifts down slowly for years before</text>
+  <text x="108" y="848" class="body" font-size="16" fill="#3D4A5C">principal finally takes over.</text>
+
+  <!-- ============ RIGHT PANEL: FIRST-LIEN HELOC + SWEEP ============ -->
+  <rect x="724" y="150" width="628" height="766" rx="14" fill="#FFFFFF" filter="url(#cardShadow)"/>
+  <path d="M 724 164 Q 724 150 738 150 L 1338 150 Q 1352 150 1352 164 L 1352 172 L 724 172 Z" fill="#1A7A7A"/>
+
+  <text x="784" y="222" class="label" font-size="24" fill="#0C2340" letter-spacing="2.5">FIRST-LIEN HELOC + SWEEP</text>
+  <text x="784" y="250" class="mono" font-size="13" fill="#1A7A7A" letter-spacing="2">YOUR CHECKING PARKS AGAINST THE BALANCE</text>
+
+  <!-- sawtooth chart -->
+  <g>
+    <g stroke="#E4DFD2" stroke-width="1.5">
+      <line x1="784" y1="290" x2="1292" y2="290"/>
+      <line x1="784" y1="352" x2="1292" y2="352"/>
+      <line x1="784" y1="415" x2="1292" y2="415"/>
+      <line x1="784" y1="477" x2="1292" y2="477"/>
+    </g>
+    <line x1="784" y1="540" x2="1292" y2="540" stroke="#0C2340" stroke-width="2"/>
+    <line x1="784" y1="282" x2="784" y2="540" stroke="#0C2340" stroke-width="2"/>
+
+    <!-- 30-yr pace ghost for comparison -->
+    <path d="M 784 292 C 976 306, 1146 372, 1292 534" fill="none" stroke="#0C2340" stroke-width="2" stroke-dasharray="3 7" opacity="0.35"/>
+    <text x="1160" y="410" class="mono" font-size="11" fill="#0C2340" opacity="0.55" letter-spacing="1">30-YR PACE</text>
+
+    <!-- sawtooth: deposits sweep the balance down, spending drifts it up, net fall is fast -->
+    <polyline points="784,292 794,356 869,332 879,396 954,372 964,436 1039,412 1049,476 1124,452 1134,516 1209,492 1219,532 1292,524"
+              fill="none" stroke="#1A7A7A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline points="784,292 794,356 869,332 879,396 954,372 964,436 1039,412 1049,476 1124,452 1134,516 1209,492 1219,532 1292,524 1292,540 784,540"
+              fill="#1A7A7A" opacity="0.08"/>
+
+    <!-- deposit arrows -->
+    <g fill="#C9995F">
+      <path d="M 789 300 L 789 322 M 789 322 l -6 -9 M 789 322 l 6 -9" stroke="#C9995F" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 874 340 L 874 362 M 874 362 l -6 -9 M 874 362 l 6 -9" stroke="#C9995F" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 959 380 L 959 402 M 959 402 l -6 -9 M 959 402 l 6 -9" stroke="#C9995F" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 1044 420 L 1044 442 M 1044 442 l -6 -9 M 1044 442 l 6 -9" stroke="#C9995F" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 1129 460 L 1129 482 M 1129 482 l -6 -9 M 1129 482 l 6 -9" stroke="#C9995F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <text x="820" y="308" class="mono" font-size="12" fill="#8F6B3F" letter-spacing="1">DEPOSITS SWEEP IN</text>
+
+    <text x="784" y="276" class="label" font-size="12" fill="#7A756A" letter-spacing="2">LOAN BALANCE</text>
+    <text x="784" y="566" class="mono" font-size="12" fill="#7A756A" letter-spacing="1">DAY 1</text>
+    <text x="1292" y="566" text-anchor="end" class="mono" font-size="12" fill="#7A756A" letter-spacing="1">PAYOFF &#8594; YEARS SOONER</text>
+  </g>
+
+  <!-- interest-on-net bar -->
+  <text x="784" y="620" class="label" font-size="13" fill="#0C2340" letter-spacing="2.5">INTEREST ACCRUES ON THE NET BALANCE ONLY</text>
+  <g>
+    <rect x="784" y="634" width="508" height="46" rx="6" fill="#0C2340"/>
+    <path d="M 1114 634 L 1286 634 Q 1292 634 1292 640 L 1292 674 Q 1292 680 1286 680 L 1114 680 Z" fill="#1A7A7A"/>
+    <rect x="1112" y="634" width="2" height="46" fill="#FFFFFF"/>
+    <text x="804" y="662" class="label" font-size="12" fill="#FFFFFF" letter-spacing="2">NET BALANCE &#8594; PAYS INTEREST</text>
+    <text x="1132" y="662" class="label" font-size="12" fill="#FFFFFF" letter-spacing="2">CASH PARKED</text>
+    <!-- gold bracket under the net span -->
+    <path d="M 784 692 L 784 700 L 1112 700 L 1112 692" fill="none" stroke="#C9995F" stroke-width="2.5"/>
+  </g>
+  <text x="784" y="726" class="mono" font-size="13" fill="#8F6B3F" letter-spacing="0.5">interest = rate &#215; net balance, figured daily</text>
+
+  <line x1="784" y1="756" x2="1292" y2="756" stroke="#E4DFD2" stroke-width="2"/>
+  <text x="784" y="796" class="body" font-size="16" fill="#3D4A5C">Every deposit sits against the loan until you spend it.</text>
+  <text x="784" y="822" class="body" font-size="16" fill="#3D4A5C">Idle dollars shrink the balance the interest math sees,</text>
+  <text x="784" y="848" class="body" font-size="16" fill="#3D4A5C">so the sawtooth falls fast.</text>
+
+  <!-- VS badge -->
+  <circle cx="700" cy="440" r="34" fill="#C9995F"/>
+  <circle cx="700" cy="440" r="34" fill="none" stroke="#F1ECE2" stroke-width="4"/>
+  <text x="700" y="449" text-anchor="middle" class="label" font-size="22" fill="#FFFFFF" letter-spacing="1">VS</text>
+
+  <!-- footer -->
+  <text x="700" y="968" text-anchor="middle" class="mono" font-size="12" fill="#9B917C" letter-spacing="2">ILLUSTRATIVE CONCEPT &#183; NOT A RATE QUOTE OR AN OFFER OF CREDIT</text>
+</svg>
+</body>
+</html>

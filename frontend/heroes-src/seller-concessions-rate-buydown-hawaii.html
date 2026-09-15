@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #F5EDE4; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7F0E8"/>
+      <stop offset="55%" stop-color="#F5EDE4"/>
+      <stop offset="100%" stop-color="#EBDFCE"/>
+    </linearGradient>
+    <linearGradient id="dialArc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00686A"/>
+      <stop offset="55%" stop-color="#008687"/>
+      <stop offset="100%" stop-color="#2CA2A2"/>
+    </linearGradient>
+    <radialGradient id="coin" cx="38%" cy="34%" r="80%">
+      <stop offset="0%" stop-color="#EBB890"/>
+      <stop offset="70%" stop-color="#D39562"/>
+      <stop offset="100%" stop-color="#B87B45"/>
+    </radialGradient>
+    <radialGradient id="dialGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#008687" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#008687" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#ground)"/>
+
+  <!-- glow behind dial -->
+  <circle cx="1050" cy="500" r="400" fill="url(#dialGlow)"/>
+
+  <!-- === RATE DIAL (right of center) === -->
+  <!-- outer thin ring, upper semicircle -->
+  <path d="M 750 500 A 300 300 0 0 1 1350 500" fill="none" stroke="#061C31" stroke-opacity="0.18" stroke-width="2"/>
+  <!-- main arc gauge -->
+  <path d="M 790 500 A 260 260 0 0 1 1310 500" fill="none" stroke="url(#dialArc)" stroke-width="26" stroke-linecap="round"/>
+  <!-- tick marks around dial -->
+  <g stroke="#061C31" stroke-width="2.5" stroke-opacity="0.55">
+    <line x1="762" y1="500" x2="792" y2="500"/>
+    <line x1="800" y1="358" x2="826" y2="373"/>
+    <line x1="904" y1="254" x2="919" y2="280"/>
+    <line x1="1050" y1="212" x2="1050" y2="242"/>
+    <line x1="1196" y1="254" x2="1181" y2="280"/>
+    <line x1="1300" y1="358" x2="1274" y2="373"/>
+    <line x1="1338" y1="500" x2="1308" y2="500"/>
+  </g>
+
+  <!-- ghost needle: where the rate was (pointing up-right) -->
+  <g transform="rotate(-38 1050 500)">
+    <path d="M 1050 500 L 1050 268" stroke="#061C31" stroke-opacity="0.18" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 12"/>
+  </g>
+  <!-- pressed-down needle: pointing down-left toward low end -->
+  <g transform="rotate(-118 1050 500)">
+    <path d="M 1050 500 L 1050 262 l -14 30 l 28 0 z" fill="#061C31" stroke="#061C31" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+  <!-- sweep arrow showing downward press -->
+  <path d="M 1136 302 A 226 226 0 0 0 878 340" fill="none" stroke="#D39562" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <path d="M 878 340 l 34 -12 l -12 34 z" fill="#D39562" transform="rotate(24 878 340)"/>
+
+  <!-- pivot hub with gold center -->
+  <circle cx="1050" cy="500" r="34" fill="#061C31"/>
+  <circle cx="1050" cy="500" r="14" fill="#D39562"/>
+
+  <!-- dial base rule -->
+  <line x1="760" y1="560" x2="1340" y2="560" stroke="#061C31" stroke-opacity="0.25" stroke-width="2"/>
+  <line x1="820" y1="584" x2="1280" y2="584" stroke="#061C31" stroke-opacity="0.12" stroke-width="1.5"/>
+
+  <!-- === SELLER CREDIT TOKENS sliding in from the left === -->
+  <!-- track -->
+  <line x1="150" y1="612" x2="880" y2="612" stroke="#061C31" stroke-opacity="0.28" stroke-width="2" stroke-dasharray="10 10"/>
+  <path d="M 880 612 l -26 -10 l 0 20 z" fill="#061C31" fill-opacity="0.4"/>
+
+  <!-- motion-trail ghosts -->
+  <circle cx="205" cy="560" r="52" fill="#D39562" fill-opacity="0.10"/>
+  <circle cx="298" cy="556" r="56" fill="#D39562" fill-opacity="0.20"/>
+
+  <!-- token 1 (rear) -->
+  <g>
+    <circle cx="402" cy="552" r="60" fill="url(#coin)"/>
+    <circle cx="402" cy="552" r="60" fill="none" stroke="#B87B45" stroke-width="3"/>
+    <circle cx="402" cy="552" r="42" fill="none" stroke="#F5EDE4" stroke-opacity="0.65" stroke-width="2.5" stroke-dasharray="7 7"/>
+  </g>
+  <!-- token 2 (middle, larger) -->
+  <g>
+    <circle cx="548" cy="544" r="68" fill="url(#coin)"/>
+    <circle cx="548" cy="544" r="68" fill="none" stroke="#B87B45" stroke-width="3"/>
+    <circle cx="548" cy="544" r="48" fill="none" stroke="#F5EDE4" stroke-opacity="0.65" stroke-width="2.5" stroke-dasharray="8 8"/>
+  </g>
+  <!-- token 3 (front, largest, overlapping toward dial) -->
+  <g>
+    <circle cx="712" cy="534" r="78" fill="url(#coin)"/>
+    <circle cx="712" cy="534" r="78" fill="none" stroke="#B87B45" stroke-width="3.5"/>
+    <circle cx="712" cy="534" r="55" fill="none" stroke="#F5EDE4" stroke-opacity="0.7" stroke-width="3" stroke-dasharray="9 9"/>
+    <!-- percent slash mark, abstract -->
+    <circle cx="692" cy="514" r="8" fill="none" stroke="#F5EDE4" stroke-width="3.5"/>
+    <circle cx="732" cy="554" r="8" fill="none" stroke="#F5EDE4" stroke-width="3.5"/>
+    <line x1="736" y1="510" x2="688" y2="558" stroke="#F5EDE4" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- corner rules for editorial frame -->
+  <g stroke="#061C31" stroke-opacity="0.3" stroke-width="2">
+    <path d="M 120 168 h 56 M 120 168 v 56" fill="none"/>
+    <path d="M 1480 732 h -56 M 1480 732 v -56" fill="none"/>
+  </g>
+</svg>
+</body>
+</html>

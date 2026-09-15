@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>page-agents</title>
+<style>
+  html,body{margin:0;padding:0;width:1600px;height:900px;overflow:hidden;background:#0C2340;}
+  svg{display:block;}
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A1B33"/>
+      <stop offset="0.6" stop-color="#10304A"/>
+      <stop offset="1" stop-color="#154B58"/>
+    </linearGradient>
+    <radialGradient id="meetGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E3C08F" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#1A7A7A" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#1A7A7A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skyline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B2240"/>
+      <stop offset="1" stop-color="#071527"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#071527"/>
+      <stop offset="1" stop-color="#050F1D"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.44" cy="0.44" r="0.95">
+      <stop offset="0.55" stop-color="#06111F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06111F" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <!-- dusk field -->
+  <rect width="1600" height="900" fill="url(#dusk)"/>
+  <ellipse cx="1120" cy="400" rx="620" ry="420" fill="url(#meetGlow)"/>
+
+  <!-- interlocking keys: two key bows overlapping like clasped hands -->
+  <!-- key A: teal, pointing right -->
+  <g transform="translate(1010,378) rotate(-14)" fill="none" stroke="#4E9C9C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.75">
+    <circle cx="0" cy="0" r="86"/>
+    <circle cx="0" cy="0" r="52"/>
+    <path d="M 86 0 L 268 0"/>
+    <path d="M 210 0 L 210 34 M 240 0 L 240 24 M 268 0 L 268 42"/>
+  </g>
+  <!-- key B: gold, pointing left, its bow interlocked through key A's bow -->
+  <g transform="translate(1146,442) rotate(166)" fill="none" stroke="#E3C08F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+    <circle cx="0" cy="0" r="86"/>
+    <circle cx="0" cy="0" r="52"/>
+    <path d="M 86 0 L 268 0"/>
+    <path d="M 210 0 L 210 34 M 240 0 L 240 24 M 268 0 L 268 42"/>
+  </g>
+  <!-- lens where the bows overlap -->
+  <circle cx="1078" cy="410" r="26" fill="#E3C08F" opacity="0.2"/>
+  <circle cx="1078" cy="410" r="26" fill="none" stroke="#F1ECE2" stroke-width="1.5" opacity="0.45"/>
+
+  <!-- faint echo ring set, cooperative geometry -->
+  <g fill="none" stroke="#4E9C9C" stroke-width="1.2">
+    <circle cx="1078" cy="410" r="180" opacity="0.14"/>
+    <circle cx="1078" cy="410" r="256" opacity="0.09"/>
+    <circle cx="1078" cy="410" r="336" opacity="0.06"/>
+  </g>
+
+  <!-- skyline band, low honolulu-abstract silhouette -->
+  <g fill="url(#skyline)">
+    <rect x="0"    y="678" width="120" height="222"/>
+    <rect x="132"  y="640" width="86"  height="260"/>
+    <rect x="230"  y="700" width="104" height="200"/>
+    <rect x="346"  y="612" width="72"  height="288"/>
+    <rect x="430"  y="668" width="118" height="232"/>
+    <rect x="560"  y="632" width="64"  height="268"/>
+    <rect x="636"  y="690" width="96"  height="210"/>
+    <rect x="744"  y="648" width="80"  height="252"/>
+    <rect x="836"  y="704" width="110" height="196"/>
+    <rect x="958"  y="624" width="70"  height="276"/>
+    <rect x="1040" y="676" width="96"  height="224"/>
+    <rect x="1148" y="644" width="82"  height="256"/>
+    <rect x="1242" y="700" width="112" height="200"/>
+    <rect x="1366" y="628" width="74"  height="272"/>
+    <rect x="1452" y="672" width="148" height="228"/>
+  </g>
+  <!-- roof accents -->
+  <g fill="#0F2C4E">
+    <rect x="346" y="604" width="72" height="8"/>
+    <rect x="958" y="616" width="70" height="8"/>
+    <rect x="1366" y="620" width="74" height="8"/>
+  </g>
+  <!-- sparse lit windows -->
+  <g fill="#E3C08F">
+    <rect x="368" y="648" width="8" height="12" opacity="0.55"/>
+    <rect x="388" y="690" width="8" height="12" opacity="0.4"/>
+    <rect x="582" y="668" width="8" height="12" opacity="0.5"/>
+    <rect x="768" y="688" width="8" height="12" opacity="0.45"/>
+    <rect x="980" y="660" width="8" height="12" opacity="0.55"/>
+    <rect x="1002" y="712" width="8" height="12" opacity="0.35"/>
+    <rect x="1170" y="684" width="8" height="12" opacity="0.5"/>
+    <rect x="1390" y="664" width="8" height="12" opacity="0.5"/>
+    <rect x="1490" y="708" width="8" height="12" opacity="0.4"/>
+    <rect x="160" y="676" width="8" height="12" opacity="0.45"/>
+  </g>
+  <g fill="#4E9C9C">
+    <rect x="456" y="700" width="8" height="12" opacity="0.4"/>
+    <rect x="862" y="732" width="8" height="12" opacity="0.35"/>
+    <rect x="1268" y="728" width="8" height="12" opacity="0.4"/>
+    <rect x="60" y="712" width="8" height="12" opacity="0.35"/>
+    <rect x="1476" y="740" width="8" height="12" opacity="0.3"/>
+  </g>
+
+  <!-- ground shadow band -->
+  <rect x="0" y="840" width="1600" height="60" fill="url(#ground)"/>
+
+  <!-- gold hairline above skyline -->
+  <rect x="0" y="600" width="1600" height="1.5" fill="#C9995F" opacity="0.18"/>
+
+  <!-- edge vignette -->
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>
+</body>
+</html>

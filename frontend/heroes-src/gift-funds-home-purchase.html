@@ -1,0 +1,96 @@
+<!-- Hero: gift-funds-home-purchase — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#F5EDE4}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0.30" cy="0.45" r="0.85">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F1E7DB"/>
+    </radialGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EBB890"/>
+      <stop offset="1" stop-color="#D39562"/>
+    </linearGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- big soft teal disc behind the gift -->
+  <circle cx="480" cy="440" r="240" fill="#2CA2A2" opacity="0.14" filter="url(#soft)"/>
+  <circle cx="480" cy="440" r="228" fill="none" stroke="#008687" stroke-opacity="0.25" stroke-width="2"/>
+
+  <!-- baseline with a gap under the transformation -->
+  <line x1="150" y1="660" x2="740" y2="660" stroke="#061C31" stroke-opacity="0.18" stroke-width="2"/>
+  <line x1="900" y1="660" x2="1460" y2="660" stroke="#061C31" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- GIFT BOX (left), right face dissolving -->
+  <g>
+    <!-- box body: left portion solid, right edge broken -->
+    <path d="M 360 340 H 540 L 560 372 L 536 404 L 558 440 L 534 476 L 556 512 L 538 548 L 560 580 H 360 Z"
+          fill="#00686A"/>
+    <path d="M 360 340 H 540 L 560 372 L 536 404 L 558 440 L 534 476 L 556 512 L 538 548 L 560 580 H 360 Z"
+          fill="none" stroke="#061C31" stroke-width="5" stroke-linejoin="round"/>
+    <!-- lid band -->
+    <rect x="340" y="308" width="250" height="44" fill="#008687" stroke="#061C31" stroke-width="5"/>
+    <!-- vertical ribbon -->
+    <rect x="438" y="308" width="42" height="272" fill="#D39562"/>
+    <!-- bow: two loops + knot -->
+    <path d="M 459 300 C 415 236 355 252 372 292 C 382 316 430 310 459 300 Z"
+          fill="#EBB890" stroke="#061C31" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M 459 300 C 503 236 563 252 546 292 C 536 316 488 310 459 300 Z"
+          fill="#EBB890" stroke="#061C31" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="459" cy="300" r="14" fill="#D39562" stroke="#061C31" stroke-width="5"/>
+  </g>
+
+  <!-- dissolving particles drifting right along a gentle arc -->
+  <g>
+    <rect x="600" y="380" width="26" height="26" fill="#00686A" transform="rotate(12 613 393)"/>
+    <rect x="662" y="430" width="20" height="20" fill="#008687" transform="rotate(-14 672 440)"/>
+    <rect x="640" y="520" width="16" height="16" fill="#00686A" transform="rotate(24 648 528)"/>
+    <circle cx="726" cy="480" r="11" fill="#D39562"/>
+    <circle cx="782" cy="430" r="9" fill="#008687"/>
+    <rect x="806" y="500" width="14" height="14" fill="#2CA2A2" transform="rotate(18 813 507)"/>
+    <circle cx="866" cy="470" r="8" fill="#D39562"/>
+    <circle cx="912" cy="520" r="7" fill="#EBB890"/>
+    <circle cx="948" cy="464" r="6" fill="#008687"/>
+  </g>
+  <!-- guide arc for the drift -->
+  <path d="M 590 430 Q 800 372 1040 470" fill="none" stroke="#061C31"
+        stroke-opacity="0.22" stroke-width="2.5" stroke-dasharray="2 14" stroke-linecap="round"/>
+
+  <!-- DOWN-PAYMENT STACK (right): three coin layers on the baseline -->
+  <g stroke="#061C31" stroke-width="5">
+    <g>
+      <rect x="1030" y="606" width="220" height="40" rx="8" fill="url(#coin)"/>
+      <ellipse cx="1140" cy="606" rx="110" ry="20" fill="#EBB890"/>
+    </g>
+    <g>
+      <rect x="1052" y="548" width="176" height="40" rx="8" fill="url(#coin)"/>
+      <ellipse cx="1140" cy="548" rx="88" ry="17" fill="#EBB890"/>
+    </g>
+    <g>
+      <rect x="1072" y="494" width="136" height="38" rx="8" fill="url(#coin)"/>
+      <ellipse cx="1140" cy="494" rx="68" ry="14" fill="#EBB890"/>
+    </g>
+  </g>
+
+  <!-- ghost house outline above the stack: the destination -->
+  <path d="M 1076 452 L 1076 400 L 1140 340 L 1204 400 L 1204 452"
+        fill="none" stroke="#008687" stroke-width="4.5" stroke-dasharray="10 10"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- quiet corner details -->
+  <line x1="1250" y1="180" x2="1470" y2="180" stroke="#061C31" stroke-opacity="0.16" stroke-width="2"/>
+  <circle cx="1470" cy="180" r="5" fill="#D39562"/>
+  <g fill="#DFD6C9">
+    <ellipse cx="240" cy="742" rx="34" ry="6"/>
+    <ellipse cx="300" cy="742" rx="16" ry="4"/>
+  </g>
+</svg>

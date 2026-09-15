@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #F5EDE4; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F2EA"/>
+      <stop offset="72%" stop-color="#F5EDE4"/>
+      <stop offset="100%" stop-color="#EADDCB"/>
+    </linearGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2CA2A2"/>
+      <stop offset="100%" stop-color="#008687"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#008687"/>
+      <stop offset="100%" stop-color="#00686A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#ground)"/>
+
+  <!-- huge faint background wave arc -->
+  <path d="M -100 830 C 400 780 780 560 1030 300 C 1120 208 1240 150 1400 140"
+        fill="none" stroke="#DFD6C9" stroke-width="60" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- ══ TIPPED BALANCE ══ -->
+  <!-- fulcrum -->
+  <path d="M 800 560 L 742 706 L 858 706 Z" fill="#D39562"/>
+  <rect x="700" y="706" width="200" height="10" rx="5" fill="#061C31"/>
+
+  <!-- tip-scale arc with tick marks -->
+  <path d="M 668 636 A 150 150 0 0 1 932 636" fill="none" stroke="#061C31" stroke-opacity="0.25" stroke-width="2"/>
+  <g stroke="#061C31" stroke-opacity="0.3" stroke-width="2">
+    <line x1="700" y1="612" x2="710" y2="624"/>
+    <line x1="748" y1="588" x2="754" y2="602"/>
+    <line x1="800" y1="580" x2="800" y2="595"/>
+    <line x1="852" y1="588" x2="846" y2="602"/>
+    <line x1="900" y1="612" x2="890" y2="624"/>
+  </g>
+  <!-- pointer needle tipped right -->
+  <g transform="rotate(9 800 560)">
+    <line x1="800" y1="560" x2="800" y2="596" stroke="#D39562" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- beam, tipped 9 degrees toward the appreciation side -->
+  <g transform="rotate(9 800 560)">
+    <rect x="330" y="552" width="940" height="14" rx="7" fill="#061C31"/>
+    <!-- left hanger -->
+    <line x1="410" y1="566" x2="410" y2="486" stroke="#061C31" stroke-width="4"/>
+    <!-- left pan (raised side): the PMI pebble -->
+    <path d="M 310 480 A 100 34 0 0 0 510 480" fill="none" stroke="#061C31" stroke-width="6" stroke-linecap="round"/>
+    <line x1="310" y1="480" x2="410" y2="428" stroke="#061C31" stroke-width="3"/>
+    <line x1="510" y1="480" x2="410" y2="428" stroke="#061C31" stroke-width="3"/>
+    <circle cx="410" cy="428" r="7" fill="#061C31"/>
+    <!-- the pebble -->
+    <ellipse cx="410" cy="468" rx="34" ry="24" fill="#192F46"/>
+    <ellipse cx="399" cy="460" rx="10" ry="6" fill="#F5EDE4" fill-opacity="0.25"/>
+
+    <!-- right hanger -->
+    <line x1="1190" y1="566" x2="1190" y2="640" stroke="#061C31" stroke-width="4"/>
+    <!-- right pan (lowered side) -->
+    <path d="M 1044 634 A 146 44 0 0 0 1336 634" fill="none" stroke="#061C31" stroke-width="6" stroke-linecap="round"/>
+    <line x1="1044" y1="634" x2="1190" y2="566" stroke="#061C31" stroke-width="3"/>
+    <line x1="1336" y1="634" x2="1190" y2="566" stroke="#061C31" stroke-width="3"/>
+    <circle cx="1190" cy="566" r="7" fill="#061C31"/>
+
+    <!-- the appreciation wave rising out of the pan -->
+    <g>
+      <!-- back swell -->
+      <path d="M 1066 640 C 1090 560 1130 500 1196 470 C 1180 516 1190 560 1216 588 C 1258 574 1290 596 1310 640 Z"
+            fill="url(#wave2)" opacity="0.85"/>
+      <!-- main breaking wave -->
+      <path d="M 1092 642 C 1100 540 1148 448 1252 412 C 1216 470 1222 520 1258 552 C 1234 550 1216 562 1208 584 C 1266 580 1310 606 1326 642 Z"
+            fill="url(#wave1)"/>
+      <!-- crest foam curls -->
+      <path d="M 1252 412 C 1290 424 1310 452 1312 484" fill="none" stroke="#2CA2A2" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="1318" cy="500" r="9" fill="#2CA2A2"/>
+      <circle cx="1284" cy="430" r="6" fill="#2CA2A2" fill-opacity="0.7"/>
+      <!-- foam dots -->
+      <circle cx="1120" cy="520" r="5" fill="#F5EDE4" fill-opacity="0.8"/>
+      <circle cx="1160" cy="472" r="4" fill="#F5EDE4" fill-opacity="0.7"/>
+      <circle cx="1230" cy="452" r="5" fill="#F5EDE4" fill-opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- small motion strokes near pebble: it barely matters -->
+  <g stroke="#192F46" stroke-opacity="0.3" stroke-width="2.5" stroke-linecap="round">
+    <line x1="330" y1="380" x2="352" y2="392"/>
+    <line x1="320" y1="416" x2="344" y2="420"/>
+  </g>
+
+  <!-- gold accent line under composition -->
+  <line x1="500" y1="790" x2="1100" y2="790" stroke="#D39562" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="470" cy="790" r="5" fill="#D39562"/>
+  <circle cx="1130" cy="790" r="5" fill="#D39562"/>
+
+  <!-- thin editorial corner rules -->
+  <g stroke="#061C31" stroke-opacity="0.3" stroke-width="2">
+    <path d="M 130 160 h 60 M 130 160 v 60" fill="none"/>
+    <path d="M 1470 160 h -60 M 1470 160 v 60" fill="none"/>
+  </g>
+</svg>
+</body>
+</html>

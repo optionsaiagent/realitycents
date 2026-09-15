@@ -1,0 +1,87 @@
+<!-- Hero: hoa-considerations-hawaii-condos — 1600x900 (navy) -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#061C31}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="nsky" cx="0.28" cy="0.24" r="0.95">
+      <stop offset="0" stop-color="#192F46"/>
+      <stop offset="1" stop-color="#061C31"/>
+    </radialGradient>
+    <filter id="glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#nsky)"/>
+
+  <!-- moon disc, upper left negative space -->
+  <circle cx="330" cy="220" r="58" fill="#F5EDE4" opacity="0.9"/>
+  <circle cx="330" cy="220" r="82" fill="none" stroke="#F5EDE4" stroke-opacity="0.2" stroke-width="2"/>
+
+  <!-- thin horizon rules, left -->
+  <g stroke="#F5EDE4" stroke-width="2">
+    <line x1="150" y1="470" x2="620" y2="470" stroke-opacity="0.18"/>
+    <line x1="150" y1="482" x2="480" y2="482" stroke-opacity="0.08"/>
+  </g>
+
+  <!-- ridge-line silhouette behind tower base -->
+  <path d="M 0 780 L 220 700 L 380 754 L 560 660 L 760 742 L 940 690 L 1140 760 L 1330 706 L 1600 780 L 1600 900 L 0 900 Z"
+        fill="#192F46"/>
+
+  <!-- shared-amenity bands sweeping the full frame, through the tower -->
+  <g>
+    <rect x="0" y="366" width="1600" height="64" fill="#008687" opacity="0.28"/>
+    <path d="M 60 398 Q 95 384 130 398 T 200 398 T 270 398 T 340 398 T 410 398 T 480 398 T 550 398 T 620 398 T 690 398"
+          fill="none" stroke="#2CA2A2" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+    <rect x="0" y="548" width="1600" height="64" fill="#008687" opacity="0.18"/>
+    <g fill="#2CA2A2" opacity="0.9">
+      <circle cx="180" cy="580" r="5"/><circle cx="240" cy="580" r="5"/>
+      <circle cx="300" cy="580" r="5"/><circle cx="360" cy="580" r="5"/>
+      <circle cx="420" cy="580" r="5"/><circle cx="480" cy="580" r="5"/>
+      <circle cx="540" cy="580" r="5"/><circle cx="600" cy="580" r="5"/>
+    </g>
+  </g>
+
+  <!-- condo tower -->
+  <g>
+    <rect x="880" y="150" width="380" height="700" fill="#0B2740" stroke="#F5EDE4" stroke-opacity="0.85" stroke-width="4"/>
+    <!-- roof cap -->
+    <rect x="860" y="128" width="420" height="26" fill="#192F46" stroke="#F5EDE4" stroke-opacity="0.85" stroke-width="4"/>
+    <!-- window grid: 5 cols x 9 rows -->
+    <g fill="#F5EDE4" opacity="0.32">
+      <rect x="912" y="188" width="48" height="42" rx="5"/><rect x="982" y="188" width="48" height="42" rx="5"/><rect x="1052" y="188" width="48" height="42" rx="5"/><rect x="1122" y="188" width="48" height="42" rx="5"/><rect x="1192" y="188" width="48" height="42" rx="5"/>
+      <rect x="912" y="262" width="48" height="42" rx="5"/><rect x="982" y="262" width="48" height="42" rx="5"/><rect x="1052" y="262" width="48" height="42" rx="5"/><rect x="1122" y="262" width="48" height="42" rx="5"/><rect x="1192" y="262" width="48" height="42" rx="5"/>
+      <rect x="912" y="336" width="48" height="42" rx="5"/><rect x="982" y="336" width="48" height="42" rx="5"/><rect x="1052" y="336" width="48" height="42" rx="5"/><rect x="1122" y="336" width="48" height="42" rx="5"/><rect x="1192" y="336" width="48" height="42" rx="5"/>
+      <rect x="912" y="410" width="48" height="42" rx="5"/><rect x="1052" y="410" width="48" height="42" rx="5"/><rect x="1122" y="410" width="48" height="42" rx="5"/><rect x="1192" y="410" width="48" height="42" rx="5"/>
+      <rect x="912" y="484" width="48" height="42" rx="5"/><rect x="982" y="484" width="48" height="42" rx="5"/><rect x="1052" y="484" width="48" height="42" rx="5"/><rect x="1122" y="484" width="48" height="42" rx="5"/><rect x="1192" y="484" width="48" height="42" rx="5"/>
+      <rect x="912" y="558" width="48" height="42" rx="5"/><rect x="982" y="558" width="48" height="42" rx="5"/><rect x="1052" y="558" width="48" height="42" rx="5"/><rect x="1122" y="558" width="48" height="42" rx="5"/><rect x="1192" y="558" width="48" height="42" rx="5"/>
+      <rect x="912" y="632" width="48" height="42" rx="5"/><rect x="982" y="632" width="48" height="42" rx="5"/><rect x="1052" y="632" width="48" height="42" rx="5"/><rect x="1122" y="632" width="48" height="42" rx="5"/><rect x="1192" y="632" width="48" height="42" rx="5"/>
+      <rect x="912" y="706" width="48" height="42" rx="5"/><rect x="982" y="706" width="48" height="42" rx="5"/><rect x="1052" y="706" width="48" height="42" rx="5"/><rect x="1122" y="706" width="48" height="42" rx="5"/><rect x="1192" y="706" width="48" height="42" rx="5"/>
+    </g>
+    <!-- the one highlighted unit -->
+    <rect x="982" y="410" width="48" height="42" rx="5" fill="#D39562" filter="url(#glow)"/>
+    <rect x="982" y="410" width="48" height="42" rx="5" fill="#EBB890"/>
+    <rect x="974" y="402" width="64" height="58" rx="9" fill="none" stroke="#D39562" stroke-width="3"/>
+    <!-- leader line from highlighted unit into negative space -->
+    <line x1="974" y1="431" x2="700" y2="431" stroke="#D39562" stroke-width="2.5"/>
+    <circle cx="700" cy="431" r="6" fill="#D39562"/>
+    <!-- entry canopy -->
+    <rect x="1028" y="796" width="84" height="54" fill="#008687"/>
+  </g>
+
+  <!-- second smaller tower, far right edge, receding -->
+  <g opacity="0.55">
+    <rect x="1400" y="330" width="150" height="520" fill="#0B2740" stroke="#F5EDE4" stroke-opacity="0.5" stroke-width="3"/>
+    <g fill="#F5EDE4" opacity="0.25">
+      <rect x="1424" y="366" width="34" height="30" rx="4"/><rect x="1478" y="366" width="34" height="30" rx="4"/>
+      <rect x="1424" y="430" width="34" height="30" rx="4"/><rect x="1478" y="430" width="34" height="30" rx="4"/>
+      <rect x="1424" y="494" width="34" height="30" rx="4"/><rect x="1478" y="494" width="34" height="30" rx="4"/>
+      <rect x="1424" y="558" width="34" height="30" rx="4"/><rect x="1478" y="558" width="34" height="30" rx="4"/>
+      <rect x="1424" y="622" width="34" height="30" rx="4"/><rect x="1478" y="622" width="34" height="30" rx="4"/>
+    </g>
+  </g>
+</svg>

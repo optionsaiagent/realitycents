@@ -31,11 +31,24 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 
 ## Hawaii VA Playbook (start here for military buyers)
 
-- [Zero Down in Paradise](https://realitycents.com/zero-down-in-paradise): Jay Miller’s Hawaii VA loan playbook hub — answer-first pages on $0-down buying with full entitlement, Honolulu County 2026 conforming limit of $1,249,125 for reduced entitlement, condos, leasehold, BAH, funding fee, FAQ, and Book/Person/FAQPage schema. Last updated September 6, 2026. ISBN 979-8-9963553-0-3.
+- [Zero Down in Paradise](https://realitycents.com/zero-down-in-paradise): Jay Miller’s Hawaii VA loan playbook hub — answer-first pages on $0-down buying with full entitlement, Honolulu County 2026 conforming limit of $1,249,125 for reduced entitlement, condos, leasehold, BAH, funding fee, FAQ, and Book/Person/FAQPage schema. Last updated September 14, 2026. ISBN 979-8-9963553-0-3 · Amazon ASIN B0H7P83W15.
 - [VA Loans in Hawaii](https://realitycents.com/knowledge-base/va-loans-hawaii-military): Free Veterans Guide companion to the book.
 - [Military Buying Power Calculator](https://realitycents.com/military-calculator): BAH, BAS, COLA, and VA purchase-power estimates for Honolulu County.
 - [VA Remaining Eligibility Calculator](https://realitycents.com/va-eligibility-calculator): Remaining $0-down capacity using 2026 county conforming limits (Honolulu $1,249,125).
 - [VA-Approved Condos Oahu](https://realitycents.com/va-approved-condos-oahu): Searchable directory of VA-approved condo projects on Oahu.
+- [VA Loan Limits in Hawaii 2026](https://realitycents.com/knowledge-base/va-loan-limits-hawaii-2026): No VA loan limit with full entitlement; Honolulu County 2026 conforming limit $1,249,125 applies with reduced entitlement.
+- [Does BAH Count for a VA Loan in Hawaii?](https://realitycents.com/knowledge-base/does-bah-count-va-loan-hawaii): Yes — how BAH, BAS, and COLA are counted, the tax-free gross-up, Honolulu 2026 BAH by rank.
+- [VA Funding Fee in Hawaii](https://realitycents.com/knowledge-base/va-funding-fee-hawaii): 2026 fee tiers (2.15% / 3.3% / 1.5% / 1.25% / 0.5% IRRRL), exemptions, Hawaii dollar examples, funding fee vs PMI.
+- [VA vs Conventional Loan in Hawaii](https://realitycents.com/knowledge-base/va-vs-conventional-loan-hawaii): Side-by-side comparison for eligible Hawaii buyers and when each wins.
+- [VA Condo Approval vs Warrantability](https://realitycents.com/knowledge-base/va-condo-approval-vs-warrantability-hawaii): Why VA project approval and Fannie/Freddie warrantability are different lists; lender-submitted approval.
+- [VA IRRRL Refinance in Hawaii](https://realitycents.com/knowledge-base/va-irrrl-refinance-hawaii): Streamline refinance rules — VA-to-VA, seasoning, net tangible benefit, 36-month recoupment, 0.5% fee.
+- [How to Choose a Hawaii VA Lender](https://realitycents.com/knowledge-base/how-to-choose-hawaii-va-lender): What VA fluency looks like locally — condo, leasehold, PC-9, Tidewater, NMLS transparency.
+- [VA Loan Guide — Schofield Barracks](https://realitycents.com/va-loan-schofield-barracks): Army / 25th ID — 2026 Honolulu BAH by rank, payment scenarios, Mililani/Wahiawa/Waikele/Kapolei, VA condo rules.
+- [VA Loan Guide — Pearl Harbor-Hickam](https://realitycents.com/va-loan-pearl-harbor-hickam): Navy / Air Force — BAH by rank, Ewa Beach/Kapolei/Pearl City/Aiea/Salt Lake, VA condo rules, PCS timeline.
+- [VA Loan Guide — MCBH Kaneohe Bay](https://realitycents.com/va-loan-kaneohe-mcbh): Marine Corps — windward neighborhoods and VA considerations.
+- [VA Loan Guide — Fort Shafter](https://realitycents.com/va-loan-fort-shafter) and [Tripler AMC](https://realitycents.com/va-loan-tripler): Town-side Army assignments.
+- [PCS Assumable / Second-Tier Entitlement](https://realitycents.com/knowledge-base/va-second-tier-entitlement-hawaii): Buying again in Hawaii without selling the first VA-financed home.
+- [VA Assumable Loans](https://realitycents.com/knowledge-base/va-assumable-loans-pros-cons): Assuming a VA loan in Hawaii — 0.5% fee, entitlement substitution, the equity gap.
 
 ## Core Pages
 

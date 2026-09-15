@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>page-calculator</title>
+<style>
+  @font-face{
+    font-family:'IBM Plex Mono';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-400.woff2') format('woff2');
+    font-weight:400;font-style:normal;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    src:url('/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2') format('woff2');
+    font-weight:700;font-style:normal;
+  }
+  html,body{margin:0;padding:0;width:1600px;height:900px;overflow:hidden;background:#0C2340;}
+  svg{display:block;}
+  text{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1C34"/>
+      <stop offset="0.55" stop-color="#0E2846"/>
+      <stop offset="1" stop-color="#11384E"/>
+    </linearGradient>
+    <radialGradient id="tealGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#1A7A7A" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#1A7A7A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#C9995F" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#C9995F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C9995F" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E3C08F" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#C9995F" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.42" cy="0.46" r="0.95">
+      <stop offset="0.55" stop-color="#06111F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06111F" stop-opacity="0.55"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#4E9C9C" stroke-width="1" opacity="0.1"/>
+    </pattern>
+    <pattern id="gridMajor" width="256" height="256" patternUnits="userSpaceOnUse">
+      <path d="M 256 0 L 0 0 0 256" fill="none" stroke="#4E9C9C" stroke-width="1" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <!-- base field -->
+  <rect width="1600" height="900" fill="url(#field)"/>
+  <ellipse cx="1280" cy="700" rx="700" ry="500" fill="url(#tealGlow)"/>
+  <ellipse cx="1360" cy="220" rx="480" ry="360" fill="url(#goldGlow)"/>
+
+  <!-- precise grid -->
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="900" fill="url(#gridMajor)"/>
+
+  <!-- numeric texture: drifting mono digits, low opacity, right-weighted -->
+  <g fill="#4E9C9C" font-weight="400">
+    <text x="1080" y="120" font-size="26" opacity="0.14" letter-spacing="14">4.125 30 360 0.865</text>
+    <text x="1180" y="184" font-size="26" opacity="0.11" letter-spacing="14">720 000 6 875 512</text>
+    <text x="1040" y="248" font-size="26" opacity="0.13" letter-spacing="14">1 024 365 12 240</text>
+    <text x="1160" y="312" font-size="26" opacity="0.1" letter-spacing="14">808 96 815 0.20</text>
+    <text x="1100" y="376" font-size="26" opacity="0.12" letter-spacing="14">30 96792 144 60</text>
+    <text x="1200" y="440" font-size="26" opacity="0.09" letter-spacing="14">248 512 36 1200</text>
+    <text x="1060" y="700" font-size="26" opacity="0.12" letter-spacing="14">365 24 7 96 480</text>
+    <text x="1180" y="764" font-size="26" opacity="0.1" letter-spacing="14">1 048 576 12 30</text>
+    <text x="1100" y="828" font-size="26" opacity="0.08" letter-spacing="14">720 84 000 2048</text>
+    <text x="60" y="120" font-size="26" opacity="0.07" letter-spacing="14">12 360 048 96</text>
+    <text x="160" y="820" font-size="26" opacity="0.07" letter-spacing="14">365 30 24 512</text>
+  </g>
+
+  <!-- large ghost percent glyph, right of center -->
+  <g stroke="#E3C08F" fill="none" stroke-width="7" stroke-linecap="round" opacity="0.3">
+    <circle cx="1236" cy="472" r="52"/>
+    <circle cx="1444" cy="668" r="52"/>
+    <line x1="1454" y1="428" x2="1226" y2="712"/>
+  </g>
+
+  <!-- highlighted grid cells, like a worksheet -->
+  <g>
+    <rect x="1088" y="512" width="64" height="64" fill="#1A7A7A" opacity="0.32"/>
+    <rect x="1152" y="576" width="64" height="64" fill="#1A7A7A" opacity="0.2"/>
+    <rect x="1344" y="512" width="64" height="64" fill="#C9995F" opacity="0.22"/>
+    <rect x="960" y="640" width="64" height="64" fill="#4E9C9C" opacity="0.14"/>
+    <rect x="1408" y="256" width="64" height="64" fill="#1A7A7A" opacity="0.18"/>
+  </g>
+
+  <!-- thin plus / equals marks, drafting style -->
+  <g stroke="#4E9C9C" stroke-width="2.5" stroke-linecap="round" opacity="0.4">
+    <line x1="1120" y1="576" x2="1120" y2="608"/>
+    <line x1="1104" y1="592" x2="1136" y2="592"/>
+  </g>
+  <g stroke="#E3C08F" stroke-width="2.5" stroke-linecap="round" opacity="0.45">
+    <line x1="1360" y1="584" x2="1392" y2="584"/>
+    <line x1="1360" y1="600" x2="1392" y2="600"/>
+  </g>
+
+  <!-- gold accent hairline across the lower third -->
+  <rect x="120" y="656" width="1360" height="2" fill="url(#goldLine)"/>
+
+  <!-- crosshair ticks at a few grid intersections -->
+  <g stroke="#E3C08F" stroke-width="1.5" opacity="0.5">
+    <path d="M 512 320 h -10 M 512 320 h 10 M 512 320 v -10 M 512 320 v 10" transform="translate(0,0)"/>
+    <path d="M 768 512 h -10 M 768 512 h 10 M 768 512 v -10 M 768 512 v 10"/>
+    <path d="M 1280 192 h -10 M 1280 192 h 10 M 1280 192 v -10 M 1280 192 v 10"/>
+    <path d="M 320 704 h -10 M 320 704 h 10 M 320 704 v -10 M 320 704 v 10"/>
+  </g>
+
+  <!-- edge vignette to seat overlay text -->
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- jumbo-loans-hawaii-luxury — oversized gold estate over the Diamond Head ridge -->
+<style>
+  html,body{margin:0;padding:0;}
+  body{width:1600px;height:900px;overflow:hidden;background:#061c31;}
+  svg{display:block;}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="goldGlow" cx="0.5" cy="0.44" r="0.55">
+      <stop offset="0" stop-color="#d39562" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#061c31" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#061c31"/>
+  <rect width="1600" height="900" fill="url(#goldGlow)"/>
+
+  <!-- moon -->
+  <circle cx="1250" cy="215" r="34" fill="#ebb890" opacity="0.85"/>
+
+  <!-- far ridge -->
+  <path d="M0 640 L240 560 L420 618 L640 540 L860 616 L1080 548 L1300 612 L1470 566 L1600 606 V900 H0 Z"
+        fill="#192f46"/>
+
+  <!-- Diamond Head profile: long slope, crater rim, steep face -->
+  <path d="M0 760 L340 742 L620 660 L840 630 L1000 610 L1120 618 L1260 668 L1440 748 L1600 760 V900 H0 Z"
+        fill="#00686a" opacity="0.55"/>
+  <path d="M340 742 L620 660 L840 630 L1000 610 L1120 618 L1260 668 L1440 748"
+        fill="none" stroke="#d39562" stroke-width="2" opacity="0.8"/>
+
+  <!-- oversized estate: thin gold line, low-pitch roof, broad facade -->
+  <g fill="none" stroke="#d39562" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M470 428 L800 250 L1130 428" stroke-width="4"/>
+    <path d="M540 428 V690 H1060 V428" stroke-width="4"/>
+    <!-- deep eaves -->
+    <line x1="440" y1="444" x2="560" y2="444" stroke-width="2" opacity="0.7"/>
+    <line x1="1040" y1="444" x2="1160" y2="444" stroke-width="2" opacity="0.7"/>
+    <!-- tall entry -->
+    <path d="M760 690 V520 Q760 486 800 486 Q840 486 840 520 V690" stroke-width="3"/>
+    <!-- window bays -->
+    <rect x="600" y="510" width="92" height="112" stroke-width="2" opacity="0.85"/>
+    <rect x="908" y="510" width="92" height="112" stroke-width="2" opacity="0.85"/>
+    <!-- roofline lantern -->
+    <line x1="800" y1="250" x2="800" y2="216" stroke-width="2.5"/>
+    <circle cx="800" cy="204" r="9" stroke-width="2.5"/>
+  </g>
+  <!-- warm interior hint -->
+  <rect x="772" y="530" width="56" height="160" fill="#ebb890" opacity="0.20"/>
+
+  <!-- terrace line to ground the estate -->
+  <line x1="380" y1="690" x2="1220" y2="690" stroke="#d39562" stroke-width="2.5" opacity="0.9"/>
+  <line x1="470" y1="722" x2="1130" y2="722" stroke="#d39562" stroke-width="1.5" opacity="0.45"/>
+
+  <!-- flanking hairlines -->
+  <line x1="130" y1="360" x2="330" y2="360" stroke="#192f46" stroke-width="2.5"/>
+  <line x1="1290" y1="360" x2="1470" y2="360" stroke="#192f46" stroke-width="2.5"/>
+</svg>

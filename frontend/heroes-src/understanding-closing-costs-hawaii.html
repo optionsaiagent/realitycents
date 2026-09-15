@@ -1,0 +1,93 @@
+<!-- Hero: understanding-closing-costs-hawaii — 1600x900 (navy) -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#061C31}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0.72" cy="0.5" r="0.95">
+      <stop offset="0" stop-color="#12293F"/>
+      <stop offset="1" stop-color="#061C31"/>
+    </radialGradient>
+    <linearGradient id="keygold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D39562"/>
+      <stop offset="1" stop-color="#EBB890"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- itemized ledger column, left: rules + dotted leaders + amount bars -->
+  <g>
+    <!-- item rows: label stub, dotted leader, amount bar -->
+    <g stroke-linecap="round">
+      <!-- row 1 -->
+      <line x1="180" y1="235" x2="300" y2="235" stroke="#F5EDE4" stroke-width="6"/>
+      <line x1="316" y1="235" x2="430" y2="235" stroke="#F5EDE4" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="2 12"/>
+      <rect x="444" y="221" width="150" height="28" rx="6" fill="#2CA2A2"/>
+      <!-- row 2 -->
+      <line x1="180" y1="315" x2="270" y2="315" stroke="#F5EDE4" stroke-width="6"/>
+      <line x1="286" y1="315" x2="430" y2="315" stroke="#F5EDE4" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="2 12"/>
+      <rect x="444" y="301" width="96" height="28" rx="6" fill="#008687"/>
+      <!-- row 3 -->
+      <line x1="180" y1="395" x2="322" y2="395" stroke="#F5EDE4" stroke-width="6"/>
+      <line x1="338" y1="395" x2="430" y2="395" stroke="#F5EDE4" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="2 12"/>
+      <rect x="444" y="381" width="196" height="28" rx="6" fill="#D39562"/>
+      <!-- row 4 -->
+      <line x1="180" y1="475" x2="286" y2="475" stroke="#F5EDE4" stroke-width="6"/>
+      <line x1="302" y1="475" x2="430" y2="475" stroke="#F5EDE4" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="2 12"/>
+      <rect x="444" y="461" width="122" height="28" rx="6" fill="#2CA2A2"/>
+      <!-- row 5 -->
+      <line x1="180" y1="555" x2="308" y2="555" stroke="#F5EDE4" stroke-width="6"/>
+      <line x1="324" y1="555" x2="430" y2="555" stroke="#F5EDE4" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="2 12"/>
+      <rect x="444" y="541" width="74" height="28" rx="6" fill="#008687"/>
+      <!-- row 6 -->
+      <line x1="180" y1="635" x2="258" y2="635" stroke="#F5EDE4" stroke-width="6"/>
+      <line x1="274" y1="635" x2="430" y2="635" stroke="#F5EDE4" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="2 12"/>
+      <rect x="444" y="621" width="160" height="28" rx="6" fill="#DFD6C9"/>
+    </g>
+    <!-- total rule under column -->
+    <line x1="180" y1="692" x2="640" y2="692" stroke="#D39562" stroke-width="4"/>
+    <line x1="180" y1="702" x2="640" y2="702" stroke="#D39562" stroke-opacity="0.5" stroke-width="2"/>
+  </g>
+
+  <!-- flow lines: every line item resolves into the key's bow -->
+  <g fill="none" stroke-width="3" stroke-linecap="round">
+    <path d="M 600 235 C 820 235 900 330 1008 404" stroke="#2CA2A2" stroke-opacity="0.85"/>
+    <path d="M 546 315 C 780 315 900 360 1004 420" stroke="#008687" stroke-opacity="0.9"/>
+    <path d="M 646 395 C 820 400 920 420 1000 438" stroke="#D39562" stroke-opacity="0.9"/>
+    <path d="M 572 475 C 800 480 920 470 1000 456" stroke="#2CA2A2" stroke-opacity="0.85"/>
+    <path d="M 524 555 C 780 555 910 510 1004 474" stroke="#008687" stroke-opacity="0.9"/>
+    <path d="M 610 635 C 840 635 920 550 1008 490" stroke="#DFD6C9" stroke-opacity="0.8"/>
+  </g>
+
+  <!-- the key (pointing right), bow at the convergence -->
+  <g>
+    <circle cx="1062" cy="447" r="120" fill="#D39562" opacity="0.35" filter="url(#glow)"/>
+    <g stroke="#061C31" stroke-width="5" stroke-linejoin="round">
+      <circle cx="1062" cy="447" r="78" fill="url(#keygold)"/>
+      <circle cx="1062" cy="447" r="30" fill="#0B2740"/>
+      <rect x="1136" y="431" width="292" height="32" rx="10" fill="url(#keygold)"/>
+      <rect x="1330" y="463" width="30" height="52" rx="8" fill="url(#keygold)"/>
+      <rect x="1384" y="463" width="26" height="72" rx="8" fill="url(#keygold)"/>
+    </g>
+  </g>
+
+  <!-- quiet upper-right: thin rule + island dots -->
+  <line x1="1080" y1="180" x2="1450" y2="180" stroke="#F5EDE4" stroke-opacity="0.22" stroke-width="2"/>
+  <g fill="#F5EDE4" opacity="0.35">
+    <ellipse cx="1180" cy="740" rx="40" ry="6"/>
+    <ellipse cx="1250" cy="740" rx="20" ry="4"/>
+    <ellipse cx="1294" cy="740" rx="10" ry="3"/>
+  </g>
+  <!-- faint dotted texture, lower-left -->
+  <g fill="#F5EDE4" opacity="0.14">
+    <circle cx="220" cy="790" r="3.5"/><circle cx="260" cy="790" r="3.5"/><circle cx="300" cy="790" r="3.5"/>
+    <circle cx="240" cy="820" r="3.5"/><circle cx="280" cy="820" r="3.5"/>
+  </g>
+</svg>

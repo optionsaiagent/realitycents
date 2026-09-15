@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>page-guide</title>
+<style>
+  html,body{margin:0;padding:0;width:1600px;height:900px;overflow:hidden;background:#0C2340;}
+  svg{display:block;}
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A1B33"/>
+      <stop offset="0.55" stop-color="#103048"/>
+      <stop offset="0.9" stop-color="#1A5560"/>
+      <stop offset="1" stop-color="#1F6468"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#175E66"/>
+      <stop offset="0.5" stop-color="#0F3A50"/>
+      <stop offset="1" stop-color="#081A30"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E3C08F" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#C9995F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pageL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E2D9C9" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#F1ECE2" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="pageR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F1ECE2" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#E2D9C9" stop-opacity="0.06"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.44" cy="0.44" r="0.95">
+      <stop offset="0.55" stop-color="#06111F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06111F" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect x="0" y="0" width="1600" height="490" fill="url(#sky)"/>
+
+  <!-- soft lamp of light where the book opens toward the horizon -->
+  <ellipse cx="1060" cy="470" rx="560" ry="330" fill="url(#glow)"/>
+  <circle cx="1062" cy="368" r="48" fill="#E3C08F" opacity="0.75"/>
+
+  <!-- island chain on the horizon -->
+  <path d="M 700 486 L 770 452 Q 795 440 822 448 L 892 478 Q 910 485 930 486 Z" fill="#0A1E33" opacity="0.85"/>
+  <path d="M 1180 486 L 1262 430 Q 1298 406 1342 420 L 1428 452 Q 1500 476 1600 486 Z" fill="#081A2E"/>
+  <path d="M 350 486 L 402 468 Q 424 461 448 467 L 505 486 Z" fill="#0C2544" opacity="0.55"/>
+
+  <!-- sea -->
+  <rect x="0" y="486" width="1600" height="414" fill="url(#sea)"/>
+  <rect x="0" y="485" width="1600" height="1.5" fill="#4E9C9C" opacity="0.5"/>
+
+  <!-- quiet swell lines -->
+  <g fill="none" stroke="#4E9C9C" stroke-linecap="round">
+    <path d="M 0 540 Q 400 530 800 540 T 1600 537" stroke-width="1.5" opacity="0.2"/>
+    <path d="M 0 610 Q 420 598 840 610 T 1600 605" stroke-width="2" opacity="0.15"/>
+    <path d="M 0 700 Q 380 686 800 700 T 1600 694" stroke-width="2.5" opacity="0.11"/>
+  </g>
+
+  <!-- open book resting on the water, pages lifting toward the island horizon -->
+  <!-- lifted pages mid-turn, fanning from the spine -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M 1050 742 C 1014 662 968 592 896 542" stroke="#F1ECE2" stroke-width="2.5" opacity="0.45"/>
+    <path d="M 1050 742 C 1030 652 1008 574 976 514" stroke="#F1ECE2" stroke-width="2.5" opacity="0.55"/>
+    <path d="M 1050 742 C 1052 648 1056 568 1062 508" stroke="#E3C08F" stroke-width="3" opacity="0.85"/>
+    <path d="M 1050 742 C 1072 652 1098 578 1136 518" stroke="#F1ECE2" stroke-width="2.5" opacity="0.55"/>
+    <path d="M 1050 742 C 1088 664 1136 598 1204 550" stroke="#F1ECE2" stroke-width="2.5" opacity="0.45"/>
+  </g>
+  <!-- faint filled leaf between the lifted center pages -->
+  <path d="M 1050 742 C 1030 652 1008 574 976 514 L 1062 508 C 1056 568 1052 648 1050 742 Z" fill="#F1ECE2" opacity="0.1"/>
+  <path d="M 1050 742 C 1052 648 1056 568 1062 508 L 1136 518 C 1098 578 1072 652 1050 742 Z" fill="#E3C08F" opacity="0.12"/>
+
+  <!-- dark cover beneath the page block, gold-edged -->
+  <path d="M 1050 752 C 974 716 882 710 792 731 L 792 866 C 882 845 974 851 1050 884 C 1126 851 1218 845 1308 866 L 1308 731 C 1218 710 1126 716 1050 752 Z"
+        fill="#0A1E33"/>
+  <path d="M 1050 752 C 974 716 882 710 792 731 L 792 866 C 882 845 974 851 1050 884 C 1126 851 1218 845 1308 866 L 1308 731 C 1218 710 1126 716 1050 752 Z"
+        fill="none" stroke="#C9995F" stroke-width="2" opacity="0.6"/>
+
+  <!-- left page block -->
+  <path d="M 1050 748 C 980 714 892 708 804 728 L 804 856 C 892 836 980 842 1050 874 Z" fill="#F1ECE2" opacity="0.94"/>
+  <!-- stacked page edges, left -->
+  <g fill="none" stroke="#C9B98F" stroke-width="1.5" opacity="0.75">
+    <path d="M 1046 760 C 982 730 898 724 814 741"/>
+    <path d="M 1046 774 C 982 744 898 738 814 755"/>
+  </g>
+  <!-- abstract text hints, left page -->
+  <g stroke="#1A7A7A" stroke-width="3" stroke-linecap="round" opacity="0.3">
+    <path d="M 856 790 C 906 780 956 782 1006 798"/>
+    <path d="M 856 812 C 900 803 944 805 988 818"/>
+  </g>
+
+  <!-- right page block -->
+  <path d="M 1050 748 C 1120 714 1208 708 1296 728 L 1296 856 C 1208 836 1120 842 1050 874 Z" fill="#F1ECE2" opacity="0.94"/>
+  <!-- stacked page edges, right -->
+  <g fill="none" stroke="#C9B98F" stroke-width="1.5" opacity="0.75">
+    <path d="M 1054 760 C 1118 730 1202 724 1286 741"/>
+    <path d="M 1054 774 C 1118 744 1202 738 1286 755"/>
+  </g>
+  <!-- abstract text hints, right page -->
+  <g stroke="#1A7A7A" stroke-width="3" stroke-linecap="round" opacity="0.3">
+    <path d="M 1094 798 C 1144 782 1194 780 1244 790"/>
+    <path d="M 1112 818 C 1156 805 1200 803 1244 812"/>
+  </g>
+
+  <!-- spine crease and gold ribbon bookmark -->
+  <path d="M 1050 748 L 1050 874" stroke="#C9B98F" stroke-width="2" opacity="0.8"/>
+  <path d="M 1043 868 L 1043 898 L 1056 886 L 1069 898 L 1069 870 Z" fill="#C9995F" opacity="0.95"/>
+
+  <!-- soft reflection of the book on the water -->
+  <ellipse cx="1050" cy="893" rx="240" ry="9" fill="#F1ECE2" opacity="0.08"/>
+
+  <!-- reading light on the water beneath the book -->
+  <g stroke="#E3C08F" stroke-linecap="round">
+    <line x1="1030" y1="520" x2="1094" y2="520" stroke-width="2" opacity="0.35"/>
+    <line x1="1010" y1="556" x2="1112" y2="556" stroke-width="2.5" opacity="0.26"/>
+    <line x1="1032" y1="600" x2="1092" y2="600" stroke-width="3" opacity="0.18"/>
+  </g>
+
+  <!-- a few faint gulls, upper left kept minimal -->
+  <g stroke="#F1ECE2" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3">
+    <path d="M 330 210 q 12 -10 24 0 q 12 -10 24 0"/>
+    <path d="M 430 176 q 9 -8 18 0 q 9 -8 18 0" opacity="0.7"/>
+  </g>
+
+  <!-- edge vignette -->
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>
+</body>
+</html>

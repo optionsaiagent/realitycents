@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>va-funding-fee-tax-deductible</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1600px; height: 900px;
+    overflow: hidden; position: relative;
+    background: linear-gradient(200deg, #fcfaf6 0%, #f5ede4 60%, #efe4d4 100%);
+  }
+  .glow {
+    position: absolute; left: 300px; top: 150px; width: 640px; height: 640px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(211,149,98,0.28) 0%, rgba(211,149,98,0) 65%);
+  }
+  svg { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gStar" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ebb890"/><stop offset="1" stop-color="#d39562"/>
+      </linearGradient>
+      <linearGradient id="gFold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="rgba(6,28,49,0.14)"/><stop offset="0.5" stop-color="rgba(6,28,49,0)"/>
+      </linearGradient>
+    </defs>
+
+    <!-- orbit ring around the star -->
+    <circle cx="600" cy="470" r="264" fill="none" stroke="#dfd6c9" stroke-width="1.5" stroke-dasharray="4 10"/>
+
+    <!-- VA star -->
+    <path d="M 600 260 L 647 405 L 800 405 L 676 495 L 723 640 L 600 550 L 477 640 L 524 495 L 400 405 L 553 405 Z"
+          fill="url(#gStar)"/>
+    <path d="M 600 344 L 628 431 L 720 431 L 646 485 L 674 572 L 600 518 L 526 572 L 554 485 L 480 431 L 572 431 Z"
+          fill="none" stroke="#fcfaf6" stroke-width="2" opacity="0.65"/>
+
+    <!-- string from star point to tag -->
+    <path d="M 800 405 C 830 408, 856 418, 878 428" fill="none" stroke="#061c31" stroke-width="2"/>
+
+    <!-- fee tag -->
+    <g>
+      <path d="M 880 430 L 946 378 L 1240 378 L 1240 482 L 946 482 Z" fill="#fcfaf6" stroke="#061c31" stroke-width="2.5"/>
+      <circle cx="938" cy="430" r="12" fill="#f5ede4" stroke="#061c31" stroke-width="2"/>
+      <!-- suggested fee lines (no text) -->
+      <line x1="986" y1="414" x2="1120" y2="414" stroke="#061c31" stroke-width="3" opacity="0.35"/>
+      <line x1="986" y1="446" x2="1080" y2="446" stroke="#061c31" stroke-width="3" opacity="0.2"/>
+      <!-- small percent glyph as geometry -->
+      <g stroke="#d39562" stroke-width="3" fill="none">
+        <circle cx="1148" cy="440" r="8"/>
+        <circle cx="1194" cy="466" r="8"/>
+        <line x1="1198" y1="432" x2="1144" y2="474"/>
+      </g>
+    </g>
+
+    <!-- tax-form corner sweeping in from top-right -->
+    <g>
+      <path d="M 700 0 L 1600 0 L 1600 760 Z" fill="#fcfaf6" stroke="#dfd6c9" stroke-width="2"/>
+      <path d="M 700 0 L 1600 760 L 1600 640 L 830 0 Z" fill="url(#gFold)" opacity="0.5"/>
+      <!-- form ruling -->
+      <g stroke="#061c31" opacity="0.28">
+        <line x1="1170" y1="86"  x2="1520" y2="86"  stroke-width="2"/>
+        <line x1="1224" y1="130" x2="1520" y2="130" stroke-width="2"/>
+        <line x1="1278" y1="174" x2="1520" y2="174" stroke-width="2"/>
+        <line x1="1330" y1="218" x2="1520" y2="218" stroke-width="2"/>
+      </g>
+      <!-- checkboxes: one checked in gold -->
+      <rect x="1392" y="266" width="26" height="26" fill="none" stroke="#061c31" stroke-width="2" opacity="0.5"/>
+      <rect x="1392" y="312" width="26" height="26" fill="none" stroke="#061c31" stroke-width="2" opacity="0.5"/>
+      <path d="M 1396 322 L 1404 332 L 1416 314" fill="none" stroke="#d39562" stroke-width="3.5"/>
+      <line x1="1436" y1="279" x2="1520" y2="279" stroke="#061c31" stroke-width="2" opacity="0.28"/>
+      <line x1="1436" y1="325" x2="1520" y2="325" stroke="#061c31" stroke-width="2" opacity="0.28"/>
+      <!-- gold edge along the diagonal -->
+      <line x1="700" y1="0" x2="1600" y2="760" stroke="#d39562" stroke-width="3" opacity="0.8"/>
+    </g>
+
+    <!-- dashed trim line clipping the tag's corner, parallel to the form edge -->
+    <line x1="1118" y1="330" x2="1300" y2="484" stroke="#061c31" stroke-width="2" stroke-dasharray="8 8"/>
+    <!-- snip marks -->
+    <g stroke="#061c31" stroke-width="2">
+      <line x1="1152" y1="352" x2="1166" y2="340"/>
+      <line x1="1206" y1="398" x2="1220" y2="386"/>
+    </g>
+
+    <!-- the trimmed sliver drifting away -->
+    <path d="M 1188 380 L 1240 380 L 1240 424 Z" fill="#dfd6c9" stroke="#061c31" stroke-width="1.5" stroke-dasharray="4 5"
+          transform="translate(42 26) rotate(9 1214 402)" opacity="0.75"/>
+
+    <!-- ground rules -->
+    <line x1="180" y1="770" x2="760" y2="770" stroke="#061c31" stroke-width="1" opacity="0.18"/>
+    <line x1="180" y1="788" x2="560" y2="788" stroke="#061c31" stroke-width="1" opacity="0.1"/>
+  </svg>
+</body>
+</html>

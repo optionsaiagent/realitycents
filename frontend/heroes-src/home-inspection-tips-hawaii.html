@@ -1,0 +1,92 @@
+<!-- Hero: home-inspection-tips-hawaii — 1600x900 -->
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0}
+  body{width:1600px;height:900px;overflow:hidden;background:#F5EDE4}
+  svg{display:block}
+</style>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0.62" cy="0.42" r="0.85">
+      <stop offset="0" stop-color="#FCFAF6"/>
+      <stop offset="1" stop-color="#F0E6D8"/>
+    </radialGradient>
+    <clipPath id="lens"><circle cx="905" cy="430" r="218"/></clipPath>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- ground line -->
+  <line x1="140" y1="672" x2="1460" y2="672" stroke="#061C31" stroke-opacity="0.20" stroke-width="2.5"/>
+
+  <!-- solid house (as seen without the lens) -->
+  <g>
+    <path d="M 420 672 L 420 420 L 690 240 L 960 420 L 960 672 Z" fill="#061C31"/>
+    <path d="M 388 442 L 690 240 L 992 442" fill="none" stroke="#061C31" stroke-width="10"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="470" y="500" width="72" height="72" fill="#F5EDE4" opacity="0.9"/>
+    <rect x="620" y="540" width="88" height="132" fill="#008687"/>
+  </g>
+
+  <!-- LENS: blueprint reveal of the same section -->
+  <g clip-path="url(#lens)">
+    <rect x="580" y="120" width="660" height="640" fill="#FCFAF6"/>
+    <!-- structure revealed: studs, plates, joists, braces -->
+    <g stroke="#008687" stroke-width="4" fill="none">
+      <!-- wall studs -->
+      <line x1="740" y1="672" x2="740" y2="428"/>
+      <line x1="800" y1="672" x2="800" y2="388"/>
+      <line x1="860" y1="672" x2="860" y2="348"/>
+      <line x1="920" y1="672" x2="920" y2="308"/>
+      <line x1="980" y1="672" x2="980" y2="348"/>
+      <!-- top plate along roof slope + ridge rafter -->
+      <line x1="690" y1="240" x2="960" y2="420"/>
+      <line x1="700" y1="262" x2="944" y2="426"/>
+      <!-- floor joists -->
+      <line x1="700" y1="560" x2="1030" y2="560"/>
+      <line x1="700" y1="672" x2="1030" y2="672"/>
+      <!-- diagonal brace -->
+      <line x1="740" y1="560" x2="860" y2="440"/>
+      <line x1="860" y1="560" x2="980" y2="440"/>
+    </g>
+    <!-- wiring run -->
+    <path d="M 720 640 Q 820 600 880 636 T 1020 622" fill="none" stroke="#D39562"
+          stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round"/>
+    <!-- flagged joint: small inspection marker -->
+    <circle cx="860" cy="440" r="14" fill="none" stroke="#D39562" stroke-width="4.5"/>
+    <circle cx="860" cy="440" r="4.5" fill="#D39562"/>
+    <!-- faint blueprint grid -->
+    <g stroke="#008687" stroke-opacity="0.14" stroke-width="1.5">
+      <line x1="600" y1="280" x2="1180" y2="280"/><line x1="600" y1="340" x2="1180" y2="340"/>
+      <line x1="600" y1="400" x2="1180" y2="400"/><line x1="600" y1="460" x2="1180" y2="460"/>
+      <line x1="600" y1="520" x2="1180" y2="520"/><line x1="600" y1="580" x2="1180" y2="580"/>
+      <line x1="660" y1="220" x2="660" y2="660"/><line x1="720" y1="220" x2="720" y2="660"/>
+      <line x1="780" y1="220" x2="780" y2="660"/><line x1="840" y1="220" x2="840" y2="660"/>
+      <line x1="900" y1="220" x2="900" y2="660"/><line x1="960" y1="220" x2="960" y2="660"/>
+      <line x1="1020" y1="220" x2="1020" y2="660"/><line x1="1080" y1="220" x2="1080" y2="660"/>
+    </g>
+  </g>
+
+  <!-- lens rim + handle -->
+  <circle cx="905" cy="430" r="218" fill="none" stroke="#D39562" stroke-width="16"/>
+  <circle cx="905" cy="430" r="234" fill="none" stroke="#061C31" stroke-opacity="0.25" stroke-width="3"/>
+  <line x1="1062" y1="586" x2="1230" y2="754" stroke="#D39562" stroke-width="34" stroke-linecap="round"/>
+  <line x1="1062" y1="586" x2="1230" y2="754" stroke="#061C31" stroke-opacity="0.18" stroke-width="8" stroke-linecap="round"/>
+  <!-- glint -->
+  <path d="M 762 330 A 176 176 0 0 1 872 268" fill="none" stroke="#FCFAF6"
+        stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- quiet left details -->
+  <line x1="150" y1="200" x2="420" y2="200" stroke="#061C31" stroke-opacity="0.18" stroke-width="2"/>
+  <circle cx="150" cy="200" r="5" fill="#008687"/>
+  <g fill="#DFD6C9">
+    <ellipse cx="240" cy="748" rx="40" ry="7"/>
+    <ellipse cx="312" cy="748" rx="18" ry="5"/>
+  </g>
+  <!-- soft teal orb, upper right balance -->
+  <circle cx="1340" cy="200" r="70" fill="#2CA2A2" opacity="0.16" filter="url(#soft)"/>
+  <circle cx="1340" cy="200" r="10" fill="#008687"/>
+</svg>

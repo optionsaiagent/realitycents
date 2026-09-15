@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/Users/madkow21/RealityCents/videos/aio-agent-explainer/assets/fonts/IBMPlexMono-700.woff2") format("woff2");
+    font-weight: 700;
+  }
+  html, body { margin: 0; padding: 0; }
+  body { width: 1600px; height: 900px; overflow: hidden; background: #FCFAF6; position: relative; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FCFAF6"/>
+      <stop offset="100%" stop-color="#F5EDE4"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2CA2A2" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2CA2A2" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#paper)"/>
+
+  <!-- blueprint grid -->
+  <g stroke="#008687" stroke-opacity="0.07" stroke-width="1">
+    <line x1="0" y1="150" x2="1600" y2="150"/>
+    <line x1="0" y1="250" x2="1600" y2="250"/>
+    <line x1="0" y1="350" x2="1600" y2="350"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="550" x2="1600" y2="550"/>
+    <line x1="0" y1="650" x2="1600" y2="650"/>
+    <line x1="0" y1="750" x2="1600" y2="750"/>
+    <line x1="200" y1="0" x2="200" y2="900"/>
+    <line x1="360" y1="0" x2="360" y2="900"/>
+    <line x1="520" y1="0" x2="520" y2="900"/>
+    <line x1="680" y1="0" x2="680" y2="900"/>
+    <line x1="840" y1="0" x2="840" y2="900"/>
+    <line x1="1000" y1="0" x2="1000" y2="900"/>
+    <line x1="1160" y1="0" x2="1160" y2="900"/>
+    <line x1="1320" y1="0" x2="1320" y2="900"/>
+    <line x1="1480" y1="0" x2="1480" y2="900"/>
+  </g>
+
+  <!-- timeline baseline -->
+  <line x1="200" y1="620" x2="1440" y2="620" stroke="#061C31" stroke-width="2.5"/>
+  <!-- year ticks -->
+  <g stroke="#061C31" stroke-width="2">
+    <line x1="280" y1="620" x2="280" y2="634"/>
+    <line x1="440" y1="620" x2="440" y2="634"/>
+    <line x1="600" y1="620" x2="600" y2="634"/>
+    <line x1="760" y1="620" x2="760" y2="634"/>
+    <line x1="920" y1="620" x2="920" y2="634"/>
+    <line x1="1080" y1="620" x2="1080" y2="634"/>
+    <line x1="1240" y1="620" x2="1240" y2="634"/>
+    <line x1="1400" y1="620" x2="1400" y2="634"/>
+  </g>
+
+  <!-- fixed-period shading -->
+  <rect x="280" y="330" width="640" height="290" fill="#008687" fill-opacity="0.05"/>
+  <!-- adjustment-period band: gentle widening range after the bend -->
+  <path d="M 920 400 C 1060 392 1180 372 1400 328 L 1400 452 C 1180 448 1060 440 920 428 Z" fill="url(#band)"/>
+
+  <!-- the planned rate line: flat, then a calm bend upward at year 5 -->
+  <path d="M 280 414 L 860 414 C 900 414 928 410 962 402"
+        fill="none" stroke="#061C31" stroke-width="7" stroke-linecap="round"/>
+  <!-- projected continuation, dashed -->
+  <path d="M 962 402 C 1090 386 1220 372 1400 348" fill="none" stroke="#061C31" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 20"/>
+  <!-- range edges, very thin -->
+  <path d="M 920 400 C 1060 392 1180 372 1400 328" fill="none" stroke="#008687" stroke-opacity="0.5" stroke-width="2"/>
+  <path d="M 920 428 C 1060 440 1180 448 1400 452" fill="none" stroke="#008687" stroke-opacity="0.5" stroke-width="2"/>
+
+  <!-- the marked year: vertical dashed rule + gold diamond at the bend -->
+  <line x1="920" y1="250" x2="920" y2="620" stroke="#D39562" stroke-width="2.5" stroke-dasharray="8 8"/>
+  <g transform="translate(920 410) rotate(45)">
+    <rect x="-15" y="-15" width="30" height="30" fill="#D39562" stroke="#FCFAF6" stroke-width="4"/>
+  </g>
+
+  <!-- caliper brackets: tool feel, measuring the fixed period -->
+  <g stroke="#008687" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M 280 522 v 16 h 640 v -16"/>
+  </g>
+  <circle cx="600" cy="538" r="6" fill="#008687"/>
+
+  <!-- measuring arrows over adjustment zone -->
+  <g stroke="#061C31" stroke-opacity="0.4" stroke-width="2.5" stroke-linecap="round">
+    <line x1="1160" y1="300" x2="1160" y2="262"/>
+    <path d="M 1160 258 l -9 14 M 1160 258 l 9 14" fill="none"/>
+    <line x1="1160" y1="486" x2="1160" y2="524"/>
+    <path d="M 1160 528 l -9 -14 M 1160 528 l 9 -14" fill="none"/>
+  </g>
+
+  <!-- left axis rule with rate ticks -->
+  <line x1="200" y1="230" x2="200" y2="620" stroke="#061C31" stroke-opacity="0.5" stroke-width="2"/>
+  <g stroke="#061C31" stroke-opacity="0.35" stroke-width="2">
+    <line x1="190" y1="290" x2="200" y2="290"/>
+    <line x1="190" y1="370" x2="200" y2="370"/>
+    <line x1="190" y1="450" x2="200" y2="450"/>
+    <line x1="190" y1="530" x2="200" y2="530"/>
+  </g>
+
+  <!-- start-point dot -->
+  <circle cx="280" cy="414" r="10" fill="#FCFAF6" stroke="#061C31" stroke-width="5"/>
+</svg>
+
+<!-- single numeric accent: the adjustment year -->
+<div style="position:absolute; top:196px; left:876px; font-family:'IBM Plex Mono', monospace; font-weight:700;
+            font-size:21px; letter-spacing:0.12em; color:#FCFAF6; background:#D39562;
+            padding:8px 16px; border-radius:6px;">YR 5</div>
+</body>
+</html>
