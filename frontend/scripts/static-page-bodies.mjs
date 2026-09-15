@@ -329,6 +329,20 @@ export const STATIC_PAGE_BODIES = {
         </ul>
       </section>
       <section>
+        <h2>Hawaii VA questions, answered one page at a time</h2>
+        <p>Free companion pages that give the direct answer first, with the Hawaii numbers, and link back to the chapter that covers the rest:</p>
+        <ul>
+          <li><a href="/knowledge-base/va-loans-hawaii-military">VA loans in Hawaii — the complete 2026 guide</a>: $0 down with full entitlement, no PMI, the funding fee, condos, leasehold, BAH, and the steps.</li>
+          <li><a href="/knowledge-base/va-loan-limits-hawaii-2026">VA loan limits in Hawaii for 2026</a>: no limit with full entitlement; Honolulu County's $1,249,125 conforming limit with reduced entitlement.</li>
+          <li><a href="/knowledge-base/does-bah-count-va-loan-hawaii">Does BAH count for a VA loan in Hawaii?</a>: yes — how BAH, BAS, and COLA are counted and the tax-free gross-up.</li>
+          <li><a href="/knowledge-base/va-funding-fee-hawaii">The VA funding fee in Hawaii</a>: 2026 percentages, exemptions, Oahu dollar examples, funding fee vs PMI.</li>
+          <li><a href="/knowledge-base/va-vs-conventional-loan-hawaii">VA vs. conventional in Hawaii</a>: the side-by-side and when each wins.</li>
+          <li><a href="/knowledge-base/va-condo-approval-vs-warrantability-hawaii">VA condo approval vs. warrantability</a>: two different lists, and the Oahu lookup.</li>
+          <li><a href="/knowledge-base/va-irrrl-refinance-hawaii">The VA IRRRL in Hawaii</a>: streamline refinance rules, the 0.5% fee, the PCS angle.</li>
+          <li><a href="/knowledge-base/how-to-choose-hawaii-va-lender">How to choose a Hawaii VA lender</a>: the questions that reveal real local VA experience.</li>
+        </ul>
+      </section>
+      <section>
         <h2>About the author</h2>
         <p><strong>Jay Miller</strong> is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran, Certified Mortgage Advisor (CMA), and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
         <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 6-200, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
