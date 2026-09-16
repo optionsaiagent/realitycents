@@ -47,7 +47,18 @@ function isOahu(rec) {
   return OAHU_TOWNS.has(base);
 }
 
+// VA timestamps are UTC-midnight values, so plain toISOString() is the right
+// read for them. The lastUpdated stamp is ours, and the page is for Hawaii
+// buyers — format that one in Pacific/Honolulu so a late-afternoon run doesn't
+// label the data with tomorrow's date.
 const toIsoDate = ms => (ms ? new Date(ms).toISOString().slice(0, 10) : null);
+const hawaiiToday = () =>
+  new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Pacific/Honolulu",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
 const titleCase = s =>
   s.toLowerCase().replace(/\b[a-z]/g, ch => ch.toUpperCase());
 
@@ -102,7 +113,7 @@ const without = condos.filter(c => c.status === "Accepted Without Conditions").l
 const withCond = condos.filter(c => c.status === "Accepted With Conditions").length;
 
 const out = {
-  lastUpdated: new Date().toISOString().slice(0, 10),
+  lastUpdated: hawaiiToday(),
   source: current.source,
   county: "HONOLULU",
   state: "HI",
