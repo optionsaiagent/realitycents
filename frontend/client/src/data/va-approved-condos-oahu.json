@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-09-02",
+  "lastUpdated": "2026-09-16",
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "HONOLULU",
   "state": "HI",
-  "totalApproved": 1766,
-  "withoutConditions": 1521,
+  "totalApproved": 1769,
+  "withoutConditions": 1524,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -1409,6 +1409,20 @@
       "neighborhood": "Kakaako/Ala Moana"
     },
     {
+      "id": 645130,
+      "vaId": "002426",
+      "name": "190A PAUKAHI",
+      "address": "44-119 C KAHINANI WAY",
+      "city": "KANEOHE",
+      "state": "HI",
+      "zipCode": "96744",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-09-15",
+      "approvalRequestDate": "2026-08-18",
+      "neighborhood": "Kaneohe"
+    },
+    {
       "id": 642533,
       "vaId": "002366",
       "name": "1915 LOHILANI ST",
@@ -2597,6 +2611,20 @@
       "reviewDate": "2020-08-04",
       "approvalRequestDate": "2020-07-22",
       "neighborhood": "Kailua"
+    },
+    {
+      "id": 645180,
+      "vaId": "002428",
+      "name": "4133/4137/4149/4155 SIERRA DRI",
+      "address": "4133/37/49/55 SIERRA DR",
+      "city": "HONOLULU",
+      "state": "HI",
+      "zipCode": "96816",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-09-02",
+      "approvalRequestDate": "2026-08-24",
+      "neighborhood": "Kaimuki/Kapahulu"
     },
     {
       "id": 493446,
@@ -8465,20 +8493,6 @@
       "neighborhood": "Downtown/Chinatown"
     },
     {
-      "id": 374065,
-      "vaId": "FHA316",
-      "name": "EXPRESSIONS @ ROYAL KUNIA",
-      "address": "PHASE  III",
-      "city": "WAIPAHU",
-      "state": "HI",
-      "zipCode": "96797",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": null,
-      "approvalRequestDate": "2011-06-06",
-      "neighborhood": "Waipahu"
-    },
-    {
       "id": 374063,
       "vaId": "FHA314",
       "name": "EXPRESSIONS @ ROYAL KUNIA",
@@ -8490,6 +8504,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "2007-03-21",
       "approvalRequestDate": "2007-03-21",
+      "neighborhood": "Waipahu"
+    },
+    {
+      "id": 374065,
+      "vaId": "FHA316",
+      "name": "EXPRESSIONS @ ROYAL KUNIA",
+      "address": "PHASE  III",
+      "city": "WAIPAHU",
+      "state": "HI",
+      "zipCode": "96797",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": null,
+      "approvalRequestDate": "2011-06-06",
       "neighborhood": "Waipahu"
     },
     {
@@ -23387,6 +23415,20 @@
       "reviewDate": "2010-01-03",
       "approvalRequestDate": "2010-01-01",
       "neighborhood": "McCully/Moiliili"
+    },
+    {
+      "id": 645040,
+      "vaId": "002423",
+      "name": "WAIALUA BEACH HALE",
+      "address": "66-284 WAIALUA BEACH ROAD",
+      "city": "WAIALUA",
+      "state": "HI",
+      "zipCode": "96712",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-09-14",
+      "approvalRequestDate": "2025-08-06",
+      "neighborhood": "Haleiwa/North Shore"
     },
     {
       "id": 321688,
