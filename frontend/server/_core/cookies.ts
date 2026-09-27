@@ -40,7 +40,6 @@ export function getSessionCookieOptions(
   //       : undefined;
 
   return {
-    domain: undefined,
     httpOnly: true,
     path: "/",
     sameSite: "lax",
