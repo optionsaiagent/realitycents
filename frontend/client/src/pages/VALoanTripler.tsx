@@ -10,6 +10,7 @@ import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import ShareGuide from "@/components/ShareGuide";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { getBAH, type PayGrade } from "@/lib/militaryPayData";
 import ContactActions from "@/components/ContactActions";
 import PCSCallout from "@/components/PCSCallout";
 import {
@@ -39,15 +40,22 @@ function QuarterlyBadge({ label }: { label: string }) {
 }
 
 // ─── BAH Table Data — 2026 Honolulu County ──────────────────────────────────
-const BAH_TABLE = [
-  { rank: "E-4 & below", dep: "$3,183", noDep: "$2,598" },
-  { rank: "E-5", dep: "$3,663", noDep: "$2,997" },
-  { rank: "E-6", dep: "$3,861", noDep: "$3,153" },
-  { rank: "E-7", dep: "$4,098", noDep: "$3,348" },
-  { rank: "O-3", dep: "$4,434", noDep: "$3,618" },
-  { rank: "O-4", dep: "$4,719", noDep: "$3,879" },
-  { rank: "O-5", dep: "$4,959", noDep: "$4,224" },
+const money0 = (n: number) =>
+  n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+const BAH_ROWS: { label: string; grade: PayGrade }[] = [
+  { label: "E-4 & below", grade: "E-4" },
+  { label: "E-5", grade: "E-5" },
+  { label: "E-6", grade: "E-6" },
+  { label: "E-7", grade: "E-7" },
+  { label: "O-3", grade: "O-3" },
+  { label: "O-4", grade: "O-4" },
+  { label: "O-5", grade: "O-5" },
 ];
+const BAH_TABLE = BAH_ROWS.map(({ label, grade }) => ({
+  rank: label,
+  dep: money0(getBAH(grade, true)),
+  noDep: money0(getBAH(grade, false)),
+}));
 
 // ─── Payment Scenarios ──────────────────────────────────────────────────────
 const PAYMENT_SCENARIOS = [
@@ -382,14 +390,14 @@ export default function VALoanTripler() {
 
           <p className="mt-4 text-sm text-foreground/60 font-body">
             Estimates assume 6.75% rate, VA funding fee financed, Honolulu County property tax
-            0.31%, $200/mo insurance. Not a rate quote.
+            0.35%, $200/mo insurance. Not a rate quote.
           </p>
 
           <div className="mt-6 p-5 bg-teal/5 border border-teal/20 rounded-lg">
             <p className="text-sm font-body text-foreground/80 leading-relaxed">
               The gap between BAH and PITI is real — but context matters. Hawaii's property tax
-              rate of 0.31% is the lowest in the country. On a $900,000 home, that's roughly
-              $232/month in property tax — compare that to $845/month in San Diego on the same
+              rate of 0.35% is the lowest in the country. On a $900,000 home, that's roughly
+              $263/month in property tax — compare that to $845/month in San Diego on the same
               home. COLA also supplements your take-home in ways that make the math more workable
               than it first appears.
             </p>

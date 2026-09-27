@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import { monthlyPI as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import { Link } from "wouter";
@@ -56,14 +57,6 @@ function InputField({ label, value, onChange, prefix, suffix, step, min, max, he
       {helpText && <p className="text-xs text-muted-foreground mt-1">{helpText}</p>}
     </div>
   );
-}
-
-// ─── P&I Calculation ─────────────────────────────────────────────────────────
-function calcMonthlyPI(principal: number, annualRate: number, termYears: number): number {
-  if (principal <= 0 || annualRate <= 0 || termYears <= 0) return 0;
-  const r = annualRate / 100 / 12;
-  const n = termYears * 12;
-  return principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
 }
 
 // ─── Buydown Type Definitions ────────────────────────────────────────────────

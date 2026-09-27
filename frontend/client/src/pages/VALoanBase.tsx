@@ -10,6 +10,8 @@ import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import ShareGuide from "@/components/ShareGuide";
 import { LENDER, IMAGES, IMAGE_ALTS, PRE_APPROVAL_URL } from "@/lib/constants";
+import { getBAH, getCOLA, type PayGrade } from "@/lib/militaryPayData";
+import { DEFAULT_PROPERTY_TAX_RATE, defaultMonthlyPropertyTax, monthlyPI, vaFundingFeeRate } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import PCSCallout from "@/components/PCSCallout";
 import {
@@ -28,49 +30,52 @@ import {
 
 // PRE_APPROVAL_URL now imported from constants
 
-// Shared BAH table data — 2026 Honolulu County
+// Shared BAH table — 2026 Honolulu County, from militaryPayData (not hand-typed).
 
 const condoCount = condoData.totalApproved.toLocaleString();
 
-const BAH_TABLE = [
-  { rank: "E-5", dep: "$3,663", noDep: "$2,856" },
-  { rank: "E-6", dep: "$3,861", noDep: "$3,036" },
-  { rank: "E-7", dep: "$4,098", noDep: "$3,348" },
-  { rank: "E-8", dep: "$4,302", noDep: "$3,720" },
-  { rank: "E-9", dep: "$4,518", noDep: "$3,783" },
-  { rank: "W-1", dep: "$3,930", noDep: "$3,222" },
-  { rank: "W-2", dep: "$4,182", noDep: "$3,717" },
-  { rank: "W-3", dep: "$4,434", noDep: "$3,795" },
-  { rank: "W-4", dep: "$4,551", noDep: "$3,951" },
-  { rank: "W-5", dep: "$4,692", noDep: "$4,146" },
-  { rank: "O-1", dep: "$3,702", noDep: "$2,997" },
-  { rank: "O-2", dep: "$3,909", noDep: "$3,555" },
-  { rank: "O-3", dep: "$4,434", noDep: "$3,819" },
-  { rank: "O-4", dep: "$4,719", noDep: "$4,110" },
-  { rank: "O-5", dep: "$4,959", noDep: "$4,224" },
-  { rank: "O-6", dep: "$5,001", noDep: "$4,413" },
+const money0 = (n: number) =>
+  n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+
+const BAH_RANKS: PayGrade[] = [
+  "E-5", "E-6", "E-7", "E-8", "E-9",
+  "W-1", "W-2", "W-3", "W-4", "W-5",
+  "O-1", "O-2", "O-3", "O-4", "O-5", "O-6",
 ];
 
-// Shared payment scenarios — PITI ≈ 100% of BAH (with dependents)
-// Logic: Find purchase price where PITI = BAH at 5.75%, VA fee financed (2.15%), 0.31% tax, $200 ins, SFH
-const PAYMENT_SCENARIOS = [
-  { rank: "E-5", bah: "$3,663", price: "$555,000", piti: "$3,652" },
-  { rank: "E-6", bah: "$3,861", price: "$590,000", piti: "$3,870" },
-  { rank: "E-7", bah: "$4,098", price: "$625,000", piti: "$4,087" },
-  { rank: "E-8", bah: "$4,302", price: "$660,000", piti: "$4,305" },
-  { rank: "E-9", bah: "$4,518", price: "$695,000", piti: "$4,523" },
-  { rank: "W-1", bah: "$3,930", price: "$600,000", piti: "$3,932" },
-  { rank: "W-2", bah: "$4,182", price: "$640,000", piti: "$4,180" },
-  { rank: "W-3", bah: "$4,434", price: "$680,000", piti: "$4,429" },
-  { rank: "W-4", bah: "$4,551", price: "$700,000", piti: "$4,554" },
-  { rank: "W-5", bah: "$4,692", price: "$720,000", piti: "$4,678" },
-  { rank: "O-1", bah: "$3,702", price: "$565,000", piti: "$3,714" },
-  { rank: "O-2", bah: "$3,909", price: "$595,000", piti: "$3,901" },
-  { rank: "O-3", bah: "$4,434", price: "$680,000", piti: "$4,429" },
-  { rank: "O-4", bah: "$4,719", price: "$725,000", piti: "$4,709" },
-  { rank: "O-5", bah: "$4,959", price: "$765,000", piti: "$4,958" },
-  { rank: "O-6", bah: "$5,001", price: "$770,000", piti: "$4,989" },
-];
+const BAH_TABLE = BAH_RANKS.map((rank) => ({
+  rank,
+  dep: money0(getBAH(rank, true)),
+  noDep: money0(getBAH(rank, false)),
+}));
+
+// Purchase price where PITI ≈ BAH with dependents.
+// 5.75%, 30-year, $0 down, first-use VA fee financed, 0.35% Honolulu tax, $200/mo insurance.
+const SCENARIO_RATE = 5.75;
+const SCENARIO_INSURANCE = 200;
+const SCENARIO_FEE_PCT = vaFundingFeeRate(0, true, false);
+
+function priceForBah(bah: number): number {
+  const feeMult = 1 + SCENARIO_FEE_PCT / 100;
+  const perDollar = monthlyPI(1, SCENARIO_RATE, 30);
+  const taxPerDollar = (DEFAULT_PROPERTY_TAX_RATE / 100) / 12;
+  const price = (bah - SCENARIO_INSURANCE) / (feeMult * perDollar + taxPerDollar);
+  return Math.max(0, Math.round(price / 1000) * 1000);
+}
+
+function pitiAtPrice(price: number): number {
+  const loan = price * (1 + SCENARIO_FEE_PCT / 100);
+  return Math.round(monthlyPI(loan, SCENARIO_RATE, 30) + defaultMonthlyPropertyTax(price) + SCENARIO_INSURANCE);
+}
+
+const PAYMENT_SCENARIOS = BAH_RANKS.map((rank) => {
+  const bah = getBAH(rank, true);
+  const price = priceForBah(bah);
+  return { rank, bah: money0(bah), price: money0(price), piti: money0(pitiAtPrice(price)) };
+});
+
+const COLA_EXAMPLE = getCOLA("E-5", 6, 1);
+const TAX_ON_600K = defaultMonthlyPropertyTax(600_000);
 
 export interface Neighborhood {
   name: string;
@@ -233,18 +238,18 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
           </div>
 
           <p className="mt-4 text-sm text-foreground/60 font-body">
-            Estimates assume 5.75% rate, VA funding fee financed, Honolulu County property tax 0.31%, $200/mo insurance, single family home. Not a rate quote — <Link href="/contact" className="text-teal hover:underline">contact me for current rates</Link>.
+            Estimates assume 5.75% rate, VA funding fee financed ({SCENARIO_FEE_PCT}% first use, $0 down), Honolulu County property tax {DEFAULT_PROPERTY_TAX_RATE}%, $200/mo insurance, single family home. Not a rate quote — <Link href="/contact" className="text-teal hover:underline">contact me for current rates</Link>.
           </p>
 
           <div className="mt-6 grid sm:grid-cols-2 gap-4">
             <div className="p-4 bg-teal/5 border border-teal/20 rounded-lg">
               <p className="text-sm font-body text-foreground/80">
-                <strong>Hawaii's secret weapon:</strong> Property tax at 0.31% is the lowest in the country. A $600K home costs just $155/month in property tax — compared to $500+/month in Texas or $750+/month in New Jersey.
+                <strong>Hawaii's secret weapon:</strong> Property tax at {DEFAULT_PROPERTY_TAX_RATE}% is the lowest in the country. A $600K home costs just {money0(TAX_ON_600K)}/month in property tax — compared to $500+/month in Texas or $750+/month in New Jersey.
               </p>
             </div>
             <div className="p-4 bg-teal/5 border border-teal/20 rounded-lg">
               <p className="text-sm font-body text-foreground/80">
-                <strong>COLA boost:</strong> Honolulu COLA adds 8.9% to base pay, supplementing your take-home beyond what BAH covers. Factor this into your comfort level.
+                <strong>COLA boost:</strong> Oahu COLA (index 120) pays about 20% of the DoD &ldquo;spendable income&rdquo; amount for your grade and dependents — not a percent of base pay. See the Military Calculator for your figure. Example: an E-5 with 6 years of service and 1 dependent receives about {money0(COLA_EXAMPLE)}/month (travel.dod.mil CY 2026 Spendable Income Table, effective Feb 1, 2026; formula DoD FMR Vol 7A Ch 68).
               </p>
             </div>
           </div>

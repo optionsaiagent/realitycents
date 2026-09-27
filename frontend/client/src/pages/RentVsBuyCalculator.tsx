@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import { DEFAULT_PROPERTY_TAX_RATE, monthlyPI as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
@@ -118,12 +119,9 @@ function calculate(inputs: Inputs): CalcResult {
   const downPayment = homePrice * downPaymentPercent / 100;
   const loanAmount = homePrice - downPayment;
   const monthlyRate = interestRate / 100 / 12;
-  const numPayments = loanTerm * 12;
 
-  // Monthly P&I
-  const monthlyPI = monthlyRate > 0
-    ? (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1)
-    : loanAmount / numPayments;
+  // Monthly P&I (annualRate is a percent; rate 0 is interest-free)
+  const monthlyPI = calcMonthlyPI(loanAmount, interestRate, loanTerm);
 
   // Year-by-year simulation
   const yearData: YearData[] = [];
@@ -260,7 +258,7 @@ export default function RentVsBuyCalculator() {
     monthlyRent: 3000,
     annualRentIncrease: 3,
     rentersInsurance: 30,
-    propertyTaxRate: 0.35,
+    propertyTaxRate: DEFAULT_PROPERTY_TAX_RATE,
     homeInsurance: 150,
     hoaFees: 400,
     maintenanceRate: 1,
@@ -330,9 +328,10 @@ export default function RentVsBuyCalculator() {
                     </div>
                     <InputField label="Home Appreciation Rate" value={inputs.homeAppreciationRate} onChange={(v) => update("homeAppreciationRate", v)} suffix="%" step={0.5} min={-5} max={15} helpText="Annual home value growth rate" />
                     <div className="grid grid-cols-2 gap-3">
-                      <InputField label="Property Tax Rate" value={inputs.propertyTaxRate} onChange={(v) => update("propertyTaxRate", v)} suffix="%" step={0.05} min={0} helpText="Annual % of home value" />
+                      <InputField label="Property Tax Rate" value={inputs.propertyTaxRate} onChange={(v) => update("propertyTaxRate", v)} suffix="%" step={0.05} min={0} helpText="Honolulu default 0.35% of value per year" />
                       <InputField label="Home Insurance" value={inputs.homeInsurance} onChange={(v) => update("homeInsurance", v)} prefix="$" suffix="/mo" step={10} min={0} />
                     </div>
+                    <InputField label="Or monthly tax" value={inputs.homePrice > 0 ? Math.round((inputs.homePrice * inputs.propertyTaxRate / 100 / 12) * 100) / 100 : 0} onChange={(v) => { if (inputs.homePrice > 0) update("propertyTaxRate", (v * 12 / inputs.homePrice) * 100); }} prefix="$" suffix="/mo" step={5} min={0} helpText="Type the listing's monthly tax to set the rate. Dollars then follow the home value." />
                     <div className="grid grid-cols-2 gap-3">
                       <InputField label="HOA Fees" value={inputs.hoaFees} onChange={(v) => update("hoaFees", v)} prefix="$" suffix="/mo" step={25} min={0} />
                       <InputField label="Maintenance" value={inputs.maintenanceRate} onChange={(v) => update("maintenanceRate", v)} suffix="%" step={0.25} min={0} helpText="Annual % of home value" />

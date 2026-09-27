@@ -7,7 +7,8 @@ import { useState, useMemo, useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER } from "@/lib/constants";
+import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { monthlyPIFromMonths as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
@@ -121,18 +122,6 @@ function InputField({
       )}
     </div>
   );
-}
-
-// ─── P&I Calculation ──────────────────────────────────────────────────────────
-function calcMonthlyPI(
-  principal: number,
-  annualRate: number,
-  termMonths: number
-): number {
-  if (principal <= 0 || termMonths <= 0) return 0;
-  const r = annualRate / 100 / 12;
-  if (r <= 0) return principal / termMonths;
-  return (principal * (r * Math.pow(1 + r, termMonths))) / (Math.pow(1 + r, termMonths) - 1);
 }
 
 // ─── Total Interest Calculation ───────────────────────────────────────────────

@@ -25,6 +25,7 @@ import {
   defaultArmCaps,
   ARM_HISTORICAL_INDEX,
   HAWAII_TAX_RATES,
+  vaFundingFeeRate,
 } from "@/lib/loanMath";
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from "lz-string";
 import {
@@ -770,13 +771,12 @@ function ScenarioPanel({
               </button>
             </div>
             <p className="text-xs text-slate-500 mt-1.5">
-              {num(scenario.downPaymentPct) >= 10
-                ? "Funding fee: 1.25% (same for first & subsequent)"
-                : num(scenario.downPaymentPct) >= 5
-                ? "Funding fee: 1.50% (same for first & subsequent)"
-                : scenario.vaFirstUse
-                ? "Funding fee: 2.15% ($0 down, first use)"
-                : "Funding fee: 3.30% ($0 down, subsequent use)"}
+              {(() => {
+                const feePct = vaFundingFeeRate(num(scenario.downPaymentPct), scenario.vaFirstUse, scenario.vaDisabled);
+                return feePct === 0
+                  ? "Funding fee: waived (disability exemption)"
+                  : `Funding fee: ${feePct.toFixed(2)}%`;
+              })()}
             </p>
           </div>
           <label className="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">

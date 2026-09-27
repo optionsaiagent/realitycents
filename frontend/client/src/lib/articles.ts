@@ -804,7 +804,7 @@ Work with a lender who understands the exact concession limits for your loan typ
 
 If you are buying in Hawaii and want to know exactly how much seller credit you can ask for — and how to structure the offer so the seller says yes — I can run the numbers for your specific situation. Every loan type has different limits, and the optimal strategy depends on your down payment, the property type, and how long the home has been on the market.
 
-[**Get Pre-Approved with Jay Miller →**](https://www.jay-miller.com)
+[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
 
 ---
 
@@ -3471,7 +3471,7 @@ For the first time, a Hawaii homeowner can turn their current home into a rental
 
 To model the payment on the next home itself, run your scenario in the [Advanced Mortgage Calculator](/advanced-calculator). And if you're buying a condo, note that Fannie Mae's [condo project review rules are also changing in 2026](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) — the two updates together reshape a lot of Oahu purchase plans.
 
-Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
+Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
 
 ---
 *Sources: Fannie Mae Selling Guide Announcement SEL-2026-08 (September 2, 2026); Fannie Mae Selling Guide B3-3.8-05, Rental Income from Non-Subject Property: Departing Residence (09/02/2026); B3-3.8-01, General Rental Income Information (09/02/2026); B3-6-06, Qualifying Impact of Other Real Estate Owned.*
@@ -4216,7 +4216,7 @@ For context on how much income you need to qualify at these price points, see ou
 
 The Hale Kamaʻāina program is offered through participating lenders enrolled with HHFDC — and **CMG Home Loans is now one of them**. For the full list of approved lenders and to confirm fund availability, visit [dbedt.hawaii.gov/hhfdc/hk-mortgage-program/](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/).
 
-Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://www.jay-miller.com) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
+Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
 
 ---
 *Sources: Hawaii Housing Finance and Development Corporation (HHFDC), Maui Now (May 10, 2026), eHousingPlus HHFDC Income and Purchase Price Limits (January 30, 2026), HHFDC Eligibility Requirements (January 15, 2026), Team Wong Hawaii (November 2025), NCSHA (February 2026)*
@@ -4655,7 +4655,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 [**Use the Loan Comparison Calculator →**](https://realitycents.com/loan-compare)
 
-[**Get Pre-Approved with Jay Miller →**](https://www.jay-miller.com)
+[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
 
 ---
 
@@ -4819,7 +4819,7 @@ If you can answer all three with confidence, we can run the numbers and find the
 
 Whether you are a military buyer on PCS orders looking at the VA ARM, a first-time buyer stretching to afford Oahu, or a move-up buyer trying to maximize purchasing power, I can show you exactly how an ARM compares to a fixed rate for your specific situation — including the worst-case adjustment scenarios.
 
-[**Get Pre-Approved and Compare Your Options →**](https://www.jay-miller.com)
+[**Get Pre-Approved and Compare Your Options →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
 
 *Have questions about whether an ARM fits your specific Hawaii homebuying timeline? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -4948,7 +4948,7 @@ Know your numbers. Negotiate aggressively for seller concessions. Focus on the p
 
 [**Compare Loan Scenarios at Different Rates →**](/loan-compare)
 
-[**Get Pre-Approved at Today's Rates →**](https://www.jay-miller.com)
+[**Get Pre-Approved at Today's Rates →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
 
 ---
 

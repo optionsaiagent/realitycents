@@ -1,3 +1,5 @@
+import { DEFAULT_PROPERTY_TAX_RATE, defaultMonthlyPropertyTax, monthlyPI, vaFundingFeeRate } from "./loanMath";
+
 // 2026 Military Pay Data for RealityCents Military Buying Power Calculator
 // Sources:
 //   Base Pay: navycs.com/charts/2026-military-pay-chart.html (DFAS 2026 tables, 3.8% raise)
@@ -296,6 +298,8 @@ export interface PurchasePowerEstimate {
   monthlyHOA: number;
   downPayment: number;
   loanAmount: number;
+  /** VA funding fee as a percent of the base loan (2.15 means 2.15%). */
+  fundingFeeRate: number;
 }
 
 export function estimatePurchasePower(
@@ -303,59 +307,80 @@ export function estimatePurchasePower(
   monthlyDebts: number = 0,
   interestRate: number = 5.75,
   maxDTI: number = 55,
-  monthlyPropertyTax: number = 350,
+  // null = Honolulu default, price × 0.35% / 12, solved with the price
+  monthlyPropertyTax: number | null = null,
   monthlyInsurance: number = 150,
   monthlyHOA: number = 0,
   downPayment: number = 0,
+  firstUse: boolean = true,
+  disabilityExempt: boolean = false,
 ): PurchasePowerEstimate {
-  // Max monthly housing payment = (income × DTI%) - existing debts
   const maxHousingPayment = (totalMonthlyIncome * maxDTI / 100) - monthlyDebts;
+  const empty = (tax = 0): PurchasePowerEstimate => ({
+    maxPurchasePrice: 0,
+    estimatedMonthlyPITI: 0,
+    maxDTI,
+    interestRate,
+    monthlyPI: 0,
+    monthlyPropertyTax: tax,
+    monthlyInsurance,
+    monthlyHOA,
+    downPayment: 0,
+    loanAmount: 0,
+    fundingFeeRate: vaFundingFeeRate(0, firstUse, disabilityExempt),
+  });
 
-  if (maxHousingPayment <= 0) {
-    return { maxPurchasePrice: 0, estimatedMonthlyPITI: 0, maxDTI, interestRate, monthlyPI: 0, monthlyPropertyTax, monthlyInsurance, monthlyHOA, downPayment: 0, loanAmount: 0 };
+  if (maxHousingPayment <= 0) return empty(monthlyPropertyTax ?? 0);
+
+  const taxIsFixed = monthlyPropertyTax != null;
+  const fixedTax = monthlyPropertyTax ?? 0;
+  const budget = maxHousingPayment - monthlyInsurance - monthlyHOA - (taxIsFixed ? fixedTax : 0);
+  if (budget <= 0 && downPayment <= 0) return empty(fixedTax);
+
+  // Payment per $1 of loan. Rate 0 is interest-free (loan / months).
+  const perDollar = monthlyPI(1, interestRate, 30);
+  if (!(perDollar > 0)) return empty(fixedTax);
+
+  const taxPerDollarOfPrice = taxIsFixed ? 0 : (DEFAULT_PROPERTY_TAX_RATE / 100) / 12;
+
+  const priceForFee = (feePct: number): number => {
+    const feeMult = 1 + feePct / 100;
+    const denom = feeMult * perDollar + taxPerDollarOfPrice;
+    if (!(denom > 0)) return 0;
+    return (budget + downPayment * feeMult * perDollar) / denom;
+  };
+
+  let feePct = vaFundingFeeRate(0, firstUse, disabilityExempt);
+  let price = priceForFee(feePct);
+  for (let i = 0; i < 5; i++) {
+    const downPct = price > 0 ? (downPayment / price) * 100 : 0;
+    const next = vaFundingFeeRate(downPct, firstUse, disabilityExempt);
+    if (next === feePct) break;
+    feePct = next;
+    price = priceForFee(feePct);
   }
 
-  // PITIA = P&I + Tax + Insurance + HOA (Assessments)
-  // Net available for P&I = maxHousingPayment - fixed monthly costs
-  const fixedMonthlyCosts = monthlyPropertyTax + monthlyInsurance + monthlyHOA;
-  const maxPI = maxHousingPayment - fixedMonthlyCosts;
-
-  if (maxPI <= 0) {
-    return { maxPurchasePrice: 0, estimatedMonthlyPITI: 0, maxDTI, interestRate, monthlyPI: 0, monthlyPropertyTax, monthlyInsurance, monthlyHOA, downPayment: 0, loanAmount: 0 };
-  }
-
-  // VA funding fee is typically 2.15% for first use, rolled into loan
-  // Loan amount = (purchase price - down payment) * fundingFeeRate
-  // maxPI = (price - downPayment) * fundingFeeRate * factor
-  // price = maxPI / (fundingFeeRate * factor) + downPayment
-  const monthlyRate = interestRate / 100 / 12;
-  const numPayments = 360; // 30-year fixed
-  const fundingFeeRate = 1.0215;
-  const factor = (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
-
-  const maxPriceFromIncome = maxPI / (fundingFeeRate * factor);
-  const maxPrice = maxPriceFromIncome + downPayment;
-
-  // Round down to nearest $1,000
-  const roundedPrice = Math.floor(maxPrice / 1000) * 1000;
-
-  // Calculate actual PITIA at that price
-  const actualLoanBase = roundedPrice - downPayment;
-  const loanAmount = actualLoanBase * fundingFeeRate;
-  const monthlyPI = loanAmount * factor;
-  const pitia = monthlyPI + fixedMonthlyCosts;
+  const roundedPrice = Math.floor(Math.max(0, price) / 1000) * 1000;
+  const downPct = roundedPrice > 0 ? (downPayment / roundedPrice) * 100 : 0;
+  const appliedFee = vaFundingFeeRate(downPct, firstUse, disabilityExempt);
+  const base = Math.max(0, roundedPrice - downPayment);
+  const loanAmount = base * (1 + appliedFee / 100);
+  const pi = monthlyPI(loanAmount, interestRate, 30);
+  const tax = taxIsFixed ? fixedTax : defaultMonthlyPropertyTax(roundedPrice);
+  const pitia = pi + tax + monthlyInsurance + monthlyHOA;
 
   return {
-    maxPurchasePrice: Math.max(0, roundedPrice),
+    maxPurchasePrice: roundedPrice,
     estimatedMonthlyPITI: Math.round(pitia),
     maxDTI,
     interestRate,
-    monthlyPI: Math.round(monthlyPI),
-    monthlyPropertyTax,
+    monthlyPI: Math.round(pi),
+    monthlyPropertyTax: Math.round(tax),
     monthlyInsurance,
     monthlyHOA,
     downPayment,
     loanAmount: Math.round(loanAmount),
+    fundingFeeRate: appliedFee,
   };
 }
 

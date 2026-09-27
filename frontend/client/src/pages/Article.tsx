@@ -310,12 +310,12 @@ export default function Article() {
                   components={{
                     a: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
                       // Internal path-relative links: use wouter Link for SPA navigation
-                      if (href && href.startsWith("/")) {
+                      if (href && typeof href === "string" && href.startsWith("/")) {
                         return <Link href={href} className="text-teal hover:underline">{children}</Link>;
                       }
-                      return <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+                      return <a {...props} href={typeof href === "string" ? href : undefined} target="_blank" rel="noopener noreferrer">{children}</a>;
                     },
-                  }}
+                  } as React.ComponentProps<typeof Streamdown>["components"]}
                 >{article.content}</Streamdown>
               </article>
 

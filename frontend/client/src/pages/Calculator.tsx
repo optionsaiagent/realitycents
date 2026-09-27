@@ -13,6 +13,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import { conventionalPmiAnnualPercent, defaultMonthlyPropertyTax, monthlyPI as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Link } from "wouter";
@@ -139,10 +140,10 @@ export default function Calculator() {
   const [downPayment, setDownPayment] = useState("140000");
   const [interestRate, setInterestRate] = useState("6.75");
   const [loanTerm, setLoanTerm] = useState(30);
-  const [propertyTax, setPropertyTax] = useState("350");
+  const [taxOverride, setTaxOverride] = useState<string | null>(null);
   const [insurance, setInsurance] = useState("150");
   const [hoaFees, setHoaFees] = useState("400");
-  const [pmiRate, setPmiRate] = useState("0.5");
+  const [pmiOverride, setPmiOverride] = useState<string | null>(null);
   const [showAmortization, setShowAmortization] = useState(false);
   const [downPaymentMode, setDownPaymentMode] = useState<"$" | "%">("$");
   // inputMode: "price" = enter home price + down payment; "loan" = enter loan amount directly
@@ -155,10 +156,8 @@ export default function Calculator() {
     ? (num(downPayment) / 100) * nLoanAmount
     : num(downPayment);
   const nInterestRate = num(interestRate);
-  const nPropertyTax = num(propertyTax);
   const nInsurance = num(insurance);
   const nHoaFees = num(hoaFees);
-  const nPmiRate = num(pmiRate);
 
   // In "loan" mode, the entered value IS the principal (no down payment subtracted)
   const principal = inputMode === "loan" ? nLoanAmount : nLoanAmount - nDownPayment;
@@ -168,6 +167,14 @@ export default function Calculator() {
       ? num(downPayment)
       : (nLoanAmount > 0 ? (nDownPayment / nLoanAmount) * 100 : 0);
   const needsPMI = inputMode === "loan" ? false : downPaymentPercent < 20;
+  const priceForTax = inputMode === "price" ? nLoanAmount : (principal > 0 ? principal / 0.8 : 0);
+  const autoMonthlyTax = defaultMonthlyPropertyTax(priceForTax);
+  const nPropertyTax = taxOverride != null ? num(taxOverride) : autoMonthlyTax;
+  const taxDisplay = taxOverride ?? String(autoMonthlyTax);
+  const ltvPercent = inputMode === "loan" || nLoanAmount <= 0 ? 80 : (nLoanAmount > 0 ? (principal / nLoanAmount) * 100 : 0);
+  const autoPmi = conventionalPmiAnnualPercent(ltvPercent);
+  const nPmiRate = pmiOverride != null ? num(pmiOverride) : autoPmi;
+  const pmiDisplay = pmiOverride ?? String(autoPmi);
 
   const handlePrint = () => {
     const el = document.getElementById('calc-print-content');
@@ -183,7 +190,7 @@ export default function Calculator() {
     const numPayments = loanTerm * 12;
     const p = principal;
 
-    if (p <= 0 || monthlyRate <= 0 || numPayments <= 0) {
+    if (p <= 0 || nInterestRate < 0 || numPayments <= 0) {
       return {
         monthlyPI: 0,
         monthlyPMI: 0,
@@ -194,9 +201,7 @@ export default function Calculator() {
       };
     }
 
-    const monthlyPI =
-      (p * (monthlyRate * Math.pow(1 + monthlyRate, numPayments))) /
-      (Math.pow(1 + monthlyRate, numPayments) - 1);
+    const monthlyPI = calcMonthlyPI(p, nInterestRate, loanTerm);
 
     const monthlyPMI = needsPMI ? (p * (nPmiRate / 100)) / 12 : 0;
     const totalMonthly = monthlyPI + nPropertyTax + nInsurance + nHoaFees + monthlyPMI;
@@ -325,7 +330,7 @@ export default function Calculator() {
 
                   {/* Row 3: RPT + Insurance */}
                   <div className="grid grid-cols-2 gap-2">
-                    <InputField label="RPT (Tax/mo)" value={propertyTax} onChange={setPropertyTax} icon={DollarSign} prefix="$" step={25} min={0} compact />
+                    <InputField label="RPT (Tax/mo)" value={taxDisplay} onChange={setTaxOverride} icon={DollarSign} prefix="$" step={25} min={0} compact />
                     <InputField label="Insurance/mo" value={insurance} onChange={setInsurance} icon={DollarSign} prefix="$" step={25} min={0} compact />
                   </div>
 
@@ -333,7 +338,7 @@ export default function Calculator() {
                   <div className="grid grid-cols-2 gap-2">
                     <InputField label="HOA Dues/mo" value={hoaFees} onChange={setHoaFees} icon={DollarSign} prefix="$" step={25} min={0} compact />
                     {needsPMI
-                      ? <InputField label="PMI Rate" value={pmiRate} onChange={setPmiRate} icon={Percent} suffix="%" step={0.1} min={0} max={3} compact />
+                      ? <InputField label="PMI Rate" value={pmiDisplay} onChange={setPmiOverride} icon={Percent} suffix="%" step={0.1} min={0} max={3} compact />
                       : <div />}
                   </div>
 
@@ -389,10 +394,13 @@ export default function Calculator() {
                   <div className="border-t border-border pt-4">
                     <p className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground mb-3">Monthly Costs</p>
                     <div className="space-y-3">
-                      <InputField label="Property Tax" value={propertyTax} onChange={setPropertyTax} icon={DollarSign} prefix="$" suffix="/mo" step={25} min={0} />
+                      <InputField label="Property Tax" value={taxDisplay} onChange={setTaxOverride} icon={DollarSign} prefix="$" suffix="/mo" step={25} min={0} helpText={taxOverride == null ? "Honolulu default: 0.35% of price per year. Tracks the price until you edit." : "Custom monthly tax — it stays when the price changes."} />
+                      {taxOverride != null && (
+                        <button type="button" onClick={() => setTaxOverride(null)} className="text-xs text-teal hover:underline -mt-2">Reset tax to 0.35% of price</button>
+                      )}
                       <InputField label="Homeowner's Insurance" value={insurance} onChange={setInsurance} icon={DollarSign} prefix="$" suffix="/mo" step={25} min={0} />
                       <InputField label="HOA Fees" value={hoaFees} onChange={setHoaFees} icon={DollarSign} prefix="$" suffix="/mo" step={25} min={0} />
-                      {needsPMI && <InputField label="PMI Rate" value={pmiRate} onChange={setPmiRate} icon={Percent} suffix="%" step={0.1} min={0} max={3} helpText="Required when down payment is less than 20%" />}
+                      {needsPMI && <InputField label="PMI Rate" value={pmiDisplay} onChange={setPmiOverride} icon={Percent} suffix="%" step={0.1} min={0} max={3} helpText="Defaults from the LTV tiers (no credit score on this calculator). Edit to match a quote." />}
                     </div>
                   </div>
                 </div>

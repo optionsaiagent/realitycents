@@ -160,7 +160,7 @@ function Dashboard() {
                 </tr>
               </thead>
               <tbody>
-                {stats.resources.map(r => (
+                {stats.resources.map((r: { id: string | number; title: string; category?: string | null; downloadCount: number }) => (
                   <tr key={r.id} className="border-b last:border-0">
                     <td className="px-4 py-3">{r.title}</td>
                     <td className="px-4 py-3">{r.category ?? ""}</td>

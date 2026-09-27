@@ -9,7 +9,17 @@ import { trpc } from "@/lib/trpc";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER } from "@/lib/constants";
+import { IMAGES, LENDER, HONOLULU_CONFORMING_LIMIT_2026, HONOLULU_FHA_LIMIT_2026 } from "@/lib/constants";
+import {
+  defaultMonthlyPropertyTax,
+  monthlyPI as calcMonthlyPI,
+  pmiRateByCreditLtv,
+  PMI_FICO_TIERS,
+  PMI_LTV_TIERS,
+  PMI_RATES,
+  vaFundingFee as calcVaFundingFee,
+  vaFundingFeeRate as lookupVaFundingFeeRate,
+} from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import {
@@ -40,58 +50,7 @@ import { Link } from "wouter";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const CONFORMING_LIMIT = 1249125;
-
 type LoanType = "conventional" | "va" | "fha" | "jumbo";
-
-// ─── PMI Rate Table (Conventional) ────────────────────────────────────────────
-// Best available annual rates across MGIC, Radian, and Arch MI (Feb 2026)
-// Fixed-rate, >20yr term, primary residence, purchase/rate-term refi
-// Coverage: 35% (97%), 25% (95%), 25% (90%), 12% (85%) per GSE requirements
-const PMI_FICO_TIERS = [760, 740, 720, 700, 680, 660, 640, 620] as const;
-const PMI_LTV_TIERS = [
-  { min: 95.01, max: 97, label: "95.01–97%" },
-  { min: 90.01, max: 95, label: "90.01–95%" },
-  { min: 85.01, max: 90, label: "85.01–90%" },
-  { min: 80.01, max: 85, label: "80.01–85%" },
-] as const;
-
-const PMI_RATES: number[][] = [
-  // 95.01-97% LTV (35% coverage): 760+, 740, 720, 700, 680, 660, 640, 620-639
-  [0.0058, 0.0070, 0.0087, 0.0099, 0.0121, 0.0154, 0.0165, 0.0186],
-  // 90.01-95% LTV (25% coverage)
-  [0.0034, 0.0048, 0.0059, 0.0068, 0.0087, 0.0111, 0.0119, 0.0125],
-  // 85.01-90% LTV (25% coverage)
-  [0.0022, 0.0038, 0.0046, 0.0055, 0.0065, 0.0090, 0.0091, 0.0094],
-  // 80.01-85% LTV (12% coverage)
-  [0.0017, 0.0019, 0.0022, 0.0023, 0.0026, 0.0032, 0.0034, 0.0041],
-];
-
-function getPmiRate(ltv: number, fico: number): number {
-  if (ltv <= 80) return 0;
-  let ltvRow = PMI_RATES.length - 1;
-  for (let i = 0; i < PMI_LTV_TIERS.length; i++) {
-    if (ltv > PMI_LTV_TIERS[i].min) { ltvRow = i; break; }
-  }
-  let ficoCol = PMI_FICO_TIERS.length - 1;
-  if (fico >= 760) ficoCol = 0;
-  else if (fico >= 740) ficoCol = 1;
-  else if (fico >= 720) ficoCol = 2;
-  else if (fico >= 700) ficoCol = 3;
-  else if (fico >= 680) ficoCol = 4;
-  else if (fico >= 660) ficoCol = 5;
-  else if (fico >= 640) ficoCol = 6;
-  else ficoCol = 7;
-  return PMI_RATES[ltvRow][ficoCol];
-}
-
-// ─── VA Funding Fee Table ─────────────────────────────────────────────────────
-function getVaFundingFeeRate(dp: number, first: boolean, disability: boolean): number {
-  if (disability) return 0;
-  if (dp >= 10) return 0.0125;
-  if (dp >= 5) return 0.015;
-  return first ? 0.0215 : 0.033;
-}
 
 // ─── FHA MIP Rates (2026 HUD rates, effective since Jan 2023) ─────────────────
 const FHA_UFMIP_RATE = 0.0175;
@@ -161,6 +120,8 @@ interface LoanInputs {
   vaDisability: boolean;
   /** Annual PMI factor in percent (e.g. 0.48 = 0.48%/yr). null = auto from FICO/LTV table. */
   pmiOverride: number | null;
+  /** False until the user types a tax amount. Then propertyTax stays put when price changes. */
+  propertyTaxManual: boolean;
 }
 
 interface CalcResult {
@@ -176,9 +137,10 @@ const defaultInputs: LoanInputs = {
   loanType: "conventional", homePrice: 800000,
   downPaymentMode: "percent", downPaymentDollar: 160000, downPaymentPercent: 20,
   interestRate: 6.000, loanTerm: 30, ficoScore: 740,
-  propertyTax: 350, insurance: 150, hoaFees: 400,
+  propertyTax: defaultMonthlyPropertyTax(800000), insurance: 150, hoaFees: 400,
   vaFirstUse: true, vaDisability: false,
   pmiOverride: null,
+  propertyTaxManual: false,
 };
 
 const loanTypeLabels: Record<LoanType, string> = {
@@ -203,8 +165,8 @@ function calculate(inputs: LoanInputs): CalcResult {
   let vaFundingFee = 0, vaFundingFeeRate = 0, fhaUfmip = 0, monthlyMip = 0, monthlyPmi = 0, pmiAnnualRate = 0, pmiIsCustom = false;
 
   if (loanType === "va") {
-    vaFundingFeeRate = getVaFundingFeeRate(dpPercent, vaFirstUse, vaDisability);
-    vaFundingFee = baseLoanAmount * vaFundingFeeRate;
+    vaFundingFeeRate = lookupVaFundingFeeRate(dpPercent, vaFirstUse, vaDisability) / 100;
+    vaFundingFee = calcVaFundingFee(baseLoanAmount, dpPercent, vaFirstUse, vaDisability);
     totalLoanAmount = baseLoanAmount + vaFundingFee;
   } else if (loanType === "fha") {
     fhaUfmip = baseLoanAmount * FHA_UFMIP_RATE;
@@ -212,15 +174,15 @@ function calculate(inputs: LoanInputs): CalcResult {
     monthlyMip = (baseLoanAmount * getFhaMipRate(ltv)) / 12;
   } else if (loanType === "conventional" && ltv > 80) {
     pmiIsCustom = pmiOverride != null && pmiOverride >= 0;
-    pmiAnnualRate = pmiIsCustom ? pmiOverride! / 100 : getPmiRate(ltv, ficoScore);
+    pmiAnnualRate = pmiIsCustom ? pmiOverride! / 100 : pmiRateByCreditLtv(ltv, ficoScore);
     monthlyPmi = (baseLoanAmount * pmiAnnualRate) / 12;
   }
 
-  if (totalLoanAmount <= 0 || monthlyRate <= 0 || numPayments <= 0) {
+  if (totalLoanAmount <= 0 || interestRate < 0 || numPayments <= 0) {
     return { monthlyPI: 0, monthlyPmi: 0, monthlyMip: 0, totalMonthly: 0, totalInterest: 0, totalLoanAmount: 0, baseLoanAmount: 0, vaFundingFee: 0, vaFundingFeeRate: 0, vaFundingFeeWaived: false, fhaUfmip: 0, pmiAnnualRate: 0, pmiIsCustom: false, loanType, amortization: [], dpDollar, dpPercent, ltv };
   }
 
-  const monthlyPI = (totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments))) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+  const monthlyPI = calcMonthlyPI(totalLoanAmount, interestRate, loanTerm);
   const totalMonthly = monthlyPI + propertyTax + insurance + hoaFees + monthlyPmi + monthlyMip;
 
   const amortization: AmortizationRow[] = [];
@@ -273,12 +235,19 @@ function decodeInputsFromURL(): LoanInputs | null {
     interestRate: Number(params.get("ir")) || 6.0,
     loanTerm: ([15, 20, 30].includes(Number(params.get("term"))) ? Number(params.get("term")) as 15 | 20 | 30 : 30),
     ficoScore: Number(params.get("fico")) || 740,
-    propertyTax: Number(params.get("tax")) || 0,
+    propertyTax: (() => {
+      const price = Number(params.get("hp")) || 800000;
+      const auto = defaultMonthlyPropertyTax(price);
+      if (!params.has("tax")) return auto;
+      const typed = Number(params.get("tax"));
+      return Number.isFinite(typed) ? typed : auto;
+    })(),
     insurance: Number(params.get("ins")) || 0,
     hoaFees: Number(params.get("hoa")) || 0,
     vaFirstUse: params.get("vfu") !== "0",
     vaDisability: params.get("vd") === "1",
     pmiOverride: params.has("pmio") && !Number.isNaN(Number(params.get("pmio"))) ? Number(params.get("pmio")) : null,
+    propertyTaxManual: params.has("tax") && Math.abs((Number(params.get("tax")) || 0) - defaultMonthlyPropertyTax(Number(params.get("hp")) || 800000)) > 0.02,
   };
 }
 
@@ -314,7 +283,7 @@ function LoanInputPanel({ inputs, onChange, label }: { inputs: LoanInputs; onCha
       </div>
 
       <div className="space-y-3">
-        <InputField label="Home Purchase Price" value={inputs.homePrice} onChange={(v) => set({ homePrice: v })} prefix="$" step={10000} min={0} />
+        <InputField label="Home Purchase Price" value={inputs.homePrice} onChange={(v) => set(inputs.propertyTaxManual ? { homePrice: v } : { homePrice: v, propertyTax: defaultMonthlyPropertyTax(v) })} prefix="$" step={10000} min={0} />
 
         {/* Down Payment */}
         <div>
@@ -356,7 +325,7 @@ function LoanInputPanel({ inputs, onChange, label }: { inputs: LoanInputs; onCha
 
         {/* PMI Factor — auto-generated from the FICO/LTV table, manually editable */}
         {inputs.loanType === "conventional" && ltv > 80 && (() => {
-          const autoPct = Number((getPmiRate(ltv, inputs.ficoScore) * 100).toFixed(3));
+          const autoPct = Number((pmiRateByCreditLtv(ltv, inputs.ficoScore) * 100).toFixed(3));
           const isCustom = inputs.pmiOverride != null;
           return (
             <div>
@@ -411,7 +380,15 @@ function LoanInputPanel({ inputs, onChange, label }: { inputs: LoanInputs; onCha
         <div className="border-t border-border pt-3">
           <p className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground mb-3">Monthly Costs (Optional)</p>
           <div className="space-y-3">
-            <InputField label="Property Tax" value={inputs.propertyTax} onChange={(v) => set({ propertyTax: v })} prefix="$" suffix="/mo" step={25} min={0} />
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-sm font-body font-medium text-navy">Property Tax</span>
+                {inputs.propertyTaxManual && (
+                  <button type="button" onClick={() => set({ propertyTaxManual: false, propertyTax: defaultMonthlyPropertyTax(inputs.homePrice) })} className="text-[10px] font-body text-teal hover:underline">Reset to 0.35%</button>
+                )}
+              </div>
+              <InputField label="" value={inputs.propertyTax} onChange={(v) => set({ propertyTax: v, propertyTaxManual: true })} prefix="$" suffix="/mo" step={25} min={0} helpText={inputs.propertyTaxManual ? "Custom monthly tax. It stays when the price changes." : "Honolulu default: 0.35% of price per year. Tracks the price until you edit."} />
+            </div>
             <InputField label="Homeowner's Insurance" value={inputs.insurance} onChange={(v) => set({ insurance: v })} prefix="$" suffix="/mo" step={25} min={0} />
             <InputField label="HOA Fees" value={inputs.hoaFees} onChange={(v) => set({ hoaFees: v })} prefix="$" suffix="/mo" step={25} min={0} />
           </div>
@@ -564,8 +541,8 @@ export default function AdvancedCalculator() {
   const baseLoanAmount = calc.baseLoanAmount;
   const ltv = calc.ltv;
   const dpPercent = calc.dpPercent;
-  const exceedsConformingLimit = inputs.loanType === "conventional" && baseLoanAmount > CONFORMING_LIMIT;
-  const exceedsFhaLimit = inputs.loanType === "fha" && baseLoanAmount > CONFORMING_LIMIT;
+  const exceedsConformingLimit = inputs.loanType === "conventional" && baseLoanAmount > HONOLULU_CONFORMING_LIMIT_2026;
+  const exceedsFhaLimit = inputs.loanType === "fha" && baseLoanAmount > HONOLULU_FHA_LIMIT_2026;
 
   const handlePrint = useCallback(() => {
     window.print();
@@ -849,8 +826,8 @@ export default function AdvancedCalculator() {
                     <AlertTriangle className="w-4 h-4 text-gold mt-0.5 shrink-0" />
                     <p className="text-xs text-navy">
                       {exceedsConformingLimit
-                        ? `Your loan amount (${fmt(baseLoanAmount)}) exceeds the Honolulu County conforming limit of ${fmt(CONFORMING_LIMIT)}. Consider a Jumbo loan instead.`
-                        : `Your loan amount (${fmt(baseLoanAmount)}) exceeds the FHA loan limit for Honolulu County (${fmt(CONFORMING_LIMIT)}).`}
+                        ? `Your loan amount (${fmt(baseLoanAmount)}) exceeds the Honolulu County conforming limit of ${fmt(HONOLULU_CONFORMING_LIMIT_2026)}. Consider a Jumbo loan instead.`
+                        : `Your loan amount (${fmt(baseLoanAmount)}) exceeds the FHA loan limit for Honolulu County (${fmt(HONOLULU_FHA_LIMIT_2026)}).`}
                     </p>
                   </div>
                 )}

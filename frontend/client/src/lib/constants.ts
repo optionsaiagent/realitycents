@@ -55,6 +55,9 @@ export const IMAGE_ALTS = {
 /** 2026 FHFA single-family conforming limits used for reduced-entitlement VA math. */
 export const HONOLULU_CONFORMING_LIMIT_2026 = 1_249_125;
 
+/** HUD CY2026 FHA Forward Limits (CHUMS file hud.gov/pub/chums/cy2026-forward-limits.txt, Urban Honolulu HI003 1-unit $828,000), HUD ML 2025-23, effective case numbers on/after Jan 1 2026 */
+export const HONOLULU_FHA_LIMIT_2026 = 828_000;
+
 export const HAWAII_COUNTY_CONFORMING_LIMITS_2026 = [
   { id: "honolulu", name: "Honolulu County (Oahu)", limit: 1_249_125 },
   { id: "maui", name: "Maui County", limit: 1_299_500 },
@@ -63,7 +66,7 @@ export const HAWAII_COUNTY_CONFORMING_LIMITS_2026 = [
   { id: "hawaii", name: "Hawaii County (Big Island)", limit: 862_500 },
 ] as const;
 
-export const PRE_APPROVAL_URL = "https://www.jay-miller.com";
+export const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },

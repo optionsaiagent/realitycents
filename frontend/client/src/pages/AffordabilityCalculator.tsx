@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import { DEFAULT_PROPERTY_TAX_RATE, monthlyPI as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
@@ -62,7 +63,8 @@ export default function AffordabilityCalculator() {
   const [downPayment, setDownPayment] = useState(100000);
   const [interestRate, setInterestRate] = useState(6.000);
   const [loanTerm, setLoanTerm] = useState<15 | 30>(30);
-  const [propertyTaxRate, setPropertyTaxRate] = useState(0.35);
+  const [propertyTaxRate, setPropertyTaxRate] = useState(DEFAULT_PROPERTY_TAX_RATE);
+  const [taxMonthlyOverride, setTaxMonthlyOverride] = useState<number | null>(null);
   const [insurance, setInsurance] = useState(150);
   const [hoaFees, setHoaFees] = useState(400);
 
@@ -83,28 +85,24 @@ export default function AffordabilityCalculator() {
     // P&I = loanAmount * [r(1+r)^n] / [(1+r)^n - 1]
     // Let's iterate to find the max home price
 
-    const monthlyRate = interestRate / 100 / 12;
-    const numPayments = loanTerm * 12;
+    if (interestRate < 0 || loanTerm <= 0) return null;
 
-    if (monthlyRate <= 0 || numPayments <= 0) return null;
-
-    const factor = (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+    const factor = calcMonthlyPI(1, interestRate, loanTerm);
+    if (!(factor > 0)) return null;
 
     // P&I = (homePrice - downPayment) * factor
-    // Tax = homePrice * propertyTaxRate / 100 / 12
-    // (homePrice - downPayment) * factor + homePrice * taxRate/100/12 = maxPIBeforeTax
-    // homePrice * factor - downPayment * factor + homePrice * taxRate/1200 = maxPIBeforeTax
-    // homePrice * (factor + taxRate/1200) = maxPIBeforeTax + downPayment * factor
-    // homePrice = (maxPIBeforeTax + downPayment * factor) / (factor + taxRate/1200)
-
-    const monthlyTaxFactor = propertyTaxRate / 100 / 12;
-    const maxHomePrice = (maxPIBeforeTax + downPayment * factor) / (factor + monthlyTaxFactor);
+    // Tax = homePrice * propertyTaxRate / 100 / 12, unless the user typed a monthly amount.
+    const monthlyTaxFactor = taxMonthlyOverride == null ? propertyTaxRate / 100 / 12 : 0;
+    const fixedTax = taxMonthlyOverride ?? 0;
+    const budgetForPrice = maxPIBeforeTax - fixedTax;
+    if (taxMonthlyOverride != null && budgetForPrice <= 0) return null;
+    const maxHomePrice = (budgetForPrice + downPayment * factor) / (factor + monthlyTaxFactor);
 
     if (maxHomePrice <= downPayment || maxHomePrice <= 0) return null;
 
     const loanAmount = maxHomePrice - downPayment;
     const monthlyPI = loanAmount * factor;
-    const monthlyTax = maxHomePrice * monthlyTaxFactor;
+    const monthlyTax = taxMonthlyOverride ?? maxHomePrice * (propertyTaxRate / 100 / 12);
     const totalHousing = monthlyPI + monthlyTax + insurance + hoaFees;
     const actualDTI = grossIncome > 0 ? ((totalHousing + monthlyDebts) / grossIncome) * 100 : 0;
 
@@ -119,7 +117,7 @@ export default function AffordabilityCalculator() {
       maxTotalHousing: Math.round(maxTotalHousing),
       actualDTI,
     };
-  }, [grossIncome, monthlyDebts, dtiRatio, downPayment, interestRate, loanTerm, propertyTaxRate, insurance, hoaFees]);
+  }, [grossIncome, monthlyDebts, dtiRatio, downPayment, interestRate, loanTerm, propertyTaxRate, taxMonthlyOverride, insurance, hoaFees]);
 
   const pieData = result ? [
     { name: "Principal & Interest", value: result.monthlyPI },
@@ -205,7 +203,11 @@ export default function AffordabilityCalculator() {
                     <div className="border-t border-border pt-3">
                       <p className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground mb-3">Monthly Costs (Optional)</p>
                       <div className="space-y-3">
-                        <InputField label="Property Tax Rate (Annual)" value={propertyTaxRate} onChange={setPropertyTaxRate} suffix="%" step={0.05} min={0} max={5} helpText="Hawaii avg: ~0.28% (Honolulu County)" />
+                        <InputField label="Property Tax Rate (Annual)" value={propertyTaxRate} onChange={(v) => { setTaxMonthlyOverride(null); setPropertyTaxRate(v); }} suffix="%" step={0.05} min={0} max={5} helpText="Honolulu County residential default: 0.35% of price per year" />
+                        <InputField label="Or monthly property tax" value={taxMonthlyOverride ?? (result?.monthlyTax ?? 0)} onChange={setTaxMonthlyOverride} prefix="$" suffix="/mo" step={25} min={0} helpText={taxMonthlyOverride == null ? "Tracks the price at the rate above until you type the listing's tax." : "Custom monthly amount. It does not change when income or price changes."} />
+                        {taxMonthlyOverride != null && (
+                          <button type="button" onClick={() => { setTaxMonthlyOverride(null); setPropertyTaxRate(DEFAULT_PROPERTY_TAX_RATE); }} className="text-xs text-teal hover:underline">Reset to 0.35%</button>
+                        )}
                         <InputField label="Homeowner's Insurance" value={insurance} onChange={setInsurance} prefix="$" suffix="/mo" step={25} min={0} />
                         <InputField label="HOA Fees" value={hoaFees} onChange={setHoaFees} prefix="$" suffix="/mo" step={25} min={0} />
                       </div>
@@ -322,7 +324,7 @@ export default function AffordabilityCalculator() {
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle className="w-4 h-4 text-teal mt-0.5 shrink-0" />
-                        <p className="text-sm text-muted-foreground">Hawaii's property tax rates are among the lowest in the nation (~0.28% for owner-occupied in Honolulu County), but home prices are significantly higher than the national average.</p>
+                        <p className="text-sm text-muted-foreground">Hawaii's property tax rates are among the lowest in the nation (0.35% for residential property in Honolulu County), but home prices are significantly higher than the national average.</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <Home className="w-4 h-4 text-navy mt-0.5 shrink-0" />
