@@ -9,28 +9,70 @@ import PCSCallout from "@/components/PCSCallout";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { getBAH, type PayGrade } from "@/lib/militaryPayData";
+import {
+  DEFAULT_PROPERTY_TAX_RATE,
+  buildAmortization,
+  defaultMonthlyPropertyTax,
+  monthlyPI,
+  vaFundingFeeRate,
+} from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import { ArrowRight, DollarSign, Home as HomeIcon, TrendingUp, MapPin, Calculator } from "lucide-react";
 
-const BAH_DATA = [
-  { rank: "E-5", bah: 3663, rent: 3300, purchasePrice: 555000, piti: 3652, totalRent: 198000, principalPaid: 41034, appreciation: 136631, netEquity: 124234 },
-  { rank: "E-6", bah: 3861, rent: 3450, purchasePrice: 590000, piti: 3870, totalRent: 207000, principalPaid: 43621, appreciation: 145247, netEquity: 132069 },
-  { rank: "E-7", bah: 4098, rent: 3700, purchasePrice: 625000, piti: 4087, totalRent: 222000, principalPaid: 46209, appreciation: 153864, netEquity: 139903 },
-  { rank: "E-8", bah: 4302, rent: 3850, purchasePrice: 660000, piti: 4305, totalRent: 231000, principalPaid: 48797, appreciation: 162480, netEquity: 147738 },
-  { rank: "E-9", bah: 4518, rent: 4050, purchasePrice: 695000, piti: 4523, totalRent: 243000, principalPaid: 51384, appreciation: 171096, netEquity: 155572 },
-  { rank: "W-1", bah: 3930, rent: 3550, purchasePrice: 600000, piti: 3932, totalRent: 213000, principalPaid: 44361, appreciation: 147709, netEquity: 134307 },
-  { rank: "W-2", bah: 4182, rent: 3750, purchasePrice: 640000, piti: 4180, totalRent: 225000, principalPaid: 47318, appreciation: 157556, netEquity: 143261 },
-  { rank: "W-3", bah: 4434, rent: 4000, purchasePrice: 680000, piti: 4429, totalRent: 240000, principalPaid: 50275, appreciation: 167404, netEquity: 152215 },
-  { rank: "W-4", bah: 4551, rent: 4100, purchasePrice: 700000, piti: 4554, totalRent: 246000, principalPaid: 51754, appreciation: 172327, netEquity: 156692 },
-  { rank: "W-5", bah: 4692, rent: 4200, purchasePrice: 720000, piti: 4678, totalRent: 252000, principalPaid: 53233, appreciation: 177251, netEquity: 161169 },
-  { rank: "O-1", bah: 3702, rent: 3350, purchasePrice: 565000, piti: 3714, totalRent: 201000, principalPaid: 41773, appreciation: 139093, netEquity: 126473 },
-  { rank: "O-2", bah: 3909, rent: 3500, purchasePrice: 595000, piti: 3901, totalRent: 210000, principalPaid: 43991, appreciation: 146478, netEquity: 133188 },
-  { rank: "O-3", bah: 4434, rent: 4000, purchasePrice: 680000, piti: 4429, totalRent: 240000, principalPaid: 50275, appreciation: 167404, netEquity: 152215 },
-  { rank: "O-4", bah: 4719, rent: 4250, purchasePrice: 725000, piti: 4709, totalRent: 255000, principalPaid: 53602, appreciation: 178482, netEquity: 162288 },
-  { rank: "O-5", bah: 4959, rent: 4450, purchasePrice: 765000, piti: 4958, totalRent: 267000, principalPaid: 56560, appreciation: 188329, netEquity: 171242 },
-  { rank: "O-6", bah: 5001, rent: 4500, purchasePrice: 770000, piti: 4989, totalRent: 270000, principalPaid: 56929, appreciation: 189560, netEquity: 172361 },
+const COMPARE_RANKS: PayGrade[] = [
+  "E-5", "E-6", "E-7", "E-8", "E-9",
+  "W-1", "W-2", "W-3", "W-4", "W-5",
+  "O-1", "O-2", "O-3", "O-4", "O-5", "O-6",
 ];
+const COMPARE_RATE = 5.75;
+const COMPARE_INSURANCE = 200;
+const COMPARE_YEARS = 5;
+const COMPARE_APPRECIATION = 0.045;
+const COMPARE_SELL_COST = 0.06;
+const COMPARE_FEE_PCT = vaFundingFeeRate(0, true, false);
+
+function priceForBah(bah: number): number {
+  const feeMult = 1 + COMPARE_FEE_PCT / 100;
+  const perDollar = monthlyPI(1, COMPARE_RATE, 30);
+  const taxPerDollar = (DEFAULT_PROPERTY_TAX_RATE / 100) / 12;
+  const price = (bah - COMPARE_INSURANCE) / (feeMult * perDollar + taxPerDollar);
+  return Math.max(0, Math.round(price / 1000) * 1000);
+}
+
+const BAH_DATA = COMPARE_RANKS.map((rank) => {
+  const bah = getBAH(rank, true);
+  const rent = Math.round(bah * 0.9);
+  const purchasePrice = priceForBah(bah);
+  const loan = purchasePrice * (1 + COMPARE_FEE_PCT / 100);
+  const pi = monthlyPI(loan, COMPARE_RATE, 30);
+  const piti = Math.round(pi + defaultMonthlyPropertyTax(purchasePrice) + COMPARE_INSURANCE);
+  const principalPaid = Math.round(
+    buildAmortization(loan, COMPARE_RATE, 30)
+      .slice(0, COMPARE_YEARS)
+      .reduce((sum, row) => sum + row.totalPrincipal, 0)
+  );
+  const futureValue = purchasePrice * Math.pow(1 + COMPARE_APPRECIATION, COMPARE_YEARS);
+  const appreciation = Math.round(futureValue - purchasePrice);
+  const netEquity = Math.round(principalPaid + appreciation - COMPARE_SELL_COST * futureValue);
+  return {
+    rank,
+    bah,
+    rent,
+    purchasePrice,
+    piti,
+    totalRent: rent * 12 * COMPARE_YEARS,
+    principalPaid,
+    appreciation,
+    netEquity,
+  };
+});
+
+const equityLow = Math.min(...BAH_DATA.map((row) => row.netEquity));
+const equityHigh = Math.max(...BAH_DATA.map((row) => row.netEquity));
+const equitySpan = `$${Math.round(equityLow / 1000)}K–$${Math.round(equityHigh / 1000)}K`;
+const o3Example = BAH_DATA.find((row) => row.rank === "O-3") ?? BAH_DATA[0];
 
 const HIDDEN_ADVANTAGES = [
   {
@@ -39,7 +81,7 @@ const HIDDEN_ADVANTAGES = [
   },
   {
     title: "Hawaii's Lowest Property Tax Rate",
-    description: "At 0.31%, Honolulu County has the lowest property tax rate in the country. More of your payment goes to principal, not taxes.",
+    description: `At ${DEFAULT_PROPERTY_TAX_RATE}%, Honolulu County has the lowest property tax rate in the country. More of your payment goes to principal, not taxes.`,
   },
   {
     title: "Leverage with $0 Down",
@@ -70,7 +112,7 @@ const FAQS = [
   },
   {
     q: "How does the VA funding fee affect the math?",
-    a: "The VA funding fee (2.15% for first-time users) is financed into the loan, so it increases your loan amount slightly. But it's still a better deal than PMI on a conventional loan. The 5-year comparison above includes the funding fee, so the numbers are realistic.",
+    a: `The VA funding fee (${COMPARE_FEE_PCT}% for first-time users with less than 5% down) is financed into the loan, so it increases your loan amount slightly. But it's still a better deal than PMI on a conventional loan. The 5-year comparison above includes the funding fee, so the numbers are realistic.`,
   },
   {
     q: "How do I start the process before I arrive on island?",
@@ -91,7 +133,7 @@ export default function BAHBuyVsRent() {
     <Layout>
       <SEO
         title="Using Your BAH to Buy vs. Rent on Oahu — The Real Math | RealityCents"
-        description="Every service member asks: should I buy or rent in Hawaii? Here's the actual numbers. 5-year comparison shows buying builds $124K–$172K+ in equity vs. $0 renting. Full rank-by-rank breakdown for military buyers."
+        description={`Every service member asks: should I buy or rent in Hawaii? Here's the actual numbers. 5-year comparison shows buying builds ${equitySpan} in equity vs. $0 renting. Full rank-by-rank breakdown for military buyers.`}
         keywords="BAH buy vs rent Oahu, should I buy or rent Hawaii military, using BAH for mortgage Hawaii, military home buying Oahu, VA loan buy vs rent"
         url="https://realitycents.com/bah-buy-vs-rent-oahu"
       />
@@ -112,6 +154,8 @@ export default function BAHBuyVsRent() {
             <div className="flex flex-wrap gap-4">
               <a
                 href={PRE_APPROVAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white px-6 py-3 rounded-lg font-semibold transition"
               >
                 Start Your Pre-Approval
@@ -171,12 +215,12 @@ export default function BAHBuyVsRent() {
           </div>
 
           <p className="mt-4 text-sm text-slate-500">
-            Estimates assume 5.75% rate, VA funding fee financed (2.15%), Honolulu County property tax 0.31%, $200/mo insurance, single family home. Not a rate quote. Equity = principal paydown + appreciation, minus 6% selling costs.
+            Estimates assume {COMPARE_RATE}% rate, VA funding fee financed ({COMPARE_FEE_PCT}% first use, $0 down), Honolulu County property tax {DEFAULT_PROPERTY_TAX_RATE}%, ${COMPARE_INSURANCE}/mo insurance, single family home. Rent is about 90% of BAH. Not a rate quote. Equity = 5-year principal paydown + 4.5% appreciation, minus 6% selling costs on the appreciated value.
           </p>
 
           <div className="mt-8 p-6 bg-teal/10 border border-teal/30 rounded-lg">
             <p className="text-slate-800">
-              <strong>Bottom line:</strong> Over 5 years, buying puts you <strong>$124K–$172K+ ahead</strong> compared to renting. That's principal paydown + appreciation at 4.5% annually, minus selling costs. And that's assuming you sell — if you keep the property as a rental, you continue building equity long-term (though expect a small monthly gap between rent and your PITI with 100% financing).
+              <strong>Bottom line:</strong> Over 5 years, buying puts you <strong>{equitySpan} ahead</strong> compared to renting. That's principal paydown + appreciation at 4.5% annually, minus selling costs. And that's assuming you sell — if you keep the property as a rental, you continue building equity long-term (though expect a small monthly gap between rent and your PITI with 100% financing).
             </p>
           </div>
 
@@ -201,7 +245,7 @@ export default function BAHBuyVsRent() {
         <div className="container">
           <SectionHeading
             title="The 5-Year Equity Build — Where Your Money Goes"
-            description="Example: O-3 buying a $680K home near base"
+            description={`Example: O-3 buying a $${Math.round(o3Example.purchasePrice / 1000)}K home near base`}
             centered={false}
           />
 
@@ -213,7 +257,7 @@ export default function BAHBuyVsRent() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900">Principal Paid Down</h3>
               </div>
-              <p className="text-4xl font-bold text-teal mb-2">$50,275</p>
+              <p className="text-4xl font-bold text-teal mb-2">${o3Example.principalPaid.toLocaleString()}</p>
               <p className="text-slate-600">You own this much more of the home after 5 years of mortgage payments.</p>
             </div>
 
@@ -224,7 +268,7 @@ export default function BAHBuyVsRent() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900">Appreciation (4.5%/yr)</h3>
               </div>
-              <p className="text-4xl font-bold text-gold mb-2">$167,404</p>
+              <p className="text-4xl font-bold text-gold mb-2">${o3Example.appreciation.toLocaleString()}</p>
               <p className="text-slate-600">Based on Oahu's long-term trend of 4–5% annual appreciation.</p>
             </div>
 
@@ -235,7 +279,7 @@ export default function BAHBuyVsRent() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900">Total Equity After Sale</h3>
               </div>
-              <p className="text-4xl font-bold text-emerald-600 mb-2">$152,215</p>
+              <p className="text-4xl font-bold text-emerald-600 mb-2">${o3Example.netEquity.toLocaleString()}</p>
               <p className="text-slate-600">After 6% selling costs. That's what you walk away with.</p>
             </div>
           </div>
@@ -245,7 +289,7 @@ export default function BAHBuyVsRent() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <p className="text-slate-600 mb-2">Total rent paid:</p>
-                <p className="text-3xl font-bold text-red-600">$240,000</p>
+                <p className="text-3xl font-bold text-red-600">${o3Example.totalRent.toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-slate-600 mb-2">Equity at end:</p>
@@ -253,7 +297,7 @@ export default function BAHBuyVsRent() {
               </div>
             </div>
             <p className="mt-6 text-slate-700">
-              <strong>The difference:</strong> Buying leaves you $152,215 ahead. That's not just a number — that's a down payment on your next home, a college fund, or retirement savings.
+              <strong>The difference:</strong> Buying leaves you ${o3Example.netEquity.toLocaleString()} ahead. That's not just a number — that's a down payment on your next home, a college fund, or retirement savings.
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import PCSCallout from "@/components/PCSCallout";
 import SEO from "@/components/SEO";
-import { LENDER } from "@/lib/constants";
+import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
@@ -64,10 +64,12 @@ function buildShareUrl(
   debts: number,
   rate: number,
   dti: number,
-  tax: number,
+  tax: number | null,
   ins: number,
   hoa: number,
-  dp: number
+  dp: number,
+  firstUse: boolean,
+  disabilityExempt: boolean,
 ): string {
   const params = new URLSearchParams({
     grade,
@@ -77,11 +79,13 @@ function buildShareUrl(
     debts: String(debts),
     rate: String(rate),
     dti: String(dti),
-    tax: String(tax),
     ins: String(ins),
     hoa: String(hoa),
     dp: String(dp),
+    firstUse: firstUse ? "1" : "0",
+    exempt: disabilityExempt ? "1" : "0",
   });
+  if (tax != null) params.set("tax", String(tax));
   return `${window.location.origin}/military-calculator?${params.toString()}`;
 }
 
@@ -99,6 +103,8 @@ function parseSearchParams(search: string) {
     ins: params.get("ins"),
     hoa: params.get("hoa"),
     dp: params.get("dp"),
+    firstUse: params.get("firstUse"),
+    exempt: params.get("exempt"),
   };
 }
 
@@ -274,9 +280,11 @@ export default function MilitaryCalculator() {
   const [maxDTI, setMaxDTI] = useState(
     parsed.dti !== null ? Number(parsed.dti) : 55
   );
-  const [monthlyPropertyTax, setMonthlyPropertyTax] = useState(
-    parsed.tax !== null ? Number(parsed.tax) : 250
+  const [taxOverride, setTaxOverride] = useState<number | null>(
+    parsed.tax !== null ? Number(parsed.tax) : null
   );
+  const [vaFirstUse, setVaFirstUse] = useState(parsed.firstUse !== "0");
+  const [vaDisabilityExempt, setVaDisabilityExempt] = useState(parsed.exempt === "1");
   const [monthlyInsurance, setMonthlyInsurance] = useState(
     parsed.ins !== null ? Number(parsed.ins) : 150
   );
@@ -305,13 +313,16 @@ export default function MilitaryCalculator() {
         monthlyDebts,
         interestRate,
         maxDTI,
-        monthlyPropertyTax,
+        taxOverride,
         monthlyInsurance,
         monthlyHOA,
-        downPayment
+        downPayment,
+        vaFirstUse,
+        vaDisabilityExempt,
       ),
-    [income.totalMonthlyIncome, monthlyDebts, interestRate, maxDTI, monthlyPropertyTax, monthlyInsurance, monthlyHOA, downPayment]
+    [income.totalMonthlyIncome, monthlyDebts, interestRate, maxDTI, taxOverride, monthlyInsurance, monthlyHOA, downPayment, vaFirstUse, vaDisabilityExempt]
   );
+  const shownPropertyTax = taxOverride ?? purchasePower.monthlyPropertyTax;
 
   const gradeOptions = PAY_GRADE_OPTIONS.map((g) => ({
     value: g,
@@ -380,10 +391,12 @@ export default function MilitaryCalculator() {
       monthlyDebts,
       interestRate,
       maxDTI,
-      monthlyPropertyTax,
+      taxOverride,
       monthlyInsurance,
       monthlyHOA,
-      downPayment
+      downPayment,
+      vaFirstUse,
+      vaDisabilityExempt,
     );
     try {
       await navigator.clipboard.writeText(url);
@@ -393,7 +406,7 @@ export default function MilitaryCalculator() {
     } catch {
       toast.error("Failed to copy link — try again");
     }
-  }, [grade, yos, numDependents, hasDependents, monthlyDebts, interestRate, maxDTI, monthlyPropertyTax, monthlyInsurance, monthlyHOA, downPayment]);
+  }, [grade, yos, numDependents, hasDependents, monthlyDebts, interestRate, maxDTI, taxOverride, monthlyInsurance, monthlyHOA, downPayment, vaFirstUse, vaDisabilityExempt]);
 
   // ─── Share: Download results as image (Canvas API) ──────────────────────
   const handleDownloadImage = useCallback(async () => {
@@ -747,14 +760,21 @@ export default function MilitaryCalculator() {
                     <div className="space-y-3">
                       <InputField
                         label="Property Taxes"
-                        value={monthlyPropertyTax}
-                        onChange={setMonthlyPropertyTax}
+                        value={shownPropertyTax}
+                        onChange={setTaxOverride}
                         prefix="$"
                         suffix="/mo"
                         step={25}
                         min={0}
-                        helpText="Hawaii avg ~0.35% effective rate (~$350/mo on $1.2M)"
+                        helpText={taxOverride == null
+                          ? "Honolulu default: 0.35% of the purchase price per year. Tracks price until you edit."
+                          : "Custom monthly tax. It stays fixed instead of tracking the price."}
                       />
+                      {taxOverride != null && (
+                        <button type="button" onClick={() => setTaxOverride(null)} className="text-xs text-teal hover:underline -mt-1">
+                          Reset to 0.35% of price
+                        </button>
+                      )}
                       <InputField
                         label="Homeowner's Insurance"
                         value={monthlyInsurance}
@@ -790,6 +810,18 @@ export default function MilitaryCalculator() {
                       min={0}
                       helpText="VA allows $0 down — adding funds increases your max purchase price"
                     />
+                  </div>
+
+                  <div className="border-t border-border pt-4 mt-4 space-y-3">
+                    <p className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground">VA Funding Fee</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <button type="button" onClick={() => setVaFirstUse(true)} className={`py-2 rounded-md text-xs font-body font-medium transition-all ${vaFirstUse ? "bg-teal text-white" : "bg-white text-muted-foreground border border-border"}`}>First use</button>
+                      <button type="button" onClick={() => setVaFirstUse(false)} className={`py-2 rounded-md text-xs font-body font-medium transition-all ${!vaFirstUse ? "bg-teal text-white" : "bg-white text-muted-foreground border border-border"}`}>Subsequent use</button>
+                    </div>
+                    <label className="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                      <input type="checkbox" checked={vaDisabilityExempt} onChange={(e) => setVaDisabilityExempt(e.target.checked)} className="rounded border-border text-teal focus:ring-teal" />
+                      Disability exempt (no funding fee)
+                    </label>
                   </div>
                 </div>
               </div>
@@ -867,7 +899,7 @@ export default function MilitaryCalculator() {
                       Estimated VA Loan Purchase Power
                     </h3>
                     <p className="text-xs text-muted-foreground mt-0.5">
-                      {downPayment > 0 ? fmt(downPayment) : "$0"} down payment, 30-year fixed, 2.15% VA funding fee
+                      {downPayment > 0 ? fmt(downPayment) : "$0"} down payment, 30-year fixed, {purchasePower.fundingFeeRate === 0 ? "VA funding fee waived (disability exemption)" : `${purchasePower.fundingFeeRate}% VA funding fee (${vaFirstUse ? "first" : "subsequent"} use)`}
                     </p>
                   </div>
                   <div className="px-6 py-6">

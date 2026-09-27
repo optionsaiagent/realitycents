@@ -190,8 +190,18 @@ export interface ScenarioResult {
 
 // ─── Hawaii County Tax Rates ─────────────────────────────────────────────────
 
+/** % of price per year, Honolulu County residential (default for all calculators). */
+export const DEFAULT_PROPERTY_TAX_RATE = 0.35;
+
+/** Monthly property tax from an annual percent of price. Rounded to the cent. */
+export function defaultMonthlyPropertyTax(price: number, annualRatePercent: number = DEFAULT_PROPERTY_TAX_RATE): number {
+  if (!(price > 0) || !(annualRatePercent > 0)) return 0;
+  return Math.round(((price * (annualRatePercent / 100)) / 12) * 100) / 100;
+}
+
 export const HAWAII_TAX_RATES: Record<string, number> = {
-  "Honolulu": 0.35,
+  // County selector label. Honolulu tracks DEFAULT_PROPERTY_TAX_RATE.
+  "Honolulu": DEFAULT_PROPERTY_TAX_RATE,
   "Maui": 0.55,
   "Kauai": 0.59,
   "Hawaii County": 0.99,
@@ -211,7 +221,7 @@ export function defaultScenario(label: string, idx: number): ScenarioInput {
     termYears: 30,
     discountPoints: 0,
     lenderCredits: 0,
-    propertyTaxRate: 0.35,
+    propertyTaxRate: DEFAULT_PROPERTY_TAX_RATE,
     propertyTaxOverride: 0,
     insurance: 200,
     hoa: 0,
@@ -241,17 +251,21 @@ export function defaultScenario(label: string, idx: number): ScenarioInput {
 
 // ─── VA Funding Fee ──────────────────────────────────────────────────────────
 
+/**
+ * 2026 VA purchase funding-fee rate, as a percent (2.15 means 2.15% of the base loan).
+ * First use: <5% down 2.15%, 5–<10% 1.5%, ≥10% 1.25%.
+ * Subsequent use: <5% down 3.3%, 5–<10% 1.5%, ≥10% 1.25%.
+ * Disability-exempt borrowers pay 0.
+ */
+export function vaFundingFeeRate(downPct: number, firstUse: boolean, disabilityExempt: boolean): number {
+  if (disabilityExempt) return 0;
+  if (downPct >= 10) return 1.25;
+  if (downPct >= 5) return 1.5;
+  return firstUse ? 2.15 : 3.3;
+}
+
 export function vaFundingFee(baseLoan: number, downPct: number, firstUse: boolean, disabled: boolean): number {
-  if (disabled) return 0;
-  let rate: number;
-  if (downPct >= 10) {
-    rate = 1.25; // same for first and subsequent use
-  } else if (downPct >= 5) {
-    rate = 1.5; // same for first and subsequent use
-  } else {
-    rate = firstUse ? 2.15 : 3.3;
-  }
-  return baseLoan * (rate / 100);
+  return baseLoan * (vaFundingFeeRate(downPct, firstUse, disabled) / 100);
 }
 
 // ─── FHA MIP ─────────────────────────────────────────────────────────────────
@@ -270,24 +284,84 @@ export function fhaMonthlyMIP(baseLoan: number, ltv: number, termYears: number):
 }
 
 // ─── Conventional PMI ────────────────────────────────────────────────────────
+// Best available annual rates across MGIC, Radian, and Arch MI (Feb 2026).
+// Fixed-rate, >20yr term, primary residence, purchase/rate-term refi.
+// Coverage: 35% (97%), 25% (95%), 25% (90%), 12% (85%) per GSE requirements.
+// Rates in PMI_RATES are annual decimals (0.0058 = 0.58%/yr).
 
-export function conventionalPMI(baseLoan: number, ltv: number): number {
+export const PMI_FICO_TIERS = [760, 740, 720, 700, 680, 660, 640, 620] as const;
+export const PMI_LTV_TIERS = [
+  { min: 95.01, max: 97, label: "95.01–97%" },
+  { min: 90.01, max: 95, label: "90.01–95%" },
+  { min: 85.01, max: 90, label: "85.01–90%" },
+  { min: 80.01, max: 85, label: "80.01–85%" },
+] as const;
+
+export const PMI_RATES: number[][] = [
+  // 95.01-97% LTV (35% coverage): 760+, 740, 720, 700, 680, 660, 640, 620-639
+  [0.0058, 0.0070, 0.0087, 0.0099, 0.0121, 0.0154, 0.0165, 0.0186],
+  // 90.01-95% LTV (25% coverage)
+  [0.0034, 0.0048, 0.0059, 0.0068, 0.0087, 0.0111, 0.0119, 0.0125],
+  // 85.01-90% LTV (25% coverage)
+  [0.0022, 0.0038, 0.0046, 0.0055, 0.0065, 0.0090, 0.0091, 0.0094],
+  // 80.01-85% LTV (12% coverage)
+  [0.0017, 0.0019, 0.0022, 0.0023, 0.0026, 0.0032, 0.0034, 0.0041],
+];
+
+/** Annual PMI rate as a decimal (0.0058 = 0.58%) from the credit × LTV table. 0 at or below 80% LTV. */
+export function pmiRateByCreditLtv(ltv: number, fico: number): number {
   if (ltv <= 80) return 0;
-  let annualRate: number;
-  if (ltv > 95) annualRate = 0.40;
-  else if (ltv > 90) annualRate = 0.30;
-  else if (ltv > 85) annualRate = 0.20;
-  else annualRate = 0.10;
-  return (baseLoan * annualRate / 100) / 12;
+  let ltvRow = PMI_RATES.length - 1;
+  for (let i = 0; i < PMI_LTV_TIERS.length; i++) {
+    if (ltv > PMI_LTV_TIERS[i].min) { ltvRow = i; break; }
+  }
+  let ficoCol = PMI_FICO_TIERS.length - 1;
+  if (fico >= 760) ficoCol = 0;
+  else if (fico >= 740) ficoCol = 1;
+  else if (fico >= 720) ficoCol = 2;
+  else if (fico >= 700) ficoCol = 3;
+  else if (fico >= 680) ficoCol = 4;
+  else if (fico >= 660) ficoCol = 5;
+  else if (fico >= 640) ficoCol = 6;
+  return PMI_RATES[ltvRow][ficoCol];
+}
+
+/**
+ * Annual PMI as a percent (0.40 means 0.40%/yr).
+ * Uses the credit × LTV table when `fico` is supplied; otherwise the LTV-only tiers.
+ */
+export function conventionalPmiAnnualPercent(ltv: number, fico?: number): number {
+  if (ltv <= 80) return 0;
+  if (fico != null && Number.isFinite(fico)) return pmiRateByCreditLtv(ltv, fico) * 100;
+  if (ltv > 95) return 0.40;
+  if (ltv > 90) return 0.30;
+  if (ltv > 85) return 0.20;
+  return 0.10;
+}
+
+/** Monthly conventional PMI dollars. Pass `fico` to use the credit × LTV table. */
+export function conventionalPMI(baseLoan: number, ltv: number, fico?: number): number {
+  return (baseLoan * conventionalPmiAnnualPercent(ltv, fico) / 100) / 12;
 }
 
 // ─── Core P&I ────────────────────────────────────────────────────────────────
 
-export function monthlyPI(loanAmount: number, annualRate: number, termYears: number): number {
-  if (loanAmount <= 0 || annualRate <= 0 || termYears <= 0) return 0;
+/**
+ * Monthly principal and interest.
+ * `annualRate` is a percent (5.75 means 5.75%), the convention used across this site.
+ * A rate of 0 (or below) is interest-free: payment = principal / number of months.
+ */
+export function monthlyPIFromMonths(principal: number, annualRate: number, termMonths: number): number {
+  if (principal <= 0 || termMonths <= 0) return 0;
+  if (!(annualRate > 0)) return principal / termMonths;
   const r = annualRate / 100 / 12;
-  const n = termYears * 12;
-  return loanAmount * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  const pow = Math.pow(1 + r, termMonths);
+  return principal * (r * pow) / (pow - 1);
+}
+
+export function monthlyPI(loanAmount: number, annualRate: number, termYears: number): number {
+  if (termYears <= 0) return 0;
+  return monthlyPIFromMonths(loanAmount, annualRate, termYears * 12);
 }
 
 // ─── APR Calculation (Newton's method) ───────────────────────────────────────
@@ -494,10 +568,7 @@ export function amortizeArmPath(
       if (annualRate !== prevRate) {
         // Recast payment over remaining term at the new rate
         const remaining = termMonths - m;
-        const r = annualRate / 100 / 12;
-        payment = r > 0
-          ? balance * (r * Math.pow(1 + r, remaining)) / (Math.pow(1 + r, remaining) - 1)
-          : balance / remaining;
+        payment = monthlyPIFromMonths(balance, annualRate, remaining);
         prevRate = annualRate;
       }
       if (k === 0 || yearStartPI === 0) {

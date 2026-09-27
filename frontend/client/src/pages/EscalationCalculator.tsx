@@ -9,6 +9,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
+import { defaultMonthlyPropertyTax, monthlyPIFromMonths as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
@@ -118,18 +119,6 @@ function InputField({
   );
 }
 
-// ─── P&I Calculation ──────────────────────────────────────────────────────────
-function calcMonthlyPI(
-  principal: number,
-  annualRate: number,
-  termMonths: number
-): number {
-  if (principal <= 0 || termMonths <= 0) return 0;
-  const r = annualRate / 100 / 12;
-  if (r <= 0) return principal / termMonths;
-  return (principal * (r * Math.pow(1 + r, termMonths))) / (Math.pow(1 + r, termMonths) - 1);
-}
-
 export default function EscalationCalculator({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
@@ -150,7 +139,8 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
   const [downPct, setDownPct] = useState(20);
   const [interestRate, setInterestRate] = useState(6.875);
   const [loanTerm, setLoanTerm] = useState(30);
-  const [monthlyTax, setMonthlyTax] = useState(250);
+  const [taxOverride, setTaxOverride] = useState<number | null>(null);
+  const monthlyTax = taxOverride ?? defaultMonthlyPropertyTax(listPrice);
   const [monthlyInsurance, setMonthlyInsurance] = useState(150);
   const [monthlyHOA, setMonthlyHOA] = useState(400);
   const [customEscalation, setCustomEscalation] = useState(40000);
@@ -174,7 +164,7 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
   // ─── Escalation Steps ──────────────────────────────────────────────────────
   const escalationAmounts = [0, 10000, 25000, 50000, 75000, 100000, customEscalation];
   // Remove duplicates and sort
-  const uniqueEscalations = [...new Set(escalationAmounts)].sort((a, b) => a - b);
+  const uniqueEscalations = Array.from(new Set(escalationAmounts)).sort((a, b) => a - b);
 
   // ─── Calculations ──────────────────────────────────────────────────────────
   const escalationData = useMemo(() => {
@@ -184,14 +174,16 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
       const offerPrice = listPrice + escalation;
       const downPayment = offerPrice * (downPct / 100);
       const loanAmount = offerPrice - downPayment;
+      const rowTax = taxOverride ?? defaultMonthlyPropertyTax(offerPrice);
+      const baseTax = taxOverride ?? defaultMonthlyPropertyTax(listPrice);
       const monthlyPI = calcMonthlyPI(loanAmount, interestRate, termMonths);
-      const totalPITIA = monthlyPI + monthlyTax + monthlyInsurance + monthlyHOA;
+      const totalPITIA = monthlyPI + rowTax + monthlyInsurance + monthlyHOA;
 
       // Baseline (list price)
       const baseDown = listPrice * (downPct / 100);
       const baseLoan = listPrice - baseDown;
       const basePI = calcMonthlyPI(baseLoan, interestRate, termMonths);
-      const basePITIA = basePI + monthlyTax + monthlyInsurance + monthlyHOA;
+      const basePITIA = basePI + baseTax + monthlyInsurance + monthlyHOA;
 
       const monthlyIncrease = totalPITIA - basePITIA;
       const dailyCost = monthlyIncrease / 30;
@@ -206,7 +198,7 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
         dailyCost,
       };
     });
-  }, [listPrice, downPct, interestRate, loanTerm, monthlyTax, monthlyInsurance, monthlyHOA, uniqueEscalations]);
+  }, [listPrice, downPct, interestRate, loanTerm, taxOverride, monthlyInsurance, monthlyHOA, uniqueEscalations]);
 
   // ─── Appraisal Gap ─────────────────────────────────────────────────────────
   const appraisalGapData = useMemo(() => {
@@ -356,12 +348,20 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
                   <InputField
                     label="Property Tax"
                     value={monthlyTax}
-                    onChange={setMonthlyTax}
+                    onChange={setTaxOverride}
                     prefix="$"
                     suffix="/mo"
                     step={25}
                     min={0}
+                    helpText={taxOverride == null
+                      ? "Honolulu default: 0.35% of each price. Tracks until you type the listing's tax."
+                      : "Custom monthly tax. It stays fixed across escalation prices."}
                   />
+                  {taxOverride != null && (
+                    <button type="button" onClick={() => setTaxOverride(null)} className="text-xs text-teal hover:underline -mt-1">
+                      Reset to 0.35% of price
+                    </button>
+                  )}
                   <InputField
                     label="Insurance"
                     value={monthlyInsurance}

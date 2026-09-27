@@ -6,7 +6,8 @@ import { useState, useMemo, useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
-import { IMAGES, LENDER } from "@/lib/constants";
+import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { defaultMonthlyPropertyTax, monthlyPI as calcMonthlyPI } from "@/lib/loanMath";
 import ContactActions from "@/components/ContactActions";
 import { trpc } from "@/lib/trpc";
 import EmailResults from "@/components/EmailResults";
@@ -106,19 +107,6 @@ function InputField({
   );
 }
 
-// ─── P&I Calculation ──────────────────────────────────────────────────────────
-function calcMonthlyPI(
-  principal: number,
-  annualRate: number,
-  termYears: number
-): number {
-  if (principal <= 0) return 0;
-  const r = annualRate / 100 / 12;
-  const n = termYears * 12;
-  if (r <= 0) return principal / n;
-  return (principal * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
-}
-
 export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
@@ -160,7 +148,8 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
   const [purchasePrice, setPurchasePrice] = useState(800000);
   const [downPaymentPct, setDownPaymentPct] = useState(25);
   const [interestRate, setInterestRate] = useState(7.5);
-  const [monthlyTax, setMonthlyTax] = useState(250);
+  const [taxOverride, setTaxOverride] = useState<number | null>(null);
+  const monthlyTax = taxOverride ?? defaultMonthlyPropertyTax(purchasePrice);
   const [monthlyInsurance, setMonthlyInsurance] = useState(150);
   const [monthlyHOA, setMonthlyHOA] = useState(600);
   const [vacancyRate, setVacancyRate] = useState(5);
@@ -506,13 +495,20 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
                   <InputField
                     label="Property Tax"
                     value={monthlyTax}
-                    onChange={setMonthlyTax}
+                    onChange={setTaxOverride}
                     prefix="$"
                     suffix="/mo"
                     step={25}
                     min={0}
-                    helpText="Hawaii avg: ~$250/mo on $800K (0.35% rate)"
+                    helpText={taxOverride == null
+                      ? "Honolulu default: 0.35% of price per year. Tracks the price until you edit."
+                      : "Custom monthly tax from the listing. It stays put when the price changes."}
                   />
+                  {taxOverride != null && (
+                    <button type="button" onClick={() => setTaxOverride(null)} className="text-xs text-teal hover:underline -mt-1">
+                      Reset to 0.35% of price
+                    </button>
+                  )}
                   <InputField
                     label="Insurance"
                     value={monthlyInsurance}

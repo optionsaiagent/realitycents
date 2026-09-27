@@ -76,9 +76,9 @@ function Router() {
         <Route path={"/va-loan-tripler"} component={VALoanTripler} />
         <Route path={"/bah-buy-vs-rent-oahu"} component={BAHBuyVsRent} />
         <Route path={"/loan-compare"} component={LoanCompare} />
-        <Route path={"/dscr-calculator"} component={DSCRCalculator} />
-        <Route path={"/assumable-calculator"} component={AssumableCalculator} />
-        <Route path={"/escalation-calculator"} component={EscalationCalculator} />
+        <Route path={"/dscr-calculator"} component={() => <DSCRCalculator />} />
+        <Route path={"/assumable-calculator"} component={() => <AssumableCalculator />} />
+        <Route path={"/escalation-calculator"} component={() => <EscalationCalculator />} />
         <Route path={"/heloc-sweep-calculator"} component={HelocSweepCalculator} />
         <Route path={"/agents"} component={Agents} />
         <Route path={"/advisors"} component={Advisors} />

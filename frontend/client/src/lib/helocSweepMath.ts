@@ -5,6 +5,8 @@
  * fixed-rate mortgage amortization.
  */
 
+import { monthlyPIFromMonths } from "./loanMath";
+
 export type DepositFrequency = "monthly" | "weekly" | "bi-weekly" | "semi-monthly";
 export type ExtraDepositFrequency = "one-time" | "annually";
 
@@ -258,8 +260,7 @@ export function simulateTraditional(
 ): TraditionalResult {
   const months = termYears * 12;
   const r = annualRate / 100 / 12;
-  const payment =
-    r > 0 ? (principal * r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1) : principal / months;
+  const payment = monthlyPIFromMonths(principal, annualRate, months);
 
   let balance = principal;
   let totalInterest = 0;
@@ -422,12 +423,7 @@ export function solveEffectiveAPR(
   if (principal <= 0) return 0;
   if (targetTotalInterest <= 0) return 0;
   const MONTHS = 360;
-  const totalPaid = (r: number): number => {
-    const rm = r / 100 / 12;
-    if (rm === 0) return principal;
-    const pmt = (principal * rm * Math.pow(1 + rm, MONTHS)) / (Math.pow(1 + rm, MONTHS) - 1);
-    return pmt * MONTHS;
-  };
+  const totalPaid = (r: number): number => monthlyPIFromMonths(principal, r, MONTHS) * MONTHS;
   const target = principal + targetTotalInterest;
   let lo = 0;
   let hi = 30;
