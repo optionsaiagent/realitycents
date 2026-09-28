@@ -619,6 +619,11 @@ export default function MilitaryCalculator() {
               and dependency status to see your full income breakdown including
               Base Pay, BAH, BAS, and COLA.
             </p>
+            <p className="mt-4">
+              <Link href="/ai" className="text-teal font-body font-semibold hover:underline">
+                Ask your AI assistant for VA purchase power by rank
+              </Link>
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">

@@ -223,7 +223,7 @@ export function defaultScenario(label: string, idx: number): ScenarioInput {
     lenderCredits: 0,
     propertyTaxRate: DEFAULT_PROPERTY_TAX_RATE,
     propertyTaxOverride: 0,
-    insurance: 200,
+    insurance: 150,
     hoa: 0,
     hoaTransferFee: 0,
     vaFirstUse: true,

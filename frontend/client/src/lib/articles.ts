@@ -279,7 +279,7 @@ Eligibility basics: first-time buyers (generally, no home ownership in the past 
 
 ## Path 3: Seller Concessions — Let the Seller Pay Your Way In
 
-Even if you have a down payment covered (through VA, gifts, or savings), you still face closing costs — typically 1.5–2% of the purchase price in Hawaii. On a $700,000 home, that's $10,500–$14,000.
+Even if you have a down payment covered (through VA, gifts, or savings), you still face closing costs, typically 2–5% of the purchase price in Hawaii, with a planning budget of about 3–4%. On a $700,000 home, that budget is roughly $21,000–$28,000.
 
 Seller concessions can eliminate this entirely. And right now, the leverage is on your side: per Redfin, sellers gave concessions in 46.2% of U.S. home sales in May 2026 — the highest share for any May on record — because there are far more sellers than buyers in the market. On Oahu, the condo market in particular has shifted firmly into buyer's territory, making concession requests increasingly successful.
 
@@ -689,7 +689,7 @@ This is not a theoretical scenario. This is how we structure VA purchases for mi
 
 FHA loans allow the seller to contribute up to **6% of the purchase price** toward the buyer's closing costs, prepaids, and discount points. On a $600,000 Oahu condo, that is a maximum credit of $36,000.
 
-Because closing costs and prepaids in Hawaii typically run only 1.5–2% of the purchase price, FHA buyers almost always have significant room left within the 6% cap to buy down their interest rate — a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
+Because closing costs and prepaids in Hawaii typically run about 2–5% of the purchase price, FHA buyers often have room left within the 6% cap to buy down their interest rate, a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
 
 ### Real Example: $650,000 Oahu Condo, FHA Loan, 3.5% Down
 
@@ -811,7 +811,7 @@ Work with a lender who understands the exact concession limits for your loan typ
 
 If you are buying in Hawaii and want to know exactly how much seller credit you can ask for — and how to structure the offer so the seller says yes — I can run the numbers for your specific situation. Every loan type has different limits, and the optimal strategy depends on your down payment, the property type, and how long the home has been on the market.
 
-[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 ---
 
@@ -1065,7 +1065,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes — if the condo **project** is VA-approved. About 1,766 Oahu projects are on the VA's accepted list, and the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you check any building in seconds. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability" — a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,769 Oahu projects (VA list as of Sep 15, 2026) are on the VA's accepted list, and the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you check any building in seconds. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -2301,7 +2301,7 @@ Use the RealityCents Buydown Calculator to compare 1/1, 2/1, and 3/2/1 buydown s
 
 ---
 
-*Ready to get pre-approved and start negotiating? [Apply with Jay Miller at CMG Home Loans](https://www.cmghomeloans.com/mysite/jay-miller) or call Jay Miller at (808) 429-0811.*
+*Ready to get pre-approved and start negotiating? [Apply with Jay Miller at CMG Home Loans](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call Jay Miller at (808) 429-0811.*
 
 For a complete breakdown of all the costs involved in a Hawaii home purchase, see our guide to [understanding closing costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii). If you are a first-time buyer, our [First-Time Homebuyer's Guide to Hawaii](/knowledge-base/first-time-homebuyer-guide-hawaii) covers the full process from pre-approval to closing.`,
   },
@@ -2418,7 +2418,7 @@ That is exactly where I come in.
 
 **Ready to explore your Hawaii investment financing options?**
 
-[**Get Pre-Approved Today →**](https://www.cmghomeloans.com/mysite/jay-miller)
+[**Get Pre-Approved Today →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 Contact me at RealityCents for personalized guidance on DSCR loans, investment property financing, and Hawaii-specific mortgage strategy. With deep knowledge of the local market and access to a wide range of investor loan programs, I can help you determine whether a DSCR loan is the right tool for your next Hawaii acquisition.
 
@@ -2607,7 +2607,7 @@ Do not rely on TikTok advice to structure one of the largest financial decisions
 
 Want to estimate your total qualifying income right now? Use our [Military Buying Power Calculator](/military-calculator) to see your Base Pay, BAH, BAS, and COLA breakdown and estimated VA loan purchase price — all based on 2026 Honolulu rates.
 
-[**Get Pre-Approved with Jay Miller at CMG Home Loans →**](https://www.cmghomeloans.com/mysite/jay-miller)
+[**Get Pre-Approved with Jay Miller at CMG Home Loans →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about how VA multi-family rules apply to your specific situation? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -2693,7 +2693,7 @@ If you're working through your numbers for a home purchase in Hawaii, I'm happy 
 
 ---
 
-*Ready to run the numbers? [Get your pre-approval started with Jay Miller at CMG Home Loans](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Ready to run the numbers? [Get your pre-approval started with Jay Miller at CMG Home Loans](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 *This content is for educational purposes only and does not constitute financial or tax advice. Consult your plan administrator and a qualified financial advisor before making retirement account decisions.*
 
@@ -2777,7 +2777,7 @@ Whether you are a first-time buyer trying to understand how a flood zone impacts
 
 **Ready to see exactly what you qualify for in today's market?** Let's get your pre-approval started.
 
-[**Get Pre-Approved with Jay Miller at CMG Home Loans**](https://www.cmghomeloans.com/mysite/jay-miller)
+[**Get Pre-Approved with Jay Miller at CMG Home Loans**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about how these new flood maps affect your specific situation? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -2952,8 +2952,8 @@ If you are serious about buying in Hawaii, here is your action plan:
 The question is not whether you can afford to buy in Hawaii. The question is which path gets you there. The math is the math — but the math has more solutions than most people realize.
 
 ---
-*Jay Miller | NMLS #657301 | CMG Home Loans NMLS #2475890*
-*Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
+*Have questions about your specific situation? [Get pre-approved](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 ---
 *Last Updated: April 2026*`,
@@ -3182,8 +3182,8 @@ If you are buying in Hawaii and want to explore how seller concessions could wor
 4. **Talk to a local lender.** Seller concession strategy is highly specific to your loan type, down payment, rate environment, and how long you plan to stay. A 15-minute conversation can clarify which approach saves you the most money.
 
 ---
-*Jay Miller | NMLS #657301 | CMG Home Loans NMLS #2475890*
-*Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
+*Have questions about your specific situation? [Get pre-approved](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 ---
 *Last Updated: May 2026*`,
@@ -3369,8 +3369,8 @@ The data says the window is open. It doesn't say how long it stays open. If you'
 
 ---
 
-*Jay Miller | NMLS #657301 | CMG Home Loans NMLS #2475890*
-*Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
+*Have questions about your specific situation? [Get pre-approved](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 ---
 
@@ -3478,7 +3478,7 @@ For the first time, a Hawaii homeowner can turn their current home into a rental
 
 To model the payment on the next home itself, run your scenario in the [Advanced Mortgage Calculator](/advanced-calculator). And if you're buying a condo, note that Fannie Mae's [condo project review rules are also changing in 2026](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) — the two updates together reshape a lot of Oahu purchase plans.
 
-Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
+Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
 
 ---
 *Sources: Fannie Mae Selling Guide Announcement SEL-2026-08 (September 2, 2026); Fannie Mae Selling Guide B3-3.8-05, Rental Income from Non-Subject Property: Departing Residence (09/02/2026); B3-3.8-01, General Rental Income Information (09/02/2026); B3-6-06, Qualifying Impact of Other Real Estate Owned.*
@@ -3805,7 +3805,7 @@ The VA buyer preserves $42,500–$170,000 of cash and pays no monthly insurance;
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project — its declaration, bylaws, budget, and governance — which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters — and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,766 approved projects.
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,769 approved projects (as of Sep 15, 2026).
 
 ## What each review actually looks at
 
@@ -3938,7 +3938,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,766 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,769 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 
@@ -4223,7 +4223,7 @@ For context on how much income you need to qualify at these price points, see ou
 
 The Hale Kamaʻāina program is offered through participating lenders enrolled with HHFDC — and **CMG Home Loans is now one of them**. For the full list of approved lenders and to confirm fund availability, visit [dbedt.hawaii.gov/hhfdc/hk-mortgage-program/](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/).
 
-Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
+Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
 
 ---
 *Sources: Hawaii Housing Finance and Development Corporation (HHFDC), Maui Now (May 10, 2026), eHousingPlus HHFDC Income and Purchase Price Limits (January 30, 2026), HHFDC Eligibility Requirements (January 15, 2026), Team Wong Hawaii (November 2025), NCSHA (February 2026)*
@@ -4516,7 +4516,7 @@ You marry the house. You only date the rate. Do not let a temporary interest rat
 
 Every PCS timeline and budget is different. If you want to see exactly how the math works for your specific situation — including how to use seller concessions to lower your effective rate today and what an IRRRL refinance would save you when rates drop — let's talk.
 
-[**Get Pre-Approved and Build Your Strategy with Jay Miller at CMG HomeHub →**](https://www.cmghomehub.com/jay.miller)
+[**Get Pre-Approved and Build Your Strategy with Jay Miller at CMG HomeHub →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about buying in Hawaii with a VA loan? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -4662,7 +4662,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 [**Use the Loan Comparison Calculator →**](https://realitycents.com/loan-compare)
 
-[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 ---
 
@@ -4826,7 +4826,7 @@ If you can answer all three with confidence, we can run the numbers and find the
 
 Whether you are a military buyer on PCS orders looking at the VA ARM, a first-time buyer stretching to afford Oahu, or a move-up buyer trying to maximize purchasing power, I can show you exactly how an ARM compares to a fixed rate for your specific situation — including the worst-case adjustment scenarios.
 
-[**Get Pre-Approved and Compare Your Options →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved and Compare Your Options →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about whether an ARM fits your specific Hawaii homebuying timeline? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -4955,7 +4955,7 @@ Know your numbers. Negotiate aggressively for seller concessions. Focus on the p
 
 [**Compare Loan Scenarios at Different Rates →**](/loan-compare)
 
-[**Get Pre-Approved at Today's Rates →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved at Today's Rates →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 ---
 

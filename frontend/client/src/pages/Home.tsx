@@ -26,6 +26,7 @@ import {
   FileText,
   Handshake,
   FileCheck,
+  Sparkles,
 } from "lucide-react";
 
 const features = [
@@ -56,6 +57,13 @@ const features = [
     description: "Exclusive partnership program for Hawaii real estate agents.",
     href: "/contact",
     color: "bg-gold/10 text-gold",
+  },
+  {
+    icon: Sparkles,
+    title: "AI Assistant Tools",
+    description: "the RealityCents calculators inside ChatGPT, Claude, and Cursor",
+    href: "/ai",
+    color: "bg-teal/10 text-teal",
   },
 ];
 
@@ -114,7 +122,7 @@ export default function Home() {
               "name": "How long does mortgage pre-approval take in Hawaii?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "A standard pre-approval typically takes 1 business day once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market."
+                "text": "A standard pre-approval often takes 1–3 business days once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market."
               }
             },
             {
@@ -122,7 +130,7 @@ export default function Home() {
               "name": "What are typical closing costs in Hawaii?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Closing costs in Hawaii typically range from 1.5–2% of the purchase price. Buyers pay lender fees, title insurance, escrow fees, prepaid interest, and property tax impounds. On an $800,000 purchase, expect approximately $12,000–$16,000 in total closing costs."
+                "text": "Closing costs in Hawaii typically run 2–5% of the purchase price, and a planning budget of about 3–4% is realistic. Buyers pay lender fees, title insurance, escrow fees, prepaid interest, and property tax impounds. On an $800,000 purchase, a 3–4% budget is roughly $24,000–$32,000, separate from any down payment. Your Loan Estimate shows your actual figures."
               }
             },
             {
@@ -503,11 +511,11 @@ export default function Home() {
                 },
                 {
                   q: "How long does mortgage pre-approval take in Hawaii?",
-                  a: "A standard pre-approval typically takes 1 business day once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market."
+                  a: "A standard pre-approval often takes 1–3 business days once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market."
                 },
                 {
                   q: "What are typical closing costs in Hawaii?",
-                  a: "Closing costs in Hawaii typically range from 1.5–2% of the purchase price. Buyers pay lender fees, title insurance, escrow fees, prepaid interest, and property tax impounds. On an $800,000 purchase, expect approximately $12,000–$16,000 in total closing costs."
+                  a: "Closing costs in Hawaii typically run 2–5% of the purchase price, and a planning budget of about 3–4% is realistic. Buyers pay lender fees, title insurance, escrow fees, prepaid interest, and property tax impounds. On an $800,000 purchase, a 3–4% budget is roughly $24,000–$32,000, separate from any down payment. Your Loan Estimate shows your actual figures."
                 },
                 {
                   q: "Can I use a VA loan to buy a condo in Hawaii?",

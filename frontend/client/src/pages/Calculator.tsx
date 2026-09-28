@@ -260,6 +260,12 @@ export default function Calculator() {
         className="no-print"
       />
 
+      <p className="container pt-4 text-sm no-print">
+        <Link href="/ai" className="text-teal font-body font-semibold hover:underline">
+          Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor
+        </Link>
+      </p>
+
       {/* ── Mobile sticky total bar ─────────────────────────────────────── */}
       <div className="lg:hidden sticky top-[57px] z-30 bg-navy border-b border-gold/20 px-4 py-2.5 flex items-center justify-between no-print">
         <span className="text-sand/70 text-xs font-body">Est. Monthly Payment</span>

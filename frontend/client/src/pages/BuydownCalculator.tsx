@@ -325,6 +325,11 @@ export default function BuydownCalculator() {
                 <p className="font-body font-semibold text-navy mb-1">What is a temporary buydown?</p>
                 <p>A temporary buydown is a <strong className="text-navy">seller-paid</strong> (or lender-paid) credit that temporarily reduces the buyer's interest rate for the first 1–3 years of the loan, then reverts to the full note rate. The cost of the buydown equals the total monthly payment savings over the buydown period — this is the amount the buyer should ask the seller to credit at closing.</p>
                 <p className="mt-2">Buydowns are especially useful in a high-rate environment because they give buyers lower payments during the years when they're most likely to refinance if rates drop.</p>
+                <p className="mt-3">
+                  <Link href="/ai" className="text-teal font-body font-semibold hover:underline">
+                    Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor
+                  </Link>
+                </p>
               </div>
             </div>
           </div>

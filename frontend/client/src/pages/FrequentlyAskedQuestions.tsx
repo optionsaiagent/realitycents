@@ -207,7 +207,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
         question: "What are closing costs when buying a home in Honolulu?",
         answer: (
           <>
-            Closing costs in Honolulu typically range from 1% to 3% of the purchase price and include items like the appraisal fee, title insurance, escrow fees, recording fees, prepaid property taxes and homeowner's insurance, and lender origination charges. Some costs may be negotiated as seller-paid. Your lender is required to provide a Loan Estimate within three business days of your application, and a final Closing Disclosure at least three business days before closing, so you will have full transparency on costs before you sign.{" "}
+            Closing costs in Honolulu typically range from 2% to 5% of the purchase price (plan on about 3–4%) and include items like the appraisal fee, title insurance, escrow fees, recording fees, prepaid property taxes and homeowner's insurance, and lender origination charges. Some costs may be negotiated as seller-paid. Your lender is required to provide a Loan Estimate within three business days of your application, and a final Closing Disclosure at least three business days before closing, so you will have full transparency on costs before you sign.{" "}
             <a href="/knowledge-base/understanding-closing-costs-hawaii" className="text-teal underline underline-offset-2 hover:text-teal-dark">Learn more about closing costs in Hawaii →</a>
           </>
         ),
