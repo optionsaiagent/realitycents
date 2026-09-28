@@ -57,8 +57,6 @@ pnpm dev
 | `VITE_API_URL` | Railway backend URL (e.g., `https://realitycents-api.up.railway.app`) | Yes |
 | `VITE_OAUTH_PORTAL_URL` | OAuth portal URL | For admin login |
 | `VITE_APP_ID` | OAuth app ID | For admin login |
-| `VITE_ANALYTICS_ENDPOINT` | Analytics endpoint | Optional |
-| `VITE_ANALYTICS_WEBSITE_ID` | Analytics website ID | Optional |
 
 ## Deployment to Vercel
 
