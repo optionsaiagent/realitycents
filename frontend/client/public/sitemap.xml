@@ -172,6 +172,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://realitycents.com/ai</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- ── Knowledge Base Articles ── -->
   <url>
     <loc>https://realitycents.com/knowledge-base/va-second-tier-entitlement-hawaii</loc>

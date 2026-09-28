@@ -558,6 +558,94 @@ export const STATIC_PAGE_BODIES = {
       </section>
     </main>
   `,
+
+  "/ai": `
+    <main>
+      <h1>Use RealityCents in your AI assistant</h1>
+      <p>RealityCents publishes a free, read-only Hawaii mortgage and VA loan calculator server for AI assistants, built on the Model Context Protocol (MCP). It does not collect personal data. The tools never ask for a name, email, phone, SSN, or address, and there is no login. The math is the same math as the calculators on realitycents.com. Results are estimates only. Rates are examples, not quotes.</p>
+      <section>
+        <h2>Server details</h2>
+        <p>Server URL: <code>https://realitycents-mcp.jaymiller.workers.dev/mcp</code></p>
+        <ul>
+          <li>Transport: Streamable HTTP</li>
+          <li>Authentication: none</li>
+          <li>Official MCP Registry name: io.github.jaymiller-cmg/mortgage-hawaii</li>
+        </ul>
+      </section>
+      <section>
+        <h2>The nine tools</h2>
+        <ul>
+          <li><strong>calculate_mortgage_payment</strong> — Monthly payment (principal &amp; interest, Hawaii property tax, insurance, HOA, plus PMI, FHA MIP or VA funding fee) for conventional, FHA, VA or jumbo.</li>
+          <li><strong>calculate_affordability</strong> — Estimated maximum purchase price from gross monthly income, debts and a DTI target.</li>
+          <li><strong>va_purchase_power</strong> — Honolulu County military income (base pay, BAH, BAS, COLA) and VA purchase price from pay grade, years of service and dependents, using 2026 pay tables.</li>
+          <li><strong>va_remaining_entitlement</strong> — Remaining VA entitlement by Hawaii county, max $0-down loan, and the 25% down payment above that.</li>
+          <li><strong>compare_loans</strong> — Side-by-side comparison of 2–4 loan scenarios: payment, illustrative cash to close, total interest.</li>
+          <li><strong>calculate_buydown</strong> — Year-by-year payments and cost of a 2-1, 1-0 or 3-2-1 temporary buydown, or permanent discount points.</li>
+          <li><strong>rent_vs_buy</strong> — Cumulative rent vs. the net cost of buying over a holding period.</li>
+          <li><strong>hawaii_mortgage_guidance</strong> — Short factual notes on Hawaii topics (property tax, VA loans, leasehold vs fee simple, VA condo approval, 2026 loan limits, BAH/COLA, closing costs, pre-approval steps), drawn from RealityCents articles.</li>
+          <li><strong>get_preapproval_link</strong> — Jay Miller's CMG Home Loans application link and business contact.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Setup</h2>
+        <p>Menus change. If a label below does not match the app you are using, check that app’s help docs.</p>
+        <h3>Claude (claude.ai and Claude Desktop)</h3>
+        <ol>
+          <li>Go to Customize → Connectors → “+” → “Add custom connector”.</li>
+          <li>Enter a name (for example, RealityCents) and the server URL, then click Add.</li>
+          <li>Leave OAuth and advanced settings blank.</li>
+          <li>In a chat, enable it from the “+” menu → Connectors.</li>
+        </ol>
+        <p>On Team and Enterprise plans, an Owner adds the connector first under Organization settings → Connectors. The free plan allows one custom connector.</p>
+        <p><a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp">Claude custom connector guide</a></p>
+        <h3>ChatGPT</h3>
+        <p>Custom MCP servers are added through Developer mode. Availability depends on your plan and workspace settings. Turn on Developer mode in settings, create a new app or connector, paste the URL, choose no authentication, and create it.</p>
+        <p><a href="https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt">ChatGPT Developer mode and MCP connectors</a></p>
+        <h3>Cursor</h3>
+        <p>Add the server to <code>.cursor/mcp.json</code> in a project, or to <code>~/.cursor/mcp.json</code> for every project:</p>
+        <pre><code>{
+  "mcpServers": {
+    "realitycents": {
+      "url": "https://realitycents-mcp.jaymiller.workers.dev/mcp"
+    }
+  }
+}</code></pre>
+        <p><a href="https://cursor.com/docs/mcp">Cursor MCP docs</a></p>
+        <h3>Other MCP clients</h3>
+        <p>Any client that supports remote Streamable HTTP servers can use the URL above. No authentication.</p>
+      </section>
+      <section>
+        <h2>Example prompts</h2>
+        <p>VA purchase power takes a pay grade, years of service, and dependents — not a raw BAH dollar amount — so ask by rank.</p>
+        <ul>
+          <li>“I'm an E-6 with 8 years of service and two dependents stationed at Schofield. What's my VA purchase power in Honolulu?”</li>
+          <li>“What's the monthly payment on a $850,000 Honolulu condo with a $650 HOA using a VA loan at 6.25%?”</li>
+          <li>“I already have $300,000 of VA entitlement in use. How much can I borrow with $0 down on Oahu?”</li>
+          <li>“Compare VA vs 5% down conventional on a $1,000,000 house in Kailua.”</li>
+          <li>“Is renting at $3,800/month or buying a $900,000 home better over 7 years?”</li>
+          <li>“Explain leasehold vs fee simple in Hawaii.”</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Estimates only</h2>
+        <p>Estimates are for education only. They are not a loan offer or a commitment to lend. Rates are examples, not quotes. Verify any scenario with a licensed loan officer. Jay Miller, NMLS #657301. CMG Home Loans NMLS #2475890. CMG Mortgage, Inc. NMLS #1820. Equal Housing Opportunity.</p>
+      </section>
+      <section>
+        <h2>Use the same calculators here</h2>
+        <ul>
+          <li><a href="${BASE_URL}/calculator">Mortgage calculator</a></li>
+          <li><a href="${BASE_URL}/military-calculator">Military buying power</a></li>
+          <li><a href="${BASE_URL}/va-eligibility-calculator">VA remaining eligibility</a></li>
+          <li><a href="${BASE_URL}/affordability-calculator">Affordability calculator</a></li>
+          <li><a href="${BASE_URL}/buydown-calculator">Buydown calculator</a></li>
+          <li><a href="${BASE_URL}/rent-vs-buy">Rent vs. buy</a></li>
+          <li><a href="${BASE_URL}/loan-compare">Loan comparison</a></li>
+          <li><a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise</a></li>
+        </ul>
+        <p><a href="https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true">Get pre-approved with Jay Miller</a></p>
+      </section>
+    </main>
+  `,
 };
 
 // ─── VA Base Pages ────────────────────────────────────────────────────────────

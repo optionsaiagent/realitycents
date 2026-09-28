@@ -72,6 +72,7 @@ const STATIC_PAGES = [
   { loc: "/heloc-sweep-calculator",  changefreq: "monthly",  priority: "0.8",  lastmod: TODAY },
   { loc: "/knowledge-base",          changefreq: "weekly",  priority: "0.9",  lastmod: TODAY },
   { loc: "/frequently-asked-questions", changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
+  { loc: "/ai",                          changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
 ];
 
 // ─── Build XML ──────────────────────────────────────────────────────────────
