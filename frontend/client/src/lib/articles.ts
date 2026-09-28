@@ -76,7 +76,7 @@ However, the moment you use a portion of your entitlement to buy a home, you fal
 
 When you have reduced entitlement, the VA *does* enforce a loan limit. To figure out how much you can borrow with zero down on a second home, the VA looks at the conforming loan limit for the county where you are buying.
 
-For 2026, the Federal Housing Finance Agency (FHFA) designates Honolulu County as a high-cost area, with a conforming loan limit of **$1,249,125**. (Maui and Kalawao counties are even higher at $1,299,500.)
+For 2026, the Federal Housing Finance Agency (FHFA) sets Honolulu County's conforming loan limit at the Hawaii baseline of **$1,249,125** (1.5x the $832,750 national baseline). (Maui and Kalawao counties are higher at $1,299,500.)
 
 The VA guarantees 25% of that county limit — giving you your **Maximum Guaranty**:
 
@@ -85,8 +85,8 @@ The VA guarantees 25% of that county limit — giving you your **Maximum Guarant
 | Honolulu | $1,249,125 | $312,281 |
 | Maui | $1,299,500 | $324,875 |
 | Kalawao | $1,299,500 | $324,875 |
-| Hawaii (Big Island) | $862,500 | $215,625 |
-| Kauai | $1,007,250 | $251,813 |
+| Hawaii (Big Island) | $1,249,125 | $312,281 |
+| Kauai | $1,249,125 | $312,281 |
 
 To find your remaining entitlement, the VA takes that Maximum Guaranty and subtracts the amount of entitlement you have already used on your first home.
 
@@ -1057,7 +1057,7 @@ The fee can be financed into the loan (most Hawaii buyers do), can be paid by th
 
 ## Do VA loan limits apply in Hawaii?
 
-Only with reduced entitlement. The 2026 FHFA single-family conforming limits are **$1,249,125 for Honolulu County**, $1,299,500 for Maui and Kalawao, $1,007,250 for Kauai, and $862,500 for Hawaii County. A reduced-entitlement buyer's $0-down ceiling is roughly the county limit less the balance of the open VA loan; above that, 25% down applies to the difference only. Worked examples: [VA loan limits in Hawaii](/knowledge-base/va-loan-limits-hawaii-2026).
+Only with reduced entitlement. The 2026 FHFA single-family conforming limits are **$1,249,125 for Honolulu County**, $1,299,500 for Maui and Kalawao, $1,249,125 for Kauai, and $1,249,125 for Hawaii County. A reduced-entitlement buyer's $0-down ceiling is roughly the county limit less the balance of the open VA loan; above that, 25% down applies to the difference only. Worked examples: [VA loan limits in Hawaii](/knowledge-base/va-loan-limits-hawaii-2026).
 
 ## Does BAH count as income?
 
@@ -1190,7 +1190,7 @@ A conventional loan is any mortgage that isn't insured or guaranteed by a govern
 
 ## Conforming vs. Non-Conforming
 
-**Conforming loans** meet the guidelines set by Fannie Mae and Freddie Mac, including loan amount limits. For 2026, the national baseline conforming loan limit is **$832,750** for a single-family home. In Honolulu County, Hawaii, the limit is set at the high-cost ceiling of **$1,249,125** — significantly higher than the national baseline, reflecting Hawaii's elevated property values.
+**Conforming loans** meet the guidelines set by Fannie Mae and Freddie Mac, including loan amount limits. For 2026, the national baseline conforming loan limit is **$832,750** for a single-family home. In Honolulu County, Hawaii, the limit is the Hawaii baseline of **$1,249,125**, 1.5x the national baseline. Maui and Kalawao counties are higher at $1,299,500.
 
 **Non-conforming loans** (jumbo loans) exceed these limits and have different qualification requirements. Given Hawaii's property values, many buyers will need jumbo financing, which we cover in a separate article.
 
@@ -2546,9 +2546,9 @@ In 2026, the conforming loan limits for Honolulu County are:
 | Property Type | 2026 Honolulu County Loan Limit |
 |---|---|
 | 1-Unit (Single-Family) | $1,249,125 |
-| 2-Unit (Duplex) | $1,599,650 |
-| 3-Unit (Triplex) | $1,933,450 |
-| 4-Unit (Fourplex) | $2,403,050 |
+| 2-Unit (Duplex) | $1,599,375 |
+| 3-Unit (Triplex) | $1,933,200 |
+| 4-Unit (Fourplex) | $2,402,625 |
 
 If you have your **full VA entitlement** — meaning you have never used a VA loan, or you have paid off a previous VA loan and sold the property — there is no county loan limit. The VA will back the loan for whatever amount you can qualify for based on your income and credit.
 
@@ -3524,8 +3524,8 @@ Your entitlement is reduced when a prior VA loan is still open (you kept the fir
 |---|---|
 | Honolulu (Oahu) | **$1,249,125** |
 | Maui and Kalawao | $1,299,500 |
-| Kauai | $1,007,250 |
-| Hawaii (Big Island) | $862,500 |
+| Kauai | $1,249,125 |
+| Hawaii (Big Island) | $1,249,125 |
 
 *Source: FHFA 2026 conforming loan limits. These reset each January; verify before relying on them.*
 

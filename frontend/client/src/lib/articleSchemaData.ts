@@ -369,7 +369,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     ],
     faqSchema: [
       { question: "Is there a VA loan limit in Hawaii in 2026?", answer: "Not if you have full entitlement. Since 2020, veterans with full entitlement have no VA loan limit \u2014 the loan size is set by what a lender approves, not by a VA cap. County limits only matter when entitlement is reduced (an existing VA loan still open, or a prior VA loss). Honolulu County's 2026 single-family conforming limit is $1,249,125." },
-      { question: "What are the 2026 conforming loan limits for Hawaii counties?", answer: "For reduced-entitlement VA borrowers, the FHFA 2026 single-family limits are $1,249,125 for Honolulu County, $1,299,500 for Maui and Kalawao Counties, $1,007,250 for Kauai County, and $862,500 for Hawaii County (Big Island). Above the county figure, reduced-entitlement buyers typically need 25% down on the difference only." },
+      { question: "What are the 2026 conforming loan limits for Hawaii counties?", answer: "For reduced-entitlement VA borrowers, the FHFA 2026 single-family limits are $1,249,125 for Honolulu County, $1,299,500 for Maui and Kalawao Counties, $1,249,125 for Kauai County, and $1,249,125 for Hawaii County (Big Island). Above the county figure, reduced-entitlement buyers typically need 25% down on the difference only." },
       { question: "How do I find out how much VA entitlement I have left?", answer: "Your Certificate of Eligibility shows entitlement used. RealityCents' VA Remaining Eligibility Calculator applies the 2026 county limits to estimate your $0-down ceiling, and a VA-experienced lender can confirm it with your COE." },
     ],
   },

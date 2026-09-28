@@ -62,8 +62,8 @@ export const HAWAII_COUNTY_CONFORMING_LIMITS_2026 = [
   { id: "honolulu", name: "Honolulu County (Oahu)", limit: 1_249_125 },
   { id: "maui", name: "Maui County", limit: 1_299_500 },
   { id: "kalawao", name: "Kalawao County", limit: 1_299_500 },
-  { id: "kauai", name: "Kauai County", limit: 1_007_250 },
-  { id: "hawaii", name: "Hawaii County (Big Island)", limit: 862_500 },
+  { id: "kauai", name: "Kauai County", limit: 1_249_125 },
+  { id: "hawaii", name: "Hawaii County (Big Island)", limit: 1_249_125 },
 ] as const;
 
 export const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com";

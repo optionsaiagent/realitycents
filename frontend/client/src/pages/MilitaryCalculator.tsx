@@ -971,8 +971,8 @@ export default function MilitaryCalculator() {
                       <strong className="text-navy/80">
                         2026 Honolulu VA Loan Limits:
                       </strong>{" "}
-                      1-unit $1,249,125 | 2-unit $1,599,650 | 3-unit $1,933,450
-                      | 4-unit $2,403,050. Full entitlement = no loan limit cap.{" "}
+                      1-unit $1,249,125 | 2-unit $1,599,375 | 3-unit $1,933,200
+                      | 4-unit $2,402,625. Full entitlement = no loan limit cap.{" "}
                       <Link href="/va-eligibility-calculator" className="text-teal font-semibold hover:underline">
                         Estimate remaining $0-down capacity
                       </Link>
