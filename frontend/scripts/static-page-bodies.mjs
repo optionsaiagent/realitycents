@@ -400,8 +400,8 @@ export const STATIC_PAGE_BODIES = {
           <li>Honolulu County (Oahu): $1,249,125</li>
           <li>Maui County: $1,299,500</li>
           <li>Kalawao County: $1,299,500</li>
-          <li>Kauai County: $1,007,250</li>
-          <li>Hawaii County (Big Island): $862,500</li>
+          <li>Kauai County: $1,249,125</li>
+          <li>Hawaii County (Big Island): $1,249,125</li>
         </ul>
         <p>Always confirm current FHFA/VA figures for the county where you are buying. Pair this tool with the <a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a> and the <a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise</a> playbook.</p>
       </section>
