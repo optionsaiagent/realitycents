@@ -36,6 +36,7 @@ import Agents from "./pages/Agents";
 import Advisors from "./pages/Advisors";
 import ZeroDownInParadise from "./pages/ZeroDownInParadise";
 import VAEligibilityCalculator from "./pages/VAEligibilityCalculator";
+import AITools from "./pages/AITools";
 import Admin from "./pages/Admin";
 
 function ScrollToTop() {
@@ -92,6 +93,7 @@ function Router() {
         <Route path={"/for-agents"} component={() => { window.location.replace("/"); return null; }} />
         <Route path={"/dealsync"} component={() => { window.location.replace("/"); return null; }} />
         <Route path={"/frequently-asked-questions"} component={FrequentlyAskedQuestions} />
+        <Route path={"/ai"} component={AITools} />
         <Route path={"/faq"} component={() => { window.location.replace("/frequently-asked-questions"); return null; }} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />

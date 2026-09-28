@@ -787,6 +787,29 @@ const STATIC_PAGES = {
       },
     ],
   },
+  "/ai": {
+    title: "Use RealityCents in Your AI Assistant (MCP Server) | RealityCents",
+    description: "Connect RealityCents' free, read-only Hawaii mortgage and VA loan MCP server to Claude, ChatGPT, Cursor, and other AI assistants. No personal data.",
+    keywords: "Hawaii mortgage MCP server, RealityCents AI assistant, VA loan calculator MCP, Model Context Protocol mortgage Hawaii, Claude custom connector, Jay Miller NMLS 657301",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Use RealityCents in Your AI Assistant (MCP Server)",
+        description: "Connect RealityCents' free, read-only Hawaii mortgage and VA loan MCP server to Claude, ChatGPT, Cursor, and other AI assistants. No personal data.",
+        url: `${BASE_URL}/ai`,
+        isPartOf: { "@type": "WebSite", name: SITE_NAME, url: BASE_URL },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "AI assistant tools", item: `${BASE_URL}/ai` },
+        ],
+      },
+    ],
+  },
 };
 
 // ─── Build article page metadata ────────────────────────────────────────────
