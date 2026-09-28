@@ -76,7 +76,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Can VA loans be used on Hawaii leasehold property?",
-    a: "Often yes, if the remaining lease term meets VA requirements (commonly at least 14 years beyond loan maturity). Always confirm with your lender on the specific lease.",
+    a: "Rarely in practice. VA financing on leasehold requires the lease to meet VA's term requirements, and very few Oahu leasehold properties end up being workable with a VA loan. VA buyers usually do best focusing on fee-simple property; have your lender and a Hawaii real estate attorney review any lease before you sign a Purchase Contract.",
   },
   {
     q: "Does BAH count as income for a Hawaii VA loan?",
@@ -96,7 +96,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What free tools does RealityCents offer for VA buyers?",
-    a: "VA remaining eligibility calculator, military buying power calculator, VA condo lookup, Pearl Harbor and Schofield VA pages, and a full Veterans Guide plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment.",
+    a: "VA remaining eligibility calculator, military buying power calculator, VA condo lookup, Pearl Harbor and Schofield VA pages, and a full Veterans Guide plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment, and the same math runs inside AI assistants through the RealityCents MCP server.",
   },
   {
     q: "How do I get started with a Hawaii VA loan?",
@@ -168,6 +168,11 @@ const TOOLS = [
     href: "/va-approved-condos-oahu",
     title: "VA Condo Lookup",
     note: `Search ${CONDO_COUNT}+ VA-approved condo projects on Oahu.`,
+  },
+  {
+    href: "/ai",
+    title: "Use these VA calculators inside ChatGPT or Claude",
+    note: "The same Hawaii VA calculators, inside ChatGPT or Claude.",
   },
   {
     href: "/knowledge-base/va-loans-hawaii-military",
@@ -770,7 +775,10 @@ export default function ZeroDownInParadise() {
                         Veterans Guide
                       </Link>{" "}
                       plus related knowledge-base articles on house hacking, assumable VA loans, and
-                      funding-fee tax treatment.
+                      funding-fee tax treatment, and the same math runs inside AI assistants through the{" "}
+                      <Link href="/ai" className="text-teal font-semibold hover:underline">
+                        RealityCents MCP server
+                      </Link>.
                     </>
                   ) : (
                     faq.a

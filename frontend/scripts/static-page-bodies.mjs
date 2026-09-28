@@ -28,13 +28,14 @@ export const STATIC_PAGE_BODIES = {
           <li><a href="${BASE_URL}/knowledge-base">Knowledge Base</a> — 30+ expert articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
           <li><a href="${BASE_URL}/agents">Agent Tools</a> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
           <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — Searchable directory of ${CONDO_TOTAL} VA-approved condo projects on Oahu</li>
+          <li><a href="${BASE_URL}/ai">AI Assistant Tools</a>: the RealityCents calculators inside ChatGPT, Claude, and Cursor</li>
           <li><a href="${BASE_URL}/guide">Free Homebuying Guide</a> — Comprehensive step-by-step guide to buying a home in Hawaii</li>
         </ul>
       </section>
       <section>
         <h2>Meet Your Lender</h2>
         <p>Jay Miller is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
-        <p>NMLS #657301 | CMG Home Loans NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</p>
+        <p>NMLS #657301 | CMG Home Loans Branch NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</p>
       </section>
       <section>
         <h2>Hawaii Mortgage FAQ</h2>
@@ -58,6 +59,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Background &amp; Experience</h2>
         <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay brings a unique combination of military service understanding and deep Hawaii real estate expertise. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
         <p>Jay is a triathlete and passionate advocate for financial literacy. He created RealityCents to provide free, no-pressure mortgage education — because informed buyers make better decisions.</p>
+        <p>I also publish the <a href="${BASE_URL}/ai">RealityCents MCP server for AI assistants</a>, so ChatGPT and Claude can run Hawaii VA math on my 2026 numbers.</p>
         <p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, <a href="https://www.amazon.com/dp/B0H7P83W15">available on Amazon</a>.</p>
       </section>
       <section>
@@ -119,6 +121,7 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>Hawaii Mortgage Calculator — Estimate Your Monthly Payment</h1>
       <p>Use our free Hawaii mortgage calculator to estimate your monthly mortgage payment including principal, interest, property taxes, insurance, HOA fees, and PMI. See a full amortization schedule and visual payment breakdown.</p>
+      <p><a href="${BASE_URL}/ai">Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor</a></p>
       <section>
         <h2>How It Works</h2>
         <p>Enter your home price, down payment, interest rate, and loan term to instantly calculate your estimated monthly payment. The calculator includes Hawaii-specific defaults for property tax rates (approximately 0.35% for owner-occupied) and typical insurance costs.</p>
@@ -151,6 +154,7 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>What Can I Afford? — Hawaii Home Affordability Calculator</h1>
       <p>Find out how much home you can afford in Hawaii based on your income, debts, and down payment. This calculator uses standard DTI (debt-to-income) ratios to estimate your maximum purchase price.</p>
+      <p><a href="${BASE_URL}/ai">Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor</a></p>
       <section>
         <h2>How Lenders Determine Affordability</h2>
         <p>Most lenders use two DTI ratios: the front-end ratio (housing costs divided by gross income, typically capped at 28–31%) and the back-end ratio (all debts including housing divided by gross income, typically capped at 43–50%). VA loans are more flexible, often allowing higher ratios with compensating factors.</p>
@@ -163,6 +167,7 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>Rent vs. Buy Calculator — Should You Buy a Home in Hawaii?</h1>
       <p>Compare the true cost of renting vs. buying a home in Hawaii over time. See your break-even year, equity growth projections, investment opportunity cost, and cumulative cost analysis.</p>
+      <p><a href="${BASE_URL}/ai">Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor</a></p>
       <section>
         <h2>Key Factors in Hawaii</h2>
         <p>Hawaii's high rents (median $2,800+/month for a 2BR) and strong appreciation history (4–6% annually) often favor buying over renting for those who plan to stay 3+ years. However, high home prices mean larger down payments and higher monthly costs. This calculator helps you see the full picture including tax benefits, equity growth, and opportunity cost of your down payment.</p>
@@ -174,6 +179,7 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>Temporary Buydown Calculator — 1/1, 2/1 &amp; 3/2/1 Buydowns</h1>
       <p>Calculate the exact seller credit needed for temporary mortgage rate buydowns. Compare 1/1, 2/1, and 3/2/1 buydown structures to see how much a seller needs to contribute to reduce your interest rate in the early years of your loan.</p>
+      <p><a href="${BASE_URL}/ai">Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor</a></p>
       <section>
         <h2>How Temporary Buydowns Work</h2>
         <p>A temporary buydown reduces your mortgage interest rate for the first 1–3 years of the loan. The seller (or builder) contributes a lump sum at closing that subsidizes your payments during the buydown period. After the buydown expires, your rate returns to the permanent note rate. This is different from buying discount points, which permanently reduce your rate.</p>
@@ -186,9 +192,10 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>Military Buying Power Calculator — Hawaii VA Loan Home Purchase Estimator</h1>
       <p>Estimate your total qualifying income and home purchase power as a Hawaii-based military service member. Uses 2026 base pay, BAH (Honolulu County), BAS, and COLA rates with VA loan qualification standards.</p>
+      <p><a href="${BASE_URL}/ai">Ask your AI assistant for VA purchase power by rank</a></p>
       <section>
         <h2>How Military Income Qualifies</h2>
-        <p>VA lenders count multiple income sources for qualification: base pay, BAH (Basic Allowance for Housing), BAS (Basic Allowance for Subsistence), COLA, flight pay, hazardous duty pay, and more. Since BAH and BAS are tax-free, lenders can gross them up by 25% for qualification purposes — significantly increasing your buying power.</p>
+        <p>VA lenders count multiple income sources for qualification: base pay, BAH (Basic Allowance for Housing), BAS (Basic Allowance for Subsistence), COLA, flight pay, hazardous duty pay, and more. Since BAH and BAS are tax-free, many lenders gross them up by up to 25% for qualification (lender policy, not a VA rule), significantly increasing your buying power.</p>
         <p>For Honolulu County in 2026, BAH with dependents ranges from $3,663/month (E-5) to $5,001/month (O-6). Combined with base pay and the 25% gross-up, most military families qualify for more home than they expect.</p>
       </section>
     </main>
@@ -198,6 +205,7 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>Loan Comparison Calculator — Compare Rate &amp; Cost Scenarios</h1>
       <p>Compare loan scenarios side by side to find the best option for your situation. See monthly payments, closing costs, APR, and total cost over time for different loan structures. Generate shareable links to send comparisons to your clients or agent.</p>
+      <p><a href="${BASE_URL}/ai">Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor</a></p>
       <section>
         <h2>What You Can Compare</h2>
         <p>Add up to 3 loan scenarios with different rates, points, closing costs, and terms. The calculator shows you the true cost of each option including the break-even point for paying points, total interest over the loan life, and effective APR. Perfect for comparing lender quotes or evaluating rate buydown options.</p>
@@ -217,14 +225,14 @@ export const STATIC_PAGE_BODIES = {
           <dt>What credit score do I need to buy a home in Hawaii?</dt>
           <dd>Minimum scores vary by loan type: VA loans have no VA-mandated minimum (most lenders require 580–620), FHA requires 580 for 3.5% down (500 for 10% down), and conventional typically requires 620+. Higher scores get better rates.</dd>
           <dt>How much are closing costs in Hawaii?</dt>
-          <dd>Typically 1.5–2% of the purchase price. On an $800,000 home, expect $12,000–$16,000 in total closing costs including lender fees, title insurance, escrow fees, and prepaid items.</dd>
+          <dd>Typically 2–5% of the purchase price, with a planning budget of about 3–4%. On an $800,000 home, that budget is roughly $24,000–$32,000, including lender fees, title insurance, escrow fees, and prepaid items.</dd>
         </dl>
       </section>
       <section>
         <h2>VA Loans</h2>
         <dl>
           <dt>Can I use a VA loan in Hawaii?</dt>
-          <dd>Yes. VA loans work in all 50 states including Hawaii. With full entitlement, there is no loan limit — you can buy at any price with $0 down. The VA funding fee is 2.15% for first-time use (waived for disabled veterans).</dd>
+          <dd>Yes. VA loans work in all 50 states including Hawaii. With full entitlement, there is no VA loan limit; how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval. The VA funding fee is 2.15% for first-time use (waived for disabled veterans).</dd>
           <dt>Can I use a VA loan for a condo in Hawaii?</dt>
           <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check — there are ${CONDO_TOTAL} approved projects on Oahu alone.</dd>
         </dl>
@@ -320,6 +328,7 @@ export const STATIC_PAGE_BODIES = {
           <li><a href="${BASE_URL}/va-eligibility-calculator">VA Remaining Eligibility Calculator</a> — estimate remaining $0-down capacity using Honolulu County’s 2026 conforming limit of $1,249,125</li>
           <li><a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a> — BAH, BAS, COLA, and qualifying income framing</li>
           <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — search ${CONDO_TOTAL}+ VA-approved condo projects on Oahu</li>
+          <li><a href="${BASE_URL}/ai">Use these VA calculators inside ChatGPT or Claude</a></li>
           <li><a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">VA Loans in Hawaii guide</a> — free web companion to the book</li>
           <li><a href="${BASE_URL}/va-loan-pearl-harbor-hickam">VA loan — Pearl Harbor / Hickam</a></li>
           <li><a href="${BASE_URL}/va-loan-schofield-barracks">VA loan — Schofield Barracks</a></li>
@@ -361,7 +370,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>Are Hawaii condos VA-approved?</dt>
           <dd>Not automatically. Many Hawaii condos are VA-approved, but you must verify the specific project before writing an offer. Use RealityCents’ <a href="${BASE_URL}/va-approved-condos-oahu">VA condo lookup</a> and have your lender confirm.</dd>
           <dt>Can VA loans be used on Hawaii leasehold property?</dt>
-          <dd>Often yes, if the remaining lease term meets VA requirements (commonly at least 14 years beyond loan maturity). Always confirm with your lender on the specific lease.</dd>
+          <dd>Rarely in practice. VA financing on leasehold requires the lease to meet VA's term requirements, and very few Oahu leasehold properties end up being workable with a VA loan. VA buyers usually do best focusing on fee-simple property; have your lender and a Hawaii real estate attorney review any lease before you sign a Purchase Contract.</dd>
           <dt>Does BAH count as income for a Hawaii VA loan?</dt>
           <dd>Yes. Basic Allowance for Housing typically counts toward qualification. Hawaii BAH is among the highest in the country, which can materially increase buying power — estimate with the <a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a>.</dd>
           <dt>What is the VA funding fee, and who is exempt?</dt>
@@ -371,7 +380,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>How is this different from generic VA loan guides?</dt>
           <dd>It is written for Hawaii: high-cost entitlement math, BAH/COLA, VA condos, leasehold, J-1, local tax exemptions, and island closing realities — by a Hawaii-based VA lender who is also a veteran.</dd>
           <dt>What free tools does RealityCents offer for VA buyers?</dt>
-          <dd><a href="${BASE_URL}/va-eligibility-calculator">VA remaining eligibility calculator</a>, <a href="${BASE_URL}/military-calculator">military buying power calculator</a>, <a href="${BASE_URL}/va-approved-condos-oahu">VA condo lookup</a>, and a full <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a> plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment.</dd>
+          <dd><a href="${BASE_URL}/va-eligibility-calculator">VA remaining eligibility calculator</a>, <a href="${BASE_URL}/military-calculator">military buying power calculator</a>, <a href="${BASE_URL}/va-approved-condos-oahu">VA condo lookup</a>, and a full <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a> plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment, and the same math runs inside AI assistants through the <a href="${BASE_URL}/ai">RealityCents MCP server</a>.</dd>
           <dt>How do I get started with a Hawaii VA loan?</dt>
           <dd>1) Get your Certificate of Eligibility (COE). 2) Get pre-approved with a VA-experienced Hawaii lender. 3) Work with an agent who understands military / PCS timelines. 4) Verify condo approval and leasehold terms before you commit. Call (808) 429-0811 or start with the <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a>.</dd>
         </dl>
@@ -391,8 +400,8 @@ export const STATIC_PAGE_BODIES = {
       <p>Estimate remaining VA $0-down capacity when entitlement is reduced. Honolulu County’s 2026 single-family conforming limit is <strong>$1,249,125</strong>. Educational tool by Jay Miller, NMLS #657301. Not a commitment to lend.</p>
       <section>
         <h2>How remaining entitlement works</h2>
-        <p>With full entitlement, there is no VA loan limit for a $0-down purchase — you can buy at whatever price a lender will approve. With reduced entitlement (for example, an existing VA loan still outstanding), county conforming limits apply.</p>
-        <p>Remaining $0-down capacity is estimated as the county conforming limit minus your outstanding VA loan balance. If the purchase price exceeds that capacity, a 25% down payment applies on the difference only.</p>
+        <p>With full entitlement, there is no VA loan limit for a $0-down purchase; you can buy at whatever price a lender will approve. With reduced entitlement (for example, a prior VA loan whose entitlement has not been restored), county conforming limits apply.</p>
+        <p>Remaining entitlement is estimated as 25% of the county conforming limit minus your VA entitlement in use (based on the original loan amount of any VA loan not yet restored; your Certificate of Eligibility shows the exact figure). Your $0-down capacity is about four times the remaining entitlement. If the purchase price exceeds that capacity, a 25% down payment applies on the difference only.</p>
       </section>
       <section>
         <h2>2026 Hawaii county conforming limits (1-unit)</h2>
@@ -404,6 +413,7 @@ export const STATIC_PAGE_BODIES = {
           <li>Hawaii County (Big Island): $1,249,125</li>
         </ul>
         <p>Always confirm current FHFA/VA figures for the county where you are buying. Pair this tool with the <a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a> and the <a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise</a> playbook.</p>
+        <p><a href="${BASE_URL}/ai">Run this VA entitlement calculator in your AI assistant</a></p>
       </section>
     </main>
   `,
@@ -549,10 +559,10 @@ export const STATIC_PAGE_BODIES = {
         <h2>2026 BAH Rates — Honolulu County (With Dependents)</h2>
         <ul>
           <li>E-5: $3,663/mo</li>
-          <li>E-6: $3,861/mo</li>
+          <li>E-6: $3,912/mo</li>
           <li>E-7: $4,098/mo</li>
-          <li>O-3: $4,434/mo</li>
-          <li>O-4: $4,719/mo</li>
+          <li>O-3: $4,428/mo</li>
+          <li>O-4: $4,737/mo</li>
           <li>O-5: $4,959/mo</li>
         </ul>
       </section>
@@ -561,8 +571,14 @@ export const STATIC_PAGE_BODIES = {
 
   "/ai": `
     <main>
-      <h1>Use RealityCents in your AI assistant</h1>
-      <p>RealityCents publishes a free, read-only Hawaii mortgage and VA loan calculator server for AI assistants, built on the Model Context Protocol (MCP). It does not collect personal data. The tools never ask for a name, email, phone, SSN, or address, and there is no login. The math is the same math as the calculators on realitycents.com. Results are estimates only. Rates are examples, not quotes.</p>
+      <h1>Hawaii mortgage and VA loan calculators for your AI assistant</h1>
+      <p>Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: September 28, 2026</p>
+      <p>RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, and 2026 Hawaii loan-limit guidance. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.</p>
+      <p>The math is the same math as the calculators on realitycents.com. Results are estimates only. Rates are examples, not quotes.</p>
+      <section>
+        <h2>Sample answer</h2>
+        <p><em>Illustrative example, not a quote or pre-approval.</em> Ask: "I'm an E-6 with 8 years of service and two dependents on Oahu. What's my VA purchase power?" The <code>va_purchase_power</code> tool returned: base pay $4,612 + BAH $3,912 + BAS $476.95 + COLA $708 = <strong>$9,708.95/mo</strong> (2026 Honolulu County tables, no gross-up). At a <strong>6.5% example rate</strong> and the calculator's 55% planning DTI, the estimated max price was <strong>$769,000</strong>, with estimated PITI of <strong>$5,339/mo</strong> ($0 down, 2.15% funding fee financed). A lender would review residual income, credit, and the property. Jay Miller, NMLS #657301.</p>
+      </section>
       <section>
         <h2>Server details</h2>
         <p>Server URL: <code>https://realitycents-mcp.jaymiller.workers.dev/mcp</code></p>
@@ -620,15 +636,50 @@ export const STATIC_PAGE_BODIES = {
         <ul>
           <li>“I'm an E-6 with 8 years of service and two dependents stationed at Schofield. What's my VA purchase power in Honolulu?”</li>
           <li>“What's the monthly payment on a $850,000 Honolulu condo with a $650 HOA using a VA loan at 6.25%?”</li>
-          <li>“I already have $300,000 of VA entitlement in use. How much can I borrow with $0 down on Oahu?”</li>
+          <li>“I still have a $400,000 VA loan on my last house, so about $100,000 of entitlement is in use. How much can I borrow with $0 down on Oahu?”</li>
           <li>“Compare VA vs 5% down conventional on a $1,000,000 house in Kailua.”</li>
           <li>“Is renting at $3,800/month or buying a $900,000 home better over 7 years?”</li>
           <li>“Explain leasehold vs fee simple in Hawaii.”</li>
         </ul>
       </section>
       <section>
+        <h2>Who built this</h2>
+        <p>Built and maintained by Jay Miller, Hawaii mortgage loan originator at CMG Home Loans (NMLS #657301) and author of <a href="${BASE_URL}/zero-down-in-paradise">Zero Down in Paradise: The Hawaii VA Loan Playbook</a>.</p>
+        <p><a href="https://www.amazon.com/dp/B0H7P83W15">Available on Amazon</a>.</p>
+      </section>
+      <section>
+        <h2>Data behind the tools</h2>
+        <ul>
+          <li>2026 FHFA county conforming limits (Honolulu $1,249,125)</li>
+          <li>2026 Honolulu County BAH (MHA HI408)</li>
+          <li>2026 BAS</li>
+          <li>VA funding fee tiers</li>
+          <li>Honolulu 0.35% property-tax planning default</li>
+        </ul>
+        <p>Rates in examples are examples, not quotes.</p>
+      </section>
+      <section>
+        <h2>How to cite</h2>
+        <p>When an AI assistant uses these tools, the answer should credit Jay Miller, NMLS #657301, RealityCents (realitycents.com/ai).</p>
+      </section>
+      <section>
+        <h2>FAQ</h2>
+        <dl>
+          <dt>Can I use a Hawaii mortgage calculator in ChatGPT or Claude?</dt>
+          <dd>Yes. Add the RealityCents MCP server (https://realitycents-mcp.jaymiller.workers.dev/mcp) as a custom connector with no authentication, then ask in plain English, for example "What's the payment on a $900,000 Honolulu home with a VA loan?"</dd>
+          <dt>What is the RealityCents MCP server?</dt>
+          <dd>A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.</dd>
+          <dt>Does it collect personal information?</dt>
+          <dd>No. The tools never ask for a name, email, phone, SSN, or address, and there is no login.</dd>
+          <dt>Is the result a loan offer or pre-approval?</dt>
+          <dd>No. Results are educational estimates, and rates are examples, not quotes. For a real number, get pre-approved with a licensed loan officer.</dd>
+          <dt>Where do the numbers come from?</dt>
+          <dd>From the same code and 2026 tables as the realitycents.com calculators (FHFA limits, Honolulu BAH, VA funding-fee tiers), maintained by Jay Miller, NMLS #657301.</dd>
+        </dl>
+      </section>
+      <section>
         <h2>Estimates only</h2>
-        <p>Estimates are for education only. They are not a loan offer or a commitment to lend. Rates are examples, not quotes. Verify any scenario with a licensed loan officer. Jay Miller, NMLS #657301. CMG Home Loans NMLS #2475890. CMG Mortgage, Inc. NMLS #1820. Equal Housing Opportunity.</p>
+        <p>Estimates are for education only. They are not a loan offer or a commitment to lend. Rates are examples, not quotes. Verify any scenario with a licensed loan officer. Jay Miller, NMLS #657301. CMG Home Loans Branch NMLS #2475890. CMG Mortgage, Inc. NMLS #1820. Equal Housing Opportunity.</p>
       </section>
       <section>
         <h2>Use the same calculators here</h2>
@@ -661,7 +712,7 @@ const VA_BASES = {
     neighborhoods: ["Mililani (10–12 min, $400K–$1.8M)", "Wahiawa (5–10 min, $600K–$900K)", "Royal Kunia (~15 min, $750K–$1.1M)", "Waikele/Waipahu (15–20 min, $400K–$1.4M)", "Kapolei (20–30 min, $400K–$1.2M)"],
     faqs: [
       { q: "Can I use my VA loan for a 3-year tour at Schofield?", a: "Yes. VA requires you to occupy the home as your primary residence for 12 months. After occupancy is met, you can rent it when you PCS out." },
-      { q: "Is there a VA loan limit for Oahu in 2026?", a: "With full entitlement, there is no loan limit — you can buy at any price with $0 down. The $1,249,125 conforming loan limit only matters if you have reduced entitlement." },
+      { q: "Is there a VA loan limit for Oahu in 2026?", a: "With full entitlement, there is no VA loan limit; how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval. The $1,249,125 conforming loan limit only matters if you have reduced entitlement." },
       { q: "Should I buy a house or a condo near Schofield?", a: "Depends on your rank and family size. E-5 and below often find condos/townhomes more realistic in the $400K–$800K range. E-6+ can stretch into single-family homes." },
     ],
   },
@@ -734,10 +785,10 @@ for (const [route, data] of Object.entries(VA_BASES)) {
         <h2>2026 BAH Rates — Honolulu County (With Dependents)</h2>
         <p>All Oahu military receive the same Honolulu County BAH rates regardless of installation:</p>
         <ul>
-          <li>E-5: $3,663/mo | E-6: $3,861/mo | E-7: $4,098/mo</li>
-          <li>O-1: $3,702/mo | O-3: $4,434/mo | O-5: $4,959/mo</li>
+          <li>E-5: $3,663/mo | E-6: $3,912/mo | E-7: $4,098/mo</li>
+          <li>O-1: $3,702/mo | O-3: $4,428/mo | O-5: $4,959/mo</li>
         </ul>
-        <p>With VA's $0 down payment and tax-free BAH (grossed up 25% for qualification), most service members qualify for more home than they expect.</p>
+        <p>With VA's $0 down payment and tax-free BAH (which many lenders gross up by up to 25%), most service members qualify for more home than they expect.</p>
       </section>
       <section>
         <h2>Frequently Asked Questions</h2>

@@ -100,7 +100,7 @@ const HIDDEN_ADVANTAGES = [
 const FAQS = [
   {
     q: "Can I use my BAH as qualifying income for a VA loan?",
-    a: "Yes. VA allows BAH to be used as qualifying income. Since BAH is tax-free, most lenders can gross it up by 25% for qualification purposes, which increases your buying power. Ask your lender about this — it often makes a big difference.",
+    a: "Yes. VA allows BAH to be used as qualifying income. Since BAH is tax-free, many lenders gross it up by up to 25% (lender policy) for qualification purposes, which increases your buying power. Ask your lender about this; it often makes a big difference.",
   },
   {
     q: "What if my BAH doesn't cover the full mortgage payment?",

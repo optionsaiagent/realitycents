@@ -136,6 +136,13 @@ export default function About() {
                   </Link>{" "}
                   (July 2026) — the definitive guide to using your VA benefit to buy a home in Hawaii, drawn from 25 years of helping military families at the closing table.
                 </p>
+                <p>
+                  I also publish the{" "}
+                  <Link href="/ai" className="text-teal font-body font-semibold hover:underline">
+                    RealityCents MCP server for AI assistants
+                  </Link>
+                  , so ChatGPT and Claude can run Hawaii VA math on my 2026 numbers.
+                </p>
               </div>
 
               {/* Specialties */}

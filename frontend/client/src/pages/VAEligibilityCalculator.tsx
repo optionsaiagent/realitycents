@@ -32,7 +32,7 @@ export default function VAEligibilityCalculator() {
   const [countyId, setCountyId] = useState<(typeof HAWAII_COUNTY_CONFORMING_LIMITS_2026)[number]["id"]>(
     "honolulu"
   );
-  const [existingBalance, setExistingBalance] = useState(0);
+  const [entitlementInUse, setEntitlementInUse] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(HONOLULU_CONFORMING_LIMIT_2026);
 
   const county =
@@ -42,8 +42,8 @@ export default function VAEligibilityCalculator() {
   const result = useMemo(() => {
     const countyLimit = county.limit;
     const maxGuaranty = countyLimit * 0.25;
-    const fullEntitlement = existingBalance <= 0;
-    const entitlementUsed = existingBalance * 0.25;
+    const fullEntitlement = entitlementInUse <= 0;
+    const entitlementUsed = entitlementInUse;
     const remainingEntitlement = Math.max(0, maxGuaranty - entitlementUsed);
     const zeroDownCapacity = remainingEntitlement * 4;
     let downPayment = 0;
@@ -58,7 +58,7 @@ export default function VAEligibilityCalculator() {
       zeroDownCapacity,
       downPayment,
     };
-  }, [county.limit, existingBalance, purchasePrice]);
+  }, [county.limit, entitlementInUse, purchasePrice]);
 
   return (
     <Layout>
@@ -114,7 +114,7 @@ export default function VAEligibilityCalculator() {
 
               <div>
                 <label className="block text-sm font-body font-medium text-navy mb-1.5">
-                  Outstanding VA loan balance
+                  VA entitlement in use
                 </label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">$</span>
@@ -122,14 +122,14 @@ export default function VAEligibilityCalculator() {
                     type="number"
                     min={0}
                     step={1000}
-                    value={existingBalance}
-                    onChange={(e) => setExistingBalance(Math.max(0, Number(e.target.value) || 0))}
+                    value={entitlementInUse}
+                    onChange={(e) => setEntitlementInUse(Math.max(0, Number(e.target.value) || 0))}
                     onFocus={(e) => e.target.select()}
                     className="w-full pl-7 pr-3 py-2.5 rounded-md border border-border bg-white text-navy text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal"
                   />
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Enter $0 if you have no active VA loan (full entitlement).
+                  Based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount; for example, a $400,000 VA loan is about $100,000). Your COE shows the exact figure. Enter $0 if you have full entitlement.
                 </p>
               </div>
 
@@ -158,7 +158,7 @@ export default function VAEligibilityCalculator() {
                 <Info className="w-4 h-4 text-teal shrink-0 mt-0.5" />
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Confirm remaining entitlement on your Certificate of Eligibility. This is an educational
-                  estimate using 25% of the county conforming limit minus 25% of an outstanding VA balance.
+                  estimate using 25% of the county conforming limit minus your VA entitlement in use.
                   Lender approval and property eligibility still apply.
                 </p>
               </div>
@@ -185,8 +185,7 @@ export default function VAEligibilityCalculator() {
                     </p>
                   ) : (
                     <p className="text-muted-foreground leading-relaxed">
-                      With reduced entitlement, remaining $0-down capacity is based on the county
-                      conforming limit minus your outstanding VA loan balance.
+                      With reduced entitlement, remaining $0-down capacity is about four times what is left after subtracting your VA entitlement in use from 25% of the county conforming limit.
                     </p>
                   )}
 
@@ -258,6 +257,11 @@ export default function VAEligibilityCalculator() {
                   Read the full playbook
                 </Link>
               </div>
+              <p className="mt-4 text-sm">
+                <Link href="/ai" className="text-teal font-semibold hover:underline">
+                  Run this VA entitlement calculator in your AI assistant
+                </Link>
+              </p>
             </div>
           </div>
 

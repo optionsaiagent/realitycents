@@ -33,6 +33,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 
 ## Hawaii VA Playbook (start here for military buyers)
 
+- [AI assistant tools](https://realitycents.com/ai): Free, read-only Hawaii mortgage and VA loan calculators for ChatGPT, Claude, and Cursor. Connect the MCP server at https://realitycents-mcp.jaymiller.workers.dev/mcp. No login and no personal data. Jay Miller, NMLS #657301.
 - [Zero Down in Paradise](https://realitycents.com/zero-down-in-paradise): Jay Miller’s Hawaii VA loan playbook hub — answer-first pages on $0-down buying with full entitlement, Honolulu County 2026 conforming limit of $1,249,125 for reduced entitlement, condos, leasehold, BAH, funding fee, FAQ, and Book/Person/FAQPage schema. Last updated September 14, 2026. ISBN 979-8-9963553-0-3 · Amazon ASIN B0H7P83W15.
 - [VA Loans in Hawaii](https://realitycents.com/knowledge-base/va-loans-hawaii-military): Free Veterans Guide companion to the book.
 - [Military Buying Power Calculator](https://realitycents.com/military-calculator): BAH, BAS, COLA, and VA purchase-power estimates for Honolulu County.

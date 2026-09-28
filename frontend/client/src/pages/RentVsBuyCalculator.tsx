@@ -4,6 +4,7 @@
  * equity vs. investment portfolio, and a year-by-year line chart.
  */
 import { useState, useMemo } from "react";
+import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
@@ -293,6 +294,11 @@ export default function RentVsBuyCalculator() {
             <Info className="w-5 h-5 text-teal mt-0.5 shrink-0" />
             <p className="text-sm text-muted-foreground font-body leading-relaxed">
               This calculator compares the total cost of buying a home vs. renting over your chosen time horizon. It accounts for mortgage payments, property taxes, maintenance, home appreciation, rent increases, tax deductions, and the opportunity cost of investing your down payment in the stock market instead. All figures are estimates for educational purposes.
+            </p>
+            <p className="text-sm mt-3">
+              <Link href="/ai" className="text-teal font-body font-semibold hover:underline">
+                Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor
+              </Link>
             </p>
           </div>
 

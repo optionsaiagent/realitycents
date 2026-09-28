@@ -5,7 +5,7 @@
  */
 import React, { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { trpc } from "@/lib/trpc";
-import { useSearch } from "wouter";
+import { Link, useSearch } from "wouter";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
@@ -233,7 +233,8 @@ function toInput(s: ScenarioStrings): ScenarioInput {
 const SCENARIO_DEFAULTS: Record<string, unknown> = {
   purchasePrice: "750000", downPaymentPct: "0", rate: "5.75", termYears: 30,
   discountPoints: "0", lenderCredits: "0", propertyTaxRate: "0.35",
-  propertyTaxOverride: "0", insurance: "200", hoa: "0", hoaTransferFee: "0",
+  propertyTaxOverride: "0", insurance: "200", // Kept at "200" for share-link backward compatibility.
+  hoa: "0", hoaTransferFee: "0",
   vaFirstUse: true, vaDisabled: false, originationFee: "1495", appraisalFee: "800",
   titleInsurance: "1750", escrowFee: "1250", recordingFees: "250",
   creditReport: "75", floodCert: "20", closingDay: "15",
@@ -2145,6 +2146,11 @@ export default function LoanCompare() {
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed">
               See the real difference between loan scenarios — monthly payment, closing costs, cash to close, and total cost over time. Adjust the numbers, then share a link with your lender or agent.
+            </p>
+            <p className="mt-4">
+              <Link href="/ai" className="text-teal font-semibold hover:underline">
+                Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor
+              </Link>
             </p>
           </div>
         </div>

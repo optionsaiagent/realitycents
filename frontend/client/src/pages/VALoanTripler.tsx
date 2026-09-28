@@ -320,8 +320,8 @@ export default function VALoanTripler() {
 
           <div className="mt-6 p-4 bg-gold/10 border border-gold/30 rounded-lg">
             <p className="text-sm font-body text-foreground/80">
-              <strong className="text-gold">Key insight:</strong> BAH is tax-free. Most VA
-              lenders can gross it up by 25% for qualifying purposes — meaning your effective
+              <strong className="text-gold">Key insight:</strong> BAH is tax-free. Many VA
+              lenders gross it up by up to 25% for qualifying purposes (lender policy), meaning your effective
               qualifying income is higher than the dollar amount shown. Ask me how this affects
               your purchase power.
             </p>

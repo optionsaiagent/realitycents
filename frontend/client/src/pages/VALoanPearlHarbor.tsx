@@ -123,7 +123,7 @@ const NEIGHBORHOODS = [
 const FAQS = [
   {
     q: "I'm Navy and used my VA loan in Norfolk. Can I use it again in Hawaii?",
-    a: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference only. With full entitlement, there is no VA loan limit for $0 down.",
+    a: "Yes, if you have remaining entitlement. Your entitlement in use is based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount); your Certificate of Eligibility shows the exact figure. In Honolulu County, remaining entitlement is 25% of the 2026 conforming limit of $1,249,125 ($312,281) minus the entitlement in use, and your $0-down ceiling is about four times the remaining entitlement. Above that, the down payment is 25% of the difference only. With full entitlement there is no VA loan limit; how much you can borrow depends on income, credit, residual income, and lender approval.",
     hasLink: true,
   },
   {
@@ -323,8 +323,8 @@ export default function VALoanPearlHarbor() {
 
           <div className="mt-6 p-4 bg-gold/10 border border-gold/30 rounded-lg">
             <p className="text-sm font-body text-foreground/80">
-              <strong className="text-gold">Key insight:</strong> BAH is tax-free. Most VA
-              lenders can gross it up by 25% for qualifying purposes — meaning your effective
+              <strong className="text-gold">Key insight:</strong> BAH is tax-free. Many VA
+              lenders gross it up by up to 25% for qualifying purposes (lender policy), meaning your effective
               qualifying income is higher than the dollar amount shown. Ask me how this affects
               your purchase power.
             </p>

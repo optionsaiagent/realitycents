@@ -92,8 +92,8 @@ const STATIC_PAGES = {
           { "@type": "Question", name: "What is the conforming loan limit in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Hawaii is a high-cost state. For 2026, the conforming loan limit for a single-family home in Honolulu County is $1,249,125 — significantly higher than the national baseline of $832,750. Loans above this limit are considered jumbo loans and require different qualification standards." } },
           { "@type": "Question", name: "What is the minimum down payment for a home in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Down payment requirements vary by loan type. VA loans (for eligible veterans and military) require 0% down. FHA loans require 3.5% down with a 580+ credit score. Conventional loans can go as low as 3% down for first-time buyers. Jumbo loans typically require 10–20% down. There are also 0% down portfolio loan options available up to $998,000 for buyers who meet certain requirements — contact Jay for details." } },
           { "@type": "Question", name: "What is a leasehold property in Hawaii and can I get a mortgage on one?", acceptedAnswer: { "@type": "Answer", text: "A leasehold property means you own the structure but lease the land from a landowner (often the Bishop Estate or other large landowners). Mortgages on leasehold properties are available but have additional requirements. For conventional loans, lenders require at least 5 years remaining on the lease term after the loan term expires — meaning a 30-year loan requires at least 35 years remaining on the lease. Some lenders restrict leasehold financing entirely. Fee simple (owning both land and structure) is generally preferred by lenders." } },
-          { "@type": "Question", name: "How long does mortgage pre-approval take in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "A standard pre-approval typically takes 1 business day once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market." } },
-          { "@type": "Question", name: "What are typical closing costs in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Closing costs in Hawaii typically range from 1.5–2% of the purchase price. Buyers pay lender fees, title insurance, escrow fees, prepaid interest, and property tax impounds. On an $800,000 purchase, expect approximately $12,000–$16,000 in total closing costs." } },
+          { "@type": "Question", name: "How long does mortgage pre-approval take in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "A standard pre-approval often takes 1–3 business days once all required documents are received. Required documents include pay stubs, W-2s, tax returns, bank statements, and a government-issued ID. A fully underwritten pre-approval (TBD approval) takes longer but provides stronger negotiating power in Hawaii's competitive market." } },
+          { "@type": "Question", name: "What are typical closing costs in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Closing costs in Hawaii typically run 2–5% of the purchase price, and a planning budget of about 3–4% is realistic. Buyers pay lender fees, title insurance, escrow fees, prepaid interest, and property tax impounds. On an $800,000 purchase, a 3–4% budget is roughly $24,000–$32,000, separate from any down payment. Your Loan Estimate shows your actual figures." } },
           { "@type": "Question", name: "Can I use a VA loan to buy a condo in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Yes, VA loans can be used to purchase condos in Hawaii, but the condo project must be VA-approved. The VA maintains a list of approved condo projects. Many Honolulu condo buildings are VA-approved, but it's important to verify approval status before making an offer. Your lender can check VA approval status and help navigate the process." } },
         ],
       },
@@ -299,7 +299,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "I used my VA loan on the mainland. Can I use it again at Schofield?", acceptedAnswer: { "@type": "Answer", text: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference. With full entitlement, there is no VA loan limit for $0 down." } },
+          { "@type": "Question", name: "I used my VA loan on the mainland. Can I use it again at Schofield?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you have remaining entitlement. Your entitlement in use is based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount); your Certificate of Eligibility shows the exact figure. In Honolulu County, remaining entitlement is 25% of the 2026 conforming limit of $1,249,125 ($312,281) minus the entitlement in use, and your $0-down ceiling is about four times the remaining entitlement. Above that, the down payment is 25% of the difference only. With full entitlement there is no VA loan limit; how much you can borrow depends on income, credit, residual income, and lender approval." } },
           { "@type": "Question", name: "Can I qualify on BAH alone?", acceptedAnswer: { "@type": "Answer", text: "BAH counts as qualifying income when documented on your LES. Most lenders can gross it up 25% since it's tax-free, which meaningfully improves your DTI. Whether it's sufficient alone depends on your full debt picture." } },
           { "@type": "Question", name: "How long does VA loan approval take? I have a short PCS window.", acceptedAnswer: { "@type": "Answer", text: "A VA loan doesn't take longer than conventional — the appraisal process is comparable. The variable is condo approval status and seller education. Jay closes VA loans on Oahu regularly and knows how to set timelines that work with PCS constraints." } },
           { "@type": "Question", name: "Should I buy or rent if I'm only here 2–3 years?", acceptedAnswer: { "@type": "Answer", text: "It depends on when in the market cycle you're buying and where you think Hawaii appreciation goes. But historically, Oahu values have supported short holds better than most markets." } },
@@ -340,7 +340,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "I'm Navy and used my VA loan in Norfolk. Can I use it again in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference only. With full entitlement, there is no VA loan limit for $0 down." } },
+          { "@type": "Question", name: "I'm Navy and used my VA loan in Norfolk. Can I use it again in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you have remaining entitlement. Your entitlement in use is based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount); your Certificate of Eligibility shows the exact figure. In Honolulu County, remaining entitlement is 25% of the 2026 conforming limit of $1,249,125 ($312,281) minus the entitlement in use, and your $0-down ceiling is about four times the remaining entitlement. Above that, the down payment is 25% of the difference only. With full entitlement there is no VA loan limit; how much you can borrow depends on income, credit, residual income, and lender approval." } },
           { "@type": "Question", name: "Can I qualify on BAH alone?", acceptedAnswer: { "@type": "Answer", text: "BAH counts as qualifying income when documented on your LES. Most lenders can gross it up 25% since it's tax-free, which meaningfully improves your DTI. Whether it's sufficient alone depends on your full debt picture." } },
           { "@type": "Question", name: "My spouse is also active duty. Can we combine VA loans?", acceptedAnswer: { "@type": "Answer", text: "Yes — two eligible borrowers can use joint VA financing on the same property. This is common at JBPHH with dual-military couples. The math gets favorable fast." } },
           { "@type": "Question", name: "Should I buy or rent if I'm only here 2–3 years?", acceptedAnswer: { "@type": "Answer", text: "It depends on when in the market cycle you're buying and where you think Hawaii appreciation goes. But historically, Oahu values have supported short holds better than most markets. Oahu's rental market near JBPHH is extremely strong." } },
@@ -381,7 +381,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "I used my VA loan at Camp Pendleton. Can I use it again at MCBH?", acceptedAnswer: { "@type": "Answer", text: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference only. With full entitlement, there is no VA loan limit for $0 down." } },
+          { "@type": "Question", name: "I used my VA loan at Camp Pendleton. Can I use it again at MCBH?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you have remaining entitlement. Your entitlement in use is based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount); your Certificate of Eligibility shows the exact figure. In Honolulu County, remaining entitlement is 25% of the 2026 conforming limit of $1,249,125 ($312,281) minus the entitlement in use, and your $0-down ceiling is about four times the remaining entitlement. Above that, the down payment is 25% of the difference only. With full entitlement there is no VA loan limit; how much you can borrow depends on income, credit, residual income, and lender approval." } },
           { "@type": "Question", name: "Can I qualify on BAH alone?", acceptedAnswer: { "@type": "Answer", text: "BAH counts as qualifying income when documented on your LES. Most lenders can gross it up 25% since it's tax-free, which meaningfully improves your DTI. Whether it's sufficient alone depends on your full debt picture." } },
           { "@type": "Question", name: "Kailua homes are expensive. Can I still use VA with $0 down above $1M?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, there is no VA loan limit for $0 down — you can buy at any price a lender will approve. Honolulu County's 2026 conforming limit of $1,249,125 applies only with reduced entitlement." } },
           { "@type": "Question", name: "Should I buy or rent if I'm only here 2–3 years?", acceptedAnswer: { "@type": "Answer", text: "Windward side homes appreciate well and rent easily to the next wave of MCBH Marines. Kailua especially has strong rental demand from both military and civilian tenants. If you buy at $900K today and rent it for $3,500–$4,000/month when you PCS, the numbers often work." } },
@@ -422,7 +422,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "I used my VA loan at my last duty station. Can I use it again at Fort Shafter?", acceptedAnswer: { "@type": "Answer", text: "Yes — with remaining entitlement. Honolulu County's 2026 single-family conforming limit is $1,249,125. Subtract your current VA loan balance from that figure to find your available 100% financing ceiling. Above that, a 25% partial down payment applies on the difference only. With full entitlement, there is no VA loan limit for $0 down." } },
+          { "@type": "Question", name: "I used my VA loan at my last duty station. Can I use it again at Fort Shafter?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you have remaining entitlement. Your entitlement in use is based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount); your Certificate of Eligibility shows the exact figure. In Honolulu County, remaining entitlement is 25% of the 2026 conforming limit of $1,249,125 ($312,281) minus the entitlement in use, and your $0-down ceiling is about four times the remaining entitlement. Above that, the down payment is 25% of the difference only. With full entitlement there is no VA loan limit; how much you can borrow depends on income, credit, residual income, and lender approval." } },
           { "@type": "Question", name: "Can I qualify on BAH alone?", acceptedAnswer: { "@type": "Answer", text: "BAH counts as qualifying income when documented on your LES. Most lenders can gross it up 25% since it's tax-free, which meaningfully improves your DTI. Shafter personnel tend to be higher-ranking — your BAH covers more of the payment than junior ranks." } },
           { "@type": "Question", name: "I'm a senior officer. Are there homes above the VA loan limit?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, there is no VA loan limit. With reduced entitlement, Honolulu County's 2026 single-family conforming limit is $1,249,125. Above your remaining $0-down capacity, you'd put 25% down on the difference only. For a $1.4M home with little remaining capacity, that's about $37,700 down instead of the $280,000 conventional would require." } },
           { "@type": "Question", name: "Should I buy or rent if I'm only here 2–3 years?", acceptedAnswer: { "@type": "Answer", text: "At your rank, the math almost always favors buying. Your BAH covers a significant portion of the payment, Oahu appreciation has historically supported short holds, and your rental demand when you PCS is built in." } },
@@ -498,7 +498,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: "Can I use my BAH as qualifying income for a VA loan?", acceptedAnswer: { "@type": "Answer", text: "Yes. VA allows BAH to be used as qualifying income. Since BAH is tax-free, most lenders can gross it up by 25% for qualification purposes, which increases your buying power." } },
+          { "@type": "Question", name: "Can I use my BAH as qualifying income for a VA loan?", acceptedAnswer: { "@type": "Answer", text: "Yes. VA allows BAH to be used as qualifying income. Since BAH is tax-free, many lenders gross it up by up to 25% (lender policy) for qualification purposes, which increases your buying power." } },
           { "@type": "Question", name: "What if my BAH doesn't cover the full mortgage payment?", acceptedAnswer: { "@type": "Answer", text: "You make up the difference from your base pay. But your base pay is also tax-free for BAH purposes, and you have other income sources (spouse's income, bonuses, etc.). The math usually works out better than renting." } },
           { "@type": "Question", name: "Can I rent out my home when I PCS?", acceptedAnswer: { "@type": "Answer", text: "Yes. VA requires you to occupy the home as your primary residence for 12 months. After 12 months, you can convert to a rental. Oahu's rental market is strong — many buyers cover their full mortgage payment with rent." } },
           { "@type": "Question", name: "How does the VA funding fee affect the math?", acceptedAnswer: { "@type": "Answer", text: "The VA funding fee (2.15% for first-time users) is financed into the loan. It's still a better deal than PMI on a conventional loan. The 5-year comparison includes the funding fee, so the numbers are realistic." } },
@@ -607,12 +607,12 @@ const STATIC_PAGES = {
           { "@type": "Question", name: "Can I use a VA loan to buy in Hawaii with zero down?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply." } },
           { "@type": "Question", name: "Is there a VA loan limit in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, no VA loan limit for $0 down. With reduced entitlement, county conforming limits apply. Honolulu County's 2026 single-family conforming limit is $1,249,125." } },
           { "@type": "Question", name: "Are Hawaii condos VA-approved?", acceptedAnswer: { "@type": "Answer", text: "Not automatically. Many Hawaii condos are VA-approved, but you must verify the specific project before writing an offer. Use RealityCents' VA condo tools and have your lender confirm." } },
-          { "@type": "Question", name: "Can VA loans be used on Hawaii leasehold property?", acceptedAnswer: { "@type": "Answer", text: "Often yes, if the remaining lease term meets VA requirements (commonly at least 14 years beyond loan maturity). Always confirm with your lender on the specific lease." } },
+          { "@type": "Question", name: "Can VA loans be used on Hawaii leasehold property?", acceptedAnswer: { "@type": "Answer", text: "Rarely in practice. VA financing on leasehold requires the lease to meet VA's term requirements, and very few Oahu leasehold properties end up being workable with a VA loan. VA buyers usually do best focusing on fee-simple property; have your lender and a Hawaii real estate attorney review any lease before you sign a Purchase Contract." } },
           { "@type": "Question", name: "Does BAH count as income for a Hawaii VA loan?", acceptedAnswer: { "@type": "Answer", text: "Yes. Basic Allowance for Housing typically counts toward qualification. Hawaii BAH is among the highest in the country, which can materially increase buying power — estimate with the Military Buying Power Calculator." } },
           { "@type": "Question", name: "What is the VA funding fee, and who is exempt?", acceptedAnswer: { "@type": "Answer", text: "The VA funding fee is a one-time fee (often financeable) in place of PMI. First-use $0-down purchasers commonly pay a percentage of the loan amount; veterans receiving VA disability compensation are generally exempt. See the book and Veterans Guide for current percentages and exceptions." } },
           { "@type": "Question", name: "Where can I buy Zero Down in Paradise?", acceptedAnswer: { "@type": "Answer", text: "On Amazon (ASIN B0H7P83W15)." } },
           { "@type": "Question", name: "How is this different from generic VA loan guides?", acceptedAnswer: { "@type": "Answer", text: "It is written for Hawaii: high-cost entitlement math, BAH/COLA, VA condos, leasehold, J-1, local tax exemptions, and island closing realities — by a Hawaii-based VA lender who is also a veteran." } },
-          { "@type": "Question", name: "What free tools does RealityCents offer for VA buyers?", acceptedAnswer: { "@type": "Answer", text: "VA remaining eligibility calculator, military buying power calculator, VA condo lookup, Pearl Harbor and Schofield VA pages, and a full Veterans Guide plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment." } },
+          { "@type": "Question", name: "What free tools does RealityCents offer for VA buyers?", acceptedAnswer: { "@type": "Answer", text: "VA remaining eligibility calculator, military buying power calculator, VA condo lookup, Pearl Harbor and Schofield VA pages, and a full Veterans Guide plus related knowledge-base articles on house hacking, assumable VA loans, and funding-fee tax treatment, and the same math runs inside AI assistants through the RealityCents MCP server." } },
           { "@type": "Question", name: "How do I get started with a Hawaii VA loan?", acceptedAnswer: { "@type": "Answer", text: "1) Get your Certificate of Eligibility (COE). 2) Get pre-approved with a VA-experienced Hawaii lender. 3) Work with an agent who understands military / PCS timelines. 4) Verify condo approval and leasehold terms before you commit. Call (808) 429-0811 or start with the Veterans Guide." } },
         ],
       },
@@ -788,15 +788,15 @@ const STATIC_PAGES = {
     ],
   },
   "/ai": {
-    title: "Use RealityCents in Your AI Assistant (MCP Server) | RealityCents",
-    description: "Connect RealityCents' free, read-only Hawaii mortgage and VA loan MCP server to Claude, ChatGPT, Cursor, and other AI assistants. No personal data.",
+    title: "Hawaii Mortgage & VA Loan Calculator for ChatGPT, Claude & Cursor (MCP) | RealityCents",
+    description: "Free, read-only Hawaii mortgage and VA loan calculators for AI assistants. Connect RealityCents' MCP server to ChatGPT, Claude, or Cursor. No personal data.",
     keywords: "Hawaii mortgage MCP server, RealityCents AI assistant, VA loan calculator MCP, Model Context Protocol mortgage Hawaii, Claude custom connector, Jay Miller NMLS 657301",
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Use RealityCents in Your AI Assistant (MCP Server)",
-        description: "Connect RealityCents' free, read-only Hawaii mortgage and VA loan MCP server to Claude, ChatGPT, Cursor, and other AI assistants. No personal data.",
+        name: "Hawaii Mortgage & VA Loan Calculator for ChatGPT, Claude & Cursor (MCP)",
+        description: "Free, read-only Hawaii mortgage and VA loan calculators for AI assistants. Connect RealityCents' MCP server to ChatGPT, Claude, or Cursor. No personal data.",
         url: `${BASE_URL}/ai`,
         isPartOf: { "@type": "WebSite", name: SITE_NAME, url: BASE_URL },
       },
@@ -806,6 +806,33 @@ const STATIC_PAGES = {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: "AI assistant tools", item: `${BASE_URL}/ai` },
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "RealityCents Hawaii Mortgage & VA Loan MCP Server",
+        alternateName: "io.github.jaymiller-cmg/mortgage-hawaii",
+        applicationCategory: "FinanceApplication",
+        applicationSubCategory: "Model Context Protocol server",
+        operatingSystem: "Any MCP client (Claude, ChatGPT, Cursor)",
+        url: `${BASE_URL}/ai`,
+        installUrl: "https://realitycents-mcp.jaymiller.workers.dev/mcp",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "get_preapproval_link"],
+        author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${BASE_URL}/about` },
+        publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
+        isRelatedTo: { "@type": "Book", name: "Zero Down in Paradise: The Hawaii VA Loan Playbook", url: `${BASE_URL}/zero-down-in-paradise` },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Can I use a Hawaii mortgage calculator in ChatGPT or Claude?", acceptedAnswer: { "@type": "Answer", text: "Yes. Add the RealityCents MCP server (https://realitycents-mcp.jaymiller.workers.dev/mcp) as a custom connector with no authentication, then ask in plain English, for example \"What's the payment on a $900,000 Honolulu home with a VA loan?\"" } },
+          { "@type": "Question", name: "What is the RealityCents MCP server?", acceptedAnswer: { "@type": "Answer", text: "A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii." } },
+          { "@type": "Question", name: "Does it collect personal information?", acceptedAnswer: { "@type": "Answer", text: "No. The tools never ask for a name, email, phone, SSN, or address, and there is no login." } },
+          { "@type": "Question", name: "Is the result a loan offer or pre-approval?", acceptedAnswer: { "@type": "Answer", text: "No. Results are educational estimates, and rates are examples, not quotes. For a real number, get pre-approved with a licensed loan officer." } },
+          { "@type": "Question", name: "Where do the numbers come from?", acceptedAnswer: { "@type": "Answer", text: "From the same code and 2026 tables as the realitycents.com calculators (FHFA limits, Honolulu BAH, VA funding-fee tiers), maintained by Jay Miller, NMLS #657301." } },
         ],
       },
     ],
@@ -1111,7 +1138,9 @@ function customizeHtml(baseHtml, route, meta, bodyContent = null) {
 
   // 10. Inject semantic HTML body (before React mount point)
   if (bodyContent) {
-    const prerenderedContent = `    <div id="prerendered-content" aria-hidden="true">\n${bodyContent}\n    </div>\n    `;
+    // Footer uses no <div>: the stale-content strip matches up to the first </div>.
+    const aiFooter = `<footer><nav><a href="${BASE_URL}/ai">AI assistant tools</a></nav></footer>`;
+    const prerenderedContent = `    <div id="prerendered-content" aria-hidden="true">\n${bodyContent}\n${aiFooter}\n    </div>\n    `;
     html = html.replace(
       '    <div id="root"></div>',
       `${prerenderedContent}    <div id="root"></div>`

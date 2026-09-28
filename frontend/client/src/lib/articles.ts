@@ -279,7 +279,7 @@ Eligibility basics: first-time buyers (generally, no home ownership in the past 
 
 ## Path 3: Seller Concessions — Let the Seller Pay Your Way In
 
-Even if you have a down payment covered (through VA, gifts, or savings), you still face closing costs — typically 1.5–2% of the purchase price in Hawaii. On a $700,000 home, that's $10,500–$14,000.
+Even if you have a down payment covered (through VA, gifts, or savings), you still face closing costs, typically 2–5% of the purchase price in Hawaii, with a planning budget of about 3–4%. On a $700,000 home, that budget is roughly $21,000–$28,000.
 
 Seller concessions can eliminate this entirely. And right now, the leverage is on your side: per Redfin, sellers gave concessions in 46.2% of U.S. home sales in May 2026 — the highest share for any May on record — because there are far more sellers than buyers in the market. On Oahu, the condo market in particular has shifted firmly into buyer's territory, making concession requests increasingly successful.
 
@@ -689,7 +689,7 @@ This is not a theoretical scenario. This is how we structure VA purchases for mi
 
 FHA loans allow the seller to contribute up to **6% of the purchase price** toward the buyer's closing costs, prepaids, and discount points. On a $600,000 Oahu condo, that is a maximum credit of $36,000.
 
-Because closing costs and prepaids in Hawaii typically run only 1.5–2% of the purchase price, FHA buyers almost always have significant room left within the 6% cap to buy down their interest rate — a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
+Because closing costs and prepaids in Hawaii typically run about 2–5% of the purchase price, FHA buyers often have room left within the 6% cap to buy down their interest rate, a strategy we cover in detail in our guide to [using seller concessions for rate buydowns](/knowledge-base/seller-concessions-rate-buydown-hawaii).
 
 ### Real Example: $650,000 Oahu Condo, FHA Loan, 3.5% Down
 
@@ -1065,7 +1065,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes — if the condo **project** is VA-approved. About 1,766 Oahu projects are on the VA's accepted list, and the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you check any building in seconds. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability" — a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,769 Oahu projects (VA list as of Sep 15, 2026) are on the VA's accepted list, and the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you check any building in seconds. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -2952,7 +2952,7 @@ If you are serious about buying in Hawaii, here is your action plan:
 The question is not whether you can afford to buy in Hawaii. The question is which path gets you there. The math is the math — but the math has more solutions than most people realize.
 
 ---
-*Jay Miller | NMLS #657301 | CMG Home Loans NMLS #2475890*
+*Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
 *Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
 
 ---
@@ -3182,7 +3182,7 @@ If you are buying in Hawaii and want to explore how seller concessions could wor
 4. **Talk to a local lender.** Seller concession strategy is highly specific to your loan type, down payment, rate environment, and how long you plan to stay. A 15-minute conversation can clarify which approach saves you the most money.
 
 ---
-*Jay Miller | NMLS #657301 | CMG Home Loans NMLS #2475890*
+*Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
 *Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
 
 ---
@@ -3369,7 +3369,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
 
 ---
 
-*Jay Miller | NMLS #657301 | CMG Home Loans NMLS #2475890*
+*Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
 *Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
 
 ---
@@ -3805,7 +3805,7 @@ The VA buyer preserves $42,500–$170,000 of cash and pays no monthly insurance;
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project — its declaration, bylaws, budget, and governance — which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters — and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,766 approved projects.
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,769 approved projects (as of Sep 15, 2026).
 
 ## What each review actually looks at
 
@@ -3938,7 +3938,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,766 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,769 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 

@@ -3,6 +3,7 @@
  * Calculates maximum home price based on income, debts, and DTI ratio
  */
 import { useState, useMemo } from "react";
+import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
@@ -140,6 +141,12 @@ export default function AffordabilityCalculator() {
         image={IMAGES.heroCalculator}
         compact
       />
+
+      <p className="container pt-4 text-sm">
+        <Link href="/ai" className="text-teal font-body font-semibold hover:underline">
+          Use this Hawaii mortgage calculator in ChatGPT, Claude, or Cursor
+        </Link>
+      </p>
 
       <section className="py-16 lg:py-24">
         <div className="container">
