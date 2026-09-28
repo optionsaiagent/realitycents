@@ -9,6 +9,7 @@ import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER } from "@/lib/constants";
 import { monthlyPI as calcMonthlyPI } from "@/lib/loanMath";
+import { numParam } from "@/lib/urlParams";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import { Link } from "wouter";
@@ -224,9 +225,12 @@ function BuydownCard({ result, isHighlighted }: { result: BuydownResult; isHighl
 export default function BuydownCalculator() {
   // Read URL params for cross-calculator data passing
   const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
-  const initialLoan = Number(urlParams.get("loan")) || 700000;
-  const initialRate = Number(urlParams.get("rate")) || 6.875;
-  const initialTerm = Number(urlParams.get("term")) || 30;
+  // 0 loan or term is not a usable mortgage. A 0% note rate is allowed (monthlyPI treats it as interest-free).
+  const loanRaw = numParam(urlParams, "loan", 700000);
+  const termRaw = numParam(urlParams, "term", 30);
+  const initialLoan = loanRaw > 0 ? loanRaw : 700000;
+  const initialRate = numParam(urlParams, "rate", 6.875);
+  const initialTerm = termRaw > 0 ? termRaw : 30;
 
   const [loanAmount, setLoanAmount] = useState(initialLoan);
   const [noteRate, setNoteRate] = useState(initialRate);

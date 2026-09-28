@@ -9,6 +9,7 @@ import { useSearch } from "wouter";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { presentOr } from "@/lib/urlParams";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
@@ -244,7 +245,10 @@ function serializeScenarios(scenarios: ScenarioStrings[], yearsInHome: number): 
   const compact = scenarios.map((s) => {
     const obj: Record<string, unknown> = { l: s.label, t: s.loanType };
     if (s.purchasePrice !== SCENARIO_DEFAULTS.purchasePrice) obj.p = s.purchasePrice;
-    if (s.downPaymentPct !== SCENARIO_DEFAULTS.downPaymentPct) obj.d = s.downPaymentPct;
+    // "0" is the stored default, but only VA deserializes a missing down payment as 0%.
+    // Conventional and FHA 0% must be written explicitly or the share link restores 5% / 3.5%.
+    const defaultDp = s.loanType === "va" ? "0" : s.loanType === "fha" ? "3.5" : "5";
+    if (s.downPaymentPct !== defaultDp) obj.d = s.downPaymentPct;
     if (s.rate !== SCENARIO_DEFAULTS.rate) obj.r = s.rate;
     if (s.termYears !== SCENARIO_DEFAULTS.termYears) obj.tm = s.termYears;
     if (s.discountPoints !== "0") obj.dp = s.discountPoints;
@@ -298,50 +302,57 @@ function deserializeScenarios(encoded: string): { scenarios: ScenarioStrings[]; 
       // Old format has all keys spelled out
       if ("purchasePrice" in obj) return obj as unknown as ScenarioStrings;
       // New compact format
+      const loanType = (presentOr(obj.t as LoanType | undefined, "va"));
+      const asText = (value: unknown, fallback: string) => String(presentOr(value as string | number | undefined, fallback));
+      // Term and prepay years reject 0 (not a valid selection). Rate, down payment, tax, insurance, HOA, points, credits, and fees keep 0.
+      const termYears = typeof obj.tm === "number" && obj.tm > 0 ? obj.tm : 30;
+      const prepayYears = typeof obj.ppy === "number" && obj.ppy > 0 ? obj.ppy : 3;
       return {
         label: (obj.l as string) || "Scenario",
-        loanType: (obj.t as LoanType) || "va",
-        purchasePrice: (obj.p as string) || "750000",
-        downPaymentPct: (obj.d as string) || (obj.t === "va" ? "0" : obj.t === "fha" ? "3.5" : "5"),
-        rate: (obj.r as string) || "5.75",
-        termYears: (obj.tm as number) || 30,
-        discountPoints: (obj.dp as string) || "0",
-        lenderCredits: (obj.lc as string) || "0",
-        propertyTaxRate: (obj.tr as string) || "0.35",
-        propertyTaxOverride: (obj.to as string) || "0",
-        insurance: (obj.i as string) || "200",
-        hoa: (obj.h as string) || "0",
-        hoaTransferFee: (obj.ht as string) || "0",
+        loanType,
+        purchasePrice: asText(obj.p, "750000"),
+        downPaymentPct: asText(obj.d, loanType === "va" ? "0" : loanType === "fha" ? "3.5" : "5"),
+        rate: asText(obj.r, "5.75"),
+        termYears,
+        discountPoints: asText(obj.dp, "0"),
+        lenderCredits: asText(obj.lc, "0"),
+        propertyTaxRate: asText(obj.tr, "0.35"),
+        propertyTaxOverride: asText(obj.to, "0"),
+        insurance: asText(obj.i, "200"),
+        hoa: asText(obj.h, "0"),
+        hoaTransferFee: asText(obj.ht, "0"),
         vaFirstUse: obj.vf !== false,
         vaDisabled: obj.vd === true,
-        originationFee: (obj.of as string) || "1495",
-        appraisalFee: (obj.af as string) || "800",
-        titleInsurance: (obj.ti as string) || "1750",
-        escrowFee: (obj.ef as string) || "1250",
-        recordingFees: (obj.rf as string) || "250",
-        creditReport: (obj.cr as string) || "75",
-        floodCert: (obj.fc as string) || "20",
-        closingDay: (obj.cd as string) || "15",
+        originationFee: asText(obj.of, "1495"),
+        appraisalFee: asText(obj.af, "800"),
+        titleInsurance: asText(obj.ti, "1750"),
+        escrowFee: asText(obj.ef, "1250"),
+        recordingFees: asText(obj.rf, "250"),
+        creditReport: asText(obj.cr, "75"),
+        floodCert: asText(obj.fc, "20"),
+        closingDay: asText(obj.cd, "15"),
         buydownType: (obj.bt as "none" | "1-1" | "2-1" | "3-2-1") || "none",
-        sellerCredit: (obj.sc as string) || "0",
-        propertyAddress: (obj.a as string) || "",
+        sellerCredit: asText(obj.sc, "0"),
+        propertyAddress: asText(obj.a, ""),
         // Investment fields
         isInvestment: obj.inv === true,
         docType: (obj.dt as "full-doc" | "dscr") || "full-doc",
-        prepayPenaltyYears: (obj.ppy as number) || 3,
-        expectedRent: (obj.er as string) || "",
-        annualRentIncrease: (obj.ari as string) || "3",
+        prepayPenaltyYears: prepayYears,
+        expectedRent: asText(obj.er, ""),
+        annualRentIncrease: asText(obj.ari, "3"),
         // ARM fields
         isARM: obj.arm === true,
         armFixedYears: ([3, 5, 7, 10].includes(obj.afy as number) ? (obj.afy as ArmFixedYears) : 5),
-        armMargin: (obj.amg as string) || "",
-        armInitialCap: (obj.aic as string) || "",
-        armPeriodicCap: (obj.apc as string) || "",
-        armLifetimeCap: (obj.alc as string) || "",
-        armAdjustmentFrequency: ((obj.t as LoanType) === "va" ? 12 : 6) as 6 | 12,
+        armMargin: asText(obj.amg, ""),
+        armInitialCap: asText(obj.aic, ""),
+        armPeriodicCap: asText(obj.apc, ""),
+        armLifetimeCap: asText(obj.alc, ""),
+        armAdjustmentFrequency: (loanType === "va" ? 12 : 6) as 6 | 12,
       };
     });
-    return { scenarios, yearsInHome: data.y || 5 };
+    // 0 years is outside the 1–30 horizon slider, so a missing or zero value stays at 5.
+    const yearsRaw = typeof data.y === "number" ? data.y : Number(data.y);
+    return { scenarios, yearsInHome: Number.isFinite(yearsRaw) && yearsRaw > 0 ? yearsRaw : 5 };
   } catch {
     return null;
   }

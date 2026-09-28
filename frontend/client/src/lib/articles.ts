@@ -1,5 +1,12 @@
 // Knowledge Base Articles Data
 // 15 substantive articles covering Hawaii mortgage topics
+//
+// Honolulu FHA and BAH dollar figures inside these template literals are hardcoded.
+// scripts/extract-article-content.mjs copies template text verbatim, so ${} interpolation
+// would be published as source text. Keep FHA in sync with HONOLULU_FHA_LIMIT_2026
+// (lib/constants.ts, $828,000). Other HUD CY2026 1-unit limits: Maui and Kalawao
+// $1,299,500, Kauai $1,110,900, Hawaii County $586,500. National floor $541,287.
+// Keep BAH in sync with militaryPayData.getBAH. E-1..E-3 match E-4, so "E-4 and below" is accurate.
 
 export interface Article {
   slug: string;
@@ -986,7 +993,7 @@ Start by getting your finances in order at least 6-12 months before you plan to 
 
 ## Loan Options for First-Time Buyers
 
-**FHA Loans** are popular among first-time Hawaii buyers because they offer lower credit score requirements and down payments as low as 3.5%. The 2026 FHA loan limit for high-cost Hawaii counties covers most entry-level properties.
+**FHA Loans** are popular among first-time Hawaii buyers because they offer lower credit score requirements and down payments as low as 3.5%. The 2026 Honolulu County FHA limit is $828,000 for a one-unit home or condo — below the $1,249,125 conforming limit — so it fits many entry-level condos, not the whole market. Maui and Kalawao are $1,299,500, Kauai is $1,110,900, and Hawaii County is $586,500.
 
 **Conventional 97** loans allow just 3% down for first-time buyers with good credit. Combined with PMI that can be removed once you reach 20% equity, this is an attractive option.
 
@@ -1054,7 +1061,7 @@ Only with reduced entitlement. The 2026 FHFA single-family conforming limits are
 
 ## Does BAH count as income?
 
-Yes. Basic Allowance for Housing counts when documented on your LES and expected to continue, and because it is tax-free most lenders gross it up — commonly by up to 25%. Honolulu County's 2026 BAH with dependents runs from about $3,183 (E-4 and below) to $4,959 (O-5); BAS and Hawaii COLA count too. Build your full income stack in the [Military Buying Power Calculator](/military-calculator), and read [does BAH count for a VA loan in Hawaii?](/knowledge-base/does-bah-count-va-loan-hawaii) for how lenders treat each line.
+Yes. Basic Allowance for Housing counts when documented on your LES and expected to continue, and because it is tax-free most lenders gross it up — commonly by up to 25%. Honolulu County's 2026 BAH with dependents runs from $3,333 (E-4 and below) to $4,959 (O-5); BAS and Hawaii COLA count too. Build your full income stack in the [Military Buying Power Calculator](/military-calculator), and read [does BAH count for a VA loan in Hawaii?](/knowledge-base/does-bah-count-va-loan-hawaii) for how lenders treat each line.
 
 ## Can you use a VA loan on a Hawaii condo?
 
@@ -1137,9 +1144,9 @@ The Federal Housing Administration insures FHA loans, which are originated by ap
 
 ## Hawaii FHA Loan Limits (2026)
 
-FHA loan limits in Hawaii are set at the high-cost area ceiling, reflecting the state's elevated property values. For 2026, the single-family FHA loan limit for Honolulu County is **$1,249,125** — the same as the national high-cost ceiling. This is dramatically higher than the standard national floor of $541,287, allowing FHA buyers in Hawaii to compete for a much wider range of properties.
+FHA loan limits are set by county, not at one statewide ceiling. For 2026, the single-family FHA loan limit for Honolulu County is **$828,000** — below the **$1,249,125** conforming limit and below the national high-cost FHA ceiling of $1,249,125. Honolulu is still above the national floor of $541,287. From the same HUD CY2026 forward limits, Maui and Kalawao are $1,299,500, Kauai is $1,110,900, and Hawaii County is $586,500. The Hawaii/Alaska special-exception ceiling is $1,873,625 (HUD ML 2025-23), which is why Maui and Kalawao can sit above the national high-cost ceiling. A Honolulu condo uses that same 1-unit limit of $828,000. With 3.5% down, an FHA purchase in Honolulu tops out around $858,000; above that, buyers need conventional, VA, or jumbo financing.
 
-These higher limits are crucial in Hawaii, where even modest homes can exceed standard FHA limits found in most mainland markets.
+Honolulu's $828,000 cap is still well above the FHA floor used in most mainland counties, which matters because even modest Hawaii homes can exceed those standard limits. It does not cover the higher end of the Oahu market.
 
 ## FHA Mortgage Insurance
 
@@ -2565,12 +2572,12 @@ Here is a realistic scenario for an O-3 with dependents buying a duplex in the H
 | Total Loan Amount | ~$1,532,250 |
 | Estimated Monthly PITI (5.75%, 30-yr) | ~$10,200 |
 | O-3 Base Pay | ~$6,500/mo |
-| O-3 BAH | $4,221/mo |
+| O-3 BAH | $4,428/mo |
 | COLA (HI009, O-3 with dependents) | $738/mo |
 | BAS (Basic Allowance for Subsistence) | $328/mo |
 | Projected Rent — Second Unit (market) | $4,800/mo |
 | Countable Rental Income (75%) | $3,600/mo |
-| **Total Qualifying Income** | **~$15,387/mo** |
+| **Total Qualifying Income** | **~$15,594/mo** |
 | **Upfront Cash to Close (funding fee + closing costs)** | **~$15,000** |
 | **Effective Monthly Cost (PITI − rent collected)** | **~$5,400/mo** |
 
@@ -2842,7 +2849,7 @@ FHA loans let you get in with just 3.5% down — a game-changer when you are try
 
 FHA also finances the upfront MIP (1.75% of the loan amount) into the loan balance, which increases your principal and interest payment slightly.
 
-**2026 FHA loan limit for Honolulu County: $1,249,125** — so FHA covers most of the market.
+**2026 FHA loan limit for Honolulu County: $828,000** (1-unit, including condos) — below the $1,249,125 conforming limit. With 3.5% down, Honolulu FHA purchases top out around $858,000; above that, buyers need conventional, VA, or jumbo. The $900,000 and $1,000,000 rows below are payment math only and are not available as FHA loans in Honolulu County.
 
 | Purchase Price | Down (3.5%) | Loan Amount | P&I (incl. UFMIP) | Tax | Insurance | Monthly MIP | Total PITIA | Income Needed (43% DTI) | Income Needed (50% DTI) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2874,7 +2881,7 @@ The VA funding fee (2.15% for first-time use) gets financed into the loan, which
 
 **The takeaway:** A military family buying a $700,000 home needs about $127,000-$139,000 in income depending on the DTI threshold used. The huge advantage is the $0 down payment — you do not need $140,000 in savings to get started.
 
-For military members, remember that **BAH counts as qualifying income.** An E-7 with dependents stationed at JBPHH receives $3,444/month in BAH (2026 rates), which adds over $41,000 to your qualifying income. COLA counts too. Our [Military Buying Power Calculator](/military-calculator) is built specifically to show you how your military income translates to purchasing power in Hawaii.
+For military members, remember that **BAH counts as qualifying income.** An E-7 with dependents stationed at JBPHH receives $4,098/month in BAH (2026 rates), which adds $49,176 a year to your qualifying income. COLA counts too. Our [Military Buying Power Calculator](/military-calculator) is built specifically to show you how your military income translates to purchasing power in Hawaii.
 
 Veterans with a service-connected disability get the funding fee waived entirely, which saves $12,900-$21,500 on these price points. Read more in our guide to [whether the VA funding fee is tax deductible](/knowledge-base/va-funding-fee-tax-deductible).
 
@@ -3566,7 +3573,7 @@ The [VA Remaining Eligibility Calculator](/va-eligibility-calculator) runs this 
 
 # Does BAH Count for a VA Loan in Hawaii?
 
-**Yes. Basic Allowance for Housing counts as qualifying income for a VA loan when it appears on your Leave and Earnings Statement and is expected to continue — and because BAH is tax-free, most VA lenders gross it up (commonly by up to 25%) when they calculate your debt-to-income ratio.** In Hawaii, where 2026 Honolulu County BAH with dependents runs from about $3,183 a month for an E-4 to $4,959 for an O-5, that allowance is usually the single largest line in a service member's qualifying income.
+**Yes. Basic Allowance for Housing counts as qualifying income for a VA loan when it appears on your Leave and Earnings Statement and is expected to continue — and because BAH is tax-free, most VA lenders gross it up (commonly by up to 25%) when they calculate your debt-to-income ratio.** In Hawaii, where 2026 Honolulu County BAH with dependents runs from $3,333 a month for an E-4 (E-1 through E-3 are the same rate) to $4,959 for an O-5, that allowance is usually the single largest line in a service member's qualifying income.
 
 ## How a lender counts your military pay
 
@@ -3588,17 +3595,17 @@ All Oahu installations — Schofield Barracks, Pearl Harbor-Hickam, MCBH Kaneohe
 
 | Rank | With dependents | Without dependents |
 |---|---|---|
-| E-4 and below | $3,183 | $2,598 |
-| E-5 | $3,663 | $2,997 |
-| E-6 | $3,861 | $3,153 |
+| E-4 and below | $3,333 | $2,598 |
+| E-5 | $3,663 | $2,856 |
+| E-6 | $3,912 | $3,036 |
 | E-7 | $4,098 | $3,348 |
-| O-3 | $4,434 | $3,618 |
-| O-4 | $4,719 | $3,879 |
+| O-3 | $4,428 | $3,819 |
+| O-4 | $4,737 | $4,110 |
 | O-5 | $4,959 | $4,224 |
 
 *Source: DoD BAH calculator, Honolulu County 2026. Verify your own rate; BAH resets each January.*
 
-**What the gross-up does.** An E-6 with dependents drawing $3,861 in BAH is treated, at a 25% gross-up, as having about $4,826 of qualifying income from BAH alone. Over a year, that is roughly $11,500 of additional qualifying income that never shows up on a tax return — which is exactly why a Hawaii VA lender who understands military pay can approve a purchase that a generic lender turns down.
+**What the gross-up does.** An E-6 with dependents drawing $3,912 in BAH is treated, at a 25% gross-up, as having $4,890 of qualifying income from BAH alone. Over a year, that is $11,736 of additional qualifying income that never shows up on a tax return — which is exactly why a Hawaii VA lender who understands military pay can approve a purchase that a generic lender turns down.
 
 ## What BAH actually buys on Oahu
 

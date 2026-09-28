@@ -11,6 +11,7 @@ import PageHero from "@/components/PageHero";
 import PCSCallout from "@/components/PCSCallout";
 import SEO from "@/components/SEO";
 import { LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
+import { numParam } from "@/lib/urlParams";
 import ContactActions from "@/components/ContactActions";
 import EmailResults from "@/components/EmailResults";
 import {
@@ -91,18 +92,20 @@ function buildShareUrl(
 
 function parseSearchParams(search: string) {
   const params = new URLSearchParams(search);
+  const taxRaw = params.has("tax") ? numParam(params, "tax", Number.NaN) : null;
   return {
     grade: params.get("grade") as PayGrade | null,
-    yos: params.get("yos"),
-    dep: params.get("dep"),
+    // 0 is valid for years of service, dependent count, debts, rate, DTI, tax, insurance, HOA, and down payment.
+    yos: numParam(params, "yos", 4),
+    dep: numParam(params, "dep", 1),
     hasDep: params.get("hasDep"),
-    debts: params.get("debts"),
-    rate: params.get("rate"),
-    dti: params.get("dti"),
-    tax: params.get("tax"),
-    ins: params.get("ins"),
-    hoa: params.get("hoa"),
-    dp: params.get("dp"),
+    debts: numParam(params, "debts", 200),
+    rate: numParam(params, "rate", 5.75),
+    dti: numParam(params, "dti", 55),
+    tax: taxRaw !== null && Number.isFinite(taxRaw) ? taxRaw : null,
+    ins: numParam(params, "ins", 150),
+    hoa: numParam(params, "hoa", 0),
+    dp: numParam(params, "dp", 0),
     firstUse: params.get("firstUse"),
     exempt: params.get("exempt"),
   };
@@ -262,38 +265,20 @@ export default function MilitaryCalculator() {
   const [grade, setGrade] = useState<PayGrade>(
     isValidGrade(parsed.grade) ? parsed.grade : "E-5"
   );
-  const [yos, setYos] = useState(
-    parsed.yos !== null ? Number(parsed.yos) : 4
-  );
+  const [yos, setYos] = useState(parsed.yos);
   const [hasDependents, setHasDependents] = useState(
     parsed.hasDep !== null ? parsed.hasDep === "1" : true
   );
-  const [numDependents, setNumDependents] = useState(
-    parsed.dep !== null ? Number(parsed.dep) : 1
-  );
-  const [monthlyDebts, setMonthlyDebts] = useState(
-    parsed.debts !== null ? Number(parsed.debts) : 200
-  );
-  const [interestRate, setInterestRate] = useState(
-    parsed.rate !== null ? Number(parsed.rate) : 5.75
-  );
-  const [maxDTI, setMaxDTI] = useState(
-    parsed.dti !== null ? Number(parsed.dti) : 55
-  );
-  const [taxOverride, setTaxOverride] = useState<number | null>(
-    parsed.tax !== null ? Number(parsed.tax) : null
-  );
+  const [numDependents, setNumDependents] = useState(parsed.dep);
+  const [monthlyDebts, setMonthlyDebts] = useState(parsed.debts);
+  const [interestRate, setInterestRate] = useState(parsed.rate);
+  const [maxDTI, setMaxDTI] = useState(parsed.dti);
+  const [taxOverride, setTaxOverride] = useState<number | null>(parsed.tax);
   const [vaFirstUse, setVaFirstUse] = useState(parsed.firstUse !== "0");
   const [vaDisabilityExempt, setVaDisabilityExempt] = useState(parsed.exempt === "1");
-  const [monthlyInsurance, setMonthlyInsurance] = useState(
-    parsed.ins !== null ? Number(parsed.ins) : 150
-  );
-  const [monthlyHOA, setMonthlyHOA] = useState(
-    parsed.hoa !== null ? Number(parsed.hoa) : 0
-  );
-  const [downPayment, setDownPayment] = useState(
-    parsed.dp !== null ? Number(parsed.dp) : 0
-  );
+  const [monthlyInsurance, setMonthlyInsurance] = useState(parsed.ins);
+  const [monthlyHOA, setMonthlyHOA] = useState(parsed.hoa);
+  const [downPayment, setDownPayment] = useState(parsed.dp);
 
   const [copiedText, setCopiedText] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);

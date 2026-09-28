@@ -10,6 +10,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import SEO from "@/components/SEO";
 import { IMAGES, LENDER, HONOLULU_CONFORMING_LIMIT_2026, HONOLULU_FHA_LIMIT_2026 } from "@/lib/constants";
+import { numParam } from "@/lib/urlParams";
 import {
   defaultMonthlyPropertyTax,
   monthlyPI as calcMonthlyPI,
@@ -225,29 +226,31 @@ function decodeInputsFromURL(): LoanInputs | null {
   if (!params.has("lt")) return null;
   const lt = params.get("lt") as LoanType;
   if (!["conventional", "va", "fha", "jumbo"].includes(lt)) return null;
-  const dpm = (params.get("dpm") || "percent") as "dollar" | "percent";
+  const dpmRaw = params.get("dpm");
+  const dpm = dpmRaw === "dollar" || dpmRaw === "percent" ? dpmRaw : "percent";
+  // 0 is not a valid price, score, or term. 0 is valid for down payment, rate, tax, insurance, HOA, and PMI override.
+  const homePriceRaw = numParam(params, "hp", 800000);
+  const homePrice = homePriceRaw > 0 ? homePriceRaw : 800000;
+  const autoTax = defaultMonthlyPropertyTax(homePrice);
+  const ficoRaw = numParam(params, "fico", 740);
+  const termRaw = numParam(params, "term", 30);
+  const pmiRaw = params.has("pmio") ? numParam(params, "pmio", Number.NaN) : Number.NaN;
   return {
     loanType: lt,
-    homePrice: Number(params.get("hp")) || 800000,
+    homePrice,
     downPaymentMode: dpm,
-    downPaymentDollar: Number(params.get("dpd")) || 160000,
-    downPaymentPercent: Number(params.get("dpp")) || 20,
-    interestRate: Number(params.get("ir")) || 6.0,
-    loanTerm: ([15, 20, 30].includes(Number(params.get("term"))) ? Number(params.get("term")) as 15 | 20 | 30 : 30),
-    ficoScore: Number(params.get("fico")) || 740,
-    propertyTax: (() => {
-      const price = Number(params.get("hp")) || 800000;
-      const auto = defaultMonthlyPropertyTax(price);
-      if (!params.has("tax")) return auto;
-      const typed = Number(params.get("tax"));
-      return Number.isFinite(typed) ? typed : auto;
-    })(),
-    insurance: Number(params.get("ins")) || 0,
-    hoaFees: Number(params.get("hoa")) || 0,
+    downPaymentDollar: numParam(params, "dpd", 160000),
+    downPaymentPercent: numParam(params, "dpp", 20),
+    interestRate: numParam(params, "ir", 6.0),
+    loanTerm: ([15, 20, 30].includes(termRaw) ? termRaw : 30) as 15 | 20 | 30,
+    ficoScore: ficoRaw > 0 ? ficoRaw : 740,
+    propertyTax: params.has("tax") ? numParam(params, "tax", autoTax) : autoTax,
+    insurance: numParam(params, "ins", 0),
+    hoaFees: numParam(params, "hoa", 0),
     vaFirstUse: params.get("vfu") !== "0",
     vaDisability: params.get("vd") === "1",
-    pmiOverride: params.has("pmio") && !Number.isNaN(Number(params.get("pmio"))) ? Number(params.get("pmio")) : null,
-    propertyTaxManual: params.has("tax") && Math.abs((Number(params.get("tax")) || 0) - defaultMonthlyPropertyTax(Number(params.get("hp")) || 800000)) > 0.02,
+    pmiOverride: Number.isFinite(pmiRaw) ? pmiRaw : null,
+    propertyTaxManual: params.has("tax") && Math.abs(numParam(params, "tax", autoTax) - autoTax) > 0.02,
   };
 }
 

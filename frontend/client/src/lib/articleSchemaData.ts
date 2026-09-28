@@ -123,7 +123,8 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     ],
     faqSchema: [
       { question: "What is an FHA loan?", answer: "An FHA loan is a mortgage insured by the Federal Housing Administration. FHA loans are popular for first-time homebuyers because they require a lower down payment (3.5% with a 580+ credit score) and are more flexible with credit requirements than conventional loans." },
-      { question: "What are the FHA loan limits in Hawaii for 2026?", answer: "In 2026, the FHA loan limit for a single-family home in Honolulu County is $1,249,125. For condos, the limit is $1,249,125 for a single unit. These limits are higher than the national baseline because Hawaii is a high-cost area." },
+      // Honolulu 1-unit and condo FHA $828,000 — keep in sync with HONOLULU_FHA_LIMIT_2026 in constants.ts
+      { question: "What are the FHA loan limits in Hawaii for 2026?", answer: "In 2026, the FHA loan limit for a single-family home in Honolulu County is $828,000. For condos, the single-unit limit is the same $828,000. That is below the $1,249,125 conforming limit, so with 3.5% down an FHA purchase in Honolulu tops out around $858,000; above that, buyers need conventional, VA, or jumbo. Other 2026 1-unit limits: Maui and Kalawao $1,299,500, Kauai $1,110,900, and Hawaii County $586,500. The national floor is $541,287." },
       { question: "Can I use an FHA loan to buy a condo in Hawaii?", answer: "Yes, FHA loans can be used for condo purchases in Hawaii, but the condo project must be FHA-approved. Your lender can verify FHA approval status. Most Honolulu condo buildings are FHA-approved, but it's important to check before making an offer." }
     ],
   },
@@ -384,7 +385,8 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     faqSchema: [
       { question: "Does BAH count as income for a VA loan?", answer: "Yes. Basic Allowance for Housing counts as qualifying income for a VA loan when it is documented on your Leave and Earnings Statement and expected to continue. Because BAH is tax-free, most VA lenders can gross it up \u2014 commonly by up to 25% \u2014 for qualifying purposes." },
       { question: "Can I qualify for a VA loan in Hawaii on BAH alone?", answer: "BAH alone is rarely the whole picture, but it is a large part of it. Lenders combine base pay, BAH, BAS, and Hawaii COLA (counted in full at CMG Home Loans, with no continuance test), then test debt-to-income. Whether BAH alone carries a specific price depends on your other debts." },
-      { question: "What is Honolulu BAH in 2026?", answer: "All Oahu installations use the Honolulu County rate. With dependents, 2026 monthly BAH runs from about $3,183 (E-4 and below) to $4,959 (O-5); without dependents from about $2,598 to $4,224. Verify your rate on the DoD BAH calculator." },
+      // keep in sync with militaryPayData.getBAH — E-1..E-3 match E-4 ($3,333 / $2,598); O-5 is $4,959 / $4,224
+      { question: "What is Honolulu BAH in 2026?", answer: "All Oahu installations use the Honolulu County rate. With dependents, 2026 monthly BAH runs from $3,333 (E-4 and below) to $4,959 (O-5); without dependents from $2,598 to $4,224. Verify your rate on the DoD BAH calculator." },
     ],
   },
   "va-funding-fee-hawaii": {
