@@ -15,8 +15,6 @@ import { IMAGES, LENDER, PRE_APPROVAL_URL, SITE } from "@/lib/constants";
 
 const MCP_URL = "https://realitycents-mcp.jaymiller.workers.dev/mcp";
 const MCP_REGISTRY = "io.github.jaymiller-cmg/mortgage-hawaii";
-/** PRE_APPROVAL_URL plus the public mobile-share query. */
-const PRE_APPROVAL_SHARE_URL = `${PRE_APPROVAL_URL}?from_mobile_share=true`;
 
 const PAGE_TITLE = "Hawaii Mortgage & VA Loan Calculator for ChatGPT, Claude & Cursor (MCP)";
 const PAGE_DESCRIPTION =
@@ -485,7 +483,7 @@ export default function AITools() {
         headline="Want a real pre-approval?"
         subtext={`${LENDER.name} can review income, credit, and the property. The assistant only estimates.`}
         preApprovalLabel="Get Pre-Approved"
-        preApprovalUrl={PRE_APPROVAL_SHARE_URL}
+        preApprovalUrl={PRE_APPROVAL_URL}
       />
     </Layout>
   );

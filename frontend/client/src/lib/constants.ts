@@ -66,7 +66,7 @@ export const HAWAII_COUNTY_CONFORMING_LIMITS_2026 = [
   { id: "hawaii", name: "Hawaii County (Big Island)", limit: 1_249_125 },
 ] as const;
 
-export const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com";
+export const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },

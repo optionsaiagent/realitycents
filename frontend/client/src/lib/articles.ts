@@ -811,7 +811,7 @@ Work with a lender who understands the exact concession limits for your loan typ
 
 If you are buying in Hawaii and want to know exactly how much seller credit you can ask for — and how to structure the offer so the seller says yes — I can run the numbers for your specific situation. Every loan type has different limits, and the optimal strategy depends on your down payment, the property type, and how long the home has been on the market.
 
-[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 ---
 
@@ -2301,7 +2301,7 @@ Use the RealityCents Buydown Calculator to compare 1/1, 2/1, and 3/2/1 buydown s
 
 ---
 
-*Ready to get pre-approved and start negotiating? [Apply with Jay Miller at CMG Home Loans](https://www.cmghomeloans.com/mysite/jay-miller) or call Jay Miller at (808) 429-0811.*
+*Ready to get pre-approved and start negotiating? [Apply with Jay Miller at CMG Home Loans](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call Jay Miller at (808) 429-0811.*
 
 For a complete breakdown of all the costs involved in a Hawaii home purchase, see our guide to [understanding closing costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii). If you are a first-time buyer, our [First-Time Homebuyer's Guide to Hawaii](/knowledge-base/first-time-homebuyer-guide-hawaii) covers the full process from pre-approval to closing.`,
   },
@@ -2418,7 +2418,7 @@ That is exactly where I come in.
 
 **Ready to explore your Hawaii investment financing options?**
 
-[**Get Pre-Approved Today →**](https://www.cmghomeloans.com/mysite/jay-miller)
+[**Get Pre-Approved Today →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 Contact me at RealityCents for personalized guidance on DSCR loans, investment property financing, and Hawaii-specific mortgage strategy. With deep knowledge of the local market and access to a wide range of investor loan programs, I can help you determine whether a DSCR loan is the right tool for your next Hawaii acquisition.
 
@@ -2607,7 +2607,7 @@ Do not rely on TikTok advice to structure one of the largest financial decisions
 
 Want to estimate your total qualifying income right now? Use our [Military Buying Power Calculator](/military-calculator) to see your Base Pay, BAH, BAS, and COLA breakdown and estimated VA loan purchase price — all based on 2026 Honolulu rates.
 
-[**Get Pre-Approved with Jay Miller at CMG Home Loans →**](https://www.cmghomeloans.com/mysite/jay-miller)
+[**Get Pre-Approved with Jay Miller at CMG Home Loans →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about how VA multi-family rules apply to your specific situation? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -2693,7 +2693,7 @@ If you're working through your numbers for a home purchase in Hawaii, I'm happy 
 
 ---
 
-*Ready to run the numbers? [Get your pre-approval started with Jay Miller at CMG Home Loans](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Ready to run the numbers? [Get your pre-approval started with Jay Miller at CMG Home Loans](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 *This content is for educational purposes only and does not constitute financial or tax advice. Consult your plan administrator and a qualified financial advisor before making retirement account decisions.*
 
@@ -2777,7 +2777,7 @@ Whether you are a first-time buyer trying to understand how a flood zone impacts
 
 **Ready to see exactly what you qualify for in today's market?** Let's get your pre-approval started.
 
-[**Get Pre-Approved with Jay Miller at CMG Home Loans**](https://www.cmghomeloans.com/mysite/jay-miller)
+[**Get Pre-Approved with Jay Miller at CMG Home Loans**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about how these new flood maps affect your specific situation? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -2953,7 +2953,7 @@ The question is not whether you can afford to buy in Hawaii. The question is whi
 
 ---
 *Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
-*Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Have questions about your specific situation? [Get pre-approved](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 ---
 *Last Updated: April 2026*`,
@@ -3183,7 +3183,7 @@ If you are buying in Hawaii and want to explore how seller concessions could wor
 
 ---
 *Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
-*Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Have questions about your specific situation? [Get pre-approved](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 ---
 *Last Updated: May 2026*`,
@@ -3370,7 +3370,7 @@ The data says the window is open. It doesn't say how long it stays open. If you'
 ---
 
 *Jay Miller | NMLS #657301 | CMG Home Loans Branch NMLS #2475890*
-*Have questions about your specific situation? [Get pre-approved](https://www.cmghomeloans.com/mysite/jay-miller) or call (808) 429-0811.*
+*Have questions about your specific situation? [Get pre-approved](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) or call (808) 429-0811.*
 
 ---
 
@@ -3478,7 +3478,7 @@ For the first time, a Hawaii homeowner can turn their current home into a rental
 
 To model the payment on the next home itself, run your scenario in the [Advanced Mortgage Calculator](/advanced-calculator). And if you're buying a condo, note that Fannie Mae's [condo project review rules are also changing in 2026](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) — the two updates together reshape a lot of Oahu purchase plans.
 
-Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
+Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
 
 ---
 *Sources: Fannie Mae Selling Guide Announcement SEL-2026-08 (September 2, 2026); Fannie Mae Selling Guide B3-3.8-05, Rental Income from Non-Subject Property: Departing Residence (09/02/2026); B3-3.8-01, General Rental Income Information (09/02/2026); B3-6-06, Qualifying Impact of Other Real Estate Owned.*
@@ -4223,7 +4223,7 @@ For context on how much income you need to qualify at these price points, see ou
 
 The Hale Kamaʻāina program is offered through participating lenders enrolled with HHFDC — and **CMG Home Loans is now one of them**. For the full list of approved lenders and to confirm fund availability, visit [dbedt.hawaii.gov/hhfdc/hk-mortgage-program/](https://dbedt.hawaii.gov/hhfdc/hk-mortgage-program/).
 
-Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
+Whether Hale Kamaʻāina is the right fit or another structure wins at your price point — VA, FHA, conventional, jumbo, or refinance — [get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) (NMLS #657301, CMG Home Loans) for a no-obligation comparison that now includes the Hale Kamaʻāina rate itself.
 
 ---
 *Sources: Hawaii Housing Finance and Development Corporation (HHFDC), Maui Now (May 10, 2026), eHousingPlus HHFDC Income and Purchase Price Limits (January 30, 2026), HHFDC Eligibility Requirements (January 15, 2026), Team Wong Hawaii (November 2025), NCSHA (February 2026)*
@@ -4516,7 +4516,7 @@ You marry the house. You only date the rate. Do not let a temporary interest rat
 
 Every PCS timeline and budget is different. If you want to see exactly how the math works for your specific situation — including how to use seller concessions to lower your effective rate today and what an IRRRL refinance would save you when rates drop — let's talk.
 
-[**Get Pre-Approved and Build Your Strategy with Jay Miller at CMG HomeHub →**](https://www.cmghomehub.com/jay.miller)
+[**Get Pre-Approved and Build Your Strategy with Jay Miller at CMG HomeHub →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about buying in Hawaii with a VA loan? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -4662,7 +4662,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 [**Use the Loan Comparison Calculator →**](https://realitycents.com/loan-compare)
 
-[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved with Jay Miller →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 ---
 
@@ -4826,7 +4826,7 @@ If you can answer all three with confidence, we can run the numbers and find the
 
 Whether you are a military buyer on PCS orders looking at the VA ARM, a first-time buyer stretching to afford Oahu, or a move-up buyer trying to maximize purchasing power, I can show you exactly how an ARM compares to a fixed rate for your specific situation — including the worst-case adjustment scenarios.
 
-[**Get Pre-Approved and Compare Your Options →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved and Compare Your Options →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 *Have questions about whether an ARM fits your specific Hawaii homebuying timeline? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
 
@@ -4955,7 +4955,7 @@ Know your numbers. Negotiate aggressively for seller concessions. Focus on the p
 
 [**Compare Loan Scenarios at Different Rates →**](/loan-compare)
 
-[**Get Pre-Approved at Today's Rates →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com)
+[**Get Pre-Approved at Today's Rates →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
 
 ---
 
