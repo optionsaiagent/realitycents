@@ -133,6 +133,20 @@
       "description": "Hawaii mortgage education and lending services. Jay Miller, NMLS #657301, CMG Home Loans. Specializing in conventional, FHA, VA, jumbo, and USDA loans for Hawaii homebuyers.",
       "telephone": "+18084290811",
       "email": "jaym@cmghomeloans.com",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "mortgage inquiries",
+        "telephone": "+18084290811",
+        "email": "jaym@cmghomeloans.com",
+        "areaServed": "US-HI",
+        "availableLanguage": "en",
+        "hoursAvailable": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }
+      }],
+      "potentialAction": {
+        "@type": "ApplyAction",
+        "name": "Apply online with CMG Home Loans",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true", "actionPlatform": ["https://schema.org/DesktopWebPlatform","https://schema.org/MobileWebPlatform"] }
+      },
       "priceRange": "Free consultation",
       "address": {
         "@type": "PostalAddress",
@@ -182,9 +196,11 @@
       },
       "employee": {"@id": "https://realitycents.com/#jaymiller"},
       "sameAs": [
+        "https://jay-miller.com",
         "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
         "https://www.linkedin.com/in/jay-miller-534bb5173/",
-        "https://www.instagram.com/jaymillercmg",
+        "https://www.instagram.com/jaymiller_hawaii/",
+        "https://www.facebook.com/realitycents",
         "https://www.youtube.com/@RacingThroughMidlife"
       ]
     }
@@ -204,8 +220,8 @@
           "alternateName": "jaymiller_hawaii",
           "url": "https://realitycents.com/",
           "image": "https://realitycents.com/og-image.jpg",
-          "description": "Certified Mortgage Advisor (CMA) at CMG Home Loans in Honolulu, Hawaii. 25 years of mortgage lending experience. U.S. Army OIF/OEF veteran. NMLS #657301. Author of Zero Down in Paradise.",
-          "jobTitle": "Certified Mortgage Advisor",
+          "description": "Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. 25+ years of mortgage lending experience. U.S. Army OIF/OEF veteran. NMLS #657301. Author of Zero Down in Paradise.",
+          "jobTitle": "Sales Manager and Certified Mortgage Advisor",
           "gender": "Male",
           "nationality": {"@type": "Country", "name": "United States"},
           "homeLocation": {
@@ -270,12 +286,11 @@
             }
           ],
           "sameAs": [
-            "https://www.jay-miller.com/",
+            "https://jay-miller.com",
             "https://x.com/realitycents",
             "https://www.linkedin.com/in/jay-miller-534bb5173",
             "https://www.instagram.com/jaymiller_hawaii/",
             "https://www.youtube.com/@RacingThroughMidlife",
-            "https://www.amazon.com/stores/Jay-Miller/author/A3G97QOILJIZB0",
             "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
             "https://www.cmghomeloans.com/mysite/jay-miller",
             "https://www.amazon.com/dp/B0H7P83W15"
@@ -285,7 +300,7 @@
           "@type": "Book",
           "@id": "https://realitycents.com/#book-zerodown",
           "name": "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers",
-          "url": "https://www.amazon.com/dp/9798996355303",
+          "url": "https://www.amazon.com/dp/B0H7P83W15",
           "isbn": "979-8-9963553-0-3",
           "description": "A comprehensive guide for military homebuyers navigating the Hawaii real estate market using VA loans with zero down payment.",
           "inLanguage": "en",
@@ -299,6 +314,14 @@
           "description": "Hawaii's Mortgage Education Resource",
           "author": {"@id": "https://realitycents.com/#jaymiller"},
           "publisher": {"@id": "https://realitycents.com/#org"}
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.pcsingtohawaii.com/#website",
+          "url": "https://www.pcsingtohawaii.com/",
+          "name": "PCSing to Hawaii",
+          "author": {"@id": "https://realitycents.com/#jaymiller"},
+          "publisher": {"@id": "https://realitycents.com/#jaymiller"}
         }
       ]
     }

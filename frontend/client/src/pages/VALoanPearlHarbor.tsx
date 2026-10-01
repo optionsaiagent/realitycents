@@ -151,7 +151,7 @@ const PAGE_SCHEMA = [
     "@id": "https://realitycents.com/#business",
     name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
     description:
-      "Army veteran and Certified Mortgage Advisor specializing in VA loans for Navy and Air Force families PCS'ing to Joint Base Pearl Harbor-Hickam. 25+ years of Hawaii mortgage lending experience.",
+      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Navy and Air Force families PCS'ing to Joint Base Pearl Harbor-Hickam. 25+ years of Hawaii mortgage lending experience.",
     url: "https://realitycents.com/va-loan-pearl-harbor-hickam",
     telephone: "(808) 429-0811",
     email: "jaym@cmghomeloans.com",

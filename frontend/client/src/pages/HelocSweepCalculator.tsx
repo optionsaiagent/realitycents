@@ -1770,7 +1770,7 @@ export default function HelocSweepCalculator() {
               <div className="hpr-brand-sub">Hawaii Mortgage Education &amp; Analysis</div>
             </div>
             <div className="hpr-meta">
-              <div className="hpr-meta-name">Jay Miller — Sales Manager / CMA</div>
+              <div className="hpr-meta-name">Jay Miller, Sales Manager and Certified Mortgage Advisor</div>
               <div>NMLS #657301 · CMG Home Loans · Branch NMLS #2475890</div>
               <div>(808) 429-0811 · www.jay-miller.com</div>
               <div>

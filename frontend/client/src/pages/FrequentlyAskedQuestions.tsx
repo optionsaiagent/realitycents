@@ -253,7 +253,7 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "RealityCents — Jay Miller, Mortgage Loan Originator",
+  name: "RealityCents: Jay Miller, Sales Manager and Certified Mortgage Advisor",
   description: "Hawaii mortgage education, tools, and lending services. Specializing in VA loans, conventional loans, FHA, and investment property financing in Honolulu and across the Hawaiian Islands.",
   url: "https://realitycents.com",
   telephone: LENDER.phone,
@@ -283,7 +283,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jay Miller",
-  jobTitle: "Certified Mortgage Advisor",
+  jobTitle: "Sales Manager and Certified Mortgage Advisor",
   url: "https://realitycents.com/about",
   worksFor: {
     "@type": "Organization",

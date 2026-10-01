@@ -105,7 +105,7 @@ export default function About() {
               <div className="mb-8 flex items-start gap-6">
                 <img
                   src={IMAGES.headshot}
-                  alt="Jay Miller — Mortgage Loan Originator in Hawaii"
+                  alt="Jay Miller, Sales Manager and Certified Mortgage Advisor, Honolulu"
                   className="w-32 h-32 sm:w-40 sm:h-40 rounded-xl object-cover object-top shadow-lg shadow-navy/10 shrink-0 border-2 border-sand"
                 />
                 <div className="pt-2">

@@ -34,7 +34,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>Meet Your Lender</h2>
-        <p>Jay Miller is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
+        <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
         <p>NMLS #657301 | CMG Home Loans Branch NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</p>
       </section>
       <section>
@@ -54,7 +54,7 @@ export const STATIC_PAGE_BODIES = {
   "/about": `
     <main>
       <h1>About Jay Miller — Hawaii Mortgage Lender</h1>
-      <p>Jay Miller is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped thousands of Hawaii families achieve homeownership — from first-time buyers navigating FHA programs to military families maximizing their VA benefits.</p>
+      <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped thousands of Hawaii families achieve homeownership — from first-time buyers navigating FHA programs to military families maximizing their VA benefits.</p>
       <section>
         <h2>Background &amp; Experience</h2>
         <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay brings a unique combination of military service understanding and deep Hawaii real estate expertise. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
@@ -418,7 +418,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>About the author</h2>
-        <p><strong>Jay Miller</strong> is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran, Certified Mortgage Advisor (CMA), and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
+        <p><strong>Jay Miller</strong> is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
         <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
       </section>
       <section>
@@ -427,7 +427,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>What is Zero Down in Paradise?</dt>
           <dd><em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em> is a 164-page paperback (July 2026, ISBN 979-8-9963553-0-3) by Jay Miller that explains how to buy a home in Hawaii using a VA loan.</dd>
           <dt>Who is Jay Miller (NMLS #657301)?</dt>
-          <dd>Jay Miller is a U.S. Army veteran and Mortgage Loan Consultant / Sales Manager at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is a Certified Mortgage Advisor (CMA) and the author of <em>Zero Down in Paradise</em>.</dd>
+          <dd>Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of <em>Zero Down in Paradise</em>.</dd>
           <dt>Can I use a VA loan to buy in Hawaii with zero down?</dt>
           <dd>Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply.</dd>
           <dt>Is there a VA loan limit in Hawaii?</dt>

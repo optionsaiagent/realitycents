@@ -2531,7 +2531,7 @@ Questions about your VA loan options or how the funding fee works? I'm always ha
 
 ---
 
-*Jay Miller | Sales Manager & Mortgage Loan Consultant | NMLS# 657301*
+*Jay Miller | Sales Manager and Certified Mortgage Advisor | NMLS #657301*
 *Licensed in Hawaii | Specializing in VA & Conventional Lending*
 
 *This article is for informational purposes only and does not constitute tax advice. Consult a qualified tax professional for guidance specific to your situation.*

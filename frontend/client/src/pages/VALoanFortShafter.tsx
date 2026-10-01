@@ -150,7 +150,7 @@ const PAGE_SCHEMA = [
     "@id": "https://realitycents.com/#business",
     name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
     description:
-      "Army veteran and Certified Mortgage Advisor specializing in VA loans for USARPAC and Fort Shafter personnel PCS'ing to Oahu. 25+ years of Hawaii mortgage lending experience.",
+      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for USARPAC and Fort Shafter personnel PCS'ing to Oahu. 25+ years of Hawaii mortgage lending experience.",
     url: "https://realitycents.com/va-loan-fort-shafter",
     telephone: "(808) 429-0811",
     email: "jaym@cmghomeloans.com",
