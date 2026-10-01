@@ -6,7 +6,7 @@ Per §9 of the handoff: live URL · target queries · answer-first opening · sc
 
 **URL:** https://realitycents.com/knowledge-base/va-loans-hawaii-military
 **Target queries:** VA loans Hawaii · Hawaii VA loan · Hawaii VA loan zero down
-**Opens:** "Yes — eligible veterans and active-duty service members can buy a home in Hawaii with $0 down using a VA loan. With full entitlement there is no VA loan limit, so you can purchase at any price a lender approves with no down payment and no PMI." Then question-H2 sections: $0 down · PMI · 2026 funding fee table · county limits (all four counties) · BAH · condos · leasehold · VA vs conventional · steps · PCS timeline · base guides · 6-question FAQ.
+**Opens:** "Yes — eligible veterans and active-duty service members can buy a home in Hawaii with $0 down using a VA loan. With full entitlement there is no VA loan limit, so how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval, with no PMI." Then question-H2 sections: $0 down · PMI · 2026 funding fee table · county limits (all four counties) · BAH · condos · leasehold · VA vs conventional · steps · PCS timeline · base guides · 6-question FAQ.
 **Schema:** Article + Person (author) + FAQPage (5 Q&As, new) + BreadcrumbList.
 **Links:** hub, VA eligibility calculator, military calculator, condo directory, all 7 new answer pages, all 5 base guides, PCSingToHawaii, About.
 **Read time:** ~12 min (was 7). Word count ~2,300 (was ~800).

@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { getArticleBySlug, articles } from "@/lib/articles";
 import { articleSchemaData } from "@/lib/articleSchemaData";
+import articleEnhancementsJson from "@/lib/articleEnhancements.json";
 import { LENDER, PRE_APPROVAL_URL, IMAGES } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import BookCallout from "@/components/BookCallout";
@@ -27,6 +28,20 @@ import {
   Calculator,
 } from "lucide-react";
 
+type ArticleHowTo = {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+};
+
+type ArticleEnhancement = {
+  intro: string;
+  keyFactsLabel: string;
+  keyFacts: string[];
+  howTo?: ArticleHowTo;
+};
+
+const articleEnhancements = articleEnhancementsJson as unknown as Record<string, ArticleEnhancement>;
 
 // Book CTA: VA-loan and military-related articles that show the
 // "Want the full playbook?" callout for Zero Down in Paradise
@@ -123,6 +138,7 @@ export default function Article() {
   const isoDate = (value?: string) =>
     value && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : undefined;
   const dateModified = toHST(isoDate(article.lastUpdated) || article.date);
+  const enhancement = articleEnhancements[article.slug];
   const articleSchemas = useMemo(() => {
     const articleSchema: Record<string, unknown> = {
       "@context": "https://schema.org",
@@ -145,9 +161,6 @@ export default function Article() {
         "@type": "Person",
         "@id": "https://realitycents.com/#jaymiller",
         name: "Jay Miller",
-        jobTitle: "Sales Manager & Mortgage Loan Consultant",
-        description:
-          "VA loan specialist with 25 years of mortgage experience in Honolulu. US Army veteran. NMLS# 657301.",
         url: "https://realitycents.com/about",
       },
       publisher: {
@@ -210,8 +223,41 @@ export default function Article() {
       ],
     };
 
-    return [articleSchema, breadcrumbSchema];
-  }, [article.slug, article.title, article.excerpt, article.image, article.date, article.lastUpdated, article.category, dateModified, meta]);
+    const schemas: object[] = [articleSchema, breadcrumbSchema];
+
+    if (meta?.faqSchema && meta.faqSchema.length > 0) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: meta.faqSchema.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      });
+    }
+
+    const howTo = enhancement?.howTo;
+    if (howTo) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: howTo.name,
+        description: howTo.description,
+        step: howTo.steps.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step.name,
+          text: step.text,
+        })),
+      });
+    }
+
+    return schemas;
+  }, [article.slug, article.title, article.excerpt, article.image, article.date, article.lastUpdated, article.category, dateModified, meta, enhancement]);
 
   return (
     <Layout>
@@ -244,7 +290,7 @@ export default function Article() {
               </span>
               <span className="flex items-center gap-1 text-xs text-sand/60">
                 <Clock className="w-3 h-3" />
-                {article.readTime} read
+                {article.readTime.replace(/\s*read$/i, "")} read
               </span>
               <span className="flex items-center gap-1 text-xs text-sand/60">
                 <Calendar className="w-3 h-3" />
@@ -300,10 +346,28 @@ export default function Article() {
                       month: "long",
                       day: "numeric",
                     })}
-                    {" · "}{article.readTime} read
+                    {" · "}{article.readTime.replace(/\s*read$/i, "")} read
                   </p>
                 </div>
               </div>
+
+              {enhancement && (
+                <>
+                  <p className="article-intro mb-6 font-body text-lg leading-relaxed text-navy md:text-xl">
+                    {enhancement.intro}
+                  </p>
+                  <aside className="key-takeaway mb-8 rounded-xl border-l-4 border-teal bg-teal/5 p-5">
+                    <p className="mb-3 font-body text-sm font-semibold text-navy">
+                      <strong>{enhancement.keyFactsLabel}</strong>
+                    </p>
+                    <ul className="list-disc space-y-2 pl-5 font-body text-sm leading-relaxed text-muted-foreground">
+                      {enhancement.keyFacts.map((fact) => (
+                        <li key={fact}>{fact}</li>
+                      ))}
+                    </ul>
+                  </aside>
+                </>
+              )}
 
               <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-navy prose-headings:font-normal prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-navy prose-a:text-teal prose-a:no-underline hover:prose-a:underline">
                 <Streamdown
@@ -457,7 +521,7 @@ export default function Article() {
                           <h5 className="text-sm font-body font-medium text-navy group-hover:text-teal transition-colors leading-snug mb-1">
                             {r.title}
                           </h5>
-                          <span className="text-xs text-muted-foreground">{r.readTime} read</span>
+                          <span className="text-xs text-muted-foreground">{r.readTime.replace(/\s*read$/i, "")} read</span>
                         </Link>
                       ))}
                     </div>

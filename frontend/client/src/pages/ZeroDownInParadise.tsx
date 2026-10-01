@@ -35,7 +35,7 @@ import {
 } from "lucide-react";
 
 const ANSWER_PAGES = [
-  { href: "/knowledge-base/va-loans-hawaii-military", title: "VA loans in Hawaii — the complete guide", note: "$0 down with full entitlement, no PMI, the funding fee, condos, leasehold, BAH, and the steps — the pillar page." },
+  { href: "/knowledge-base/va-loans-hawaii-military", title: "How to buy a house in Hawaii with a VA loan and $0 down", note: "$0 down with full entitlement, no PMI, the funding fee, condos, leasehold, BAH, Hawaii costs, and the steps: the pillar page." },
   { href: "/knowledge-base/va-loan-limits-hawaii-2026", title: "VA loan limits in Hawaii for 2026", note: "Why there is no limit with full entitlement, and how Honolulu County's $1,249,125 conforming limit applies when entitlement is reduced." },
   { href: "/knowledge-base/does-bah-count-va-loan-hawaii", title: "Does BAH count for a VA loan in Hawaii?", note: "Yes — how BAH, BAS, and Hawaii COLA are counted, the tax-free gross-up, and what it does to buying power." },
   { href: "/knowledge-base/va-funding-fee-hawaii", title: "The VA funding fee in Hawaii", note: "2026 percentages, who is exempt, what it costs on a Hawaii price, and why it still beats PMI." },
@@ -242,7 +242,7 @@ const PAGE_SCHEMAS = [
     "@type": "Person",
     "@id": PERSON_ID,
     name: "Jay Miller",
-    jobTitle: "Sales Manager & Mortgage Loan Consultant",
+    jobTitle: "Certified Mortgage Advisor",
     description:
       "U.S. Army veteran and Certified Mortgage Advisor. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
     url: `${SITE.url}/about`,
@@ -465,7 +465,7 @@ export default function ZeroDownInParadise() {
                 href="/knowledge-base/va-loans-hawaii-military"
                 className="text-teal font-semibold hover:underline"
               >
-                VA Loans in Hawaii: A Complete Guide for Military Homebuyers
+                how to buy a house in Hawaii with a VA loan and $0 down (step by step)
               </Link>
               .
             </p>
@@ -483,8 +483,7 @@ export default function ZeroDownInParadise() {
             <p>
               <strong className="text-navy">
                 With full entitlement, there is no VA loan limit for a $0-down purchase
-              </strong>{" "}
-              — you can buy at whatever price a lender will approve. With <em>reduced</em> entitlement (for
+              </strong>; how much you can borrow depends on your income, debts, residual income, and lender approval. With <em>reduced</em> entitlement (for
               example, an existing VA loan still outstanding), county conforming limits apply. For Honolulu
               County, the 2026 single-family conforming limit referenced in our Veterans Guide is{" "}
               <strong className="text-navy">${HONOLULU_LIMIT}</strong>; always confirm the current FHFA/VA

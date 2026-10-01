@@ -29,6 +29,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const distPublic = path.resolve(projectRoot, "dist");
 const indexHtmlPath = path.resolve(distPublic, "index.html");
+const articleEnhancements = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "../client/src/lib/articleEnhancements.json"), "utf8")
+);
 
 const BASE_URL = "https://realitycents.com";
 const SITE_NAME = "RealityCents";
@@ -383,7 +386,7 @@ const STATIC_PAGES = {
         mainEntity: [
           { "@type": "Question", name: "I used my VA loan at Camp Pendleton. Can I use it again at MCBH?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you have remaining entitlement. Your entitlement in use is based on the original loan amount of any VA loan not yet restored (generally 25% of that original amount); your Certificate of Eligibility shows the exact figure. In Honolulu County, remaining entitlement is 25% of the 2026 conforming limit of $1,249,125 ($312,281) minus the entitlement in use, and your $0-down ceiling is about four times the remaining entitlement. Above that, the down payment is 25% of the difference only. With full entitlement there is no VA loan limit; how much you can borrow depends on income, credit, residual income, and lender approval." } },
           { "@type": "Question", name: "Can I qualify on BAH alone?", acceptedAnswer: { "@type": "Answer", text: "BAH counts as qualifying income when documented on your LES. Most lenders can gross it up 25% since it's tax-free, which meaningfully improves your DTI. Whether it's sufficient alone depends on your full debt picture." } },
-          { "@type": "Question", name: "Kailua homes are expensive. Can I still use VA with $0 down above $1M?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, there is no VA loan limit for $0 down — you can buy at any price a lender will approve. Honolulu County's 2026 conforming limit of $1,249,125 applies only with reduced entitlement." } },
+          { "@type": "Question", name: "Kailua homes are expensive. Can I still use VA with $0 down above $1M?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, there is no VA loan limit for $0 down; how much you can borrow depends on your income, debts, residual income, and lender approval. Honolulu County's 2026 conforming limit of $1,249,125 applies only with reduced entitlement." } },
           { "@type": "Question", name: "Should I buy or rent if I'm only here 2–3 years?", acceptedAnswer: { "@type": "Answer", text: "Windward side homes appreciate well and rent easily to the next wave of MCBH Marines. Kailua especially has strong rental demand from both military and civilian tenants. If you buy at $900K today and rent it for $3,500–$4,000/month when you PCS, the numbers often work." } },
         ],
       },
@@ -578,7 +581,7 @@ const STATIC_PAGES = {
         "@type": "Person",
         "@id": `${BASE_URL}/#jaymiller`,
         name: "Jay Miller",
-        jobTitle: "Sales Manager & Mortgage Loan Consultant",
+        jobTitle: "Certified Mortgage Advisor",
         description: "U.S. Army veteran and Certified Mortgage Advisor. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
         url: `${BASE_URL}/about`,
         identifier: { "@type": "PropertyValue", name: "NMLS", value: "657301" },
@@ -853,14 +856,12 @@ function buildArticleMeta(article) {
     description: article.excerpt,
     image: { "@type": "ImageObject", url: resolveOgImage(article.image), width: 1600, height: 900 },
     datePublished: toHST(article.date),
-    dateModified: toHST(article.date),
+    dateModified: toHST(/^\d{4}-\d{2}-\d{2}$/.test(article.lastUpdated || "") ? article.lastUpdated : article.date),
     wordCount: meta.wordCount || 1500,
     author: {
       "@type": "Person",
       "@id": `${BASE_URL}/#jaymiller`,
       name: "Jay Miller",
-      jobTitle: "Sales Manager & Mortgage Loan Consultant",
-      description: "VA loan specialist with 25 years of mortgage experience in Honolulu. US Army veteran. NMLS# 657301.",
       url: `${BASE_URL}/about`,
     },
     publisher: {
@@ -905,6 +906,22 @@ function buildArticleMeta(article) {
       }))
     };
     schemas.push(faqSchema);
+  }
+
+  const howTo = articleEnhancements[article.slug]?.howTo;
+  if (howTo) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: howTo.name,
+      description: howTo.description,
+      step: howTo.steps.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: step.name,
+        text: step.text,
+      })),
+    });
   }
 
   return {
@@ -966,15 +983,20 @@ function escapeHtml(str) {
 function generateArticleBody(article) {
   // Convert markdown to HTML
   const htmlContent = marked(article.content);
+  const enh = articleEnhancements[article.slug];
+  const readLabel = `${(article.readTime || '8 min').replace(/\s*read$/i, "")} read`;
+  const leadHtml = enh && enh.intro
+    ? `<p class="article-intro">${escapeHtml(enh.intro)}</p>\n      <aside class="key-takeaway"><p><strong>${escapeHtml(enh.keyFactsLabel || "Key facts")}</strong></p><ul>${(enh.keyFacts || []).map((fact) => `<li>${escapeHtml(fact)}</li>`).join("")}</ul></aside>`
+    : `<p class="excerpt">${escapeHtml(article.excerpt)}</p>`;
 
   return `
     <article class="article-content">
       <h1>${escapeHtml(article.title)}</h1>
       <div class="article-byline" style="font-size: 0.875rem; color: #666; margin: 1rem 0; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem;">
         <p style="margin: 0;"><strong>Jay Miller, CMA</strong> · NMLS #657301 · Certified Mortgage Advisor · 25 years Hawaii mortgage experience · U.S. Army veteran</p>
-        <p style="margin: 0.25rem 0 0 0;">Last updated: ${article.lastUpdated || article.date} · ${article.readTime || '8 min'} read</p>
+        <p style="margin: 0.25rem 0 0 0;">Last updated: ${article.lastUpdated || article.date} · ${readLabel}</p>
       </div>
-      <p class="excerpt">${escapeHtml(article.excerpt)}</p>
+      ${leadHtml}
       <div class="article-body">
         ${htmlContent}
       </div>

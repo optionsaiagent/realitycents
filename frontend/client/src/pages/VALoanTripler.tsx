@@ -339,8 +339,7 @@ export default function VALoanTripler() {
             <QuarterlyBadge label="Rate-dependent · Q1 2026" />
           </div>
           <p className="text-foreground/70 font-body mb-2">
-            With full entitlement, there is no VA loan limit for a $0-down purchase — you can buy
-            at whatever price a lender will approve. Honolulu County's 2026 single-family
+            With full entitlement, there is no VA loan limit for a $0-down purchase; how much you can borrow depends on your income, debts, residual income, and lender approval. Honolulu County's 2026 single-family
             conforming limit of <strong className="text-foreground">$1,249,125</strong> applies
             only with reduced entitlement. Here's how BAH maps to realistic scenarios by rank.
           </p>
@@ -583,10 +582,10 @@ export default function VALoanTripler() {
               className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all"
             >
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">
-                VA Loans in Hawaii — Complete Guide
+                How to Buy a House in Hawaii With a VA Loan and $0 Down
               </h3>
               <p className="text-xs text-foreground/60 font-body mt-1">
-                Everything about VA loan benefits, eligibility, and Hawaii-specific rules.
+                The step-by-step process, the Hawaii costs to budget, and the rules, from COE to closing.
               </p>
             </Link>
             <Link
