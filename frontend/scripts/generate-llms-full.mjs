@@ -355,7 +355,7 @@ function generate() {
     lines.push(`- O-6: $5,001 w/dep, $4,413 w/o dep`);
     lines.push("");
     lines.push(`### Key Facts`);
-    lines.push(`- No VA loan limit with full entitlement ($0 down at any price)`);
+    lines.push(`- No VA loan limit with full entitlement; how much you can borrow with $0 down depends on income, debts, residual income, and lender approval`);
     lines.push(`- $1,249,125 conforming limit only applies with reduced entitlement`);
     lines.push(`- BAH is tax-free income, helping VA buyers qualify for more house`);
     lines.push(`- VA appraisals on Oahu: 7-10 business days (ordered after inspection period)`);

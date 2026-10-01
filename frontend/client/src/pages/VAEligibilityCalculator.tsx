@@ -178,7 +178,7 @@ export default function VAEligibilityCalculator() {
                   {result.fullEntitlement ? (
                     <p className="text-muted-foreground leading-relaxed">
                       With <strong className="text-navy">full entitlement</strong>, there is no VA loan
-                      limit for a $0-down purchase — you can buy at whatever price a lender will approve.
+                      limit for a $0-down purchase; how much you can borrow depends on your income, debts, residual income, and lender approval.
                       The county conforming limit of{" "}
                       <strong className="text-navy">{fmt(result.countyLimit)}</strong> does not cap a
                       full-entitlement $0-down loan.

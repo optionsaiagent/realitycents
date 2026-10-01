@@ -102,16 +102,23 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     ],
   },
   "va-loans-hawaii-military": {
-    wordCount: 2400,
-    keywords: "VA loan Hawaii, VA home loan Honolulu, military home buying Hawaii, VA loan limits 2026, VA loan entitlement, zero down VA loan Oahu",
+    wordCount: 2657,
+    keywords: "how to buy a house in Hawaii with a VA loan, VA loan zero down Hawaii, VA loan Hawaii, VA home loan Honolulu, military home buying Hawaii, VA loan limits 2026, VA funding fee 2026",
     about: [
       { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
       { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
     ],
     faqSchema: [
-      { question: "What is a VA loan?", answer: "A VA loan is a mortgage guaranteed by the U.S. Department of Veterans Affairs for eligible service members, veterans, and surviving spouses. VA loans offer zero down payment, no PMI, and competitive interest rates." },
-      { question: "What is VA loan entitlement?", answer: "VA loan entitlement is your borrowing capacity guaranteed by the VA. Most veterans have $647,200 in entitlement (2026), meaning the VA will guarantee that amount. You can use your entitlement multiple times, and it can be restored after you sell a property." },
-      { question: "Can I use a VA loan to buy a home in Hawaii?", answer: "Yes. VA loans work nationwide, including Hawaii, and with full entitlement there is no VA loan limit, so an eligible buyer can purchase on Oahu with $0 down and no PMI. Two Hawaii-specific points: a condo's project must be on the VA-approved list (or be submitted for approval during escrow), and leasehold property — a small share of the market that looks like a bargain because the land is leased — is almost never financeable with VA, so stick with fee simple." }
+      { question: "How do I buy a house in Hawaii with a VA loan and zero down?", answer: "To buy a house in Hawaii with a VA loan and $0 down, get your Certificate of Eligibility, get pre-approved by a Hawaii VA lender, choose a fee-simple home (or a VA-approved condo), then make your offer and close, typically in 30–45 days, with no down payment and no PMI if you have full entitlement and qualify, because there is no VA loan limit. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt." },
+      { question: "Can I buy a home in Hawaii with $0 down using a VA loan?", answer: "Yes, if you have full entitlement and qualify; with full entitlement there is no VA loan limit. With reduced entitlement, your $0-down ceiling is figured from the 2026 county conforming limit ($1,249,125 in Honolulu County) and the entitlement you already have in use." },
+      { question: "What extra costs should I budget for a VA purchase in Hawaii?", answer: "Homeowners and hurricane insurance, flood insurance if the home is in a FEMA flood zone, condo HOA/AOAO dues (which count in your debt-to-income ratio), property tax, closing costs, and the VA funding fee unless you are exempt. On the Big Island, homes in lava zones 1 and 2 also raise insurance and financing issues." },
+      { question: "Is there PMI on a VA loan?", answer: "No. A one-time funding fee (2.15% on first use with $0 down) takes its place; it can be financed and is waived for veterans receiving VA disability compensation." },
+      { question: "Does BAH count?", answer: "Yes, when it is on your LES and expected to continue, and many lenders gross it up by up to 25% because it is tax-free." },
+      { question: "Can I use a VA loan on a Hawaii condo?", answer: "Yes, if the project is VA-approved; check the directory, or have your lender submit the building." },
+      { question: "Can a VA loan be used on leasehold property?", answer: "Rarely in practice. Leasehold is a small share of the market, the low prices are the tell, and most VA buyers stick with fee simple." },
+      { question: "Do the VA rules differ on Maui, Kauai, or the Big Island?", answer: "No, the VA rules are the same statewide. Costs differ by county, lava zones 1 and 2 matter only on the Big Island, and with reduced entitlement Maui's county limit is higher at $1,299,500." },
+      { question: "How long does a VA purchase take in Hawaii?", answer: "Typically 30–45 days from accepted offer to closing, about the same as a conventional loan when the front-end work is done." },
+      { question: "Can I use my VA loan more than once?", answer: "Yes, with restored or remaining entitlement. See the second VA loan strategy and VA house hacking in Hawaii." },
     ],
   },
   "fha-loans-hawaii-explained": {

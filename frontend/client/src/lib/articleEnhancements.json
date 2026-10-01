@@ -1,0 +1,43 @@
+{
+  "va-loans-hawaii-military": {
+    "intro": "To buy a house in Hawaii with a VA loan and $0 down, get your Certificate of Eligibility, get pre-approved by a Hawaii VA lender, choose a fee-simple home (or a VA-approved condo), then make your offer and close, typically in 30–45 days, with no down payment and no PMI if you have full entitlement and qualify, because there is no VA loan limit. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt.",
+    "keyFactsLabel": "Key facts",
+    "keyFacts": [
+      "With full VA entitlement there is no VA loan limit; your $0-down price is set by your income, debts, residual income, and lender approval.",
+      "VA loans have no monthly PMI; a one-time funding fee of 2.15% on first use with less than 5% down takes its place, and it is waived for veterans receiving VA disability compensation.",
+      "A Hawaii condo must be in a VA-approved project, or your lender can submit the building during escrow.",
+      "Leasehold property is rarely workable with a VA loan in practice, so most VA buyers stick with fee simple.",
+      "Budget Hawaii's extra costs before you shop: homeowners and hurricane insurance, flood insurance in a flood zone, and condo HOA/AOAO dues, which count in your debt-to-income ratio."
+    ],
+    "howTo": {
+      "name": "How to buy a house in Hawaii with a VA loan and $0 down",
+      "description": "Six steps from Certificate of Eligibility to closing for a Hawaii VA purchase with $0 down, for eligible buyers with full entitlement who qualify.",
+      "steps": [
+        {
+          "name": "Get your Certificate of Eligibility (COE)",
+          "text": "The COE confirms your VA entitlement and any funding-fee exemption. Your lender can usually pull it through the VA portal in minutes."
+        },
+        {
+          "name": "Budget Hawaii's extra costs",
+          "text": "Before you set a price range, add Hawaii's extra monthly costs to the payment: homeowners and hurricane insurance, flood insurance if the home is in a flood zone, condo HOA/AOAO dues, and property tax. On the Big Island, also check whether the home is in lava zone 1 or 2. Lenders count these costs in your debt-to-income ratio, so they change how much home you qualify for."
+        },
+        {
+          "name": "Get pre-approved by a Hawaii VA lender",
+          "text": "A pre-approval is a lender's review of your actual documents, and with a complete file it often takes 1–3 business days. Bring your LES, orders, and two years of income history; BAH counts as income when it is on your LES and expected to continue."
+        },
+        {
+          "name": "Screen the property before you offer",
+          "text": "Before you write a Purchase Contract, confirm the home is fee simple (skip leasehold), check the condo project's VA status, check the flood zone, and look at age and condition against VA minimum property requirements. On the Big Island, also confirm the home is not in lava zone 1 or 2."
+        },
+        {
+          "name": "Make your offer and go through escrow",
+          "text": "Once the seller accepts your Purchase Contract, escrow opens. Expect the VA appraisal (with the Tidewater process if value comes in low), the PC-9 termite inspection, and seller concessions of up to 4% for closing costs or the funding fee. In Hawaii, your documents are recorded with the Bureau of Conveyances (or the Land Court, depending on how the title is registered), and closing usually happens about two business days after signing."
+        },
+        {
+          "name": "Close",
+          "text": "Closing typically takes 30–45 days from accepted offer, about the same as conventional when the front-end work is done. Your lender must deliver the Closing Disclosure at least three business days before signing; compare it to your Loan Estimate."
+        }
+      ]
+    }
+  }
+}

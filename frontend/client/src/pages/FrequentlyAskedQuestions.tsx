@@ -283,7 +283,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jay Miller",
-  jobTitle: "Mortgage Loan Originator / Sales Manager",
+  jobTitle: "Certified Mortgage Advisor",
   url: "https://realitycents.com/about",
   worksFor: {
     "@type": "Organization",

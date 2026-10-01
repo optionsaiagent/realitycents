@@ -245,10 +245,10 @@ Here's what VA gives you:
 - **Zero down payment — with no loan limit if you have full entitlement.** This is the part almost nobody gets right, including a lot of loan officers. Since the Blue Water Navy Vietnam Veterans Act took effect in 2020, veterans with *full entitlement* have **no VA loan limit**. You can buy a $1.5 million home on Oahu with $0 down if your income and credit support the payment. Honolulu County's 2026 conforming limit of $1,249,125 (FHFA) only comes into play if you have *reduced* entitlement — for example, an existing VA loan you haven't paid off. (Maui and Kalawao counties run even higher at $1,299,500.)
 - **No private mortgage insurance (PMI) — ever**
 - **Competitive interest rates** — historically at or below comparable conventional rates
-- **Unlimited seller-paid closing costs** — the seller can pay ALL of your normal closing costs with no cap
+- **Seller-paid normal closing costs don't count toward the 4%**: the seller can pay your normal closing costs, and they are not counted toward the 4% concession limit
 - **Up to 4% in additional seller concessions** — covering the VA funding fee, prepaids, discount points beyond normal, and even paying off buyer debts (VA Pamphlet 26-7, Chapter 8)
 
-The math: on an $800,000 home, a VA buyer can purchase with $0 down. If the seller agrees to cover normal closing costs (no cap) plus concessions from the 4% allowance ($32,000), the buyer can walk into the home with literally nothing out of pocket.
+The math: on an $800,000 home, a VA buyer can purchase with $0 down. If the seller agrees to cover normal closing costs (not counted toward the 4%) plus concessions up to 4% of the property's reasonable value (up to $32,000 at an $800,000 reasonable value), the buyer can walk into the home with literally nothing out of pocket.
 
 This isn't theoretical. Hawaii has one of the largest military populations in the country — Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, Fort Shafter, Tripler Army Medical Center. We structure these zero-out-of-pocket VA purchases every month.
 
@@ -258,6 +258,8 @@ This isn't theoretical. Hawaii has one of the largest military populations in th
 2. **New for 2026: the funding fee is tax-deductible** for borrowers who itemize, treated like an upfront mortgage insurance premium. Talk to your tax professional about whether you qualify.
 
 For the full breakdown of how VA seller concessions work, see our guide to [getting the seller to pay your closing costs](/knowledge-base/seller-concessions-closing-costs-hawaii).
+
+For the step-by-step process, see [how to buy a house in Hawaii with a VA loan and $0 down](/knowledge-base/va-loans-hawaii-military).
 
 ---
 
@@ -287,7 +289,7 @@ The limits by loan type:
 
 | Loan Type | Maximum Seller Concession |
 |---|---|
-| VA | All normal closing costs (no cap) + 4% additional concessions |
+| VA | Normal closing costs (not counted toward the 4%) + concessions up to 4% of the property's reasonable value |
 | FHA | 6% of purchase price (HUD Handbook 4000.1) |
 | Conventional, <10% down | 3% (Fannie Mae Selling Guide B3-4.1-02) |
 | Conventional, 10–25% down | 6% |
@@ -405,7 +407,7 @@ Higher monthly payments (larger loan balance), mortgage insurance on FHA/convent
 
 ### Related Articles
 - [What Hawaii Buyers Don't Know About Closing Costs — And How to Get the Seller to Pay Them](/knowledge-base/seller-concessions-closing-costs-hawaii)
-- [Understanding VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
+- [How to buy a house in Hawaii with a VA loan and $0 down](/knowledge-base/va-loans-hawaii-military)
 - [Down Payment Assistance Programs in Hawaii](/knowledge-base/down-payment-assistance-hawaii)
 - [FHA Loans in Hawaii Explained](/knowledge-base/fha-loans-hawaii-explained)
 - [The Hale Kamaʻaina Mortgage Program](/knowledge-base/hale-kamaaina-mortgage-program-hawaii)
@@ -997,6 +999,8 @@ Start by getting your finances in order at least 6-12 months before you plan to 
 
 **Conventional 97** loans allow just 3% down for first-time buyers with good credit. Combined with PMI that can be removed once you reach 20% equity, this is an attractive option.
 
+**VA Loans** let eligible veterans and service members with full entitlement buy with $0 down and no PMI, subject to lender approval. See [how to buy a house in Hawaii with a VA loan and zero down](/knowledge-base/va-loans-hawaii-military).
+
 **HHFDC Programs** through the Hawaii Housing Finance and Development Corporation offer below-market interest rates and down payment assistance specifically for Hawaii residents. The Hale Kama'aina program is particularly valuable for first-time buyers.
 
 ## The Pre-Approval Advantage
@@ -1021,18 +1025,59 @@ Explore [down payment assistance programs available in Hawaii](/knowledge-base/d
   },
   {
     slug: "va-loans-hawaii-military",
-    title: "VA Loans in Hawaii: The Complete 2026 Guide for Military Homebuyers",
-    excerpt: "$0 down with full entitlement, no PMI, the 2026 funding fee, county loan limits, BAH, condo approval, why to skip leasehold, and the steps — the answer-first guide to using a VA loan on Oahu, from a Honolulu VA lender and Army veteran.",
+    title: "VA Loans in Hawaii (2026): How to Buy a House With $0 Down",
+    excerpt: "How to buy a house in Hawaii with a VA loan and $0 down if you have full entitlement and qualify: the steps, the Hawaii costs to budget, the 2026 funding fee, county loan limits, BAH, condo approval, and why to skip leasehold, for Oahu, Maui, Kauai, and the Big Island, from a Honolulu VA lender and Army veteran.",
     category: "VA Loans",
-    readTime: "12 min read",
+    readTime: "12 min",
     date: "2026-02-10",
-    lastUpdated: "2026-09-14",
+    lastUpdated: "2026-09-30",
     image: "/images/heroes/va-loans-hawaii-military.webp",
-    content: `*By Jay Miller — NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise](/zero-down-in-paradise) · Updated September 14, 2026*
+    content: `Yes, eligible veterans and active-duty service members can buy a home in Hawaii with $0 down using a VA loan. With full entitlement there is no VA loan limit, so how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval, not a county cap. Hawaii is home to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, Fort Shafter, and Tripler Army Medical Center, and military families and veterans use this benefit to buy on Oahu, Maui, Kauai, and the Big Island. This guide answers the questions that decide a Hawaii VA purchase, in the order they come up.
 
-**Yes — eligible veterans and active-duty service members can buy a home in Hawaii with $0 down using a VA loan. With full entitlement there is no VA loan limit, so you can purchase at any price a lender approves with no down payment and no PMI.** Hawaii is home to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, Fort Shafter, and Tripler Army Medical Center, and every year thousands of military families use this benefit to buy on Oahu rather than rent. This guide answers the questions that actually decide a Hawaii VA purchase — in the order they come up.
+## How to buy a house in Hawaii with a VA loan and $0 down (step by step)
 
-**Read the full playbook — [Zero Down in Paradise](/zero-down-in-paradise)** by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, plus the free RealityCents tools that pair with it.
+1. **Get your Certificate of Eligibility (COE).** The COE confirms your VA entitlement and any funding-fee exemption. Your lender can usually pull it through the VA portal in minutes.
+2. **Budget Hawaii's extra costs.** Before you set a price range, add Hawaii's extra monthly costs to the payment: homeowners and hurricane insurance, flood insurance if the home is in a flood zone, condo HOA/AOAO dues, and property tax. On the Big Island, also check whether the home is in lava zone 1 or 2. Lenders count these costs in your debt-to-income ratio, so they change how much home you qualify for. The details are in the next section.
+3. **Get pre-approved by a Hawaii VA lender.** A pre-approval is a lender's review of your actual documents, and with a complete file it often takes 1–3 business days. Bring your LES, orders, and two years of income history; BAH counts as income when it is on your LES and expected to continue. Ask the questions in [how to choose a Hawaii VA lender](/knowledge-base/how-to-choose-hawaii-va-lender).
+4. **Screen the property before you offer.** Before you write a Purchase Contract, confirm the home is fee simple (skip leasehold), check the condo project's VA status in the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), check the flood zone, and look at age and condition against VA minimum property requirements. On the Big Island, also confirm the home is not in lava zone 1 or 2.
+5. **Make your offer and go through escrow.** Once the seller accepts your Purchase Contract, escrow opens. Expect the VA appraisal (with the Tidewater process if value comes in low), the [PC-9 termite inspection](/knowledge-base/home-inspection-tips-hawaii), and seller concessions of up to 4% for closing costs or the funding fee. In Hawaii, your documents are recorded with the Bureau of Conveyances (or the Land Court, depending on how the title is registered), and closing usually happens about two business days after signing; see [the escrow process in Hawaii](/knowledge-base/escrow-process-hawaii).
+6. **Close.** Closing typically takes 30–45 days from accepted offer, about the same as conventional when the front-end work is done. Your lender must deliver the Closing Disclosure at least three business days before signing; compare it to your Loan Estimate.
+
+**Read the full playbook: [Zero Down in Paradise](/zero-down-in-paradise)** by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, plus the free RealityCents tools that pair with it.
+
+## Hawaii costs to build into your VA pre-approval
+
+$0 down doesn't mean $0 a month. Taxes, association fees, and insurance all go into your payment, so build them in before you shop. "A real Hawaii pre-approval is built on the maximum total monthly PITIA you qualify for, then checked against the actual numbers of each specific property before you write the offer." ([DTI Is the New Credit Score](/knowledge-base/dti-killing-hawaii-mortgage-applications))
+
+**Property tax**
+- Honolulu: "the effective rate for owner-occupants in Honolulu is approximately 0.35%, compared to 1.0%+ in most mainland states." ([Closing costs](/knowledge-base/seller-concessions-closing-costs-hawaii))
+- Veteran exemption: Hawaii counties' veteran property tax exemption applies only to 100% disabled veterans, so most VA buyers should budget for the full property tax.
+
+**HOA / AOAO maintenance fees**
+- "In Honolulu, the median advertised HOA/AOAO fee in February 2026 was $882/month" ([UHERO 2026](/knowledge-base/uhero-hawaii-housing-factbook-2026-buyers))
+- "For VA buyers specifically, HOA fees count toward your DTI." ([UHERO 2026](/knowledge-base/uhero-hawaii-housing-factbook-2026-buyers))
+- "an $882/month HOA fee has the same impact on your debt-to-income ratio as adding $158,000 to your loan amount." ([UHERO 2026](/knowledge-base/uhero-hawaii-housing-factbook-2026-buyers))
+
+**Insurance**
+- House: "Homeowners insurance: $150/month (~$1,800/year, typical for Hawaii SFH)" ([Income needed 2026](/knowledge-base/income-needed-buy-home-hawaii-2026))
+- Condo: "Expect to pay $300-$800 per year for a standard HO-6 policy in Honolulu" ([HO-6 guide](/knowledge-base/ho6-insurance-hawaii-condos))
+- Hurricane: "hurricane coverage often carries a separate, higher deductible (typically 2–5% of coverage)." ([Condo insurance crisis](/knowledge-base/hawaii-condo-insurance-crisis))
+- Flood (house): For single-family homes in a flood zone, your VA lender will require flood insurance, typically $1,500 to $3,000 a year on Oahu. ([UHERO 2026](/knowledge-base/uhero-hawaii-housing-factbook-2026-buyers))
+- Flood (condo): Condo owners' flood coverage is usually included in the HOA/AOAO dues.
+- "your insurance quote today may be 15-20% higher by your second year of ownership." ([UHERO 2026](/knowledge-base/uhero-hawaii-housing-factbook-2026-buyers))
+
+**Lava zones**
+- Lava zones only matter on the Big Island of Hawaii, and only lava zones 1 and 2 are issues for financing. ([Home inspection tips](/knowledge-base/home-inspection-tips-hawaii))
+
+## Buying on Maui, Kauai, or the Big Island
+
+The VA rules are the same on every island. What changes is the cost picture and a few local details.
+
+- **Loan limits:** With full entitlement there is no VA loan limit anywhere in Hawaii. With reduced entitlement, the 2026 county limits are $1,299,500 for Maui and Kalawao and $1,249,125 for Kauai, Hawaii County, and Honolulu County.
+- **Costs:** Most cost figures above are Honolulu figures; property tax, insurance, and HOA/AOAO dues differ by county, so get local numbers for the home you are buying.
+- **Big Island lava zones:** Lava zones matter only on the Big Island, and only lava zones 1 and 2 create financing issues. Check the zone before you write a Purchase Contract.
+- **Condos:** VA project approval works the same on every island. The RealityCents directory covers Oahu (Honolulu County) only, so on other islands your lender checks the VA list or submits the project during escrow.
+- **BAH:** The BAH figures on this page are 2026 Honolulu County rates, not neighbor-island rates.
 
 ## Can you really buy in Hawaii with $0 down?
 
@@ -1057,7 +1102,7 @@ The fee can be financed into the loan (most Hawaii buyers do), can be paid by th
 
 ## Do VA loan limits apply in Hawaii?
 
-Only with reduced entitlement. The 2026 FHFA single-family conforming limits are **$1,249,125 for Honolulu County**, $1,299,500 for Maui and Kalawao, $1,249,125 for Kauai, and $1,249,125 for Hawaii County. A reduced-entitlement buyer's $0-down ceiling is roughly the county limit less the balance of the open VA loan; above that, 25% down applies to the difference only. Worked examples: [VA loan limits in Hawaii](/knowledge-base/va-loan-limits-hawaii-2026).
+Only with reduced entitlement. The 2026 FHFA single-family conforming limits are **$1,249,125 for Honolulu County**, $1,299,500 for Maui and Kalawao, $1,249,125 for Kauai, and $1,249,125 for Hawaii County. With reduced entitlement, your $0-down ceiling is about four times what is left after subtracting your VA entitlement in use from 25% of the county limit. For example, in Honolulu County with $50,000 of entitlement in use, the $0-down ceiling is about $1,049,124; above that, 25% down applies to the difference only. Worked examples: [VA loan limits in Hawaii](/knowledge-base/va-loan-limits-hawaii-2026).
 
 ## Does BAH count as income?
 
@@ -1069,19 +1114,11 @@ Yes, if the condo **project** is VA-approved. About 1,769 Oahu projects (VA list
 
 ## What about leasehold property?
 
-Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. Background on how Hawaii's leasehold system works: [leasehold vs. fee simple in Hawaii](/knowledge-base/leasehold-vs-fee-simple-hawaii).
+Leasehold is a small share of the Oahu market and, in practice, rarely workable with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. Background on how Hawaii's leasehold system works: [leasehold vs. fee simple in Hawaii](/knowledge-base/leasehold-vs-fee-simple-hawaii).
 
 ## VA or conventional?
 
 For most eligible primary-residence buyers, VA wins: $0 down, no PMI, and military-pay-aware underwriting. Conventional can be the better tool with 20% down and reduced entitlement, on a warrantable-but-not-VA-approved condo, or for a property you will not occupy. The full table is in [VA vs. conventional in Hawaii](/knowledge-base/va-vs-conventional-loan-hawaii).
-
-## The steps, in order
-
-1. **Certificate of Eligibility.** Your lender can pull it through the VA portal in minutes; it confirms entitlement and any funding-fee exemption.
-2. **Pre-approval with a Hawaii VA lender.** Bring your LES, orders, and two years of income history. Ask the questions in [how to choose a Hawaii VA lender](/knowledge-base/how-to-choose-hawaii-va-lender).
-3. **Property screen before you offer.** Fee simple (skip leasehold); VA condo status; age and condition against VA minimum property requirements.
-4. **Offer and escrow.** VA appraisal (with the Tidewater process if value comes in low), the [PC-9 termite inspection](/knowledge-base/home-inspection-tips-hawaii), and seller concessions of up to 4% for closing costs or the funding fee.
-5. **Close** — typically 30–45 days on Oahu, the same as conventional when the front-end work is done.
 
 ## Buying from a PCS: the remote timeline
 
@@ -1098,17 +1135,25 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 ## Frequently asked questions
 
-**Can I buy a home in Hawaii with $0 down using a VA loan?** Yes, with full entitlement there is no VA loan limit; with reduced entitlement, Honolulu County's 2026 limit of $1,249,125 sets the $0-down ceiling.
+**How do I buy a house in Hawaii with a VA loan and zero down?** To buy a house in Hawaii with a VA loan and $0 down, get your Certificate of Eligibility, get pre-approved by a Hawaii VA lender, choose a fee-simple home (or a VA-approved condo), then make your offer and close, typically in 30–45 days, with no down payment and no PMI if you have full entitlement and qualify, because there is no VA loan limit. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt.
 
-**Is there PMI on a VA loan?** No. A one-time funding fee (2.15% first use, $0 down) takes its place, financeable and waived for disabled veterans.
+**Can I buy a home in Hawaii with $0 down using a VA loan?** Yes, if you have full entitlement and qualify; with full entitlement there is no VA loan limit. With reduced entitlement, your $0-down ceiling is figured from the 2026 county conforming limit ($1,249,125 in Honolulu County) and the entitlement you already have in use.
 
-**Does BAH count?** Yes, with a tax-free gross-up at most lenders.
+**What extra costs should I budget for a VA purchase in Hawaii?** Homeowners and hurricane insurance, flood insurance if the home is in a FEMA flood zone, condo HOA/AOAO dues (which count in your debt-to-income ratio), property tax, closing costs, and the VA funding fee unless you are exempt. On the Big Island, homes in lava zones 1 and 2 also raise insurance and financing issues.
+
+**Is there PMI on a VA loan?** No. A one-time funding fee (2.15% on first use with $0 down) takes its place; it can be financed and is waived for veterans receiving VA disability compensation.
+
+**Does BAH count?** Yes, when it is on your LES and expected to continue, and many lenders gross it up by up to 25% because it is tax-free.
 
 **Can I use a VA loan on a Hawaii condo?** Yes, if the project is VA-approved; check the directory, or have your lender submit the building.
 
-**Can a VA loan be used on leasehold property?** Almost never in practice on Oahu. Leasehold is a small share of the market; the low prices are the tell. Stick with fee simple.
+**Can a VA loan be used on leasehold property?** Rarely in practice. Leasehold is a small share of the market, the low prices are the tell, and most VA buyers stick with fee simple.
 
-**Can I use my VA loan more than once?** Yes — with restored or remaining entitlement. See [the second VA loan strategy](/knowledge-base/va-second-tier-entitlement-hawaii) and [VA house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii).
+**Do the VA rules differ on Maui, Kauai, or the Big Island?** No, the VA rules are the same statewide. Costs differ by county, lava zones 1 and 2 matter only on the Big Island, and with reduced entitlement Maui's county limit is higher at $1,299,500.
+
+**How long does a VA purchase take in Hawaii?** Typically 30–45 days from accepted offer to closing, about the same as a conventional loan when the front-end work is done.
+
+**Can I use my VA loan more than once?** Yes, with restored or remaining entitlement. See [the second VA loan strategy](/knowledge-base/va-second-tier-entitlement-hawaii) and [VA house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii).
 
 ## Related resources
 
@@ -1119,7 +1164,8 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 *Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
-*Last Updated: September 14, 2026*`,
+*Last Updated: September 30, 2026*
+`,
   },
   {
     slug: "fha-loans-hawaii-explained",
@@ -3502,7 +3548,7 @@ Want to see whether your current home clears the math? [Get pre-approved with Ja
 
 # VA Loan Limits in Hawaii for 2026
 
-**If you have full VA entitlement, there is no VA loan limit in Hawaii in 2026 — you can buy at any price a lender approves with $0 down.** The county "loan limits" you see quoted only apply when your entitlement is reduced, and for Honolulu County the 2026 figure is **$1,249,125** for a single-family home.
+**If you have full VA entitlement, there is no VA loan limit in Hawaii in 2026; how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval.** The county "loan limits" you see quoted only apply when your entitlement is reduced, and for Honolulu County the 2026 figure is **$1,249,125** for a single-family home.
 
 That distinction decides more Hawaii purchases than any other VA rule, because Oahu's median single-family price sits above $1.1 million — well past the old caps that still show up in mainland articles.
 
@@ -4523,7 +4569,7 @@ Every PCS timeline and budget is different. If you want to see exactly how the m
 ---
 
 ### Related Articles
-- [Understanding VA Loans in Hawaii](/knowledge-base/va-loans-hawaii)
+- [How to Buy a House in Hawaii With a VA Loan and $0 Down](/knowledge-base/va-loans-hawaii-military)
 - [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
 - [Why an ARM Isn't a Gamble in Hawaii — It's a Timeline Tool](/knowledge-base/adjustable-rate-mortgage-hawaii)
 
@@ -4667,9 +4713,9 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 ---
 
 ### Related Articles
-- [Understanding VA Loans in Hawaii](/knowledge-base/va-loans-hawaii)
+- [How to Buy a House in Hawaii With a VA Loan and $0 Down](/knowledge-base/va-loans-hawaii-military)
 - [Conventional Loans in Hawaii](/knowledge-base/conventional-loans-hawaii)
-- [First-Time Homebuyer Programs in Hawaii](/knowledge-base/first-time-homebuyer-programs-hawaii)
+- [First-Time Homebuyer's Guide to Hawaii](/knowledge-base/first-time-homebuyer-guide-hawaii)
 
 ---
 
@@ -4941,7 +4987,7 @@ Here is what surprises most people: even at a higher stated rate, a first-lien H
 
 This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. But in an environment where the consensus is that rates are more likely to fall than rise, it is worth understanding how the product works.
 
-[**Learn How a First-Lien HELOC Works →**](/knowledge-base/first-lien-heloc-sweep-calculator)
+[**Learn How a First-Lien HELOC Works →**](/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii)
 
 ---
 

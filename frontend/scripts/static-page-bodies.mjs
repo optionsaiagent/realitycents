@@ -290,11 +290,11 @@ export const STATIC_PAGE_BODIES = {
         <h2>Can you buy a home in Hawaii with a VA loan and zero down?</h2>
         <p><strong>Yes.</strong> Eligible veterans and active-duty service members with full VA entitlement can purchase a primary residence in Hawaii with $0 down and no PMI. You still need lender approval based on income, credit, residual income, and the property.</p>
         <p>That $0-down benefit is especially powerful in Hawaii, where a conventional 20% down payment on an $800,000 home is $160,000. VA financing removes that cash hurdle when you qualify and have full entitlement. Many lenders still set their own maximum loan amount for $0-down VA purchases — ask your lender what their cap is.</p>
-        <p>For the full walkthrough, see the free companion guide: <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">VA Loans in Hawaii: A Complete Guide for Military Homebuyers</a>.</p>
+        <p>For the full walkthrough, see the free companion guide: <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">how to buy a house in Hawaii with a VA loan and $0 down (step by step)</a>.</p>
       </section>
       <section>
         <h2>Is there a VA loan limit in Hawaii?</h2>
-        <p><strong>With full entitlement, there is no VA loan limit for a $0-down purchase</strong> — you can buy at whatever price a lender will approve. With reduced entitlement (for example, an existing VA loan still outstanding), county conforming limits apply. For Honolulu County, the 2026 single-family conforming limit referenced in our Veterans Guide is <strong>$1,249,125</strong>; always confirm the current FHFA/VA figures for the county where you are buying.</p>
+        <p><strong>With full entitlement, there is no VA loan limit for a $0-down purchase</strong>; how much you can borrow depends on your income, debts, residual income, and lender approval. With reduced entitlement (for example, an existing VA loan still outstanding), county conforming limits apply. For Honolulu County, the 2026 single-family conforming limit referenced in our Veterans Guide is <strong>$1,249,125</strong>; always confirm the current FHFA/VA figures for the county where you are buying.</p>
         <p>If you are unsure how much entitlement you have left, use the <a href="${BASE_URL}/va-eligibility-calculator">VA Remaining Eligibility Calculator</a> and read the entitlement section of the <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">Veterans Guide</a>.</p>
       </section>
       <section>
@@ -341,7 +341,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Hawaii VA questions, answered one page at a time</h2>
         <p>Free companion pages that give the direct answer first, with the Hawaii numbers, and link back to the chapter that covers the rest:</p>
         <ul>
-          <li><a href="/knowledge-base/va-loans-hawaii-military">VA loans in Hawaii — the complete 2026 guide</a>: $0 down with full entitlement, no PMI, the funding fee, condos, leasehold, BAH, and the steps.</li>
+          <li><a href="/knowledge-base/va-loans-hawaii-military">How to buy a house in Hawaii with a VA loan and $0 down</a>: the steps, Hawaii costs, $0 down with full entitlement, no PMI, the funding fee, condos, leasehold, and BAH.</li>
           <li><a href="/knowledge-base/va-loan-limits-hawaii-2026">VA loan limits in Hawaii for 2026</a>: no limit with full entitlement; Honolulu County's $1,249,125 conforming limit with reduced entitlement.</li>
           <li><a href="/knowledge-base/does-bah-count-va-loan-hawaii">Does BAH count for a VA loan in Hawaii?</a>: yes — how BAH, BAS, and COLA are counted and the tax-free gross-up.</li>
           <li><a href="/knowledge-base/va-funding-fee-hawaii">The VA funding fee in Hawaii</a>: 2026 percentages, exemptions, Oahu dollar examples, funding fee vs PMI.</li>
@@ -400,7 +400,7 @@ export const STATIC_PAGE_BODIES = {
       <p>Estimate remaining VA $0-down capacity when entitlement is reduced. Honolulu County’s 2026 single-family conforming limit is <strong>$1,249,125</strong>. Educational tool by Jay Miller, NMLS #657301. Not a commitment to lend.</p>
       <section>
         <h2>How remaining entitlement works</h2>
-        <p>With full entitlement, there is no VA loan limit for a $0-down purchase; you can buy at whatever price a lender will approve. With reduced entitlement (for example, a prior VA loan whose entitlement has not been restored), county conforming limits apply.</p>
+        <p>With full entitlement, there is no VA loan limit for a $0-down purchase; how much you can borrow depends on your income, debts, residual income, and lender approval. With reduced entitlement (for example, a prior VA loan whose entitlement has not been restored), county conforming limits apply.</p>
         <p>Remaining entitlement is estimated as 25% of the county conforming limit minus your VA entitlement in use (based on the original loan amount of any VA loan not yet restored; your Certificate of Eligibility shows the exact figure). Your $0-down capacity is about four times the remaining entitlement. If the purchase price exceeds that capacity, a 25% down payment applies on the difference only.</p>
       </section>
       <section>
@@ -774,6 +774,7 @@ for (const [route, data] of Object.entries(VA_BASES)) {
       <h1>VA Loan Guide for ${data.name} — Buy a Home on Oahu</h1>
       <p><strong>${data.branch}</strong> | ${data.unit}</p>
       <p>${data.opening}</p>
+      <p>Step by step: <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">how to buy a house in Hawaii with a VA loan and $0 down</a>.</p>
       ${data.playbookCta ? `<p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The Hawaii VA loan playbook for military homebuyers.</p>` : ""}
       <section>
         <h2>Best Neighborhoods Near ${data.name}</h2>

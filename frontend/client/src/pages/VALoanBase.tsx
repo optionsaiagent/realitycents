@@ -208,7 +208,7 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
             What Does BAH Actually Buy Near {data.installationName} Right Now?
           </h2>
           <p className="text-foreground/70 font-body mb-2">
-            With full VA entitlement, there is no loan limit for $0 down — you can buy at any price without a down payment. Here's how your BAH maps to realistic purchase scenarios by rank:
+            With full VA entitlement, there is no loan limit for $0 down; how much you can borrow depends on your income, debts, residual income, and lender approval. Here's how your BAH maps to realistic purchase scenarios by rank:
           </p>
           <p className="text-foreground/60 font-body text-sm mb-6">
             Each scenario shows a purchase price where your BAH (with dependents) covers approximately 100% of the total monthly PITI payment.
@@ -376,8 +376,8 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <Link href="/knowledge-base/va-loans-hawaii-military" className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all">
-              <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">VA Loans in Hawaii — Complete Guide</h3>
-              <p className="text-xs text-foreground/60 font-body mt-1">Everything about VA loan benefits, eligibility, and Hawaii-specific rules.</p>
+              <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">How to Buy a House in Hawaii With a VA Loan and $0 Down</h3>
+              <p className="text-xs text-foreground/60 font-body mt-1">The step-by-step process, the Hawaii costs to budget, and the rules, from COE to closing.</p>
             </Link>
             <Link href="/knowledge-base/va-loan-house-hacking-hawaii" className="group p-4 bg-card border border-border rounded-xl hover:border-teal/40 hover:shadow-md transition-all">
               <h3 className="text-sm font-display font-bold text-foreground group-hover:text-teal transition-colors">VA House Hacking in Hawaii</h3>
