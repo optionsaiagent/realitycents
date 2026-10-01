@@ -47,6 +47,7 @@ const STATIC_PAGES = [
   { loc: "/",                        changefreq: "weekly",  priority: "1.0",  lastmod: TODAY },
   { loc: "/about",                   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/contact",                 changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
+  { loc: "/facts",                   changefreq: "monthly", priority: "0.7",  lastmod: TODAY },
   { loc: "/guide",                   changefreq: "monthly", priority: "0.9",  lastmod: TODAY },
   { loc: "/agents",                  changefreq: "monthly", priority: "0.8",  lastmod: TODAY },
   { loc: "/advisors",                changefreq: "monthly", priority: "0.8",  lastmod: TODAY },

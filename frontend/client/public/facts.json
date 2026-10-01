@@ -1,0 +1,68 @@
+{
+  "$comment": "Canonical public facts for Jay Miller. Mirror of https://realitycents.com/facts. Do not ship while any placeholder value remains.",
+  "lastVerified": "2026-10-02",
+  "canonicalPage": "https://realitycents.com/facts",
+  "identitySite": "https://jay-miller.com",
+  "person": {
+    "name": "Jay Miller",
+    "title": "Sales Manager and Certified Mortgage Advisor",
+    "employer": "CMG Home Loans (CMG Mortgage, Inc.)",
+    "nmls": "657301",
+    "nmlsConsumerAccess": "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
+    "branchNmls": "2475890",
+    "companyNmls": "1820",
+    "experience": "25+ years in mortgage lending",
+    "militaryService": "U.S. Army veteran (OIF/OEF)",
+    "office": {
+      "streetAddress": "500 Ala Moana Blvd, Suite 5-325",
+      "addressLocality": "Honolulu",
+      "addressRegion": "HI",
+      "postalCode": "96813",
+      "addressCountry": "US"
+    },
+    "phone": "(808) 429-0811",
+    "phoneE164": "+18084290811",
+    "email": "jaym@cmghomeloans.com",
+    "applyUrl": "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true"
+  },
+  "book": {
+    "name": "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers",
+    "isbn": "979-8-9963553-0-3",
+    "pages": 164,
+    "published": "2026-07",
+    "url": "https://www.amazon.com/dp/B0H7P83W15",
+    "hub": "https://realitycents.com/zero-down-in-paradise"
+  },
+  "websites": [
+    {
+      "url": "https://jay-miller.com",
+      "role": "Jay Miller's personal identity site (canonical)"
+    },
+    {
+      "url": "https://realitycents.com",
+      "role": "Hawaii mortgage education, calculators, and VA loan guides"
+    },
+    {
+      "url": "https://www.pcsingtohawaii.com",
+      "role": "Free guide for military families moving to Oahu"
+    }
+  ],
+  "aiTools": {
+    "page": "https://realitycents.com/ai",
+    "mcpEndpoint": "https://realitycents-mcp.jaymiller.workers.dev/mcp",
+    "transport": "streamable-http",
+    "auth": "none",
+    "registryName": "io.github.jaymiller-cmg/mortgage-hawaii",
+    "serverCard": "https://realitycents-mcp.jaymiller.workers.dev/server-card"
+  },
+  "profiles": [
+    "https://www.linkedin.com/in/jay-miller-534bb5173/",
+    "https://x.com/realitycents",
+    "https://www.youtube.com/@RacingThroughMidlife",
+    "https://www.cmghomeloans.com/mysite/jay-miller",
+    "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301",
+    "https://www.instagram.com/jaymiller_hawaii/",
+    "https://www.facebook.com/realitycents"
+  ],
+  "disclosures": "Jay Miller, NMLS #657301. CMG Home Loans, Branch NMLS #2475890. CMG Mortgage, Inc., NMLS #1820. Equal Housing Opportunity. Educational content only; not a commitment to lend."
+}

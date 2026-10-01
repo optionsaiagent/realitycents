@@ -53,6 +53,14 @@ export default function Footer() {
                   AI assistant tools
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/facts"
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  Facts about Jay
+                </Link>
+              </li>
             </ul>
           </div>
 

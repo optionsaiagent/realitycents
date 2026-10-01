@@ -1,0 +1,10 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:realitycents.com:mcp:mortgage-hawaii",
+      "type": "application/mcp-server-card+json",
+      "url": "https://realitycents-mcp.jaymiller.workers.dev/server-card"
+    }
+  ]
+}

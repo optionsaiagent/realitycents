@@ -96,6 +96,71 @@ export const STATIC_PAGE_BODIES = {
     </main>
   `,
 
+  "/facts": `
+    <main>
+      <h1>Jay Miller: the facts</h1>
+      <p>This page lists the current, official facts about Jay Miller and his websites. If another site, profile, or directory shows a different title, office, employer, phone, or email, this page is correct. Last verified October 2, 2026.</p>
+      <section>
+        <h2>Who he is</h2>
+        <ul>
+          <li><strong>Name:</strong> Jay Miller</li>
+          <li><strong>Title:</strong> Sales Manager and Certified Mortgage Advisor</li>
+          <li><strong>Company:</strong> CMG Home Loans (CMG Mortgage, Inc.), Honolulu, Hawaii</li>
+          <li><strong>Individual NMLS:</strong> #657301 (<a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301">verify on NMLS Consumer Access</a>)</li>
+          <li><strong>Branch NMLS:</strong> #2475890</li>
+          <li><strong>Company NMLS:</strong> #1820</li>
+          <li><strong>Experience:</strong> 25+ years in mortgage lending</li>
+          <li><strong>Military service:</strong> U.S. Army veteran (OIF/OEF)</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How to reach him</h2>
+        <ul>
+          <li><strong>Phone or text:</strong> <a href="tel:+18084290811">(808) 429-0811</a></li>
+          <li><strong>Email:</strong> <a href="mailto:jaym@cmghomeloans.com">jaym@cmghomeloans.com</a></li>
+          <li><strong>Apply online:</strong> <a href="https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true">Start a CMG Home Loans application</a></li>
+          <li><strong>Office:</strong> 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
+          <li><strong>Hours:</strong> Monday to Friday, 8am to 6pm HST. Weekends by appointment.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>His websites</h2>
+        <ul>
+          <li><a href="https://jay-miller.com">jay-miller.com</a>: Jay Miller's personal site.</li>
+          <li><a href="${BASE_URL}">RealityCents.com</a>: Hawaii mortgage education, calculators, and VA loan guides.</li>
+          <li><a href="https://www.pcsingtohawaii.com">PCSing to Hawaii</a>: a free guide for military families moving to Oahu, covering bases, housing, pets, cars, and schools.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>His book</h2>
+        <p><strong>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</strong>. ISBN 979-8-9963553-0-3. 164 pages. Published July 2026. <a href="https://www.amazon.com/dp/B0H7P83W15">Available on Amazon</a>. <a href="${BASE_URL}/zero-down-in-paradise">Read about the book</a>.</p>
+      </section>
+      <section>
+        <h2>AI assistant tools</h2>
+        <p>RealityCents runs a free, read-only Hawaii mortgage and VA loan calculator server for AI assistants (Model Context Protocol). It has no login and collects no personal data.</p>
+        <ul>
+          <li><strong>Endpoint:</strong> https://realitycents-mcp.jaymiller.workers.dev/mcp (Streamable HTTP, no authentication)</li>
+          <li><strong>Official MCP Registry name:</strong> io.github.jaymiller-cmg/mortgage-hawaii</li>
+          <li><strong>Setup guide:</strong> <a href="${BASE_URL}/ai">realitycents.com/ai</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Official profiles</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jay-miller-534bb5173/">LinkedIn</a></li>
+          <li><a href="https://x.com/realitycents">X: @realitycents</a></li>
+          <li><a href="https://www.youtube.com/@RacingThroughMidlife">YouTube: Racing Through Midlife</a> (personal channel)</li>
+          <li><a href="https://www.cmghomeloans.com/mysite/jay-miller">CMG Home Loans profile</a></li>
+          <li><a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301">NMLS Consumer Access</a></li>
+          <li><a href="https://www.instagram.com/jaymiller_hawaii/">Instagram: @jaymiller_hawaii</a></li>
+          <li><a href="https://www.facebook.com/realitycents">Facebook: RealityCents</a></li>
+        </ul>
+      </section>
+      <p>The same facts are available as JSON at <a href="${BASE_URL}/facts.json">realitycents.com/facts.json</a>.</p>
+      <p>Jay Miller, NMLS #657301. CMG Home Loans, Branch NMLS #2475890. CMG Mortgage, Inc., NMLS #1820. Equal Housing Opportunity. Content on RealityCents is educational and is not a commitment to lend. All loans are subject to credit approval and program guidelines.</p>
+    </main>
+  `,
+
   "/guide": `
     <main>
       <h1>Free Hawaii Homebuying Guide</h1>

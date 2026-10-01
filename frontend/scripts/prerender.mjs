@@ -112,6 +112,23 @@ const STATIC_PAGES = {
     description: "Contact Jay Miller, NMLS #657301, at CMG Home Loans in Honolulu, HI. Get personalized mortgage guidance, request a pre-approval, or ask about Hawaii home loan options. Call (808) 429-0811 or email jaym@cmghomeloans.com.",
     keywords: "contact Hawaii mortgage lender, Jay Miller contact, CMG Home Loans Honolulu, Hawaii mortgage pre-approval, mortgage consultation Hawaii",
   },
+  "/facts": {
+    title: "Jay Miller Facts: NMLS #657301, CMG Home Loans Honolulu",
+    description: "Canonical facts about Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu. NMLS #657301, office, phone, email, books, sites, and AI tools.",
+    keywords: "Jay Miller NMLS 657301, Jay Miller CMG Home Loans, Jay Miller Honolulu mortgage",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://realitycents.com/facts#page",
+        url: "https://realitycents.com/facts",
+        name: "Jay Miller: the facts",
+        dateModified: "2026-10-02",
+        isPartOf: { "@id": "https://realitycents.com/#website" },
+        mainEntity: { "@id": "https://realitycents.com/#jaymiller" },
+      },
+    ],
+  },
   "/guide": {
     title: "Free Hawaii Homebuying Guide — Download Now",
     description: "Download our free comprehensive Hawaii Homebuying Guide. Learn the step-by-step process of buying a home in Hawaii — from pre-approval to closing day. Covers leasehold vs. fee simple, down payment assistance, VA loans, and more.",
