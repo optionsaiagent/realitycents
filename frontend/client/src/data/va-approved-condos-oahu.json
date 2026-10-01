@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-09-15",
+  "lastUpdated": "2026-10-01",
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "HONOLULU",
   "state": "HI",
-  "totalApproved": 1769,
-  "withoutConditions": 1524,
+  "totalApproved": 1772,
+  "withoutConditions": 1527,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -36,20 +36,6 @@
     "Waipahu"
   ],
   "condos": [
-    {
-      "id": 599015,
-      "vaId": "001639",
-      "name": "'A'ALI'I",
-      "address": "987 QUEEN ST",
-      "city": "HONOLULU",
-      "state": "HI",
-      "zipCode": "96814",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": "2022-03-10",
-      "approvalRequestDate": "2022-02-02",
-      "neighborhood": "Kakaako/Ala Moana"
-    },
     {
       "id": 642868,
       "vaId": "002372",
@@ -566,6 +552,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "2020-09-02",
       "approvalRequestDate": "2020-05-11",
+      "neighborhood": "Wahiawa"
+    },
+    {
+      "id": 645101,
+      "vaId": "002425",
+      "name": "1301 CALIFORNIA AVENUE",
+      "address": "1301 CALIFORNIA AVENUE",
+      "city": "WAHIAWA",
+      "state": "HI",
+      "zipCode": "96876",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-09-23",
+      "approvalRequestDate": "2026-08-15",
       "neighborhood": "Wahiawa"
     },
     {
@@ -8521,6 +8521,20 @@
       "neighborhood": "Waipahu"
     },
     {
+      "id": 645360,
+      "vaId": "002431",
+      "name": "EXPRESSIONS AT ROYAL KUNIA",
+      "address": "94-101 POOHUKU WAY",
+      "city": "WAIPAHU",
+      "state": "HI",
+      "zipCode": "96797",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-09-25",
+      "approvalRequestDate": "2026-09-11",
+      "neighborhood": "Waipahu"
+    },
+    {
       "id": 336786,
       "vaId": "FHA241",
       "name": "EXPRESSIONS III AT ROYAL KUNIA",
@@ -10467,6 +10481,20 @@
       "neighborhood": "Mililani"
     },
     {
+      "id": 355246,
+      "vaId": "FHA294",
+      "name": "HO'ALOHA IKE II - PH1",
+      "address": "",
+      "city": "MILILANI",
+      "state": "HI",
+      "zipCode": "96789",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2005-09-27",
+      "approvalRequestDate": "2005-09-27",
+      "neighborhood": "Mililani"
+    },
+    {
       "id": 592148,
       "vaId": "000581",
       "name": "HO'OKUMU AT WAIKELE",
@@ -11657,20 +11685,6 @@
       "neighborhood": "Waialua"
     },
     {
-      "id": 639814,
-      "vaId": "002315",
-      "name": "KAHE KAI I & II",
-      "address": "87-131 HELELUA ST",
-      "city": "WAIANAE",
-      "state": "HI",
-      "zipCode": "96792",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": "2024-11-19",
-      "approvalRequestDate": "2024-11-12",
-      "neighborhood": "Waianae/Makaha"
-    },
-    {
       "id": 321716,
       "vaId": "FHA015",
       "name": "KAHE KAI I & II",
@@ -11682,6 +11696,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": null,
       "approvalRequestDate": "2011-06-06",
+      "neighborhood": "Waianae/Makaha"
+    },
+    {
+      "id": 639814,
+      "vaId": "002315",
+      "name": "KAHE KAI I & II",
+      "address": "87-131 HELELUA ST",
+      "city": "WAIANAE",
+      "state": "HI",
+      "zipCode": "96792",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2024-11-19",
+      "approvalRequestDate": "2024-11-12",
       "neighborhood": "Waianae/Makaha"
     },
     {
@@ -12721,20 +12749,6 @@
       "neighborhood": "Kapolei"
     },
     {
-      "id": 635240,
-      "vaId": "002178",
-      "name": "KAWENA AT MEHANA",
-      "address": "460 KAMAAHA",
-      "city": "KAPOLEI",
-      "state": "HI",
-      "zipCode": "96707",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": "2023-04-07",
-      "approvalRequestDate": "2023-03-13",
-      "neighborhood": "Kapolei"
-    },
-    {
       "id": 298291,
       "vaId": "002178",
       "name": "KAWENA AT MEHANA",
@@ -12746,6 +12760,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "2023-04-12",
       "approvalRequestDate": "2023-03-16",
+      "neighborhood": "Kapolei"
+    },
+    {
+      "id": 635240,
+      "vaId": "002178",
+      "name": "KAWENA AT MEHANA",
+      "address": "460 KAMAAHA",
+      "city": "KAPOLEI",
+      "state": "HI",
+      "zipCode": "96707",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2023-04-07",
+      "approvalRequestDate": "2023-03-13",
       "neighborhood": "Kapolei"
     },
     {
@@ -23344,6 +23372,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": null,
       "approvalRequestDate": "2011-06-06",
+      "neighborhood": "Salt Lake/Moanalua"
+    },
+    {
+      "id": 645304,
+      "vaId": "002430",
+      "name": "VISTA DEL MAR",
+      "address": "1015 ALA NAPUNANI ST APT 402",
+      "city": "HONOLULU",
+      "state": "HI",
+      "zipCode": "96818",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-09-16",
+      "approvalRequestDate": "2026-09-04",
       "neighborhood": "Salt Lake/Moanalua"
     },
     {
