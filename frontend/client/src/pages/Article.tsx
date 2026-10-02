@@ -473,7 +473,7 @@ export default function Article() {
                     {LENDER.title} at {LENDER.company} | NMLS #{LENDER.nmls}
                   </p>
                   <a
-                    href={`tel:${LENDER.phone}`}
+                    href={`tel:${LENDER.phoneE164}`}
                     className="inline-flex items-center gap-1.5 text-sm font-body font-semibold text-teal"
                   >
                     <Phone className="w-3.5 h-3.5" />

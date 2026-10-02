@@ -6,175 +6,181 @@
   <!-- ── Core Pages ── -->
   <url>
     <loc>https://realitycents.com/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://realitycents.com/about</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://realitycents.com/contact</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realitycents.com/facts</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://realitycents.com/guide</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://realitycents.com/agents</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/advisors</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/zero-down-in-paradise</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-eligibility-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://realitycents.com/advanced-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/affordability-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/rent-vs-buy</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/buydown-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/military-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-approved-condos-oahu</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-loan-schofield-barracks</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-loan-pearl-harbor-hickam</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-loan-kaneohe-mcbh</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-loan-fort-shafter</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/va-loan-tripler</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/bah-buy-vs-rent-oahu</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/loan-compare</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/dscr-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/assumable-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/escalation-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/heloc-sweep-calculator</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/knowledge-base</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://realitycents.com/frequently-asked-questions</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realitycents.com/ai</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -182,54 +188,6 @@
   <url>
     <loc>https://realitycents.com/knowledge-base/va-second-tier-entitlement-hawaii</loc>
     <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/va-loan-limits-hawaii-2026</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/va-funding-fee-hawaii</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/does-bah-count-va-loan-hawaii</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/va-condo-approval-vs-warrantability-hawaii</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/va-irrrl-refinance-hawaii</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/how-to-choose-hawaii-va-lender</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/va-vs-conventional-loan-hawaii</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://realitycents.com/knowledge-base/hawaii-va-field-note-2026-09</loc>
-    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -428,6 +386,54 @@
   <url>
     <loc>https://realitycents.com/knowledge-base/fannie-mae-departing-residence-move-up-buyers-hawaii</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/va-loan-limits-hawaii-2026</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/does-bah-count-va-loan-hawaii</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/va-funding-fee-hawaii</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/va-vs-conventional-loan-hawaii</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/va-condo-approval-vs-warrantability-hawaii</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/va-irrrl-refinance-hawaii</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/how-to-choose-hawaii-va-lender</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://realitycents.com/knowledge-base/hawaii-va-field-note-2026-09</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

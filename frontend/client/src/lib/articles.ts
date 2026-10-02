@@ -193,7 +193,7 @@ The math can be complex, and big-box mainland lenders frequently miscalculate Ha
 
 ---
 
-*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://jay-miller.com)*`,
   },
   {
     slug: "zero-down-home-buying-hawaii",
@@ -5005,7 +5005,7 @@ Know your numbers. Negotiate aggressively for seller concessions. Focus on the p
 
 ---
 
-*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://jay-miller.com)*`,
   },
 ];
 /** All published (non-draft) articles — use this everywhere public-facing */

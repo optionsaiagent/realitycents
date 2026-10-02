@@ -417,7 +417,7 @@ export async function sendGuideEmail(params: {
         <p>Your copy of The Oahu Homebuyer's Guide is attached — 46 pages covering neighborhoods, maintenance fees, loan programs, escrow, and closing on Oahu, updated August 2026.</p>
         <p>If the attachment gives you any trouble, here's a direct link: <a href="${downloadUrl}" style="color:#16697a;">${"realitycents.com/files/guides/oahu-homebuyers-guide.pdf"}</a></p>
         <p>When a question comes up that the guide doesn't answer — and one always does — just reply to this email. I read every one.</p>
-        <p>Aloha,<br>Jay Miller<br>NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890<br>(808) 429-0811 | <a href="https://www.jay-miller.com" style="color:#6b7280;">www.jay-miller.com</a></p>
+        <p>Aloha,<br>Jay Miller<br>NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890<br>(808) 429-0811 | <a href="https://jay-miller.com" style="color:#6b7280;">jay-miller.com</a></p>
       </div>
     `,
   });

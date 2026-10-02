@@ -100,7 +100,7 @@ export default function Header() {
       <div className="hidden lg:block border-b border-white/10">
         <div className="container flex justify-between items-center py-1.5 text-xs text-sand/70">
           <span>Jay Miller | NMLS #{LENDER.nmls} | CMG Home Loans NMLS #{LENDER.branchNmls}</span>
-          <a href={`tel:${LENDER.phone}`} className="flex items-center gap-1.5 hover:text-gold transition-colors">
+          <a href={`tel:${LENDER.phoneE164}`} className="flex items-center gap-1.5 hover:text-gold transition-colors">
             <Phone className="w-3 h-3" />
             {LENDER.phone}
           </a>
@@ -181,7 +181,7 @@ export default function Header() {
             Get Pre-Approved
           </a>
           <a
-            href={`tel:${LENDER.phone}`}
+            href={`tel:${LENDER.phoneE164}`}
             className="hidden lg:inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white px-4 py-2 rounded-md text-sm font-body font-medium transition-all hover:shadow-lg hover:shadow-teal/20"
           >
             <Phone className="w-4 h-4" />
@@ -269,7 +269,7 @@ export default function Header() {
             Get Pre-Approved
           </a>
           <a
-            href={`tel:${LENDER.phone}`}
+            href={`tel:${LENDER.phoneE164}`}
             className="flex items-center justify-center gap-2 bg-teal text-white px-4 py-3 rounded-md text-sm font-body font-medium"
           >
             <Phone className="w-4 h-4" />

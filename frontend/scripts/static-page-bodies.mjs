@@ -85,9 +85,11 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Contact Information</h2>
         <ul>
-          <li><strong>Phone:</strong> (808) 429-0811</li>
-          <li><strong>Email:</strong> jaym@cmghomeloans.com</li>
-          <li><strong>Website:</strong> www.jay-miller.com</li>
+          <li><strong>Phone or text:</strong> <a href="tel:+18084290811">(808) 429-0811</a></li>
+          <li><strong>Email:</strong> <a href="mailto:jaym@cmghomeloans.com">jaym@cmghomeloans.com</a></li>
+          <li><strong>Apply online:</strong> <a href="https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true">Start a CMG Home Loans application</a></li>
+          <li><strong>Personal site:</strong> <a href="https://jay-miller.com">jay-miller.com</a></li>
+          <li><strong>All facts:</strong> <a href="${BASE_URL}/facts">realitycents.com/facts</a></li>
           <li><strong>Office:</strong> 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
           <li><strong>Hours:</strong> Monday–Friday 8am–6pm HST, Weekends by appointment</li>
         </ul>

@@ -666,7 +666,7 @@ export default function ZeroDownInParadise() {
                 <ul className="space-y-2 mb-8 text-sm text-sand/80">
                   <li className="flex items-center justify-center sm:justify-start gap-2">
                     <Phone className="w-4 h-4 text-teal" />
-                    <a href={`tel:${LENDER.phone}`} className="hover:text-gold">
+                    <a href={`tel:${LENDER.phoneE164}`} className="hover:text-gold">
                       {LENDER.phone}
                     </a>
                   </li>

@@ -183,7 +183,7 @@ export default function About() {
 
                 <div className="space-y-2.5">
                   <a
-                    href={`tel:${LENDER.phone}`}
+                    href={`tel:${LENDER.phoneE164}`}
                     className="flex items-center gap-2.5 text-sm text-sand/80 hover:text-gold transition-colors"
                   >
                     <Phone className="w-4 h-4 text-teal" />

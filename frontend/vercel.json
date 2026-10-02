@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build && node scripts/prerender.mjs",
+  "buildCommand": "node scripts/build-va-condo-data.mjs && node scripts/generate-llms-full.mjs && pnpm run build && node scripts/prerender.mjs",
   "outputDirectory": "dist",
   "trailingSlash": false,
   "cleanUrls": true,
@@ -140,6 +140,16 @@
     {
       "source": "/mortgagecalcplus/va-eligibility-calculator/",
       "destination": "/va-eligibility-calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/mortgagecalcplus",
+      "destination": "/calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/mortgagecalcplus/",
+      "destination": "/calculator",
       "statusCode": 301
     },
     {

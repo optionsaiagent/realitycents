@@ -74,7 +74,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`tel:${LENDER.phone}`}
+                  href={`tel:${LENDER.phoneE164}`}
                   className="flex items-center gap-2.5 text-sm hover:text-gold transition-colors"
                 >
                   <Phone className="w-4 h-4 text-teal shrink-0" />

@@ -1,6 +1,6 @@
 # RealityCents
 
-> Mortgage education and VA loan expertise for veterans, military families, and homebuyers in Honolulu, Hawaii. Published by Jay Miller, Sales Manager & Mortgage Loan Consultant at CMG Home Loans (NMLS# 657301). 25 years of local mortgage experience specializing in VA loans, conventional loans, FHA loans, and Hawaii condo financing.
+> Mortgage and VA loan education for veterans, military families, and homebuyers in Honolulu, Hawaii. Published by Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans (NMLS #657301). 25 years of local mortgage experience specializing in VA loans, conventional loans, FHA loans, and Hawaii condo financing.
 
 RealityCents.com is an educational resource for anyone buying a home on Oahu or refinancing an existing mortgage in Hawaii. Content is written by a licensed mortgage professional and US Army veteran who lives and works in Honolulu. All mortgage guidance reflects Hawaii-specific rules including condo warrantability requirements, leasehold property considerations, PC-9 termite inspection mandates, and county-specific property tax exemptions.
 
@@ -34,7 +34,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 ## Hawaii VA Playbook (start here for military buyers)
 
 - [AI assistant tools](https://realitycents.com/ai): Free, read-only Hawaii mortgage and VA loan calculators for ChatGPT, Claude, and Cursor. Connect the MCP server at https://realitycents-mcp.jaymiller.workers.dev/mcp. No login and no personal data. Jay Miller, NMLS #657301.
-- [Zero Down in Paradise](https://realitycents.com/zero-down-in-paradise): Jay Miller’s Hawaii VA loan playbook hub — answer-first pages on $0-down buying with full entitlement, Honolulu County 2026 conforming limit of $1,249,125 for reduced entitlement, condos, leasehold, BAH, funding fee, FAQ, and Book/Person/FAQPage schema. Last updated September 14, 2026. ISBN 979-8-9963553-0-3 · Amazon ASIN B0H7P83W15.
+- [Zero Down in Paradise](https://realitycents.com/zero-down-in-paradise): Jay Miller’s Hawaii VA loan playbook hub — answer-first pages on $0-down buying with full entitlement, Honolulu County 2026 conforming limit of $1,249,125 for reduced entitlement, condos, leasehold, BAH, funding fee, FAQ, and Book/Person/FAQPage schema. ISBN 979-8-9963553-0-3 · Amazon ASIN B0H7P83W15.
 - [VA Loans in Hawaii](https://realitycents.com/knowledge-base/va-loans-hawaii-military): Free Veterans Guide companion to the book.
 - [Military Buying Power Calculator](https://realitycents.com/military-calculator): BAH, BAS, COLA, and VA purchase-power estimates for Honolulu County.
 - [VA Remaining Eligibility Calculator](https://realitycents.com/va-eligibility-calculator): Remaining $0-down capacity using 2026 county conforming limits (Honolulu $1,249,125).
@@ -53,6 +53,13 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 - [VA Loan Guide — Fort Shafter](https://realitycents.com/va-loan-fort-shafter) and [Tripler AMC](https://realitycents.com/va-loan-tripler): Town-side Army assignments.
 - [PCS Assumable / Second-Tier Entitlement](https://realitycents.com/knowledge-base/va-second-tier-entitlement-hawaii): Buying again in Hawaii without selling the first VA-financed home.
 - [VA Assumable Loans](https://realitycents.com/knowledge-base/va-assumable-loans-pros-cons): Assuming a VA loan in Hawaii — 0.5% fee, entitlement substitution, the equity gap.
+
+## Author facts and related sites
+
+- [Jay Miller facts](https://realitycents.com/facts): Canonical facts about Jay Miller: title, NMLS #657301, office, phone, email, websites, and AI tools. JSON: https://realitycents.com/facts.json
+- [jay-miller.com](https://jay-miller.com): Jay Miller's personal site.
+- [PCSing to Hawaii](https://www.pcsingtohawaii.com): Jay Miller's free guide for military families moving to Oahu: bases, neighborhoods, BAH, pets, cars, schools, and a PCS timeline. Index: https://www.pcsingtohawaii.com/llms.txt
+- [MCP server card](https://realitycents-mcp.jaymiller.workers.dev/server-card): Machine-readable description of the RealityCents MCP server. Catalog: https://realitycents.com/.well-known/ai-catalog.json
 
 ## Core Pages
 
@@ -99,15 +106,19 @@ Interactive Hawaii-specific mortgage calculators for self-service estimates:
 
 ## Contact
 
-Jay Miller — Sales Manager & Mortgage Loan Consultant
-CMG Home Loans | NMLS# 657301 | US Army Veteran
-Phone: 808-429-0811
+Jay Miller, Sales Manager and Certified Mortgage Advisor
+CMG Home Loans | NMLS #657301 | Branch NMLS #2475890 | CMG Mortgage, Inc. NMLS #1820 | US Army Veteran
+Phone or text: (808) 429-0811
 Email: jaym@cmghomeloans.com
+Apply online: https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true
 Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813
 Website: https://realitycents.com
+Personal site: https://jay-miller.com
+Facts: https://realitycents.com/facts
 
 ## Optional
 
 - [Knowledge Base](https://realitycents.com/knowledge-base): Market updates, rate commentary, VA loan news, and homebuying tips for Oahu.
-- [Instagram](https://www.instagram.com/jaymillercmg): VA loan education content and Hawaii real estate insights.
+- [Instagram @jaymiller_hawaii](https://www.instagram.com/jaymiller_hawaii/): Jay Miller's official Instagram: VA loan education and Hawaii real estate.
 - [YouTube — Racing Through Midlife](https://www.youtube.com/@RacingThroughMidlife): Jay Miller's personal channel.
+- [Full knowledge base text](https://realitycents.com/llms-full.txt): Every article and FAQ as plain text.
