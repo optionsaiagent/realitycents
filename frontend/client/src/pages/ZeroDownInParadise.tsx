@@ -806,7 +806,7 @@ export default function ZeroDownInParadise() {
             {LENDER.email}
           </p>
           <p className="text-xs text-muted-foreground/80 mt-6 leading-relaxed max-w-2xl mx-auto">
-            Equal Housing Lender. This is educational content, not a commitment to lend. All loans subject
+            Equal Housing Opportunity. This is educational content, not a commitment to lend. All loans subject
             to credit approval and property eligibility. Approvals are not guaranteed. $0-down VA
             purchases require full entitlement and lender approval. NMLS Consumer Access:{" "}
             <a

@@ -1799,7 +1799,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
             <div style={{ padding: "4px 6px", border: "1px solid #ccc", borderRadius: "3px", fontSize: "6.5pt", color: "#666" }}>
               <p style={{ margin: 0 }}>
                 Estimates for educational purposes only. Not a commitment to lend. Actual rates, fees, and terms may vary.
-                Contact {LENDER.name} (NMLS #{LENDER.nmls}) at {LENDER.phone} | {LENDER.email} | {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Lender.
+                Contact {LENDER.name} (NMLS #{LENDER.nmls}) at {LENDER.phone} | {LENDER.email} | {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Opportunity.
               </p>
             </div>
           </div>
@@ -2015,7 +2015,7 @@ function PrintLayout({ results, yearsInHome, scenarios, comparableRent, includeR
             Appreciation rate of 3% annually is a conservative estimate and is not guaranteed. Actual home values may vary.
             These calculations are estimates for educational purposes only. Not a commitment to lend.
             Contact {LENDER.name} (NMLS #{LENDER.nmls}) at {LENDER.phone} or {LENDER.email} for a personalized quote.
-            {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Lender.
+            {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Opportunity.
           </p>
         </div>
       </div>

@@ -104,7 +104,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes, if the condo **project** is VA-approved. About 1,782 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,781 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -156,7 +156,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 30, 2026*
 
@@ -230,7 +230,7 @@ BAH alone rarely carries a Hawaii purchase — it is the largest piece, combined
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -281,7 +281,7 @@ FHFA typically announces the next year's conforming loan limits in late November
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -301,7 +301,7 @@ Last updated: September 14, 2026
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,782 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,781 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 
@@ -347,7 +347,7 @@ I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loan
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -423,7 +423,7 @@ And since tax year 2026, the funding fee may be deductible as mortgage insurance
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -487,7 +487,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -503,7 +503,7 @@ Last updated: September 14, 2026
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for Honolulu County's roughly 1,782 approved projects (as of Oct 1, 2026).
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for Honolulu County's roughly 1,781 approved projects (as of Oct 1, 2026).
 
 ## What each review actually looks at
 
@@ -546,7 +546,7 @@ Condotels and buildings with mandatory rental pools are the exception: the VA do
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -614,7 +614,7 @@ The [VA Remaining Eligibility Calculator](/va-eligibility-calculator) runs this 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -687,7 +687,7 @@ The VA buyer preserves $42,500–$170,000 of cash and pays no monthly insurance;
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
-*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*
 
@@ -4899,9 +4899,9 @@ Published: May 2026
 Last updated: May 2026
 
 
-1,782 VA-accepted condo projects on Oahu from VA's condo list, last checked October 1, 2026. Approvals change; confirm current status with VA.
+1,781 VA-accepted condo projects on Oahu from VA's condo list, last checked October 1, 2026. Approvals change; confirm current status with VA.
 Data sourced from the VA LGY Hub (https://lgy.va.gov/lgyhub/condo-report).
-- Accepted Without Conditions: 1537
+- Accepted Without Conditions: 1536
 - Accepted With Conditions: 245
 - Last checked: 2026-10-01
 
@@ -4922,27 +4922,26 @@ You can request a Single Unit Approval (Spot Approval) where the VA reviews just
 - Kaneohe: 168 projects
 - Makiki/Manoa: 141 projects
 - Ewa Beach: 127 projects
-- Kailua: 119 projects
+- Kailua: 122 projects
 - Waikiki: 106 projects
-- Waianae/Makaha: 94 projects
+- Waianae/Makaha: 95 projects
 - Mililani: 90 projects
 - Waipahu: 86 projects
 - Kalihi/Liliha: 78 projects
-- Kapolei: 71 projects
+- Kapolei: 70 projects
 - Salt Lake/Moanalua: 70 projects
 - Kakaako/Ala Moana: 67 projects
 - McCully/Moiliili: 67 projects
+- Aiea: 67 projects
 - Wahiawa: 66 projects
 - Downtown/Chinatown: 66 projects
-- Aiea: 66 projects
 - Kaimuki/Kapahulu: 63 projects
-- Hawaii Kai: 54 projects
+- Hawaii Kai: 55 projects
 - Pearl City: 47 projects
 - Waialua: 44 projects
 - Haleiwa/North Shore: 36 projects
 - Hauula: 28 projects
 - Kaaawa: 13 projects
-- Other: 6 projects
 - Kahuku: 5 projects
 - Laie: 3 projects
 - Waimanalo: 1 projects

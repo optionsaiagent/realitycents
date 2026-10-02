@@ -1206,7 +1206,7 @@ export default function MilitaryCalculator() {
                   them to match your target property for a more accurate
                   purchase price. This tool is for educational purposes only
                   and does not constitute a loan offer or pre-approval. NMLS
-                  #1820 | Equal Housing Lender.
+                  #1820 | Equal Housing Opportunity.
                 </p>
               </div>
             </div>
