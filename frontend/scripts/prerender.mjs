@@ -124,7 +124,7 @@ const STATIC_PAGES = {
         "@id": "https://realitycents.com/facts#page",
         url: "https://realitycents.com/facts",
         name: "Jay Miller: the facts",
-        dateModified: "2026-10-02",
+        dateModified: "2026-10-01",
         isPartOf: { "@id": "https://realitycents.com/#website" },
         mainEntity: { "@id": "https://realitycents.com/#jaymiller" },
       },

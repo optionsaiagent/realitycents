@@ -8,8 +8,8 @@ import SEO from "@/components/SEO";
 import ContactActions from "@/components/ContactActions";
 import { IMAGES, LENDER, PRE_APPROVAL_URL } from "@/lib/constants";
 
-const LAST_VERIFIED = "October 2, 2026"; // ship date; use the actual merge date if it slips
-const LAST_VERIFIED_ISO = "2026-10-02";
+const LAST_VERIFIED = "October 1, 2026"; // ship date; use the actual merge date if it slips
+const LAST_VERIFIED_ISO = "2026-10-01";
 const NMLS_URL = "https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301";
 const MCP_ENDPOINT = "https://realitycents-mcp.jaymiller.workers.dev/mcp";
 

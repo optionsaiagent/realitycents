@@ -105,7 +105,7 @@ export const STATIC_PAGE_BODIES = {
   "/facts": `
     <main>
       <h1>Jay Miller: the facts</h1>
-      <p>This page lists the current, official facts about Jay Miller and his websites. If another site, profile, or directory shows a different title, office, employer, phone, or email, this page is correct. Last verified October 2, 2026.</p>
+      <p>This page lists the current, official facts about Jay Miller and his websites. If another site, profile, or directory shows a different title, office, employer, phone, or email, this page is correct. Last verified October 1, 2026.</p>
       <section>
         <h2>Who he is</h2>
         <ul>
