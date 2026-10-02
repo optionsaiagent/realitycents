@@ -48,6 +48,11 @@ const ANSWER_PAGES = [
 
 const HONOLULU_LIMIT = HONOLULU_CONFORMING_LIMIT_2026.toLocaleString("en-US");
 const CONDO_COUNT = condoData.totalApproved.toLocaleString("en-US");
+const CONDO_CHECKED = (() => {
+  const [y, m, d] = condoData.lastUpdated.split("-").map(Number);
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return `${months[m - 1]} ${d}, ${y}`;
+})();
 
 const PERSON_ID = `${SITE.url}/#jaymiller`;
 const ORG_ID = `${SITE.url}/#business`;
@@ -167,7 +172,7 @@ const TOOLS = [
   {
     href: "/va-approved-condos-oahu",
     title: "VA Condo Lookup",
-    note: `Search ${CONDO_COUNT}+ VA-approved condo projects on Oahu.`,
+    note: `${CONDO_COUNT} VA-accepted condo projects on Oahu from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA.`,
   },
   {
     href: "/ai",

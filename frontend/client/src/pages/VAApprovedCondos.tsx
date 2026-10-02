@@ -1,6 +1,7 @@
 /*
  * Pacific Modernism — VA-Approved Condos on Oahu
- * Searchable, filterable directory of all VA-approved condo projects
+ * Searchable directory of VA-accepted condo projects on Oahu from VA's condo list.
+ * Approvals change; confirm current status with VA.
  * Data sourced from VA LGY Hub (lgy.va.gov)
  */
 import { useState, useMemo } from "react";
@@ -60,6 +61,13 @@ function getDisplayNeighborhood(n: string) {
 }
 
 const ITEMS_PER_PAGE = 50;
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+function formatChecked(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+}
+const condoChecked = formatChecked(condoData.lastUpdated);
 
 export default function VAApprovedCondos() {
   const [search, setSearch] = useState("");
@@ -186,7 +194,7 @@ export default function VAApprovedCondos() {
     },
     {
       q: "How often is this list updated?",
-      a: `This list is sourced from the VA's LGY Hub database and was last updated on ${condoData.lastUpdated}. The VA continuously processes new approvals and status changes. For the most current status of a specific project, you can verify directly at the VA's official portal or contact your VA-experienced lender.`,
+      a: `This list is sourced from the VA's condo list and was last checked on ${condoChecked}. Approvals change; confirm current status with VA. For the most current status of a specific project, verify it on VA's condo report or contact your VA-experienced lender.`,
     },
   ];
 
@@ -194,14 +202,14 @@ export default function VAApprovedCondos() {
     <Layout>
       <SEO
         title={`VA-Approved Condos on Oahu — ${condoData.totalApproved.toLocaleString()} Projects | RealityCents`}
-        description={`Searchable directory of all ${condoData.totalApproved} VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Updated ${condoData.lastUpdated}.`}
+        description={`${condoData.totalApproved.toLocaleString()} VA-accepted condo projects on Oahu from VA's condo list, last checked ${condoChecked}. Approvals change; confirm current status with VA.`}
         url="/va-approved-condos-oahu"
         keywords="VA approved condos Oahu, VA approved condos Hawaii, VA condo list Honolulu, VA eligible condos Waikiki, VA loan condo Hawaii, VA approved condo projects Oahu 2026"
       />
 
       <PageHero
         title="VA-Approved Condos on Oahu"
-        subtitle={`${condoData.totalApproved.toLocaleString()} condo projects approved for VA financing — searchable by name, address, neighborhood, or zip code.`}
+        subtitle={`${condoData.totalApproved.toLocaleString()} VA-accepted condo projects on Oahu from VA's condo list, last checked ${condoChecked}. Approvals change; confirm current status with VA.`}
         image={IMAGES.heroGuide}
         compact
       />
@@ -231,27 +239,25 @@ export default function VAApprovedCondos() {
                 </span>
               </div>
             </div>
-            <div className="text-sm text-white/70">
-              Data from{" "}
-              <a
-                href="https://lgy.va.gov/lgyhub/condo-report"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-gold transition-colors"
-              >
-                VA LGY Hub
-              </a>{" "}
-              · Last updated {condoData.lastUpdated}
-            </div>
           </div>
-          <div className="text-sm text-white/70 mt-1">
-            Download:{" "}
-            <a href="/data/va-approved-condos-hawaii.json" className="underline hover:text-gold transition-colors">JSON</a>{" · "}
+          <p className="text-sm text-white/70 mt-2">
+            Last checked {condoChecked}. Approvals change; confirm current status with{" "}
+            <a
+              href="https://lgy.va.gov/lgyhub/condo-report"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gold transition-colors"
+            >
+              VA's condo report
+            </a>
+            .{" "}
             <a href="/data/va-approved-condos-hawaii.csv" className="underline hover:text-gold transition-colors">CSV</a>
-            {" · "}Approvals change. Verify a project on the{" "}
-            <a href="https://lgy.va.gov/lgyhub/condo-report" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold transition-colors">VA condo lookup</a>.
-            VA approval status does not guarantee loan approval.
-          </div>
+            {" · "}
+            <a href="/data/va-approved-condos-hawaii.json" className="underline hover:text-gold transition-colors">JSON</a>
+            {" · "}
+            <a href="/data/README.md" className="underline hover:text-gold transition-colors">README</a>
+            . VA approval status does not guarantee loan approval.
+          </p>
         </div>
       </section>
 

@@ -36,6 +36,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 
 - [VA-approved condos, Hawaii (JSON)](https://realitycents.com/data/va-approved-condos-hawaii.json): Oahu (Honolulu County) condo projects on the VA's accepted condo list, with VA ID, status (Accepted Without Conditions or Accepted With Conditions), address, ZIP, neighborhood, and VA review date. Fields last_checked, source, scope, notice, and schema describe the file. Copied from the VA condo report (https://lgy.va.gov/lgyhub/condo-report) and refreshed about monthly. Neighbor islands are not included yet. Approvals change, so verify with the VA. VA approval status does not guarantee loan approval.
 - [VA-approved condos, Hawaii (CSV)](https://realitycents.com/data/va-approved-condos-hawaii.csv): The same records as CSV, one project per row, with a last_checked column.
+- [VA-approved condos, Hawaii (README)](https://realitycents.com/data/README.md): Last-checked date, counts, and how Oahu is decided from ZIP, city, and county. VA's county field alone is unreliable.
 
 ## Hawaii VA Playbook (start here for military buyers)
 
@@ -44,7 +45,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 - [VA Loans in Hawaii](https://realitycents.com/knowledge-base/va-loans-hawaii-military): Free Veterans Guide companion to the book.
 - [Military Buying Power Calculator](https://realitycents.com/military-calculator): BAH, BAS, COLA, and VA purchase-power estimates for Honolulu County.
 - [VA Remaining Eligibility Calculator](https://realitycents.com/va-eligibility-calculator): Remaining $0-down capacity using 2026 county conforming limits (Honolulu $1,249,125).
-- [VA-Approved Condos Oahu](https://realitycents.com/va-approved-condos-oahu): Searchable directory of VA-approved condo projects on Oahu. Data files: https://realitycents.com/data/va-approved-condos-hawaii.json and https://realitycents.com/data/va-approved-condos-hawaii.csv. Verify current status at https://lgy.va.gov/lgyhub/condo-report.
+- [VA-Approved Condos Oahu](https://realitycents.com/va-approved-condos-oahu): VA-accepted condo projects on Oahu from VA's condo list. Approvals change; confirm current status with VA. Data files: https://realitycents.com/data/va-approved-condos-hawaii.json, https://realitycents.com/data/va-approved-condos-hawaii.csv, and https://realitycents.com/data/README.md. VA condo report: https://lgy.va.gov/lgyhub/condo-report. VA approval status does not guarantee loan approval.
 - [Hawaii VA Field Note — September 2026](https://realitycents.com/knowledge-base/hawaii-va-field-note-2026-09): Monthly dated field note — Fannie departing-residence rule (VA unchanged), CMG approved for Hale Kamaʻāina, condo review changes, COLA counted at CMG. No rate quotes.
 - [VA Loan Limits in Hawaii 2026](https://realitycents.com/knowledge-base/va-loan-limits-hawaii-2026): No VA loan limit with full entitlement; Honolulu County 2026 conforming limit $1,249,125 applies with reduced entitlement.
 - [Does BAH Count for a VA Loan in Hawaii?](https://realitycents.com/knowledge-base/does-bah-count-va-loan-hawaii): Yes — how BAH, BAS, and COLA are counted, the tax-free gross-up, Honolulu 2026 BAH by rank.

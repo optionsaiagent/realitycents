@@ -1110,7 +1110,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes, if the condo **project** is VA-approved. About 1,772 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,782 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -3851,7 +3851,7 @@ The VA buyer preserves $42,500–$170,000 of cash and pays no monthly insurance;
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,772 approved projects (as of Oct 1, 2026).
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for Honolulu County's roughly 1,782 approved projects (as of Oct 1, 2026).
 
 ## What each review actually looks at
 
@@ -3984,7 +3984,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,772 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,782 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 

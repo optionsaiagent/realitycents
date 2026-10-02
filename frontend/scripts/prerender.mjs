@@ -23,7 +23,11 @@ const CONDO_DATA = JSON.parse(
   fs.readFileSync(new URL("../client/src/data/va-approved-condos-oahu.json", import.meta.url), "utf8")
 );
 const CONDO_TOTAL = CONDO_DATA.totalApproved.toLocaleString("en-US");
-const CONDO_UPDATED_MONTH = new Date(CONDO_DATA.lastUpdated + "T00:00:00").toLocaleString("en-US", { month: "long", year: "numeric" });
+const CONDO_CHECKED = (() => {
+  const [y, m, d] = CONDO_DATA.lastUpdated.split("-").map(Number);
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return `${months[m - 1]} ${d}, ${y}`;
+})();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -258,14 +262,14 @@ const STATIC_PAGES = {
   },
   "/va-approved-condos-oahu": {
     title: `VA-Approved Condos on Oahu — ${CONDO_TOTAL} Projects`,
-    description: `Searchable directory of all ${CONDO_TOTAL} VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Updated ${CONDO_UPDATED_MONTH}. Data from VA LGY Hub.`,
+    description: `${CONDO_TOTAL} VA-accepted condo projects on Oahu from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA.`,
     keywords: "VA approved condos Oahu, VA approved condos Hawaii, VA condo list Honolulu, VA eligible condos Waikiki, VA loan condo Hawaii, VA approved condo projects Oahu 2026, VA condo approval list",
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "Dataset",
         name: "VA-Approved Condo Projects on Oahu, Hawaii",
-        description: `Complete directory of ${CONDO_TOTAL} VA-approved condominium projects in Honolulu County (Oahu), Hawaii, sourced from the VA LGY Hub. Includes project name, address, approval status, review date, and VA ID.`,
+        description: `${CONDO_TOTAL} VA-accepted condo projects on Oahu (Honolulu County) from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA. Includes project name, address, approval status, review date, and VA ID.`,
         url: `${BASE_URL}/va-approved-condos-oahu`,
         creator: { "@type": "Organization", name: "U.S. Department of Veterans Affairs" },
         dateModified: CONDO_DATA.lastUpdated,
@@ -287,7 +291,7 @@ const STATIC_PAGES = {
           { "@type": "Question", name: "What is the difference between Accepted Without Conditions and Accepted With Conditions?", acceptedAnswer: { "@type": "Answer", text: "Accepted Without Conditions means the project fully meets all VA requirements with no additional stipulations. Accepted With Conditions means the project is approved but the VA identified items to be noted. Both statuses allow VA financing. In practice, there is almost never anything that needs to be resolved — the lender may simply require the Veteran to acknowledge and accept the noted conditions, which are informational in nature." } },
           { "@type": "Question", name: "What if the condo I want is not on the VA-approved list?", acceptedAnswer: { "@type": "Answer", text: "Your lender can submit the full project approval package to the Regional VA Loan Center as part of your purchase transaction — this is called Lender Submitted Condo Approval and typically takes 2–3 weeks, well within a standard 45-day contract. Alternatively, the HOA board or seller can submit a full project approval application directly to the VA, which approves the entire building for all future VA buyers." } },
           { "@type": "Question", name: "Can I use a VA loan for a Waikiki condotel?", acceptedAnswer: { "@type": "Answer", text: "Generally no. The VA does not approve projects that operate primarily as hotels or where units are part of a mandatory rental pool. Some Waikiki buildings that are primarily residential (not hotel-operated) are VA-approved — check the directory to verify." } },
-          { "@type": "Question", name: "How many VA-approved condos are on Oahu?", acceptedAnswer: { "@type": "Answer", text: `As of ${CONDO_UPDATED_MONTH}, there are ${CONDO_TOTAL} VA-approved condo projects on Oahu — ${CONDO_DATA.withoutConditions.toLocaleString("en-US")} Accepted Without Conditions and ${CONDO_DATA.withConditions.toLocaleString("en-US")} Accepted With Conditions — spread across ${CONDO_DATA.neighborhoods.length} neighborhoods from Waikiki to Ewa Beach.` } },
+          { "@type": "Question", name: "How many VA-approved condos are on Oahu?", acceptedAnswer: { "@type": "Answer", text: `${CONDO_TOTAL} VA-accepted condo projects on Oahu from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA. This file lists ${CONDO_DATA.withoutConditions.toLocaleString("en-US")} Accepted Without Conditions and ${CONDO_DATA.withConditions.toLocaleString("en-US")} Accepted With Conditions, across ${CONDO_DATA.neighborhoods.length} neighborhoods from Waikiki to Ewa Beach.` } },
         ],
       },
       {

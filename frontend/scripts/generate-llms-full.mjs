@@ -281,15 +281,19 @@ function generate() {
   lines.push("Published: May 2026");
   lines.push("Last updated: May 2026");
   lines.push("");
-  lines.push("Searchable directory of all VA-approved condo projects on Oahu, Hawaii. Data sourced from the VA LGY Hub (lgy.va.gov/lgyhub/condo-report).");
   lines.push("");
   try {
     const condoDataPath = path.resolve(projectRoot, "client/src/data/va-approved-condos-oahu.json");
     const condoData = JSON.parse(fs.readFileSync(condoDataPath, "utf-8"));
-    lines.push(`Total VA-approved condos on Oahu: ${condoData.totalApproved}`);
+    const [y, m, d] = String(condoData.lastUpdated).split("-").map(Number);
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const checked = `${months[m - 1]} ${d}, ${y}`;
+    const total = Number(condoData.totalApproved).toLocaleString("en-US");
+    lines.push(`${total} VA-accepted condo projects on Oahu from VA's condo list, last checked ${checked}. Approvals change; confirm current status with VA.`);
+    lines.push("Data sourced from the VA LGY Hub (https://lgy.va.gov/lgyhub/condo-report).");
     lines.push(`- Accepted Without Conditions: ${condoData.withoutConditions}`);
     lines.push(`- Accepted With Conditions: ${condoData.withConditions}`);
-    lines.push(`- Last updated: ${condoData.lastUpdated}`);
+    lines.push(`- Last checked: ${condoData.lastUpdated}`);
     lines.push("");
     lines.push("### What VA Condo Approval Means");
     lines.push("");

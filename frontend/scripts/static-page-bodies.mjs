@@ -13,7 +13,12 @@ const CONDO_DATA = JSON.parse(
   readFileSync(new URL("../client/src/data/va-approved-condos-oahu.json", import.meta.url), "utf8")
 );
 const CONDO_TOTAL = CONDO_DATA.totalApproved.toLocaleString("en-US");
-const CONDO_UPDATED_MONTH = new Date(CONDO_DATA.lastUpdated + "T00:00:00").toLocaleString("en-US", { month: "long", year: "numeric" });
+const CONDO_CHECKED = (() => {
+  const [y, m, d] = CONDO_DATA.lastUpdated.split("-").map(Number);
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return `${months[m - 1]} ${d}, ${y}`;
+})();
+const CONDO_BLURB = `${CONDO_TOTAL} VA-accepted condo projects on Oahu from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA.`;
 
 const LICENSE_TAIL = "Jay Miller, Sales Manager and Certified Mortgage Advisor, NMLS #657301. CMG Home Loans Branch NMLS #2475890, 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813. CMG Mortgage, Inc. NMLS #1820. Equal Housing Opportunity.";
 const LICENSE_CALC = `<p class="license">Estimates are for education only. They are not a loan offer or a commitment to lend. Rates are examples, not quotes. Verify any scenario with a licensed loan officer. ${LICENSE_TAIL}</p>`;
@@ -31,7 +36,7 @@ export const STATIC_PAGE_BODIES = {
           <li><a href="${BASE_URL}/calculator">Free Mortgage Calculators</a> — Basic, Advanced, Affordability, Rent vs. Buy, Buydown, <a href="${BASE_URL}/military-calculator">Military Buying Power</a>, and Loan Comparison tools</li>
           <li><a href="${BASE_URL}/knowledge-base">Knowledge Base</a> — 30+ articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
           <li><a href="${BASE_URL}/agents">Agent Tools</a> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
-          <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — Searchable directory of ${CONDO_TOTAL} VA-approved condo projects on Oahu</li>
+          <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — ${CONDO_BLURB}</li>
           <li><a href="${BASE_URL}/ai">AI Assistant Tools</a>: the RealityCents calculators inside ChatGPT, Claude, and Cursor</li>
           <li><a href="${BASE_URL}/guide">Free Homebuying Guide</a> — Comprehensive step-by-step guide to buying a home in Hawaii</li>
         </ul>
@@ -313,7 +318,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>Can I use a VA loan in Hawaii?</dt>
           <dd>Yes. VA loans work in all 50 states including Hawaii. With full entitlement, there is no VA loan limit; how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval. The VA funding fee is 2.15% for first-time use (waived for disabled veterans).</dd>
           <dt>Can I use a VA loan for a condo in Hawaii?</dt>
-          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check — there are ${CONDO_TOTAL} approved projects on Oahu alone.</dd>
+          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check. ${CONDO_BLURB}</dd>
         </dl>
       </section>
       <section>
@@ -331,15 +336,15 @@ export const STATIC_PAGE_BODIES = {
 
   "/va-approved-condos-oahu": `
     <main>
-      <h1>VA-Approved Condos on Oahu — ${CONDO_TOTAL} Projects</h1>
-      <p>Searchable directory of all ${CONDO_TOTAL} VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Data sourced from the VA LGY Hub, updated ${CONDO_UPDATED_MONTH}.</p>
+      <h1>VA-Approved Condos on Oahu</h1>
+      <p>${CONDO_BLURB} Filter by neighborhood, approval status, and zip code.</p>
       <section>
         <h2>Approval Status Breakdown</h2>
         <ul>
           <li><strong>${CONDO_DATA.withoutConditions.toLocaleString("en-US")} projects:</strong> Accepted Without Conditions</li>
           <li><strong>${CONDO_DATA.withConditions.toLocaleString("en-US")} projects:</strong> Accepted With Conditions, with conditions noted in the VA record</li>
         </ul>
-        <p>Data from the <a href="https://lgy.va.gov/lgyhub/condo-report">VA condo report</a>, last checked ${CONDO_DATA.lastUpdated}. Download: <a href="/data/va-approved-condos-hawaii.json">JSON</a> · <a href="/data/va-approved-condos-hawaii.csv">CSV</a>. Approvals change; verify a project's current status with the VA. VA approval status does not guarantee loan approval.</p>
+        <p>Data from the <a href="https://lgy.va.gov/lgyhub/condo-report">VA condo report</a>, last checked ${CONDO_CHECKED}. Download: <a href="/data/va-approved-condos-hawaii.json">JSON</a> · <a href="/data/va-approved-condos-hawaii.csv">CSV</a> · <a href="/data/README.md">README</a>. Approvals change; confirm current status with VA. VA approval status does not guarantee loan approval.</p>
         <p>Both statuses allow VA financing. The difference is administrative — in practice, there is almost never anything that needs to be resolved for "With Conditions" projects.</p>
       </section>
       <section>
@@ -409,7 +414,7 @@ export const STATIC_PAGE_BODIES = {
         <ul>
           <li><a href="${BASE_URL}/va-eligibility-calculator">VA Remaining Eligibility Calculator</a> — estimate remaining $0-down capacity using Honolulu County’s 2026 conforming limit of $1,249,125</li>
           <li><a href="${BASE_URL}/military-calculator">Military Buying Power Calculator</a> — BAH, BAS, COLA, and qualifying income framing</li>
-          <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — search ${CONDO_TOTAL}+ VA-approved condo projects on Oahu</li>
+          <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — ${CONDO_BLURB}</li>
           <li><a href="${BASE_URL}/ai">Use these VA calculators inside ChatGPT or Claude</a></li>
           <li><a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">VA Loans in Hawaii guide</a> — free web companion to the book</li>
           <li><a href="${BASE_URL}/va-loan-pearl-harbor-hickam">VA loan — Pearl Harbor / Hickam</a></li>

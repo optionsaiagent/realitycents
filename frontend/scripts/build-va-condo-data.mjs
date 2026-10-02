@@ -8,6 +8,7 @@
  *
  *   client/public/data/va-approved-condos-hawaii.json
  *   client/public/data/va-approved-condos-hawaii.csv
+ *   client/public/data/README.md
  *
  * Run from frontend/:  node scripts/build-va-condo-data.mjs
  * Optional args: <sourceJson> <outDir>   (used for local testing)
@@ -37,6 +38,11 @@ const COMPLIANCE =
 
 const ALLOWED = new Set(["Accepted Without Conditions", "Accepted With Conditions"]);
 const titleCase = s => s.toLowerCase().replace(/\b[a-z]/g, ch => ch.toUpperCase());
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const longDate = iso => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+};
 
 const src = JSON.parse(readFileSync(SRC, "utf8"));
 if (!/^\d{4}-\d{2}-\d{2}$/.test(src.lastUpdated ?? "")) throw new Error("source lastUpdated missing");
@@ -61,11 +67,12 @@ const records = src.condos.map(c => {
 });
 
 const without = records.filter(r => r.status === "Accepted Without Conditions").length;
+const checked = longDate(src.lastUpdated);
 const meta = {
   title: "VA-approved condo projects in Hawaii (Oahu only)",
   description:
-    "Condominium projects in Honolulu County (Oahu) that appear on the U.S. Department of Veterans Affairs condo list " +
-    "with status Accepted Without Conditions or Accepted With Conditions, as of last_checked.",
+    `VA-accepted condo projects on Oahu (Honolulu County) from VA's condo list, last checked ${checked}. ` +
+    "Approvals change; confirm current status with VA.",
   last_checked: src.lastUpdated,
   source: {
     name: "U.S. Department of Veterans Affairs, LGY Hub condo report",
@@ -76,6 +83,7 @@ const meta = {
     state: "HI",
     islands: ["Oahu"],
     counties: ["Honolulu"],
+    note: "Island is decided from ZIP, city, and county because VA's county field alone is unreliable.",
     statuses_included: [...ALLOWED],
     not_included:
       "Neighbor islands (Hawaii, Maui, Kauai and Kalawao counties) and projects the VA lists as Pending, Rejected, Suspended, " +
@@ -87,6 +95,7 @@ const meta = {
   urls: {
     json: `${SITE}/data/${BASE}.json`,
     csv: `${SITE}/data/${BASE}.csv`,
+    readme: `${SITE}/data/README.md`,
     directory: `${SITE}/va-approved-condos-oahu`,
     guide: `${SITE}/knowledge-base/va-loans-hawaii-military`,
   },
@@ -122,5 +131,32 @@ const csv = [cols.join(",")]
   .join("\n") + "\n";
 writeFileSync(path.join(OUT_DIR, `${BASE}.csv`), csv);
 
-console.log(`Wrote ${records.length} records (${without} without / ${records.length - without} with), last_checked ${meta.last_checked}, ` +
-  `json ${Buffer.byteLength(json)} B, csv ${Buffer.byteLength(csv)} B`);
+const withCond = records.length - without;
+const readme = `# VA-accepted condo projects on Oahu
+
+VA-accepted condo projects on Oahu from VA's condo list, last checked ${checked}. Approvals change; confirm current status with VA.
+
+VA source: ${VA_LOOKUP_URL}
+VA API: ${VA_API_URL}
+
+Files:
+- JSON: ${SITE}/data/${BASE}.json
+- CSV: ${SITE}/data/${BASE}.csv
+
+Counts:
+- Total: ${records.length.toLocaleString("en-US")}
+- Without conditions: ${without.toLocaleString("en-US")}
+- With conditions: ${withCond.toLocaleString("en-US")}
+
+Oahu is decided from ZIP, city, and county. VA's county field alone is unreliable.
+
+A missing project may still be on VA's list.
+
+VA approval status does not guarantee loan approval.
+
+Jay Miller, NMLS #657301 | CMG Home Loans branch NMLS #2475890 | CMG Mortgage, Inc. NMLS #1820 | Equal Housing Opportunity.
+`;
+writeFileSync(path.join(OUT_DIR, "README.md"), readme);
+
+console.log(`Wrote ${records.length} records (${without} without / ${withCond} with), last_checked ${meta.last_checked}, ` +
+  `json ${Buffer.byteLength(json)} B, csv ${Buffer.byteLength(csv)} B, readme ${Buffer.byteLength(readme)} B`);

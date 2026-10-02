@@ -327,6 +327,7 @@ va_id,va_record_id,name,address,city,zip,island,county,neighborhood,status,revie
 000930,379683,84-694 & 84-694A LAHAINA STREE,84-694 LAHAINA ST,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2019-05-23,2007-07-18,2026-10-01
 001996,629216,84-755 HANALEI STREET,84-755 HANALEI ST,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2021-03-24,2021-03-19,2026-10-01
 000902,360220,84-802 LAHAINA,APTS A & B,Makaha,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2006-04-28,2006-04-26,2026-10-01
+001893,626308,84-827 LAHAINA STREET,84-827 LAHAINA ST,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2020-06-28,2020-06-02,2026-10-01
 001405,566752,84-885 HANA STREET,84-885 HANA ST,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2016-08-22,2016-08-11,2026-10-01
 002033,629979,84-921 LAHAINA CONDOMINIUM,84-921 LAHAINA ST,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2021-06-10,2021-06-03,2026-10-01
 002342,641510,84-927 HANA STREET,84-931 HANA STREET,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2024-06-24,2025-06-11,2026-10-01
@@ -337,6 +338,7 @@ va_id,va_record_id,name,address,city,zip,island,county,neighborhood,status,revie
 000786,321624,84-984 LAHAINA STREET,84-984 LAHAINA STREET,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,,,2026-10-01
 001181,504949,845/847 ONEAWA STREET,845 & 847 ONEAWA STREET,Kailua,96734,Oahu,Honolulu,Kailua,Accepted Without Conditions,2013-08-22,2013-08-22,2026-10-01
 002291,639086,85-138 WAIANAE VALLEY RD.,85-138 WAIANAE VALLEY,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2024-08-22,2024-08-15,2026-10-01
+002137,633162,85-202 / 85-204 LUALUALEI HOME,85-202 / 85-204 LUALUALEI HOME,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2005-04-21,2005-04-07,2026-10-01
 001895,626347,85-206 LUALUALEI HOMESTEAD,ROAD CONDOMINIUM,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2020-06-26,2020-06-04,2026-10-01
 002305,639581,85-702 KAUPUNI PLACE,85-702 KAUPUNI PLACE,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2024-10-18,2024-10-16,2026-10-01
 002024,629801,85-745 LIHUE STREET,85-745 LIHUE STREET,Waianae,96792,Oahu,Honolulu,Waianae/Makaha,Accepted Without Conditions,2021-05-19,2021-05-13,2026-10-01
@@ -403,6 +405,7 @@ va_id,va_record_id,name,address,city,zip,island,county,neighborhood,status,revie
 000104,321049,ACADEMY TOWERS,,Honolulu,96813,Oahu,Honolulu,Downtown/Chinatown,Accepted Without Conditions,,,2026-10-01
 001444,574757,AHUIMANU ESTATES I,47-421A & 47-421B AHUIMANU PL,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted With Conditions,2017-01-05,2016-12-29,2026-10-01
 001428,571413,AHUIMANU ESTATES II,47-419 AHUIMANU PL,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted With Conditions,2016-11-08,2016-11-04,2026-10-01
+000059,321020,AHUIMANU GARDENS,,Kahaluu,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,,,2026-10-01
 000941,384623,AHUIMANU PLACE ESTATES,47-414 AHUIMANU PL,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2007-11-29,2007-11-09,2026-10-01
 001880,625992,AHUIMANU VIEW ESTATES,47-361 AHUIMANU RD,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted With Conditions,2020-04-22,2020-04-20,2026-10-01
 001885,626104,AHUIMANU WOODS I,47-608 A&B HUI ULILI ST,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2020-05-12,2020-05-07,2026-10-01
@@ -516,6 +519,7 @@ FHA004,321710,CANDLEWOOD,,Honolulu,96818,Oahu,Honolulu,Salt Lake/Moanalua,Accept
 002405,644154,CLUB VIEW GARDENS II,47-712 HUI KELU STREET,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2026-06-02,2026-05-04,2026-10-01
 000054,309338,CLUB VIEW GARDENS II,47-728-2 HUI KELU ST,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
 000055,321018,CLUB VIEW GARDENS III,47-696 HUI KELU ST,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
+002163,634414,COBB ADAMS RD,"45-1131, 45-1133, 45-1135",Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2022-11-29,2022-11-07,2026-10-01
 001291,546731,COCONUT GROVE ESTATES,410A ULUPAINA ST,Kailua,96734,Oahu,Honolulu,Kailua,Accepted Without Conditions,2015-09-30,2015-08-11,2026-10-01
 000953,394203,COCONUT PLANTATION @ KOLINA,92-1070 OLANI STREET,Kapolei,96707,Oahu,Honolulu,Kapolei,Accepted Without Conditions,2008-05-05,2008-05-01,2026-10-01
 000248,321155,COLLEGE GARDENS (ALL PHASES),96-226 WAIAWA RD,Pearl City,96782,Oahu,Honolulu,Pearl City,Accepted With Conditions,2000-01-01,2000-01-01,2026-10-01
@@ -819,6 +823,7 @@ FHA083,321772,IHONA,,Waipahu,96797,Oahu,Honolulu,Waipahu,Accepted Without Condit
 001886,626116,KAALA HIGHLANDS,1238 KAALA AVE,Wahiawa,96786,Oahu,Honolulu,Wahiawa,Accepted With Conditions,2020-05-14,2020-05-08,2026-10-01
 000903,360600,KAAMOOLOA ESTATES,66-341/345,Waialua,96791,Oahu,Honolulu,Waialua,Accepted Without Conditions,2006-05-08,2006-05-05,2026-10-01
 000270,469243,KAAMOOLOA PLANTATION,,Waialua,96791,Oahu,Honolulu,Waialua,Accepted With Conditions,,2011-07-06,2026-10-01
+001363,558372,KAHA KAIPII,518 KAHA ST,Kailua,96734,Oahu,Honolulu,Kailua,Accepted Without Conditions,2016-04-20,2016-04-11,2026-10-01
 002064,630940,KAHALA GARDENS,1228B STREET,Honolulu,96816,Oahu,Honolulu,Kaimuki/Kapahulu,Accepted Without Conditions,2021-09-20,2021-09-16,2026-10-01
 001728,609511,KAHALA HEIGHTS CONDOMINIUM,RESIDENCES 3955 KOKO DR,Honolulu,96816,Oahu,Honolulu,Kaimuki/Kapahulu,Accepted With Conditions,2018-12-06,2018-11-29,2026-10-01
 000356,321251,KAHALA TOWERS,4300 WAIALAE AVE,Honolulu,96816,Oahu,Honolulu,Kaimuki/Kapahulu,Accepted Without Conditions,2017-06-09,2015-02-20,2026-10-01
@@ -890,6 +895,7 @@ FHA015,321716,KAHE KAI I & II,,Nanakuli,96792,Oahu,Honolulu,Waianae/Makaha,Accep
 002353,641907,KAPIOLANI BEL-AIRE,750 KAHEKA STREET,Honolulu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted Without Conditions,2025-09-02,2025-07-25,2026-10-01
 000436,321326,KAPIOLANI GARDENS,2439 KAPIOLANI BLVD,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,,,2026-10-01
 002080,631168,KAPIOLANI HOUSE,2232 KAPIOLANI BLVD.,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,2021-10-19,2021-10-13,2026-10-01
+000058,309341,KAPIOLANI MANOR,1655 MAKALOA STREET,Honolullu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted Without Conditions,,,2026-10-01
 001436,573334,KAPIOLANI RESIDENCE,1631 KAPIOLANI BLVD,Honolulu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted With Conditions,2016-12-20,2016-12-01,2026-10-01
 000038,321008,KAPIOLANI ROYALE,2474 KAPIOLANI BLVD,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
 001700,606530,KAPIOLANI TERRACE,1560 KANUNU ST,Honolulu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted Without Conditions,2018-10-29,2018-08-13,2026-10-01
@@ -942,7 +948,6 @@ FHA270,339678,KE AINA KAI,OCEANPOINTE,Ewa,96706,Oahu,Honolulu,Ewa Beach,Accepted
 000024,320998,KEONI ANA,430 KEONIANA ST,Honolulu,96815,Oahu,Honolulu,Waikiki,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
 000570,321444,KEWALO GARDENS,1503 LIHOLIHO STREET,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,,,2026-10-01
 000625,321491,KEWALO HALE,1526 KEWALO STREET,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,,,2026-10-01
-001344,555071,KIHEI SHORES (FKA MAUI COURT),2747 S KIHEI RD,Kihei,96753,Oahu,Honolulu,Other,Accepted Without Conditions,2016-03-17,2016-03-03,2026-10-01
 001935,627752,KIKIKINA I CONDOMINIUM,45-918 ANOI RD,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2020-10-21,2020-09-28,2026-10-01
 001127,484686,KIKIKINI 2,47-505 AHUIMANU ROAD,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted With Conditions,,2012-07-26,2026-10-01
 000713,321562,KILEA CONDOMINIUM,81-C KILEA PL,Wahiawa,96786,Oahu,Honolulu,Wahiawa,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
@@ -1166,6 +1171,7 @@ FHA334,401463,LAKECREST CONDOMINIUMS,,Honolulu,96818,Oahu,Honolulu,Salt Lake/Moa
 001010,424823,MANU MELE,1244 & 1246 MANU MELE ST,Kailua,96734,Oahu,Honolulu,Kailua,Accepted With Conditions,2009-05-22,2009-05-22,2026-10-01
 000217,321133,MARCO POLO APARTMENTS,2333 KAPIOLANI BLVD,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,2020-05-07,2000-01-01,2026-10-01
 001197,509107,MARINA GARDENS,1621 & 1627 ALA WAI BLVD.,Honolulu,96815,Oahu,Honolulu,Waikiki,Accepted Without Conditions,2013-11-21,2013-11-21,2026-10-01
+000198,321118,MARINA PALMS,6231 KEOKEA STREET,Honolullu,96825,Oahu,Honolulu,Hawaii Kai,Accepted Without Conditions,,,2026-10-01
 000961,402183,MARINA TOWERS,1645 ALA WAI BLVD,Honolulu,96815,Oahu,Honolulu,Waikiki,Accepted Without Conditions,2008-08-08,2008-08-05,2026-10-01
 000224,321138,MARINER'S VILLAGE,574 HAHAIONE ST,Honolulu,96825,Oahu,Honolulu,Hawaii Kai,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
 001249,526328,MARINER'S VILLAGE TWO,591 HAHAIONE STREET,Honolulu,96825,Oahu,Honolulu,Hawaii Kai,Accepted Without Conditions,2014-11-03,2014-11-03,2026-10-01
@@ -1403,6 +1409,7 @@ FHA113,321798,NORTHPOINTE - PHASE II,95-1011 KAAPEHA ST,Mililani,96789,Oahu,Hono
 000992,416864,PENINSULA AT HAWAII KAI (ALL,PROJS) 520 & 580 LUNALILO HOME,Honolulu,96825,Oahu,Honolulu,Hawaii Kai,Accepted With Conditions,2020-10-28,2009-02-26,2026-10-01
 000390,94504,PENSACOLA GARDENS CONDOMINIUM,1524 PENSACOLA ST,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
 001913,627319,PERRYDISE,59-499 KE WAENA ST,Haleiwa,96712,Oahu,Honolulu,Haleiwa/North Shore,Accepted Without Conditions,2020-09-23,2020-08-21,2026-10-01
+002026,629808,PIERPAOLO CONDOMINIUM PROJECT,66-350 WAIALUA BEACH ROAD A-B,Waialua,96712,Oahu,Honolulu,Haleiwa/North Shore,Accepted Without Conditions,2021-06-02,2021-05-14,2026-10-01
 000187,321109,PIIKOI ATRIUM,1441 PIIKOI STREET,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,,,2026-10-01
 002075,631122,PIIKOI HALE,1512 PIIKOI STREET,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,2021-10-25,2021-10-07,2026-10-01
 000237,321146,PIIKOI PLAZA,725 PIIKOI STREET,Honolulu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted Without Conditions,,,2026-10-01
@@ -1631,18 +1638,21 @@ FHA157,321829,THE LOFTS BY GENTRY,,Ewa Beach,96706,Oahu,Honolulu,Ewa Beach,Accep
 000245,321154,TROPICANA MANOR-MOANALUA,815 ALA LILIKOI STREET,Honolulu,96818,Oahu,Honolulu,Salt Lake/Moanalua,Accepted With Conditions,2019-02-06,2014-12-03,2026-10-01
 000879,336555,TROPICANA VILLAGE - MAKAI,,Honolulu,96816,Oahu,Honolulu,Kaimuki/Kapahulu,Accepted Without Conditions,2002-06-25,2002-06-12,2026-10-01
 000152,321079,TROPICANA VILLAGE-AIEA PH 2&3,98-447 KAONOHI STREET,Aiea,96701,Oahu,Honolulu,Aiea,Accepted Without Conditions,,2012-02-13,2026-10-01
+000073,321031,TROPICANA VILLAGE-HAIKU,(AKA: KAHALUU COLONY),Kahaluu,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,,,2026-10-01
 000222,321136,TROPICANA WEST,94207 LEOWAHINE STREET,Waipahu,96797,Oahu,Honolulu,Waipahu,Accepted Without Conditions,,,2026-10-01
 000900,358880,TROPICS AT WAIKELE (ALL,PHASES) PAIWA & PAKELA ST,Waipahu,96797,Oahu,Honolulu,Waipahu,Accepted Without Conditions,2006-04-18,2006-03-27,2026-10-01
 001171,502545,TUAHINE,3697 WOODLAWN DRIVE,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,2013-07-05,2013-05-09,2026-10-01
 002336,641127,TURNER CONDOMINIUM,99-139 NAPUANANI RD,Aiea,96701,Oahu,Honolulu,Aiea,Accepted Without Conditions,2025-05-08,2025-04-29,2026-10-01
 000357,321252,TWENTY ONE HUNDRED,2100 DATE ST,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted With Conditions,2018-04-06,2000-01-01,2026-10-01
 002330,640521,ULANA WARD VILLAGE,1240 ALA MOANA BOULEVARD,Honolulu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted Without Conditions,2025-02-26,2025-02-20,2026-10-01
+002400,643980,ULUWEHI AT HO'OPILI,91-3529 NANA HOPE STREET,Ewa Beach,96706,Oahu,Honolulu,Ewa Beach,Accepted Without Conditions,2026-04-30,2026-04-15,2026-10-01
 000223,321137,UNION PLAZA,1737 S. BERETANIA STREET,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,,,2026-10-01
 001792,615475,UNITS 51-624A & 51-624A1,KAMEHAMEHA HIGHWAY,Kaaawa,96730,Oahu,Honolulu,Kaaawa,Accepted Without Conditions,2019-07-23,2019-06-26,2026-10-01
 001961,628266,UNIVERSITY COURT,1914 UNIVERSITY AVE,Honolulu,96822,Oahu,Honolulu,Makiki/Manoa,Accepted Without Conditions,2021-01-11,2020-12-03,2026-10-01
 000456,321345,UNIVERSITY GARDENS,908 UNIVERSITY AVE.,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,,,2026-10-01
 000500,321385,UNIVERSITY PLAZA,2626 KUILEI LANE,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,,,2026-10-01
 000455,321344,UNIVERSITY TOWERS,1026 KALO PL,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted With Conditions,2020-02-18,2000-01-01,2026-10-01
+002116,632573,UNIVERSITY VILLA,1205 KALO PLACE,Honolulu,96826,Oahu,Honolulu,McCully/Moiliili,Accepted Without Conditions,2020-04-13,2022-03-30,2026-10-01
 002112,632452,"URAKU TOWER, HAWAII",1341 KAPIOLANI BLVD,Honolulu,96814,Oahu,Honolulu,Kakaako/Ala Moana,Accepted Without Conditions,2022-03-22,2022-03-16,2026-10-01
 000313,321211,VALLEY ESTATES,47-403-47-427C AHUIMANU,Kaneohe,96744,Oahu,Honolulu,Kaneohe,Accepted Without Conditions,2000-01-01,2000-01-01,2026-10-01
 000511,321394,VALLEY PARK PLACE,2431 PAUOA ROAD,Honolulu,96813,Oahu,Honolulu,Downtown/Chinatown,Accepted Without Conditions,,,2026-10-01
