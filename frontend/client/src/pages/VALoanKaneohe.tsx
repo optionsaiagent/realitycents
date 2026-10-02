@@ -92,7 +92,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$900K–$1.2M",
     priceTH: null,
     whyFamilies:
-      "Quiet residential, close to Kailua town. Established neighborhood with mature landscaping. Good schools, family-oriented streets.",
+      "Quiet residential, close to Kailua town. Established neighborhood with mature landscaping.",
     vaNote:
       "Mostly fee simple single-family — strong for VA. Clean appraisals on well-maintained homes.",
   },
