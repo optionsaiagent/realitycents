@@ -4582,7 +4582,7 @@ Every PCS timeline and budget is different. If you want to see exactly how the m
   {
     slug: "down-payment-myth-hawaii-pmi-vs-appreciation",
     title: "The 20% Down Payment Myth: Why Saving to Avoid PMI Is Costing Hawaii Buyers Tens of Thousands",
-    excerpt: "Waiting to save a 20% down payment in Hawaii is a losing strategy. See the real math: how much home appreciation you lose vs. what PMI actually costs — and why buying now with 3–5% down wins.",
+    excerpt: "Waiting to save a 20% down payment in Hawaii can cost more than it saves. See the real math: how much home appreciation you lose vs. what PMI actually costs — and when buying sooner with 3% to 5% down can make sense.",
     category: "First-Time Buyers",
     readTime: "6 min",
     date: "2026-06-07",
@@ -4597,7 +4597,7 @@ If you live in Ohio or Indiana, that might be reasonable advice. If you live in 
 
 In a market where the median single-family home on Oahu sells for over $1.1 million, the 20% target is moving faster than you can save. While you are sitting on the sidelines diligently stacking cash, the market is appreciating. The equity you are losing by waiting far exceeds the cost of the PMI you are trying to avoid.
 
-If you qualify for a home today with 3%, 5%, or 0% down, waiting to save more is a losing strategy. Here is the math.
+If you qualify for a home today with 3%, 5%, or 0% down, waiting to save more can cost more than it saves. Here is an example.
 
 ---
 
@@ -4607,7 +4607,7 @@ Let's run the numbers on an $850,000 Ewa Beach single-family home — a realisti
 
 To put 20% down, you need **$170,000** in cash. To put 5% down (Conventional), you need **$42,500**. Say you have the $42,500 today, but you decide to wait and save the remaining $127,500 to avoid PMI. If you are an aggressive saver putting away $2,000 every single month, it will take you **over five years** to close that gap.
 
-The housing market does not stand still for five years. Hawaii real estate has historically appreciated at 4–5% annually. Using a conservative **3.5% appreciation rate**, here is what happens to that $850,000 home while you save:
+The housing market does not stand still for five years. This example uses **3.5% annual appreciation** (an assumption, not a forecast; Oahu prices have also fallen in some years), here is what happens to that $850,000 home while you save:
 
 | Year | Home Value | 20% Down Payment Required | Your Savings Progress |
 |---|---|---|---|
@@ -4724,7 +4724,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
   {
     slug: "adjustable-rate-mortgage-hawaii",
     title: "Why an ARM Isn't a Gamble in Hawaii — It's a Timeline Tool",
-    excerpt: "With 30-year fixed rates around 6.5%, many Hawaii buyers are asking about adjustable-rate mortgages. Here's the real math on 5-year and 7-year ARMs, the 5/1/5 cap structure, and the VA 5-Year ARM at 5.375% — the most underutilized tool for military PCS buyers in Hawaii right now.",
+    excerpt: "Many Hawaii buyers are asking about adjustable-rate mortgages. Here's how 5-year and 7-year ARMs work, how the 5/1/5 cap structure limits adjustments, and how a VA 5-year ARM can fit a PCS timeline. All rates shown are examples, not quotes.",
     category: "Loan Types",
     readTime: "6 min",
     date: "2026-06-01",
@@ -4733,29 +4733,29 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 *Last Updated: June 2026*
 
-**An adjustable-rate mortgage makes sense in Hawaii when you know you'll sell or refinance within 5–7 years — the VA 5-Year ARM at 5.375% saves ~$285/month vs. the 30-year fixed, with a conservative 1%/year cap structure that limits risk.** If you are buying a home in Hawaii right now, you are probably staring at a 30-year fixed mortgage rate somewhere around **6.5%**. On an $800,000 Honolulu condo or a $1.15 million Oahu single-family home, that number translates into a monthly payment that makes even high-earning professionals pause.
+**An adjustable-rate mortgage can make sense in Hawaii when you expect to sell or refinance within the fixed period. In this article's example, a VA 5-year ARM priced 0.50% below a VA 30-year fixed lowers the payment on a $900,000 loan by about $285 a month during the fixed years, with a conservative 1%/year cap structure that limits risk. Example rates only, not a quote.** If you are buying a home in Hawaii right now, this article uses an example 30-year fixed rate of **6.5%** (an illustration, not today's pricing). On an $800,000 Honolulu condo or a $1.15 million Oahu single-family home, that number translates into a monthly payment that makes even high-earning professionals pause.
 
-So it is no surprise that more buyers are asking me about Adjustable-Rate Mortgages (ARMs). They see a 5-year ARM at 6.0% or a 7-year ARM at 6.125% and wonder if the lower payment is worth the risk.
+So it is no surprise that more buyers are asking me about Adjustable-Rate Mortgages (ARMs). They see a 5-year or 7-year ARM priced below the 30-year fixed and wonder if the lower payment is worth the risk.
 
-Here is the thing most lenders will not tell you: **In Hawaii, an ARM is not a gamble. It is a timeline tool.**
+**In Hawaii, an ARM is best understood as a timeline tool, not a bet on rates.**
 
 Whether an ARM is a brilliant financial move or a dangerous trap depends entirely on one question: *How long are you actually going to keep this specific loan?*
 
-But before we get into conventional ARMs, there is one product that deserves its own spotlight — especially if you are active-duty military. It is the **VA 5-Year ARM**, and it is one of the most underutilized tools in Hawaii's mortgage market right now.
+But before we get into conventional ARMs, there is one product that deserves its own spotlight — especially if you are active-duty military. It is the **VA 5-Year ARM**, and it is worth a close look if your tour length is defined.
 
 ---
 
-## The VA 5-Year ARM: The Best-Kept Secret for Military PCS Buyers
+## The VA 5-Year ARM for Military PCS Buyers
 
 If you are active-duty military PCSing to Hawaii, stop and read this section carefully.
 
-Right now, the VA 30-year fixed rate is approximately **5.875%**. The VA 5-year ARM is priced at approximately **5.375%** — a full **0.50% lower**.
+For illustration, assume a VA 30-year fixed at **5.875%** and a VA 5-year ARM at **5.375%**, a **0.50%** difference. These are example rates, not quotes; actual pricing changes daily.
 
 On a $900,000 loan, that half-point difference saves you roughly **$285 a month**, or about **$3,400 a year**.
 
-But here is what makes the VA ARM genuinely exceptional compared to conventional ARMs: the cap structure is far more conservative. After the 5-year fixed period ends, the VA ARM can only adjust by a **maximum of 1% per year**, and it can never increase more than **5% over the life of the loan**.
+But here is what sets the VA ARM apart from conventional ARMs: the cap structure is more conservative. After the 5-year fixed period ends, the VA ARM can only adjust by a **maximum of 1% per year**, and it can never increase more than **5% over the life of the loan**.
 
-Compare that to a conventional ARM, which can jump by up to 5% at the very first adjustment. The VA ARM's 1% annual cap means your payment increases gradually and predictably — not in a single shock.
+Compare that to a conventional ARM, which can jump by up to 5% at the very first adjustment. The VA ARM's 1% annual cap means your payment increases gradually and predictably, not in a single shock.
 
 ### The VA ARM Math for a PCS Buyer
 
@@ -4763,16 +4763,16 @@ The standard accompanied PCS tour in Hawaii is 36 months. Here is what the VA AR
 
 | Period | Rate | Monthly Payment (on $900K loan) | Notes |
 |--------|------|----------------------------------|-------|
-| Years 1–5 (fixed) | 5.375% | ~$5,042 | Locked. Guaranteed. |
+| Years 1 to 5 (fixed) | 5.375% (example) | ~$5,042 | Fixed for years 1 to 5 |
 | Year 6 (worst case, +1%) | 6.375% | ~$5,605 | Max first adjustment |
 | Year 7 (worst case, +1%) | 7.375% | ~$6,187 | Max second adjustment |
 | Lifetime cap reached | 10.375% | ~$8,100 | Absolute ceiling |
 
-For a buyer who sells or PCSes in year 3, they never see a single adjustment. They captured $3,400 per year in savings — roughly **$10,200 over their tour** — and walked away.
+For a buyer who sells or PCSes in year 3, they never see a single adjustment. In this example, the lower payment adds up to about $3,400 a year, or roughly **$10,200 over a 3-year tour**.
 
 Even for a buyer who stays through year 6, the worst-case first adjustment is only +1%. That is a manageable step up, not a financial cliff.
 
-**The VA ARM is an excellent product up through approximately year 6.** After that, the annual adjustments begin stacking, and the math starts to favor refinancing or selling. But for a military family on a 3- to 4-year tour, this product is purpose-built for your situation.
+**In this example, the VA ARM's advantage lasts through about year 6.** After that, the annual adjustments begin stacking, and the math starts to favor refinancing or selling. But for a military family on a 3- to 4-year tour, this structure can line up with your timeline.
 
 ---
 
@@ -4782,9 +4782,9 @@ For non-VA buyers, conventional ARMs follow a similar structure but with more ag
 
 When you see a "5-Year ARM" or a "7-Year ARM," the numbers tell you how the loan behaves: the first number is how many years your rate is locked and cannot change, and after that fixed period, the rate adjusts every **6 months**.
 
-Today's conventional ARM rates are approximately:
+Example rates used in this article (illustration only, not a quote or today's pricing):
 
-| Loan Type | Approximate Rate | vs. 30-Year Fixed (6.5%) |
+| Loan Type | Example rate | vs. 30-Year Fixed (6.5%) |
 |-----------|-----------------|---------------------------|
 | 30-Year Fixed | 6.500% | Baseline |
 | 7-Year ARM | 6.125% | –0.375% |
@@ -4801,11 +4801,11 @@ Most conventional ARMs today use a **5/1/5 cap structure**:
 
 ### The Worst-Case Scenario for a Conventional 5-Year ARM
 
-Let's say you lock in a 5-year ARM at **6.0%** today.
+Say you take a 5-year ARM at an example rate of **6.0%**.
 
 | Period | Rate | Monthly Payment (on $900K loan) | Notes |
 |--------|------|----------------------------------|-------|
-| Years 1–5 (fixed) | 6.000% | ~$5,396 | Locked. Guaranteed. |
+| Years 1 to 5 (fixed) | 6.000% (example) | ~$5,396 | Fixed for years 1 to 5 |
 | Year 6 (worst case, +5%) | 11.000% | ~$8,572 | Initial cap hit |
 | Year 6.5+ | 11.000% | ~$8,572 | Already at lifetime cap |
 
@@ -4825,7 +4825,7 @@ The **Index** is typically the SOFR (Secured Overnight Financing Rate), which mo
 
 ### An ARM Makes Sense When:
 
-**You are a military PCS buyer using a VA loan.** The VA 5-year ARM at 5.375% with a 1% annual cap is purpose-built for the Hawaii PCS cycle. You capture meaningful savings over your 36-month tour and exit before the adjustments begin. This is the cleanest ARM use case in the Hawaii market.
+**You are a military PCS buyer using a VA loan.** The VA 5-year ARM at 5.375% (example rate) with a 1% annual cap can fit the Hawaii PCS cycle: on a 36-month tour, if you sell or refinance before year 6, you never reach an adjustment.
 
 **You have a defined, realistic exit strategy.** A stepping-stone condo purchase you plan to sell in 5 years. A property you will convert to a rental when you PCS. A home you plan to pay down aggressively with a bonus or inheritance. The key word is *defined* — not hoped for.
 
@@ -4843,13 +4843,15 @@ The **Index** is typically the SOFR (Secured Overnight Financing Rate), which mo
 
 ## The Comparison Table: ARM vs. Fixed in Hawaii's Market
 
-| Scenario | Best Loan | Why |
+| Scenario | Often fits | Why |
 |----------|-----------|-----|
-| Military PCS buyer, 3-year tour, VA eligible | VA 5-Year ARM (5.375%) | 1% annual cap, exits before adjustment, saves ~$10K over tour |
-| First-time buyer, stepping-stone condo, 5-year plan | Conventional 5-Year ARM (6.0%) | Saves ~$180/mo vs. fixed; clear exit before adjustment |
-| Move-up buyer, 7-year plan, strong income | Conventional 7-Year ARM (6.125%) | Saves ~$225/mo vs. fixed; manageable risk window |
-| Long-term owner, forever home, risk-averse | 30-Year Fixed (6.5%) | Complete certainty; no adjustment risk |
-| Buyer without a clear exit strategy | 30-Year Fixed (6.5%) | No plan = no ARM |
+| Military PCS buyer, 3-year tour, VA eligible | VA 5-Year ARM | 1% annual cap, exits before adjustment, saves ~$10K over tour |
+| First-time buyer, stepping-stone condo, 5-year plan | Conventional 5-Year ARM | Saves ~$180/mo vs. fixed; clear exit before adjustment |
+| Move-up buyer, 7-year plan, strong income | Conventional 7-Year ARM | Saves ~$225/mo vs. fixed; manageable risk window |
+| Long-term owner, forever home, risk-averse | 30-Year Fixed | Complete certainty; no adjustment risk |
+| Buyer without a clear exit strategy | 30-Year Fixed | No plan = no ARM |
+
+Savings figures use this article's example rates, not quotes.
 
 ---
 
@@ -4857,14 +4859,14 @@ The **Index** is typically the SOFR (Secured Overnight Financing Rate), which mo
 
 In a market where the median Oahu single-family home costs over $1 million, even a 0.50% rate difference creates real monthly savings. But savings now is only half the equation. The other half is: *what does this cost me if I am wrong about my timeline?*
 
-An ARM is not inherently dangerous. It is a tool designed for a specific job — delivering a lower payment for a defined window of time. If your window matches the tool, it is one of the smartest moves you can make. If your window does not match, it is one of the most expensive mistakes in the mortgage industry.
+An ARM is not inherently dangerous. It is a tool designed for a specific job — delivering a lower payment for a defined window of time. If your window matches the tool, it can lower your cost. If it does not, it can cost you far more than a fixed rate would have.
 
 **Before you choose between an ARM and a 30-year fixed, you need to answer three questions:**
 1. How long am I realistically keeping this loan?
 2. What is my exit strategy if the market changes?
 3. Can I afford the worst-case adjusted payment if I am wrong?
 
-If you can answer all three with confidence, we can run the numbers and find the right product for your situation. If you cannot, the 30-year fixed is your answer.
+If you can answer all three with confidence, we can run the numbers together. If you cannot, a 30-year fixed is usually the safer choice.
 
 ---
 
@@ -4890,7 +4892,7 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
   {
     slug: "mortgage-rates-2026-high-hawaii-buyers",
     title: "Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now",
-    excerpt: "The 30-year fixed rate just hit 6.67% — the highest since July 2025. Here is why rates spiked (oil, inflation, bond market — not the Fed), what forecasters say about the rest of 2026, and the specific decision framework for Hawaii buyers who are under contract, shopping, or on the sidelines.",
+    excerpt: "The 30-year fixed rate just hit 6.67% — the highest since July 2025. Here is why rates spiked (oil, inflation, bond market — not the Fed), why forecasts are not a plan, and the specific decision framework for Hawaii buyers who are under contract, shopping, or on the sidelines.",
     category: "Market Insights",
     readTime: "6 min",
     date: "2026-08-03",
@@ -4903,7 +4905,7 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
 
 The 30-year fixed mortgage rate just hit 6.67% for the week ending July 30 — the highest level since July 2025. If you were pre-approved in June at 6.3%, that 37 basis point increase costs you $266 per month on a $1.2M Hawaii loan — $95,760 in additional interest over 30 years.
 
-The instinct is to pause and wait for the Fed to "fix it." But in Hawaii's constrained market — median single-family homes at a record $1.24 million, selling in 13 days — waiting without a strategy is the most expensive decision you can make. Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers right now.
+The instinct is to pause and wait for the Fed to "fix it." But in Hawaii's constrained market — median single-family homes at a record $1.24 million, selling in 13 days — waiting without a strategy can be costly. Here is why rates spiked, what forecasts can and can't tell you, and the specific decision framework for Hawaii buyers right now.
 
 ---
 
@@ -4923,17 +4925,11 @@ The bond market reacts to two primary forces: inflation expectations and economi
 
 ---
 
-## What the Forecasts Say
+## What Forecasts Can and Can't Tell You
 
-Despite the July spike, the macro forecast for the second half of 2026 remains cautiously optimistic.
+Published forecasts for late 2026 range widely. In mid-2026, forecaster Barry Habib projected about 5.6%, and a Forbes roundup projected about 6.4%. Forecasts like these are often wrong, and this article does not predict where rates will go.
 
-Barry Habib — one of the most accurate mortgage rate forecasters in the industry — maintains his target of rates reaching 5.6% by the end of 2026. His thesis relies on a critical insight: true inflation is actually much lower than reported inflation (1.51% vs. 3.3%) due to a 12-to-18-month lag in how the government measures shelter costs.
-
-As that lagging shelter data finally catches up to reality in the second half of 2026, headline inflation should drop meaningfully, bringing bond yields and mortgage rates down with it.
-
-Forbes' July 2026 forecast projects the 30-year fixed will hover around 6.4% for the remainder of 2026, with a gradual decline into 2027. The consensus among economists is that rates have likely peaked — but the path down will be volatile, not smooth.
-
-**What this means for you:** Rates are more likely to be lower six months from now than higher. But "likely" is not "guaranteed," and the path between here and there will include weeks like this one where rates spike on bad data.
+**What this means for you:** plan around a payment you can afford at today's rate. Treat any future drop as a bonus, not a plan.
 
 ---
 
@@ -4969,11 +4965,11 @@ Use the [Loan Comparison Calculator at RealityCents](/loan-compare) to run side-
 
 If you paused your search because rates hit 6.67%, you are falling into the classic cost-of-waiting trap.
 
-Let us assume Barry Habib is right, and rates drop to 5.6% by December 2026. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that drop in rates will bring sidelined buyers flooding back into an already competitive market, driving prices higher.
+As a what-if, suppose rates fell to 5.6% by December 2026. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that drop in rates will bring sidelined buyers flooding back into an already competitive market, driving prices higher.
 
-If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But you will likely pay $30,000 to $50,000 more for the house — and you will be competing against every other buyer who was also waiting for rates to improve.
+If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But if prices rose in the meantime, you could pay $30,000 to $50,000 more for the house — and you will be competing against every other buyer who was also waiting for rates to improve.
 
-**The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. When rates drop to 5.6% next year, you refinance into the lower rate — capturing both the lower price and the lower rate. You can change your mortgage rate. You cannot change your purchase price.
+**The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. If rates fall enough later, refinancing may lower your rate, if you qualify and the costs make sense. You can change your mortgage rate. You cannot change your purchase price.
 
 ---
 
@@ -4985,7 +4981,7 @@ The tradeoff is real: your rate moves both directions, and today's starting rate
 
 Here is what surprises most people: even at a higher stated rate, a first-lien HELOC can save hundreds of thousands of dollars in total mortgage interest compared to a traditional 30-year fixed. The reason is structural. Because your income sweeps directly into the loan balance every pay period, you are reducing principal daily — not monthly. Interest is calculated on a lower average daily balance, and the compounding effect over time is dramatic. Many borrowers pay off their home in under 15 years while paying a fraction of the total interest a 30-year fixed would have cost them — even though the rate on paper is higher.
 
-This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. But in an environment where the consensus is that rates are more likely to fall than rise, it is worth understanding how the product works.
+This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. If you are weighing rate risk either way, it is worth understanding how the product works.
 
 [**Learn How a First-Lien HELOC Works →**](/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii)
 

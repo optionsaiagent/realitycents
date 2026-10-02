@@ -58,7 +58,7 @@ export const STATIC_PAGE_BODIES = {
   "/about": `
     <main>
       <h1>About Jay Miller — Hawaii Mortgage Lender</h1>
-      <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped thousands of Hawaii families achieve homeownership — from first-time buyers navigating FHA programs to military families maximizing their VA benefits.</p>
+      <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped hundreds of military families use their VA benefits to buy homes in Hawaii, and he also works with first-time buyers using FHA programs.</p>
       <section>
         <h2>Background &amp; Experience</h2>
         <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay combines his military service with 25+ years of Hawaii lending experience. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>

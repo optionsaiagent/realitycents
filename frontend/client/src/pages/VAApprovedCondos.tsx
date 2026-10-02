@@ -634,7 +634,7 @@ export default function VAApprovedCondos() {
       <ContactActions
         variant="full"
         headline="Found a Condo You Like?"
-        subtext="Let’s check your VA eligibility and get you pre-approved. Jay Miller has helped hundreds of military families buy condos on Oahu with $0 down."
+        subtext="Let’s check your VA eligibility and get you pre-approved. Jay Miller has helped hundreds of military families buy condos on Oahu, including $0-down purchases for buyers with full entitlement who qualify."
         preApprovalLabel="Get Pre-Approved"
         hideEmail
       />
