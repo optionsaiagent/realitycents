@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 /**
  * Refresh frontend/client/src/data/va-approved-condos-oahu.json from the
- * VA LGY Hub API. Run from the frontend/ directory:
+ * VA LGY Hub API, then regenerate the public JSON, CSV, and README.
+ * Run from the frontend/ directory:
  *
  *   node scripts/update-va-condos.mjs
  *
- * The VA data is dirty (misspelled counties like "HONOULU"/"HOPNOLULU",
- * cities like "KANEOHE, OAHU"), so Oahu membership is decided by:
- *   1. county starting with "HON", or county OAHU/WAIPAHU (all typos for
- *      Honolulu County observed in the data), else
- *   2. the city string containing "OAHU", else
- *   3. the base city (before any comma) being a known Oahu town.
+ * VA's county field is unreliable (Honolulu typos, Oahu projects tagged
+ * HAWAII or left blank, and at least one Maui project tagged HONOLULU).
+ * Oahu membership is classifyOahu() in scripts/lib/oahu-filter.mjs: ZIP,
+ * city, and county each vote "O" (Oahu), "N" (neighbor island), or null.
+ * Majority wins. On a tie the city signal decides when it is not null;
+ * otherwise the ZIP signal decides (a null ZIP is not Oahu).
  *
  * Neighborhoods are assigned by zip code using the mapping already present
  * in the current data file (zip → neighborhood is unique); unseen zips fall
@@ -19,34 +20,15 @@
  * Safety: aborts without writing if the fetched count is outside sane
  * bounds, so a broken API response can never wipe the page.
  */
+import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { classifyOahu, isOahu } from "./lib/oahu-filter.mjs";
 
-const DATA_PATH = path.resolve(
-  path.dirname(new URL(import.meta.url).pathname),
-  "../client/src/data/va-approved-condos-oahu.json"
-);
+const SCRIPT_DIR = path.dirname(new URL(import.meta.url).pathname);
+const FRONTEND_DIR = path.resolve(SCRIPT_DIR, "..");
+const DATA_PATH = path.resolve(FRONTEND_DIR, "client/src/data/va-approved-condos-oahu.json");
 const API_URL = "https://lgy.va.gov/lgyhub/api/condos/search?stateCode=HI";
-
-const OAHU_TOWNS = new Set([
-  "AIEA", "EWA", "EWA BEACH", "EWA BAECH", "HALEIWA", "HALAWA", "HAUULA", "HAUUL",
-  "HONOLULU", "KAAAWA", "KAHUKU", "KAILUA", "KALIHI", "KANEOHE", "HANEOHE",
-  "KAPOLEI", "LAIE", "MAKAHA", "MAKAKILO", "MAKIKI", "MILILANI", "MILIANI",
-  "MILILANI TOWN", "MOKULEIA", "NANAKULI", "PEARL CITY", "WAHIAWA", "WAIHAWA",
-  "WAIALUA", "WAIANAE", "WAIAINAE", "WAIAU", "WAIKELE", "WAIMANALO",
-  "WAIPAHU", "WAIPHAHU", "WAIPIO",
-]);
-
-function isOahu(rec) {
-  const county = (rec.county ?? "").toUpperCase().replace(/[^A-Z]/g, "");
-  if (county.startsWith("HON") || county === "OAHU" || county === "WAIPAHU") return true;
-  if (county.startsWith("HO") && county.endsWith("LULU")) return true; // HOPNOLULU and similar typos
-  if (county) return false; // a real non-Honolulu county (MAUI, KAUAI, HAWAII…)
-  const city = (rec.city ?? "").toUpperCase();
-  if (city.includes("OAHU")) return true;
-  const base = city.split(",")[0].trim();
-  return OAHU_TOWNS.has(base);
-}
 
 // VA timestamps are UTC-midnight values, so plain toISOString() is the right
 // read for them. The lastUpdated stamp is ours, and the page is for Hawaii
@@ -134,3 +116,30 @@ console.log(
   `Updated: ${condos.length} approved (${without} without / ${withCond} with conditions); ` +
   `+${newIds} new, -${removed} removed vs previous file (was ${current.totalApproved} on ${current.lastUpdated}).`
 );
+
+// Accepted projects whose county vote contradicts the island decision.
+// Printed on every refresh so a later commit log shows the overrides
+// (Oahu projects VA tagged HAWAII, and neighbor-island projects VA tagged HONOLULU).
+const disagreements = all
+  .filter(r => (r.dispositionCode ?? "").startsWith("Accepted"))
+  .map(r => ({ r, cls: classifyOahu(r) }))
+  .filter(({ cls }) =>
+    (cls.signals.county === "O" && !cls.oahu) ||
+    (cls.signals.county === "N" && cls.oahu)
+  )
+  .sort((a, b) =>
+    String(a.r.developmentBusinessId ?? "").localeCompare(String(b.r.developmentBusinessId ?? ""))
+  );
+console.log(`County signal disagreed with final decision (${disagreements.length} accepted projects):`);
+for (const { r, cls } of disagreements) {
+  const zip = String(r.zipCode ?? "").trim().slice(0, 5);
+  const decision = cls.oahu ? "Oahu" : "not Oahu";
+  console.log(
+    `${r.developmentBusinessId ?? ""} | ${r.firstLineName ?? ""} | ${r.city ?? ""} | ${zip} | ${r.county ?? ""} | ${decision}`
+  );
+}
+
+execFileSync(process.execPath, ["scripts/build-va-condo-data.mjs"], {
+  cwd: FRONTEND_DIR,
+  stdio: "inherit",
+});

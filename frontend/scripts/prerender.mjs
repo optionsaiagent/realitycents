@@ -23,7 +23,26 @@ const CONDO_DATA = JSON.parse(
   fs.readFileSync(new URL("../client/src/data/va-approved-condos-oahu.json", import.meta.url), "utf8")
 );
 const CONDO_TOTAL = CONDO_DATA.totalApproved.toLocaleString("en-US");
-const CONDO_UPDATED_MONTH = new Date(CONDO_DATA.lastUpdated + "T00:00:00").toLocaleString("en-US", { month: "long", year: "numeric" });
+const CONDO_CHECKED = (() => {
+  const [y, m, d] = CONDO_DATA.lastUpdated.split("-").map(Number);
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return `${months[m - 1]} ${d}, ${y}`;
+})();
+
+const FAQ_DATA = JSON.parse(
+  fs.readFileSync(new URL("../client/src/data/faq.json", import.meta.url), "utf8")
+);
+const FAQ_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_DATA.categories.flatMap((cat) =>
+    cat.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    }))
+  ),
+};
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -86,7 +105,7 @@ try {
 const STATIC_PAGES = {
   "/": {
     title: "Hawaii Mortgage Education & Lending",
-    description: "Hawaii mortgage education from Jay Miller, NMLS #657301, CMG Home Loans: a free homebuying guide, mortgage calculators, and 25+ years of Hawaii mortgage lending experience. Serving Oahu, Maui, Kauai, and the Big Island.",
+    description: "Hawaii mortgage education from Jay Miller, NMLS #657301, CMG Home Loans: a free homebuying guide, mortgage calculators, and 25 years in mortgage lending. Serving Oahu, Maui, Kauai, and the Big Island.",
     keywords: "Hawaii mortgage, Hawaii home loans, mortgage lender Honolulu, Jay Miller mortgage, CMG Home Loans Hawaii, FHA loans Hawaii, VA loans Hawaii, first time homebuyer Hawaii, Hawaii mortgage calculator, Oahu home loans",
     schema: [
       {
@@ -105,7 +124,7 @@ const STATIC_PAGES = {
   },
   "/about": {
     title: "About Jay Miller — Hawaii Mortgage Lender",
-    description: "Meet Jay Miller, NMLS #657301 — a Hawaii mortgage loan originator with 25+ years of experience at CMG Home Loans. U.S. Army veteran, triathlete, and passionate advocate for informed homebuyers across the Hawaiian Islands.",
+    description: "Meet Jay Miller, NMLS #657301 — a Hawaii mortgage loan originator at CMG Home Loans with 25 years in mortgage lending. U.S. Army veteran, triathlete, and passionate advocate for informed homebuyers across the Hawaiian Islands.",
     keywords: "Jay Miller mortgage, Hawaii mortgage lender, CMG Home Loans Honolulu, mortgage loan originator Hawaii, NMLS 657301, Hawaii home loan officer",
   },
   "/contact": {
@@ -226,9 +245,10 @@ const STATIC_PAGES = {
 
   "/frequently-asked-questions": {
     title: "Hawaii Home Loan FAQ",
-    description: "Answers to 20 common questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.",
+    description: "Answers to 20 common questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25 years in mortgage lending.",
     keywords: "Hawaii mortgage FAQ, Honolulu home loan questions, VA loan Hawaii, conforming loan limits Honolulu, first-time homebuyer Hawaii, condo warrantability, leasehold property Hawaii",
     schema: [
+      FAQ_PAGE_SCHEMA,
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -258,14 +278,14 @@ const STATIC_PAGES = {
   },
   "/va-approved-condos-oahu": {
     title: `VA-Approved Condos on Oahu — ${CONDO_TOTAL} Projects`,
-    description: `Searchable directory of all ${CONDO_TOTAL} VA-approved condo projects on Oahu, Hawaii. Filter by neighborhood, approval status, and zip code. Updated ${CONDO_UPDATED_MONTH}. Data from VA LGY Hub.`,
+    description: `${CONDO_TOTAL} VA-accepted condo projects on Oahu from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA.`,
     keywords: "VA approved condos Oahu, VA approved condos Hawaii, VA condo list Honolulu, VA eligible condos Waikiki, VA loan condo Hawaii, VA approved condo projects Oahu 2026, VA condo approval list",
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "Dataset",
         name: "VA-Approved Condo Projects on Oahu, Hawaii",
-        description: `Complete directory of ${CONDO_TOTAL} VA-approved condominium projects in Honolulu County (Oahu), Hawaii, sourced from the VA LGY Hub. Includes project name, address, approval status, review date, and VA ID.`,
+        description: `${CONDO_TOTAL} VA-accepted condo projects on Oahu (Honolulu County) from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA. Includes project name, address, approval status, review date, and VA ID.`,
         url: `${BASE_URL}/va-approved-condos-oahu`,
         creator: { "@type": "Organization", name: "U.S. Department of Veterans Affairs" },
         dateModified: CONDO_DATA.lastUpdated,
@@ -287,7 +307,7 @@ const STATIC_PAGES = {
           { "@type": "Question", name: "What is the difference between Accepted Without Conditions and Accepted With Conditions?", acceptedAnswer: { "@type": "Answer", text: "Accepted Without Conditions means the project fully meets all VA requirements with no additional stipulations. Accepted With Conditions means the project is approved but the VA identified items to be noted. Both statuses allow VA financing. In practice, there is almost never anything that needs to be resolved — the lender may simply require the Veteran to acknowledge and accept the noted conditions, which are informational in nature." } },
           { "@type": "Question", name: "What if the condo I want is not on the VA-approved list?", acceptedAnswer: { "@type": "Answer", text: "Your lender can submit the full project approval package to the Regional VA Loan Center as part of your purchase transaction — this is called Lender Submitted Condo Approval and typically takes 2–3 weeks, well within a standard 45-day contract. Alternatively, the HOA board or seller can submit a full project approval application directly to the VA, which approves the entire building for all future VA buyers." } },
           { "@type": "Question", name: "Can I use a VA loan for a Waikiki condotel?", acceptedAnswer: { "@type": "Answer", text: "Generally no. The VA does not approve projects that operate primarily as hotels or where units are part of a mandatory rental pool. Some Waikiki buildings that are primarily residential (not hotel-operated) are VA-approved — check the directory to verify." } },
-          { "@type": "Question", name: "How many VA-approved condos are on Oahu?", acceptedAnswer: { "@type": "Answer", text: `As of ${CONDO_UPDATED_MONTH}, there are ${CONDO_TOTAL} VA-approved condo projects on Oahu — ${CONDO_DATA.withoutConditions.toLocaleString("en-US")} Accepted Without Conditions and ${CONDO_DATA.withConditions.toLocaleString("en-US")} Accepted With Conditions — spread across ${CONDO_DATA.neighborhoods.length} neighborhoods from Waikiki to Ewa Beach.` } },
+          { "@type": "Question", name: "How many VA-approved condos are on Oahu?", acceptedAnswer: { "@type": "Answer", text: `${CONDO_TOTAL} VA-accepted condo projects on Oahu from VA's condo list, last checked ${CONDO_CHECKED}. Approvals change; confirm current status with VA. This file lists ${CONDO_DATA.withoutConditions.toLocaleString("en-US")} Accepted Without Conditions and ${CONDO_DATA.withConditions.toLocaleString("en-US")} Accepted With Conditions, across ${CONDO_DATA.neighborhoods.length} neighborhoods from Waikiki to Ewa Beach.` } },
         ],
       },
       {
@@ -312,7 +332,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25 years in mortgage lending.",
         url: "https://realitycents.com/va-loan-schofield-barracks",
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -353,7 +373,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Navy and Air Force families PCS'ing to Joint Base Pearl Harbor-Hickam. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Navy and Air Force families PCS'ing to Joint Base Pearl Harbor-Hickam. 25 years in mortgage lending.",
         url: `${BASE_URL}/va-loan-pearl-harbor-hickam`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -394,7 +414,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25 years in mortgage lending.",
         url: `${BASE_URL}/va-loan-kaneohe-mcbh`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -435,7 +455,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for USARPAC and Fort Shafter personnel PCS'ing to Oahu. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for USARPAC and Fort Shafter personnel PCS'ing to Oahu. 25 years in mortgage lending.",
         url: `${BASE_URL}/va-loan-fort-shafter`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -476,7 +496,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military medical staff PCS'ing to Tripler Army Medical Center. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military medical staff PCS'ing to Tripler Army Medical Center. 25 years in mortgage lending.",
         url: `${BASE_URL}/va-loan-tripler`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -607,7 +627,7 @@ const STATIC_PAGES = {
         "@id": `${BASE_URL}/#jaymiller`,
         name: "Jay Miller",
         jobTitle: "Sales Manager and Certified Mortgage Advisor",
-        description: "U.S. Army veteran, Sales Manager and Certified Mortgage Advisor at CMG Home Loans. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
+        description: "U.S. Army veteran, Sales Manager and Certified Mortgage Advisor at CMG Home Loans. VA loan specialist with 25 years in mortgage lending. NMLS #657301.",
         url: `${BASE_URL}/about`,
         identifier: { "@type": "PropertyValue", name: "NMLS", value: "657301" },
         worksFor: { "@type": "Organization", name: "CMG Home Loans" },
@@ -631,7 +651,7 @@ const STATIC_PAGES = {
         "@id": `${BASE_URL}/zero-down-in-paradise#faq`,
         mainEntity: [
           { "@type": "Question", name: "What is Zero Down in Paradise?", acceptedAnswer: { "@type": "Answer", text: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers is a 164-page paperback (July 2026, ISBN 979-8-9963553-0-3) by Jay Miller that explains how to buy a home in Hawaii using a VA loan." } },
-          { "@type": "Question", name: "Who is Jay Miller (NMLS #657301)?", acceptedAnswer: { "@type": "Answer", text: "Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of Zero Down in Paradise." } },
+          { "@type": "Question", name: "Who is Jay Miller (NMLS #657301)?", acceptedAnswer: { "@type": "Answer", text: "Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25 years in mortgage lending. He is the author of Zero Down in Paradise." } },
           { "@type": "Question", name: "Can I use a VA loan to buy in Hawaii with zero down?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply." } },
           { "@type": "Question", name: "Is there a VA loan limit in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, no VA loan limit for $0 down. With reduced entitlement, county conforming limits apply. Honolulu County's 2026 single-family conforming limit is $1,249,125." } },
           { "@type": "Question", name: "Are Hawaii condos VA-approved?", acceptedAnswer: { "@type": "Answer", text: "Not automatically. Many Hawaii condos are VA-approved, but you must verify the specific project before writing an offer. Use RealityCents' VA condo tools and have your lender confirm." } },
@@ -850,7 +870,6 @@ const STATIC_PAGES = {
         featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "lookup_va_condo", "get_preapproval_link"],
         author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${BASE_URL}/about` },
         publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
-        isRelatedTo: { "@type": "Book", name: "Zero Down in Paradise: The Hawaii VA Loan Playbook", url: `${BASE_URL}/zero-down-in-paradise` },
       },
       {
         "@context": "https://schema.org",
@@ -1018,7 +1037,7 @@ function generateArticleBody(article) {
     <article class="article-content">
       <h1>${escapeHtml(article.title)}</h1>
       <div class="article-byline" style="font-size: 0.875rem; color: #666; margin: 1rem 0; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem;">
-        <p style="margin: 0;"><strong>Jay Miller</strong> · Sales Manager and Certified Mortgage Advisor, CMG Home Loans · NMLS #657301 · 25 years Hawaii mortgage experience · U.S. Army veteran</p>
+        <p style="margin: 0;"><strong>Jay Miller</strong> · Sales Manager and Certified Mortgage Advisor, CMG Home Loans · NMLS #657301 · 25 years in mortgage lending · U.S. Army veteran</p>
         <p style="margin: 0.25rem 0 0 0;">Last updated: ${article.lastUpdated || article.date} · ${readLabel}</p>
       </div>
       ${leadHtml}
@@ -1069,7 +1088,7 @@ ${articleLinks}
   return `
     <main>
       <h1>Hawaii Mortgage Knowledge Base</h1>
-      <p>Articles on Hawaii mortgages, home loans, and the homebuying process. Written by Jay Miller, CMA, NMLS #657301, with 25+ years of Hawaii lending experience. Topics include VA loans, FHA loans, conventional financing, down payment assistance, leasehold vs. fee simple, and more.</p>
+      <p>Articles on Hawaii mortgages, home loans, and the homebuying process. Written by Jay Miller, CMA, NMLS #657301, with 25 years in mortgage lending. Topics include VA loans, FHA loans, conventional financing, down payment assistance, leasehold vs. fee simple, and more.</p>
       <p>${articleList.length} articles covering every aspect of buying a home in Hawaii.</p>
 
 ${categoryBlocks}

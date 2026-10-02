@@ -551,7 +551,7 @@ It's not for everyone. But for the right Hawaii household, it's a fundamentally 
 
 Here's what I'd do in your shoes: don't decide based on an article — this one or anyone else's. Run your actual numbers. Take your loan balance, take-home income, and monthly spending to a licensed loan officer, and ask for a side-by-side simulation showing total interest and payoff date against a traditional mortgage. If the lender can't or won't show you that comparison, keep looking.
 
-Curious whether this strategy fits your situation? I've been running these comparisons for Hawaii homeowners for 25 years, and I'm happy to walk through your numbers with you — no pressure, no obligation. Reach out anytime at (808) 429-0811 or jaym@cmghomeloans.com.
+Curious whether this strategy fits your situation? I've been running these comparisons for Hawaii homeowners. With 25 years in mortgage lending, I'm happy to walk through your numbers with you — no pressure, no obligation. Reach out anytime at (808) 429-0811 or jaym@cmghomeloans.com.
 
 ---
 
@@ -953,7 +953,7 @@ Because the alternative is what we see too often: buyers going under contract, p
 
 Online calculators use mainland assumptions — they don't know what an Oahu maintenance fee, leasehold payment, or flood premium does to a qualification. If you're planning to buy in Hawaii, get your DTI mapped against the actual PITIA of the properties you're targeting, with the student loan and program strategy worked out up front. That's the difference between a pre-approval that survives escrow and one that doesn't.
 
-Want to run your numbers against specific properties before you write an offer? I've been mapping DTI against Hawaii's real PITIA numbers for 25 years — maintenance fees, flood zones, leasehold payments, all of it. Reach out anytime at 📞 808-429-0811 or 📧 jaym@cmghomeloans.com. No pressure, no obligation — just your real number.
+Want to run your numbers against specific properties before you write an offer? With 25 years in mortgage lending, I've been mapping DTI against Hawaii's real PITIA numbers — maintenance fees, flood zones, leasehold payments, all of it. Reach out anytime at 📞 808-429-0811 or 📧 jaym@cmghomeloans.com. No pressure, no obligation — just your real number.
 
 ---
 
@@ -1110,7 +1110,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes, if the condo **project** is VA-approved. About 1,772 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,782 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -3851,7 +3851,7 @@ The VA buyer preserves $42,500–$170,000 of cash and pays no monthly insurance;
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,772 approved projects (as of Oct 1, 2026).
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for Honolulu County's roughly 1,782 approved projects (as of Oct 1, 2026).
 
 ## What each review actually looks at
 
@@ -3984,7 +3984,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,772 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,782 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 
@@ -4015,7 +4015,7 @@ Judge the specificity of the answers. A lender who has done this on Oahu will an
 
 ## About the author, and why this page exists
 
-I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu — NMLS #657301, Branch NMLS #2475890 — a U.S. Army veteran, and the author of [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](/zero-down-in-paradise). I have originated Hawaii mortgages for 25 years, most of them VA loans for families at Schofield, Pearl Harbor-Hickam, Kaneohe, Fort Shafter, and Tripler. This page is written so you can hold me to the same standard as anyone else: my license is public on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301), my background is on the [About page](/about), and the tools on this site — the [Military Buying Power Calculator](/military-calculator), the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the condo directory — are free whether or not you ever work with me. The [Veterans Guide](/knowledge-base/va-loans-hawaii-military) covers the whole VA process in Hawaii if you want to read before you call anyone.
+I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu — NMLS #657301, Branch NMLS #2475890 — a U.S. Army veteran, and the author of [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](/zero-down-in-paradise). I have 25 years in mortgage lending, most of it VA loans for families at Schofield, Pearl Harbor-Hickam, Kaneohe, Fort Shafter, and Tripler. This page is written so you can hold me to the same standard as anyone else: my license is public on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301), my background is on the [About page](/about), and the tools on this site — the [Military Buying Power Calculator](/military-calculator), the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the condo directory — are free whether or not you ever work with me. The [Veterans Guide](/knowledge-base/va-loans-hawaii-military) covers the whole VA process in Hawaii if you want to read before you call anyone.
 
 ## Frequently asked questions
 
@@ -4578,7 +4578,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 ---
 
-*Jay Miller is a 25-year Hawaii VA lending specialist. RealityCents.com is his educational resource for Hawaii military homebuyers, veterans, and first-time buyers navigating one of the most competitive real estate markets in the country.*`,
+*Jay Miller has 25 years in mortgage lending. RealityCents.com is his educational resource for Hawaii military homebuyers, veterans, and first-time buyers navigating one of the most competitive real estate markets in the country.*`,
   },
   {
     slug: "adjustable-rate-mortgage-hawaii",

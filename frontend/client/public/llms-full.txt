@@ -104,7 +104,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes, if the condo **project** is VA-approved. About 1,772 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,782 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -301,7 +301,7 @@ Last updated: September 14, 2026
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,772 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,782 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 
@@ -332,7 +332,7 @@ Judge the specificity of the answers. A lender who has done this on Oahu will an
 
 ## About the author, and why this page exists
 
-I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu — NMLS #657301, Branch NMLS #2475890 — a U.S. Army veteran, and the author of [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](/zero-down-in-paradise). I have originated Hawaii mortgages for 25 years, most of them VA loans for families at Schofield, Pearl Harbor-Hickam, Kaneohe, Fort Shafter, and Tripler. This page is written so you can hold me to the same standard as anyone else: my license is public on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301), my background is on the [About page](/about), and the tools on this site — the [Military Buying Power Calculator](/military-calculator), the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the condo directory — are free whether or not you ever work with me. The [Veterans Guide](/knowledge-base/va-loans-hawaii-military) covers the whole VA process in Hawaii if you want to read before you call anyone.
+I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu — NMLS #657301, Branch NMLS #2475890 — a U.S. Army veteran, and the author of [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](/zero-down-in-paradise). I have 25 years in mortgage lending, most of it VA loans for families at Schofield, Pearl Harbor-Hickam, Kaneohe, Fort Shafter, and Tripler. This page is written so you can hold me to the same standard as anyone else: my license is public on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301), my background is on the [About page](/about), and the tools on this site — the [Military Buying Power Calculator](/military-calculator), the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the condo directory — are free whether or not you ever work with me. The [Veterans Guide](/knowledge-base/va-loans-hawaii-military) covers the whole VA process in Hawaii if you want to read before you call anyone.
 
 ## Frequently asked questions
 
@@ -503,7 +503,7 @@ Last updated: September 14, 2026
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,772 approved projects (as of Oct 1, 2026).
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for Honolulu County's roughly 1,782 approved projects (as of Oct 1, 2026).
 
 ## What each review actually looks at
 
@@ -1605,7 +1605,7 @@ It's not for everyone. But for the right Hawaii household, it's a fundamentally 
 
 Here's what I'd do in your shoes: don't decide based on an article — this one or anyone else's. Run your actual numbers. Take your loan balance, take-home income, and monthly spending to a licensed loan officer, and ask for a side-by-side simulation showing total interest and payoff date against a traditional mortgage. If the lender can't or won't show you that comparison, keep looking.
 
-Curious whether this strategy fits your situation? I've been running these comparisons for Hawaii homeowners for 25 years, and I'm happy to walk through your numbers with you — no pressure, no obligation. Reach out anytime at (808) 429-0811 or jaym@cmghomeloans.com.
+Curious whether this strategy fits your situation? I've been running these comparisons for Hawaii homeowners. With 25 years in mortgage lending, I'm happy to walk through your numbers with you — no pressure, no obligation. Reach out anytime at (808) 429-0811 or jaym@cmghomeloans.com.
 
 ---
 
@@ -1783,7 +1783,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 ---
 
-*Jay Miller is a 25-year Hawaii VA lending specialist. RealityCents.com is his educational resource for Hawaii military homebuyers, veterans, and first-time buyers navigating one of the most competitive real estate markets in the country.*
+*Jay Miller has 25 years in mortgage lending. RealityCents.com is his educational resource for Hawaii military homebuyers, veterans, and first-time buyers navigating one of the most competitive real estate markets in the country.*
 
 ---
 
@@ -2143,7 +2143,7 @@ Because the alternative is what we see too often: buyers going under contract, p
 
 Online calculators use mainland assumptions — they don't know what an Oahu maintenance fee, leasehold payment, or flood premium does to a qualification. If you're planning to buy in Hawaii, get your DTI mapped against the actual PITIA of the properties you're targeting, with the student loan and program strategy worked out up front. That's the difference between a pre-approval that survives escrow and one that doesn't.
 
-Want to run your numbers against specific properties before you write an offer? I've been mapping DTI against Hawaii's real PITIA numbers for 25 years — maintenance fees, flood zones, leasehold payments, all of it. Reach out anytime at 📞 808-429-0811 or 📧 jaym@cmghomeloans.com. No pressure, no obligation — just your real number.
+Want to run your numbers against specific properties before you write an offer? With 25 years in mortgage lending, I've been mapping DTI against Hawaii's real PITIA numbers — maintenance fees, flood zones, leasehold payments, all of it. Reach out anytime at 📞 808-429-0811 or 📧 jaym@cmghomeloans.com. No pressure, no obligation — just your real number.
 
 ---
 
@@ -4773,18 +4773,137 @@ Not all lenders offer competitive jumbo products, and Hawaii's unique property t
 
 ---
 
+## Frequently Asked Questions
+URL: https://realitycents.com/frequently-asked-questions
+Author: Jay Miller, NMLS #657301, CMG Home Loans
+Published: January 2026
+Last updated: April 2026
+
+### Loan Basics
+
+**Q: What are the current conforming loan limits in Honolulu County?**
+
+A: For 2026, the conforming loan limit for a single-unit property in Honolulu County is $1,249,125. This applies to conventional loans backed by Fannie Mae and Freddie Mac. VA loans have no loan limit — there is no maximum loan amount for VA borrowers as long as the buyer qualifies for the loan payment. If you need to borrow above the conforming limit on a conventional loan, you would need a jumbo loan, which has different qualification requirements. Contact a local lender to discuss your specific scenario.
+- Learn more about conventional loans in Hawaii →: https://realitycents.com/knowledge-base/conventional-loans-hawaii
+- Learn about jumbo loans in Hawaii →: https://realitycents.com/knowledge-base/jumbo-loans-hawaii-luxury
+
+**Q: How much do I need for a down payment to buy a home in Honolulu?**
+
+A: It depends on your loan type. VA loans require zero down payment for eligible veterans and active-duty service members. FHA loans require 3.5% down with a 580+ credit score. Conventional loans can go as low as 3% down for first-time buyers through Fannie Mae HomeReady or Freddie Mac Home Possible programs. A 20% down payment eliminates the need for private mortgage insurance (PMI) on conventional loans. The City and County of Honolulu also offers a down payment assistance loan of up to $40,000 for qualifying first-time buyers.
+- Read: The 20% Down Payment Myth in Hawaii →: https://realitycents.com/knowledge-base/down-payment-myth-hawaii-pmi-vs-appreciation
+- Learn more about down payment assistance →: https://realitycents.com/knowledge-base/down-payment-assistance-hawaii
+
+**Q: What credit score do I need to buy a home in Hawaii?**
+
+A: Minimum credit score requirements vary by loan program. Conventional loans generally require a 620 minimum. FHA loans allow scores as low as 580 with 3.5% down, or 500 with 10% down. VA loans require a minimum of 620. The higher your credit score, the better your interest rate and loan terms will be. If your score needs work, a mortgage professional can help you create a plan to improve it before applying.
+- Learn more about improving your credit for a mortgage →: https://realitycents.com/knowledge-base/credit-tips-mortgage-approval
+
+**Q: How much can I afford to borrow for a home in Hawaii?**
+
+A: Your borrowing power depends on your income, monthly debts, credit score, down payment, and the loan program you choose. A general guideline is the 28/36 rule: your housing payment should not exceed 28% of your gross monthly income, and your total debt payments should stay below 36%. However, most loan programs allow significantly higher ratios for well-qualified borrowers — conventional loans typically allow up to 45–50% DTI, jumbo loans up to 43–45%, FHA up to 55%, and VA loans can go 60% or higher for borrowers with excellent credit profiles. In Hawaii, the high cost of living means HOA fees, property taxes, and homeowner's insurance all factor into your qualifying payment. Getting pre-approved with a local lender gives you a clear picture of your budget before you start shopping.
+- Learn more about income requirements to buy in Hawaii →: https://realitycents.com/knowledge-base/income-needed-buy-home-hawaii-2026
+- What to do when mortgage rates rise →: https://realitycents.com/knowledge-base/mortgage-rates-2026-high-hawaii-buyers
+- Compare loan options with our calculator →: https://realitycents.com/loan-compare
+
+**Q: Can I buy a home in Hawaii with an FHA loan?**
+
+A: Yes. FHA loans are popular in Hawaii because they allow down payments as low as 3.5% and have more flexible credit requirements than conventional loans. The 2026 FHA loan limit for a single-unit property in Honolulu County is $828,000. FHA loans do require both an upfront mortgage insurance premium (1.75% of the loan amount, typically financed into the loan) and an annual MIP that is paid monthly for the life of the loan. FHA condos must be on HUD's approved condo list or receive a single-unit approval.
+- Learn more about FHA loans in Hawaii →: https://realitycents.com/knowledge-base/fha-loans-hawaii-explained
+
+**Q: What is the difference between fixed-rate and adjustable-rate mortgages?**
+
+A: A fixed-rate mortgage locks in your interest rate for the entire loan term, typically 15 or 30 years, so your principal and interest payment never changes. An adjustable-rate mortgage (ARM) starts with a lower fixed rate for an initial period (commonly 5 or 7 years), then adjusts periodically based on a market index plus a margin. ARMs can make sense if you plan to sell or refinance before the adjustment period begins. In Hawaii, where many military buyers are on 3-year PCS rotations, a 5/1 or 7/1 ARM can offer significant savings during their time on island.
+- Read our full ARM guide for Hawaii buyers →: https://realitycents.com/knowledge-base/adjustable-rate-mortgage-hawaii
+
+**Q: What should I know about refinancing my mortgage in Hawaii?**
+
+A: There are several reasons to refinance: to lower your interest rate, shorten your loan term, eliminate mortgage insurance, or access home equity through a cash-out refinance. For VA borrowers, the VA Interest Rate Reduction Refinance Loan (IRRRL) offers a streamlined process with minimal documentation and no appraisal requirement. When evaluating a refinance, calculate your break-even point — the number of months of savings needed to recoup your closing costs. As a general rule, a refinance makes the most financial sense when the break-even period is 30 months or less.
+- Learn more about refinancing in Hawaii →: https://realitycents.com/knowledge-base/refinancing-hawaii-homeowners
+
+### VA Loans
+
+**Q: What is the VA loan and who is eligible?**
+
+A: A VA loan is a mortgage benefit backed by the U.S. Department of Veterans Affairs, available to eligible veterans, active-duty service members, certain National Guard and Reserve members, and qualifying surviving spouses. Key benefits include zero down payment, no private mortgage insurance (PMI), competitive interest rates, and limited closing costs. To use a VA loan, you need a Certificate of Eligibility (COE) from the VA, which your lender can often obtain for you. The VA loan can be used for primary residences including single-family homes and VA-approved condominiums.
+- Learn more about VA loans in Hawaii →: https://realitycents.com/knowledge-base/va-loans-hawaii-military
+
+**Q: Can I use a VA loan to buy a condo in Honolulu?**
+
+A: Yes, but the condominium project must be on the VA's approved condo list or receive a project approval from the VA before closing. Many condo buildings in Honolulu are already VA-approved, but some are not. You can check our VA Approved Condos on Oahu list for current approval status. If a project is not currently approved, it may be possible to submit it for approval, though the process takes time. Working with a lender who specializes in VA loans in Hawaii is critical because condo warrantability is one of the most common deal-breakers in the Honolulu market.
+- VA Approved Condos on Oahu list: https://realitycents.com/va-approved-condos-oahu
+- Learn more about VA loans in Hawaii →: https://realitycents.com/knowledge-base/va-loans-hawaii-military
+
+**Q: What is the VA funding fee and can it be waived?**
+
+A: The VA funding fee is a one-time fee paid to the VA at closing that helps sustain the loan program. For a first-time VA purchase with zero down payment, the funding fee is 2.15% of the loan amount. For subsequent use, it increases to 3.3%. A down payment of 5% or more reduces the fee. The funding fee is waived entirely for veterans with a service-connected disability rating of 10% or higher, Purple Heart recipients on active duty, and qualifying surviving spouses. The fee can be financed into the loan amount rather than paid out of pocket. Additionally, the VA funding fee is tax deductible — consult a tax advisor to confirm how this applies to your situation.
+- Learn more about the VA funding fee and tax deductibility →: https://realitycents.com/knowledge-base/va-funding-fee-tax-deductible
+
+**Q: Can I use my VA loan benefit more than once?**
+
+A: Yes. Your VA loan benefit is reusable. You can have more than one VA loan at a time if you have remaining entitlement, or you can restore your full entitlement after selling a previous VA-financed home and paying off that loan. If you are PCSing from one duty station to another, you may be able to keep your current VA loan on your existing property and use remaining entitlement to purchase a new primary residence at your next duty station. The key is understanding your remaining entitlement and how it interacts with the county loan limits at your new location.
+- Learn more about using your VA benefit multiple times (house hacking) →: https://realitycents.com/knowledge-base/va-loan-house-hacking-hawaii
+
+### Hawaii-Specific
+
+**Q: What is condo warrantability and why does it matter in Hawaii?**
+
+A: Condo warrantability refers to whether a condominium project meets the eligibility standards set by Fannie Mae, Freddie Mac, FHA, or the VA for conventional or government-backed financing. In Honolulu, where condos make up a large share of the housing inventory, warrantability is a critical factor. A non-warrantable condo cannot be financed with a standard conventional, FHA, or VA loan. Common reasons a condo may be non-warrantable include: high investor ownership concentration (this applies to FHA — conventional loans do not have the same investor concentration threshold), pending litigation involving structural defects, inadequate reserve funding, major ongoing repairs or deferred maintenance, and insufficient insurance coverage. Buyers considering a non-warrantable condo typically need a portfolio loan, which may require a larger down payment and carry a higher interest rate.
+- Learn more about Fannie Mae condo guidelines in Hawaii →: https://realitycents.com/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii
+
+**Q: Should I use a local lender or an online lender in Hawaii?**
+
+A: Hawaii's real estate market has unique characteristics that can trip up mainland and online lenders. These include leasehold properties, condo warrantability requirements, termite inspection rules (PC-9 form), Hawaiian Home Lands restrictions, and county-specific short-term and vacation rental rules. Hawaii also has unique closing timelines that are not well understood or planned for by mainland lenders, which can cause delays and even jeopardize transactions. A local lender familiar with these nuances can prevent delays, appraisal issues, and deal cancellations. Online lenders may offer competitive rates, but if they lack Hawaii-specific experience, the cost of a failed transaction or delayed closing can far outweigh any rate savings.
+
+**Q: What is the termite inspection requirement in Hawaii?**
+
+A: Hawaii requires a wood-destroying insect inspection (commonly called a termite inspection) on all existing residential properties, including condominiums five stories or less. The inspection must be reported on a state-prescribed PC-9 form, which is valid for 90 days from the date of inspection. Termite inspections are not required for conventional financing, though they are typically performed in virtually every purchase transaction given Hawaii's tropical climate and high termite activity. The PC-9 is a standard part of the purchase process and buyers should plan for it regardless of loan type.
+
+**Q: What is a leasehold property and should I buy one?**
+
+A: In Hawaii, some properties are built on leased land rather than fee simple (owned) land. With a leasehold property, you own the building or unit but lease the land beneath it from a landowner for a set term. Leasehold properties are typically less expensive than fee simple, but you will pay a monthly lease rent that can increase over time, and financing options are more limited as the lease term shortens. There are no mortgages available for leaseholds with fewer than 15 years remaining on the lease. Conventional lending is available as long as the loan term ends at least 5 years prior to the end of the lease — meaning a 10-year fixed is the shortest term available. VA loans are extremely difficult to obtain on leasehold properties due to strict VA requirements on renegotiation periods and the need for at least 14 years remaining after the end of the loan term. It is important to understand the lease terms, renegotiation provisions, and how the lease affects long-term value before purchasing a leasehold property.
+- Learn more about leasehold vs. fee simple in Hawaii →: https://realitycents.com/knowledge-base/leasehold-vs-fee-simple-hawaii
+
+**Q: What are HOA fees in Honolulu and how do they affect my mortgage?**
+
+A: HOA fees in Honolulu condos can range from a few hundred dollars per month to over $1,500 per month for buildings with extensive amenities or aging infrastructure requiring special assessments. Your HOA fee is included in your total monthly housing payment for mortgage qualification purposes, which means a high HOA fee directly reduces how much purchase price you can qualify for. Before making an offer on a condo, review the HOA's financial statements, reserve study, and history of special assessments to avoid surprises.
+- Learn more about HOA considerations for Hawaii condos →: https://realitycents.com/knowledge-base/hoa-considerations-hawaii-condos
+
+### Buying Process
+
+**Q: What is the difference between a mortgage pre-qualification and a pre-approval?**
+
+A: A pre-qualification is an informal estimate of how much you might borrow based on self-reported financial information. No credit pull or documentation is required. A pre-approval is a formal process where the lender verifies your income, assets, employment, and credit history, then issues a pre-approval letter for a specific loan amount. In Hawaii's competitive market, sellers and listing agents strongly prefer offers backed by a pre-approval because it signals a serious, vetted buyer. In Hawaii, lenders typically issue a pre-approval letter specific to each offer — tied to the subject property, offer price, and down payment amount. A pre-approval is valid for 120 days.
+- Learn more about the mortgage pre-approval process →: https://realitycents.com/knowledge-base/mortgage-pre-approval-process
+
+**Q: What are closing costs when buying a home in Honolulu?**
+
+A: Closing costs in Honolulu typically range from 2% to 5% of the purchase price (plan on about 3–4%) and include items like the appraisal fee, title insurance, escrow fees, recording fees, prepaid property taxes and homeowner's insurance, and lender origination charges. Some costs may be negotiated as seller-paid. Your lender is required to provide a Loan Estimate within three business days of your application, and a final Closing Disclosure at least three business days before closing, so you will have full transparency on costs before you sign.
+- Learn more about closing costs in Hawaii →: https://realitycents.com/knowledge-base/understanding-closing-costs-hawaii
+
+**Q: How long does it take to close on a home in Honolulu?**
+
+A: A typical purchase transaction in Honolulu takes 30 to 45 days from accepted offer to closing, though some can close faster and others may take longer depending on the loan type, property type, and any conditions that arise during underwriting. Cash transactions can close in as little as 7 to 14 days. Staying responsive to your lender's document requests is the single best thing you can do to keep your closing on schedule.
+- Learn more about the escrow and closing process in Hawaii →: https://realitycents.com/knowledge-base/escrow-process-hawaii
+
+**Q: Are there first-time homebuyer programs available in Hawaii?**
+
+A: Yes. The most significant program currently available is the Hale Kama'āina Mortgage Program, administered by the Hawaii Housing Finance and Development Corporation (HHFDC). Relaunched in December 2025 after being dormant for over a decade, it provides below-market 30-year fixed rates — 5.62% for FHA/VA/USDA and 5.87% for conventional as of August 2026 (the posting resets with each bond issuance; it launched at 4.65%/4.95% in spring 2026) — to eligible first-time buyers. The program also offers optional down payment assistance of up to 4% of the purchase price as a second mortgage at 1% simple interest with no monthly payments. To qualify, buyers must be Hawaii residents, meet household income limits (up to $152,000 for a 1–2 person household in Honolulu County), purchase within the program's price limits ($809,458 in non-targeted Oahu areas, $989,337 in targeted census tracts), and complete a HUD-approved homebuyer education course. Veterans and buyers in targeted census tracts may be exempt from the three-year first-time buyer lookback rule. Bond funds are finite — when the $30 million allocation is committed, the program closes until a new bond series is issued. Hale Kama'āina loans can only be originated by lenders enrolled with HHFDC, and CMG Home Loans is an approved participating lender.
+- Read the full Hale Kama'āina program guide →: https://realitycents.com/knowledge-base/hale-kamaaina-mortgage-program-hawaii
+
+---
+
 ## VA-Approved Condos on Oahu
 URL: https://realitycents.com/va-approved-condos-oahu
 Author: Jay Miller, NMLS #657301, CMG Home Loans
 Published: May 2026
 Last updated: May 2026
 
-Searchable directory of all VA-approved condo projects on Oahu, Hawaii. Data sourced from the VA LGY Hub (lgy.va.gov/lgyhub/condo-report).
 
-Total VA-approved condos on Oahu: 1772
-- Accepted Without Conditions: 1527
+1,782 VA-accepted condo projects on Oahu from VA's condo list, last checked October 1, 2026. Approvals change; confirm current status with VA.
+Data sourced from the VA LGY Hub (https://lgy.va.gov/lgyhub/condo-report).
+- Accepted Without Conditions: 1537
 - Accepted With Conditions: 245
-- Last updated: 2026-10-01
+- Last checked: 2026-10-01
 
 ### What VA Condo Approval Means
 
@@ -4800,30 +4919,30 @@ You can request a Single Unit Approval (Spot Approval) where the VA reviews just
 
 ### Oahu Neighborhoods with VA-Approved Condos
 
-- Kaneohe: 165 projects
+- Kaneohe: 168 projects
 - Makiki/Manoa: 141 projects
-- Ewa Beach: 126 projects
-- Kailua: 118 projects
+- Ewa Beach: 127 projects
+- Kailua: 119 projects
 - Waikiki: 106 projects
-- Waianae/Makaha: 92 projects
+- Waianae/Makaha: 94 projects
 - Mililani: 90 projects
 - Waipahu: 86 projects
 - Kalihi/Liliha: 78 projects
 - Kapolei: 71 projects
 - Salt Lake/Moanalua: 70 projects
+- Kakaako/Ala Moana: 67 projects
+- McCully/Moiliili: 67 projects
 - Wahiawa: 66 projects
-- Kakaako/Ala Moana: 66 projects
 - Downtown/Chinatown: 66 projects
-- McCully/Moiliili: 66 projects
 - Aiea: 66 projects
 - Kaimuki/Kapahulu: 63 projects
-- Hawaii Kai: 53 projects
+- Hawaii Kai: 54 projects
 - Pearl City: 47 projects
 - Waialua: 44 projects
-- Haleiwa/North Shore: 35 projects
+- Haleiwa/North Shore: 36 projects
 - Hauula: 28 projects
 - Kaaawa: 13 projects
-- Other: 7 projects
+- Other: 6 projects
 - Kahuku: 5 projects
 - Laie: 3 projects
 - Waimanalo: 1 projects
@@ -5014,7 +5133,7 @@ Interactive tool for comparing up to 3 loan scenarios side by side. Supports VA,
 
 ## About RealityCents
 
-RealityCents.com is an educational mortgage resource for Hawaii homebuyers, refinancers, and military families. All content is authored by Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans (NMLS #657301), a US Army veteran with 25 years of Hawaii mortgage experience. The site specializes in VA loans, conventional loans, FHA loans, and Hawaii condo financing. All guidance reflects Hawaii-specific rules including condo warrantability requirements, leasehold property considerations, PC-9 termite inspection mandates, and Honolulu County property tax exemptions.
+RealityCents.com is an educational mortgage resource for Hawaii homebuyers, refinancers, and military families. All content is authored by Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans (NMLS #657301), a US Army veteran with 25 years in mortgage lending. The site specializes in VA loans, conventional loans, FHA loans, and Hawaii condo financing. All guidance reflects Hawaii-specific rules including condo warrantability requirements, leasehold property considerations, PC-9 termite inspection mandates, and Honolulu County property tax exemptions.
 
 NMLS Consumer Access verification: https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301
 

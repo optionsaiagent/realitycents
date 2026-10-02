@@ -775,7 +775,7 @@ export default function AssumableCalculator({ isEmbedded = false }: { isEmbedded
           variant="compact"
           kicker="Ready to Explore an Assumption?"
           headline="Get Guidance on Loan Assumptions"
-          subtext="25+ years of Hawaii lending experience. Let's look at the options for your situation."
+          subtext="25 years in mortgage lending. Let's look at the options for your situation."
           preApprovalLabel="Get Started"
           hideEmail
         />
