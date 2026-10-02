@@ -136,8 +136,7 @@ export default function FeaturedVideo() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3 text-center font-body text-xs leading-relaxed text-sand/50">
-              Educational content only — not a commitment to lend. A first-lien
-              HELOC carries a variable rate that can rise as well as fall.
+              Educational content only, not a commitment to lend. Figures are from one sample simulation shown in the video, not a typical result, a quote, or a promise. A first-lien HELOC carries a variable rate that can rise as well as fall. All In One Loan™ is a trademark of CMG Financial.
             </p>
           </div>
         </div>

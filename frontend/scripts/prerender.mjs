@@ -18,6 +18,9 @@ import { fileURLToPath } from "url";
 import { marked } from "marked";
 import { STATIC_PAGE_BODIES } from "./static-page-bodies.mjs";
 
+const AIO_NAME = "All In One Loan™";
+const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
+
 // Live condo data so prerendered SEO stays in sync with twice-monthly refreshes
 const CONDO_DATA = JSON.parse(
   fs.readFileSync(new URL("../client/src/data/va-approved-condos-oahu.json", import.meta.url), "utf8")
@@ -691,7 +694,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "VideoObject",
         name: "Build the equity, then use it — the All-In-One loan for real estate agents",
-        description: "Your past clients from the last four years are mostly at 5.5% or higher. This seven-minute video shows what the All-In-One does to the pace of their equity, and what that means for the next property, the second home, and the move-up. Sample rates in a what-if model; not a paid promotion, not a commitment to lend.",
+        description: "Your past clients from the last four years are mostly at 5.5% or higher. This seven-minute video shows what the All In One Loan™ does to the pace of their equity, and what that means for the next property, the second home, and the move-up. Sample rates in a what-if model; not a paid promotion, not a commitment to lend.",
         thumbnailUrl: "https://i.ytimg.com/vi/7x6JekhTmis/hqdefault.jpg",
         uploadDate: "2026-09-07",
         duration: "PT7M27S",
@@ -702,15 +705,15 @@ const STATIC_PAGES = {
     ],
   },
   "/advisors": {
-    title: "Financial Advisors — Free Up Client Cash Flow with the AIO",
-    description: "The All-In-One first-lien HELOC helps your clients pay off their mortgage in 11-14 years instead of 30, freeing $44K+/year for portfolio growth. Watch the 8-minute advisor briefing and partner with Jay Miller at CMG Home Loans.",
+    title: "Financial Advisors — Free Up Client Cash Flow with the All In One Loan™",
+    description: "How the All In One Loan™, a first-lien HELOC, can change a client's mortgage cash flow, and who it fits. Watch the 8-minute advisor briefing and partner with Jay Miller at CMG Home Loans.",
     keywords: "financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One loan",
     schema: [
       {
         "@context": "https://schema.org",
         "@type": "VideoObject",
         name: "The Largest Allocation You Don't Manage — The All-In-One Loan, for Financial Advisors",
-        description: "An 8-minute briefing for financial advisors on the All-In-One first-lien HELOC: the mechanics, the math, the rate-risk analysis, and the suitability screen.",
+        description: "An 8-minute briefing for financial advisors on the All In One Loan™, a first-lien HELOC: the mechanics, the math, the rate-risk analysis, and the suitability screen.",
         thumbnailUrl: `${BASE_URL}/aio-advisor-poster.png`,
         uploadDate: "2026-08-22",
         duration: "PT8M34S",
@@ -722,7 +725,7 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "VideoObject",
         name: "Nine questions financial advisors ask about the All-In-One loan — answered with the numbers",
-        description: "Nine questions financial advisors ask about the All-In-One loan, answered in order with the numbers on screen, including what happens if rates rise, three ways, and whether a client will qualify. Sample rates in a what-if model; not investment advice.",
+        description: "Nine questions financial advisors ask about the All In One Loan™, answered in order with the numbers on screen, including what happens if rates rise, three ways, and whether a client will qualify. Sample rates in a what-if model; not investment advice.",
         thumbnailUrl: "https://i.ytimg.com/vi/fN2ipKwyREc/hqdefault.jpg",
         uploadDate: "2026-09-07",
         duration: "PT8M15S",

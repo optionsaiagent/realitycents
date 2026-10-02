@@ -6,6 +6,9 @@
  * that AI crawlers and search engines can extract without JavaScript.
  */
 
+const AIO_NAME = "All In One Loan™";
+const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
+
 const BASE_URL = "https://realitycents.com";
 
 import { readFileSync } from "fs";
@@ -514,50 +517,52 @@ export const STATIC_PAGE_BODIES = {
         <p>Enter your name and email to unlock access to all tools. These professional resources are provided free by Jay Miller, NMLS #657301, CMG Home Loans.</p>
       </section>
       <section>
-        <h2>Watch: Build the Equity, Then Use It — The All-In-One Loan for Real Estate Agents</h2>
-        <p>Your past clients from the last four years are mostly at 5.5% or higher. This seven-minute video shows what the All-In-One does to the pace of their equity, and what that means for the next property, the second home, and the move-up. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not a paid promotion, not a commitment to lend. <a href="https://www.youtube.com/watch?v=7x6JekhTmis">Watch on YouTube</a>.</p>
+        <h2>Watch: Build the Equity, Then Use It: The All In One Loan™ for Real Estate Agents</h2>
+        <p>Your past clients from the last four years are mostly at 5.5% or higher. This seven-minute video shows what the All In One Loan™ does to the pace of their equity, and what that means for the next property, the second home, and the move-up. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not a paid promotion, not a commitment to lend. <a href="https://www.youtube.com/watch?v=7x6JekhTmis">Watch on YouTube</a>.</p>
       </section>
       <section>
         <h2>Also Watch: The Deal You Didn't Have to Lose</h2>
-        <p>A 6-minute briefing on the All-In-One first-lien HELOC, built for agents — the three client conversations it unlocks (the fence-sitting buyer, the locked-in seller, the investor), the math behind it, and the risks stated plainly. <a href="https://www.youtube.com/watch?v=9J92UtySyR8">Watch on YouTube</a>.</p>
+        <p>A 6-minute briefing on the All In One Loan™, a first-lien HELOC, built for agents — the three client conversations it unlocks (the fence-sitting buyer, the locked-in seller, the investor), the math behind it, and the risks stated plainly. <a href="https://www.youtube.com/watch?v=9J92UtySyR8">Watch on YouTube</a>.</p>
       </section>
+      <p>${AIO_TM_LINE}</p>
     </main>
   `,
 
   "/advisors": `
     <main>
       <h1>For Financial Advisors</h1>
-      <p>Your client's mortgage is the largest drag on their investable cash flow. There's a better structure.</p>
+      <p>For many clients, the mortgage is the largest drag on investable cash flow. Here is one alternative structure.</p>
       <section>
         <h2>The Largest Line Item You Don't Manage</h2>
-        <p>A $600,000 mortgage at 6.25% costs your client $3,694/month for 30 years — $729,949 in total interest. That's $44K/year locked into housing during their prime earning and compounding years. The All-In-One first-lien HELOC changes that math dramatically.</p>
+        <p>At an example rate of 6.25% (not a quote), a $600,000 mortgage costs your client $3,694/month for 30 years — $729,949 in total interest. That's $44K/year locked into housing during their prime earning and compounding years. The All In One Loan™ (AIO), a first-lien HELOC, can change that math for clients with steady surplus.</p>
       </section>
       <section>
-        <h2>Watch the Briefing: How the AIO Creates Portfolio Capacity</h2>
+        <h2>Watch the Briefing: How the All In One Loan™ Creates Portfolio Capacity</h2>
         <p>An 8-minute briefing on the mechanics, the math, the rate-risk analysis, and the suitability screen — built for advisors, not consumers. <a href="https://www.youtube.com/watch?v=inVfvRG92Uo">Watch on YouTube</a>.</p>
       </section>
       <section>
         <h2>Nine Questions Advisors Ask</h2>
-        <p>Nine questions financial advisors ask about the All-In-One loan, answered in order with the numbers on screen, including what happens if rates rise, three ways, and whether a client will qualify. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not investment advice. <a href="https://www.youtube.com/watch?v=fN2ipKwyREc">Watch on YouTube</a>.</p>
+        <p>Nine questions financial advisors ask about the All In One Loan™, answered in order with the numbers on screen, including what happens if rates rise, three ways, and whether a client will qualify. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not investment advice. <a href="https://www.youtube.com/watch?v=fN2ipKwyREc">Watch on YouTube</a>.</p>
       </section>
       <section>
         <h2>The Advisor's Edge</h2>
         <ul>
-          <li><strong>Free Up Client Cash Flow:</strong> The average mortgage consumes $44K+/year for 30 years. The AIO pays off in 11–14 years, redirecting that payment to investable assets decades sooner.</li>
+          <li><strong>Free Up Client Cash Flow:</strong> In the example above, the mortgage takes $44K a year for 30 years. With steady surplus, the AIO can pay off sooner and free that cash flow earlier; results depend on the client's numbers and the rate path.</li>
           <li><strong>Grow Your AUM:</strong> Every dollar freed from mortgage payments is a dollar available for your management.</li>
           <li><strong>Maintain Client Liquidity:</strong> Unlike extra payments on a fixed mortgage, every dollar paid into the AIO remains accessible on the line — no refinance needed to access equity.</li>
           <li><strong>Holistic Financial Planning:</strong> Position yourself as the advisor who optimizes the full balance sheet — not just the investment accounts.</li>
         </ul>
       </section>
       <section>
-        <h2>How the All-In-One Works</h2>
+        <h2>How the All In One Loan™ Works</h2>
         <ul>
           <li><strong>Paycheck Deposits:</strong> Full income deposits into the line, immediately reducing the balance.</li>
           <li><strong>Balance Drops Daily:</strong> Interest is calculated on the average daily balance — every idle dollar saves interest.</li>
           <li><strong>Bills Paid as Usual:</strong> The client pays expenses from the same account. The balance rises only when money is spent.</li>
           <li><strong>Surplus Retires Principal:</strong> The gap between income and spending automatically accelerates payoff — no extra effort.</li>
         </ul>
-        <p>The All-In-One is a variable-rate first-lien HELOC tied to 30-day average SOFR plus a fixed margin. Suitability is narrow: it fits households with a genuine monthly surplus and stable deposits. Jay Miller, NMLS #657301, CMG Home Loans, runs the official simulator on each client's real numbers and returns a personalized comparison with every assumption on the page.</p>
+        <p>The All In One Loan™ is a variable-rate first-lien HELOC tied to an index plus a fixed margin. Suitability is narrow: it fits households with a genuine monthly surplus and stable deposits. Jay Miller, NMLS #657301, CMG Home Loans, runs the official simulator on each client's real numbers and returns a personalized comparison with every assumption on the page.</p>
+        <p>${AIO_TM_LINE}</p>
       </section>
     </main>
   `,
@@ -619,16 +624,17 @@ export const STATIC_PAGE_BODIES = {
       <p>Simulate a first-lien HELOC with an integrated sweep checking account. Your net income is deposited directly against the loan balance, suppressing the balance interest is calculated on — starting the day it lands. Expenses draw from the line throughout the month, creating a "sawtooth" daily balance pattern. This calculator runs a true day-by-day simulation and compares the result against a traditional fixed-rate mortgage.</p>
       <section>
         <h2>How the Sweep Mechanism Works</h2>
-        <p>With an all-in-one first-lien HELOC, your checking account and mortgage are the same account. Every paycheck immediately reduces the balance that daily interest accrues on. As you pay bills during the month, the balance rises back up — but the surplus you don't spend becomes a permanent principal paydown each month. Because interest is calculated on the average daily balance, even money that sits in the account for two weeks before being spent reduces your interest cost.</p>
+        <p>With a first-lien HELOC that has built-in sweep checking, such as the All In One Loan™, your checking account and mortgage are the same account. Every paycheck immediately reduces the balance that daily interest accrues on. As you pay bills during the month, the balance rises back up — but the surplus you don't spend becomes a permanent principal paydown each month. Because interest is calculated on the average daily balance, even money that sits in the account for two weeks before being spent reduces your interest cost.</p>
       </section>
       <section>
         <h2>The Honest Math</h2>
-        <p>The strategy only works with positive monthly cash flow. On a $600,000 balance at 7.55%, interest starts around $3,775/month — if your surplus is smaller than that, the balance grows instead of shrinking. And because first-lien HELOC rates typically run about 1% higher than fixed rates, a disciplined borrower making the same extra principal payments on a traditional mortgage often comes out ahead. The calculator shows both trajectories so you can see exactly where the crossover is for your numbers.</p>
+        <p>The strategy only works with positive monthly cash flow. If your monthly surplus is smaller than the monthly interest on your balance, the balance grows instead of shrinking. First-lien HELOC rates often start above 30-year fixed rates, so compare total interest, not rates. A disciplined borrower making the same extra principal payments on a traditional mortgage often comes out ahead. The calculator shows both trajectories so you can see exactly where the crossover is for your numbers.</p>
       </section>
       <section>
         <h2>What You Can Model</h2>
         <p>Inputs include starting balance, HELOC rate (default SOFR + 3.25%), deposit frequency (weekly, bi-weekly, semi-monthly, or monthly), total monthly expenses, one-time or annually recurring extra deposits (bonus, tax refund, property sale proceeds), and a traditional fixed-rate comparison. Outputs include payoff time, total interest, interest and time saved, a balance-over-time chart, a daily "sawtooth" detail view, a year-by-year breakdown table, and available credit during the draw period.</p>
       </section>
+      <p>${AIO_TM_LINE}</p>
       ${LICENSE_CALC}
     </main>
   `,

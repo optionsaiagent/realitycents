@@ -336,7 +336,7 @@ const PRINT_STYLES = `
 const FAQ_ITEMS: { q: string; a: string }[] = [
   {
     q: "What is a first-lien HELOC with sweep checking?",
-    a: "It's a home equity line of credit that replaces your traditional mortgage as the first lien on your home, combined with an integrated checking account. Your paychecks deposit directly against the loan balance, and your bills are paid from the line. Because interest is calculated on your daily balance, every dollar sitting in the account \"sweeps\" down the balance that interest accrues on — your idle cash effectively earns your mortgage rate. Products like CMG's All-In-One Loan use this structure.",
+    a: "It's a home equity line of credit that replaces your traditional mortgage as the first lien on your home, combined with an integrated checking account. Your paychecks deposit directly against the loan balance, and your bills are paid from the line. Because interest is calculated on your daily balance, every dollar sitting in the account \"sweeps\" down the balance that interest accrues on — your idle cash effectively earns your mortgage rate. CMG's All In One Loan™ uses this structure. All In One Loan™ is a trademark of CMG Financial.",
   },
   {
     q: "How does daily interest calculation save money compared to a traditional mortgage?",
@@ -360,7 +360,7 @@ const FAQ_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: "What happens after the 10-year draw period?",
-    a: "With the All-In-One structure this calculator models, you don't lose access to the line. For the first 10 years you can draw up to the original credit limit. Starting in year 11, the credit limit reduces by 1/240th of the original balance each month over the remaining 20 years — a gradual step-down rather than a cliff. You retain access to the declining line for the full 30-year term. Terms vary by lender, so confirm the specific product's draw schedule.",
+    a: "With the All In One Loan™ structure this calculator models, you don't lose access to the line. For the first 10 years you can draw up to the original credit limit. Starting in year 11, the credit limit reduces by 1/240th of the original balance each month over the remaining 20 years — a gradual step-down rather than a cliff. You retain access to the declining line for the full 30-year term. Terms vary by lender, so confirm the specific product's draw schedule.",
   },
   {
     q: "Can I still make this work if my income fluctuates?",
@@ -740,8 +740,8 @@ export default function HelocSweepCalculator() {
       result.heloc.paidOff && result.interestSaved > 50000 && yearsSaved >= 3 && monthlySurplus > 0;
     if (strongWin) {
       return {
-        p1: `Based on your income profile and spending habits, a first-lien HELOC with sweep-checking integration would reduce your total mortgage cost by ${fmt(result.interestSaved)} and accelerate your payoff by ${yearsSaved.toFixed(1)} years compared to a ${inputs.traditionalRate.toFixed(2)}% fixed mortgage. Your monthly surplus of ${fmt(monthlySurplus)} — the difference between your net deposits and total expenses — would suppress your average daily balance by approximately ${fmt(avgBalanceReduction)} in the first year, resulting in an effective interest cost equivalent to a ${paydown.heloc.effectiveAPR.toFixed(2)}% fixed-rate mortgage.`,
-        p2: `This structure is particularly well-suited to your situation because your income significantly exceeds your expenses, creating a consistent surplus that the sweep mechanism converts into aggressive principal reduction while maintaining full liquidity. Unlike extra payments on a traditional mortgage, every dollar applied remains accessible via your checking account without refinancing. ${paydown.heloc.breakevenRate !== null ? `Note that the strategy retains its advantage until the variable rate averages roughly ${paydown.heloc.breakevenRate.toFixed(2)}% over the life of the loan — a meaningful cushion above today's rate.` : "At these inputs, the strategy retains its advantage across the full range of realistic rate scenarios modeled."}`,
+        p1: `Based on your income profile and spending habits, under these inputs, a first-lien HELOC with sweep checking is estimated to reduce total interest by ${fmt(result.interestSaved)} and shorten payoff by ${yearsSaved.toFixed(1)} years, if rates and cash flow stay as entered, compared to a ${inputs.traditionalRate.toFixed(2)}% fixed mortgage. Your monthly surplus of ${fmt(monthlySurplus)} — the difference between your net deposits and total expenses — would suppress your average daily balance by approximately ${fmt(avgBalanceReduction)} in the first year, resulting in an effective interest cost equivalent to a ${paydown.heloc.effectiveAPR.toFixed(2)}% fixed-rate mortgage.`,
+        p2: `These inputs favor this structure because your income significantly exceeds your expenses, creating a consistent surplus that the sweep mechanism converts into aggressive principal reduction while maintaining full liquidity. Unlike extra payments on a traditional mortgage, every dollar applied remains accessible via your checking account without refinancing. ${paydown.heloc.breakevenRate !== null ? `Note that the strategy retains its advantage until the variable rate averages roughly ${paydown.heloc.breakevenRate.toFixed(2)}% over the life of the loan — a meaningful cushion above today's rate.` : "At these inputs, the strategy retains its advantage across the full range of realistic rate scenarios modeled."}`,
       };
     }
     if (result.heloc.paidOff && result.monthsSaved > 0) {
@@ -821,7 +821,7 @@ export default function HelocSweepCalculator() {
             <p className="text-lg text-slate-300 leading-relaxed">
               Your paycheck hits the loan. Your expenses draw from the line. This calculator
               simulates every single day — deposits, spending, and daily interest — so you can see
-              whether an "all-in-one" first-lien HELOC actually beats a traditional mortgage for
+              whether a first-lien HELOC with sweep checking beats a traditional mortgage for
               your numbers.
             </p>
           </div>
@@ -873,7 +873,7 @@ export default function HelocSweepCalculator() {
                 />
                 <Field label="Loan Term" value={termYears} onChange={setTermYears} suffix="yrs" />
                 <div className="p-3 bg-slate-700/30 border border-slate-600/40 rounded-lg">
-                  <p className="text-xs text-slate-300 font-medium mb-1">Line Access (All-in-One structure)</p>
+                  <p className="text-xs text-slate-300 font-medium mb-1">Line Access (All In One Loan™ structure)</p>
                   <p className="text-[11px] text-slate-400 leading-relaxed">
                     Full draw access to the original credit limit for the first 10 years. Starting in
                     year 11, the credit limit reduces by 1/240th of the original balance each month —
@@ -1565,7 +1565,7 @@ export default function HelocSweepCalculator() {
                         {/* All-In-One HELOC side */}
                         <div className="bg-slate-700/30 border border-teal/30 rounded-lg p-4">
                           <p className="text-xs font-semibold uppercase tracking-wider text-teal mb-2">
-                            All-In-One HELOC
+                            All In One Loan™
                           </p>
                           <MetricRow
                             label="Avg. Minimum Monthly Payment"
@@ -1594,7 +1594,7 @@ export default function HelocSweepCalculator() {
                           <MetricRow
                             label="Comparison Loan Effective APR"
                             value={result.heloc.paidOff ? `${paydown.heloc.effectiveAPR.toFixed(2)}%` : "—"}
-                            tooltip="The annual percentage rate that a 30-year fixed mortgage would need to have in order to cost the same total interest as the All-in-One HELOC — reflecting how efficiently the sweep mechanism reduces your borrowing cost."
+                            tooltip="The annual percentage rate that a 30-year fixed mortgage would need to have in order to cost the same total interest as the All In One Loan™ — reflecting how efficiently the sweep mechanism reduces your borrowing cost."
                             accent="text-gold"
                           />
                           <MetricRow
@@ -1786,7 +1786,7 @@ export default function HelocSweepCalculator() {
 
           <h1 className="hpr-title">First-Lien HELOC Sweep Analysis</h1>
           <p className="hpr-subtitle">
-            Day-by-day simulation of an all-in-one first-lien HELOC with sweep checking, compared
+            Day-by-day simulation of a first-lien HELOC with sweep checking, compared
             against a {inputs.traditionalRate.toFixed(2)}% {inputs.traditionalTermYears}-year fixed
             mortgage on the same balance.
           </p>
@@ -1963,7 +1963,7 @@ export default function HelocSweepCalculator() {
             <div className="hpr-grid">
               <div>
                 <div className="hpr-row head">
-                  <span className="label">All-In-One HELOC</span>
+                  <span className="label">All In One Loan™</span>
                   <span className="value"></span>
                 </div>
                 <div className="hpr-row">
@@ -2200,7 +2200,7 @@ export default function HelocSweepCalculator() {
               Year-by-Year Breakdown
             </h2>
             <p className="hpr-note" style={{ marginBottom: "6pt" }}>
-              All-In-One HELOC vs. the {inputs.traditionalRate.toFixed(2)}%{" "}
+              All In One Loan™ vs. the {inputs.traditionalRate.toFixed(2)}%{" "}
               {inputs.traditionalTermYears}-year fixed comparison loan. HELOC principal reflects the
               balance reduction after that year's interest is capitalized to the line.
             </p>
@@ -2212,7 +2212,7 @@ export default function HelocSweepCalculator() {
                     Yr
                   </th>
                   <th className="grp aio sep" colSpan={5}>
-                    All-In-One HELOC
+                    All In One Loan™
                   </th>
                   <th className="grp trad sep" colSpan={5}>
                     Traditional Mortgage

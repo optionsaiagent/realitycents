@@ -156,23 +156,25 @@ When you use your VA loan for the second time, the VA Funding Fee increases. For
 
 ---
 
-## An Alternative Strategy: The AIO First-Lien HELOC
+## An Alternative Strategy: A First-Lien HELOC (All In One Loan™)
 
 If you are keeping your first home as a rental, your primary goal on the *new* property is likely maximizing cash flow and managing your monthly obligations.
 
-While the second-tier VA loan is excellent, some Hawaii buyers with significant equity in their first home or strong cash reserves choose a different path for property number two: the **All-In-One (AIO) First-Lien HELOC**.
+While the second-tier VA loan is excellent, some Hawaii buyers with significant equity in their first home or strong cash reserves choose a different path for property number two: the **CMG All In One Loan™ (AIO), a first-lien HELOC**.
 
-The AIO is a unique mortgage product that replaces a traditional 30-year fixed loan with a primary-position Home Equity Line of Credit that also functions as your primary checking account. Instead of sending your paycheck to a traditional bank, your income is deposited directly into the AIO loan, immediately driving down the principal balance and reducing the daily interest calculation. When you need to pay bills, you draw from the available line of credit.
+The AIO is a mortgage product that replaces a traditional 30-year fixed loan with a primary-position Home Equity Line of Credit that also functions as your primary checking account. Instead of sending your paycheck to a traditional bank, your income is deposited directly into the AIO loan, immediately driving down the principal balance and reducing the daily interest calculation. When you need to pay bills, you draw from the available line of credit.
 
 There are three reasons a military family building a portfolio might choose the AIO for property number two instead of a second VA loan:
 
-**Interest Savings.** Because your idle cash sits against the loan principal 24/7, the AIO dramatically reduces the total interest paid over the life of the loan compared to a traditional amortizing mortgage. On a $950,000 Hawaii home, the savings over 10 years can be substantial for a household with strong income.
+**Interest Savings.** Because your idle cash sits against the loan principal 24/7, the AIO can reduce total interest compared to a traditional amortizing mortgage for households with steady surplus. It can also cost more if rates rise or surplus shrinks.
 
 **Flexibility.** Unlike a rigid 30-year fixed payment, the AIO allows you to pay down the principal aggressively when you have extra cash, but draw back on that equity instantly if you need funds for an emergency, a renovation, or another investment.
 
 **Preserving VA Entitlement.** By using an AIO for your new Hawaii home, you preserve your remaining VA entitlement for a future purchase — perhaps your forever home on the mainland when you eventually retire or PCS out of Hawaii.
 
-The AIO requires discipline — it is a tool for buyers who consistently spend less than they earn and want their idle cash to work for them. But for military families building a multi-property portfolio, it is a powerful alternative to traditional financing.
+The AIO requires discipline — it is a tool for buyers who consistently spend less than they earn and want their idle cash to work for them. For military families building a multi-property portfolio, it is one alternative to traditional financing.
+
+All In One Loan™ is a trademark of CMG Financial.
 
 ---
 
@@ -419,7 +421,7 @@ Higher monthly payments (larger loan balance), mortgage insurance on FHA/convent
   {
     slug: "first-lien-heloc-vs-traditional-mortgage-hawaii",
     title: "First-Lien HELOCs vs. Traditional Mortgages: Why the Interest Rate Isn't the Number That Matters",
-    excerpt: "Most Hawaii homeowners focus on the interest rate. But for disciplined savers, a first-lien HELOC with a sweep account can save hundreds of thousands in interest while keeping equity liquid.",
+    excerpt: "Most Hawaii homeowners focus on the interest rate. For disciplined savers, a first-lien HELOC with a sweep account can lower total interest and keep equity accessible. Here's how to compare it fairly.",
     category: "Loan Types",
     readTime: "10 min",
     date: "2026-07-01",
@@ -470,7 +472,7 @@ No extra payments. No budgeting apps. No behavior change beyond routing your ban
 
 ## The Hawaii Math: Who Benefits Most?
 
-This isn't magic — it's arithmetic, and it requires one specific ingredient: positive monthly cash flow. The bigger the gap between what you earn and what you spend, the more powerful the effect.
+This isn't magic — it's arithmetic, and it requires one specific ingredient: positive monthly cash flow. The bigger the gap between what you earn and what you spend, the larger the effect.
 
 That's exactly why this structure is so relevant here. With Oahu home prices commonly running $600,000 to over $1 million, loan balances are large — and the larger the balance, the more every day of interest suppression is worth. The strongest candidates:
 
@@ -494,7 +496,7 @@ In a traditional setup, that $5,000 surplus sits in checking earning almost noth
 
 In the sweep structure, the entire $12,000 suppresses the balance the day it arrives. The $7,000 in expenses draws it partially back up. The $5,000 surplus stays swept against principal, month after month, compounding the effect.
 
-For a borrower who maintains that discipline, this structure can shave years — potentially a decade or more — off a 30-year timeline and save a substantial amount in lifetime interest. Actual results depend entirely on your income, spending, balance, and rate environment. The only honest way to evaluate it is a side-by-side simulation of your numbers against a traditional mortgage — comparing total interest paid and payoff date, not note rates.
+For a borrower who maintains that discipline, depending on income, spending, balance, and rates, this structure can shorten the payoff timeline; it can also cost more if rates rise or surplus shrinks. Actual results depend entirely on your income, spending, balance, and rate environment. The only honest way to evaluate it is a side-by-side simulation of your numbers against a traditional mortgage — comparing total interest paid and payoff date, not note rates.
 
 ---
 
@@ -512,7 +514,7 @@ In Hawaii's high-cost environment, having accessible capital without selling or 
 
 ## The Rate Trade-Off: Let's Be Honest About It
 
-If this structure is so powerful, why doesn't everyone use it? Because you have to clear a psychological hurdle: the rate.
+If this structure can lower interest, why doesn't everyone use it? Because you have to clear a psychological hurdle: the rate.
 
 First-lien HELOCs are variable-rate products — a published index plus a lender's margin. The starting rate will generally sit above prevailing 30-year fixed rates, and that gap alone stops most borrowers from looking further. Compare the two note rates side-by-side and the fixed rate "wins" every time — on paper. But that comparison is the wrong one.
 
@@ -545,7 +547,7 @@ Qualification also tends to be more selective than a standard mortgage — lende
 
 For decades, the mortgage industry has trained buyers and homeowners to shop one number: the rate. But the rate is just an input. Total interest paid is the output — and the output is what you actually write checks for.
 
-If you consistently spend less than you earn, parking your surplus in a low-yield checking account while paying interest on a full, slowly amortizing mortgage balance is mathematically inefficient. A first-lien HELOC with a daily sweep account puts every idle dollar to work against your balance, accelerates your payoff, and keeps your equity liquid the entire time.
+If you consistently spend less than you earn, parking your surplus in a low-yield checking account while paying interest on a full, slowly amortizing mortgage balance is mathematically inefficient. A first-lien HELOC with a daily sweep account puts every idle dollar to work against your balance, can accelerate your payoff when your monthly surplus is steady, and keeps paid-down equity accessible.
 
 It's not for everyone. But for the right Hawaii household, it's a fundamentally different way to own a home.
 
@@ -564,7 +566,7 @@ It's a home equity line of credit that replaces your primary mortgage, sitting i
 Your income is deposited directly into an account integrated with the loan, immediately reducing the principal balance. The money remains available for bills and everyday expenses through debit card, checks, and bill pay — but until you spend it, it's lowering the balance your daily interest is calculated on.
 
 **How is interest calculated?**
-On products built for this strategy, interest is computed daily on the outstanding balance — often each day's ending balance — then totaled and billed monthly. This is what makes balance suppression so powerful compared to a traditional mortgage's monthly amortization schedule.
+On products built for this strategy, interest is computed daily on the outstanding balance — often each day's ending balance — then totaled and billed monthly. This is why lowering the daily balance matters more here than on a traditional mortgage's monthly amortization schedule.
 
 **Is the rate fixed or variable?**
 Variable — an index plus a margin. Product features vary, so ask any specific lender about lifetime rate caps, whether the margin is fixed for the life of the loan, initial fixed-rate options, prepayment penalties, and balloon payments before you commit.
@@ -4834,11 +4836,11 @@ If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. Bu
 
 ## Consider a Product That Works With Rate Volatility, Not Against It
 
-One option worth exploring in a volatile rate environment: a first-lien HELOC (sometimes called an All-In-One or AIO mortgage). Unlike a traditional 30-year fixed, a first-lien HELOC carries a variable rate tied to an index like SOFR. That means when rates eventually decline — as most forecasters expect — your rate drops automatically. No refinance application, no closing costs, no appraisal, no waiting.
+One option worth exploring in a volatile rate environment: a first-lien HELOC (CMG's version is the All In One Loan™). Unlike a traditional 30-year fixed, a first-lien HELOC carries a variable rate tied to an index like SOFR. If rates fall, a variable rate adjusts down without a refinance; if they rise, it adjusts up. All In One Loan™ is a trademark of CMG Financial.
 
-The tradeoff is real: your rate moves both directions, and today's starting rate may be higher than a fixed loan. But for buyers who believe rates are near a peak and heading lower, a first-lien HELOC lets you capture every basis point of decline without lifting a finger. It also functions as an active line of credit, allowing you to use your equity for future investments or large purchases throughout the life of the loan.
+The tradeoff is real: your rate moves both directions, and today's starting rate may be higher than a fixed loan. A variable rate passes rate changes through in both directions. It also functions as an active line of credit, allowing you to use your equity for future investments or large purchases throughout the life of the loan.
 
-Here is what surprises most people: even at a higher stated rate, a first-lien HELOC can save hundreds of thousands of dollars in total mortgage interest compared to a traditional 30-year fixed. The reason is structural. Because your income sweeps directly into the loan balance every pay period, you are reducing principal daily — not monthly. Interest is calculated on a lower average daily balance, and the compounding effect over time is dramatic. Many borrowers pay off their home in under 15 years while paying a fraction of the total interest a 30-year fixed would have cost them — even though the rate on paper is higher.
+Even at a higher stated rate, a first-lien HELOC can cost less in total interest than a 30-year fixed for a household with steady surplus, because deposits lower the daily balance. It can also cost more if rates rise or surplus shrinks. A side-by-side simulation with your numbers is the only fair test.
 
 This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. If you are weighing rate risk either way, it is worth understanding how the product works.
 

@@ -30,13 +30,13 @@ const ADVISOR_BENEFITS = [
     icon: DollarSign,
     title: "Free Up Client Cash Flow",
     description:
-      "The average mortgage consumes $44K+/year for 30 years. The AIO pays off in 11–14 years, redirecting that payment to investable assets decades sooner.",
+      "In the example above, the mortgage takes $44K a year for 30 years. With steady surplus, the AIO can pay off sooner and free that cash flow earlier; results depend on the client's numbers and the rate path.",
   },
   {
     icon: TrendingUp,
     title: "Grow Your AUM",
     description:
-      "Every dollar freed from mortgage payments is a dollar available for your management. A client saving $3,694/mo post-payoff adds $44K/year to their portfolio.",
+      "Every dollar freed from mortgage payments is a dollar available for your management. In the example above, a paid-off $3,694 monthly payment is $44K a year a client could invest.",
   },
   {
     icon: Shield,
@@ -63,8 +63,8 @@ export default function Advisors() {
   return (
     <Layout>
       <SEO
-        title="Financial Advisors — Free Up Client Cash Flow with the AIO | RealityCents"
-        description="The All-In-One first-lien HELOC helps your clients pay off their mortgage in 11-14 years instead of 30, freeing $44K+/year for portfolio growth. Partner with Jay Miller at CMG Home Loans."
+        title="Financial Advisors — Free Up Client Cash Flow with the All In One Loan™ | RealityCents"
+        description="How the All In One Loan™, a first-lien HELOC, can change a client's mortgage cash flow, and who it fits. Partner with Jay Miller at CMG Home Loans."
         url="/advisors"
         image={IMAGES.heroAdvisors}
         imageAlt={IMAGE_ALTS.heroAdvisors}
@@ -73,7 +73,7 @@ export default function Advisors() {
 
       <PageHero
         title="For Financial Advisors"
-        subtitle="Your client's mortgage is the largest drag on their investable cash flow. There's a better structure."
+        subtitle="For many clients, the mortgage is the largest drag on investable cash flow. Here is one alternative structure."
         image={IMAGES.heroAdvisors}
         imageAlt={IMAGE_ALTS.heroAdvisors}
         compact
@@ -90,10 +90,9 @@ export default function Advisors() {
               The Largest Line Item You Don't Manage
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A $600,000 mortgage at 6.25% costs your client $3,694/month for 30 years —
+              At an example rate of 6.25% (not a quote), a $600,000 mortgage costs your client $3,694/month for 30 years —
               $729,949 in total interest. That's $44K/year locked into housing during their
-              prime earning and compounding years. The All-In-One first-lien HELOC changes
-              that math dramatically.
+              prime earning and compounding years. The All In One Loan™ (AIO), a first-lien HELOC, can change that math for clients with steady surplus.
             </p>
           </div>
 
@@ -120,7 +119,7 @@ export default function Advisors() {
               Watch the Briefing
             </p>
             <h2 className="font-display text-3xl lg:text-4xl text-navy mb-4">
-              How the AIO Creates Portfolio Capacity
+              How the All In One Loan™ Creates Portfolio Capacity
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               An 8-minute briefing on the mechanics, the math, the rate-risk analysis, and the
@@ -150,7 +149,7 @@ export default function Advisors() {
                 Nine questions advisors ask
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Nine questions financial advisors ask about the All-In-One loan, answered in order
+                Nine questions financial advisors ask about the All In One Loan™, answered in order
                 with the numbers on screen — including what happens if rates rise, three ways, and
                 whether a client will qualify.
               </p>
@@ -220,7 +219,7 @@ export default function Advisors() {
         <div className="container max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl lg:text-4xl text-white mb-4">
-              How the All-In-One Works
+              How the All In One Loan™ Works
             </h2>
             <p className="text-sand/80 max-w-2xl mx-auto">
               A first-lien HELOC with an integrated sweep-checking account. Your client's

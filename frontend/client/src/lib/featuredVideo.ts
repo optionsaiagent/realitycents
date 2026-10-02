@@ -23,28 +23,28 @@ export const FEATURED_VIDEO = {
   youtubeId: "vuYeyF_63fE",
 
   title:
-    "Your Mortgage Rate Is Not What You Pay — The All-In-One Loan, Explained",
-  shortTitle: "The All-In-One Loan, Explained",
+    "Your Mortgage Rate Is Not What You Pay: The All In One Loan™, Explained",
+  shortTitle: "The All In One Loan™, Explained",
   runtime: "8:25",
 
   /** Poster used until the video is live (and as a social preview image). Served from /public. */
   poster: "/aio-explainer-poster.png",
 
   description:
-    "A complete walkthrough of how the All-In-One loan — a first-lien HELOC — actually works, following one sample scenario from the lender's Interactive Comparison Simulator: a $1,000,000 home, 20% down, $800,000 financed. The benefits and the risks, stated plainly. No extra payments, no tighter budget.",
+    "A complete walkthrough of how the All In One Loan™, a first-lien HELOC, works, following one sample scenario from the lender's Interactive Comparison Simulator: a $1,000,000 home, 20% down, $800,000 financed. The benefits and the risks, stated plainly. No extra payments, no tighter budget.",
 
   /** Headline figures pulled from the simulation shown in the video (simulator key Cw5-Yvj-3f5). */
   stats: [
-    { value: "12.4 yrs", label: "Payoff instead of 30" },
-    { value: "$630,769", label: "Total interest saved" },
-    { value: "2.841%", label: "Effective rate on a 6.869% loan" },
+    { value: "12.4 yrs", label: "Payoff in one sample simulation (vs. 30 years)" },
+    { value: "$630,769", label: "Interest difference in that sample" },
+    { value: "2.841%", label: "Effective rate in that sample (6.869% example rate)" },
   ],
 
   /** Chapters mirror the video's scene timeline (v2.2, 8:25). */
   chapters: [
     { at: 0, label: "Your rate is not what you pay" },
     { at: 43, label: "The 30-year fixed, dissected" },
-    { at: 108, label: "What the All-In-One actually is" },
+    { at: 108, label: "What the All In One Loan™ is" },
     { at: 134, label: "Day one: your paycheck drops the balance" },
     { at: 201, label: "The engine: year-one interest vs. the average" },
     { at: 254, label: "The rate, reframed: 6.869% sticker, ≈2.8% effective" },

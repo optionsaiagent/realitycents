@@ -1,6 +1,9 @@
 // RealityCents Site Constants
 // Pacific Modernism Design — Deep navy authority, teal trust, warm sand approachability
 
+export const AIO_NAME = "All In One Loan™";
+export const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
+
 export const SITE = {
   name: "RealityCents",
   tagline: "Hawaii Mortgage Education and Lending",
