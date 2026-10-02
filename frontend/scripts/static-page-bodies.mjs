@@ -552,6 +552,10 @@ export const STATIC_PAGE_BODIES = {
         <p>Enter your name and email to unlock access to all tools. These professional resources are provided free by Jay Miller, NMLS #657301, CMG Home Loans.</p>
       </section>
       <section>
+        <h2>Free Download: Conventional vs. FHA vs. VA vs. USDA — Hawaii Agent Cheat Sheet</h2>
+        <p>A one-page comparison of the four main purchase loan programs for Hawaii real estate agents: minimum down payment, credit score, mortgage insurance and funding fees, 2026 loan limits by county (Honolulu $1,249,125 conforming / $828,000 FHA), condo approval rules, seller-concession caps, appraisal and property condition, and best fit — plus Hawaii-specific agent tips. Figures as of October 2026. <a href="https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf">Download the PDF</a>.</p>
+      </section>
+      <section>
         <h2>Watch: Build the Equity, Then Use It: The All In One Loan™ for Real Estate Agents</h2>
         <p>Your past clients from the last four years are mostly at 5.5% or higher. This seven-minute video shows what the All In One Loan™ does to the pace of their equity, and what that means for the next property, the second home, and the move-up. Sample rates in a what-if model, not a rate quote or a promise to any borrower. Not a paid promotion, not a commitment to lend. <a href="https://www.youtube.com/watch?v=7x6JekhTmis">Watch on YouTube</a>.</p>
       </section>

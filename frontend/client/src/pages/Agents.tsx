@@ -445,6 +445,40 @@ export default function Agents() {
         </div>
       </section>
 
+      {/* ─── Free download: loan comparison cheat sheet ─── */}
+      <section className="py-14 lg:py-16 bg-white">
+        <div className="container max-w-5xl">
+          <div className="rounded-2xl border border-border bg-sand/60 p-6 lg:p-8 flex flex-col md:flex-row md:items-center gap-6">
+            <div className="shrink-0 w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center">
+              <FileText className="w-7 h-7 text-teal" />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-teal mb-2">
+                Free Download &middot; Agent Cheat Sheet
+              </p>
+              <h2 className="font-display text-2xl lg:text-3xl text-navy mb-2">
+                Conventional vs. FHA vs. VA vs. USDA &mdash; Hawaii
+              </h2>
+              <p className="text-muted-foreground max-w-2xl">
+                One page, built for the listing table: down payment, credit, mortgage insurance and
+                funding fees, 2026 Hawaii loan limits by county, condo approval, seller-concession
+                caps, appraisal rules, and who each program fits &mdash; plus six Hawaii-specific
+                agent tips. Figures as of October 2026.
+              </p>
+            </div>
+            <a
+              href="https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf?v=202610a"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white px-6 py-3 rounded-lg text-sm font-body font-semibold transition-all hover:shadow-lg whitespace-nowrap"
+            >
+              Download the PDF
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ─── AIO for Agents: current piece (equity) + earlier explainer ─── */}
       <section className="py-16 lg:py-20 bg-sand">
         <div className="container max-w-5xl">

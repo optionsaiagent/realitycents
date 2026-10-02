@@ -68,6 +68,8 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 - [PCSing to Hawaii](https://www.pcsingtohawaii.com): Jay Miller's free guide for military families moving to Oahu: bases, neighborhoods, BAH, pets, cars, schools, and a PCS timeline. Index: https://www.pcsingtohawaii.com/llms.txt
 - [MCP server card](https://realitycents-mcp.jaymiller.workers.dev/server-card): Machine-readable description of the RealityCents MCP server. Catalog: https://realitycents.com/.well-known/ai-catalog.json. Same card: https://realitycents.com/.well-known/mcp.json and https://realitycents.com/.well-known/mcp/server-card.json
 
+- [Hawaii Loan Comparison Cheat Sheet (PDF)](https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf): One-page Conventional vs FHA vs VA vs USDA comparison for Hawaii agents — down payment, credit, MI/funding fees, 2026 county loan limits, condo approval, seller concessions. Free download on the /agents page.
+
 ## Core Pages
 
 - [Use RealityCents in your AI assistant](https://realitycents.com/ai): Free, read-only Hawaii mortgage and VA loan MCP server — endpoint, the ten tools, and setup for Claude, ChatGPT, and Cursor.
