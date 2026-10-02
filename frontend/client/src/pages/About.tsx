@@ -29,7 +29,7 @@ const credentials = [
   { label: "CMG NMLS", value: `#${LENDER.companyNmls}` },
   { label: "Branch NMLS", value: `#${LENDER.branchNmls}` },
   { label: "Licensed In", value: "State of Hawaii" },
-  { label: "Experience", value: `${LENDER.experience} Years` },
+  { label: "In Mortgage Lending", value: `${LENDER.experience} Years` },
   { label: "Location", value: "Honolulu, HI" },
 ];
 
@@ -42,7 +42,7 @@ const values = [
   {
     icon: Target,
     title: "Local Market Expertise",
-    description: "With 25 years in Hawaii's real estate and mortgage industry, I understand the nuances of island property — from leasehold vs. fee simple to lava zone considerations on the Big Island.",
+    description: "With 25 years in mortgage lending, I understand the nuances of island property — from leasehold vs. fee simple to lava zone considerations on the Big Island.",
   },
   {
     icon: Users,
@@ -74,13 +74,13 @@ export default function About() {
     <Layout>
       <SEO
         title="About Jay Miller — Hawaii Mortgage Lender"
-        description="Meet Jay Miller, NMLS #657301 — a Hawaii mortgage loan originator with 25+ years of experience at CMG Home Loans. U.S. Army veteran, triathlete, and passionate advocate for informed homebuyers across the Hawaiian Islands."
+        description="Meet Jay Miller, NMLS #657301 — a Hawaii mortgage loan originator at CMG Home Loans with 25 years in mortgage lending. U.S. Army veteran, triathlete, and passionate advocate for informed homebuyers across the Hawaiian Islands."
         url="/about"
         keywords="Jay Miller mortgage, Hawaii mortgage lender, CMG Home Loans Honolulu, mortgage loan originator Hawaii, NMLS 657301, Hawaii home loan officer"
       />
       <PageHero
         title="About Jay Miller"
-        subtitle="25+ years of mortgage lending experience, helping Hawaii buyers finance their homes."
+        subtitle="25 years in mortgage lending, helping Hawaii buyers finance their homes."
         image={IMAGES.heroAbout}
       />
 
@@ -121,7 +121,7 @@ export default function About() {
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  With 25 years of experience in Hawaii's real estate and mortgage industry, I'm passionate about helping clients confidently achieve their homeownership dreams. I believe an informed homebuyer is a happy homebuyer, which is why I take the time to explain every step and ensure you feel comfortable and empowered throughout the process.
+                  With 25 years in mortgage lending, I'm passionate about helping clients confidently achieve their homeownership dreams. I believe an informed homebuyer is a happy homebuyer, which is why I take the time to explain every step and ensure you feel comfortable and empowered throughout the process.
                 </p>
                 <p>
                   Known for being responsive, accessible, and proactive, I work closely with both clients and Realtors to create a smooth, seamless experience from application to closing. With a broad range of loan options — including Conventional, VA, Jumbo, Portfolio, USDA, and FHA — I tailor solutions to fit your unique goals.
@@ -134,7 +134,7 @@ export default function About() {
                   <Link href={BOOK.pageUrl} className="text-teal font-body font-semibold hover:underline">
                     <em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em>
                   </Link>{" "}
-                  (July 2026) — a guide to using your VA benefit to buy a home in Hawaii, drawn from 25 years of helping military families at the closing table.
+                  (July 2026) — a guide to using your VA benefit to buy a home in Hawaii, drawn from 25 years in mortgage lending, helping military families at the closing table.
                 </p>
                 <p>
                   I also publish the{" "}

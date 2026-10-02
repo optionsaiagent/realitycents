@@ -126,7 +126,7 @@ export default function Guide() {
               Everything You Need to Buy a Home in Hawaii
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Written with over 25 years of Hawaii mortgage experience, this guide covers the complete homebuying journey with island-specific insights you won't find anywhere else.
+              Written with 25 years in mortgage lending, this guide covers the complete homebuying journey with island-specific insights you won't find anywhere else.
             </p>
           </div>
 
@@ -182,7 +182,7 @@ export default function Guide() {
                     Your free Oahu Homebuyer's Guide is on its way to <strong className="text-white">{email}</strong>. It should arrive within a few minutes.
                   </p>
                   <a
-                    href="https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf?v=202609c"
+                    href="https://realitycents.com/files/guides/oahu-homebuyers-guide.pdf?v=202610a"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-md bg-teal px-5 py-2.5 text-sm font-body font-semibold text-white hover:bg-teal/90 transition-colors"

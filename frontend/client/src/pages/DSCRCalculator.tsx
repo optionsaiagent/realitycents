@@ -1019,7 +1019,7 @@ export default function DSCRCalculator({ isEmbedded = false }: { isEmbedded?: bo
           variant="compact"
           kicker="Ready to Run the Numbers for Real?"
           headline="Get Pre-Approved for a DSCR Loan"
-          subtext="25+ years of Hawaii lending experience. Let's see what you actually qualify for."
+          subtext="25 years in mortgage lending. Let's see what you actually qualify for."
           hideEmail
         />
 

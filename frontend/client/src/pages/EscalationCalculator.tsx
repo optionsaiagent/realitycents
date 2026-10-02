@@ -764,7 +764,7 @@ export default function EscalationCalculator({ isEmbedded = false }: { isEmbedde
           variant="compact"
           kicker="Ready to Win the Bid?"
           headline="Need Help Structuring a Winning Offer?"
-          subtext="25+ years of Hawaii lending experience. Let's make your offer stand out."
+          subtext="25 years in mortgage lending. Let's make your offer stand out."
           hideEmail
         />
 

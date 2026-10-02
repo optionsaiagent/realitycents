@@ -31,7 +31,7 @@ export const LENDER = {
     zip: "96813",
     full: "500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813",
   },
-  experience: "25+",
+  experience: "25",
 } as const;
 
 export const IMAGES = {

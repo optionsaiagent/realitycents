@@ -72,7 +72,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$1M–$1.5M",
     priceTH: "$600K–$900K (condo/townhome)",
     whyFamilies:
-      "Beach town, walkable, top schools, highly desirable. Lanikai and Kailua Beach are world-class. Vibrant downtown with restaurants, shops, and farmers market.",
+      "Beach town with walkable areas. Lanikai and Kailua Beach are world-class. Vibrant downtown with restaurants, shops, and farmers market.",
     vaNote:
       "Higher price point — may need full entitlement. Some condos need VA approval check. Mostly fee simple single-family.",
   },
@@ -92,7 +92,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$900K–$1.2M",
     priceTH: null,
     whyFamilies:
-      "Quiet residential, close to Kailua town. Established neighborhood with mature landscaping. Good schools, family-oriented streets.",
+      "Quiet residential, close to Kailua town. Established neighborhood with mature landscaping.",
     vaNote:
       "Mostly fee simple single-family — strong for VA. Clean appraisals on well-maintained homes.",
   },
@@ -150,7 +150,7 @@ const PAGE_SCHEMA = [
     "@id": "https://realitycents.com/#business",
     name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
     description:
-      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25+ years of Hawaii mortgage lending experience.",
+      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25 years in mortgage lending.",
     url: "https://realitycents.com/va-loan-kaneohe-mcbh",
     telephone: "(808) 429-0811",
     email: "jaym@cmghomeloans.com",
@@ -559,7 +559,7 @@ export default function VALoanKaneohe() {
             <p className="leading-relaxed">
               I'm Jay Miller, NMLS #657301, with CMG Home Loans in Honolulu. I'm an Army veteran
               — my wife Michelle and I both served, and we chose to plant roots here after our
-              time in uniform. I've been doing VA loans on Oahu for 25 years. I work with Marines
+              time in uniform. I have 25 years in mortgage lending. I work with Marines
               from Kaneohe Bay regularly — I know what the VA appraiser will flag on a Kailua
               cottage and what passes clean.
             </p>

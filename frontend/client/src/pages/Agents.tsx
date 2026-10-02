@@ -414,7 +414,7 @@ export default function Agents() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    "25 years closing VA and conventional loans on Oahu — I know what passes appraisal and what doesn't.",
+                    "25 years in mortgage lending — I know what passes appraisal and what doesn't.",
                     "Same-day pre-approvals, not 48-hour callbacks.",
                     "I educate your buyers so you don't have to explain DTI ratios at the showing.",
                     "When the deal gets complicated — VA entitlement restoration, condo approval, leasehold — I handle it. You keep selling.",

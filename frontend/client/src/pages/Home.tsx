@@ -84,7 +84,7 @@ export default function Home() {
     <Layout>
       <SEO
         title="Hawaii Mortgage Education & Lending"
-        description="Hawaii mortgage education from Jay Miller, NMLS #657301, CMG Home Loans: a free homebuying guide, mortgage calculators, and 25+ years of Hawaii mortgage lending experience. Serving Oahu, Maui, Kauai, and the Big Island."
+        description="Hawaii mortgage education from Jay Miller, NMLS #657301, CMG Home Loans: a free homebuying guide, mortgage calculators, and 25 years in mortgage lending. Serving Oahu, Maui, Kauai, and the Big Island."
         url="/"
         image={IMAGES.heroHome}
         imageAlt={IMAGE_ALTS.heroHome}
@@ -254,11 +254,11 @@ export default function Home() {
                   <h2 className="font-display text-2xl md:text-3xl lg:text-4xl text-white">
                     Jay Miller
                   </h2>
-                  <p className="text-sm text-sand/60">{LENDER.experience} Years in Hawaii Mortgages</p>
+                  <p className="text-sm text-sand/60">{LENDER.experience} Years · In Mortgage Lending</p>
                 </div>
               </div>
               <p className="text-sand/70 leading-relaxed mb-6">
-                With 25 years of experience in Hawaii's real estate and mortgage industry, I'm passionate about helping clients confidently achieve their homeownership dreams. Known for being responsive, accessible, and proactive, I work closely with both clients and Realtors to create a smooth, seamless experience from application to closing.
+                With 25 years in mortgage lending, I'm passionate about helping clients confidently achieve their homeownership dreams. Known for being responsive, accessible, and proactive, I work closely with both clients and Realtors to create a smooth, seamless experience from application to closing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <div className="flex items-center gap-3">
@@ -267,7 +267,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Star className="w-5 h-5 text-gold" />
-                  <span className="text-sm text-sand/80">25+ Years in Hawaii Lending</span>
+                  <span className="text-sm text-sand/80">{LENDER.experience} Years · In Mortgage Lending</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-teal" />
@@ -334,7 +334,7 @@ export default function Home() {
               <p className="text-sand/70 leading-relaxed mb-7">
                 A guide to buying a home in Hawaii with your VA loan — entitlement, BAH,
                 condo approvals, leasehold vs. fee simple, and every zero-down strategy that actually
-                works in the islands. Written from 25 years at the closing table.
+                works in the islands. Written from 25 years in mortgage lending.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
                 <a
