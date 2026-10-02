@@ -335,7 +335,7 @@ function generate() {
   lines.push(
     "RealityCents.com is an educational mortgage resource for Hawaii homebuyers, refinancers, and military families. " +
     "All content is authored by Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans (NMLS #657301), " +
-    "a US Army veteran with 25 years of Hawaii mortgage experience. The site specializes in VA loans, conventional loans, " +
+    "a US Army veteran with 25 years in mortgage lending. The site specializes in VA loans, conventional loans, " +
     "FHA loans, and Hawaii condo financing. All guidance reflects Hawaii-specific rules including condo warrantability " +
     "requirements, leasehold property considerations, PC-9 termite inspection mandates, and Honolulu County property tax exemptions."
   );

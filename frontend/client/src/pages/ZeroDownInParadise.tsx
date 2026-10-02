@@ -65,7 +65,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Who is Jay Miller (NMLS #657301)?",
-    a: "Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of Zero Down in Paradise.",
+    a: "Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25 years in mortgage lending. He is the author of Zero Down in Paradise.",
   },
   {
     q: "Can I use a VA loan to buy in Hawaii with zero down?",
@@ -249,7 +249,7 @@ const PAGE_SCHEMAS = [
     name: "Jay Miller",
     jobTitle: "Sales Manager and Certified Mortgage Advisor",
     description:
-      "U.S. Army veteran, Sales Manager and Certified Mortgage Advisor at CMG Home Loans. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
+      "U.S. Army veteran, Sales Manager and Certified Mortgage Advisor at CMG Home Loans. VA loan specialist with 25 years in mortgage lending. NMLS #657301.",
     url: `${SITE.url}/about`,
     image: IMAGES.headshot,
     identifier: {
@@ -396,7 +396,7 @@ export default function ZeroDownInParadise() {
       <section className="bg-sand/60 border-b border-border">
         <div className="container py-6">
           <p className="text-sm text-navy font-body font-medium">
-            Jay Miller · Sales Manager and Certified Mortgage Advisor, {LENDER.company} · NMLS #{LENDER.nmls} · U.S. Army veteran · 25 years Hawaii mortgage experience
+            Jay Miller · Sales Manager and Certified Mortgage Advisor, {LENDER.company} · NMLS #{LENDER.nmls} · U.S. Army veteran · 25 years in mortgage lending
           </p>
           <p className="text-sm text-muted-foreground mt-1">
             Published {BOOK.published} · Paperback, {BOOK.pages} pages · ISBN {BOOK.isbn}
@@ -430,8 +430,8 @@ export default function ZeroDownInParadise() {
               Hawaii is one of the most expensive housing markets in America. For service members arriving
               on PCS orders to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii,
               or other installations across the islands, the sticker shock is real. This book is the field
-              guide to using your VA benefit in that market — written by a 25-year Hawaii lender and Army
-              veteran who has helped hundreds of military families close VA loans here.
+              guide to using your VA benefit in that market — written by an Army
+              veteran with 25 years in mortgage lending who has helped hundreds of military families close VA loans here.
             </p>
             <p>
               It is not a generic mainland VA pamphlet. It covers entitlement and loan limits in a high-cost
@@ -656,8 +656,8 @@ export default function ZeroDownInParadise() {
                 <p className="text-sand/70 leading-relaxed mb-4">
                   <strong className="text-white">Jay Miller</strong> is a Sales Manager and Certified Mortgage
                   Advisor at {LENDER.company} in Honolulu, Hawaii (NMLS #{LENDER.nmls} · Branch NMLS #
-                  {LENDER.branchNmls}). He is a U.S. Army veteran and a
-                  25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo
+                  {LENDER.branchNmls}). He is a U.S. Army veteran with
+                  25 years in mortgage lending, specializing in VA loans, conventional and jumbo
                   financing, and the island-specific issues that trip up mainland playbooks — leasehold,
                   condo approval, and high-cost qualification.
                 </p>

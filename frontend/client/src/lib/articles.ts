@@ -551,7 +551,7 @@ It's not for everyone. But for the right Hawaii household, it's a fundamentally 
 
 Here's what I'd do in your shoes: don't decide based on an article — this one or anyone else's. Run your actual numbers. Take your loan balance, take-home income, and monthly spending to a licensed loan officer, and ask for a side-by-side simulation showing total interest and payoff date against a traditional mortgage. If the lender can't or won't show you that comparison, keep looking.
 
-Curious whether this strategy fits your situation? I've been running these comparisons for Hawaii homeowners for 25 years, and I'm happy to walk through your numbers with you — no pressure, no obligation. Reach out anytime at (808) 429-0811 or jaym@cmghomeloans.com.
+Curious whether this strategy fits your situation? I've been running these comparisons for Hawaii homeowners. With 25 years in mortgage lending, I'm happy to walk through your numbers with you — no pressure, no obligation. Reach out anytime at (808) 429-0811 or jaym@cmghomeloans.com.
 
 ---
 
@@ -953,7 +953,7 @@ Because the alternative is what we see too often: buyers going under contract, p
 
 Online calculators use mainland assumptions — they don't know what an Oahu maintenance fee, leasehold payment, or flood premium does to a qualification. If you're planning to buy in Hawaii, get your DTI mapped against the actual PITIA of the properties you're targeting, with the student loan and program strategy worked out up front. That's the difference between a pre-approval that survives escrow and one that doesn't.
 
-Want to run your numbers against specific properties before you write an offer? I've been mapping DTI against Hawaii's real PITIA numbers for 25 years — maintenance fees, flood zones, leasehold payments, all of it. Reach out anytime at 📞 808-429-0811 or 📧 jaym@cmghomeloans.com. No pressure, no obligation — just your real number.
+Want to run your numbers against specific properties before you write an offer? With 25 years in mortgage lending, I've been mapping DTI against Hawaii's real PITIA numbers — maintenance fees, flood zones, leasehold payments, all of it. Reach out anytime at 📞 808-429-0811 or 📧 jaym@cmghomeloans.com. No pressure, no obligation — just your real number.
 
 ---
 
@@ -4015,7 +4015,7 @@ Judge the specificity of the answers. A lender who has done this on Oahu will an
 
 ## About the author, and why this page exists
 
-I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu — NMLS #657301, Branch NMLS #2475890 — a U.S. Army veteran, and the author of [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](/zero-down-in-paradise). I have originated Hawaii mortgages for 25 years, most of them VA loans for families at Schofield, Pearl Harbor-Hickam, Kaneohe, Fort Shafter, and Tripler. This page is written so you can hold me to the same standard as anyone else: my license is public on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301), my background is on the [About page](/about), and the tools on this site — the [Military Buying Power Calculator](/military-calculator), the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the condo directory — are free whether or not you ever work with me. The [Veterans Guide](/knowledge-base/va-loans-hawaii-military) covers the whole VA process in Hawaii if you want to read before you call anyone.
+I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu — NMLS #657301, Branch NMLS #2475890 — a U.S. Army veteran, and the author of [*Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers*](/zero-down-in-paradise). I have 25 years in mortgage lending, most of it VA loans for families at Schofield, Pearl Harbor-Hickam, Kaneohe, Fort Shafter, and Tripler. This page is written so you can hold me to the same standard as anyone else: my license is public on [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301), my background is on the [About page](/about), and the tools on this site — the [Military Buying Power Calculator](/military-calculator), the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the condo directory — are free whether or not you ever work with me. The [Veterans Guide](/knowledge-base/va-loans-hawaii-military) covers the whole VA process in Hawaii if you want to read before you call anyone.
 
 ## Frequently asked questions
 
@@ -4578,7 +4578,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 ---
 
-*Jay Miller is a 25-year Hawaii VA lending specialist. RealityCents.com is his educational resource for Hawaii military homebuyers, veterans, and first-time buyers navigating one of the most competitive real estate markets in the country.*`,
+*Jay Miller has 25 years in mortgage lending. RealityCents.com is his educational resource for Hawaii military homebuyers, veterans, and first-time buyers navigating one of the most competitive real estate markets in the country.*`,
   },
   {
     slug: "adjustable-rate-mortgage-hawaii",

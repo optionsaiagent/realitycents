@@ -70,7 +70,7 @@ function buildFaqPageBody() {
   return `
     <main>
       <h1>Hawaii Home Loan FAQ</h1>
-      <p>Answers to the most common questions about buying a home and getting a mortgage in Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.</p>
+      <p>Answers to the most common questions about buying a home and getting a mortgage in Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25 years in mortgage lending.</p>
 ${sections}
       ${LICENSE_EDU}
     </main>
@@ -81,7 +81,7 @@ export const STATIC_PAGE_BODIES = {
   "/": `
     <main>
       <h1>Hawaii Mortgage Education &amp; Lending</h1>
-      <p>Hawaii mortgage education and lending from Jay Miller, NMLS #657301, with 25+ years of Hawaii lending experience at CMG Home Loans. Serving Oahu, Maui, Kauai, and the Big Island.</p>
+      <p>Hawaii mortgage education and lending from Jay Miller, NMLS #657301, CMG Home Loans, with 25 years in mortgage lending. Serving Oahu, Maui, Kauai, and the Big Island.</p>
       <section>
         <h2>What We Offer</h2>
         <p>RealityCents provides free mortgage education, professional calculators, and personalized lending services for Hawaii homebuyers. Whether you're a first-time buyer, military service member, or real estate investor, the calculators and articles here are built for Hawaii's real estate market.</p>
@@ -96,7 +96,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>Meet Your Lender</h2>
-        <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
+        <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With 25 years in mortgage lending and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
         <p>NMLS #657301 | CMG Home Loans Branch NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</p>
       </section>
       <section>
@@ -116,10 +116,10 @@ export const STATIC_PAGE_BODIES = {
   "/about": `
     <main>
       <h1>About Jay Miller — Hawaii Mortgage Lender</h1>
-      <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped hundreds of military families use their VA benefits to buy homes in Hawaii, and he also works with first-time buyers using FHA programs.</p>
+      <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With 25 years in mortgage lending, Jay has helped hundreds of military families use their VA benefits to buy homes in Hawaii, and he also works with first-time buyers using FHA programs.</p>
       <section>
         <h2>Background &amp; Experience</h2>
-        <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay combines his military service with 25+ years of Hawaii lending experience. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
+        <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay combines his military service with 25 years in mortgage lending. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
         <p>Jay is a triathlete and passionate advocate for financial literacy. He created RealityCents to provide free, no-pressure mortgage education — because informed buyers make better decisions.</p>
         <p>I also publish the <a href="${BASE_URL}/ai">RealityCents MCP server for AI assistants</a>, so ChatGPT and Claude can run Hawaii VA math on my 2026 numbers.</p>
         <p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, <a href="https://www.amazon.com/dp/B0H7P83W15">available on Amazon</a>.</p>
@@ -130,7 +130,7 @@ export const STATIC_PAGE_BODIES = {
           <li>NMLS #657301</li>
           <li>CMG Home Loans, Branch NMLS #2475890</li>
           <li>Certified Mortgage Advisor (CMA)</li>
-          <li>25+ years Hawaii mortgage lending</li>
+          <li>25 years in mortgage lending</li>
           <li>U.S. Army veteran</li>
           <li>Author of "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers" (ISBN 979-8-9963553-0-3)</li>
           <li>500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
@@ -173,7 +173,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>Individual NMLS:</strong> #657301 (<a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301">verify on NMLS Consumer Access</a>)</li>
           <li><strong>Branch NMLS:</strong> #2475890</li>
           <li><strong>Company NMLS:</strong> #1820</li>
-          <li><strong>Experience:</strong> 25+ years in mortgage lending</li>
+          <li><strong>Experience:</strong> 25 years in mortgage lending</li>
           <li><strong>Military service:</strong> U.S. Army veteran (OIF/OEF)</li>
         </ul>
       </section>
@@ -387,7 +387,7 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>What is Zero Down in Paradise?</h2>
         <p><em>Zero Down in Paradise</em> is Jay Miller’s Hawaii-specific VA loan playbook for military homebuyers (164 pages, July 2026, ISBN 979-8-9963553-0-3).</p>
-        <p>Hawaii is one of the most expensive housing markets in America. For service members arriving on PCS orders to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, or other installations across the islands, the sticker shock is real. This book is the field guide to using your VA benefit in that market — written by a 25-year Hawaii lender and Army veteran who has helped hundreds of military families close VA loans here.</p>
+        <p>Hawaii is one of the most expensive housing markets in America. For service members arriving on PCS orders to Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Hawaii, or other installations across the islands, the sticker shock is real. This book is the field guide to using your VA benefit in that market — written by an Army veteran with 25 years in mortgage lending who has helped hundreds of military families close VA loans here.</p>
         <p>It is not a generic mainland VA pamphlet. It covers entitlement and loan limits in a high-cost county, BAH and COLA as purchasing power, VA condo approval, leasehold vs fee simple, the J-1 inspection contingency, property tax exemptions, IRRRL and assumable strategies, and the funding-fee rules most buyers only hear about at the closing table.</p>
         <p><a href="https://www.amazon.com/dp/B0H7P83W15">Get Zero Down in Paradise on Amazon</a></p>
       </section>
@@ -458,7 +458,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>About the author</h2>
-        <p><strong>Jay Miller</strong> is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
+        <p><strong>Jay Miller</strong> is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran with 25 years in mortgage lending, specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
         <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
       </section>
       <section>
@@ -467,7 +467,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>What is Zero Down in Paradise?</dt>
           <dd><em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em> is a 164-page paperback (July 2026, ISBN 979-8-9963553-0-3) by Jay Miller that explains how to buy a home in Hawaii using a VA loan.</dd>
           <dt>Who is Jay Miller (NMLS #657301)?</dt>
-          <dd>Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of <em>Zero Down in Paradise</em>.</dd>
+          <dd>Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25 years in mortgage lending. He is the author of <em>Zero Down in Paradise</em>.</dd>
           <dt>Can I use a VA loan to buy in Hawaii with zero down?</dt>
           <dd>Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply.</dd>
           <dt>Is there a VA loan limit in Hawaii?</dt>
@@ -910,7 +910,7 @@ for (const [route, data] of Object.entries(VA_BASES)) {
       </section>
       <section>
         <h2>Get Started</h2>
-        <p>Jay Miller, NMLS #657301, specializes in VA loans for Hawaii military families. 25+ years experience, U.S. Army veteran. Call (808) 429-0811 or visit <a href="${BASE_URL}">realitycents.com</a> to get pre-approved.</p>
+        <p>Jay Miller, NMLS #657301, specializes in VA loans for Hawaii military families. 25 years in mortgage lending, U.S. Army veteran. Call (808) 429-0811 or visit <a href="${BASE_URL}">realitycents.com</a> to get pre-approved.</p>
       </section>
     </main>
   `;

@@ -126,7 +126,7 @@ export default function Guide() {
               Everything You Need to Buy a Home in Hawaii
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Written with over 25 years of Hawaii mortgage experience, this guide covers the complete homebuying journey with island-specific insights you won't find anywhere else.
+              Written with 25 years in mortgage lending, this guide covers the complete homebuying journey with island-specific insights you won't find anywhere else.
             </p>
           </div>
 

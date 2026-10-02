@@ -151,7 +151,7 @@ const PAGE_SCHEMA = [
     "@id": "https://realitycents.com/#business",
     name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
     description:
-      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military medical staff PCS'ing to Tripler Army Medical Center. 25+ years of Hawaii mortgage lending experience.",
+      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military medical staff PCS'ing to Tripler Army Medical Center. 25 years in mortgage lending.",
     url: "https://realitycents.com/va-loan-tripler",
     telephone: "(808) 429-0811",
     email: "jaym@cmghomeloans.com",
@@ -560,7 +560,7 @@ export default function VALoanTripler() {
             <p className="leading-relaxed">
               I'm Jay Miller, NMLS #657301, with CMG Home Loans in Honolulu. I'm an Army veteran
               — my wife Michelle and I both served, and we chose to plant roots here after our
-              time in uniform. I've been doing VA loans on Oahu for 25 years. I work with Tripler
+              time in uniform. I have 25 years in mortgage lending. I work with Tripler
               staff regularly — doctors, nurses, and support personnel. Your income structure is
               often non-standard, and I know how to document it for VA underwriting.
             </p>
