@@ -72,7 +72,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$1M–$1.5M",
     priceTH: "$600K–$900K (condo/townhome)",
     whyFamilies:
-      "Beach town, walkable, top schools, highly desirable. Lanikai and Kailua Beach are world-class. Vibrant downtown with restaurants, shops, and farmers market.",
+      "Beach town with walkable areas. Lanikai and Kailua Beach are world-class. Vibrant downtown with restaurants, shops, and farmers market.",
     vaNote:
       "Higher price point — may need full entitlement. Some condos need VA approval check. Mostly fee simple single-family.",
   },
