@@ -689,7 +689,7 @@ export default function Calculator() {
 
           {/* Disclaimer */}
           <div className="print-note">
-            This estimate is for informational purposes only and does not constitute a loan commitment or guarantee of financing. Actual rates, payments, taxes, and insurance costs may vary. Contact Jay Miller (NMLS #{LENDER.nmls}) at {LENDER.phone} for a personalized quote. {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Lender.
+            This estimate is for informational purposes only and does not constitute a loan commitment or guarantee of financing. Actual rates, payments, taxes, and insurance costs may vary. Contact Jay Miller (NMLS #{LENDER.nmls}) at {LENDER.phone} for a personalized quote. {LENDER.company} NMLS #{LENDER.companyNmls}. Equal Housing Opportunity.
           </div>
         </div>
       </div>

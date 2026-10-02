@@ -267,7 +267,7 @@ export default function VAEligibilityCalculator() {
 
           <p className="text-xs text-muted-foreground mt-10 leading-relaxed max-w-3xl">
             <Shield className="w-3.5 h-3.5 inline mr-1 text-teal" />
-            Equal Housing Lender. Educational content, not a commitment to lend. All loans subject to
+            Equal Housing Opportunity. Educational content, not a commitment to lend. All loans subject to
             credit approval and property eligibility. Approvals are not guaranteed. $0-down VA purchases
             require full entitlement (or remaining capacity) and lender approval. NMLS Consumer Access:{" "}
             <a

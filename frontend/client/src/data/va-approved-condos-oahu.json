@@ -3,8 +3,8 @@
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "HONOLULU",
   "state": "HI",
-  "totalApproved": 1782,
-  "withoutConditions": 1537,
+  "totalApproved": 1781,
+  "withoutConditions": 1536,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -25,7 +25,6 @@
     "Makiki/Manoa",
     "McCully/Moiliili",
     "Mililani",
-    "Other",
     "Pearl City",
     "Salt Lake/Moanalua",
     "Wahiawa",
@@ -561,7 +560,7 @@
       "address": "1301 CALIFORNIA AVENUE",
       "city": "WAHIAWA",
       "state": "HI",
-      "zipCode": "96876",
+      "zipCode": "96786",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": "2026-09-23",
@@ -2017,12 +2016,12 @@
       "address": "",
       "city": "KAILUA",
       "state": "HI",
-      "zipCode": "96737",
+      "zipCode": "96734",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": null,
       "approvalRequestDate": "2010-08-10",
-      "neighborhood": "Other"
+      "neighborhood": "Kailua"
     },
     {
       "id": 402185,
@@ -2185,12 +2184,12 @@
       "address": "285 KIHAPAI STREET",
       "city": "KAILUA, OAHU",
       "state": "HI",
-      "zipCode": "96737",
+      "zipCode": "96734",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": null,
       "approvalRequestDate": null,
-      "neighborhood": "Other"
+      "neighborhood": "Kailua"
     },
     {
       "id": 321095,
@@ -12847,20 +12846,6 @@
       "neighborhood": "Kapolei"
     },
     {
-      "id": 635240,
-      "vaId": "002178",
-      "name": "KAWENA AT MEHANA",
-      "address": "460 KAMAAHA",
-      "city": "KAPOLEI",
-      "state": "HI",
-      "zipCode": "96707",
-      "county": "HONOLULU",
-      "status": "Accepted Without Conditions",
-      "reviewDate": "2023-04-07",
-      "approvalRequestDate": "2023-03-13",
-      "neighborhood": "Kapolei"
-    },
-    {
       "id": 339678,
       "vaId": "FHA270",
       "name": "KE AINA KAI",
@@ -15667,12 +15652,12 @@
       "address": "84-686 FARRINGTON HWY",
       "city": "WAIANAE",
       "state": "HI",
-      "zipCode": "96892",
+      "zipCode": "96792",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": "2016-09-19",
       "approvalRequestDate": "2016-09-01",
-      "neighborhood": "Other"
+      "neighborhood": "Waianae/Makaha"
     },
     {
       "id": 81144,
@@ -16969,12 +16954,12 @@
       "address": "HAWAII KAI DRIVE",
       "city": "HONOLULU",
       "state": "HI",
-      "zipCode": "96732",
+      "zipCode": "96825",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": "2009-02-24",
       "approvalRequestDate": "2009-02-24",
-      "neighborhood": "Other"
+      "neighborhood": "Hawaii Kai"
     },
     {
       "id": 560672,
@@ -20315,12 +20300,12 @@
       "address": "646 KAHA & 814 KAIPII ST",
       "city": "KAILUA",
       "state": "HI",
-      "zipCode": "96673",
+      "zipCode": "96734",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": "2020-10-02",
       "approvalRequestDate": "2020-09-18",
-      "neighborhood": "Other"
+      "neighborhood": "Kailua"
     },
     {
       "id": 581304,
@@ -24277,12 +24262,12 @@
       "address": "98-310 KAM HWY",
       "city": "AIEA",
       "state": "HI",
-      "zipCode": "69701",
+      "zipCode": "96701",
       "county": "HONOLULU",
       "status": "Accepted Without Conditions",
       "reviewDate": "2000-01-01",
       "approvalRequestDate": "2000-01-01",
-      "neighborhood": "Other"
+      "neighborhood": "Aiea"
     },
     {
       "id": 634890,

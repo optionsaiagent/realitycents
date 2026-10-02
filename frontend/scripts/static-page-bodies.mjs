@@ -494,7 +494,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Get the playbook</h2>
         <p><a href="https://www.amazon.com/dp/B0H7P83W15">Buy Zero Down in Paradise on Amazon</a></p>
         <p>Questions about a Hawaii VA purchase? Jay Miller, NMLS #657301 · (808) 429-0811 · jaym@cmghomeloans.com</p>
-        <p><em>Equal Housing Lender. This is educational content, not a commitment to lend. All loans subject to credit approval and property eligibility. Approvals are not guaranteed. $0-down VA purchases require full entitlement and lender approval. NMLS Consumer Access: <a href="https://www.nmlsconsumeraccess.org">nmlsconsumeraccess.org</a>.</em></p>
+        <p><em>Equal Housing Opportunity. This is educational content, not a commitment to lend. All loans subject to credit approval and property eligibility. Approvals are not guaranteed. $0-down VA purchases require full entitlement and lender approval. NMLS Consumer Access: <a href="https://www.nmlsconsumeraccess.org">nmlsconsumeraccess.org</a>.</em></p>
       </section>
     </main>
   `,

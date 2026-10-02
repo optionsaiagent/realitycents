@@ -13,6 +13,12 @@
  * Majority wins. On a tie the city signal decides when it is not null;
  * otherwise the ZIP signal decides (a null ZIP is not Oahu).
  *
+ * Before that vote, correctZip() applies ZIP_OVERRIDES. An override
+ * changes the ZIP only while the record's 5-digit ZIP still equals the
+ * listed (wrong) value, and the corrected ZIP is what classifyOahu sees
+ * and what is written. After the Oahu filter, dedupeByVaId() keeps one
+ * record per VA ID: latest review date, then the higher record id.
+ *
  * Neighborhoods are assigned by zip code using the mapping already present
  * in the current data file (zip → neighborhood is unique); unseen zips fall
  * back to the title-cased city name.
@@ -23,7 +29,7 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { classifyOahu, isOahu } from "./lib/oahu-filter.mjs";
+import { classifyOahu, isOahu, correctZip, dedupeByVaId } from "./lib/oahu-filter.mjs";
 
 const SCRIPT_DIR = path.dirname(new URL(import.meta.url).pathname);
 const FRONTEND_DIR = path.resolve(SCRIPT_DIR, "..");
@@ -57,11 +63,32 @@ if (!Array.isArray(all) || all.length < 2000) {
   process.exit(1);
 }
 
-// ── Filter + map ───────────────────────────────────────────────────────────
+// ── Correct ZIPs, then filter + map ───────────────────────────────────────
+// correctZip runs before classifyOahu so the Oahu vote and the written
+// zipCode (and its neighborhood lookup) all use the corrected ZIP.
 const current = JSON.parse(readFileSync(DATA_PATH, "utf8"));
 const zipToNeighborhood = new Map(current.condos.map(c => [c.zipCode, c.neighborhood]));
 
-const accepted = all.filter(
+const overrideLogs = [];
+const correctedAll = all.map(r => {
+  const listed = r.zipCode;
+  const corrected = correctZip(r.developmentBusinessId, listed);
+  if (corrected === listed) return r;
+  const listedFive = String(listed ?? "").replace(/\D/g, "").slice(0, 5);
+  overrideLogs.push({
+    id: String(r.developmentBusinessId ?? ""),
+    name: r.firstLineName ?? "",
+    from: listedFive || String(listed ?? ""),
+    to: corrected,
+  });
+  return { ...r, zipCode: corrected };
+});
+overrideLogs.sort((a, b) => a.id.localeCompare(b.id));
+for (const o of overrideLogs) {
+  console.log(`ZIP override: ${o.id} | ${o.name} | ${o.from} -> ${o.to}`);
+}
+
+const accepted = correctedAll.filter(
   r => isOahu(r) && (r.dispositionCode ?? "").startsWith("Accepted")
 );
 if (accepted.length < 1500 || accepted.length > 2200) {
@@ -69,7 +96,19 @@ if (accepted.length < 1500 || accepted.length > 2200) {
   process.exit(1);
 }
 
-const condos = accepted
+const { kept: deduped, dropped } = dedupeByVaId(
+  accepted,
+  r => r.developmentBusinessId ?? "",
+  r => r.reviewCompletedDate,
+  r => r.id,
+);
+dropped.sort((a, b) => a.vaId.localeCompare(b.vaId) || String(a.dropped?.id ?? "").localeCompare(String(b.dropped?.id ?? "")));
+for (const d of dropped) {
+  const name = d.dropped.firstLineName ?? d.kept.firstLineName ?? "";
+  console.log(`Dropped duplicate: ${d.vaId} | ${name} | kept ${d.kept.id} | dropped ${d.dropped.id}`);
+}
+
+const condos = deduped
   .map(r => {
     const zip = (r.zipCode ?? "").slice(0, 5);
     const baseCity = titleCase((r.city ?? "").split(",")[0].trim());
@@ -120,7 +159,7 @@ console.log(
 // Accepted projects whose county vote contradicts the island decision.
 // Printed on every refresh so a later commit log shows the overrides
 // (Oahu projects VA tagged HAWAII, and neighbor-island projects VA tagged HONOLULU).
-const disagreements = all
+const disagreements = correctedAll
   .filter(r => (r.dispositionCode ?? "").startsWith("Accepted"))
   .map(r => ({ r, cls: classifyOahu(r) }))
   .filter(({ cls }) =>
