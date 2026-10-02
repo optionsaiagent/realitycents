@@ -259,7 +259,7 @@ function buildRichEmailHtml(params: {
       <div style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:14px 24px;text-align:center;">
         <p style="color:#64748b;font-size:11px;line-height:1.6;margin:0;">
           Estimates for educational purposes only. Not a commitment to lend.<br/>
-          Jay Miller &middot; Certified Mortgage Advisor &middot; NMLS #657301 &middot; CMG Home Loans NMLS #2475890<br/>
+          Jay Miller &middot; Sales Manager and Certified Mortgage Advisor &middot; NMLS #657301 &middot; CMG Home Loans NMLS #2475890<br/>
           <a href="https://realitycents.com" style="color:#0f766e;text-decoration:none;">realitycents.com</a> &middot; (808) 429-0811
         </p>
       </div>
@@ -310,7 +310,7 @@ function buildFallbackEmailHtml(params: {
       </div>
       <hr style="border:none;border-top:1px solid #e2e8f0;margin:32px 0 16px;"/>
       <p style="color:#94a3b8;font-size:12px;line-height:1.5;margin:0;text-align:center;">
-        Jay Miller &middot; Certified Mortgage Advisor &middot; NMLS #657301<br/>
+        Jay Miller &middot; Sales Manager and Certified Mortgage Advisor &middot; NMLS #657301<br/>
         CMG Home Loans &middot; Honolulu, Hawaii<br/><br/>
         <a href="https://realitycents.com" style="color:#0f766e;text-decoration:none;">realitycents.com</a>
       </p>
@@ -417,7 +417,7 @@ export async function sendGuideEmail(params: {
         <p>Your copy of The Oahu Homebuyer's Guide is attached — 46 pages covering neighborhoods, maintenance fees, loan programs, escrow, and closing on Oahu, updated August 2026.</p>
         <p>If the attachment gives you any trouble, here's a direct link: <a href="${downloadUrl}" style="color:#16697a;">${"realitycents.com/files/guides/oahu-homebuyers-guide.pdf"}</a></p>
         <p>When a question comes up that the guide doesn't answer — and one always does — just reply to this email. I read every one.</p>
-        <p>Aloha,<br>Jay Miller<br>NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890<br>(808) 429-0811 | <a href="https://www.jay-miller.com" style="color:#6b7280;">www.jay-miller.com</a></p>
+        <p>Aloha,<br>Jay Miller<br>NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890<br>(808) 429-0811 | <a href="https://jay-miller.com" style="color:#6b7280;">www.jay-miller.com</a></p>
       </div>
     `,
   });
