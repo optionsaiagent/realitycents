@@ -82,7 +82,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$800K–$1.1M",
     priceTH: null,
     whyFamilies:
-      "Quiet, established, good schools. Moanalua Gardens nearby. Suburban feel minutes from both Fort Shafter and H-1. Popular with families.",
+      "Quiet, established. Moanalua Gardens nearby. Suburban feel minutes from both Fort Shafter and H-1.",
     vaNote:
       "Mostly fee simple single-family — strong for VA. Clean appraisals on well-maintained homes.",
   },
@@ -102,7 +102,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$750K–$1.1M",
     priceTH: null,
     whyFamilies:
-      "More space, suburban feel, good schools. Pearlridge Mall, Pearl Highlands nearby. Larger lots than Salt Lake or Kalihi. Family-oriented neighborhoods.",
+      "More space, suburban feel. Pearlridge Mall, Pearl Highlands nearby. Larger lots than Salt Lake or Kalihi.",
     vaNote:
       "Mix of properties — confirm fee simple on older properties. Some leasehold exists in this area.",
   },
@@ -216,7 +216,7 @@ export default function VALoanFortShafter() {
     <Layout>
       <SEO
         title="VA Loan Guide for Fort Shafter — Buy a Home on Oahu with $0 Down"
-        description="PCS'ing to Fort Shafter? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Salt Lake, Moanalua, Kalihi, Aiea, Manoa/Makiki), VA condo rules, and $0-down purchase options for USARPAC Army personnel on Oahu."
+        description="PCS'ing to Fort Shafter? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Salt Lake, Moanalua, Kalihi, Aiea, Manoa/Makiki), VA condo rules, and $0-down purchase options for USARPAC Army personnel on Oahu."
         url="https://realitycents.com/va-loan-fort-shafter"
         keywords="VA loan Fort Shafter, buying a home near Fort Shafter, VA loan Honolulu, USARPAC home loan, military home loan Honolulu"
         type="website"
@@ -394,8 +394,7 @@ export default function VALoanFortShafter() {
 
           <div className="mt-6 p-5 bg-teal/5 border border-teal/20 rounded-lg">
             <p className="text-sm font-body text-foreground/80 leading-relaxed">
-              The gap between BAH and PITI is real — but context matters. Hawaii's property tax
-              rate of 0.35% is the lowest in the country. On a $900,000 home, that's roughly
+              The gap between BAH and PITI is real — but context matters. Honolulu's owner-occupant property tax rate of about 0.35% is among the lowest in the nation. On a $900,000 home, that's roughly
               $263/month in property tax — compare that to $845/month in San Diego on the same
               home. COLA also supplements your take-home in ways that make the math more workable
               than it first appears.
@@ -427,7 +426,7 @@ export default function VALoanFortShafter() {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-            Best Neighborhoods for Fort Shafter Personnel
+            Neighborhoods Near Fort Shafter: Commute, Housing, and Price
           </h2>
           <p className="text-foreground/70 font-body mb-8">
             Fort Shafter personnel tend to be more senior — E-7+ and field-grade officers. The
@@ -471,6 +470,10 @@ export default function VALoanFortShafter() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6 text-sm text-foreground/70 font-body">
+            For school assignments, use the <a href="https://www.hawaiipublicschools.org" className="text-teal hover:underline" target="_blank" rel="noopener noreferrer">Hawaii State Department of Education school finder</a>.
+          </p>
 
           <div className="mt-8 p-4 bg-navy/5 border border-navy/10 rounded-lg dark:bg-white/5 dark:border-white/10">
             <p className="text-sm font-body text-foreground/70 italic">

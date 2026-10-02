@@ -47,7 +47,7 @@ const values = [
   {
     icon: Users,
     title: "Strong Agent Relationships",
-    description: "I've built a trusted network of real estate agents across the Hawaiian Islands, ensuring smooth transactions and effective communication throughout the homebuying process.",
+    description: "I work with a network of real estate agents across the Hawaiian Islands, ensuring smooth transactions and effective communication throughout the homebuying process.",
   },
   {
     icon: Shield,
@@ -76,11 +76,11 @@ export default function About() {
         title="About Jay Miller — Hawaii Mortgage Lender"
         description="Meet Jay Miller, NMLS #657301 — a Hawaii mortgage loan originator with 25+ years of experience at CMG Home Loans. U.S. Army veteran, triathlete, and passionate advocate for informed homebuyers across the Hawaiian Islands."
         url="/about"
-        keywords="Jay Miller mortgage, Hawaii mortgage lender, CMG Home Loans Honolulu, mortgage loan originator Hawaii, NMLS 657301, Hawaii home loan expert"
+        keywords="Jay Miller mortgage, Hawaii mortgage lender, CMG Home Loans Honolulu, mortgage loan originator Hawaii, NMLS 657301, Hawaii home loan officer"
       />
       <PageHero
         title="About Jay Miller"
-        subtitle="Over 25 years of dedicated mortgage expertise, helping Hawaii families achieve the dream of homeownership."
+        subtitle="25+ years of mortgage lending experience, helping Hawaii buyers finance their homes."
         image={IMAGES.heroAbout}
       />
 
@@ -134,7 +134,7 @@ export default function About() {
                   <Link href={BOOK.pageUrl} className="text-teal font-body font-semibold hover:underline">
                     <em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em>
                   </Link>{" "}
-                  (July 2026) — the definitive guide to using your VA benefit to buy a home in Hawaii, drawn from 25 years of helping military families at the closing table.
+                  (July 2026) — a guide to using your VA benefit to buy a home in Hawaii, drawn from 25 years of helping military families at the closing table.
                 </p>
                 <p>
                   I also publish the{" "}

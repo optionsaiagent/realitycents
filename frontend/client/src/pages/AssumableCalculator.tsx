@@ -774,8 +774,8 @@ export default function AssumableCalculator({ isEmbedded = false }: { isEmbedded
         <ContactActions
           variant="compact"
           kicker="Ready to Explore an Assumption?"
-          headline="Get Expert Guidance on Loan Assumptions"
-          subtext="25+ years of Hawaii lending experience. Let's structure the best path forward."
+          headline="Get Guidance on Loan Assumptions"
+          subtext="25+ years of Hawaii lending experience. Let's look at the options for your situation."
           preApprovalLabel="Get Started"
           hideEmail
         />

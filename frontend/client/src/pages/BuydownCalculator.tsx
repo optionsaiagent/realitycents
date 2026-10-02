@@ -605,7 +605,7 @@ export default function BuydownCalculator() {
                 </tr>
               ))}
               <tr className="buydown-total-row">
-                <td className="buydown-total-label" colSpan={5}>Best Value: 2/1 Buydown (most popular)</td>
+                <td className="buydown-total-label" colSpan={5}>Example shown: 2/1 Buydown</td>
                 <td className="buydown-total-value">{fmt(buydowns[1]?.totalSellerCredit || 0)}</td>
               </tr>
             </tbody>
@@ -648,8 +648,8 @@ export default function BuydownCalculator() {
 
           {/* Best Option */}
           <div className="print-best-option">
-            <div className="best-label">Recommended Option</div>
-            <div className="best-name">2/1 Buydown — Most Popular Choice</div>
+            <div className="best-label">Example Option</div>
+            <div className="best-name">2/1 Buydown</div>
             <div className="best-detail">Seller credit needed: {fmt(buydowns[1]?.totalSellerCredit || 0)} · Year 1 savings: {fmtExact(buydowns[1]?.year1MonthlySavings || 0)}/mo · Year 1 rate: {fmtPct(buydowns[1]?.years[0]?.buydownRate || 0)}</div>
           </div>
 

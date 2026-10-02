@@ -211,7 +211,7 @@ function generate() {
   // ── File header ──
   lines.push("# RealityCents — Full Knowledge Base");
   lines.push("");
-  lines.push("> Hawaii mortgage education and VA loan expertise by Jay Miller, NMLS #657301, CMG Home Loans.");
+  lines.push("> Hawaii mortgage and VA loan education by Jay Miller, NMLS #657301, CMG Home Loans.");
   lines.push("> Plain-text dump of all knowledge base articles, guide chapters, and Hawaii-specific topic guides.");
   lines.push("> Optimized for AI ingestion. For the curated index, see https://realitycents.com/llms.txt");
   lines.push(">");

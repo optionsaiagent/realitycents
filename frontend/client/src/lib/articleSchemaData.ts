@@ -458,7 +458,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
   },
   "how-to-choose-hawaii-va-lender": {
     wordCount: 1100,
-    keywords: "best VA loan lender Hawaii, how to choose VA lender Hawaii, VA lender Oahu, VA loan specialist Honolulu, VA condo approval lender Hawaii, leasehold VA loan lender, NMLS consumer access lender",
+    keywords: "VA loan lender Hawaii, how to choose VA lender Hawaii, VA lender Oahu, VA loan specialist Honolulu, VA condo approval lender Hawaii, leasehold VA loan lender, NMLS consumer access lender",
     about: [
       { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
       { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
@@ -516,7 +516,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
     faqSchema: [
       { question: "How much can a seller contribute toward closing costs in Hawaii?", answer: "It depends on your loan type. VA loans allow up to 4% of the purchase price. FHA loans allow up to 6%. Conventional loans allow 3% (less than 10% down), 6% (10\u201324.99% down), or 9% (25%+ down). These limits apply to the lower of the purchase price or appraised value." },
       { question: "Is it better to ask for a price reduction or seller concessions in Hawaii?", answer: "In most cases, seller concessions deliver more value than a price reduction. A $20,000 price reduction saves about $126/month on a $900K home at 6.5%. The same $20,000 as a 2/1 buydown saves approximately $1,000/month in Year 1 and $500/month in Year 2. For buyers who need cash flow relief in the early years, concessions almost always win." },
-      { question: "Can a VA buyer ask the seller to pay the VA funding fee?", answer: "Yes. The VA funding fee can be included in the seller's 4% concession limit. On a $750,000 purchase, the first-time use funding fee is $16,125 (2.15%). The seller can cover this plus additional closing costs, all within the 4% cap of $30,000. This is one of the most powerful uses of VA seller concessions." },
+      { question: "Can a VA buyer ask the seller to pay the VA funding fee?", answer: "Yes. The VA funding fee can be included in the seller's 4% concession limit. On a $750,000 purchase, the first-time use funding fee is $16,125 (2.15%). The seller can cover this plus additional closing costs, all within the 4% cap of $30,000. This is a common, high-value use of VA seller concessions." },
     ],
   },
   "income-needed-buy-home-hawaii-2026": {

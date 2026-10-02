@@ -40,7 +40,7 @@ const features = [
   {
     icon: BookOpen,
     title: "Knowledge Base",
-    description: "Expert articles on Hawaii mortgages, loan types, credit tips, and the homebuying process.",
+    description: "Articles on Hawaii mortgages, loan types, credit tips, and the homebuying process.",
     href: "/knowledge-base",
     color: "bg-gold/10 text-gold",
   },
@@ -84,7 +84,7 @@ export default function Home() {
     <Layout>
       <SEO
         title="Hawaii Mortgage Education & Lending"
-        description="Hawaii's trusted mortgage resource. Jay Miller, NMLS #657301, CMG Home Loans — expert mortgage guidance, free homebuying guide, mortgage calculator, and 25+ years of Hawaii real estate expertise. Serving Oahu, Maui, Kauai, and the Big Island."
+        description="Hawaii mortgage education from Jay Miller, NMLS #657301, CMG Home Loans: a free homebuying guide, mortgage calculators, and 25+ years of Hawaii mortgage lending experience. Serving Oahu, Maui, Kauai, and the Big Island."
         url="/"
         image={IMAGES.heroHome}
         imageAlt={IMAGE_ALTS.heroHome}
@@ -159,7 +159,7 @@ export default function Home() {
         <div className="container relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-body font-semibold uppercase tracking-[0.2em] text-gold mb-4">
-              Hawaii's Trusted Mortgage Resource
+              Hawaii Mortgage Education
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-[1.1]">
               Your Path to<br />
@@ -167,7 +167,7 @@ export default function Home() {
               in Paradise
             </h1>
             <p className="text-lg md:text-xl text-sand/80 leading-relaxed mb-8 max-w-lg">
-              Expert mortgage guidance, powerful tools, and personalized service to help you navigate Hawaii's unique real estate market.
+              Plain-language mortgage education, free calculators, and one-on-one guidance from a licensed Honolulu loan officer for Hawaii's real estate market.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
@@ -267,7 +267,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Star className="w-5 h-5 text-gold" />
-                  <span className="text-sm text-sand/80">Top-Rated Lender</span>
+                  <span className="text-sm text-sand/80">25+ Years in Hawaii Lending</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-teal" />
@@ -332,7 +332,7 @@ export default function Home() {
                 {BOOK.subtitle}
               </p>
               <p className="text-sand/70 leading-relaxed mb-7">
-                The definitive guide to buying a home in Hawaii with your VA loan — entitlement, BAH,
+                A guide to buying a home in Hawaii with your VA loan — entitlement, BAH,
                 condo approvals, leasehold vs. fee simple, and every zero-down strategy that actually
                 works in the islands. Written from 25 years at the closing table.
               </p>
@@ -470,7 +470,7 @@ export default function Home() {
                   <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-gold">For Real Estate Agents</span>
                 </div>
                 <h3 className="font-display text-2xl lg:text-3xl text-white mb-3">
-                  Partner With a Trusted Lender
+                  Partner With a Local Lender
                 </h3>
                 <p className="text-sand/70 text-sm mb-5 max-w-md">
                   Access our exclusive agent CRM, co-branded marketing materials, and dedicated support to grow your business.

@@ -64,7 +64,7 @@ export default function Contact() {
       />
       <PageHero
         title="Get in Touch"
-        subtitle="Have questions about mortgages in Hawaii? Jay Miller is here to help with personalized guidance and expert advice."
+        subtitle="Have questions about mortgages in Hawaii? Jay Miller is here to help with personalized guidance for your situation."
         image={IMAGES.heroAbout}
         compact
       />

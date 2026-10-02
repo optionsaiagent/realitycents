@@ -73,7 +73,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$700K–$1M",
     priceTH: null,
     whyFamilies:
-      "Navy/AF families love it. Newer construction, Ocean Pointe, Hoakalei. Beach access, great schools, family-oriented community.",
+      "Newer construction, Ocean Pointe, Hoakalei. Beach access.",
     vaNote:
       "Mostly fee simple, newer builds pass VA appraisal easily. Strong resale to next wave of military buyers.",
   },
@@ -83,7 +83,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$750K–$1.05M",
     priceTH: null,
     whyFamilies:
-      "Oahu's second city — great schools, newer developments, Ka Makana Ali'i mall, growing restaurant scene. Ho'opili and new phases actively seek VA approval.",
+      "Oahu's second city, newer developments, Ka Makana Ali'i mall, growing restaurant scene. Ho'opili and new phases actively seek VA approval.",
     vaNote:
       "Ho'opili and new phases actively pursue VA approval. Mostly fee simple, newer construction means clean appraisals.",
   },
@@ -93,7 +93,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$750K–$1M",
     priceTH: null,
     whyFamilies:
-      "Established, close to base, good schools, larger lots, local community feel. Pearl City Shopping Center and Pearl Highlands nearby.",
+      "Established, close to base, larger lots, local community feel. Pearl City Shopping Center and Pearl Highlands nearby.",
     vaNote:
       "Mix of older and newer homes — MPR awareness on older stock. Budget for pre-inspection on 1960s–70s homes.",
   },
@@ -217,7 +217,7 @@ export default function VALoanPearlHarbor() {
     <Layout>
       <SEO
         title="VA Loan Guide for Pearl Harbor-Hickam — Buy a Home on Oahu with $0 Down"
-        description="PCS'ing to Joint Base Pearl Harbor-Hickam? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Ewa Beach, Kapolei, Pearl City, Aiea, Salt Lake), VA condo rules, and $0-down purchase options for Navy and Air Force families on Oahu."
+        description="PCS'ing to Joint Base Pearl Harbor-Hickam? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Ewa Beach, Kapolei, Pearl City, Aiea, Salt Lake), VA condo rules, and $0-down purchase options for Navy and Air Force families on Oahu."
         url="https://realitycents.com/va-loan-pearl-harbor-hickam"
         keywords="VA loan Pearl Harbor, VA loan Hickam, buying a home near Pearl Harbor, Navy home loan Hawaii, Air Force home loan Oahu"
         type="website"
@@ -397,8 +397,7 @@ export default function VALoanPearlHarbor() {
 
           <div className="mt-6 p-5 bg-teal/5 border border-teal/20 rounded-lg">
             <p className="text-sm font-body text-foreground/80 leading-relaxed">
-              The gap between BAH and PITI is real — but context matters. Hawaii's property tax
-              rate of 0.35% is the lowest in the country. On a $900,000 home, that's roughly
+              The gap between BAH and PITI is real — but context matters. Honolulu's owner-occupant property tax rate of about 0.35% is among the lowest in the nation. On a $900,000 home, that's roughly
               $263/month in property tax — compare that to $845/month in San Diego on the same
               home. COLA also supplements your take-home in ways that make the math more workable
               than it first appears.
@@ -430,7 +429,7 @@ export default function VALoanPearlHarbor() {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-            Best Neighborhoods for Pearl Harbor-Hickam Families
+            Neighborhoods Near Pearl Harbor-Hickam: Commute, Housing, and Price
           </h2>
           <p className="text-foreground/70 font-body mb-8">
             Pearl Harbor-Hickam families have the widest neighborhood spread on the island. The
@@ -474,6 +473,10 @@ export default function VALoanPearlHarbor() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6 text-sm text-foreground/70 font-body">
+            For school assignments, use the <a href="https://www.hawaiipublicschools.org" className="text-teal hover:underline" target="_blank" rel="noopener noreferrer">Hawaii State Department of Education school finder</a>.
+          </p>
 
           <div className="mt-8 p-4 bg-navy/5 border border-navy/10 rounded-lg dark:bg-white/5 dark:border-white/10">
             <p className="text-sm font-body text-foreground/70 italic">

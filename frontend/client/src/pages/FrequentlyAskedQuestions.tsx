@@ -394,7 +394,7 @@ export default function FrequentlyAskedQuestions() {
     <Layout>
       <SEO
         title="Hawaii Home Loan FAQ"
-        description="Answers to the top 20 questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Expert answers from a local mortgage professional with 25 years of experience."
+        description="Answers to 20 common questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience."
         url="/frequently-asked-questions"
         keywords="Hawaii mortgage FAQ, Honolulu home loan questions, VA loan Hawaii, conforming loan limits Honolulu, first-time homebuyer Hawaii, condo warrantability, leasehold property Hawaii"
         schema={schemas}
@@ -402,7 +402,7 @@ export default function FrequentlyAskedQuestions() {
 
       <PageHero
         title="Hawaii Home Loan FAQ"
-        subtitle="Expert answers to the most common questions about buying a home, qualifying for a mortgage, and navigating Hawaii's unique real estate market."
+        subtitle="Answers to common questions about buying a home, qualifying for a mortgage, and navigating Hawaii's unique real estate market."
         image={IMAGES.heroHome}
         compact
       />
@@ -509,7 +509,7 @@ export default function FrequentlyAskedQuestions() {
       <ContactActions
         variant="full"
         headline="Still Have Questions?"
-        subtext="Hawaii's mortgage market has unique nuances that generic answers can't fully address. Get personalized guidance from a local expert with 25 years of Hawaii mortgage experience."
+        subtext="Hawaii's mortgage market has unique nuances that generic answers can't fully address. Get personalized guidance from a Honolulu loan officer with 25+ years of Hawaii mortgage experience."
         preApprovalLabel="Start Your Pre-Approval"
         hideEmail
       />

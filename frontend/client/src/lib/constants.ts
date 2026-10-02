@@ -3,7 +3,7 @@
 
 export const SITE = {
   name: "RealityCents",
-  tagline: "Your Trusted Mortgage Resource in Hawaii",
+  tagline: "Hawaii Mortgage Education and Lending",
   description: "Mortgage education, tools, and lending services for Hawaii homebuyers and real estate professionals.",
   url: "https://realitycents.com",
 } as const;

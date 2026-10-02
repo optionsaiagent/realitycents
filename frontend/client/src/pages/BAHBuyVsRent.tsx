@@ -80,8 +80,8 @@ const HIDDEN_ADVANTAGES = [
     description: "BAH is tax-free. When you use it for a mortgage, you're building equity with dollars that don't count as taxable income. That's a huge advantage over renting.",
   },
   {
-    title: "Hawaii's Lowest Property Tax Rate",
-    description: `At ${DEFAULT_PROPERTY_TAX_RATE}%, Honolulu County has the lowest property tax rate in the country. More of your payment goes to principal, not taxes.`,
+    title: "Low Property Tax Rate",
+    description: `At ${DEFAULT_PROPERTY_TAX_RATE}%, Honolulu County's rate is among the lowest in the nation. More of your payment goes to principal, not taxes.`,
   },
   {
     title: "Leverage with $0 Down",

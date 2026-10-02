@@ -244,7 +244,7 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
           <div className="mt-6 grid sm:grid-cols-2 gap-4">
             <div className="p-4 bg-teal/5 border border-teal/20 rounded-lg">
               <p className="text-sm font-body text-foreground/80">
-                <strong>Hawaii's secret weapon:</strong> Property tax at {DEFAULT_PROPERTY_TAX_RATE}% is the lowest in the country. A $600K home costs just {money0(TAX_ON_600K)}/month in property tax — compared to $500+/month in Texas or $750+/month in New Jersey.
+                <strong>Property tax:</strong> Honolulu's rate of about {DEFAULT_PROPERTY_TAX_RATE}% is among the lowest in the nation. A $600K home costs just {money0(TAX_ON_600K)}/month in property tax — compared to $500+/month in Texas or $750+/month in New Jersey.
               </p>
             </div>
             <div className="p-4 bg-teal/5 border border-teal/20 rounded-lg">
@@ -279,7 +279,7 @@ export default function VALoanBasePage({ data }: { data: BasePageData }) {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-            Best Neighborhoods for {data.installationName} Families
+            Neighborhoods Near {data.installationName}: Commute, Housing, and Price
           </h2>
           <p className="text-foreground/70 font-body mb-8">
             These are the areas where I see most {data.branch} families buying near {data.installationName}. Each has trade-offs — here's the honest breakdown:

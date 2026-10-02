@@ -75,7 +75,7 @@ const RELATED_ARTICLES: Record<string, Array<{ slug: string; title: string; exce
     {
       slug: "va-loans-hawaii-military",
       title: "VA Loans in Hawaii: A Complete Guide for Military Homebuyers",
-      excerpt: "Zero down payment, no PMI, and competitive rates — VA loans are one of the most powerful home financing tools available. Everything Hawaii military buyers and veterans need to know.",
+      excerpt: "No down payment with full entitlement (if you qualify) and no PMI: how VA loans work for Hawaii military buyers. Everything Hawaii military buyers and veterans need to know.",
     },
   ],
 };
@@ -103,7 +103,7 @@ const CROSS_LINKS: Record<string, { slug: string; title: string; excerpt: string
   "va-assumable-loans-pros-cons": {
     slug: "va-loans-hawaii-military",
     title: "VA Loans in Hawaii: A Complete Guide for Military Homebuyers",
-    excerpt: "Zero down payment, no PMI, and competitive rates — VA loans are one of the most powerful home financing tools available. Here's everything Hawaii military buyers and veterans need to know.",
+    excerpt: "No down payment with full entitlement (if you qualify) and no PMI: how VA loans work for Hawaii military buyers. Here's everything Hawaii military buyers and veterans need to know.",
     label: "Related Article",
   },
 };
@@ -263,7 +263,7 @@ export default function Article() {
     <Layout>
       <SEO
         title={article.title}
-        description={`${article.excerpt} Expert mortgage guidance from Jay Miller, NMLS #657301, CMG Home Loans Hawaii.`}
+        description={`${article.excerpt} Mortgage education from Jay Miller, NMLS #657301, CMG Home Loans Hawaii.`}
         url={`/knowledge-base/${article.slug}`}
         image={article.image}
         imageAlt={article.title}

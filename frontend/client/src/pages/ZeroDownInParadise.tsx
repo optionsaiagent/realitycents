@@ -454,7 +454,7 @@ export default function ZeroDownInParadise() {
               You still need lender approval based on income, credit, residual income, and the property.
             </p>
             <p>
-              That $0-down benefit is especially powerful in Hawaii, where a conventional 20% down payment
+              That $0-down benefit matters more in Hawaii, where a conventional 20% down payment
               on an $800,000 home is $160,000. VA financing removes that cash hurdle when you qualify and
               have full entitlement. Many lenders still set their own maximum loan amount for $0-down VA
               purchases — ask your lender what their cap is.
