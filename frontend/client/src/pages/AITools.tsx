@@ -75,6 +75,11 @@ const TOOLS: { name: string; summary: string }[] = [
       "Short factual notes on Hawaii topics (property tax, VA loans, leasehold vs fee simple, VA condo approval, 2026 loan limits, BAH/COLA, closing costs, pre-approval steps), drawn from RealityCents articles.",
   },
   {
+    name: "lookup_va_condo",
+    summary:
+      "Checks whether an Oahu condo project is on the VA's accepted condo list by name, building address, or VA ID. Returns status, VA ID, data date, and the VA's lookup link to verify. VA approval status does not guarantee loan approval.",
+  },
+  {
     name: "get_preapproval_link",
     summary: "Jay Miller's CMG Home Loans application link and business contact.",
   },
@@ -107,7 +112,7 @@ const AI_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What is the RealityCents MCP server?",
-    a: "A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.",
+    a: "A free, read-only Model Context Protocol server with 10 Hawaii mortgage and VA loan tools, including an Oahu VA-approved condo lookup. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.",
   },
   {
     q: "Does it collect personal information?",
@@ -160,6 +165,7 @@ const PAGE_SCHEMA = [
       "calculate_buydown",
       "rent_vs_buy",
       "hawaii_mortgage_guidance",
+      "lookup_va_condo",
       "get_preapproval_link",
     ],
     author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${SITE.url}/about` },
@@ -243,7 +249,7 @@ export default function AITools() {
 
       <PageHero
         title="Hawaii mortgage and VA loan calculators for your AI assistant"
-        subtitle="Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: September 28, 2026"
+        subtitle="Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: October 1, 2026"
         image={IMAGES.heroCalculator}
         compact
       />
@@ -253,7 +259,7 @@ export default function AITools() {
           <SectionHeading label="Overview" title="What it is" centered={false} />
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, and 2026 Hawaii loan-limit guidance. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.
+              RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, 2026 Hawaii loan-limit guidance, and an Oahu VA-approved condo lookup. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.
             </p>
             <p>
               The math is the same math as the calculators on realitycents.com. Results are estimates only. Rates are examples, not quotes.
@@ -300,7 +306,7 @@ export default function AITools() {
 
       <section className="py-16 lg:py-20">
         <div className="container max-w-4xl">
-          <SectionHeading label="Tools" title="The nine tools" centered={false} />
+          <SectionHeading label="Tools" title="The ten tools" centered={false} />
           <ul className="space-y-3">
             {TOOLS.map((tool) => (
               <li key={tool.name} className="rounded-xl border border-border bg-white px-4 py-4">

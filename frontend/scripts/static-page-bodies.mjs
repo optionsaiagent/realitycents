@@ -323,9 +323,10 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Approval Status Breakdown</h2>
         <ul>
-          <li><strong>1,498 projects:</strong> Accepted Without Conditions — fully meets all VA requirements</li>
-          <li><strong>247 projects:</strong> Accepted With Conditions — approved with noted informational items</li>
+          <li><strong>${CONDO_DATA.withoutConditions.toLocaleString("en-US")} projects:</strong> Accepted Without Conditions</li>
+          <li><strong>${CONDO_DATA.withConditions.toLocaleString("en-US")} projects:</strong> Accepted With Conditions, with conditions noted in the VA record</li>
         </ul>
+        <p>Data from the <a href="https://lgy.va.gov/lgyhub/condo-report">VA condo report</a>, last checked ${CONDO_DATA.lastUpdated}. Download: <a href="/data/va-approved-condos-hawaii.json">JSON</a> · <a href="/data/va-approved-condos-hawaii.csv">CSV</a>. Approvals change; verify a project's current status with the VA. VA approval status does not guarantee loan approval.</p>
         <p>Both statuses allow VA financing. The difference is administrative — in practice, there is almost never anything that needs to be resolved for "With Conditions" projects.</p>
       </section>
       <section>
@@ -639,8 +640,8 @@ export const STATIC_PAGE_BODIES = {
   "/ai": `
     <main>
       <h1>Hawaii mortgage and VA loan calculators for your AI assistant</h1>
-      <p>Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: September 28, 2026</p>
-      <p>RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, and 2026 Hawaii loan-limit guidance. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.</p>
+      <p>Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: October 1, 2026</p>
+      <p>RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, 2026 Hawaii loan-limit guidance, and an Oahu VA-approved condo lookup. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.</p>
       <p>The math is the same math as the calculators on realitycents.com. Results are estimates only. Rates are examples, not quotes.</p>
       <section>
         <h2>Sample answer</h2>
@@ -656,7 +657,7 @@ export const STATIC_PAGE_BODIES = {
         </ul>
       </section>
       <section>
-        <h2>The nine tools</h2>
+        <h2>The ten tools</h2>
         <ul>
           <li><strong>calculate_mortgage_payment</strong> — Monthly payment (principal &amp; interest, Hawaii property tax, insurance, HOA, plus PMI, FHA MIP or VA funding fee) for conventional, FHA, VA or jumbo.</li>
           <li><strong>calculate_affordability</strong> — Estimated maximum purchase price from gross monthly income, debts and a DTI target.</li>
@@ -666,6 +667,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>calculate_buydown</strong> — Year-by-year payments and cost of a 2-1, 1-0 or 3-2-1 temporary buydown, or permanent discount points.</li>
           <li><strong>rent_vs_buy</strong> — Cumulative rent vs. the net cost of buying over a holding period.</li>
           <li><strong>hawaii_mortgage_guidance</strong> — Short factual notes on Hawaii topics (property tax, VA loans, leasehold vs fee simple, VA condo approval, 2026 loan limits, BAH/COLA, closing costs, pre-approval steps), drawn from RealityCents articles.</li>
+          <li><strong>lookup_va_condo</strong>: Checks whether an Oahu condo project is on the VA's accepted condo list by name, building address, or VA ID, with the data date and the VA's lookup link. VA approval status does not guarantee loan approval.</li>
           <li><strong>get_preapproval_link</strong> — Jay Miller's CMG Home Loans application link and business contact.</li>
         </ul>
       </section>
@@ -735,7 +737,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>Can I use a Hawaii mortgage calculator in ChatGPT or Claude?</dt>
           <dd>Yes. Add the RealityCents MCP server (https://realitycents-mcp.jaymiller.workers.dev/mcp) as a custom connector with no authentication, then ask in plain English, for example "What's the payment on a $900,000 Honolulu home with a VA loan?"</dd>
           <dt>What is the RealityCents MCP server?</dt>
-          <dd>A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.</dd>
+          <dd>A free, read-only Model Context Protocol server with 10 Hawaii mortgage and VA loan tools, including an Oahu VA-approved condo lookup. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.</dd>
           <dt>Does it collect personal information?</dt>
           <dd>No. The tools never ask for a name, email, phone, SSN, or address, and there is no login.</dd>
           <dt>Is the result a loan offer or pre-approval?</dt>

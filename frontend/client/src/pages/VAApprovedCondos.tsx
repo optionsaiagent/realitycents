@@ -244,6 +244,14 @@ export default function VAApprovedCondos() {
               · Last updated {condoData.lastUpdated}
             </div>
           </div>
+          <div className="text-sm text-white/70 mt-1">
+            Download:{" "}
+            <a href="/data/va-approved-condos-hawaii.json" className="underline hover:text-gold transition-colors">JSON</a>{" · "}
+            <a href="/data/va-approved-condos-hawaii.csv" className="underline hover:text-gold transition-colors">CSV</a>
+            {" · "}Approvals change. Verify a project on the{" "}
+            <a href="https://lgy.va.gov/lgyhub/condo-report" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold transition-colors">VA condo lookup</a>.
+            VA approval status does not guarantee loan approval.
+          </div>
         </div>
       </section>
 

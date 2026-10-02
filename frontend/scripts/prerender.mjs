@@ -271,6 +271,13 @@ const STATIC_PAGES = {
         dateModified: CONDO_DATA.lastUpdated,
         license: "https://www.usa.gov/government-works",
         spatialCoverage: { "@type": "Place", name: "Honolulu County, Hawaii, USA" },
+        distribution: [
+          { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${BASE_URL}/data/va-approved-condos-hawaii.json` },
+          { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${BASE_URL}/data/va-approved-condos-hawaii.csv` },
+        ],
+        isAccessibleForFree: true,
+        isBasedOn: "https://lgy.va.gov/lgyhub/condo-report",
+        publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
       },
       {
         "@context": "https://schema.org",
@@ -840,7 +847,7 @@ const STATIC_PAGES = {
         url: `${BASE_URL}/ai`,
         installUrl: "https://realitycents-mcp.jaymiller.workers.dev/mcp",
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "get_preapproval_link"],
+        featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "lookup_va_condo", "get_preapproval_link"],
         author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${BASE_URL}/about` },
         publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
         isRelatedTo: { "@type": "Book", name: "Zero Down in Paradise: The Hawaii VA Loan Playbook", url: `${BASE_URL}/zero-down-in-paradise` },
@@ -850,7 +857,7 @@ const STATIC_PAGES = {
         "@type": "FAQPage",
         mainEntity: [
           { "@type": "Question", name: "Can I use a Hawaii mortgage calculator in ChatGPT or Claude?", acceptedAnswer: { "@type": "Answer", text: "Yes. Add the RealityCents MCP server (https://realitycents-mcp.jaymiller.workers.dev/mcp) as a custom connector with no authentication, then ask in plain English, for example \"What's the payment on a $900,000 Honolulu home with a VA loan?\"" } },
-          { "@type": "Question", name: "What is the RealityCents MCP server?", acceptedAnswer: { "@type": "Answer", text: "A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii." } },
+          { "@type": "Question", name: "What is the RealityCents MCP server?", acceptedAnswer: { "@type": "Answer", text: "A free, read-only Model Context Protocol server with 10 Hawaii mortgage and VA loan tools, including an Oahu VA-approved condo lookup. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii." } },
           { "@type": "Question", name: "Does it collect personal information?", acceptedAnswer: { "@type": "Answer", text: "No. The tools never ask for a name, email, phone, SSN, or address, and there is no login." } },
           { "@type": "Question", name: "Is the result a loan offer or pre-approval?", acceptedAnswer: { "@type": "Answer", text: "No. Results are educational estimates, and rates are examples, not quotes. For a real number, get pre-approved with a licensed loan officer." } },
           { "@type": "Question", name: "Where do the numbers come from?", acceptedAnswer: { "@type": "Answer", text: "From the same code and 2026 tables as the realitycents.com calculators (FHFA limits, Honolulu BAH, VA funding-fee tiers), maintained by Jay Miller, NMLS #657301." } },
