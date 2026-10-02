@@ -66,7 +66,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 - [Jay Miller facts](https://realitycents.com/facts): Canonical facts about Jay Miller: title, NMLS #657301, office, phone, email, websites, and AI tools. JSON: https://realitycents.com/facts.json
 - [jay-miller.com](https://jay-miller.com): Jay Miller's personal site.
 - [PCSing to Hawaii](https://www.pcsingtohawaii.com): Jay Miller's free guide for military families moving to Oahu: bases, neighborhoods, BAH, pets, cars, schools, and a PCS timeline. Index: https://www.pcsingtohawaii.com/llms.txt
-- [MCP server card](https://realitycents-mcp.jaymiller.workers.dev/server-card): Machine-readable description of the RealityCents MCP server. Catalog: https://realitycents.com/.well-known/ai-catalog.json
+- [MCP server card](https://realitycents-mcp.jaymiller.workers.dev/server-card): Machine-readable description of the RealityCents MCP server. Catalog: https://realitycents.com/.well-known/ai-catalog.json. Same card: https://realitycents.com/.well-known/mcp.json and https://realitycents.com/.well-known/mcp/server-card.json
 
 ## Core Pages
 
@@ -128,4 +128,4 @@ Facts: https://realitycents.com/facts
 - [Knowledge Base](https://realitycents.com/knowledge-base): Market updates, rate commentary, VA loan news, and homebuying tips for Oahu.
 - [Instagram @jaymiller_hawaii](https://www.instagram.com/jaymiller_hawaii/): Jay Miller's official Instagram: VA loan education and Hawaii real estate.
 - [YouTube — Racing Through Midlife](https://www.youtube.com/@RacingThroughMidlife): Jay Miller's personal channel.
-- [Full knowledge base text](https://realitycents.com/llms-full.txt): Every article and FAQ as plain text.
+- [Full knowledge base text](https://realitycents.com/llms-full.txt): Plain-text copy of the knowledge base articles and the site FAQ (20 questions), plus summaries of key tools and pages.

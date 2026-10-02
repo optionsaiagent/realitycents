@@ -1,0 +1,238 @@
+{
+  "categories": [
+    {
+      "title": "Loan Basics",
+      "id": "loan-basics",
+      "items": [
+        {
+          "question": "What are the current conforming loan limits in Honolulu County?",
+          "answer": "For 2026, the conforming loan limit for a single-unit property in Honolulu County is $1,249,125. This applies to conventional loans backed by Fannie Mae and Freddie Mac. VA loans have no loan limit — there is no maximum loan amount for VA borrowers as long as the buyer qualifies for the loan payment. If you need to borrow above the conforming limit on a conventional loan, you would need a jumbo loan, which has different qualification requirements. Contact a local lender to discuss your specific scenario.",
+          "links": [
+            {
+              "href": "/knowledge-base/conventional-loans-hawaii",
+              "label": "Learn more about conventional loans in Hawaii →"
+            },
+            {
+              "href": "/knowledge-base/jumbo-loans-hawaii-luxury",
+              "label": "Learn about jumbo loans in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "How much do I need for a down payment to buy a home in Honolulu?",
+          "answer": "It depends on your loan type. VA loans require zero down payment for eligible veterans and active-duty service members. FHA loans require 3.5% down with a 580+ credit score. Conventional loans can go as low as 3% down for first-time buyers through Fannie Mae HomeReady or Freddie Mac Home Possible programs. A 20% down payment eliminates the need for private mortgage insurance (PMI) on conventional loans. The City and County of Honolulu also offers a down payment assistance loan of up to $40,000 for qualifying first-time buyers.",
+          "links": [
+            {
+              "href": "/knowledge-base/down-payment-myth-hawaii-pmi-vs-appreciation",
+              "label": "Read: The 20% Down Payment Myth in Hawaii →"
+            },
+            {
+              "href": "/knowledge-base/down-payment-assistance-hawaii",
+              "label": "Learn more about down payment assistance →"
+            }
+          ]
+        },
+        {
+          "question": "What credit score do I need to buy a home in Hawaii?",
+          "answer": "Minimum credit score requirements vary by loan program. Conventional loans generally require a 620 minimum. FHA loans allow scores as low as 580 with 3.5% down, or 500 with 10% down. VA loans require a minimum of 620. The higher your credit score, the better your interest rate and loan terms will be. If your score needs work, a mortgage professional can help you create a plan to improve it before applying.",
+          "links": [
+            {
+              "href": "/knowledge-base/credit-tips-mortgage-approval",
+              "label": "Learn more about improving your credit for a mortgage →"
+            }
+          ]
+        },
+        {
+          "question": "How much can I afford to borrow for a home in Hawaii?",
+          "answer": "Your borrowing power depends on your income, monthly debts, credit score, down payment, and the loan program you choose. A general guideline is the 28/36 rule: your housing payment should not exceed 28% of your gross monthly income, and your total debt payments should stay below 36%. However, most loan programs allow significantly higher ratios for well-qualified borrowers — conventional loans typically allow up to 45–50% DTI, jumbo loans up to 43–45%, FHA up to 55%, and VA loans can go 60% or higher for borrowers with excellent credit profiles. In Hawaii, the high cost of living means HOA fees, property taxes, and homeowner's insurance all factor into your qualifying payment. Getting pre-approved with a local lender gives you a clear picture of your budget before you start shopping.",
+          "links": [
+            {
+              "href": "/knowledge-base/income-needed-buy-home-hawaii-2026",
+              "label": "Learn more about income requirements to buy in Hawaii →"
+            },
+            {
+              "href": "/knowledge-base/mortgage-rates-2026-high-hawaii-buyers",
+              "label": "What to do when mortgage rates rise →"
+            },
+            {
+              "href": "/loan-compare",
+              "label": "Compare loan options with our calculator →"
+            }
+          ]
+        },
+        {
+          "question": "Can I buy a home in Hawaii with an FHA loan?",
+          "answer": "Yes. FHA loans are popular in Hawaii because they allow down payments as low as 3.5% and have more flexible credit requirements than conventional loans. The 2026 FHA loan limit for a single-unit property in Honolulu County is $828,000. FHA loans do require both an upfront mortgage insurance premium (1.75% of the loan amount, typically financed into the loan) and an annual MIP that is paid monthly for the life of the loan. FHA condos must be on HUD's approved condo list or receive a single-unit approval.",
+          "links": [
+            {
+              "href": "/knowledge-base/fha-loans-hawaii-explained",
+              "label": "Learn more about FHA loans in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "What is the difference between fixed-rate and adjustable-rate mortgages?",
+          "answer": "A fixed-rate mortgage locks in your interest rate for the entire loan term, typically 15 or 30 years, so your principal and interest payment never changes. An adjustable-rate mortgage (ARM) starts with a lower fixed rate for an initial period (commonly 5 or 7 years), then adjusts periodically based on a market index plus a margin. ARMs can make sense if you plan to sell or refinance before the adjustment period begins. In Hawaii, where many military buyers are on 3-year PCS rotations, a 5/1 or 7/1 ARM can offer significant savings during their time on island.",
+          "links": [
+            {
+              "href": "/knowledge-base/adjustable-rate-mortgage-hawaii",
+              "label": "Read our full ARM guide for Hawaii buyers →"
+            }
+          ]
+        },
+        {
+          "question": "What should I know about refinancing my mortgage in Hawaii?",
+          "answer": "There are several reasons to refinance: to lower your interest rate, shorten your loan term, eliminate mortgage insurance, or access home equity through a cash-out refinance. For VA borrowers, the VA Interest Rate Reduction Refinance Loan (IRRRL) offers a streamlined process with minimal documentation and no appraisal requirement. When evaluating a refinance, calculate your break-even point — the number of months of savings needed to recoup your closing costs. As a general rule, a refinance makes the most financial sense when the break-even period is 30 months or less.",
+          "links": [
+            {
+              "href": "/knowledge-base/refinancing-hawaii-homeowners",
+              "label": "Learn more about refinancing in Hawaii →"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VA Loans",
+      "id": "va-loans",
+      "items": [
+        {
+          "question": "What is the VA loan and who is eligible?",
+          "answer": "A VA loan is a mortgage benefit backed by the U.S. Department of Veterans Affairs, available to eligible veterans, active-duty service members, certain National Guard and Reserve members, and qualifying surviving spouses. Key benefits include zero down payment, no private mortgage insurance (PMI), competitive interest rates, and limited closing costs. To use a VA loan, you need a Certificate of Eligibility (COE) from the VA, which your lender can often obtain for you. The VA loan can be used for primary residences including single-family homes and VA-approved condominiums.",
+          "links": [
+            {
+              "href": "/knowledge-base/va-loans-hawaii-military",
+              "label": "Learn more about VA loans in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "Can I use a VA loan to buy a condo in Honolulu?",
+          "answer": "Yes, but the condominium project must be on the VA's approved condo list or receive a project approval from the VA before closing. Many condo buildings in Honolulu are already VA-approved, but some are not. You can check our VA Approved Condos on Oahu list for current approval status. If a project is not currently approved, it may be possible to submit it for approval, though the process takes time. Working with a lender who specializes in VA loans in Hawaii is critical because condo warrantability is one of the most common deal-breakers in the Honolulu market.",
+          "links": [
+            {
+              "href": "/va-approved-condos-oahu",
+              "label": "VA Approved Condos on Oahu list"
+            },
+            {
+              "href": "/knowledge-base/va-loans-hawaii-military",
+              "label": "Learn more about VA loans in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "What is the VA funding fee and can it be waived?",
+          "answer": "The VA funding fee is a one-time fee paid to the VA at closing that helps sustain the loan program. For a first-time VA purchase with zero down payment, the funding fee is 2.15% of the loan amount. For subsequent use, it increases to 3.3%. A down payment of 5% or more reduces the fee. The funding fee is waived entirely for veterans with a service-connected disability rating of 10% or higher, Purple Heart recipients on active duty, and qualifying surviving spouses. The fee can be financed into the loan amount rather than paid out of pocket. Additionally, the VA funding fee is tax deductible — consult a tax advisor to confirm how this applies to your situation.",
+          "links": [
+            {
+              "href": "/knowledge-base/va-funding-fee-tax-deductible",
+              "label": "Learn more about the VA funding fee and tax deductibility →"
+            }
+          ]
+        },
+        {
+          "question": "Can I use my VA loan benefit more than once?",
+          "answer": "Yes. Your VA loan benefit is reusable. You can have more than one VA loan at a time if you have remaining entitlement, or you can restore your full entitlement after selling a previous VA-financed home and paying off that loan. If you are PCSing from one duty station to another, you may be able to keep your current VA loan on your existing property and use remaining entitlement to purchase a new primary residence at your next duty station. The key is understanding your remaining entitlement and how it interacts with the county loan limits at your new location.",
+          "links": [
+            {
+              "href": "/knowledge-base/va-loan-house-hacking-hawaii",
+              "label": "Learn more about using your VA benefit multiple times (house hacking) →"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hawaii-Specific",
+      "id": "hawaii-specific",
+      "items": [
+        {
+          "question": "What is condo warrantability and why does it matter in Hawaii?",
+          "answer": "Condo warrantability refers to whether a condominium project meets the eligibility standards set by Fannie Mae, Freddie Mac, FHA, or the VA for conventional or government-backed financing. In Honolulu, where condos make up a large share of the housing inventory, warrantability is a critical factor. A non-warrantable condo cannot be financed with a standard conventional, FHA, or VA loan. Common reasons a condo may be non-warrantable include: high investor ownership concentration (this applies to FHA — conventional loans do not have the same investor concentration threshold), pending litigation involving structural defects, inadequate reserve funding, major ongoing repairs or deferred maintenance, and insufficient insurance coverage. Buyers considering a non-warrantable condo typically need a portfolio loan, which may require a larger down payment and carry a higher interest rate.",
+          "links": [
+            {
+              "href": "/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii",
+              "label": "Learn more about Fannie Mae condo guidelines in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "Should I use a local lender or an online lender in Hawaii?",
+          "answer": "Hawaii's real estate market has unique characteristics that can trip up mainland and online lenders. These include leasehold properties, condo warrantability requirements, termite inspection rules (PC-9 form), Hawaiian Home Lands restrictions, and county-specific short-term and vacation rental rules. Hawaii also has unique closing timelines that are not well understood or planned for by mainland lenders, which can cause delays and even jeopardize transactions. A local lender familiar with these nuances can prevent delays, appraisal issues, and deal cancellations. Online lenders may offer competitive rates, but if they lack Hawaii-specific experience, the cost of a failed transaction or delayed closing can far outweigh any rate savings.",
+          "links": []
+        },
+        {
+          "question": "What is the termite inspection requirement in Hawaii?",
+          "answer": "Hawaii requires a wood-destroying insect inspection (commonly called a termite inspection) on all existing residential properties, including condominiums five stories or less. The inspection must be reported on a state-prescribed PC-9 form, which is valid for 90 days from the date of inspection. Termite inspections are not required for conventional financing, though they are typically performed in virtually every purchase transaction given Hawaii's tropical climate and high termite activity. The PC-9 is a standard part of the purchase process and buyers should plan for it regardless of loan type.",
+          "links": []
+        },
+        {
+          "question": "What is a leasehold property and should I buy one?",
+          "answer": "In Hawaii, some properties are built on leased land rather than fee simple (owned) land. With a leasehold property, you own the building or unit but lease the land beneath it from a landowner for a set term. Leasehold properties are typically less expensive than fee simple, but you will pay a monthly lease rent that can increase over time, and financing options are more limited as the lease term shortens. There are no mortgages available for leaseholds with fewer than 15 years remaining on the lease. Conventional lending is available as long as the loan term ends at least 5 years prior to the end of the lease — meaning a 10-year fixed is the shortest term available. VA loans are extremely difficult to obtain on leasehold properties due to strict VA requirements on renegotiation periods and the need for at least 14 years remaining after the end of the loan term. It is important to understand the lease terms, renegotiation provisions, and how the lease affects long-term value before purchasing a leasehold property.",
+          "links": [
+            {
+              "href": "/knowledge-base/leasehold-vs-fee-simple-hawaii",
+              "label": "Learn more about leasehold vs. fee simple in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "What are HOA fees in Honolulu and how do they affect my mortgage?",
+          "answer": "HOA fees in Honolulu condos can range from a few hundred dollars per month to over $1,500 per month for buildings with extensive amenities or aging infrastructure requiring special assessments. Your HOA fee is included in your total monthly housing payment for mortgage qualification purposes, which means a high HOA fee directly reduces how much purchase price you can qualify for. Before making an offer on a condo, review the HOA's financial statements, reserve study, and history of special assessments to avoid surprises.",
+          "links": [
+            {
+              "href": "/knowledge-base/hoa-considerations-hawaii-condos",
+              "label": "Learn more about HOA considerations for Hawaii condos →"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Buying Process",
+      "id": "buying-process",
+      "items": [
+        {
+          "question": "What is the difference between a mortgage pre-qualification and a pre-approval?",
+          "answer": "A pre-qualification is an informal estimate of how much you might borrow based on self-reported financial information. No credit pull or documentation is required. A pre-approval is a formal process where the lender verifies your income, assets, employment, and credit history, then issues a pre-approval letter for a specific loan amount. In Hawaii's competitive market, sellers and listing agents strongly prefer offers backed by a pre-approval because it signals a serious, vetted buyer. In Hawaii, lenders typically issue a pre-approval letter specific to each offer — tied to the subject property, offer price, and down payment amount. A pre-approval is valid for 120 days.",
+          "links": [
+            {
+              "href": "/knowledge-base/mortgage-pre-approval-process",
+              "label": "Learn more about the mortgage pre-approval process →"
+            }
+          ]
+        },
+        {
+          "question": "What are closing costs when buying a home in Honolulu?",
+          "answer": "Closing costs in Honolulu typically range from 2% to 5% of the purchase price (plan on about 3–4%) and include items like the appraisal fee, title insurance, escrow fees, recording fees, prepaid property taxes and homeowner's insurance, and lender origination charges. Some costs may be negotiated as seller-paid. Your lender is required to provide a Loan Estimate within three business days of your application, and a final Closing Disclosure at least three business days before closing, so you will have full transparency on costs before you sign.",
+          "links": [
+            {
+              "href": "/knowledge-base/understanding-closing-costs-hawaii",
+              "label": "Learn more about closing costs in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "How long does it take to close on a home in Honolulu?",
+          "answer": "A typical purchase transaction in Honolulu takes 30 to 45 days from accepted offer to closing, though some can close faster and others may take longer depending on the loan type, property type, and any conditions that arise during underwriting. Cash transactions can close in as little as 7 to 14 days. Staying responsive to your lender's document requests is the single best thing you can do to keep your closing on schedule.",
+          "links": [
+            {
+              "href": "/knowledge-base/escrow-process-hawaii",
+              "label": "Learn more about the escrow and closing process in Hawaii →"
+            }
+          ]
+        },
+        {
+          "question": "Are there first-time homebuyer programs available in Hawaii?",
+          "answer": "Yes. The most significant program currently available is the Hale Kamaʻāina Mortgage Program, administered by the Hawaii Housing Finance and Development Corporation (HHFDC). Relaunched in December 2025 after being dormant for over a decade, it provides below-market 30-year fixed rates — 5.62% for FHA/VA/USDA and 5.87% for conventional as of August 2026 (the posting resets with each bond issuance; it launched at 4.65%/4.95% in spring 2026) — to eligible first-time buyers. The program also offers optional down payment assistance of up to 4% of the purchase price as a second mortgage at 1% simple interest with no monthly payments. To qualify, buyers must be Hawaii residents, meet household income limits (up to $152,000 for a 1–2 person household in Honolulu County), purchase within the program's price limits ($809,458 in non-targeted Oahu areas, $989,337 in targeted census tracts), and complete a HUD-approved homebuyer education course. Veterans and buyers in targeted census tracts may be exempt from the three-year first-time buyer lookback rule. Bond funds are finite — when the $30 million allocation is committed, the program closes until a new bond series is issued. Hale Kamaʻāina loans can only be originated by lenders enrolled with HHFDC, and CMG Home Loans is an approved participating lender.",
+          "links": [
+            {
+              "href": "/knowledge-base/hale-kamaaina-mortgage-program-hawaii",
+              "label": "Read the full Hale Kamaʻāina program guide →"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -24,6 +24,59 @@ const LICENSE_TAIL = "Jay Miller, Sales Manager and Certified Mortgage Advisor, 
 const LICENSE_CALC = `<p class="license">Estimates are for education only. They are not a loan offer or a commitment to lend. Rates are examples, not quotes. Verify any scenario with a licensed loan officer. ${LICENSE_TAIL}</p>`;
 const LICENSE_EDU = `<p class="license">Educational content only. It is not a loan offer or a commitment to lend. Verify any scenario with a licensed loan officer. ${LICENSE_TAIL}</p>`;
 
+const FAQ_DATA = JSON.parse(
+  readFileSync(new URL("../client/src/data/faq.json", import.meta.url), "utf8")
+);
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function faqHref(href) {
+  if (href.startsWith("http://") || href.startsWith("https://")) return href;
+  return `${BASE_URL}${href.startsWith("/") ? href : `/${href}`}`;
+}
+
+function renderFaqAnswerHtml(item) {
+  const links = item.links || [];
+  const inline = links.filter((link) => item.answer.includes(link.label));
+  const trailing = links.filter((link) => !item.answer.includes(link.label));
+  let html = escapeHtml(item.answer);
+  for (const link of inline) {
+    const safeLabel = escapeHtml(link.label);
+    html = html.replace(safeLabel, `<a href="${faqHref(link.href)}">${safeLabel}</a>`);
+  }
+  const trailingHtml = trailing
+    .map((link) => ` <a href="${faqHref(link.href)}">${escapeHtml(link.label)}</a>`)
+    .join("");
+  return html + trailingHtml;
+}
+
+function buildFaqPageBody() {
+  const sections = FAQ_DATA.categories
+    .map((category) => {
+      const rows = category.items
+        .map(
+          (item) =>
+            `          <dt>${escapeHtml(item.question)}</dt>\n          <dd>${renderFaqAnswerHtml(item)}</dd>`
+        )
+        .join("\n");
+      return `      <section>\n        <h2>${escapeHtml(category.title)}</h2>\n        <dl>\n${rows}\n        </dl>\n      </section>`;
+    })
+    .join("\n");
+  return `
+    <main>
+      <h1>Hawaii Home Loan FAQ</h1>
+      <p>Answers to the most common questions about buying a home and getting a mortgage in Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.</p>
+${sections}
+      ${LICENSE_EDU}
+    </main>
+  `;
+}
+
 export const STATIC_PAGE_BODIES = {
   "/": `
     <main>
@@ -297,42 +350,7 @@ export const STATIC_PAGE_BODIES = {
     </main>
   `,
 
-  "/frequently-asked-questions": `
-    <main>
-      <h1>Hawaii Home Loan FAQ</h1>
-      <p>Answers to the most common questions about buying a home and getting a mortgage in Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.</p>
-      <section>
-        <h2>Loan Basics</h2>
-        <dl>
-          <dt>What is the conforming loan limit in Hawaii for 2026?</dt>
-          <dd>The conforming loan limit for Honolulu County is $1,249,125 for a single-family home — significantly higher than the national baseline of $832,750. This means you can get a conventional loan up to this amount without jumbo pricing.</dd>
-          <dt>What credit score do I need to buy a home in Hawaii?</dt>
-          <dd>Minimum scores vary by loan type: VA loans have no VA-mandated minimum (most lenders require 580–620), FHA requires 580 for 3.5% down (500 for 10% down), and conventional typically requires 620+. Higher scores get better rates.</dd>
-          <dt>How much are closing costs in Hawaii?</dt>
-          <dd>Typically 2–5% of the purchase price, with a planning budget of about 3–4%. On an $800,000 home, that budget is roughly $24,000–$32,000, including lender fees, title insurance, escrow fees, and prepaid items.</dd>
-        </dl>
-      </section>
-      <section>
-        <h2>VA Loans</h2>
-        <dl>
-          <dt>Can I use a VA loan in Hawaii?</dt>
-          <dd>Yes. VA loans work in all 50 states including Hawaii. With full entitlement, there is no VA loan limit; how much you can borrow with $0 down depends on your income, debts, residual income, and lender approval. The VA funding fee is 2.15% for first-time use (waived for disabled veterans).</dd>
-          <dt>Can I use a VA loan for a condo in Hawaii?</dt>
-          <dd>Yes, but the condo project must be VA-approved. Use our VA Condo Lookup tool to check. ${CONDO_BLURB}</dd>
-        </dl>
-      </section>
-      <section>
-        <h2>Hawaii-Specific</h2>
-        <dl>
-          <dt>What is leasehold vs. fee simple in Hawaii?</dt>
-          <dd>Fee simple means you own both the structure and the land. Leasehold means you own the structure but lease the land — you pay monthly lease rent to the landowner. Lenders require at least 35 years remaining on the lease for a 30-year mortgage.</dd>
-          <dt>What are typical HOA fees for Hawaii condos?</dt>
-          <dd>HOA fees range from $400–$1,200+/month depending on the building's age, amenities, and reserve fund health. Older buildings with deferred maintenance tend to have higher fees and special assessments.</dd>
-        </dl>
-      </section>
-      ${LICENSE_EDU}
-    </main>
-  `,
+  "/frequently-asked-questions": buildFaqPageBody(),
 
   "/va-approved-condos-oahu": `
     <main>

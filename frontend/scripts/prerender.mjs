@@ -29,6 +29,21 @@ const CONDO_CHECKED = (() => {
   return `${months[m - 1]} ${d}, ${y}`;
 })();
 
+const FAQ_DATA = JSON.parse(
+  fs.readFileSync(new URL("../client/src/data/faq.json", import.meta.url), "utf8")
+);
+const FAQ_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_DATA.categories.flatMap((cat) =>
+    cat.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    }))
+  ),
+};
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const distPublic = path.resolve(projectRoot, "dist");
@@ -233,6 +248,7 @@ const STATIC_PAGES = {
     description: "Answers to 20 common questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.",
     keywords: "Hawaii mortgage FAQ, Honolulu home loan questions, VA loan Hawaii, conforming loan limits Honolulu, first-time homebuyer Hawaii, condo warrantability, leasehold property Hawaii",
     schema: [
+      FAQ_PAGE_SCHEMA,
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -854,7 +870,6 @@ const STATIC_PAGES = {
         featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "lookup_va_condo", "get_preapproval_link"],
         author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${BASE_URL}/about` },
         publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
-        isRelatedTo: { "@type": "Book", name: "Zero Down in Paradise: The Hawaii VA Loan Playbook", url: `${BASE_URL}/zero-down-in-paradise` },
       },
       {
         "@context": "https://schema.org",

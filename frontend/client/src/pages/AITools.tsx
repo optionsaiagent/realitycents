@@ -170,11 +170,6 @@ const PAGE_SCHEMA = [
     ],
     author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${SITE.url}/about` },
     publisher: { "@type": "Organization", name: "RealityCents", url: SITE.url },
-    isRelatedTo: {
-      "@type": "Book",
-      name: "Zero Down in Paradise: The Hawaii VA Loan Playbook",
-      url: `${SITE.url}/zero-down-in-paradise`,
-    },
   },
   {
     "@context": "https://schema.org",
