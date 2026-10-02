@@ -491,7 +491,7 @@ export default function Agents() {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Your past clients from the last four years are mostly at 5.5% or higher. This
-              seven-minute video shows what the All-In-One does to the pace of their equity, and
+              seven-minute video shows what the All In One Loan™ does to the pace of their equity, and
               what that means for the next property, the second home, and the move-up.
             </p>
           </div>
@@ -536,7 +536,7 @@ export default function Agents() {
                 The Deal You Didn&rsquo;t Have to Lose
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                A 6-minute briefing on the All-In-One loan, built for agents — the three client
+                A 6-minute briefing on the All In One Loan™, built for agents — the three client
                 conversations it unlocks, the math behind it, and the risks stated plainly.
               </p>
             </div>

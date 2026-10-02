@@ -89,6 +89,12 @@ Interactive Hawaii-specific mortgage calculators for self-service estimates:
 - [Buydown Calculator](https://realitycents.com/buydown-calculator): Seller-paid 1/1, 2/1, and 3/2/1 temporary buydowns.
 - [Rent vs. Buy Calculator](https://realitycents.com/rent-vs-buy): Break-even analysis with equity growth and opportunity cost.
 
+## First-lien HELOC / All In One Loan™
+
+- [The All In One Loan™ in Hawaii](https://realitycents.com/first-lien-heloc-hawaii): How CMG's 30-year first-lien HELOC with a built-in sweep checking account works, compared with a 30-year fixed, other first-lien HELOCs, and velocity banking; who it fits and the risks (variable rate, discipline, cash flow). No rates or savings figures. Jay Miller, NMLS #657301.
+- [First-lien HELOCs vs. traditional mortgages](https://realitycents.com/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii): Why total interest, not the note rate, is the comparison that matters.
+- [HELOC sweep calculator](https://realitycents.com/heloc-sweep-calculator): Day-by-day simulation of a first-lien HELOC with a sweep account vs. a traditional mortgage.
+
 ## Featured Knowledge Base Articles
 
 - [DTI Is the New Credit Score](https://realitycents.com/knowledge-base/dti-killing-hawaii-mortgage-applications): How Debt-to-Income ratio is quietly killing Hawaii mortgage applications — front-end vs. back-end DTI, student loan calculation differences by loan type, BAH gross-up, and strategies to fix borderline DTI.

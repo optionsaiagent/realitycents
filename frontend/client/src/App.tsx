@@ -33,6 +33,7 @@ import DSCRCalculator from "./pages/DSCRCalculator";
 import AssumableCalculator from "./pages/AssumableCalculator";
 import EscalationCalculator from "./pages/EscalationCalculator";
 import HelocSweepCalculator from "./pages/HelocSweepCalculator";
+import FirstLienHelocHawaii from "./pages/FirstLienHelocHawaii";
 import Agents from "./pages/Agents";
 import Advisors from "./pages/Advisors";
 import ZeroDownInParadise from "./pages/ZeroDownInParadise";
@@ -83,6 +84,7 @@ function Router() {
         <Route path={"/assumable-calculator"} component={() => <AssumableCalculator />} />
         <Route path={"/escalation-calculator"} component={() => <EscalationCalculator />} />
         <Route path={"/heloc-sweep-calculator"} component={HelocSweepCalculator} />
+        <Route path={"/first-lien-heloc-hawaii"} component={FirstLienHelocHawaii} />
         <Route path={"/agents"} component={Agents} />
         <Route path={"/advisors"} component={Advisors} />
         <Route path={"/zero-down-in-paradise"} component={ZeroDownInParadise} />
