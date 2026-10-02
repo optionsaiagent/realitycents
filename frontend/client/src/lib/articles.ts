@@ -189,7 +189,7 @@ The math can be complex, and big-box mainland lenders frequently miscalculate Ha
 ### Related Articles
 - [VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
 - [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
-- [The Hidden Reason Hawaii Rates Are Stuck in the 6s](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers)
+- [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers)
 
 ---
 
@@ -1157,7 +1157,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 ## Related resources
 
-[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-09) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why waiting for lower rates costs military buyers](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers) · [About Jay Miller](/about)
+[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-09) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers) · [About Jay Miller](/about)
 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
@@ -4437,147 +4437,6 @@ For more on Hawaii's condo market challenges, read our coverage of [the condo in
 *Sources: Fannie Mae Lender Letter LL-2026-03 (March 18, 2026), Freddie Mac Bulletin 2026-C (March 18, 2026), Ekimoto & Morris — Hawaii Condo Law (March 2026), Hirzel Law — Michigan Community Association Law Blog (May 2026), RealManage (2026), Hawaii Revised Statutes §514B-148*
 
 *Last Updated: May 2026*`,
-  },
-  {
-    slug: "why-waiting-for-lower-rates-costs-hawaii-military-buyers",
-    title: "The Hidden Reason Hawaii Mortgage Rates Are Stuck in the 6s (And Why Waiting Will Cost You)",
-    excerpt: "True inflation is already at 1.51% — not the 3.3% the headlines report. VA rates are heading to 5.125% by end of 2026. But when they drop, pent-up demand floods Hawaii's already constrained market and drives prices higher. Here's why Hawaii military buyers who wait for lower rates will pay a steep price for that patience.",
-    category: "Market Insights",
-    readTime: "6 min",
-    date: "2026-06-07",
-    image: "/images/heroes/why-waiting-for-lower-rates-costs-hawaii-military-buyers.webp",
-    content: `# The Hidden Reason Hawaii Mortgage Rates Are Stuck in the 6s (And Why Waiting Will Cost You)
-
-*Last Updated: June 2026*
-
-**Waiting for lower rates in Hawaii will likely cost you more than today's rate — when rates drop (projected to ~5.125% by late 2026), pent-up demand floods Hawaii's supply-constrained market, driving prices $40K–$80K higher and erasing any monthly payment savings.** If you are a military family PCSing to Hawaii this summer, you are probably looking at 30-year fixed VA mortgage rates hovering around 6% and thinking: *I'll just rent for a year and wait for rates to come down.*
-
-It sounds like the responsible, conservative financial move. It is also the exact strategy that is going to cost you tens of thousands of dollars in lost equity and purchasing power.
-
-Here is the reality that most lenders will not tell you: The mortgage rates you are seeing today are artificially inflated by a statistical illusion. The true inflation rate in the United States is not the 3.3% you see in the headlines. According to mortgage and real estate forecaster Barry Habib — one of the most accurate rate forecasters in the industry — it is actually closer to **1.51%**.
-
-When the market finally wakes up to that reality — and it will, likely by the end of 2026 — rates are going to drop. But when they do, the floodgates of pent-up buyer demand will burst open, driving Hawaii home prices even higher.
-
-If you wait for the "perfect" rate, you will end up paying a massive premium for the house. Here is the data behind why buying now — especially with a VA loan — is the smartest move you can make in today's market.
-
----
-
-## The Statistical Illusion Keeping Rates High
-
-To understand why rates are stuck in the 6s, you have to look at how the government measures inflation. The Consumer Price Index (CPI) is the primary metric the Federal Reserve uses to set policy. But the CPI has a massive structural flaw: how it calculates shelter costs.
-
-Shelter makes up about one-third of the CPI. But the data the government uses for shelter costs lags real-time market conditions by 12 to 18 months. The Bureau of Labor Statistics is measuring what rents did a year ago, not what they are doing today. Real-time rent data from sources like Apartment List and Zillow shows that rent growth has already cooled dramatically — but that cooling has not yet shown up in the official CPI numbers.
-
-According to Habib, if you strip out that lagging, inaccurate shelter data and replace it with real-time rent metrics, the true inflation rate drops from the reported 3.3% down to just **1.51%**.
-
-That means inflation is already beaten. The Federal Reserve's target is 2.0%. We are already below it.
-
-### The Oil Factor
-
-So why hasn't the Fed cut rates aggressively? The answer lies in the Middle East.
-
-Geopolitical tension has kept oil prices elevated. Because oil impacts the cost of transporting almost every good in the economy, the Fed is holding rates high as an insurance policy against a potential oil-driven inflation spike. They are not cutting because they are afraid of what they cannot see coming — not because the underlying data supports keeping rates this high.
-
-But this is a temporary standoff. As the lagging shelter data finally washes out of the CPI reports over the next several months, the Fed will be forced to acknowledge the reality of sub-2% inflation. Habib's projection: conventional mortgage rates will drop to around 5.6% by the end of 2026. For VA buyers, that translates to roughly **5.125%** — VA rates typically run about half a percent lower than conventional.
-
----
-
-## The "Cost of Waiting" Trap
-
-If rates are heading to 5.6%, why not just wait?
-
-Because you are not the only one waiting.
-
-Right now, there is a massive backlog of pent-up demand in the housing market. Historically, the U.S. sees about **1.8 million new household formations per year** — people getting married, moving out of their parents' houses, upgrading from apartments. Over the last two years, that number has dropped to just **1.4 million**. Four hundred thousand households per year have been sitting on the sidelines, waiting for rates to come down.
-
-When rates drop into the 5s, that pent-up demand is going to flood the market simultaneously.
-
-### The Hawaii Inventory Crisis
-
-Now apply that national trend to Hawaii. Oahu already has one of the most severely constrained housing inventories in the country. We live on an island. There is no building out into the suburbs. There is no empty land to develop. Every new buyer who enters the market competes for the same finite pool of homes.
-
-When rates drop and that wave of pent-up demand hits Hawaii, what happens to prices? They go up — fast. Habib forecasts a conservative **3.5% national home price appreciation** for the next 12 months. In a supply-constrained island market like Oahu, that number has historically run higher.
-
-Let's look at what that means in real dollars on an $850,000 Ewa Beach single-family home:
-
-| | Buy Now at 6.0% (VA) | Wait 1 Year for 5.125% (VA) |
-|---|---|---|
-| **Purchase Price** | $850,000 | $879,750 (after 3.5% appreciation) |
-| **Down Payment (VA, 0%)** | $0 | $0 |
-| **Loan Amount** | $850,000 | $879,750 |
-| **Monthly P&I** | ~$5,096 | ~$4,728 |
-| **Monthly Savings from Waiting** | — | ~$368/month |
-| **Extra Cost of Higher Purchase Price** | — | +$29,750 |
-| **Break-Even on Waiting** | — | 81 months (6+ years) |
-
-Yes, waiting saves you about $368 a month on your payment. But it costs you **$29,750 in lost equity** because you paid more for the house. It would take over six years of those monthly savings just to break even on the higher purchase price — and that assumes you win the house at asking price.
-
-When rates drop and competition surges, you will be competing against five other offers, waiving contingencies, and potentially paying above asking price. Right now, at 6%, you have negotiating leverage. You can ask the seller for concessions to buy down your rate. You can do inspections. You can negotiate repairs. That leverage disappears the moment rates drop.
-
----
-
-## The Military Advantage: Why VA Buyers Hold the Winning Hand Right Now
-
-If you are active-duty military, the "cost of waiting" argument is even more critical — because you have tools that civilian buyers simply do not have.
-
-### 1. The 0% Down Advantage
-
-Civilian buyers have to save tens of thousands of dollars to cover a down payment as home prices rise. Every month they wait, the target moves further away. With a VA loan, you can buy with **0% down**. You do not have to chase a moving target. You can lock in today's price with zero out-of-pocket down payment, regardless of where prices go next.
-
-### 2. The 2026 BAH Increase
-
-The Basic Allowance for Housing (BAH) for Hawaii saw a **5.4% increase for 2026**. That extra tax-free income directly offsets the higher monthly payment at today's 6% rate. The military has essentially already given you the bridge funding to handle the current rate environment while you wait for rates to normalize.
-
-### 3. The IRRRL Strategy: Buy Now, Refinance Later
-
-This is the most powerful tool in the VA buyer's arsenal, and it is the strategy that makes the "cost of waiting" argument completely irrelevant for military families.
-
-The VA Interest Rate Reduction Refinance Loan (IRRRL) is the simplest, cheapest refinance program in the mortgage industry. It requires **no appraisal, no income verification, and minimal paperwork**. If you have a VA loan and rates drop, you can refinance into the lower rate with almost no friction.
-
-The strategy is straightforward: Buy the house now at today's price. Use your increased BAH to manage the 6% payment. When rates drop to 5.125% by end of 2026, use the IRRRL to permanently lower your payment.
-
-You get the house at the lower price. You eventually get the lower rate. You win on both sides of the equation — and you never have to compete in the feeding frenzy that will hit Hawaii's market when rates finally drop.
-
----
-
-## The Move: What to Do Right Now
-
-The data is clear. The 6% VA rates we are seeing today are based on lagging statistical data and geopolitical caution, not the true state of inflation in the U.S. economy. Rates will come down. But when they do, Hawaii home prices will go up, and competition will be fierce.
-
-If you are PCSing to Hawaii or have been sitting on the sidelines waiting for the "right" moment, here is your playbook:
-
-**Step 1: Stop renting.** Renting guarantees a 100% interest rate on your housing cost and builds zero equity. Every month you rent in Hawaii, you are paying someone else's mortgage.
-
-**Step 2: Buy the house now.** Lock in the purchase price before the pent-up demand wave hits. You are buying the asset, not the rate.
-
-**Step 3: Negotiate aggressively.** Use the current high-rate environment to your advantage. Ask sellers for concessions to buy down your rate — a 2/1 temporary buydown can make your first two years significantly more affordable while you wait for rates to normalize.
-
-**Step 4: Refinance later.** When the lagging shelter data washes out of the CPI and rates drop into the 5s, execute a VA IRRRL to permanently lower your payment. No appraisal. No income docs. Just a lower rate.
-
-You marry the house. You only date the rate. Do not let a temporary interest rate environment — built on a statistical illusion — cost you tens of thousands of dollars in permanent equity.
-
----
-
-## Ready to Run the Numbers?
-
-Every PCS timeline and budget is different. If you want to see exactly how the math works for your specific situation — including how to use seller concessions to lower your effective rate today and what an IRRRL refinance would save you when rates drop — let's talk.
-
-[**Get Pre-Approved and Build Your Strategy with Jay Miller at CMG HomeHub →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
-
-*Have questions about buying in Hawaii with a VA loan? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
-
----
-
-### Related Articles
-- [How to Buy a House in Hawaii With a VA Loan and $0 Down](/knowledge-base/va-loans-hawaii-military)
-- [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
-- [Why an ARM Isn't a Gamble in Hawaii — It's a Timeline Tool](/knowledge-base/adjustable-rate-mortgage-hawaii)
-
----
-
-*Last Updated: June 2026*
-
-*Published by Jay Miller, NMLS #657301 | CMG Home Loans, Honolulu, Hawaii | RealityCents.com*`,
   },
   {
     slug: "down-payment-myth-hawaii-pmi-vs-appreciation",

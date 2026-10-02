@@ -250,6 +250,16 @@
       "statusCode": 301
     },
     {
+      "source": "/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers",
+      "destination": "/knowledge-base/mortgage-rates-2026-high-hawaii-buyers",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers/",
+      "destination": "/knowledge-base/mortgage-rates-2026-high-hawaii-buyers",
+      "statusCode": 301
+    },
+    {
       "source": "/assumable-va-mortgage-pros-and-cons",
       "destination": "/knowledge-base/va-assumable-loans-pros-cons",
       "statusCode": 301

@@ -51,7 +51,6 @@ const BOOK_CTA_SLUGS = new Set<string>([
   "va-assumable-loans-pros-cons",
   "va-funding-fee-tax-deductible",
   "va-loan-house-hacking-hawaii",
-  "why-waiting-for-lower-rates-costs-hawaii-military-buyers",
 ]);
 
 // Calculator tool links: articles that have a companion calculator page

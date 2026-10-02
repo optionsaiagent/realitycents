@@ -65,7 +65,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
           <>
             Your borrowing power depends on your income, monthly debts, credit score, down payment, and the loan program you choose. A general guideline is the 28/36 rule: your housing payment should not exceed 28% of your gross monthly income, and your total debt payments should stay below 36%. However, most loan programs allow significantly higher ratios for well-qualified borrowers — conventional loans typically allow up to 45–50% DTI, jumbo loans up to 43–45%, FHA up to 55%, and VA loans can go 60% or higher for borrowers with excellent credit profiles. In Hawaii, the high cost of living means HOA fees, property taxes, and homeowner's insurance all factor into your qualifying payment. Getting pre-approved with a local lender gives you a clear picture of your budget before you start shopping.{" "}
             <a href="/knowledge-base/income-needed-buy-home-hawaii-2026" className="text-teal underline underline-offset-2 hover:text-teal-dark">Learn more about income requirements to buy in Hawaii →</a>{" "}
-            <a href="/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers" className="text-teal underline underline-offset-2 hover:text-teal-dark">Why waiting for lower rates costs you more →</a>{" "}
+            <a href="/knowledge-base/mortgage-rates-2026-high-hawaii-buyers" className="text-teal underline underline-offset-2 hover:text-teal-dark">What to do when mortgage rates rise →</a>{" "}
             <a href="/loan-compare" className="text-teal underline underline-offset-2 hover:text-teal-dark">Compare loan options with our calculator →</a>
           </>
         ),
