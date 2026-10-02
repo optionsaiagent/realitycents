@@ -1770,9 +1770,9 @@ export default function HelocSweepCalculator() {
               <div className="hpr-brand-sub">Hawaii Mortgage Education &amp; Analysis</div>
             </div>
             <div className="hpr-meta">
-              <div className="hpr-meta-name">Jay Miller — Sales Manager / CMA</div>
+              <div className="hpr-meta-name">Jay Miller, Sales Manager and Certified Mortgage Advisor</div>
               <div>NMLS #657301 · CMG Home Loans · Branch NMLS #2475890</div>
-              <div>(808) 429-0811 · www.jay-miller.com</div>
+              <div>(808) 429-0811 · jay-miller.com</div>
               <div>
                 Generated:{" "}
                 {new Date().toLocaleDateString("en-US", {
@@ -2298,7 +2298,7 @@ export default function HelocSweepCalculator() {
               First-lien HELOC rates are variable and tied to an index (typically SOFR or Prime) plus
               a margin; a rate increase changes these results materially. CMG Mortgage, Inc. dba CMG
               Home Loans — NMLS #1820. Licensed in Hawaii. Equal Housing Opportunity. ·
-              www.realitycents.com · www.jay-miller.com
+              realitycents.com · jay-miller.com
             </div>
           </div>
         </div>

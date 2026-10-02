@@ -40,6 +40,7 @@ const OAHU_TOWNS = new Set([
 function isOahu(rec) {
   const county = (rec.county ?? "").toUpperCase().replace(/[^A-Z]/g, "");
   if (county.startsWith("HON") || county === "OAHU" || county === "WAIPAHU") return true;
+  if (county.startsWith("HO") && county.endsWith("LULU")) return true; // HOPNOLULU and similar typos
   if (county) return false; // a real non-Honolulu county (MAUI, KAUAI, HAWAII…)
   const city = (rec.city ?? "").toUpperCase();
   if (city.includes("OAHU")) return true;

@@ -151,7 +151,7 @@ function extractFaqFromTsx() {
 
     // Extract Q&A pairs
     const items = [];
-    const qaRe = /question:\s*"((?:[^"\\]|\\.|[\s\S])*?)",\s*\n\s*answer:\s*"((?:[^"\\]|\\.|[\s\S])*?)"/g;
+    const qaRe = /question:\s*"((?:[^"\\]|\\.)*)",\s*\n\s*answer:\s*"((?:[^"\\]|\\.)*)"/g;
     let qm;
     while ((qm = qaRe.exec(catBlock)) !== null) {
       const question = qm[1]
@@ -211,13 +211,13 @@ function generate() {
   // ── File header ──
   lines.push("# RealityCents — Full Knowledge Base");
   lines.push("");
-  lines.push("> Hawaii mortgage education and VA loan expertise by Jay Miller, NMLS #657301, CMG Home Loans.");
+  lines.push("> Hawaii mortgage and VA loan education by Jay Miller, NMLS #657301, CMG Home Loans.");
   lines.push("> Plain-text dump of all knowledge base articles, guide chapters, and Hawaii-specific topic guides.");
   lines.push("> Optimized for AI ingestion. For the curated index, see https://realitycents.com/llms.txt");
   lines.push(">");
   lines.push(`> Last updated: ${mostRecentDate}`);
   lines.push("> Source: https://realitycents.com/llms-full.txt");
-  lines.push("> Author: Jay Miller, Sales Manager & Mortgage Loan Consultant, CMG Home Loans");
+  lines.push("> Author: Jay Miller, Sales Manager and Certified Mortgage Advisor, CMG Home Loans (NMLS #657301)");
   lines.push("> Contact: jaym@cmghomeloans.com | 808-429-0811");
   lines.push("> Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813");
   lines.push("");
@@ -334,11 +334,12 @@ function generate() {
     lines.push(`Published: 2026-05-12`);
     lines.push(`Last updated: 2026-05-12`);
     lines.push("");
-    lines.push(`Complete VA loan guide for military families PCS'ing to ${basePage.installation} (${basePage.branch}). Includes 2026 BAH rates for Honolulu County, payment scenarios by rank (E-5 through O-6, plus W-1 through W-5), best neighborhoods with commute times and price ranges, VA condo considerations, and FAQs specific to the installation. All calculations use 5.75% rate, VA funding fee financed, Honolulu County property tax 0.31%.`);
+    lines.push(`Complete VA loan guide for military families PCS'ing to ${basePage.installation} (${basePage.branch}). Includes 2026 BAH rates for Honolulu County, payment scenarios by rank (E-5 through O-6, plus W-1 through W-5), nearby neighborhoods with commute times and price ranges, VA condo considerations, and FAQs specific to the installation. Payment scenarios on the page are illustrative examples, not rate quotes.`);
     lines.push("");
     lines.push(`### 2026 BAH Rates (Honolulu County)`);
+    // keep in sync with BAH_HONOLULU in client/src/lib/militaryPayData.ts
     lines.push(`- E-5: $3,663 w/dep, $2,856 w/o dep`);
-    lines.push(`- E-6: $3,861 w/dep, $3,036 w/o dep`);
+    lines.push(`- E-6: $3,912 w/dep, $3,036 w/o dep`);
     lines.push(`- E-7: $4,098 w/dep, $3,348 w/o dep`);
     lines.push(`- E-8: $4,302 w/dep, $3,720 w/o dep`);
     lines.push(`- E-9: $4,518 w/dep, $3,783 w/o dep`);
@@ -349,8 +350,8 @@ function generate() {
     lines.push(`- W-5: $4,692 w/dep, $4,146 w/o dep`);
     lines.push(`- O-1: $3,702 w/dep, $2,997 w/o dep`);
     lines.push(`- O-2: $3,909 w/dep, $3,555 w/o dep`);
-    lines.push(`- O-3: $4,434 w/dep, $3,819 w/o dep`);
-    lines.push(`- O-4: $4,719 w/dep, $4,110 w/o dep`);
+    lines.push(`- O-3: $4,428 w/dep, $3,819 w/o dep`);
+    lines.push(`- O-4: $4,737 w/dep, $4,110 w/o dep`);
     lines.push(`- O-5: $4,959 w/dep, $4,224 w/o dep`);
     lines.push(`- O-6: $5,001 w/dep, $4,413 w/o dep`);
     lines.push("");
@@ -379,7 +380,7 @@ function generate() {
   lines.push("");
   lines.push(
     "RealityCents.com is an educational mortgage resource for Hawaii homebuyers, refinancers, and military families. " +
-    "All content is authored by Jay Miller, Sales Manager and Mortgage Loan Consultant at CMG Home Loans (NMLS #657301), " +
+    "All content is authored by Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans (NMLS #657301), " +
     "a US Army veteran with 25 years of Hawaii mortgage experience. The site specializes in VA loans, conventional loans, " +
     "FHA loans, and Hawaii condo financing. All guidance reflects Hawaii-specific rules including condo warrantability " +
     "requirements, leasehold property considerations, PC-9 termite inspection mandates, and Honolulu County property tax exemptions."

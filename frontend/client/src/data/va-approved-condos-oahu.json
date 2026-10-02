@@ -3,8 +3,8 @@
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "HONOLULU",
   "state": "HI",
-  "totalApproved": 1771,
-  "withoutConditions": 1526,
+  "totalApproved": 1772,
+  "withoutConditions": 1527,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -10478,6 +10478,20 @@
       "status": "Accepted Without Conditions",
       "reviewDate": "1999-10-06",
       "approvalRequestDate": "1999-10-04",
+      "neighborhood": "Mililani"
+    },
+    {
+      "id": 355246,
+      "vaId": "FHA294",
+      "name": "HO'ALOHA IKE II - PH1",
+      "address": "",
+      "city": "MILILANI",
+      "state": "HI",
+      "zipCode": "96789",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2005-09-27",
+      "approvalRequestDate": "2005-09-27",
       "neighborhood": "Mililani"
     },
     {

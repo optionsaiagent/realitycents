@@ -72,7 +72,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$800K–$1.1M",
     priceTH: "$550K–$750K",
     whyFamilies:
-      "Top-rated schools, walkable, established military community, clean and well-maintained",
+      "walkable, established military community, clean and well-maintained",
     vaNote:
       "Mix of fee simple and leasehold — confirm fee simple before making an offer",
   },
@@ -140,7 +140,7 @@ const PAGE_SCHEMA = [
     "@id": "https://realitycents.com/#business",
     name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
     description:
-      "Army veteran and Certified Mortgage Advisor specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25+ years of Hawaii mortgage lending experience.",
+      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25+ years of Hawaii mortgage lending experience.",
     url: "https://realitycents.com/va-loan-schofield-barracks",
     telephone: "(808) 429-0811",
     email: "jaym@cmghomeloans.com",
@@ -206,7 +206,7 @@ export default function VALoanSchofield() {
     <Layout>
       <SEO
         title="VA Loan Guide for Schofield Barracks — Buy a Home on Oahu with $0 Down"
-        description="PCS'ing to Schofield Barracks? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Mililani, Wahiawa, Kapolei), VA condo rules, and $0-down purchase options for 25th Infantry Division families on Oahu."
+        description="PCS'ing to Schofield Barracks? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Mililani, Wahiawa, Kapolei), VA condo rules, and $0-down purchase options for 25th Infantry Division families on Oahu."
         url="https://realitycents.com/va-loan-schofield-barracks"
         keywords="VA loan Schofield Barracks, buying a home near Schofield Barracks, VA loan Wahiawa, VA loan Mililani, 25th Infantry Division home loan"
         type="website"
@@ -386,8 +386,7 @@ export default function VALoanSchofield() {
 
           <div className="mt-6 p-5 bg-teal/5 border border-teal/20 rounded-lg">
             <p className="text-sm font-body text-foreground/80 leading-relaxed">
-              The gap between BAH and PITI is real — but context matters. Hawaii's property tax
-              rate of 0.35% is the lowest in the country. On a $900,000 home, that's roughly
+              The gap between BAH and PITI is real — but context matters. Honolulu's owner-occupant property tax rate of about 0.35% is among the lowest in the nation. On a $900,000 home, that's roughly
               $263/month in property tax — compare that to $845/month in San Diego on the same
               home. COLA also supplements your take-home in ways that make the math more workable
               than it first appears.
@@ -419,7 +418,7 @@ export default function VALoanSchofield() {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-            Best Neighborhoods for Schofield Barracks Families
+            Neighborhoods Near Schofield Barracks: Commute, Housing, and Price
           </h2>
           <p className="text-foreground/70 font-body mb-8">
             Where you live relative to Schofield's Lyman Gate or Foote Gate will define your

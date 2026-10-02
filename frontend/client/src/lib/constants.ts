@@ -3,21 +3,22 @@
 
 export const SITE = {
   name: "RealityCents",
-  tagline: "Your Trusted Mortgage Resource in Hawaii",
+  tagline: "Hawaii Mortgage Education and Lending",
   description: "Mortgage education, tools, and lending services for Hawaii homebuyers and real estate professionals.",
   url: "https://realitycents.com",
 } as const;
 
 export const LENDER = {
   name: "Jay Miller",
-  title: "Mortgage Loan Originator",
+  title: "Sales Manager and Certified Mortgage Advisor",
   nmls: "657301",
   company: "CMG Home Loans",
   branchNmls: "2475890",
   companyNmls: "1820",
   phone: "(808) 429-0811",
+  phoneE164: "+18084290811",
   email: "jaym@cmghomeloans.com",
-  website: "www.jay-miller.com",
+  website: "jay-miller.com",
   address: {
     street: "500 Ala Moana Blvd, Suite 5-325",
     city: "Honolulu",

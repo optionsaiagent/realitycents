@@ -9,6 +9,7 @@ import { useLocation } from "wouter";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Facts from "./pages/Facts";
 import KnowledgeBase from "./pages/KnowledgeBase";
 import Article from "./pages/Article";
 import Calculator from "./pages/Calculator";
@@ -60,6 +61,7 @@ function Router() {
         <Route path={"/"} component={Home} />
         <Route path={"/about"} component={About} />
         <Route path={"/contact"} component={Contact} />
+        <Route path={"/facts"} component={Facts} />
         <Route path={"/knowledge-base"} component={KnowledgeBase} />
         <Route path={"/knowledge-base/:slug"} component={Article} />
         <Route path={"/calculator"} component={Calculator} />

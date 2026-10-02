@@ -34,6 +34,7 @@ const articleEnhancements = JSON.parse(
 );
 
 const BASE_URL = "https://realitycents.com";
+const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true"; // mirror of client/src/lib/constants.ts
 const SITE_NAME = "RealityCents";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 const DEFAULT_IMAGE_ALT = "RealityCents - Hawaii Mortgage Education & Lending";
@@ -85,7 +86,7 @@ try {
 const STATIC_PAGES = {
   "/": {
     title: "Hawaii Mortgage Education & Lending",
-    description: "Hawaii's trusted mortgage resource. Jay Miller, NMLS #657301, CMG Home Loans — expert mortgage guidance, free homebuying guide, mortgage calculator, and 25+ years of Hawaii real estate expertise. Serving Oahu, Maui, Kauai, and the Big Island.",
+    description: "Hawaii mortgage education from Jay Miller, NMLS #657301, CMG Home Loans: a free homebuying guide, mortgage calculators, and 25+ years of Hawaii mortgage lending experience. Serving Oahu, Maui, Kauai, and the Big Island.",
     keywords: "Hawaii mortgage, Hawaii home loans, mortgage lender Honolulu, Jay Miller mortgage, CMG Home Loans Hawaii, FHA loans Hawaii, VA loans Hawaii, first time homebuyer Hawaii, Hawaii mortgage calculator, Oahu home loans",
     schema: [
       {
@@ -105,12 +106,29 @@ const STATIC_PAGES = {
   "/about": {
     title: "About Jay Miller — Hawaii Mortgage Lender",
     description: "Meet Jay Miller, NMLS #657301 — a Hawaii mortgage loan originator with 25+ years of experience at CMG Home Loans. U.S. Army veteran, triathlete, and passionate advocate for informed homebuyers across the Hawaiian Islands.",
-    keywords: "Jay Miller mortgage, Hawaii mortgage lender, CMG Home Loans Honolulu, mortgage loan originator Hawaii, NMLS 657301, Hawaii home loan expert",
+    keywords: "Jay Miller mortgage, Hawaii mortgage lender, CMG Home Loans Honolulu, mortgage loan originator Hawaii, NMLS 657301, Hawaii home loan officer",
   },
   "/contact": {
     title: "Contact Jay Miller — Hawaii Mortgage Lender",
     description: "Contact Jay Miller, NMLS #657301, at CMG Home Loans in Honolulu, HI. Get personalized mortgage guidance, request a pre-approval, or ask about Hawaii home loan options. Call (808) 429-0811 or email jaym@cmghomeloans.com.",
     keywords: "contact Hawaii mortgage lender, Jay Miller contact, CMG Home Loans Honolulu, Hawaii mortgage pre-approval, mortgage consultation Hawaii",
+  },
+  "/facts": {
+    title: "Jay Miller Facts: NMLS #657301, CMG Home Loans Honolulu",
+    description: "Canonical facts about Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu. NMLS #657301, office, phone, email, books, sites, and AI tools.",
+    keywords: "Jay Miller NMLS 657301, Jay Miller CMG Home Loans, Jay Miller Honolulu mortgage",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://realitycents.com/facts#page",
+        url: "https://realitycents.com/facts",
+        name: "Jay Miller: the facts",
+        dateModified: "2026-10-01",
+        isPartOf: { "@id": "https://realitycents.com/#website" },
+        mainEntity: { "@id": "https://realitycents.com/#jaymiller" },
+      },
+    ],
   },
   "/guide": {
     title: "Free Hawaii Homebuying Guide — Download Now",
@@ -202,13 +220,13 @@ const STATIC_PAGES = {
   },
   "/knowledge-base": {
     title: "Hawaii Mortgage Knowledge Base — Articles & Guides",
-    description: "Expert articles on Hawaii mortgages, home loans, and the homebuying process. Topics include FHA loans, VA loans, jumbo loans, first-time homebuyer programs, down payment assistance, leasehold vs. fee simple, and more.",
+    description: "Articles on Hawaii mortgages, home loans, and the homebuying process. Topics include FHA loans, VA loans, jumbo loans, first-time homebuyer programs, down payment assistance, leasehold vs. fee simple, and more.",
     keywords: "Hawaii mortgage articles, Hawaii home loan guide, FHA loans Hawaii, VA loans Hawaii, first time homebuyer Hawaii, leasehold fee simple Hawaii, down payment assistance Hawaii, Hawaii mortgage tips",
   },
 
   "/frequently-asked-questions": {
     title: "Hawaii Home Loan FAQ",
-    description: "Answers to the top 20 questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Expert answers from a local mortgage professional with 25 years of experience.",
+    description: "Answers to 20 common questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.",
     keywords: "Hawaii mortgage FAQ, Honolulu home loan questions, VA loan Hawaii, conforming loan limits Honolulu, first-time homebuyer Hawaii, condo warrantability, leasehold property Hawaii",
     schema: [
       {
@@ -253,6 +271,13 @@ const STATIC_PAGES = {
         dateModified: CONDO_DATA.lastUpdated,
         license: "https://www.usa.gov/government-works",
         spatialCoverage: { "@type": "Place", name: "Honolulu County, Hawaii, USA" },
+        distribution: [
+          { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${BASE_URL}/data/va-approved-condos-hawaii.json` },
+          { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${BASE_URL}/data/va-approved-condos-hawaii.csv` },
+        ],
+        isAccessibleForFree: true,
+        isBasedOn: "https://lgy.va.gov/lgyhub/condo-report",
+        publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
       },
       {
         "@context": "https://schema.org",
@@ -279,7 +304,7 @@ const STATIC_PAGES = {
   // ─── Military Installation Hub Pages ─────────────────────────────────────
   "/va-loan-schofield-barracks": {
     title: "VA Loan Guide for Schofield Barracks — Buy a Home on Oahu with $0 Down",
-    description: "PCS'ing to Schofield Barracks? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Mililani, Wahiawa, Kapolei), VA condo rules, and $0-down purchase options for 25th Infantry Division families on Oahu.",
+    description: "PCS'ing to Schofield Barracks? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Mililani, Wahiawa, Kapolei), VA condo rules, and $0-down purchase options for 25th Infantry Division families on Oahu.",
     keywords: "VA loan Schofield Barracks, buying a home near Schofield Barracks, VA loan Wahiawa, VA loan Mililani, 25th Infantry Division home loan",
     schema: [
       {
@@ -287,7 +312,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran and Certified Mortgage Advisor specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military families PCS'ing to Schofield Barracks and Oahu. 25+ years of Hawaii mortgage lending experience.",
         url: "https://realitycents.com/va-loan-schofield-barracks",
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -320,7 +345,7 @@ const STATIC_PAGES = {
   },
   "/va-loan-pearl-harbor-hickam": {
     title: "VA Loan Guide for Pearl Harbor-Hickam — Buy a Home on Oahu with $0 Down",
-    description: "PCS'ing to Joint Base Pearl Harbor-Hickam? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Ewa Beach, Kapolei, Pearl City, Aiea, Salt Lake), VA condo rules, and $0-down purchase options for Navy and Air Force families on Oahu.",
+    description: "PCS'ing to Joint Base Pearl Harbor-Hickam? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Ewa Beach, Kapolei, Pearl City, Aiea, Salt Lake), VA condo rules, and $0-down purchase options for Navy and Air Force families on Oahu.",
     keywords: "VA loan Pearl Harbor, VA loan Hickam, buying a home near Pearl Harbor, Navy home loan Hawaii, Air Force home loan Oahu",
     schema: [
       {
@@ -328,7 +353,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran and Certified Mortgage Advisor specializing in VA loans for Navy and Air Force families PCS'ing to Joint Base Pearl Harbor-Hickam. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Navy and Air Force families PCS'ing to Joint Base Pearl Harbor-Hickam. 25+ years of Hawaii mortgage lending experience.",
         url: `${BASE_URL}/va-loan-pearl-harbor-hickam`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -361,7 +386,7 @@ const STATIC_PAGES = {
   },
   "/va-loan-kaneohe-mcbh": {
     title: "VA Loan Guide for MCBH Kaneohe Bay — Buy a Home on Oahu with $0 Down",
-    description: "PCS'ing to Marine Corps Base Hawaii? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best Windward side neighborhoods (Kailua, Kaneohe, Enchanted Lake, Hawaii Kai, Mililani), VA condo rules, and $0-down purchase options for Marines at MCBH Kaneohe Bay.",
+    description: "PCS'ing to Marine Corps Base Hawaii? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, Windward side neighborhoods (Kailua, Kaneohe, Enchanted Lake, Hawaii Kai, Mililani), VA condo rules, and $0-down purchase options for Marines at MCBH Kaneohe Bay.",
     keywords: "VA loan Kaneohe Bay, VA loan MCBH, buying a home near Kaneohe Bay, Marine Corps Hawaii home loan, VA loan Kailua",
     schema: [
       {
@@ -369,7 +394,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran and Certified Mortgage Advisor specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25+ years of Hawaii mortgage lending experience.",
         url: `${BASE_URL}/va-loan-kaneohe-mcbh`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -402,7 +427,7 @@ const STATIC_PAGES = {
   },
   "/va-loan-fort-shafter": {
     title: "VA Loan Guide for Fort Shafter — Buy a Home on Oahu with $0 Down",
-    description: "PCS'ing to Fort Shafter? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Salt Lake, Moanalua, Kalihi, Aiea, Manoa/Makiki), VA condo rules, and $0-down purchase options for USARPAC Army personnel on Oahu.",
+    description: "PCS'ing to Fort Shafter? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Salt Lake, Moanalua, Kalihi, Aiea, Manoa/Makiki), VA condo rules, and $0-down purchase options for USARPAC Army personnel on Oahu.",
     keywords: "VA loan Fort Shafter, buying a home near Fort Shafter, VA loan Honolulu, USARPAC home loan, military home loan Honolulu",
     schema: [
       {
@@ -410,7 +435,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran and Certified Mortgage Advisor specializing in VA loans for USARPAC and Fort Shafter personnel PCS'ing to Oahu. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for USARPAC and Fort Shafter personnel PCS'ing to Oahu. 25+ years of Hawaii mortgage lending experience.",
         url: `${BASE_URL}/va-loan-fort-shafter`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -443,7 +468,7 @@ const STATIC_PAGES = {
   },
   "/va-loan-tripler": {
     title: "VA Loan Guide for Tripler Army Medical Center — Buy a Home on Oahu with $0 Down",
-    description: "Assigned to Tripler Army Medical Center? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best neighborhoods (Salt Lake, Moanalua, Aiea, Pearl City, Kalihi), VA condo rules, and $0-down purchase options for military medical staff on Oahu.",
+    description: "Assigned to Tripler Army Medical Center? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, nearby neighborhoods (Salt Lake, Moanalua, Aiea, Pearl City, Kalihi), VA condo rules, and $0-down purchase options for military medical staff on Oahu.",
     keywords: "VA loan Tripler, buying a home near Tripler, VA loan Salt Lake, VA loan Moanalua, military medical staff home loan Hawaii",
     schema: [
       {
@@ -451,7 +476,7 @@ const STATIC_PAGES = {
         "@type": "LocalBusiness",
         "@id": "https://realitycents.com/#business",
         name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
-        description: "Army veteran and Certified Mortgage Advisor specializing in VA loans for military medical staff PCS'ing to Tripler Army Medical Center. 25+ years of Hawaii mortgage lending experience.",
+        description: "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for military medical staff PCS'ing to Tripler Army Medical Center. 25+ years of Hawaii mortgage lending experience.",
         url: `${BASE_URL}/va-loan-tripler`,
         telephone: "(808) 429-0811",
         email: "jaym@cmghomeloans.com",
@@ -581,15 +606,15 @@ const STATIC_PAGES = {
         "@type": "Person",
         "@id": `${BASE_URL}/#jaymiller`,
         name: "Jay Miller",
-        jobTitle: "Certified Mortgage Advisor",
-        description: "U.S. Army veteran and Certified Mortgage Advisor. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
+        jobTitle: "Sales Manager and Certified Mortgage Advisor",
+        description: "U.S. Army veteran, Sales Manager and Certified Mortgage Advisor at CMG Home Loans. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
         url: `${BASE_URL}/about`,
         identifier: { "@type": "PropertyValue", name: "NMLS", value: "657301" },
         worksFor: { "@type": "Organization", name: "CMG Home Loans" },
         sameAs: [
           BASE_URL,
           "https://www.linkedin.com/in/jay-miller-534bb5173/",
-          "https://www.instagram.com/jaymillercmg",
+          "https://www.instagram.com/jaymiller_hawaii/",
         ],
       },
       {
@@ -606,7 +631,7 @@ const STATIC_PAGES = {
         "@id": `${BASE_URL}/zero-down-in-paradise#faq`,
         mainEntity: [
           { "@type": "Question", name: "What is Zero Down in Paradise?", acceptedAnswer: { "@type": "Answer", text: "Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers is a 164-page paperback (July 2026, ISBN 979-8-9963553-0-3) by Jay Miller that explains how to buy a home in Hawaii using a VA loan." } },
-          { "@type": "Question", name: "Who is Jay Miller (NMLS #657301)?", acceptedAnswer: { "@type": "Answer", text: "Jay Miller is a U.S. Army veteran and Mortgage Loan Consultant / Sales Manager at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is a Certified Mortgage Advisor (CMA) and the author of Zero Down in Paradise." } },
+          { "@type": "Question", name: "Who is Jay Miller (NMLS #657301)?", acceptedAnswer: { "@type": "Answer", text: "Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of Zero Down in Paradise." } },
           { "@type": "Question", name: "Can I use a VA loan to buy in Hawaii with zero down?", acceptedAnswer: { "@type": "Answer", text: "Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply." } },
           { "@type": "Question", name: "Is there a VA loan limit in Hawaii?", acceptedAnswer: { "@type": "Answer", text: "With full entitlement, no VA loan limit for $0 down. With reduced entitlement, county conforming limits apply. Honolulu County's 2026 single-family conforming limit is $1,249,125." } },
           { "@type": "Question", name: "Are Hawaii condos VA-approved?", acceptedAnswer: { "@type": "Answer", text: "Not automatically. Many Hawaii condos are VA-approved, but you must verify the specific project before writing an offer. Use RealityCents' VA condo tools and have your lender confirm." } },
@@ -822,7 +847,7 @@ const STATIC_PAGES = {
         url: `${BASE_URL}/ai`,
         installUrl: "https://realitycents-mcp.jaymiller.workers.dev/mcp",
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "get_preapproval_link"],
+        featureList: ["calculate_mortgage_payment", "calculate_affordability", "va_purchase_power", "va_remaining_entitlement", "compare_loans", "calculate_buydown", "rent_vs_buy", "hawaii_mortgage_guidance", "lookup_va_condo", "get_preapproval_link"],
         author: { "@type": "Person", name: "Jay Miller", identifier: "NMLS #657301", url: `${BASE_URL}/about` },
         publisher: { "@type": "Organization", name: "RealityCents", url: BASE_URL },
         isRelatedTo: { "@type": "Book", name: "Zero Down in Paradise: The Hawaii VA Loan Playbook", url: `${BASE_URL}/zero-down-in-paradise` },
@@ -832,7 +857,7 @@ const STATIC_PAGES = {
         "@type": "FAQPage",
         mainEntity: [
           { "@type": "Question", name: "Can I use a Hawaii mortgage calculator in ChatGPT or Claude?", acceptedAnswer: { "@type": "Answer", text: "Yes. Add the RealityCents MCP server (https://realitycents-mcp.jaymiller.workers.dev/mcp) as a custom connector with no authentication, then ask in plain English, for example \"What's the payment on a $900,000 Honolulu home with a VA loan?\"" } },
-          { "@type": "Question", name: "What is the RealityCents MCP server?", acceptedAnswer: { "@type": "Answer", text: "A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii." } },
+          { "@type": "Question", name: "What is the RealityCents MCP server?", acceptedAnswer: { "@type": "Answer", text: "A free, read-only Model Context Protocol server with 10 Hawaii mortgage and VA loan tools, including an Oahu VA-approved condo lookup. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii." } },
           { "@type": "Question", name: "Does it collect personal information?", acceptedAnswer: { "@type": "Answer", text: "No. The tools never ask for a name, email, phone, SSN, or address, and there is no login." } },
           { "@type": "Question", name: "Is the result a loan offer or pre-approval?", acceptedAnswer: { "@type": "Answer", text: "No. Results are educational estimates, and rates are examples, not quotes. For a real number, get pre-approved with a licensed loan officer." } },
           { "@type": "Question", name: "Where do the numbers come from?", acceptedAnswer: { "@type": "Answer", text: "From the same code and 2026 tables as the realitycents.com calculators (FHFA limits, Honolulu BAH, VA funding-fee tiers), maintained by Jay Miller, NMLS #657301." } },
@@ -926,7 +951,7 @@ function buildArticleMeta(article) {
 
   return {
     title: article.title,
-    description: `${article.excerpt} Expert mortgage guidance from Jay Miller, NMLS #657301, CMG Home Loans Hawaii.`,
+    description: `${article.excerpt} Mortgage education from Jay Miller, NMLS #657301, CMG Home Loans Hawaii.`,
     keywords: meta.keywords || `${article.category}, Hawaii mortgage, ${article.title.toLowerCase()}, Jay Miller mortgage, CMG Home Loans Hawaii`,
     image: resolveOgImage(article.image),
     imageAlt: article.title,
@@ -993,7 +1018,7 @@ function generateArticleBody(article) {
     <article class="article-content">
       <h1>${escapeHtml(article.title)}</h1>
       <div class="article-byline" style="font-size: 0.875rem; color: #666; margin: 1rem 0; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem;">
-        <p style="margin: 0;"><strong>Jay Miller, CMA</strong> · NMLS #657301 · Certified Mortgage Advisor · 25 years Hawaii mortgage experience · U.S. Army veteran</p>
+        <p style="margin: 0;"><strong>Jay Miller</strong> · Sales Manager and Certified Mortgage Advisor, CMG Home Loans · NMLS #657301 · 25 years Hawaii mortgage experience · U.S. Army veteran</p>
         <p style="margin: 0.25rem 0 0 0;">Last updated: ${article.lastUpdated || article.date} · ${readLabel}</p>
       </div>
       ${leadHtml}
@@ -1001,7 +1026,7 @@ function generateArticleBody(article) {
         ${htmlContent}
       </div>
       <div class="article-footer">
-        <p>For personalized mortgage guidance, call (808) 429-0811 or visit <a href="${BASE_URL}">realitycents.com</a></p>
+        <p>For personalized mortgage guidance, call or text <a href="tel:+18084290811">(808) 429-0811</a>, email <a href="mailto:jaym@cmghomeloans.com">jaym@cmghomeloans.com</a>, or <a href="${PRE_APPROVAL_URL}">apply online with CMG Home Loans</a>. Jay Miller, NMLS #657301.</p>
       </div>
     </article>
   `;
@@ -1044,7 +1069,7 @@ ${articleLinks}
   return `
     <main>
       <h1>Hawaii Mortgage Knowledge Base</h1>
-      <p>Expert articles on Hawaii mortgages, home loans, and the homebuying process. Written by Jay Miller, CMA, NMLS #657301, with 25+ years of Hawaii lending experience. Topics include VA loans, FHA loans, conventional financing, down payment assistance, leasehold vs. fee simple, and more.</p>
+      <p>Articles on Hawaii mortgages, home loans, and the homebuying process. Written by Jay Miller, CMA, NMLS #657301, with 25+ years of Hawaii lending experience. Topics include VA loans, FHA loans, conventional financing, down payment assistance, leasehold vs. fee simple, and more.</p>
       <p>${articleList.length} articles covering every aspect of buying a home in Hawaii.</p>
 
 ${categoryBlocks}
@@ -1161,7 +1186,7 @@ function customizeHtml(baseHtml, route, meta, bodyContent = null) {
   // 10. Inject semantic HTML body (before React mount point)
   if (bodyContent) {
     // Footer uses no <div>: the stale-content strip matches up to the first </div>.
-    const aiFooter = `<footer><nav><a href="${BASE_URL}/ai">AI assistant tools</a></nav></footer>`;
+    const aiFooter = `<footer><nav aria-label="Contact and related sites"><a href="tel:+18084290811">Call or text (808) 429-0811</a> <a href="mailto:jaym@cmghomeloans.com">Email jaym@cmghomeloans.com</a> <a href="${PRE_APPROVAL_URL}">Apply online with CMG Home Loans</a> <a href="${BASE_URL}/contact">Contact</a> <a href="${BASE_URL}/facts">Jay Miller facts</a> <a href="${BASE_URL}/ai">AI assistant tools</a> <a href="https://www.pcsingtohawaii.com">PCSing to Hawaii</a> <a href="https://jay-miller.com">jay-miller.com</a></nav><p>Jay Miller, Sales Manager and Certified Mortgage Advisor · NMLS #657301 · CMG Home Loans, Branch NMLS #2475890 · CMG Mortgage, Inc., NMLS #1820 · Equal Housing Opportunity</p></footer>`;
     const prerenderedContent = `    <div id="prerendered-content" aria-hidden="true">\n${bodyContent}\n${aiFooter}\n    </div>\n    `;
     html = html.replace(
       '    <div id="root"></div>',

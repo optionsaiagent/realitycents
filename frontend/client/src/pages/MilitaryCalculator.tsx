@@ -1235,7 +1235,7 @@ export default function MilitaryCalculator() {
             author: {
               "@type": "Person",
               name: "Jay Miller",
-              jobTitle: "Certified Mortgage Advisor",
+              jobTitle: "Sales Manager and Certified Mortgage Advisor",
               url: "https://realitycents.com/about",
             },
           }),

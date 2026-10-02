@@ -15,17 +15,21 @@ const CONDO_DATA = JSON.parse(
 const CONDO_TOTAL = CONDO_DATA.totalApproved.toLocaleString("en-US");
 const CONDO_UPDATED_MONTH = new Date(CONDO_DATA.lastUpdated + "T00:00:00").toLocaleString("en-US", { month: "long", year: "numeric" });
 
+const LICENSE_TAIL = "Jay Miller, Sales Manager and Certified Mortgage Advisor, NMLS #657301. CMG Home Loans Branch NMLS #2475890, 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813. CMG Mortgage, Inc. NMLS #1820. Equal Housing Opportunity.";
+const LICENSE_CALC = `<p class="license">Estimates are for education only. They are not a loan offer or a commitment to lend. Rates are examples, not quotes. Verify any scenario with a licensed loan officer. ${LICENSE_TAIL}</p>`;
+const LICENSE_EDU = `<p class="license">Educational content only. It is not a loan offer or a commitment to lend. Verify any scenario with a licensed loan officer. ${LICENSE_TAIL}</p>`;
+
 export const STATIC_PAGE_BODIES = {
   "/": `
     <main>
       <h1>Hawaii Mortgage Education &amp; Lending</h1>
-      <p>Hawaii's trusted mortgage resource. Expert guidance from Jay Miller, NMLS #657301, with 25+ years of Hawaii lending experience at CMG Home Loans. Serving Oahu, Maui, Kauai, and the Big Island.</p>
+      <p>Hawaii mortgage education and lending from Jay Miller, NMLS #657301, with 25+ years of Hawaii lending experience at CMG Home Loans. Serving Oahu, Maui, Kauai, and the Big Island.</p>
       <section>
         <h2>What We Offer</h2>
-        <p>RealityCents provides free mortgage education, professional calculators, and personalized lending services for Hawaii homebuyers. Whether you're a first-time buyer, military service member, or real estate investor, we have the tools and expertise to guide you through Hawaii's unique real estate market.</p>
+        <p>RealityCents provides free mortgage education, professional calculators, and personalized lending services for Hawaii homebuyers. Whether you're a first-time buyer, military service member, or real estate investor, the calculators and articles here are built for Hawaii's real estate market.</p>
         <ul>
           <li><a href="${BASE_URL}/calculator">Free Mortgage Calculators</a> — Basic, Advanced, Affordability, Rent vs. Buy, Buydown, <a href="${BASE_URL}/military-calculator">Military Buying Power</a>, and Loan Comparison tools</li>
-          <li><a href="${BASE_URL}/knowledge-base">Knowledge Base</a> — 30+ expert articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
+          <li><a href="${BASE_URL}/knowledge-base">Knowledge Base</a> — 30+ articles covering VA loans, FHA loans, conventional financing, down payment assistance, and Hawaii-specific topics</li>
           <li><a href="${BASE_URL}/agents">Agent Tools</a> — Professional DSCR analyzer, assumable loan calculator, and escalation calculator for real estate professionals</li>
           <li><a href="${BASE_URL}/va-approved-condos-oahu">VA Condo Lookup</a> — Searchable directory of ${CONDO_TOTAL} VA-approved condo projects on Oahu</li>
           <li><a href="${BASE_URL}/ai">AI Assistant Tools</a>: the RealityCents calculators inside ChatGPT, Claude, and Cursor</li>
@@ -34,7 +38,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>Meet Your Lender</h2>
-        <p>Jay Miller is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
+        <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience and as a U.S. Army veteran, Jay specializes in VA loans, first-time homebuyer programs, and Hawaii's unique real estate challenges including leasehold properties, condo warrantability, and high-cost market financing.</p>
         <p>NMLS #657301 | CMG Home Loans Branch NMLS #2475890 | (808) 429-0811 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</p>
       </section>
       <section>
@@ -54,10 +58,10 @@ export const STATIC_PAGE_BODIES = {
   "/about": `
     <main>
       <h1>About Jay Miller — Hawaii Mortgage Lender</h1>
-      <p>Jay Miller is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped thousands of Hawaii families achieve homeownership — from first-time buyers navigating FHA programs to military families maximizing their VA benefits.</p>
+      <p>Jay Miller is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii. With over 25 years of mortgage lending experience, Jay has helped hundreds of military families use their VA benefits to buy homes in Hawaii, and he also works with first-time buyers using FHA programs.</p>
       <section>
         <h2>Background &amp; Experience</h2>
-        <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay brings a unique combination of military service understanding and deep Hawaii real estate expertise. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
+        <p>A U.S. Army veteran and Certified Mortgage Advisor (CMA), Jay combines his military service with 25+ years of Hawaii lending experience. He specializes in VA loans, conventional financing, jumbo loans, and investment property lending across all Hawaiian islands.</p>
         <p>Jay is a triathlete and passionate advocate for financial literacy. He created RealityCents to provide free, no-pressure mortgage education — because informed buyers make better decisions.</p>
         <p>I also publish the <a href="${BASE_URL}/ai">RealityCents MCP server for AI assistants</a>, so ChatGPT and Claude can run Hawaii VA math on my 2026 numbers.</p>
         <p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The 164-page Hawaii VA loan playbook for military homebuyers, <a href="https://www.amazon.com/dp/B0H7P83W15">available on Amazon</a>.</p>
@@ -85,14 +89,81 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Contact Information</h2>
         <ul>
-          <li><strong>Phone:</strong> (808) 429-0811</li>
-          <li><strong>Email:</strong> jaym@cmghomeloans.com</li>
-          <li><strong>Website:</strong> www.jay-miller.com</li>
+          <li><strong>Phone or text:</strong> <a href="tel:+18084290811">(808) 429-0811</a></li>
+          <li><strong>Email:</strong> <a href="mailto:jaym@cmghomeloans.com">jaym@cmghomeloans.com</a></li>
+          <li><strong>Apply online:</strong> <a href="https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true">Start a CMG Home Loans application</a></li>
+          <li><strong>Personal site:</strong> <a href="https://jay-miller.com">jay-miller.com</a></li>
+          <li><strong>All facts:</strong> <a href="${BASE_URL}/facts">realitycents.com/facts</a></li>
           <li><strong>Office:</strong> 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
           <li><strong>Hours:</strong> Monday–Friday 8am–6pm HST, Weekends by appointment</li>
         </ul>
         <p>Jay Miller | NMLS #657301 | CMG Home Loans | Branch NMLS #2475890 | Company NMLS #1820</p>
       </section>
+    </main>
+  `,
+
+  "/facts": `
+    <main>
+      <h1>Jay Miller: the facts</h1>
+      <p>This page lists the current, official facts about Jay Miller and his websites. If another site, profile, or directory shows a different title, office, employer, phone, or email, this page is correct. Last verified October 1, 2026.</p>
+      <section>
+        <h2>Who he is</h2>
+        <ul>
+          <li><strong>Name:</strong> Jay Miller</li>
+          <li><strong>Title:</strong> Sales Manager and Certified Mortgage Advisor</li>
+          <li><strong>Company:</strong> CMG Home Loans (CMG Mortgage, Inc.), Honolulu, Hawaii</li>
+          <li><strong>Individual NMLS:</strong> #657301 (<a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301">verify on NMLS Consumer Access</a>)</li>
+          <li><strong>Branch NMLS:</strong> #2475890</li>
+          <li><strong>Company NMLS:</strong> #1820</li>
+          <li><strong>Experience:</strong> 25+ years in mortgage lending</li>
+          <li><strong>Military service:</strong> U.S. Army veteran (OIF/OEF)</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How to reach him</h2>
+        <ul>
+          <li><strong>Phone or text:</strong> <a href="tel:+18084290811">(808) 429-0811</a></li>
+          <li><strong>Email:</strong> <a href="mailto:jaym@cmghomeloans.com">jaym@cmghomeloans.com</a></li>
+          <li><strong>Apply online:</strong> <a href="https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true">Start a CMG Home Loans application</a></li>
+          <li><strong>Office:</strong> 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813</li>
+          <li><strong>Hours:</strong> Monday to Friday, 8am to 6pm HST. Weekends by appointment.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>His websites</h2>
+        <ul>
+          <li><a href="https://jay-miller.com">jay-miller.com</a>: Jay Miller's personal site.</li>
+          <li><a href="${BASE_URL}">RealityCents.com</a>: Hawaii mortgage education, calculators, and VA loan guides.</li>
+          <li><a href="https://www.pcsingtohawaii.com">PCSing to Hawaii</a>: a free guide for military families moving to Oahu, covering bases, housing, pets, cars, and schools.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>His book</h2>
+        <p><strong>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</strong>. ISBN 979-8-9963553-0-3. 164 pages. Published July 2026. <a href="https://www.amazon.com/dp/B0H7P83W15">Available on Amazon</a>. <a href="${BASE_URL}/zero-down-in-paradise">Read about the book</a>.</p>
+      </section>
+      <section>
+        <h2>AI assistant tools</h2>
+        <p>RealityCents runs a free, read-only Hawaii mortgage and VA loan calculator server for AI assistants (Model Context Protocol). It has no login and collects no personal data.</p>
+        <ul>
+          <li><strong>Endpoint:</strong> https://realitycents-mcp.jaymiller.workers.dev/mcp (Streamable HTTP, no authentication)</li>
+          <li><strong>Official MCP Registry name:</strong> io.github.jaymiller-cmg/mortgage-hawaii</li>
+          <li><strong>Setup guide:</strong> <a href="${BASE_URL}/ai">realitycents.com/ai</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Official profiles</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jay-miller-534bb5173/">LinkedIn</a></li>
+          <li><a href="https://x.com/realitycents">X: @realitycents</a></li>
+          <li><a href="https://www.youtube.com/@RacingThroughMidlife">YouTube: Racing Through Midlife</a> (personal channel)</li>
+          <li><a href="https://www.cmghomeloans.com/mysite/jay-miller">CMG Home Loans profile</a></li>
+          <li><a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301">NMLS Consumer Access</a></li>
+          <li><a href="https://www.instagram.com/jaymiller_hawaii/">Instagram: @jaymiller_hawaii</a></li>
+          <li><a href="https://www.facebook.com/realitycents">Facebook: RealityCents</a></li>
+        </ul>
+      </section>
+      <p>The same facts are available as JSON at <a href="${BASE_URL}/facts.json">realitycents.com/facts.json</a>.</p>
+      <p>Jay Miller, NMLS #657301. CMG Home Loans, Branch NMLS #2475890. CMG Mortgage, Inc., NMLS #1820. Equal Housing Opportunity. Content on RealityCents is educational and is not a commitment to lend. All loans are subject to credit approval and program guidelines.</p>
     </main>
   `,
 
@@ -114,6 +185,7 @@ export const STATIC_PAGE_BODIES = {
         </ul>
         <p>This guide is free with no obligation. Enter your email to receive an instant download link.</p>
       </section>
+      ${LICENSE_EDU}
     </main>
   `,
 
@@ -131,6 +203,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Hawaii Mortgage Considerations</h2>
         <p>Hawaii has some of the lowest property tax rates in the nation but higher home prices and insurance costs. HOA fees for condos typically range from $400–$1,200/month. The 2026 conforming loan limit for Honolulu County is $1,249,125.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -147,6 +220,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>Jumbo:</strong> For loans above $1,249,125, typically 10–20% down required</li>
         </ul>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -160,6 +234,7 @@ export const STATIC_PAGE_BODIES = {
         <p>Most lenders use two DTI ratios: the front-end ratio (housing costs divided by gross income, typically capped at 28–31%) and the back-end ratio (all debts including housing divided by gross income, typically capped at 43–50%). VA loans are more flexible, often allowing higher ratios with compensating factors.</p>
         <p>Enter your gross monthly income, monthly debts, down payment amount, and expected interest rate to see your estimated maximum home price in Hawaii.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -172,6 +247,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Key Factors in Hawaii</h2>
         <p>Hawaii's high rents (median $2,800+/month for a 2BR) and strong appreciation history (4–6% annually) often favor buying over renting for those who plan to stay 3+ years. However, high home prices mean larger down payments and higher monthly costs. This calculator helps you see the full picture including tax benefits, equity growth, and opportunity cost of your down payment.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -185,6 +261,7 @@ export const STATIC_PAGE_BODIES = {
         <p>A temporary buydown reduces your mortgage interest rate for the first 1–3 years of the loan. The seller (or builder) contributes a lump sum at closing that subsidizes your payments during the buydown period. After the buydown expires, your rate returns to the permanent note rate. This is different from buying discount points, which permanently reduce your rate.</p>
         <p>Common structures: A 2/1 buydown reduces your rate by 2% in Year 1 and 1% in Year 2. A 3/2/1 reduces by 3%, 2%, and 1% over three years. The seller credit required equals the total payment difference over the buydown period.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -198,6 +275,7 @@ export const STATIC_PAGE_BODIES = {
         <p>VA lenders count multiple income sources for qualification: base pay, BAH (Basic Allowance for Housing), BAS (Basic Allowance for Subsistence), COLA, flight pay, hazardous duty pay, and more. Since BAH and BAS are tax-free, many lenders gross them up by up to 25% for qualification (lender policy, not a VA rule), significantly increasing your buying power.</p>
         <p>For Honolulu County in 2026, BAH with dependents ranges from $3,663/month (E-5) to $5,001/month (O-6). Combined with base pay and the 25% gross-up, most military families qualify for more home than they expect.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -210,13 +288,14 @@ export const STATIC_PAGE_BODIES = {
         <h2>What You Can Compare</h2>
         <p>Add up to 3 loan scenarios with different rates, points, closing costs, and terms. The calculator shows you the true cost of each option including the break-even point for paying points, total interest over the loan life, and effective APR. Perfect for comparing lender quotes or evaluating rate buydown options.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
   "/frequently-asked-questions": `
     <main>
       <h1>Hawaii Home Loan FAQ</h1>
-      <p>Answers to the most common questions about buying a home and getting a mortgage in Hawaii. Expert answers from Jay Miller, a local mortgage professional with 25+ years of experience.</p>
+      <p>Answers to the most common questions about buying a home and getting a mortgage in Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience.</p>
       <section>
         <h2>Loan Basics</h2>
         <dl>
@@ -246,6 +325,7 @@ export const STATIC_PAGE_BODIES = {
           <dd>HOA fees range from $400–$1,200+/month depending on the building's age, amenities, and reserve fund health. Older buildings with deferred maintenance tend to have higher fees and special assessments.</dd>
         </dl>
       </section>
+      ${LICENSE_EDU}
     </main>
   `,
 
@@ -256,9 +336,10 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Approval Status Breakdown</h2>
         <ul>
-          <li><strong>1,498 projects:</strong> Accepted Without Conditions — fully meets all VA requirements</li>
-          <li><strong>247 projects:</strong> Accepted With Conditions — approved with noted informational items</li>
+          <li><strong>${CONDO_DATA.withoutConditions.toLocaleString("en-US")} projects:</strong> Accepted Without Conditions</li>
+          <li><strong>${CONDO_DATA.withConditions.toLocaleString("en-US")} projects:</strong> Accepted With Conditions, with conditions noted in the VA record</li>
         </ul>
+        <p>Data from the <a href="https://lgy.va.gov/lgyhub/condo-report">VA condo report</a>, last checked ${CONDO_DATA.lastUpdated}. Download: <a href="/data/va-approved-condos-hawaii.json">JSON</a> · <a href="/data/va-approved-condos-hawaii.csv">CSV</a>. Approvals change; verify a project's current status with the VA. VA approval status does not guarantee loan approval.</p>
         <p>Both statuses allow VA financing. The difference is administrative — in practice, there is almost never anything that needs to be resolved for "With Conditions" projects.</p>
       </section>
       <section>
@@ -272,6 +353,7 @@ export const STATIC_PAGE_BODIES = {
           <dd>Generally no. The VA does not approve projects that operate primarily as hotels or where units are part of a mandatory rental pool.</dd>
         </dl>
       </section>
+      ${LICENSE_EDU}
     </main>
   `,
 
@@ -289,7 +371,7 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Can you buy a home in Hawaii with a VA loan and zero down?</h2>
         <p><strong>Yes.</strong> Eligible veterans and active-duty service members with full VA entitlement can purchase a primary residence in Hawaii with $0 down and no PMI. You still need lender approval based on income, credit, residual income, and the property.</p>
-        <p>That $0-down benefit is especially powerful in Hawaii, where a conventional 20% down payment on an $800,000 home is $160,000. VA financing removes that cash hurdle when you qualify and have full entitlement. Many lenders still set their own maximum loan amount for $0-down VA purchases — ask your lender what their cap is.</p>
+        <p>That $0-down benefit matters more in Hawaii, where a conventional 20% down payment on an $800,000 home is $160,000. VA financing removes that cash hurdle when you qualify and have full entitlement. Many lenders still set their own maximum loan amount for $0-down VA purchases — ask your lender what their cap is.</p>
         <p>For the full walkthrough, see the free companion guide: <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">how to buy a house in Hawaii with a VA loan and $0 down (step by step)</a>.</p>
       </section>
       <section>
@@ -353,7 +435,7 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section>
         <h2>About the author</h2>
-        <p><strong>Jay Miller</strong> is a Sales Manager and Mortgage Loan Consultant at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran, Certified Mortgage Advisor (CMA), and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
+        <p><strong>Jay Miller</strong> is a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu, Hawaii (NMLS #657301 · Branch NMLS #2475890). He is a U.S. Army veteran and a 25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo financing, and the island-specific issues that trip up mainland playbooks — leasehold, condo approval, and high-cost qualification.</p>
         <p>Phone: (808) 429-0811 · Email: jaym@cmghomeloans.com · Office: 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813 · <a href="${BASE_URL}/about">About Jay Miller</a></p>
       </section>
       <section>
@@ -362,7 +444,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>What is Zero Down in Paradise?</dt>
           <dd><em>Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers</em> is a 164-page paperback (July 2026, ISBN 979-8-9963553-0-3) by Jay Miller that explains how to buy a home in Hawaii using a VA loan.</dd>
           <dt>Who is Jay Miller (NMLS #657301)?</dt>
-          <dd>Jay Miller is a U.S. Army veteran and Mortgage Loan Consultant / Sales Manager at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is a Certified Mortgage Advisor (CMA) and the author of <em>Zero Down in Paradise</em>.</dd>
+          <dd>Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of <em>Zero Down in Paradise</em>.</dd>
           <dt>Can I use a VA loan to buy in Hawaii with zero down?</dt>
           <dd>Yes, if you are eligible and have full entitlement, and you meet lender credit, income, and property requirements. There is no PMI on VA loans. Lender maximums for $0-down amounts may still apply.</dd>
           <dt>Is there a VA loan limit in Hawaii?</dt>
@@ -493,6 +575,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>Hawaii-Specific Considerations</h2>
         <p>Hawaii property tax rates are among the lowest in the nation (~0.35%), but HOA/maintenance fees for condos can be significant ($400–$1,200+/month). Many Hawaii condos are leasehold — verify fee simple vs. leasehold before running DSCR numbers. DSCR lenders will use the appraiser's Form 1007 market rent determination, which may differ from online estimates.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -509,6 +592,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>VA Entitlement Considerations</h2>
         <p>If the seller's VA entitlement isn't restored at closing, it remains tied to the property. Buyers can assume using their own VA entitlement (substitution of entitlement) or assume as a non-veteran. The seller's entitlement stays encumbered until the loan is paid off or refinanced.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -525,6 +609,7 @@ export const STATIC_PAGE_BODIES = {
         <p>A $25,000 escalation on an $850,000 home at 6.875% with 20% down adds approximately $132/month — about $4.40/day. Meanwhile, if you lose this home and rates go up just 0.25% on your next purchase at the same price, your payment increases by approximately $113/month for the entire 30-year loan life. The escalation is finite; the rate increase is forever.</p>
         <p>At Hawaii's historical 4–6% annual appreciation, a $25K escalation is typically recovered in equity within 4–6 months.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -544,6 +629,7 @@ export const STATIC_PAGE_BODIES = {
         <h2>What You Can Model</h2>
         <p>Inputs include starting balance, HELOC rate (default SOFR + 3.25%), deposit frequency (weekly, bi-weekly, semi-monthly, or monthly), total monthly expenses, one-time or annually recurring extra deposits (bonus, tax refund, property sale proceeds), and a traditional fixed-rate comparison. Outputs include payoff time, total interest, interest and time saved, a balance-over-time chart, a daily "sawtooth" detail view, a year-by-year breakdown table, and available credit during the draw period.</p>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
@@ -566,14 +652,15 @@ export const STATIC_PAGE_BODIES = {
           <li>O-5: $4,959/mo</li>
         </ul>
       </section>
+      ${LICENSE_CALC}
     </main>
   `,
 
   "/ai": `
     <main>
       <h1>Hawaii mortgage and VA loan calculators for your AI assistant</h1>
-      <p>Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: September 28, 2026</p>
-      <p>RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, and 2026 Hawaii loan-limit guidance. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.</p>
+      <p>Server URL · Streamable HTTP · No auth · Official MCP Registry: io.github.jaymiller-cmg/mortgage-hawaii · Last updated: October 1, 2026</p>
+      <p>RealityCents runs a free, read-only MCP server that gives ChatGPT, Claude, Cursor and other AI assistants the same Hawaii mortgage and VA loan math as the calculators on realitycents.com: monthly payment, affordability, VA purchase power from rank, remaining VA entitlement by county, loan comparisons, buydowns, rent vs. buy, 2026 Hawaii loan-limit guidance, and an Oahu VA-approved condo lookup. There is no login and no personal data. Built by Jay Miller, NMLS #657301, author of <em>Zero Down in Paradise</em>.</p>
       <p>The math is the same math as the calculators on realitycents.com. Results are estimates only. Rates are examples, not quotes.</p>
       <section>
         <h2>Sample answer</h2>
@@ -589,7 +676,7 @@ export const STATIC_PAGE_BODIES = {
         </ul>
       </section>
       <section>
-        <h2>The nine tools</h2>
+        <h2>The ten tools</h2>
         <ul>
           <li><strong>calculate_mortgage_payment</strong> — Monthly payment (principal &amp; interest, Hawaii property tax, insurance, HOA, plus PMI, FHA MIP or VA funding fee) for conventional, FHA, VA or jumbo.</li>
           <li><strong>calculate_affordability</strong> — Estimated maximum purchase price from gross monthly income, debts and a DTI target.</li>
@@ -599,6 +686,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>calculate_buydown</strong> — Year-by-year payments and cost of a 2-1, 1-0 or 3-2-1 temporary buydown, or permanent discount points.</li>
           <li><strong>rent_vs_buy</strong> — Cumulative rent vs. the net cost of buying over a holding period.</li>
           <li><strong>hawaii_mortgage_guidance</strong> — Short factual notes on Hawaii topics (property tax, VA loans, leasehold vs fee simple, VA condo approval, 2026 loan limits, BAH/COLA, closing costs, pre-approval steps), drawn from RealityCents articles.</li>
+          <li><strong>lookup_va_condo</strong>: Checks whether an Oahu condo project is on the VA's accepted condo list by name, building address, or VA ID, with the data date and the VA's lookup link. VA approval status does not guarantee loan approval.</li>
           <li><strong>get_preapproval_link</strong> — Jay Miller's CMG Home Loans application link and business contact.</li>
         </ul>
       </section>
@@ -668,7 +756,7 @@ export const STATIC_PAGE_BODIES = {
           <dt>Can I use a Hawaii mortgage calculator in ChatGPT or Claude?</dt>
           <dd>Yes. Add the RealityCents MCP server (https://realitycents-mcp.jaymiller.workers.dev/mcp) as a custom connector with no authentication, then ask in plain English, for example "What's the payment on a $900,000 Honolulu home with a VA loan?"</dd>
           <dt>What is the RealityCents MCP server?</dt>
-          <dd>A free, read-only Model Context Protocol server with 9 Hawaii mortgage and VA loan tools. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.</dd>
+          <dd>A free, read-only Model Context Protocol server with 10 Hawaii mortgage and VA loan tools, including an Oahu VA-approved condo lookup. It is listed in the official MCP Registry as io.github.jaymiller-cmg/mortgage-hawaii.</dd>
           <dt>Does it collect personal information?</dt>
           <dd>No. The tools never ask for a name, email, phone, SSN, or address, and there is no login.</dd>
           <dt>Is the result a loan offer or pre-approval?</dt>
@@ -725,7 +813,7 @@ const VA_BASES = {
     neighborhoods: ["Ewa Beach (15–20 min, $500K–$1.2M)", "Pearl City (10–15 min, $500K–$1.1M)", "Aiea (10–15 min, $400K–$900K)", "Salt Lake/Moanalua (10 min, $400K–$800K)", "Kapolei (20–25 min, $400K–$1.2M)"],
     faqs: [
       { q: "Can Navy and Air Force both use VA loans at JBPHH?", a: "Yes. VA loan eligibility is based on your service record, not your branch. Both Navy and Air Force members stationed at JBPHH qualify for VA benefits." },
-      { q: "What neighborhoods are best for JBPHH families?", a: "Ewa Beach and Pearl City offer the best combination of newer homes, good schools, and short commutes. Salt Lake is closest but has older inventory." },
+      { q: "Which neighborhoods are near JBPHH?", a: "Ewa Beach and Pearl City have newer homes and short commutes. Salt Lake is closest but has older inventory." },
       { q: "Can I buy before arriving on island?", a: "Yes — get pre-approved as soon as you have orders. VA allows you to close up to 60 days before your reporting date." },
     ],
   },
@@ -733,7 +821,7 @@ const VA_BASES = {
     name: "Marine Corps Base Hawaii (MCBH Kaneohe Bay)",
     branch: "U.S. Marine Corps",
     unit: "MCBH",
-    opening: "You just got orders to MCBH Kaneohe Bay and you're looking at the Windward side of Oahu for the first time. Good news: this is one of the most beautiful parts of the island — and the neighborhoods around base are some of the best for families. The trade-off is that Windward side homes tend to cost more per square foot than Leeward. But with VA's $0 down and Oahu's low property tax, the math often works better than you'd expect.",
+    opening: "You just got orders to MCBH Kaneohe Bay and you're looking at the Windward side of Oahu for the first time. Good news: this is one of the greener, quieter parts of the island, with established neighborhoods close to base. The trade-off is that Windward side homes tend to cost more per square foot than Leeward. But with VA's $0 down and Oahu's low property tax, the math often works better than you'd expect.",
     neighborhoods: ["Kailua (10–15 min, $800K–$2M+)", "Kaneohe (5–10 min, $600K–$1.5M)", "Enchanted Lake (10 min, $700K–$1.2M)", "Hawaii Kai (20–25 min, $700K–$2M+)"],
     faqs: [
       { q: "Is the Windward side too expensive for enlisted Marines?", a: "Not necessarily. Kaneohe has condos and townhomes in the $500K–$700K range that work for E-5/E-6 with BAH. Kailua is pricier but has options too." },
@@ -761,7 +849,7 @@ const VA_BASES = {
     neighborhoods: ["Moanalua/Salt Lake (5 min, $400K–$800K)", "Aliamanu/Red Hill (5–10 min, $500K–$900K)", "Aiea Heights (10 min, $600K–$1.1M)", "Pearl City (10–15 min, $500K–$1.1M)", "Kalihi Valley/Pacific Heights (10–15 min, $500K–$1.5M)"],
     faqs: [
       { q: "Do Tripler staff get the same BAH as other Oahu military?", a: "Yes — BAH is based on duty station zip code, not specific installation. All Oahu military receive Honolulu County BAH rates regardless of which base they're assigned to." },
-      { q: "What's the best neighborhood for Tripler medical staff?", a: "Moanalua and Aliamanu are closest (5–10 min) with the most affordable options. Aiea Heights offers newer homes with views. Pearl City is popular with families wanting more space." },
+      { q: "Which neighborhoods are closest to Tripler?", a: "Moanalua and Aliamanu are closest (5–10 min) with the most affordable options. Aiea Heights offers newer homes with views. Pearl City offers more space for the money." },
       { q: "Can I buy near Tripler and keep it as a rental later?", a: "Yes — the Moanalua/Salt Lake area has strong rental demand due to proximity to three military installations (Tripler, Shafter, and JBPHH). Most properties rent for enough to cover the mortgage." },
     ],
   },
@@ -777,7 +865,7 @@ for (const [route, data] of Object.entries(VA_BASES)) {
       <p>Step by step: <a href="${BASE_URL}/knowledge-base/va-loans-hawaii-military">how to buy a house in Hawaii with a VA loan and $0 down</a>.</p>
       ${data.playbookCta ? `<p><a href="${BASE_URL}/zero-down-in-paradise">Read the full playbook — Zero Down in Paradise</a> by Jay Miller, NMLS #657301. The Hawaii VA loan playbook for military homebuyers.</p>` : ""}
       <section>
-        <h2>Best Neighborhoods Near ${data.name}</h2>
+        <h2>Neighborhoods Near ${data.name}: Commute, Housing, and Price</h2>
         <ul>
           ${data.neighborhoods.map(n => `<li>${n}</li>`).join("\n          ")}
         </ul>

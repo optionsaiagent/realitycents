@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build && node scripts/prerender.mjs",
+  "buildCommand": "node scripts/build-va-condo-data.mjs && node scripts/generate-llms-full.mjs && pnpm run build && node scripts/prerender.mjs",
   "outputDirectory": "dist",
   "trailingSlash": false,
   "cleanUrls": true,
@@ -23,11 +23,80 @@
       ]
     },
     {
+      "source": "/.well-known/ai-catalog.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/ai-catalog+json"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/mcp/catalog.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/facts.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
       "source": "/404.html",
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)\\.csv",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/csv; charset=utf-8"
         }
       ]
     }
@@ -93,6 +162,16 @@
     {
       "source": "/mortgagecalcplus/va-eligibility-calculator/",
       "destination": "/va-eligibility-calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/mortgagecalcplus",
+      "destination": "/calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/mortgagecalcplus/",
+      "destination": "/calculator",
       "statusCode": 301
     },
     {
@@ -168,6 +247,16 @@
     {
       "source": "/knowledge-base/va-assumable-loans-hawaii",
       "destination": "/knowledge-base/va-assumable-loans-pros-cons",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers",
+      "destination": "/knowledge-base/mortgage-rates-2026-high-hawaii-buyers",
+      "statusCode": 301
+    },
+    {
+      "source": "/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers/",
+      "destination": "/knowledge-base/mortgage-rates-2026-high-hawaii-buyers",
       "statusCode": 301
     },
     {

@@ -60,7 +60,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Who is Jay Miller (NMLS #657301)?",
-    a: "Jay Miller is a U.S. Army veteran and Mortgage Loan Consultant / Sales Manager at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is a Certified Mortgage Advisor (CMA) and the author of Zero Down in Paradise.",
+    a: "Jay Miller is a U.S. Army veteran and a Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu with 25+ years of Hawaii lending experience. He is the author of Zero Down in Paradise.",
   },
   {
     q: "Can I use a VA loan to buy in Hawaii with zero down?",
@@ -242,9 +242,9 @@ const PAGE_SCHEMAS = [
     "@type": "Person",
     "@id": PERSON_ID,
     name: "Jay Miller",
-    jobTitle: "Certified Mortgage Advisor",
+    jobTitle: "Sales Manager and Certified Mortgage Advisor",
     description:
-      "U.S. Army veteran and Certified Mortgage Advisor. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
+      "U.S. Army veteran, Sales Manager and Certified Mortgage Advisor at CMG Home Loans. VA loan specialist with 25 years of mortgage experience in Honolulu. NMLS #657301.",
     url: `${SITE.url}/about`,
     image: IMAGES.headshot,
     identifier: {
@@ -264,7 +264,7 @@ const PAGE_SCHEMAS = [
         addressCountry: "US",
       },
     },
-    sameAs: [SITE.url, LINKEDIN, "https://www.instagram.com/jaymillercmg"],
+    sameAs: [SITE.url, LINKEDIN, "https://www.instagram.com/jaymiller_hawaii/"],
   },
   {
     "@context": "https://schema.org",
@@ -274,7 +274,7 @@ const PAGE_SCHEMAS = [
     url: SITE.url,
     logo: { "@type": "ImageObject", url: `${SITE.url}/favicon-180x180.png`, width: 300, height: 60 },
     founder: { "@id": PERSON_ID },
-    sameAs: [LINKEDIN, "https://www.instagram.com/jaymillercmg"],
+    sameAs: [LINKEDIN, "https://www.instagram.com/jaymiller_hawaii/", "https://www.facebook.com/realitycents"],
   },
   {
     "@context": "https://schema.org",
@@ -391,7 +391,7 @@ export default function ZeroDownInParadise() {
       <section className="bg-sand/60 border-b border-border">
         <div className="container py-6">
           <p className="text-sm text-navy font-body font-medium">
-            Jay Miller, CMA · NMLS #{LENDER.nmls} · U.S. Army veteran · Sales Manager, {LENDER.company} · 25 years Hawaii mortgage experience
+            Jay Miller · Sales Manager and Certified Mortgage Advisor, {LENDER.company} · NMLS #{LENDER.nmls} · U.S. Army veteran · 25 years Hawaii mortgage experience
           </p>
           <p className="text-sm text-muted-foreground mt-1">
             Published {BOOK.published} · Paperback, {BOOK.pages} pages · ISBN {BOOK.isbn}
@@ -454,7 +454,7 @@ export default function ZeroDownInParadise() {
               You still need lender approval based on income, credit, residual income, and the property.
             </p>
             <p>
-              That $0-down benefit is especially powerful in Hawaii, where a conventional 20% down payment
+              That $0-down benefit matters more in Hawaii, where a conventional 20% down payment
               on an $800,000 home is $160,000. VA financing removes that cash hurdle when you qualify and
               have full entitlement. Many lenders still set their own maximum loan amount for $0-down VA
               purchases — ask your lender what their cap is.
@@ -649,9 +649,9 @@ export default function ZeroDownInParadise() {
                 </span>
                 <h2 className="font-display text-3xl md:text-4xl text-white mb-4">Jay Miller</h2>
                 <p className="text-sand/70 leading-relaxed mb-4">
-                  <strong className="text-white">Jay Miller</strong> is a Sales Manager and Mortgage Loan
-                  Consultant at {LENDER.company} in Honolulu, Hawaii (NMLS #{LENDER.nmls} · Branch NMLS #
-                  {LENDER.branchNmls}). He is a U.S. Army veteran, Certified Mortgage Advisor (CMA), and a
+                  <strong className="text-white">Jay Miller</strong> is a Sales Manager and Certified Mortgage
+                  Advisor at {LENDER.company} in Honolulu, Hawaii (NMLS #{LENDER.nmls} · Branch NMLS #
+                  {LENDER.branchNmls}). He is a U.S. Army veteran and a
                   25-year Hawaii lending veteran specializing in VA loans, conventional and jumbo
                   financing, and the island-specific issues that trip up mainland playbooks — leasehold,
                   condo approval, and high-cost qualification.
@@ -666,7 +666,7 @@ export default function ZeroDownInParadise() {
                 <ul className="space-y-2 mb-8 text-sm text-sand/80">
                   <li className="flex items-center justify-center sm:justify-start gap-2">
                     <Phone className="w-4 h-4 text-teal" />
-                    <a href={`tel:${LENDER.phone}`} className="hover:text-gold">
+                    <a href={`tel:${LENDER.phoneE164}`} className="hover:text-gold">
                       {LENDER.phone}
                     </a>
                   </li>

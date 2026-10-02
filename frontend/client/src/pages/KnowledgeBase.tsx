@@ -36,13 +36,13 @@ export default function KnowledgeBase() {
     <Layout>
       <SEO
         title="Hawaii Mortgage Knowledge Base — Articles & Guides"
-        description="Expert articles on Hawaii mortgages, home loans, and the homebuying process. Topics include FHA loans, VA loans, jumbo loans, first-time homebuyer programs, down payment assistance, leasehold vs. fee simple, and more."
+        description="Articles on Hawaii mortgages, home loans, and the homebuying process. Topics include FHA loans, VA loans, jumbo loans, first-time homebuyer programs, down payment assistance, leasehold vs. fee simple, and more."
         url="/knowledge-base"
         keywords="Hawaii mortgage articles, Hawaii home loan guide, FHA loans Hawaii, VA loans Hawaii, first time homebuyer Hawaii, leasehold fee simple Hawaii, down payment assistance Hawaii, Hawaii mortgage tips"
       />
       <PageHero
         title="Knowledge Base"
-        subtitle="Expert articles on Hawaii mortgages, loan types, credit strategies, and the homebuying process."
+        subtitle="Articles on Hawaii mortgages, loan types, credit strategies, and the homebuying process."
         image={IMAGES.heroGuide}
         compact
       />

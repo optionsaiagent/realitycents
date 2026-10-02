@@ -54,7 +54,7 @@ const allArticles: Article[] = [
 
 One of the most persistent myths in military real estate is the idea that the VA loan is a "one-and-done" benefit. If you own a home with a VA loan, conventional wisdom says you have to sell it, pay off the mortgage, and restore your entitlement before you can use the VA loan again.
 
-In a market like Hawaii, where long-term real estate appreciation is a primary wealth-building tool, that advice is costing military families hundreds of thousands of dollars in future equity.
+In a market like Hawaii, where long-term real estate appreciation is a primary wealth-building tool, that advice can cost military families significant future equity.
 
 If you bought a home near Schofield Barracks in 2021 and locked in a 2.75% interest rate, selling that home today just to free up your VA benefit is financially painful. You are giving up an asset with a historically low payment that could generate significant rental income for the rest of your life.
 
@@ -140,7 +140,7 @@ Compare that to a conventional loan on a primary residence, which would require 
 
 ## The Rules You Must Follow
 
-While second-tier entitlement is a powerful tool, the VA has strict rules designed to ensure the benefit is used for primary housing, not purely for investment.
+While second-tier entitlement is a useful tool, the VA has strict rules designed to ensure the benefit is used for primary housing, not purely for investment.
 
 ### 1. The Occupancy Requirement
 You must intend to personally occupy the new home as your primary residence within 60 days of closing. You cannot use your second-tier entitlement to buy a dedicated rental property or a vacation home. You are using it to buy your *next* primary residence. The home you are leaving behind (the one with your first VA loan) is the one that becomes the rental.
@@ -189,11 +189,11 @@ The math can be complex, and big-box mainland lenders frequently miscalculate Ha
 ### Related Articles
 - [VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
 - [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
-- [The Hidden Reason Hawaii Rates Are Stuck in the 6s](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers)
+- [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers)
 
 ---
 
-*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://jay-miller.com)*`,
   },
   {
     slug: "zero-down-home-buying-hawaii",
@@ -238,7 +238,7 @@ And when you layer in gift funds, down payment assistance programs, and seller c
 
 ## Path 1: VA Loans — The Gold Standard of Zero Down
 
-If you are a veteran, active-duty service member, National Guard/Reserve member with qualifying service, or an eligible surviving spouse, the VA loan is the single most powerful zero-down tool in the mortgage market. Full stop.
+If you are a veteran, active-duty service member, National Guard/Reserve member with qualifying service, or an eligible surviving spouse, the VA loan is the first zero-down option to compare, with full entitlement and if you qualify.
 
 Here's what VA gives you:
 
@@ -319,7 +319,7 @@ This path works particularly well for first-time buyers whose parents or grandpa
 
 ## Path 5: Combining Strategies for True Zero
 
-The most powerful zero-down purchases combine multiple strategies:
+Many zero-down purchases combine several strategies:
 
 **VA + Seller Concessions:**
 - Down payment: $0 (VA benefit)
@@ -657,9 +657,9 @@ Every loan program has a strict cap on how much the seller can contribute. Askin
 
 ---
 
-## VA Loans: The Ultimate Concession Strategy
+## VA Loans and Seller Concessions
 
-For military buyers in Hawaii, the VA loan rules regarding seller concessions are arguably the most powerful — and least understood — benefit of the entire program.
+For military buyers in Hawaii, the VA loan rules on seller concessions are one of the program's most overlooked benefits.
 
 Here is what most people do not realize: under VA guidelines (VA Pamphlet 26-7), the seller can pay **ALL** of the buyer's normal closing costs with **no cap**. Appraisal, title insurance, escrow fees, recording fees, credit report, loan origination — the seller can cover every single one of these without any of it counting toward the VA's concession limit.
 
@@ -1110,7 +1110,7 @@ Yes. Basic Allowance for Housing counts when documented on your LES and expected
 
 ## Can you use a VA loan on a Hawaii condo?
 
-Yes, if the condo **project** is VA-approved. About 1,769 Oahu projects (VA list as of Sep 15, 2026) are on the VA's accepted list, and the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you check any building in seconds. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
+Yes, if the condo **project** is VA-approved. About 1,772 Oahu projects (VA list as of Oct 1, 2026) are on the VA's accepted list. The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) lets you search any building, and the same list is published as a dated data file ([JSON](/data/va-approved-condos-hawaii.json), [CSV](/data/va-approved-condos-hawaii.csv)). Approvals change, so confirm a project's current status in the [VA's condo lookup](https://lgy.va.gov/lgyhub/condo-report). VA approval status does not guarantee loan approval. If a building is not listed, your lender can submit it for approval during escrow (typically two to three weeks). VA approval is a different review from conventional "warrantability"; a building can pass one and fail the other, explained in [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii). Condotels and mandatory rental pools are generally not eligible.
 
 ## What about leasehold property?
 
@@ -1157,7 +1157,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 ## Related resources
 
-[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-09) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why waiting for lower rates costs military buyers](/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers) · [About Jay Miller](/about)
+[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-09) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers) · [About Jay Miller](/about)
 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
@@ -1718,7 +1718,7 @@ To understand the full escrow timeline in Hawaii, read our guide to [the escrow 
     date: "2025-11-20",
     lastUpdated: "March 2026",
     image: "/images/heroes/refinancing-hawaii-homeowners.webp",
-    content: `Refinancing your mortgage can be a powerful financial tool, but it's not always the right move. For Hawaii homeowners, understanding when refinancing makes sense — and when it doesn't — can save thousands of dollars over the life of your loan.
+    content: `Refinancing your mortgage can be a useful financial tool, but it's not always the right move. For Hawaii homeowners, understanding when refinancing makes sense — and when it doesn't — can save thousands of dollars over the life of your loan.
 
 ## Types of Refinancing
 
@@ -1993,7 +1993,7 @@ If you have a 401k, learn how [borrowing from your retirement account](/knowledg
 
 *By Jay Miller — NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise](/zero-down-in-paradise) · Updated September 14, 2026*
 
-In today's mortgage rate environment, with rates hovering near 7%, the idea of taking over someone else's 2.75% or 3.25% VA loan sounds almost too good to be true. And while VA loan assumption is a real and powerful strategy, it comes with complexities that every buyer and seller should understand before pursuing it.
+When today's rates are well above the rate on an existing loan, the idea of taking over someone else's 2.75% or 3.25% VA loan sounds almost too good to be true. And while VA loan assumption is a real strategy, it comes with complexities that every buyer and seller should understand before pursuing it.
 
 This article explains how VA loan assumptions work, who can assume them, and the critical trade-offs involved — including the entitlement trap that catches many sellers off guard.
 
@@ -2001,7 +2001,7 @@ This article explains how VA loan assumptions work, who can assume them, and the
 
 A loan assumption is a transaction where a buyer takes over the seller's existing mortgage — including the remaining balance, the interest rate, and the repayment terms. Instead of originating a new loan at today's rates, the buyer steps into the seller's shoes and continues making payments under the original loan terms.
 
-Most conventional and FHA loans have "due-on-sale" clauses that prevent assumption (with limited exceptions for FHA loans originated before December 1989). VA loans, however, are **assumable by design**. This feature is built into every VA-guaranteed mortgage, making it one of the most valuable — and underutilized — benefits of the VA loan program.
+Most conventional and FHA loans have "due-on-sale" clauses that prevent assumption (with limited exceptions for FHA loans originated before December 1989). VA loans, however, are **assumable by design**. This feature is built into every VA-guaranteed mortgage, a VA benefit many buyers and sellers overlook.
 
 ## Why VA Assumable Loans Are in High Demand
 
@@ -2014,7 +2014,7 @@ Consider this comparison on a $500,000 loan balance:
 - **Monthly savings:** $1,202
 - **Savings over remaining loan term:** Potentially $300,000+
 
-That monthly savings of over $1,200 represents enormous purchasing power. It is the equivalent of qualifying for a significantly larger home or dramatically reducing your housing costs. This is why VA assumable loans have become one of the most sought-after features in today's real estate market.
+That monthly savings of over $1,200 represents enormous purchasing power. That can mean qualifying for more home or lowering your housing cost. It is why VA assumable loans draw attention when rates are high.
 
 ## Who Can Assume a VA Loan?
 
@@ -2105,7 +2105,7 @@ If preserving your entitlement is important, consider requiring that the assumin
 
 In Hawaii's high-cost market, VA loan assumptions are particularly relevant. Hawaii has one of the highest concentrations of military personnel and veterans in the country, and many service members purchased homes during the 2020-2022 low-rate window. With Hawaii's median home prices well above $700,000 on Oahu, the equity gaps can be significant — but so are the monthly savings from assuming a sub-3% rate versus originating a new loan near 7%.
 
-For military families PCSing (receiving Permanent Change of Station orders) out of Hawaii, offering their VA loan for assumption can be a powerful tool to sell quickly and potentially at a premium. For buyers — both military and civilian — assuming a VA loan in Hawaii can mean the difference between affording a home and being priced out of the market.
+For military families PCSing (receiving Permanent Change of Station orders) out of Hawaii, offering their VA loan for assumption can help a listing stand out and may support a higher price. For buyers — both military and civilian — assuming a VA loan in Hawaii can mean the difference between affording a home and being priced out of the market.
 
 If you are considering a VA loan assumption — whether as a buyer or seller — I can help you evaluate the numbers, understand the entitlement implications, and navigate the process. This is one of the most complex but potentially rewarding transactions in real estate, and having experienced guidance makes all the difference.
 
@@ -2391,7 +2391,7 @@ In a market where a standard investment property can easily cost $1 million or m
 
 ### 2. Leveraging Vacation Rental Income
 
-Hawaii is a premier vacation destination, and short-term rental (STR) income can significantly exceed long-term rental income. Many DSCR programs allow you to qualify using projected short-term rental income or market rent analysis, making it easier to finance properties that generate high seasonal revenue.
+Hawaii is a major vacation destination, and short-term rental (STR) income can exceed long-term rental income where STRs are legal (check county rules first). Many DSCR programs allow you to qualify using projected short-term rental income or market rent analysis, making it easier to finance properties that generate high seasonal revenue.
 
 ### 3. Scaling Your Portfolio Without DTI Limits
 
@@ -2525,13 +2525,13 @@ If your disability rating came through after you closed, you may be eligible for
 
 If you closed on a VA loan and paid a funding fee, talk to your tax professional about whether itemizing makes sense for you this year. The savings could be meaningful — especially here in Hawaii where home prices push those fees higher.
 
-And if you're thinking about buying with a VA loan this year, this is one more reason the VA benefit is one of the most powerful tools available to military families. No down payment, no PMI, competitive rates — and now a potential tax deduction on the funding fee.
+And if you're thinking about buying with a VA loan this year, this is one more reason to look closely at the VA benefit: no down payment with full entitlement (if you qualify), no PMI, competitive rates — and now a potential tax deduction on the funding fee.
 
 Questions about your VA loan options or how the funding fee works? I'm always happy to chat.
 
 ---
 
-*Jay Miller | Sales Manager & Mortgage Loan Consultant | NMLS# 657301*
+*Jay Miller | Sales Manager and Certified Mortgage Advisor | NMLS #657301*
 *Licensed in Hawaii | Specializing in VA & Conventional Lending*
 
 *This article is for informational purposes only and does not constitute tax advice. Consult a qualified tax professional for guidance specific to your situation.*
@@ -2553,7 +2553,7 @@ For a complete overview of VA loan benefits in Hawaii, see our [VA Loans in Hawa
 
 As a licensed mortgage loan officer here in Hawaii, I need to set the record straight.
 
-The truth is that VA loan "house hacking" — buying a multi-family property with a VA loan, living in one unit, and renting out the others — is a very real, highly effective strategy for building wealth in Hawaii. It is one of the smartest moves a service member can make while stationed at Pearl Harbor, Schofield Barracks, or Kaneohe Bay.
+The truth is that VA loan "house hacking" — buying a multi-family property with a VA loan, living in one unit, and renting out the others — is a very real, highly effective strategy for building wealth in Hawaii. It can be a strong move for a service member stationed at Pearl Harbor, Schofield Barracks, or Kaneohe Bay.
 
 But the viral videos get the rules wrong. If you try to execute their "hacks" without understanding actual VA underwriting guidelines, your loan will be denied.
 
@@ -2637,7 +2637,7 @@ What happens when you receive Permanent Change of Station (PCS) orders?
 
 Once you have fulfilled your 12-month primary residency requirement, you are free to move out and rent your unit to a new tenant. At that point, the property becomes a fully income-producing asset. You can then use your remaining second-tier VA entitlement to purchase a new primary residence at your next duty station — meaning you can potentially hold the Hawaii property as a rental while buying again with $0 down at your next base.
 
-This is one of the most powerful long-term wealth-building strategies available to military families, and Hawaii's persistent housing demand and strong rental market make it particularly compelling.
+This can be an effective long-term wealth-building strategy for military families, and Hawaii's persistent housing demand and strong rental market make it particularly compelling.
 
 ## What to Look for in a Hawaii Multi-Family Property
 
@@ -2913,7 +2913,7 @@ For a deeper dive into FHA specifics, read our [complete FHA loan guide for Hawa
 
 ## VA Loan: The Military Advantage
 
-If you are active-duty military, a veteran, or an eligible surviving spouse, VA loans are the most powerful tool in Hawaii's market. Zero down payment and zero mortgage insurance — in a market where those two factors can be the difference between buying and renting forever.
+If you are active-duty military, a veteran, or an eligible surviving spouse, VA loans can make the biggest difference: no down payment with full entitlement (if you qualify) and no monthly mortgage insurance — in a market where those two factors can be the difference between buying and renting forever.
 
 The VA funding fee (2.15% for first-time use) gets financed into the loan, which increases your payment slightly. But the savings from no PMI and no down payment more than compensate.
 
@@ -2963,7 +2963,7 @@ If you are looking outside urban Honolulu — parts of the North Shore, Windward
 All three loan types (conventional, FHA, VA) allow gift funds for down payment and closing costs. In Hawaii, it is common for family members to contribute. Our guide on [using gift funds for your home purchase](/knowledge-base/gift-funds-home-purchase) explains the documentation requirements.
 
 **House Hacking:**
-Buying a multi-unit property (duplex, triplex, fourplex) and living in one unit while renting the others can dramatically change the math. Rental income from the other units counts toward your qualifying income. VA loans are particularly powerful here because you can buy up to a fourplex with zero down. Read our guide on [VA loan house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii).
+Buying a multi-unit property (duplex, triplex, fourplex) and living in one unit while renting the others can dramatically change the math. Rental income from the other units counts toward your qualifying income. VA loans can help here because eligible buyers can purchase up to a fourplex with no down payment, with full entitlement and if they qualify. Read our guide on [VA loan house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii).
 
 **Employer Assistance:**
 Some Hawaii employers — particularly in healthcare, education, and government — offer housing assistance or forgivable loans. Ask your HR department.
@@ -2978,7 +2978,7 @@ But that does not mean homeownership is impossible. It means you need a strategy
 
 **Start with condos.** A $500,000-$600,000 condo is achievable at median household income. Build equity, then trade up.
 
-**Maximize your loan program.** If you qualify for VA, use it. The zero-down, no-PMI combination is worth hundreds of thousands over the life of the loan.
+**Maximize your loan program.** If you qualify for VA, use it. The zero-down, no-PMI combination can be worth a large amount over the life of the loan; run your numbers to see how much.
 
 **Reduce other debt first.** Paying off a $500/month car loan before applying is equivalent to earning $14,000 more per year in terms of buying power.
 
@@ -3032,7 +3032,7 @@ In practice, seller concessions can cover:
 - **Prepaid interest, property taxes, and homeowner's insurance**
 - **Temporary buydown escrow costs** (funding a 2/1 or 3/2/1 buydown)
 - **Title insurance, escrow fees, and recording fees**
-- **VA funding fee** (for VA loans, this is one of the most powerful uses)
+- **VA funding fee** (for VA loans, often a high-value use)
 
 The key distinction: seller concessions do not reduce the purchase price. The loan amount stays the same. The seller simply contributes cash at closing that the buyer would otherwise have to bring out of pocket — or that gets applied to reduce the buyer's interest rate.
 
@@ -3117,7 +3117,7 @@ Let's run the numbers at three common Hawaii price points. All examples assume a
 | 2 Discount Points | $12,545 | $3,810 (at 6.00%) | $156/mo | ~6.7 years |
 | Cover Closing Costs + 1 Point | ~$22,000 | $3,888 | $78/mo + $0 out of pocket | Immediate |
 
-For an FHA buyer stretching to qualify, the 2/1 buydown is often the most powerful tool. Reducing the first-year payment by $774 per month can be the difference between a 45% DTI (which FHA allows) and a 55% DTI (which it does not). The qualifying rate for a 2/1 buydown is the note rate, not the buydown rate — but the lower payment can help buyers who are close to the DTI limit.
+For an FHA buyer stretching to qualify, a 2/1 buydown can help. Reducing the first-year payment by $774 per month can be the difference between a 45% DTI (which FHA allows) and a 55% DTI (which it does not). The qualifying rate for a 2/1 buydown is the note rate, not the buydown rate — but the lower payment can help buyers who are close to the DTI limit.
 
 ### Scenario 2: $850,000 Oahu Single-Family — Conventional, 10% Down
 
@@ -3148,7 +3148,7 @@ For a conventional buyer with 10% down, the 6% concession cap gives significant 
 | 2/1 Buydown | ~$21,900 | $4,944 (at 4.50%) | $1,192/mo | Reverts Year 3 |
 | Funding Fee + 1 Point | $29,930 | $5,760 | $376/mo | Permanent + fee covered |
 
-For VA buyers, having the seller cover the funding fee is often the highest-value use of concessions. It reduces the loan balance by $20,425, which lowers every payment for 30 years. Combined with a partial rate buydown, a VA buyer can dramatically reduce their monthly obligation without bringing additional cash to closing.
+For VA buyers, having the seller cover the funding fee is often the highest-value use of concessions. It reduces the loan balance by $20,425, which lowers every payment for 30 years. Combined with a partial rate buydown, a VA buyer can reduce their monthly obligation without bringing additional cash to closing.
 
 For more on how VA loans work in Hawaii and how to maximize your military benefits, see our [VA loans Hawaii guide](/knowledge-base/va-loans-hawaii-military).
 
@@ -3851,7 +3851,7 @@ The VA buyer preserves $42,500–$170,000 of cash and pays no monthly insurance;
 
 # VA Condo Approval vs. Warrantability in Hawaii
 
-**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,769 approved projects (as of Sep 15, 2026).
+**VA condo approval and conventional "warrantability" are two different reviews by two different bodies, and a Hawaii building can pass one and fail the other.** VA approval is the Department of Veterans Affairs' review of a condominium project (its declaration, bylaws, budget, and governance), which places the project on the VA's accepted list. Warrantability is Fannie Mae's and Freddie Mac's standard for conventional loans, applied by the lender on each transaction. If you are buying an Oahu condo with a VA loan, only the first list matters, and you can check it in seconds with the [VA-Approved Condos Oahu directory](/va-approved-condos-oahu), which mirrors the VA's LGY Hub for all of Honolulu County's roughly 1,772 approved projects (as of Oct 1, 2026).
 
 ## What each review actually looks at
 
@@ -3984,7 +3984,7 @@ Divide the closing costs by the monthly principal-and-interest reduction. If the
 
 ## What a Hawaii VA lender has to know
 
-**VA condo project approval.** Roughly 1,769 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
+**VA condo project approval.** Roughly 1,772 Oahu condo projects are on the VA's accepted list, and thousands are not. A VA-fluent lender checks the address before you write an offer and knows how to run a lender-submitted approval inside a 45-day escrow. If a lender has never heard of the LGY Hub, keep looking. ([Check a building yourself.](/va-approved-condos-oahu))
 
 **Leasehold, in one sentence.** Leasehold is a small share of the Oahu market and, in practice, almost impossible to finance with a VA loan. You will notice these listings because they look like very nice condos at prices that seem too low — the price is low because the land is leased, not owned, and the lease runs out. The advice is simple: skip them and stick with fee simple. Most Oahu leaseholds with fewer than 15 years left can only be bought with short-term conventional fixed products or cash. A lender who tries to make a leasehold work with VA, rather than steering you to fee simple, is a lender who has not done this on Oahu.
 
@@ -4439,150 +4439,9 @@ For more on Hawaii's condo market challenges, read our coverage of [the condo in
 *Last Updated: May 2026*`,
   },
   {
-    slug: "why-waiting-for-lower-rates-costs-hawaii-military-buyers",
-    title: "The Hidden Reason Hawaii Mortgage Rates Are Stuck in the 6s (And Why Waiting Will Cost You)",
-    excerpt: "True inflation is already at 1.51% — not the 3.3% the headlines report. VA rates are heading to 5.125% by end of 2026. But when they drop, pent-up demand floods Hawaii's already constrained market and drives prices higher. Here's why Hawaii military buyers who wait for lower rates will pay a steep price for that patience.",
-    category: "Market Insights",
-    readTime: "6 min",
-    date: "2026-06-07",
-    image: "/images/heroes/why-waiting-for-lower-rates-costs-hawaii-military-buyers.webp",
-    content: `# The Hidden Reason Hawaii Mortgage Rates Are Stuck in the 6s (And Why Waiting Will Cost You)
-
-*Last Updated: June 2026*
-
-**Waiting for lower rates in Hawaii will likely cost you more than today's rate — when rates drop (projected to ~5.125% by late 2026), pent-up demand floods Hawaii's supply-constrained market, driving prices $40K–$80K higher and erasing any monthly payment savings.** If you are a military family PCSing to Hawaii this summer, you are probably looking at 30-year fixed VA mortgage rates hovering around 6% and thinking: *I'll just rent for a year and wait for rates to come down.*
-
-It sounds like the responsible, conservative financial move. It is also the exact strategy that is going to cost you tens of thousands of dollars in lost equity and purchasing power.
-
-Here is the reality that most lenders will not tell you: The mortgage rates you are seeing today are artificially inflated by a statistical illusion. The true inflation rate in the United States is not the 3.3% you see in the headlines. According to mortgage and real estate forecaster Barry Habib — one of the most accurate rate forecasters in the industry — it is actually closer to **1.51%**.
-
-When the market finally wakes up to that reality — and it will, likely by the end of 2026 — rates are going to drop. But when they do, the floodgates of pent-up buyer demand will burst open, driving Hawaii home prices even higher.
-
-If you wait for the "perfect" rate, you will end up paying a massive premium for the house. Here is the data behind why buying now — especially with a VA loan — is the smartest move you can make in today's market.
-
----
-
-## The Statistical Illusion Keeping Rates High
-
-To understand why rates are stuck in the 6s, you have to look at how the government measures inflation. The Consumer Price Index (CPI) is the primary metric the Federal Reserve uses to set policy. But the CPI has a massive structural flaw: how it calculates shelter costs.
-
-Shelter makes up about one-third of the CPI. But the data the government uses for shelter costs lags real-time market conditions by 12 to 18 months. The Bureau of Labor Statistics is measuring what rents did a year ago, not what they are doing today. Real-time rent data from sources like Apartment List and Zillow shows that rent growth has already cooled dramatically — but that cooling has not yet shown up in the official CPI numbers.
-
-According to Habib, if you strip out that lagging, inaccurate shelter data and replace it with real-time rent metrics, the true inflation rate drops from the reported 3.3% down to just **1.51%**.
-
-That means inflation is already beaten. The Federal Reserve's target is 2.0%. We are already below it.
-
-### The Oil Factor
-
-So why hasn't the Fed cut rates aggressively? The answer lies in the Middle East.
-
-Geopolitical tension has kept oil prices elevated. Because oil impacts the cost of transporting almost every good in the economy, the Fed is holding rates high as an insurance policy against a potential oil-driven inflation spike. They are not cutting because they are afraid of what they cannot see coming — not because the underlying data supports keeping rates this high.
-
-But this is a temporary standoff. As the lagging shelter data finally washes out of the CPI reports over the next several months, the Fed will be forced to acknowledge the reality of sub-2% inflation. Habib's projection: conventional mortgage rates will drop to around 5.6% by the end of 2026. For VA buyers, that translates to roughly **5.125%** — VA rates typically run about half a percent lower than conventional.
-
----
-
-## The "Cost of Waiting" Trap
-
-If rates are heading to 5.6%, why not just wait?
-
-Because you are not the only one waiting.
-
-Right now, there is a massive backlog of pent-up demand in the housing market. Historically, the U.S. sees about **1.8 million new household formations per year** — people getting married, moving out of their parents' houses, upgrading from apartments. Over the last two years, that number has dropped to just **1.4 million**. Four hundred thousand households per year have been sitting on the sidelines, waiting for rates to come down.
-
-When rates drop into the 5s, that pent-up demand is going to flood the market simultaneously.
-
-### The Hawaii Inventory Crisis
-
-Now apply that national trend to Hawaii. Oahu already has one of the most severely constrained housing inventories in the country. We live on an island. There is no building out into the suburbs. There is no empty land to develop. Every new buyer who enters the market competes for the same finite pool of homes.
-
-When rates drop and that wave of pent-up demand hits Hawaii, what happens to prices? They go up — fast. Habib forecasts a conservative **3.5% national home price appreciation** for the next 12 months. In a supply-constrained island market like Oahu, that number has historically run higher.
-
-Let's look at what that means in real dollars on an $850,000 Ewa Beach single-family home:
-
-| | Buy Now at 6.0% (VA) | Wait 1 Year for 5.125% (VA) |
-|---|---|---|
-| **Purchase Price** | $850,000 | $879,750 (after 3.5% appreciation) |
-| **Down Payment (VA, 0%)** | $0 | $0 |
-| **Loan Amount** | $850,000 | $879,750 |
-| **Monthly P&I** | ~$5,096 | ~$4,728 |
-| **Monthly Savings from Waiting** | — | ~$368/month |
-| **Extra Cost of Higher Purchase Price** | — | +$29,750 |
-| **Break-Even on Waiting** | — | 81 months (6+ years) |
-
-Yes, waiting saves you about $368 a month on your payment. But it costs you **$29,750 in lost equity** because you paid more for the house. It would take over six years of those monthly savings just to break even on the higher purchase price — and that assumes you win the house at asking price.
-
-When rates drop and competition surges, you will be competing against five other offers, waiving contingencies, and potentially paying above asking price. Right now, at 6%, you have negotiating leverage. You can ask the seller for concessions to buy down your rate. You can do inspections. You can negotiate repairs. That leverage disappears the moment rates drop.
-
----
-
-## The Military Advantage: Why VA Buyers Hold the Winning Hand Right Now
-
-If you are active-duty military, the "cost of waiting" argument is even more critical — because you have tools that civilian buyers simply do not have.
-
-### 1. The 0% Down Advantage
-
-Civilian buyers have to save tens of thousands of dollars to cover a down payment as home prices rise. Every month they wait, the target moves further away. With a VA loan, you can buy with **0% down**. You do not have to chase a moving target. You can lock in today's price with zero out-of-pocket down payment, regardless of where prices go next.
-
-### 2. The 2026 BAH Increase
-
-The Basic Allowance for Housing (BAH) for Hawaii saw a **5.4% increase for 2026**. That extra tax-free income directly offsets the higher monthly payment at today's 6% rate. The military has essentially already given you the bridge funding to handle the current rate environment while you wait for rates to normalize.
-
-### 3. The IRRRL Strategy: Buy Now, Refinance Later
-
-This is the most powerful tool in the VA buyer's arsenal, and it is the strategy that makes the "cost of waiting" argument completely irrelevant for military families.
-
-The VA Interest Rate Reduction Refinance Loan (IRRRL) is the simplest, cheapest refinance program in the mortgage industry. It requires **no appraisal, no income verification, and minimal paperwork**. If you have a VA loan and rates drop, you can refinance into the lower rate with almost no friction.
-
-The strategy is straightforward: Buy the house now at today's price. Use your increased BAH to manage the 6% payment. When rates drop to 5.125% by end of 2026, use the IRRRL to permanently lower your payment.
-
-You get the house at the lower price. You eventually get the lower rate. You win on both sides of the equation — and you never have to compete in the feeding frenzy that will hit Hawaii's market when rates finally drop.
-
----
-
-## The Move: What to Do Right Now
-
-The data is clear. The 6% VA rates we are seeing today are based on lagging statistical data and geopolitical caution, not the true state of inflation in the U.S. economy. Rates will come down. But when they do, Hawaii home prices will go up, and competition will be fierce.
-
-If you are PCSing to Hawaii or have been sitting on the sidelines waiting for the "right" moment, here is your playbook:
-
-**Step 1: Stop renting.** Renting guarantees a 100% interest rate on your housing cost and builds zero equity. Every month you rent in Hawaii, you are paying someone else's mortgage.
-
-**Step 2: Buy the house now.** Lock in the purchase price before the pent-up demand wave hits. You are buying the asset, not the rate.
-
-**Step 3: Negotiate aggressively.** Use the current high-rate environment to your advantage. Ask sellers for concessions to buy down your rate — a 2/1 temporary buydown can make your first two years significantly more affordable while you wait for rates to normalize.
-
-**Step 4: Refinance later.** When the lagging shelter data washes out of the CPI and rates drop into the 5s, execute a VA IRRRL to permanently lower your payment. No appraisal. No income docs. Just a lower rate.
-
-You marry the house. You only date the rate. Do not let a temporary interest rate environment — built on a statistical illusion — cost you tens of thousands of dollars in permanent equity.
-
----
-
-## Ready to Run the Numbers?
-
-Every PCS timeline and budget is different. If you want to see exactly how the math works for your specific situation — including how to use seller concessions to lower your effective rate today and what an IRRRL refinance would save you when rates drop — let's talk.
-
-[**Get Pre-Approved and Build Your Strategy with Jay Miller at CMG HomeHub →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
-
-*Have questions about buying in Hawaii with a VA loan? Contact Jay Miller at RealityCents for personalized, Hawaii-specific mortgage guidance.*
-
----
-
-### Related Articles
-- [How to Buy a House in Hawaii With a VA Loan and $0 Down](/knowledge-base/va-loans-hawaii-military)
-- [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
-- [Why an ARM Isn't a Gamble in Hawaii — It's a Timeline Tool](/knowledge-base/adjustable-rate-mortgage-hawaii)
-
----
-
-*Last Updated: June 2026*
-
-*Published by Jay Miller, NMLS #657301 | CMG Home Loans, Honolulu, Hawaii | RealityCents.com*`,
-  },
-  {
     slug: "down-payment-myth-hawaii-pmi-vs-appreciation",
     title: "The 20% Down Payment Myth: Why Saving to Avoid PMI Is Costing Hawaii Buyers Tens of Thousands",
-    excerpt: "Waiting to save a 20% down payment in Hawaii is a losing strategy. See the real math: how much home appreciation you lose vs. what PMI actually costs — and why buying now with 3–5% down wins.",
+    excerpt: "Waiting to save a 20% down payment in Hawaii can cost more than it saves. See the real math: how much home appreciation you lose vs. what PMI actually costs — and when buying sooner with 3% to 5% down can make sense.",
     category: "First-Time Buyers",
     readTime: "6 min",
     date: "2026-06-07",
@@ -4597,7 +4456,7 @@ If you live in Ohio or Indiana, that might be reasonable advice. If you live in 
 
 In a market where the median single-family home on Oahu sells for over $1.1 million, the 20% target is moving faster than you can save. While you are sitting on the sidelines diligently stacking cash, the market is appreciating. The equity you are losing by waiting far exceeds the cost of the PMI you are trying to avoid.
 
-If you qualify for a home today with 3%, 5%, or 0% down, waiting to save more is a losing strategy. Here is the math.
+If you qualify for a home today with 3%, 5%, or 0% down, waiting to save more can cost more than it saves. Here is an example.
 
 ---
 
@@ -4607,7 +4466,7 @@ Let's run the numbers on an $850,000 Ewa Beach single-family home — a realisti
 
 To put 20% down, you need **$170,000** in cash. To put 5% down (Conventional), you need **$42,500**. Say you have the $42,500 today, but you decide to wait and save the remaining $127,500 to avoid PMI. If you are an aggressive saver putting away $2,000 every single month, it will take you **over five years** to close that gap.
 
-The housing market does not stand still for five years. Hawaii real estate has historically appreciated at 4–5% annually. Using a conservative **3.5% appreciation rate**, here is what happens to that $850,000 home while you save:
+The housing market does not stand still for five years. This example uses **3.5% annual appreciation** (an assumption, not a forecast; Oahu prices have also fallen in some years), here is what happens to that $850,000 home while you save:
 
 | Year | Home Value | 20% Down Payment Required | Your Savings Progress |
 |---|---|---|---|
@@ -4656,7 +4515,7 @@ Here is where the strategy gets smart: treat those extra principal payments as f
 
 You do not need 20% down. Here is a clear breakdown of every realistic option available to Hawaii buyers right now:
 
-| Loan Type | Minimum Down | PMI / MIP | Best For |
+| Loan Type | Minimum Down | PMI / MIP | Often used by |
 |---|---|---|---|
 | VA Loan | **0%** | None | Active-duty military, veterans |
 | Conventional (First-Time) | **3%** | PMI (removable at 80% LTV) | First-time buyers with strong credit |
@@ -4664,11 +4523,11 @@ You do not need 20% down. Here is a clear breakdown of every realistic option av
 | FHA Loan | **3.5%** | MIP (requires refi to remove) | Buyers with lower credit scores |
 | Jumbo Loan | **10–20%** | Varies by lender | Luxury properties above $1.249M |
 
-**VA Loans (0% Down).** If you are active-duty military or a qualifying veteran, the VA loan is the most powerful mortgage product in existence. Zero down payment. No monthly PMI. Ever. There is no loan limit on VA loans — as long as you qualify for the payment, you can finance the full purchase price with nothing out of pocket. If you have VA eligibility, this is almost always your best option, full stop.
+**VA Loans (0% Down).** If you are active-duty military or a qualifying veteran, the VA loan is hard to beat: no down payment with full entitlement, no monthly PMI, and no VA loan limit for borrowers with full entitlement who qualify (lenders may set their own caps). If you have VA eligibility, compare it first.
 
 **Conventional Loans (3–5% Down).** First-time homebuyers can access conventional financing with as little as 3% down. Repeat buyers need 5%. You will pay PMI, but as the math above shows, the equity you gain by entering the market now outpaces that cost by a wide margin. And again — PMI comes off once you hit 20% equity.
 
-**FHA Loans (3.5% Down).** FHA loans are government-backed and more forgiving on credit scores and debt-to-income ratios. The trade-off is that FHA Mortgage Insurance Premium (MIP) cannot be removed by simply gaining equity — you will eventually need to refinance into a conventional loan to eliminate it. Still, FHA is an excellent entry point for buyers who need the most flexible underwriting.
+**FHA Loans (3.5% Down).** FHA loans are government-backed and more forgiving on credit scores and debt-to-income ratios. The trade-off is that FHA Mortgage Insurance Premium (MIP) cannot be removed by simply gaining equity — you will eventually need to refinance into a conventional loan to eliminate it. FHA can be a good fit for buyers who need more flexible underwriting.
 
 **Jumbo Loans (10–20% Down).** If you are buying above the conforming loan limit — which in Hawaii's high-cost counties is $1,249,125 — you will need a Jumbo loan. These require larger down payments and stricter credit and reserve requirements, but they are the path to Hawaii's luxury and upper-tier market.
 
@@ -4694,7 +4553,7 @@ If you have been sitting on the sidelines because you think you need a massive d
 
 **Run the real numbers.** Use the [Loan Comparison Calculator at realitycents.com/loan-compare](https://realitycents.com/loan-compare) to see exactly what a 5% down payment looks like versus 20% on your specific purchase price. Look at the monthly PMI cost, then look at the historical appreciation rate of the neighborhood you want to buy in. The math will make the decision for you.
 
-**Consider keeping your cash liquid.** Even if you *have* 20% to put down, it may not be the smartest deployment of that capital. Putting 5% down and keeping the remaining 15% in an index fund, a high-yield savings account, or using it for renovations often produces a better overall financial return than burying it all in home equity on day one.
+**Consider keeping your cash liquid.** Even if you *have* 20% to put down, it may not be the most useful place for that cash. Putting 5% down and keeping the remaining 15% in an index fund, a high-yield savings account, or using it for renovations often produces a better overall financial return than burying it all in home equity on day one.
 
 **Get pre-approved today.** A pre-approval costs nothing, does not commit you to buying, and gives you the exact numbers you need to make an informed decision. You will know your purchase price ceiling, your estimated monthly payment, and exactly what your PMI looks like — so you can compare it against the appreciation you are giving up by waiting.
 
@@ -4724,7 +4583,7 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
   {
     slug: "adjustable-rate-mortgage-hawaii",
     title: "Why an ARM Isn't a Gamble in Hawaii — It's a Timeline Tool",
-    excerpt: "With 30-year fixed rates around 6.5%, many Hawaii buyers are asking about adjustable-rate mortgages. Here's the real math on 5-year and 7-year ARMs, the 5/1/5 cap structure, and the VA 5-Year ARM at 5.375% — the most underutilized tool for military PCS buyers in Hawaii right now.",
+    excerpt: "Many Hawaii buyers are asking about adjustable-rate mortgages. Here's how 5-year and 7-year ARMs work, how the 5/1/5 cap structure limits adjustments, and how a VA 5-year ARM can fit a PCS timeline. All rates shown are examples, not quotes.",
     category: "Loan Types",
     readTime: "6 min",
     date: "2026-06-01",
@@ -4733,29 +4592,29 @@ Whether you are a military buyer looking to use your 0% down VA benefit or a fir
 
 *Last Updated: June 2026*
 
-**An adjustable-rate mortgage makes sense in Hawaii when you know you'll sell or refinance within 5–7 years — the VA 5-Year ARM at 5.375% saves ~$285/month vs. the 30-year fixed, with a conservative 1%/year cap structure that limits risk.** If you are buying a home in Hawaii right now, you are probably staring at a 30-year fixed mortgage rate somewhere around **6.5%**. On an $800,000 Honolulu condo or a $1.15 million Oahu single-family home, that number translates into a monthly payment that makes even high-earning professionals pause.
+**An adjustable-rate mortgage can make sense in Hawaii when you expect to sell or refinance within the fixed period. In this article's example, a VA 5-year ARM priced 0.50% below a VA 30-year fixed lowers the payment on a $900,000 loan by about $285 a month during the fixed years, with a conservative 1%/year cap structure that limits risk. Example rates only, not a quote.** If you are buying a home in Hawaii right now, this article uses an example 30-year fixed rate of **6.5%** (an illustration, not today's pricing). On an $800,000 Honolulu condo or a $1.15 million Oahu single-family home, that number translates into a monthly payment that makes even high-earning professionals pause.
 
-So it is no surprise that more buyers are asking me about Adjustable-Rate Mortgages (ARMs). They see a 5-year ARM at 6.0% or a 7-year ARM at 6.125% and wonder if the lower payment is worth the risk.
+So it is no surprise that more buyers are asking me about Adjustable-Rate Mortgages (ARMs). They see a 5-year or 7-year ARM priced below the 30-year fixed and wonder if the lower payment is worth the risk.
 
-Here is the thing most lenders will not tell you: **In Hawaii, an ARM is not a gamble. It is a timeline tool.**
+**In Hawaii, an ARM is best understood as a timeline tool, not a bet on rates.**
 
 Whether an ARM is a brilliant financial move or a dangerous trap depends entirely on one question: *How long are you actually going to keep this specific loan?*
 
-But before we get into conventional ARMs, there is one product that deserves its own spotlight — especially if you are active-duty military. It is the **VA 5-Year ARM**, and it is one of the most underutilized tools in Hawaii's mortgage market right now.
+But before we get into conventional ARMs, there is one product that deserves its own spotlight — especially if you are active-duty military. It is the **VA 5-Year ARM**, and it is worth a close look if your tour length is defined.
 
 ---
 
-## The VA 5-Year ARM: The Best-Kept Secret for Military PCS Buyers
+## The VA 5-Year ARM for Military PCS Buyers
 
 If you are active-duty military PCSing to Hawaii, stop and read this section carefully.
 
-Right now, the VA 30-year fixed rate is approximately **5.875%**. The VA 5-year ARM is priced at approximately **5.375%** — a full **0.50% lower**.
+For illustration, assume a VA 30-year fixed at **5.875%** and a VA 5-year ARM at **5.375%**, a **0.50%** difference. These are example rates, not quotes; actual pricing changes daily.
 
 On a $900,000 loan, that half-point difference saves you roughly **$285 a month**, or about **$3,400 a year**.
 
-But here is what makes the VA ARM genuinely exceptional compared to conventional ARMs: the cap structure is far more conservative. After the 5-year fixed period ends, the VA ARM can only adjust by a **maximum of 1% per year**, and it can never increase more than **5% over the life of the loan**.
+But here is what sets the VA ARM apart from conventional ARMs: the cap structure is more conservative. After the 5-year fixed period ends, the VA ARM can only adjust by a **maximum of 1% per year**, and it can never increase more than **5% over the life of the loan**.
 
-Compare that to a conventional ARM, which can jump by up to 5% at the very first adjustment. The VA ARM's 1% annual cap means your payment increases gradually and predictably — not in a single shock.
+Compare that to a conventional ARM, which can jump by up to 5% at the very first adjustment. The VA ARM's 1% annual cap means your payment increases gradually and predictably, not in a single shock.
 
 ### The VA ARM Math for a PCS Buyer
 
@@ -4763,16 +4622,16 @@ The standard accompanied PCS tour in Hawaii is 36 months. Here is what the VA AR
 
 | Period | Rate | Monthly Payment (on $900K loan) | Notes |
 |--------|------|----------------------------------|-------|
-| Years 1–5 (fixed) | 5.375% | ~$5,042 | Locked. Guaranteed. |
+| Years 1 to 5 (fixed) | 5.375% (example) | ~$5,042 | Fixed for years 1 to 5 |
 | Year 6 (worst case, +1%) | 6.375% | ~$5,605 | Max first adjustment |
 | Year 7 (worst case, +1%) | 7.375% | ~$6,187 | Max second adjustment |
 | Lifetime cap reached | 10.375% | ~$8,100 | Absolute ceiling |
 
-For a buyer who sells or PCSes in year 3, they never see a single adjustment. They captured $3,400 per year in savings — roughly **$10,200 over their tour** — and walked away.
+For a buyer who sells or PCSes in year 3, they never see a single adjustment. In this example, the lower payment adds up to about $3,400 a year, or roughly **$10,200 over a 3-year tour**.
 
 Even for a buyer who stays through year 6, the worst-case first adjustment is only +1%. That is a manageable step up, not a financial cliff.
 
-**The VA ARM is an excellent product up through approximately year 6.** After that, the annual adjustments begin stacking, and the math starts to favor refinancing or selling. But for a military family on a 3- to 4-year tour, this product is purpose-built for your situation.
+**In this example, the VA ARM's advantage lasts through about year 6.** After that, the annual adjustments begin stacking, and the math starts to favor refinancing or selling. But for a military family on a 3- to 4-year tour, this structure can line up with your timeline.
 
 ---
 
@@ -4782,9 +4641,9 @@ For non-VA buyers, conventional ARMs follow a similar structure but with more ag
 
 When you see a "5-Year ARM" or a "7-Year ARM," the numbers tell you how the loan behaves: the first number is how many years your rate is locked and cannot change, and after that fixed period, the rate adjusts every **6 months**.
 
-Today's conventional ARM rates are approximately:
+Example rates used in this article (illustration only, not a quote or today's pricing):
 
-| Loan Type | Approximate Rate | vs. 30-Year Fixed (6.5%) |
+| Loan Type | Example rate | vs. 30-Year Fixed (6.5%) |
 |-----------|-----------------|---------------------------|
 | 30-Year Fixed | 6.500% | Baseline |
 | 7-Year ARM | 6.125% | –0.375% |
@@ -4801,11 +4660,11 @@ Most conventional ARMs today use a **5/1/5 cap structure**:
 
 ### The Worst-Case Scenario for a Conventional 5-Year ARM
 
-Let's say you lock in a 5-year ARM at **6.0%** today.
+Say you take a 5-year ARM at an example rate of **6.0%**.
 
 | Period | Rate | Monthly Payment (on $900K loan) | Notes |
 |--------|------|----------------------------------|-------|
-| Years 1–5 (fixed) | 6.000% | ~$5,396 | Locked. Guaranteed. |
+| Years 1 to 5 (fixed) | 6.000% (example) | ~$5,396 | Fixed for years 1 to 5 |
 | Year 6 (worst case, +5%) | 11.000% | ~$8,572 | Initial cap hit |
 | Year 6.5+ | 11.000% | ~$8,572 | Already at lifetime cap |
 
@@ -4825,7 +4684,7 @@ The **Index** is typically the SOFR (Secured Overnight Financing Rate), which mo
 
 ### An ARM Makes Sense When:
 
-**You are a military PCS buyer using a VA loan.** The VA 5-year ARM at 5.375% with a 1% annual cap is purpose-built for the Hawaii PCS cycle. You capture meaningful savings over your 36-month tour and exit before the adjustments begin. This is the cleanest ARM use case in the Hawaii market.
+**You are a military PCS buyer using a VA loan.** The VA 5-year ARM at 5.375% (example rate) with a 1% annual cap can fit the Hawaii PCS cycle: on a 36-month tour, if you sell or refinance before year 6, you never reach an adjustment.
 
 **You have a defined, realistic exit strategy.** A stepping-stone condo purchase you plan to sell in 5 years. A property you will convert to a rental when you PCS. A home you plan to pay down aggressively with a bonus or inheritance. The key word is *defined* — not hoped for.
 
@@ -4843,13 +4702,15 @@ The **Index** is typically the SOFR (Secured Overnight Financing Rate), which mo
 
 ## The Comparison Table: ARM vs. Fixed in Hawaii's Market
 
-| Scenario | Best Loan | Why |
+| Scenario | Often fits | Why |
 |----------|-----------|-----|
-| Military PCS buyer, 3-year tour, VA eligible | VA 5-Year ARM (5.375%) | 1% annual cap, exits before adjustment, saves ~$10K over tour |
-| First-time buyer, stepping-stone condo, 5-year plan | Conventional 5-Year ARM (6.0%) | Saves ~$180/mo vs. fixed; clear exit before adjustment |
-| Move-up buyer, 7-year plan, strong income | Conventional 7-Year ARM (6.125%) | Saves ~$225/mo vs. fixed; manageable risk window |
-| Long-term owner, forever home, risk-averse | 30-Year Fixed (6.5%) | Complete certainty; no adjustment risk |
-| Buyer without a clear exit strategy | 30-Year Fixed (6.5%) | No plan = no ARM |
+| Military PCS buyer, 3-year tour, VA eligible | VA 5-Year ARM | 1% annual cap, exits before adjustment, saves ~$10K over tour |
+| First-time buyer, stepping-stone condo, 5-year plan | Conventional 5-Year ARM | Saves ~$180/mo vs. fixed; clear exit before adjustment |
+| Move-up buyer, 7-year plan, strong income | Conventional 7-Year ARM | Saves ~$225/mo vs. fixed; manageable risk window |
+| Long-term owner, forever home, risk-averse | 30-Year Fixed | Complete certainty; no adjustment risk |
+| Buyer without a clear exit strategy | 30-Year Fixed | No plan = no ARM |
+
+Savings figures use this article's example rates, not quotes.
 
 ---
 
@@ -4857,14 +4718,14 @@ The **Index** is typically the SOFR (Secured Overnight Financing Rate), which mo
 
 In a market where the median Oahu single-family home costs over $1 million, even a 0.50% rate difference creates real monthly savings. But savings now is only half the equation. The other half is: *what does this cost me if I am wrong about my timeline?*
 
-An ARM is not inherently dangerous. It is a tool designed for a specific job — delivering a lower payment for a defined window of time. If your window matches the tool, it is one of the smartest moves you can make. If your window does not match, it is one of the most expensive mistakes in the mortgage industry.
+An ARM is not inherently dangerous. It is a tool designed for a specific job — delivering a lower payment for a defined window of time. If your window matches the tool, it can lower your cost. If it does not, it can cost you far more than a fixed rate would have.
 
 **Before you choose between an ARM and a 30-year fixed, you need to answer three questions:**
 1. How long am I realistically keeping this loan?
 2. What is my exit strategy if the market changes?
 3. Can I afford the worst-case adjusted payment if I am wrong?
 
-If you can answer all three with confidence, we can run the numbers and find the right product for your situation. If you cannot, the 30-year fixed is your answer.
+If you can answer all three with confidence, we can run the numbers together. If you cannot, a 30-year fixed is usually the safer choice.
 
 ---
 
@@ -4890,7 +4751,7 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
   {
     slug: "mortgage-rates-2026-high-hawaii-buyers",
     title: "Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now",
-    excerpt: "The 30-year fixed rate just hit 6.67% — the highest since July 2025. Here is why rates spiked (oil, inflation, bond market — not the Fed), what forecasters say about the rest of 2026, and the specific decision framework for Hawaii buyers who are under contract, shopping, or on the sidelines.",
+    excerpt: "The 30-year fixed rate just hit 6.67% — the highest since July 2025. Here is why rates spiked (oil, inflation, bond market — not the Fed), why forecasts are not a plan, and the specific decision framework for Hawaii buyers who are under contract, shopping, or on the sidelines.",
     category: "Market Insights",
     readTime: "6 min",
     date: "2026-08-03",
@@ -4903,7 +4764,7 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
 
 The 30-year fixed mortgage rate just hit 6.67% for the week ending July 30 — the highest level since July 2025. If you were pre-approved in June at 6.3%, that 37 basis point increase costs you $266 per month on a $1.2M Hawaii loan — $95,760 in additional interest over 30 years.
 
-The instinct is to pause and wait for the Fed to "fix it." But in Hawaii's constrained market — median single-family homes at a record $1.24 million, selling in 13 days — waiting without a strategy is the most expensive decision you can make. Here is exactly why rates spiked, what the forecasts say, and the specific decision framework for Hawaii buyers right now.
+The instinct is to pause and wait for the Fed to "fix it." But in Hawaii's constrained market — median single-family homes at a record $1.24 million, selling in 13 days — waiting without a strategy can be costly. Here is why rates spiked, what forecasts can and can't tell you, and the specific decision framework for Hawaii buyers right now.
 
 ---
 
@@ -4923,17 +4784,11 @@ The bond market reacts to two primary forces: inflation expectations and economi
 
 ---
 
-## What the Forecasts Say
+## What Forecasts Can and Can't Tell You
 
-Despite the July spike, the macro forecast for the second half of 2026 remains cautiously optimistic.
+Published forecasts for late 2026 range widely. In mid-2026, forecaster Barry Habib projected about 5.6%, and a Forbes roundup projected about 6.4%. Forecasts like these are often wrong, and this article does not predict where rates will go.
 
-Barry Habib — one of the most accurate mortgage rate forecasters in the industry — maintains his target of rates reaching 5.6% by the end of 2026. His thesis relies on a critical insight: true inflation is actually much lower than reported inflation (1.51% vs. 3.3%) due to a 12-to-18-month lag in how the government measures shelter costs.
-
-As that lagging shelter data finally catches up to reality in the second half of 2026, headline inflation should drop meaningfully, bringing bond yields and mortgage rates down with it.
-
-Forbes' July 2026 forecast projects the 30-year fixed will hover around 6.4% for the remainder of 2026, with a gradual decline into 2027. The consensus among economists is that rates have likely peaked — but the path down will be volatile, not smooth.
-
-**What this means for you:** Rates are more likely to be lower six months from now than higher. But "likely" is not "guaranteed," and the path between here and there will include weeks like this one where rates spike on bad data.
+**What this means for you:** plan around a payment you can afford at today's rate. Treat any future drop as a bonus, not a plan.
 
 ---
 
@@ -4969,11 +4824,11 @@ Use the [Loan Comparison Calculator at RealityCents](/loan-compare) to run side-
 
 If you paused your search because rates hit 6.67%, you are falling into the classic cost-of-waiting trap.
 
-Let us assume Barry Habib is right, and rates drop to 5.6% by December 2026. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that drop in rates will bring sidelined buyers flooding back into an already competitive market, driving prices higher.
+As a what-if, suppose rates fell to 5.6% by December 2026. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that drop in rates will bring sidelined buyers flooding back into an already competitive market, driving prices higher.
 
-If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But you will likely pay $30,000 to $50,000 more for the house — and you will be competing against every other buyer who was also waiting for rates to improve.
+If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But if prices rose in the meantime, you could pay $30,000 to $50,000 more for the house — and you will be competing against every other buyer who was also waiting for rates to improve.
 
-**The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. When rates drop to 5.6% next year, you refinance into the lower rate — capturing both the lower price and the lower rate. You can change your mortgage rate. You cannot change your purchase price.
+**The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. If rates fall enough later, refinancing may lower your rate, if you qualify and the costs make sense. You can change your mortgage rate. You cannot change your purchase price.
 
 ---
 
@@ -4985,7 +4840,7 @@ The tradeoff is real: your rate moves both directions, and today's starting rate
 
 Here is what surprises most people: even at a higher stated rate, a first-lien HELOC can save hundreds of thousands of dollars in total mortgage interest compared to a traditional 30-year fixed. The reason is structural. Because your income sweeps directly into the loan balance every pay period, you are reducing principal daily — not monthly. Interest is calculated on a lower average daily balance, and the compounding effect over time is dramatic. Many borrowers pay off their home in under 15 years while paying a fraction of the total interest a 30-year fixed would have cost them — even though the rate on paper is higher.
 
-This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. But in an environment where the consensus is that rates are more likely to fall than rise, it is worth understanding how the product works.
+This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. If you are weighing rate risk either way, it is worth understanding how the product works.
 
 [**Learn How a First-Lien HELOC Works →**](/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii)
 
@@ -5005,7 +4860,7 @@ Know your numbers. Negotiate aggressively for seller concessions. Focus on the p
 
 ---
 
-*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | www.jay-miller.com*`,
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://jay-miller.com)*`,
   },
 ];
 /** All published (non-draft) articles — use this everywhere public-facing */

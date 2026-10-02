@@ -102,7 +102,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$900K–$1.3M",
     priceTH: null,
     whyFamilies:
-      "Marina lifestyle, newer developments, good schools. Costco, restaurants, and shopping nearby. Feels like a self-contained community.",
+      "Marina lifestyle, newer developments. Costco, restaurants, and shopping nearby. Feels like a self-contained community.",
     vaNote:
       "Mostly fee simple, some condos need approval check. Newer construction passes VA appraisal easily.",
   },
@@ -112,7 +112,7 @@ const NEIGHBORHOODS = [
     priceSFH: "$800K–$1.1M",
     priceTH: "$550K–$750K",
     whyFamilies:
-      "More affordable than Windward side, established military community, top-rated schools, walkable, clean and well-maintained.",
+      "More affordable than Windward side, established military community, walkable, clean and well-maintained.",
     vaNote:
       "Mix of fee simple and leasehold — confirm fee simple before making an offer. Strong military resale market.",
   },
@@ -150,7 +150,7 @@ const PAGE_SCHEMA = [
     "@id": "https://realitycents.com/#business",
     name: "Jay Miller — VA Loan Specialist, CMG Home Loans",
     description:
-      "Army veteran and Certified Mortgage Advisor specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25+ years of Hawaii mortgage lending experience.",
+      "Army veteran, Sales Manager and Certified Mortgage Advisor, specializing in VA loans for Marines and Navy personnel PCS'ing to MCBH Kaneohe Bay. 25+ years of Hawaii mortgage lending experience.",
     url: "https://realitycents.com/va-loan-kaneohe-mcbh",
     telephone: "(808) 429-0811",
     email: "jaym@cmghomeloans.com",
@@ -216,7 +216,7 @@ export default function VALoanKaneohe() {
     <Layout>
       <SEO
         title="VA Loan Guide for MCBH Kaneohe Bay — Buy a Home on Oahu with $0 Down"
-        description="PCS'ing to Marine Corps Base Hawaii? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, best Windward side neighborhoods (Kailua, Kaneohe, Enchanted Lake, Hawaii Kai, Mililani), VA condo rules, and $0-down purchase options for Marines at MCBH Kaneohe Bay."
+        description="PCS'ing to Marine Corps Base Hawaii? Complete 2026 VA loan guide with BAH rates, payment scenarios by rank, Windward side neighborhoods (Kailua, Kaneohe, Enchanted Lake, Hawaii Kai, Mililani), VA condo rules, and $0-down purchase options for Marines at MCBH Kaneohe Bay."
         url="https://realitycents.com/va-loan-kaneohe-mcbh"
         keywords="VA loan Kaneohe Bay, VA loan MCBH, buying a home near Kaneohe Bay, Marine Corps Hawaii home loan, VA loan Kailua"
         type="website"
@@ -392,8 +392,7 @@ export default function VALoanKaneohe() {
 
           <div className="mt-6 p-5 bg-teal/5 border border-teal/20 rounded-lg">
             <p className="text-sm font-body text-foreground/80 leading-relaxed">
-              The gap between BAH and PITI is real — but context matters. Hawaii's property tax
-              rate of 0.35% is the lowest in the country. On a $900,000 home, that's roughly
+              The gap between BAH and PITI is real — but context matters. Honolulu's owner-occupant property tax rate of about 0.35% is among the lowest in the nation. On a $900,000 home, that's roughly
               $263/month in property tax — compare that to $845/month in San Diego on the same
               home. COLA also supplements your take-home in ways that make the math more workable
               than it first appears.
@@ -425,7 +424,7 @@ export default function VALoanKaneohe() {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-            Best Neighborhoods for MCBH Kaneohe Bay Families
+            Neighborhoods Near MCBH Kaneohe Bay: Commute, Housing, and Price
           </h2>
           <p className="text-foreground/70 font-body mb-8">
             The Windward side is stunning but pricier. Here's how the closest neighborhoods
@@ -468,6 +467,10 @@ export default function VALoanKaneohe() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6 text-sm text-foreground/70 font-body">
+            For school assignments, use the <a href="https://www.hawaiipublicschools.org" className="text-teal hover:underline" target="_blank" rel="noopener noreferrer">Hawaii State Department of Education school finder</a>.
+          </p>
 
           <div className="mt-8 p-4 bg-navy/5 border border-navy/10 rounded-lg dark:bg-white/5 dark:border-white/10">
             <p className="text-sm font-body text-foreground/70 italic">

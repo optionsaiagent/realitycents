@@ -44,7 +44,7 @@ export interface ContactActionsProps {
 const SMS_BODY = encodeURIComponent(
   "Hi Jay, I found you on RealityCents and have a question about..."
 );
-const SMS_LINK = `sms:8084290811?body=${SMS_BODY}`;
+const SMS_LINK = `sms:${LENDER.phoneE164}?body=${SMS_BODY}`;
 
 export default function ContactActions({
   variant = "full",
@@ -86,7 +86,7 @@ export default function ContactActions({
 
   const callBtn = (isFullWidth = false) => !hideCall && (
     <a
-      href={`tel:${LENDER.phone}`}
+      href={`tel:${LENDER.phoneE164}`}
       className={`inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all border border-white/20 ${isFullWidth ? "w-full" : ""}`}
     >
       <Phone className="w-4 h-4 shrink-0" />
@@ -96,7 +96,7 @@ export default function ContactActions({
 
   const callBtnLight = !hideCall && (
     <a
-      href={`tel:${LENDER.phone}`}
+      href={`tel:${LENDER.phoneE164}`}
       className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white px-5 py-3 rounded-md text-sm font-body font-semibold transition-all"
     >
       <Phone className="w-4 h-4" />

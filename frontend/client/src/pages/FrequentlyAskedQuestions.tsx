@@ -65,7 +65,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
           <>
             Your borrowing power depends on your income, monthly debts, credit score, down payment, and the loan program you choose. A general guideline is the 28/36 rule: your housing payment should not exceed 28% of your gross monthly income, and your total debt payments should stay below 36%. However, most loan programs allow significantly higher ratios for well-qualified borrowers — conventional loans typically allow up to 45–50% DTI, jumbo loans up to 43–45%, FHA up to 55%, and VA loans can go 60% or higher for borrowers with excellent credit profiles. In Hawaii, the high cost of living means HOA fees, property taxes, and homeowner's insurance all factor into your qualifying payment. Getting pre-approved with a local lender gives you a clear picture of your budget before you start shopping.{" "}
             <a href="/knowledge-base/income-needed-buy-home-hawaii-2026" className="text-teal underline underline-offset-2 hover:text-teal-dark">Learn more about income requirements to buy in Hawaii →</a>{" "}
-            <a href="/knowledge-base/why-waiting-for-lower-rates-costs-hawaii-military-buyers" className="text-teal underline underline-offset-2 hover:text-teal-dark">Why waiting for lower rates costs you more →</a>{" "}
+            <a href="/knowledge-base/mortgage-rates-2026-high-hawaii-buyers" className="text-teal underline underline-offset-2 hover:text-teal-dark">What to do when mortgage rates rise →</a>{" "}
             <a href="/loan-compare" className="text-teal underline underline-offset-2 hover:text-teal-dark">Compare loan options with our calculator →</a>
           </>
         ),
@@ -253,7 +253,7 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "RealityCents — Jay Miller, Mortgage Loan Originator",
+  name: "RealityCents: Jay Miller, Sales Manager and Certified Mortgage Advisor",
   description: "Hawaii mortgage education, tools, and lending services. Specializing in VA loans, conventional loans, FHA, and investment property financing in Honolulu and across the Hawaiian Islands.",
   url: "https://realitycents.com",
   telephone: LENDER.phone,
@@ -283,7 +283,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jay Miller",
-  jobTitle: "Certified Mortgage Advisor",
+  jobTitle: "Sales Manager and Certified Mortgage Advisor",
   url: "https://realitycents.com/about",
   worksFor: {
     "@type": "Organization",
@@ -394,7 +394,7 @@ export default function FrequentlyAskedQuestions() {
     <Layout>
       <SEO
         title="Hawaii Home Loan FAQ"
-        description="Answers to the top 20 questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Expert answers from a local mortgage professional with 25 years of experience."
+        description="Answers to 20 common questions about home loans, VA loans, conforming limits, closing costs, and buying a home in Honolulu and Hawaii. Answers from Jay Miller, NMLS #657301, a Honolulu loan officer with 25+ years of experience."
         url="/frequently-asked-questions"
         keywords="Hawaii mortgage FAQ, Honolulu home loan questions, VA loan Hawaii, conforming loan limits Honolulu, first-time homebuyer Hawaii, condo warrantability, leasehold property Hawaii"
         schema={schemas}
@@ -402,7 +402,7 @@ export default function FrequentlyAskedQuestions() {
 
       <PageHero
         title="Hawaii Home Loan FAQ"
-        subtitle="Expert answers to the most common questions about buying a home, qualifying for a mortgage, and navigating Hawaii's unique real estate market."
+        subtitle="Answers to common questions about buying a home, qualifying for a mortgage, and navigating Hawaii's unique real estate market."
         image={IMAGES.heroHome}
         compact
       />
@@ -509,7 +509,7 @@ export default function FrequentlyAskedQuestions() {
       <ContactActions
         variant="full"
         headline="Still Have Questions?"
-        subtext="Hawaii's mortgage market has unique nuances that generic answers can't fully address. Get personalized guidance from a local expert with 25 years of Hawaii mortgage experience."
+        subtext="Hawaii's mortgage market has unique nuances that generic answers can't fully address. Get personalized guidance from a Honolulu loan officer with 25+ years of Hawaii mortgage experience."
         preApprovalLabel="Start Your Pre-Approval"
         hideEmail
       />
