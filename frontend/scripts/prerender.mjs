@@ -20,6 +20,8 @@ import { STATIC_PAGE_BODIES } from "./static-page-bodies.mjs";
 
 const AIO_NAME = "All In One Loan™";
 const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
+/** Mirror of client/src/lib/constants.ts AIO_HUB_UPDATED. Change only at merge. */
+const AIO_HUB_UPDATED = "2026-10-02";
 
 // Live condo data so prerendered SEO stays in sync with twice-monthly refreshes
 const CONDO_DATA = JSON.parse(
@@ -814,6 +816,79 @@ const STATIC_PAGES = {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: "HELOC Sweep Calculator", item: `${BASE_URL}/heloc-sweep-calculator` },
+        ],
+      },
+    ],
+  },
+  "/first-lien-heloc-hawaii": {
+    title: `${AIO_NAME} in Hawaii: How CMG's First-Lien HELOC Works | RealityCents`,
+    description: `How the CMG ${AIO_NAME}, a 30-year first-lien HELOC with a built-in sweep checking account, works in Hawaii; how it compares with a 30-year fixed, other first-lien HELOCs, and velocity banking; and who it fits.`,
+    keywords: "All In One Loan Hawaii, CMG All In One Loan, first lien HELOC Hawaii, velocity banking vs HELOC, HELOC sweep account, Jay Miller NMLS 657301",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${BASE_URL}/first-lien-heloc-hawaii#webpage`,
+        name: `${AIO_NAME} in Hawaii: How CMG's First-Lien HELOC Works | RealityCents`,
+        description: `How the CMG ${AIO_NAME}, a 30-year first-lien HELOC with a built-in sweep checking account, works in Hawaii; how it compares with a 30-year fixed, other first-lien HELOCs, and velocity banking; and who it fits.`,
+        url: `${BASE_URL}/first-lien-heloc-hawaii`,
+        dateModified: `${AIO_HUB_UPDATED}T00:00:00-10:00`,
+        author: { "@id": "https://realitycents.com/#jaymiller" },
+        reviewedBy: { "@id": "https://realitycents.com/#jaymiller" },
+        about: {
+          "@type": "FinancialProduct",
+          name: AIO_NAME,
+          category: "First-lien home equity line of credit",
+          provider: { "@type": "Organization", name: "CMG Home Loans", identifier: "NMLS #1820" },
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `What is the CMG ${AIO_NAME}?`,
+            acceptedAnswer: { "@type": "Answer", text: "It is a 30-year first-lien home equity line of credit with a built-in sweep checking account, offered by CMG Home Loans. It replaces a traditional mortgage on a purchase or refinance." },
+          },
+          {
+            "@type": "Question",
+            name: `How does the sweep account in the ${AIO_NAME} work?`,
+            acceptedAnswer: { "@type": "Answer", text: "Deposits are applied against the loan balance as soon as they post, and you pay bills from the same account. Interest is calculated nightly on the unpaid balance and billed monthly, so money waiting to be spent still lowers the balance interest is charged on." },
+          },
+          {
+            "@type": "Question",
+            name: `Is the ${AIO_NAME} rate fixed or variable?`,
+            acceptedAnswer: { "@type": "Answer", text: "Variable. It is an index plus a margin, can change each monthly billing cycle, and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details." },
+          },
+          {
+            "@type": "Question",
+            name: `Is velocity banking the same as the ${AIO_NAME}?`,
+            acceptedAnswer: { "@type": "Answer", text: `No. Velocity banking is a strategy that usually pairs a regular mortgage with a separate HELOC and moves lump sums between them. The ${AIO_NAME} builds the deposit-against-balance idea into one first-lien account. Both depend on steady monthly surplus.` },
+          },
+          {
+            "@type": "Question",
+            name: `Will an ${AIO_NAME} pay off my house faster?`,
+            acceptedAnswer: { "@type": "Answer", text: "It depends on your income, spending, balance, and the rate path. With a steady surplus the balance can fall faster than on a fixed schedule; without one, or if rates rise, it may not. A side-by-side simulation with your own numbers is the only fair answer." },
+          },
+          {
+            "@type": "Question",
+            name: `Who should avoid an ${AIO_NAME}?`,
+            acceptedAnswer: { "@type": "Answer", text: "Households without consistent monthly surplus, anyone who would treat the line as spending money, and borrowers who need the certainty of a fixed payment." },
+          },
+          {
+            "@type": "Question",
+            name: `Who offers the ${AIO_NAME} in Hawaii?`,
+            acceptedAnswer: { "@type": "Answer", text: "CMG Home Loans. In Honolulu, Jay Miller, Sales Manager and Certified Mortgage Advisor, NMLS #657301, can walk you through it: (808) 429-0811 or jaym@cmghomeloans.com." },
+          },
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: `${AIO_NAME} in Hawaii`, item: `${BASE_URL}/first-lien-heloc-hawaii` },
         ],
       },
     ],

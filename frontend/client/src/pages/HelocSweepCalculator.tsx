@@ -8,9 +8,11 @@
  * teal/gold accents.
  */
 import { useState, useMemo, useEffect, useRef } from "react";
+import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { trpc } from "@/lib/trpc";
 import SEO from "@/components/SEO";
+import { AIO_NAME } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import {
   type HelocSweepInputs,
@@ -823,6 +825,13 @@ export default function HelocSweepCalculator() {
               simulates every single day — deposits, spending, and daily interest — so you can see
               whether a first-lien HELOC with sweep checking beats a traditional mortgage for
               your numbers.
+            </p>
+            <p className="mt-4 text-base text-slate-300 leading-relaxed">
+              New to the strategy? Read{" "}
+              <Link href="/first-lien-heloc-hawaii" className="text-teal font-semibold hover:underline">
+                how the {AIO_NAME} works
+              </Link>
+              .
             </p>
           </div>
         </div>

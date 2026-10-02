@@ -8,6 +8,18 @@
 
 const AIO_NAME = "All In One Loan™";
 const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
+/** Mirror of client/src/lib/constants.ts AIO_HUB_UPDATED. Change only at merge. */
+const AIO_HUB_UPDATED = "2026-10-02";
+const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true";
+
+function aioHubUpdatedLabel(iso) {
+  const [year, month, day] = iso.split("-").map(Number);
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  return `${months[month - 1]} ${day}, ${year}`;
+}
 
 const BASE_URL = "https://realitycents.com";
 
@@ -622,6 +634,7 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>First-Lien HELOC + Sweep Checking Calculator</h1>
       <p>Simulate a first-lien HELOC with an integrated sweep checking account. Your net income is deposited directly against the loan balance, suppressing the balance interest is calculated on — starting the day it lands. Expenses draw from the line throughout the month, creating a "sawtooth" daily balance pattern. This calculator runs a true day-by-day simulation and compares the result against a traditional fixed-rate mortgage.</p>
+      <p>New to the strategy? Read <a href="${BASE_URL}/first-lien-heloc-hawaii">how the ${AIO_NAME} works</a>.</p>
       <section>
         <h2>How the Sweep Mechanism Works</h2>
         <p>With a first-lien HELOC that has built-in sweep checking, such as the All In One Loan™, your checking account and mortgage are the same account. Every paycheck immediately reduces the balance that daily interest accrues on. As you pay bills during the month, the balance rises back up — but the surplus you don't spend becomes a permanent principal paydown each month. Because interest is calculated on the average daily balance, even money that sits in the account for two weeks before being spent reduces your interest cost.</p>
@@ -636,6 +649,171 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <p>${AIO_TM_LINE}</p>
       ${LICENSE_CALC}
+    </main>
+  `,
+
+  "/first-lien-heloc-hawaii": `
+    <main>
+      <h1>The ${AIO_NAME} in Hawaii: How a First-Lien HELOC With a Sweep Account Works</h1>
+      <p><em>By Jay Miller, Sales Manager and Certified Mortgage Advisor, CMG Home Loans | NMLS #657301 | Last updated: ${aioHubUpdatedLabel(AIO_HUB_UPDATED)}</em></p>
+      <p class="article-intro">The CMG ${AIO_NAME} is a 30-year first-lien home equity line of credit (HELOC) that replaces a traditional mortgage and comes with a built-in sweep checking account: your deposits lower the loan balance right away, and the money stays available to spend. Interest is calculated on each day's balance at a variable rate, so the result depends on your cash flow and the rate path, not on the starting rate alone. It can fit households with steady monthly surplus and spending discipline; it does not fit anyone who needs a fixed payment or lives paycheck to paycheck.</p>
+      <aside class="key-takeaway">
+        <p><strong>Key facts</strong></p>
+        <ul>
+          <li><strong>What it is:</strong> a 30-year first-lien HELOC with an integrated sweep checking account, offered by CMG Home Loans.</li>
+          <li><strong>How interest works:</strong> calculated nightly on the unpaid balance and billed monthly.</li>
+          <li><strong>Rate:</strong> variable, tied to an index plus a margin; it can change every monthly billing cycle, within a floor and a lifetime cap set when the account opens.</li>
+          <li><strong>Access to funds:</strong> advances are available up to your available credit limit for the 30-year term; the limit begins stepping down after year 10.</li>
+          <li><strong>The catch:</strong> it only helps if you consistently deposit more than you spend, and a rising rate raises your interest cost.</li>
+        </ul>
+      </aside>
+      <section id="how-it-works">
+        <h2>How the CMG ${AIO_NAME} works</h2>
+        <p>A traditional mortgage and a checking account are two separate things. Your paycheck lands in checking, and once a month you send a fixed payment to the lender. The ${AIO_NAME} puts both in one account.</p>
+        <ol>
+          <li><strong>Your income is deposited into the account.</strong> Each deposit is applied against the loan balance the day it posts.</li>
+          <li><strong>You pay bills from the same account.</strong> Debit card, checks, online bill pay, and transfers draw on the line, the way a checking account would.</li>
+          <li><strong>Interest accrues on each day's balance.</strong> CMG computes interest nightly on the unpaid principal and totals it at the end of the month.</li>
+          <li><strong>What you don't spend keeps the balance lower.</strong> There is no traditional amortization schedule; principal goes down through the money you leave in the account.</li>
+        </ol>
+        <aside>
+          <p><strong>Illustration from the RealityCents first-lien HELOC article (not a quote, not a prediction):</strong> a household with a $600,000 balance deposits $12,000 of take-home pay on the 1st, so the balance drops to $588,000 that night. As $7,000 of living expenses are paid through the month, the balance drifts back up. The $5,000 that isn't spent stays against the balance. The daily balance makes a sawtooth pattern: a sharp drop on payday, a slow climb as bills are paid. Your own numbers will differ; the <a href="${BASE_URL}/heloc-sweep-calculator">HELOC sweep calculator</a> runs a day-by-day simulation with your inputs.</p>
+        </aside>
+        <h3>The credit line over 30 years</h3>
+        <p>Per CMG's current Important Terms disclosure, you can take advances up to your available credit limit for 360 months. The full credit limit is available for the first 120 billing periods (10 years). After that, the limit reduces by 1/240 of the original limit each month until it reaches zero at month 360, and the required payment includes whatever is needed to keep the balance at or below the reduced limit.</p>
+        <h3>Payments</h3>
+        <p>There is no fixed principal-and-interest payment like a 30-year fixed loan has. Interest is charged monthly and principal is reduced by deposits. CMG's Important Terms disclosure explains the minimum payment requirements, how they change after year 10, and the fees; ask for it and read it before you apply.</p>
+      </section>
+      <section id="vs-30-year-fixed">
+        <h2>${AIO_NAME} vs. a 30-year fixed mortgage</h2>
+        <p>The useful comparison is total interest paid and payoff timeline under your real cash flow, not the starting rate. A higher rate on a balance that stays lower can cost less in dollars than a lower rate on a balance that amortizes slowly, and the reverse can also be true.</p>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>30-year fixed mortgage</th>
+              <th>CMG ${AIO_NAME}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Rate</th>
+              <td>Fixed for the life of the loan</td>
+              <td>Variable; can change monthly within a floor and lifetime cap</td>
+            </tr>
+            <tr>
+              <th scope="row">Required payment</th>
+              <td>Same principal and interest every month</td>
+              <td>No fixed amortizing payment; see CMG's disclosure for minimum payments</td>
+            </tr>
+            <tr>
+              <th scope="row">How principal goes down</th>
+              <td>On a set amortization schedule, plus any extra payments</td>
+              <td>Through deposits you leave in the account</td>
+            </tr>
+            <tr>
+              <th scope="row">Getting money back out after paying down</th>
+              <td>Usually requires a refinance or a separate HELOC</td>
+              <td>Available up to your available credit limit during the 30-year term</td>
+            </tr>
+            <tr>
+              <th scope="row">Payment certainty</th>
+              <td>High</td>
+              <td>Low; interest cost moves with the rate and your balance</td>
+            </tr>
+            <tr>
+              <th scope="row">Usually fits</th>
+              <td>Borrowers who want a predictable payment</td>
+              <td>Borrowers with steady surplus who will run their banking through the loan</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Extra principal payments on a fixed-rate loan also cut total interest. The difference is liquidity and rate type: on a fixed loan, extra principal is locked in the house; in the ${AIO_NAME}, paid-down principal stays available, at the cost of a variable rate. The <a href="${BASE_URL}/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii">first-lien HELOC vs. traditional mortgage article</a> walks through the math in more depth.</p>
+      </section>
+      <section id="vs-other-first-lien-helocs">
+        <h2>${AIO_NAME} vs. other first-lien HELOCs</h2>
+        <p>"First-lien HELOC" describes a category, not one product. Features vary a lot, so compare these line by line:</p>
+        <ul>
+          <li><strong>Integrated sweep checking.</strong> Is your paycheck deposited straight against the balance, or do you have to move money from a separate bank? The checking account in the ${AIO_NAME} is built in.</li>
+          <li><strong>Draw period and step-down.</strong> How long can you draw, and when does the limit start shrinking? Many second-lien HELOCs have a 10-year draw period. The ${AIO_NAME} allows advances for 30 years, with the limit stepping down after year 10.</li>
+          <li><strong>Index, margin, floor, and cap.</strong> Which index, what margin, is the margin fixed, and what are the floor and lifetime cap? Get the numbers in writing.</li>
+          <li><strong>Occupancy.</strong> Some products are limited to primary residences; ask whether second homes and investment properties are allowed.</li>
+          <li><strong>Fees.</strong> Ask about annual fees and closing costs; CMG's Important Terms disclosure lists them for the ${AIO_NAME}.</li>
+          <li><strong>Hawaii property types.</strong> Ask how condos, condotels, and leasehold properties are treated before you fall in love with a property.</li>
+        </ul>
+      </section>
+      <section id="velocity-banking">
+        <h2>Velocity banking with a HELOC vs. the ${AIO_NAME}</h2>
+        <p><strong>Velocity banking is a cash-flow strategy, not a loan product.</strong> The usual version keeps a regular mortgage, opens a HELOC (often a second lien), uses the HELOC to make lump-sum "chunk" payments against the mortgage principal, then routes income into the HELOC to pay it back down, and repeats.</p>
+        <p>What it can and can't do:</p>
+        <ul>
+          <li>It reduces interest only to the extent your monthly surplus pays principal down sooner. Without surplus, it moves debt around and can add cost.</li>
+          <li>The HELOC usually carries a variable rate, and the chunk sits on that rate until income pays it down.</li>
+          <li>It takes active management: timing chunks, tracking two loans, and keeping spending in check.</li>
+        </ul>
+        <p>The ${AIO_NAME} uses the same core idea, letting idle cash sit against the balance, but builds it into one first-lien account, so there are no chunk transfers between two loans. Either way, the math only works with real, repeatable surplus. Anyone promising a specific payoff date or savings amount without your actual numbers is selling, not calculating.</p>
+      </section>
+      <section id="who-it-fits">
+        <h2>Who it fits, and who it doesn't</h2>
+        <p><strong>It can fit:</strong></p>
+        <ul>
+          <li>Households with steady income and a reliable monthly surplus.</li>
+          <li>People willing to run their everyday banking through the loan account.</li>
+          <li>Borrowers who value keeping access to paid-down principal for repairs, emergencies, or opportunities.</li>
+        </ul>
+        <p><strong>It doesn't fit:</strong></p>
+        <ul>
+          <li><strong>Paycheck-to-paycheck households.</strong> With no surplus, you carry a variable rate with none of the benefit.</li>
+          <li><strong>Anyone who would treat the line as spending money.</strong> Your home equity is reachable with a debit card. If that would become a slush fund, the balance can go up instead of down.</li>
+          <li><strong>Borrowers who need payment certainty.</strong> If a rate change would strain your budget or your sleep, a fixed-rate loan is the better choice.</li>
+        </ul>
+        <p><strong>The risks, plainly:</strong></p>
+        <ul>
+          <li><strong>Variable rate.</strong> The rate can change every month, up to the lifetime cap, and there is no annual limit on how much it can move.</li>
+          <li><strong>Discipline.</strong> Results depend on your behavior every month for years.</li>
+          <li><strong>Cash flow.</strong> If your monthly surplus is smaller than the monthly interest, the balance grows.</li>
+          <li><strong>Shrinking access after year 10.</strong> The credit limit steps down, and payments can rise to keep the balance under it.</li>
+          <li><strong>Qualification.</strong> Expect underwriting to focus on credit, equity, and documented cash flow.</li>
+        </ul>
+      </section>
+      <section id="who-can-set-it-up">
+        <h2>Who can set up an ${AIO_NAME} in Hawaii</h2>
+        <p>Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), works with Hawaii homeowners and buyers on the ${AIO_NAME} for purchases and refinances on Oahu, Maui, Kauai, and the Big Island. Bring your balance, take-home income, and monthly spending, and ask for a side-by-side simulation against a traditional mortgage that shows total interest and payoff timeline under different rate assumptions.</p>
+        <ul>
+          <li>Call <a href="tel:+18084290811">(808) 429-0811</a> or email <a href="mailto:jaym@cmghomeloans.com">jaym@cmghomeloans.com</a></li>
+          <li><a href="${PRE_APPROVAL_URL}">Apply with CMG Home Loans</a></li>
+          <li>Run your own numbers first: <a href="${BASE_URL}/heloc-sweep-calculator">HELOC sweep calculator</a></li>
+        </ul>
+        <p>Related reading:</p>
+        <ul>
+          <li><a href="${BASE_URL}/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii">First-lien HELOCs vs. traditional mortgages: why the interest rate isn't the number that matters</a></li>
+          <li><a href="${BASE_URL}/knowledge-base/va-second-tier-entitlement-hawaii">VA second-tier entitlement in Hawaii</a> (includes the first-lien HELOC as an option for a second property)</li>
+          <li><a href="${BASE_URL}/knowledge-base/adjustable-rate-mortgage-hawaii">Adjustable-rate mortgages in Hawaii</a></li>
+          <li><a href="${BASE_URL}/knowledge-base/refinancing-hawaii-homeowners">When and how to refinance your Hawaii mortgage</a></li>
+        </ul>
+      </section>
+      <section id="faq">
+        <h2>Frequently asked questions</h2>
+        <h3>What is the CMG ${AIO_NAME}?</h3>
+        <p>It is a 30-year first-lien home equity line of credit with a built-in sweep checking account, offered by CMG Home Loans. It replaces a traditional mortgage on a purchase or refinance.</p>
+        <h3>How does the sweep account in the ${AIO_NAME} work?</h3>
+        <p>Deposits are applied against the loan balance as soon as they post, and you pay bills from the same account. Interest is calculated nightly on the unpaid balance and billed monthly, so money waiting to be spent still lowers the balance interest is charged on.</p>
+        <h3>Is the ${AIO_NAME} rate fixed or variable?</h3>
+        <p>Variable. It is an index plus a margin, can change each monthly billing cycle, and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details.</p>
+        <h3>Is velocity banking the same as the ${AIO_NAME}?</h3>
+        <p>No. Velocity banking is a strategy that usually pairs a regular mortgage with a separate HELOC and moves lump sums between them. The ${AIO_NAME} builds the deposit-against-balance idea into one first-lien account. Both depend on steady monthly surplus.</p>
+        <h3>Will an ${AIO_NAME} pay off my house faster?</h3>
+        <p>It depends on your income, spending, balance, and the rate path. With a steady surplus the balance can fall faster than on a fixed schedule; without one, or if rates rise, it may not. A side-by-side simulation with your own numbers is the only fair answer.</p>
+        <h3>Who should avoid an ${AIO_NAME}?</h3>
+        <p>Households without consistent monthly surplus, anyone who would treat the line as spending money, and borrowers who need the certainty of a fixed payment.</p>
+        <h3>Who offers the ${AIO_NAME} in Hawaii?</h3>
+        <p>CMG Home Loans. In Honolulu, Jay Miller, Sales Manager and Certified Mortgage Advisor, NMLS #657301, can walk you through it: (808) 429-0811 or jaym@cmghomeloans.com.</p>
+      </section>
+      <footer>
+        <p>Jay Miller, Sales Manager and Certified Mortgage Advisor | NMLS #657301 | CMG Home Loans Branch NMLS #2475890 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813 | <a href="tel:+18084290811">(808) 429-0811</a></p>
+        <p>CMG Mortgage, Inc. dba CMG Home Loans, NMLS #1820. For licensing information, go to <a href="https://www.nmlsconsumeraccess.org">www.nmlsconsumeraccess.org</a>. Equal Housing Opportunity.</p>
+        <p>This page is educational. It is not an offer to lend, a commitment to lend, or a rate quote. The ${AIO_NAME} is a variable-rate line of credit; the rate and the interest you pay can increase. Results depend on your deposits, spending, balance, and rate changes, and are not guaranteed. All loans are subject to credit approval, property eligibility, and program guidelines. ${AIO_TM_LINE}</p>
+      </footer>
     </main>
   `,
 
