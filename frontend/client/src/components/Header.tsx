@@ -28,7 +28,6 @@ const CALC_LINKS = [
 
 const AFTER_CALC_NAV = [
   { label: "The Book", href: "/zero-down-in-paradise" },
-  { label: "Homebuying Guide", href: "/guide" },
   { label: "VA Condo Lookup", href: "/va-approved-condos-oahu" },
   { label: "All In One Loan™", href: "/first-lien-heloc-hawaii" },
   { label: "Agent Tools", href: "/agents" },
@@ -181,13 +180,6 @@ export default function Header() {
             <FileCheck className="w-4 h-4" />
             Get Pre-Approved
           </a>
-          <a
-            href={`tel:${LENDER.phoneE164}`}
-            className="hidden lg:inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white px-4 py-2 rounded-md text-sm font-body font-medium transition-all hover:shadow-lg hover:shadow-teal/20"
-          >
-            <Phone className="w-4 h-4" />
-            Call Now
-          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors"
@@ -268,13 +260,6 @@ export default function Header() {
           >
             <FileCheck className="w-4 h-4" />
             Get Pre-Approved
-          </a>
-          <a
-            href={`tel:${LENDER.phoneE164}`}
-            className="flex items-center justify-center gap-2 bg-teal text-white px-4 py-3 rounded-md text-sm font-body font-medium"
-          >
-            <Phone className="w-4 h-4" />
-            {LENDER.phone}
           </a>
         </nav>
       </div>
