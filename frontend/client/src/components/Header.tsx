@@ -33,7 +33,6 @@ const AFTER_CALC_NAV = [
   { label: "Agent Tools", href: "/agents" },
   { label: "For Advisors", href: "/advisors" },
   { label: "Contact", href: "/contact" },
-  { label: "FAQ", href: "/frequently-asked-questions" },
 ] as const;
 
 export default function Header() {
