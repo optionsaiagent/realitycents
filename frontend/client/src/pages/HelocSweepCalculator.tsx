@@ -801,7 +801,7 @@ export default function HelocSweepCalculator() {
       <SEO
         title="First-Lien HELOC Sweep Calculator — Mortgage Acceleration Analysis | RealityCents"
         description="Simulate a first-lien HELOC with a sweep checking account. See day-by-day how depositing your income against your balance changes payoff time and total interest vs. a traditional 30-year mortgage."
-        keywords="first lien HELOC calculator, HELOC sweep account, mortgage acceleration calculator, all in one loan calculator, velocity banking calculator, HELOC vs mortgage Hawaii"
+        keywords="first lien HELOC calculator, HELOC sweep account, mortgage acceleration calculator, All In One Loan™ calculator, velocity banking calculator, HELOC vs mortgage Hawaii"
         url="https://realitycents.com/heloc-sweep-calculator"
         schema={schema}
       />

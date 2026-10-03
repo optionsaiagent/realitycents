@@ -22,7 +22,7 @@ const PAGE_TITLE = `${AIO_NAME} in Hawaii: How CMG's First-Lien HELOC Works | Re
 const SEO_TITLE = `${AIO_NAME} in Hawaii: How CMG's First-Lien HELOC Works`;
 const PAGE_DESCRIPTION = `How the CMG ${AIO_NAME}, a 30-year first-lien HELOC with a built-in sweep checking account, works in Hawaii; how it compares with a 30-year fixed, other first-lien HELOCs, and velocity banking; and who it fits.`;
 const PAGE_KEYWORDS =
-  "All In One Loan Hawaii, CMG All In One Loan, first lien HELOC Hawaii, velocity banking vs HELOC, HELOC sweep account, Jay Miller NMLS 657301";
+  "All In One Loan™ Hawaii, CMG All In One Loan™, first lien HELOC Hawaii, velocity banking vs HELOC, HELOC sweep account, Jay Miller NMLS 657301";
 
 const FAQ: { q: string; a: string }[] = [
   {
@@ -35,7 +35,19 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: `Is the ${AIO_NAME} rate fixed or variable?`,
-    a: "Variable. It is an index plus a margin, can change each monthly billing cycle, and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details.",
+    a: "Variable. The rate is based on the average monthly SOFR index plus a margin. The margin ranges from 2.5% to 4.0%, and you choose it by paying discount points at closing to buy the margin down, much like discount points on a traditional mortgage. The rate can change each monthly billing cycle and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details.",
+  },
+  {
+    q: `Can I use the ${AIO_NAME} on a second home or investment property?`,
+    a: "Yes. Primary residences, second homes, and investment properties are all eligible, subject to program guidelines.",
+  },
+  {
+    q: `Can I use the ${AIO_NAME} on a Hawaii condo?`,
+    a: `Only if the condo is warrantable. ${AIO_NAME} property guidelines follow Fannie Mae property guidelines, so non-warrantable condos are not eligible.`,
+  },
+  {
+    q: `Can self-employed borrowers qualify for the ${AIO_NAME}?`,
+    a: "Yes. Bank statement qualifying is available for self-employed borrowers, using a minimum 15% expense factor.",
   },
   {
     q: `Is velocity banking the same as the ${AIO_NAME}?`,
@@ -59,7 +71,7 @@ const COMPARISON_ROWS: { label: string; fixed: string; aio: string }[] = [
   {
     label: "Rate",
     fixed: "Fixed for the life of the loan",
-    aio: "Variable; can change monthly within a floor and lifetime cap",
+    aio: "Variable: average monthly SOFR plus a margin of 2.5% to 4.0%; can change monthly within a floor and lifetime cap",
   },
   {
     label: "Required payment",
@@ -196,10 +208,16 @@ export default function FirstLienHelocHawaii() {
             <ul className="list-disc space-y-2 pl-5 font-body text-sm leading-relaxed text-muted-foreground">
               <li><strong className="text-navy">What it is:</strong> a 30-year first-lien HELOC with an integrated sweep checking account, offered by CMG Home Loans.</li>
               <li><strong className="text-navy">How interest works:</strong> calculated nightly on the unpaid balance and billed monthly.</li>
-              <li><strong className="text-navy">Rate:</strong> variable, tied to an index plus a margin; it can change every monthly billing cycle, within a floor and a lifetime cap set when the account opens.</li>
+              <li><strong className="text-navy">Rate:</strong> variable, based on the average monthly SOFR index plus a margin. The margin ranges from 2.5% to 4.0%, and you choose it by how many discount points you pay at closing to buy the margin down, much like discount points on a traditional mortgage. The rate can change every monthly billing cycle, within a floor and a lifetime cap set when the account opens.</li>
               <li><strong className="text-navy">Access to funds:</strong> advances are available up to your available credit limit for the 30-year term; the limit begins stepping down after year 10.</li>
+              <li><strong className="text-navy">Occupancy:</strong> primary residences, second homes, and investment properties are all eligible.</li>
+              <li><strong className="text-navy">Condos:</strong> only warrantable condos are eligible, because {AIO_NAME} property guidelines follow Fannie Mae property guidelines.</li>
+              <li><strong className="text-navy">Self-employed borrowers:</strong> bank statement qualifying is available, using a minimum 15% expense factor.</li>
               <li><strong className="text-navy">The catch:</strong> it only helps if you consistently deposit more than you spend, and a rising rate raises your interest cost.</li>
             </ul>
+            <p className="mt-3 font-body text-xs leading-relaxed text-muted-foreground">
+              Eligibility, margins, and terms are subject to program guidelines and can change.
+            </p>
           </aside>
 
           <section className="mt-12" id="how-it-works">
@@ -274,10 +292,10 @@ export default function FirstLienHelocHawaii() {
             <ul className="list-disc space-y-3 pl-5 text-muted-foreground leading-relaxed mb-4">
               <li><strong className="text-navy">Integrated sweep checking.</strong> Is your paycheck deposited straight against the balance, or do you have to move money from a separate bank? The checking account in the {AIO_NAME} is built in.</li>
               <li><strong className="text-navy">Draw period and step-down.</strong> How long can you draw, and when does the limit start shrinking? Many second-lien HELOCs have a 10-year draw period. The {AIO_NAME} allows advances for 30 years, with the limit stepping down after year 10.</li>
-              <li><strong className="text-navy">Index, margin, floor, and cap.</strong> Which index, what margin, is the margin fixed, and what are the floor and lifetime cap? Get the numbers in writing.</li>
-              <li><strong className="text-navy">Occupancy.</strong> Some products are limited to primary residences; ask whether second homes and investment properties are allowed.</li>
+              <li><strong className="text-navy">Index, margin, floor, and cap.</strong> Which index, what margin, is the margin fixed, and what are the floor and lifetime cap? Get the numbers in writing. For the {AIO_NAME}, the index is the average monthly SOFR and the margin ranges from 2.5% to 4.0%, depending on the discount points you pay at closing.</li>
+              <li><strong className="text-navy">Occupancy.</strong> Some products are limited to primary residences. The {AIO_NAME} allows primary residences, second homes, and investment properties.</li>
               <li><strong className="text-navy">Fees.</strong> Ask about annual fees and closing costs; CMG's Important Terms disclosure lists them for the {AIO_NAME}.</li>
-              <li><strong className="text-navy">Hawaii property types.</strong> Ask how condos, condotels, and leasehold properties are treated before you fall in love with a property.</li>
+              <li><strong className="text-navy">Hawaii property types.</strong> Ask how condos, condotels, and leasehold properties are treated before you fall in love with a property. For the {AIO_NAME}, only warrantable condos are eligible, because its property guidelines follow Fannie Mae property guidelines.</li>
             </ul>
           </section>
 
@@ -318,7 +336,7 @@ export default function FirstLienHelocHawaii() {
               <li><strong className="text-navy">Discipline.</strong> Results depend on your behavior every month for years.</li>
               <li><strong className="text-navy">Cash flow.</strong> If your monthly surplus is smaller than the monthly interest, the balance grows.</li>
               <li><strong className="text-navy">Shrinking access after year 10.</strong> The credit limit steps down, and payments can rise to keep the balance under it.</li>
-              <li><strong className="text-navy">Qualification.</strong> Expect underwriting to focus on credit, equity, and documented cash flow.</li>
+              <li><strong className="text-navy">Qualification.</strong> Expect underwriting to focus on credit, equity, and documented cash flow. Self-employed borrowers can use bank statement qualifying, with a minimum 15% expense factor.</li>
             </ul>
           </section>
 
@@ -378,7 +396,7 @@ export default function FirstLienHelocHawaii() {
               {" "}Equal Housing Opportunity.
             </p>
             <p>
-              This page is educational. It is not an offer to lend, a commitment to lend, or a rate quote. The {AIO_NAME} is a variable-rate line of credit; the rate and the interest you pay can increase. Results depend on your deposits, spending, balance, and rate changes, and are not guaranteed. All loans are subject to credit approval, property eligibility, and program guidelines. {AIO_TM_LINE}
+              This page is educational. It is not an offer to lend, a commitment to lend, or a rate quote. The {AIO_NAME} is a variable-rate line of credit; the rate and the interest you pay can increase. Results depend on your deposits, spending, balance, and rate changes, and are not guaranteed. All loans are subject to credit approval, property eligibility, and program guidelines. Eligibility, margins, and terms are subject to program guidelines and can change. {AIO_TM_LINE}
             </p>
           </footer>
         </div>
