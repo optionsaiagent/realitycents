@@ -68,7 +68,7 @@ export default function Advisors() {
         url="/advisors"
         image={IMAGES.heroAdvisors}
         imageAlt={IMAGE_ALTS.heroAdvisors}
-        keywords="financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One loan"
+        keywords="financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One Loan™"
       />
 
       <PageHero

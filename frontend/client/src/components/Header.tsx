@@ -30,6 +30,7 @@ const AFTER_CALC_NAV = [
   { label: "The Book", href: "/zero-down-in-paradise" },
   { label: "Homebuying Guide", href: "/guide" },
   { label: "VA Condo Lookup", href: "/va-approved-condos-oahu" },
+  { label: "All In One Loan™", href: "/first-lien-heloc-hawaii" },
   { label: "Agent Tools", href: "/agents" },
   { label: "For Advisors", href: "/advisors" },
   { label: "Contact", href: "/contact" },

@@ -457,12 +457,12 @@ export default function Agents() {
                 Free Download &middot; Agent Cheat Sheet
               </p>
               <h2 className="font-display text-2xl lg:text-3xl text-navy mb-2">
-                Conventional vs. FHA vs. VA vs. USDA &mdash; Hawaii
+                Conventional vs. FHA vs. VA vs. USDA: Hawaii
               </h2>
               <p className="text-muted-foreground max-w-2xl">
                 One page, built for the listing table: down payment, credit, mortgage insurance and
                 funding fees, 2026 Hawaii loan limits by county, condo approval, seller-concession
-                caps, appraisal rules, and who each program fits &mdash; plus six Hawaii-specific
+                caps, appraisal rules, and who each program fits, plus six Hawaii-specific
                 agent tips. Figures as of October 2026.
               </p>
             </div>

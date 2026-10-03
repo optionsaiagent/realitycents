@@ -68,7 +68,7 @@ All MCP responses include attribution to Jay Miller, NMLS #657301, CMG Home Loan
 - [PCSing to Hawaii](https://www.pcsingtohawaii.com): Jay Miller's free guide for military families moving to Oahu: bases, neighborhoods, BAH, pets, cars, schools, and a PCS timeline. Index: https://www.pcsingtohawaii.com/llms.txt
 - [MCP server card](https://realitycents-mcp.jaymiller.workers.dev/server-card): Machine-readable description of the RealityCents MCP server. Catalog: https://realitycents.com/.well-known/ai-catalog.json. Same card: https://realitycents.com/.well-known/mcp.json and https://realitycents.com/.well-known/mcp/server-card.json
 
-- [Hawaii Loan Comparison Cheat Sheet (PDF)](https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf): One-page Conventional vs FHA vs VA vs USDA comparison for Hawaii agents — down payment, credit, MI/funding fees, 2026 county loan limits, condo approval, seller concessions. Free download on the /agents page.
+- [Hawaii Loan Comparison Cheat Sheet (PDF)](https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf): One-page Conventional vs FHA vs VA vs USDA comparison for Hawaii agents: down payment, credit, MI/funding fees, 2026 county loan limits, condo approval, seller concessions. Free download on the /agents page.
 
 ## Core Pages
 
@@ -91,7 +91,7 @@ Interactive Hawaii-specific mortgage calculators for self-service estimates:
 
 ## First-lien HELOC / All In One Loan™
 
-- [The All In One Loan™ in Hawaii](https://realitycents.com/first-lien-heloc-hawaii): How CMG's 30-year first-lien HELOC with a built-in sweep checking account works, compared with a 30-year fixed, other first-lien HELOCs, and velocity banking; who it fits and the risks (variable rate, discipline, cash flow). No rates or savings figures. Jay Miller, NMLS #657301.
+- [The All In One Loan™ in Hawaii](https://realitycents.com/first-lien-heloc-hawaii): How CMG's 30-year first-lien HELOC with a built-in sweep checking account works, compared with a 30-year fixed, other first-lien HELOCs, and velocity banking; who it fits and the risks (variable rate, discipline, cash flow). Rate: average monthly SOFR index plus a margin of 2.5% to 4.0%, chosen through discount points paid at closing. Primary residences, second homes, and investment properties are eligible; only warrantable condos (property guidelines follow Fannie Mae); self-employed bank statement qualifying with a minimum 15% expense factor. Eligibility, margins, and terms are subject to program guidelines and can change. No current rate quotes or savings figures. Jay Miller, NMLS #657301.
 - [First-lien HELOCs vs. traditional mortgages](https://realitycents.com/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii): Why total interest, not the note rate, is the comparison that matters.
 - [HELOC sweep calculator](https://realitycents.com/heloc-sweep-calculator): Day-by-day simulation of a first-lien HELOC with a sweep account vs. a traditional mortgage.
 

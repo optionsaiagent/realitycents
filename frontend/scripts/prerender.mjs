@@ -729,7 +729,7 @@ const STATIC_PAGES = {
   "/advisors": {
     title: "Financial Advisors — Free Up Client Cash Flow with the All In One Loan™",
     description: "How the All In One Loan™, a first-lien HELOC, can change a client's mortgage cash flow, and who it fits. Watch the 8-minute advisor briefing and partner with Jay Miller at CMG Home Loans.",
-    keywords: "financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One loan",
+    keywords: "financial advisor mortgage partnership, AIO HELOC, first lien HELOC financial planning, client cash flow optimization, mortgage payoff strategy, wealth management mortgage, CMG All In One Loan™",
     schema: [
       {
         "@context": "https://schema.org",
@@ -816,7 +816,7 @@ const STATIC_PAGES = {
   "/heloc-sweep-calculator": {
     title: "First-Lien HELOC Sweep Calculator — Mortgage Acceleration Analysis | RealityCents",
     description: "Simulate a first-lien HELOC with a sweep checking account. See day-by-day how depositing your income against your balance changes payoff time and total interest vs. a traditional 30-year mortgage.",
-    keywords: "first lien HELOC calculator, HELOC sweep account, mortgage acceleration calculator, all in one loan calculator, velocity banking calculator, HELOC vs mortgage Hawaii",
+    keywords: "first lien HELOC calculator, HELOC sweep account, mortgage acceleration calculator, All In One Loan™ calculator, velocity banking calculator, HELOC vs mortgage Hawaii",
     schema: [
       {
         "@context": "https://schema.org",
@@ -843,7 +843,7 @@ const STATIC_PAGES = {
   "/first-lien-heloc-hawaii": {
     title: `${AIO_NAME} in Hawaii: How CMG's First-Lien HELOC Works | RealityCents`,
     description: `How the CMG ${AIO_NAME}, a 30-year first-lien HELOC with a built-in sweep checking account, works in Hawaii; how it compares with a 30-year fixed, other first-lien HELOCs, and velocity banking; and who it fits.`,
-    keywords: "All In One Loan Hawaii, CMG All In One Loan, first lien HELOC Hawaii, velocity banking vs HELOC, HELOC sweep account, Jay Miller NMLS 657301",
+    keywords: "All In One Loan™ Hawaii, CMG All In One Loan™, first lien HELOC Hawaii, velocity banking vs HELOC, HELOC sweep account, Jay Miller NMLS 657301",
     schema: [
       {
         "@context": "https://schema.org",
@@ -879,7 +879,22 @@ const STATIC_PAGES = {
           {
             "@type": "Question",
             name: `Is the ${AIO_NAME} rate fixed or variable?`,
-            acceptedAnswer: { "@type": "Answer", text: "Variable. It is an index plus a margin, can change each monthly billing cycle, and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details." },
+            acceptedAnswer: { "@type": "Answer", text: "Variable. The rate is based on the average monthly SOFR index plus a margin. The margin ranges from 2.5% to 4.0%, and you choose it by paying discount points at closing to buy the margin down, much like discount points on a traditional mortgage. The rate can change each monthly billing cycle and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details." },
+          },
+          {
+            "@type": "Question",
+            name: `Can I use the ${AIO_NAME} on a second home or investment property?`,
+            acceptedAnswer: { "@type": "Answer", text: "Yes. Primary residences, second homes, and investment properties are all eligible, subject to program guidelines." },
+          },
+          {
+            "@type": "Question",
+            name: `Can I use the ${AIO_NAME} on a Hawaii condo?`,
+            acceptedAnswer: { "@type": "Answer", text: `Only if the condo is warrantable. ${AIO_NAME} property guidelines follow Fannie Mae property guidelines, so non-warrantable condos are not eligible.` },
+          },
+          {
+            "@type": "Question",
+            name: `Can self-employed borrowers qualify for the ${AIO_NAME}?`,
+            acceptedAnswer: { "@type": "Answer", text: "Yes. Bank statement qualifying is available for self-employed borrowers, using a minimum 15% expense factor." },
           },
           {
             "@type": "Question",

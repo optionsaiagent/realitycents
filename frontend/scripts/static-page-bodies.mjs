@@ -552,8 +552,8 @@ export const STATIC_PAGE_BODIES = {
         <p>Enter your name and email to unlock access to all tools. These professional resources are provided free by Jay Miller, NMLS #657301, CMG Home Loans.</p>
       </section>
       <section>
-        <h2>Free Download: Conventional vs. FHA vs. VA vs. USDA — Hawaii Agent Cheat Sheet</h2>
-        <p>A one-page comparison of the four main purchase loan programs for Hawaii real estate agents: minimum down payment, credit score, mortgage insurance and funding fees, 2026 loan limits by county (Honolulu $1,249,125 conforming / $828,000 FHA), condo approval rules, seller-concession caps, appraisal and property condition, and best fit — plus Hawaii-specific agent tips. Figures as of October 2026. <a href="https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf">Download the PDF</a>.</p>
+        <h2>Free Download: Conventional vs. FHA vs. VA vs. USDA (Hawaii Agent Cheat Sheet)</h2>
+        <p>A one-page comparison of the four main purchase loan programs for Hawaii real estate agents: minimum down payment, credit score, mortgage insurance and funding fees, 2026 loan limits by county (Honolulu $1,249,125 conforming / $828,000 FHA), condo approval rules, seller-concession caps, appraisal and property condition, and best fit, plus Hawaii-specific agent tips. Figures as of October 2026. <a href="https://realitycents.com/files/guides/loan-comparison-cheat-sheet.pdf">Download the PDF</a>.</p>
       </section>
       <section>
         <h2>Watch: Build the Equity, Then Use It: The All In One Loan™ for Real Estate Agents</h2>
@@ -689,10 +689,14 @@ export const STATIC_PAGE_BODIES = {
         <ul>
           <li><strong>What it is:</strong> a 30-year first-lien HELOC with an integrated sweep checking account, offered by CMG Home Loans.</li>
           <li><strong>How interest works:</strong> calculated nightly on the unpaid balance and billed monthly.</li>
-          <li><strong>Rate:</strong> variable, tied to an index plus a margin; it can change every monthly billing cycle, within a floor and a lifetime cap set when the account opens.</li>
+          <li><strong>Rate:</strong> variable, based on the average monthly SOFR index plus a margin. The margin ranges from 2.5% to 4.0%, and you choose it by how many discount points you pay at closing to buy the margin down, much like discount points on a traditional mortgage. The rate can change every monthly billing cycle, within a floor and a lifetime cap set when the account opens.</li>
           <li><strong>Access to funds:</strong> advances are available up to your available credit limit for the 30-year term; the limit begins stepping down after year 10.</li>
+          <li><strong>Occupancy:</strong> primary residences, second homes, and investment properties are all eligible.</li>
+          <li><strong>Condos:</strong> only warrantable condos are eligible, because ${AIO_NAME} property guidelines follow Fannie Mae property guidelines.</li>
+          <li><strong>Self-employed borrowers:</strong> bank statement qualifying is available, using a minimum 15% expense factor.</li>
           <li><strong>The catch:</strong> it only helps if you consistently deposit more than you spend, and a rising rate raises your interest cost.</li>
         </ul>
+        <p>Eligibility, margins, and terms are subject to program guidelines and can change.</p>
       </aside>
       <section id="how-it-works">
         <h2>How the CMG ${AIO_NAME} works</h2>
@@ -726,7 +730,7 @@ export const STATIC_PAGE_BODIES = {
             <tr>
               <th scope="row">Rate</th>
               <td>Fixed for the life of the loan</td>
-              <td>Variable; can change monthly within a floor and lifetime cap</td>
+              <td>Variable: average monthly SOFR plus a margin of 2.5% to 4.0%; can change monthly within a floor and lifetime cap</td>
             </tr>
             <tr>
               <th scope="row">Required payment</th>
@@ -763,10 +767,10 @@ export const STATIC_PAGE_BODIES = {
         <ul>
           <li><strong>Integrated sweep checking.</strong> Is your paycheck deposited straight against the balance, or do you have to move money from a separate bank? The checking account in the ${AIO_NAME} is built in.</li>
           <li><strong>Draw period and step-down.</strong> How long can you draw, and when does the limit start shrinking? Many second-lien HELOCs have a 10-year draw period. The ${AIO_NAME} allows advances for 30 years, with the limit stepping down after year 10.</li>
-          <li><strong>Index, margin, floor, and cap.</strong> Which index, what margin, is the margin fixed, and what are the floor and lifetime cap? Get the numbers in writing.</li>
-          <li><strong>Occupancy.</strong> Some products are limited to primary residences; ask whether second homes and investment properties are allowed.</li>
+          <li><strong>Index, margin, floor, and cap.</strong> Which index, what margin, is the margin fixed, and what are the floor and lifetime cap? Get the numbers in writing. For the ${AIO_NAME}, the index is the average monthly SOFR and the margin ranges from 2.5% to 4.0%, depending on the discount points you pay at closing.</li>
+          <li><strong>Occupancy.</strong> Some products are limited to primary residences. The ${AIO_NAME} allows primary residences, second homes, and investment properties.</li>
           <li><strong>Fees.</strong> Ask about annual fees and closing costs; CMG's Important Terms disclosure lists them for the ${AIO_NAME}.</li>
-          <li><strong>Hawaii property types.</strong> Ask how condos, condotels, and leasehold properties are treated before you fall in love with a property.</li>
+          <li><strong>Hawaii property types.</strong> Ask how condos, condotels, and leasehold properties are treated before you fall in love with a property. For the ${AIO_NAME}, only warrantable condos are eligible, because its property guidelines follow Fannie Mae property guidelines.</li>
         </ul>
       </section>
       <section id="velocity-banking">
@@ -800,7 +804,7 @@ export const STATIC_PAGE_BODIES = {
           <li><strong>Discipline.</strong> Results depend on your behavior every month for years.</li>
           <li><strong>Cash flow.</strong> If your monthly surplus is smaller than the monthly interest, the balance grows.</li>
           <li><strong>Shrinking access after year 10.</strong> The credit limit steps down, and payments can rise to keep the balance under it.</li>
-          <li><strong>Qualification.</strong> Expect underwriting to focus on credit, equity, and documented cash flow.</li>
+          <li><strong>Qualification.</strong> Expect underwriting to focus on credit, equity, and documented cash flow. Self-employed borrowers can use bank statement qualifying, with a minimum 15% expense factor.</li>
         </ul>
       </section>
       <section id="who-can-set-it-up">
@@ -826,7 +830,13 @@ export const STATIC_PAGE_BODIES = {
         <h3>How does the sweep account in the ${AIO_NAME} work?</h3>
         <p>Deposits are applied against the loan balance as soon as they post, and you pay bills from the same account. Interest is calculated nightly on the unpaid balance and billed monthly, so money waiting to be spent still lowers the balance interest is charged on.</p>
         <h3>Is the ${AIO_NAME} rate fixed or variable?</h3>
-        <p>Variable. It is an index plus a margin, can change each monthly billing cycle, and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details.</p>
+        <p>Variable. The rate is based on the average monthly SOFR index plus a margin. The margin ranges from 2.5% to 4.0%, and you choose it by paying discount points at closing to buy the margin down, much like discount points on a traditional mortgage. The rate can change each monthly billing cycle and stays within a floor and a lifetime cap set when the account opens. Ask for CMG's Important Terms disclosure for the current details.</p>
+        <h3>Can I use the ${AIO_NAME} on a second home or investment property?</h3>
+        <p>Yes. Primary residences, second homes, and investment properties are all eligible, subject to program guidelines.</p>
+        <h3>Can I use the ${AIO_NAME} on a Hawaii condo?</h3>
+        <p>Only if the condo is warrantable. ${AIO_NAME} property guidelines follow Fannie Mae property guidelines, so non-warrantable condos are not eligible.</p>
+        <h3>Can self-employed borrowers qualify for the ${AIO_NAME}?</h3>
+        <p>Yes. Bank statement qualifying is available for self-employed borrowers, using a minimum 15% expense factor.</p>
         <h3>Is velocity banking the same as the ${AIO_NAME}?</h3>
         <p>No. Velocity banking is a strategy that usually pairs a regular mortgage with a separate HELOC and moves lump sums between them. The ${AIO_NAME} builds the deposit-against-balance idea into one first-lien account. Both depend on steady monthly surplus.</p>
         <h3>Will an ${AIO_NAME} pay off my house faster?</h3>
@@ -839,7 +849,7 @@ export const STATIC_PAGE_BODIES = {
       <footer>
         <p>Jay Miller, Sales Manager and Certified Mortgage Advisor | NMLS #657301 | CMG Home Loans Branch NMLS #2475890 | 500 Ala Moana Blvd, Suite 5-325, Honolulu, HI 96813 | <a href="tel:+18084290811">(808) 429-0811</a></p>
         <p>CMG Mortgage, Inc. dba CMG Home Loans, NMLS #1820. For licensing information, go to <a href="https://www.nmlsconsumeraccess.org">www.nmlsconsumeraccess.org</a>. Equal Housing Opportunity.</p>
-        <p>This page is educational. It is not an offer to lend, a commitment to lend, or a rate quote. The ${AIO_NAME} is a variable-rate line of credit; the rate and the interest you pay can increase. Results depend on your deposits, spending, balance, and rate changes, and are not guaranteed. All loans are subject to credit approval, property eligibility, and program guidelines. ${AIO_TM_LINE}</p>
+        <p>This page is educational. It is not an offer to lend, a commitment to lend, or a rate quote. The ${AIO_NAME} is a variable-rate line of credit; the rate and the interest you pay can increase. Results depend on your deposits, spending, balance, and rate changes, and are not guaranteed. All loans are subject to credit approval, property eligibility, and program guidelines. Eligibility, margins, and terms are subject to program guidelines and can change. ${AIO_TM_LINE}</p>
       </footer>
     </main>
   `,
