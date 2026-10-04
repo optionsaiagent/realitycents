@@ -1,6 +1,6 @@
 # AI Visibility — Delivery Package (Sep 14, 2026)
 
-Per §9 of the handoff: live URL · target queries · answer-first opening · schema · internal links · last-updated. All pages are prerendered to static HTML (answers are in the served markup, not client-only JS), carry the byline block (Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of *Zero Down in Paradise*), the compliance footer (Equal Housing Lender · educational only · not a commitment to lend · approvals not guaranteed · $0-down requires eligibility + lender approval · NMLS Consumer Access link), and a visible "Last Updated: September 14, 2026".
+Per §9 of the handoff: live URL · target queries · answer-first opening · schema · internal links · last-updated. All pages are prerendered to static HTML (answers are in the served markup, not client-only JS), carry the byline block (Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of *Zero Down in Paradise*), the compliance footer (Equal Housing Opportunity · educational only · not a commitment to lend · approvals not guaranteed · $0-down requires eligibility + lender approval · NMLS Consumer Access link), and a visible "Last Updated: September 14, 2026".
 
 ## P0-A · Pillar (upgraded in place — URL unchanged, already the 301 target for old Veterans Guide paths)
 
