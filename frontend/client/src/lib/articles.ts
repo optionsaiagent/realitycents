@@ -4755,119 +4755,127 @@ Whether you are a military buyer on PCS orders looking at the VA ARM, a first-ti
   },
   {
     slug: "mortgage-rates-2026-high-hawaii-buyers",
-    title: "Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now",
-    excerpt: "The 30-year fixed rate just hit 6.67% — the highest since July 2025. Here is why rates spiked (oil, inflation, bond market — not the Fed), why forecasts are not a plan, and the specific decision framework for Hawaii buyers who are under contract, shopping, or on the sidelines.",
+    title: "Mortgage Rates Just Crossed 7% — Here's Why, and What Hawaii Buyers Should Do Right Now (October 2026)",
+    excerpt: "The 30-year fixed averaged 7.28% on October 1 — up from 6.67% in late July and the highest since November 2023. This time the Fed did move, but the bond market moved first and further. Here is what changed, what 7.28% actually costs on an Oahu loan, and the decision framework for buyers under contract, shopping, or waiting.",
     category: "Market Insights",
-    readTime: "6 min",
+    readTime: "7 min",
     date: "2026-08-03",
     featured: true,
-    lastUpdated: "August 2026",
+    lastUpdated: "2026-10-07",
     image: "/images/heroes/mortgage-rates-2026-high-hawaii-buyers.webp",
-    content: `# Mortgage Rates Just Hit a 2026 High — Here's Why, and What Hawaii Buyers Should Do Right Now
+    content: `# Mortgage Rates Just Crossed 7% — Here's Why, and What Hawaii Buyers Should Do Right Now
 
-*By Jay Miller | Last Updated: August 2026*
+*By Jay Miller — NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · Updated October 7, 2026*
 
-The 30-year fixed mortgage rate just hit 6.67% for the week ending July 30 — the highest level since July 2025. If you were pre-approved in June at 6.3%, that 37 basis point increase costs you $266 per month on a $1.2M Hawaii loan — $95,760 in additional interest over 30 years.
+**The 30-year fixed mortgage rate averaged 7.28% for the week ending October 1, 2026 — up a quarter point in a single week, up from 6.67% at the end of July, and the highest reading since November 2023.** If you were pre-approved in July at 6.67%, that 61-basis-point move costs about $491 a month on a $1.2 million Hawaii loan — roughly $177,000 in additional interest over 30 years. On an $850,000 loan it is about $348 a month.
 
-The instinct is to pause and wait for the Fed to "fix it." But in Hawaii's constrained market — median single-family homes at a record $1.24 million, selling in 13 days — waiting without a strategy can be costly. Here is why rates spiked, what forecasts can and can't tell you, and the specific decision framework for Hawaii buyers right now.
+When this article was first written in August, the story was that rates had spiked to 6.67% *without* the Fed doing anything. That part has changed: the Federal Reserve raised its benchmark rate on September 16 for the first time since 2023. But the bigger lesson held. The bond market moved first, moved further, and is still the thing that sets your mortgage rate. Here is what actually happened, what it costs, and the specific decision framework for Oahu buyers right now.
 
 ---
 
-## Why Rates Spiked (Hint: It Is Not the Fed)
+## What Happened: Three Months in Four Numbers
 
-When mortgage rates jump, the common assumption is that the Federal Reserve raised interest rates. That is not what happened here.
+| Week ending | 30-year fixed (Freddie Mac) |
+|---|---|
+| July 30, 2026 | 6.67% — the "2026 high" at the time |
+| September 3 | 6.71% |
+| September 24 | 7.03% — first time above 7% since January 2025 |
+| **October 1** | **7.28%** — largest one-week jump in four years |
 
-The Fed controls the short-term federal funds rate, which directly impacts credit cards and auto loans. Mortgage rates are driven by an entirely different mechanism: the bond market — specifically, the yield on the 10-year Treasury note.
+A year earlier, the same survey read 6.34%. The 15-year fixed is at 6.60%. (Source: Freddie Mac Primary Mortgage Market Survey. Daily lender surveys in the first week of October ran higher still, but the weekly Freddie Mac number is the one to anchor on.)
 
-The bond market reacts to two primary forces: inflation expectations and economic uncertainty. In July 2026, both flared up simultaneously.
+---
 
-**Rising Oil Prices.** Oil is a foundational input for almost every good and service in the economy. When oil prices rise, the cost of manufacturing, shipping, food production, and travel rises with it. The bond market sees rising oil as a leading indicator of future inflation — and in July, oil prices climbed meaningfully. The Locations Hawaii CEO confirmed this on Hawaii News Now this week: "Mortgage rates have moved higher in recent weeks due to persistent inflation and rising oil prices."
+## Why Rates Rose: The Fed Moved, but the Bond Market Moved First
 
-**Persistent Inflation Data.** While headline inflation has cooled significantly from its 2022 peak, the "last mile" of getting inflation down to the Fed's 2% target has proven stubbornly difficult. The bond market, which hates inflation because it erodes the value of fixed returns, demanded higher yields to compensate for the risk. Higher Treasury yields translate directly into higher mortgage rates.
+Two things are true at once, and it matters to keep them separate.
 
-**The Key Insight:** The Fed did not cause this spike. The bond market did. And the bond market can reverse course just as quickly when inflation data improves — which brings us to the forecasts.
+**The Fed raised rates.** On September 16 the Federal Open Market Committee raised the federal funds target range by a quarter point to 3.75%–4.00%, the first increase since 2023, citing inflation that remains above its 2% goal and heightened uncertainty tied to the conflict in the Middle East. The Fed's own projections show most participants expecting one more increase before year-end; its next decision is October 28.
+
+**But the Fed does not set mortgage rates.** The federal funds rate is an overnight rate that moves credit cards, auto loans, and home-equity lines. A 30-year mortgage is priced off the yield on the 10-year Treasury note plus a spread. That yield had already climbed through the summer — from under 4% in late February to roughly 4.9% by early September, before the Fed acted — and kept climbing afterward, pushing above 5.25% by the start of October. The mortgage move from 6.71% to 7.28% in September was the bond market repricing inflation and government-debt risk, with rising energy prices from the Middle East conflict as the accelerant. The Fed's quarter point was a confirmation, not the cause.
+
+**Why this matters for you:** the same bond market that pushed rates up can pull them down on a soft inflation print or a de-escalation, without waiting for a Fed meeting. Rates can move in either direction fast. That argues for planning around the payment in front of you, not a forecast.
 
 ---
 
 ## What Forecasts Can and Can't Tell You
 
-Published forecasts for late 2026 range widely. In mid-2026, forecaster Barry Habib projected about 5.6%, and a Forbes roundup projected about 6.4%. Forecasts like these are often wrong, and this article does not predict where rates will go.
+In mid-2026 published forecasts for late 2026 ranged from about 5.6% to about 6.4%. Rates are now at 7.28%. That is not a knock on forecasters; it is the point. Forecasts are informed guesses about a market that reprices on every data release and every headline, and this year's headlines have included a hot inflation stretch, a Fed hike, and a war.
 
 **What this means for you:** plan around a payment you can afford at today's rate. Treat any future drop as a bonus, not a plan.
 
 ---
 
-## The Decision Framework for Hawaii Buyers
+## What the Oahu Market Is Doing Right Now
 
-If you are navigating the Hawaii market right now, you need a specific strategy based on your current position — not generic advice about "waiting for rates to come down."
+Higher rates have not stalled Oahu — they have shifted it. The Honolulu Board of Realtors' September report (published October 7) shows:
 
-### If You Are Under Contract: Lock Your Rate
+- **Single-family median: $1,110,000**, down 3.9% from a year earlier and the lowest monthly median of 2026. Sales *rose* 6.2% to 293.
+- **Condo median: $523,000**, up 2.8%. Condo sales fell 8.1% to 375.
+- Single-family homes were still moving in a median of about 17 days as of August.
 
-If you have an accepted offer and are scheduled to close within 30 to 45 days, the decision is straightforward: **lock your rate today.**
-
-In a volatile market, floating your rate (waiting to lock in hopes that rates drop before closing) is a gamble with asymmetric risk. If rates drop 0.125%, you save a modest amount. If rates spike another 0.25% because of a bad inflation report or geopolitical event, you could lose your loan approval entirely due to debt-to-income (DTI) limits.
-
-On a $1.2M Hawaii loan, a 0.25% rate increase means $180 more per month. That $180 could push your DTI above the qualifying threshold and kill your deal.
-
-**The Move:** Lock your rate to secure your approval. Ask your lender if they offer a float-down option — this allows you to lock now to protect against increases, but gives you a one-time option to drop your rate if the market improves significantly before closing. Not all lenders offer this, and some charge a fee. But in this environment, it is worth asking.
-
-### If You Are Actively Shopping: Recalibrate Your Numbers
-
-If you are pre-approved and actively submitting offers, you need to recalibrate your purchasing power. A pre-approval letter from June based on a 6.3% rate is no longer accurate at 6.67%.
-
-**The math:** On an $850,000 loan at 6.3%, your principal and interest payment is $5,274/month. At 6.67%, that same loan costs $5,474/month — $200 more per month. If that $200 pushes your DTI above your qualifying limit, you no longer qualify for that price point.
-
-**The Move:** Call your lender today and ask them to run your numbers at 6.75% (build in a small buffer). You need to know exactly what your monthly payment looks like at today's rates, and you need to confirm that your DTI still qualifies for the homes you are targeting. If the higher rate pushes your payment out of your comfort zone, you have three options:
-
-1. **Target homes priced $25,000 to $50,000 lower.** In Hawaii's market, this might mean Ewa Beach instead of Kailua, or a townhome instead of a single-family.
-2. **Negotiate seller concessions to buy down your interest rate.** A seller-paid 2-1 buydown or permanent buydown can reduce your effective rate in the critical first years of ownership. In today's market, nearly half of sellers nationally are offering concessions — and Hawaii's condo market is shifting toward buyer's territory.
-3. **Increase your down payment to reduce the loan amount.** Every $10,000 in additional down payment reduces your monthly payment by approximately $65 at current rates.
-
-Use the [Loan Comparison Calculator at RealityCents](/loan-compare) to run side-by-side scenarios at different rates and price points.
-
-### If You Are on the Sidelines: Understand the Cost of Waiting
-
-If you paused your search because rates hit 6.67%, you are falling into the classic cost-of-waiting trap.
-
-As a what-if, suppose rates fell to 5.6% by December 2026. In Hawaii, where inventory is already severely constrained — Oahu median single-family homes are selling in 13 days, and one in three homes is selling above asking price — that drop in rates will bring sidelined buyers flooding back into an already competitive market, driving prices higher.
-
-If you wait for a 5.6% rate, you might save $300 to $400 a month on interest. But if prices rose in the meantime, you could pay $30,000 to $50,000 more for the house — and you will be competing against every other buyer who was also waiting for rates to improve.
-
-**The Move:** If you find a home that fits your family and you can comfortably afford the payment at 6.67%, buy the house. You are securing the asset at today's price with minimal competition from the buyers who are waiting on the sidelines. If rates fall enough later, refinancing may lower your rate, if you qualify and the costs make sense. You can change your mortgage rate. You cannot change your purchase price.
+The board's president said rising mortgage rates are "adding another consideration for buyers" weighing monthly payments, and UHERO noted that even small rate increases meaningfully affect what households can afford. Read together: sellers of single-family homes are already giving some ground on price, and buyers who stayed in the market are getting deals done. That is the environment the framework below is built for.
 
 ---
 
-## Consider a Product That Works With Rate Volatility, Not Against It
+## The Decision Framework for Hawaii Buyers
 
-One option worth exploring in a volatile rate environment: a first-lien HELOC (CMG's version is the All In One Loan™). Unlike a traditional 30-year fixed, a first-lien HELOC carries a variable rate tied to an index like SOFR. If rates fall, a variable rate adjusts down without a refinance; if they rise, it adjusts up. All In One Loan™ is a trademark of CMG Financial.
+### If You Are Under Contract: Lock Your Rate
 
-The tradeoff is real: your rate moves both directions, and today's starting rate may be higher than a fixed loan. A variable rate passes rate changes through in both directions. It also functions as an active line of credit, allowing you to use your equity for future investments or large purchases throughout the life of the loan.
+If you have an accepted offer and are closing within 30 to 45 days, **lock today.** Floating in this market is a gamble with lopsided odds: if rates dip an eighth, you save a little; if they rise another quarter point on a bad inflation print or an escalation overseas, a $1.2 million loan costs about $205 more a month — enough to push a tight debt-to-income ratio over the line and put your approval at risk.
 
-Even at a higher stated rate, a first-lien HELOC can cost less in total interest than a 30-year fixed for a household with steady surplus, because deposits lower the daily balance. It can also cost more if rates rise or surplus shrinks. A side-by-side simulation with your numbers is the only fair test.
+**The move:** lock, then ask your lender about a float-down. Many lenders (including this office) offer a one-time option to drop your rate if the market improves meaningfully before closing. Terms vary; ask what the trigger and the cost are.
 
-This is not the right fit for everyone — it depends on your risk tolerance, income stability, and financial goals. If you are weighing rate risk either way, it is worth understanding how the product works.
+### If You Are Actively Shopping: Re-run Your Numbers
 
-[**Learn How a First-Lien HELOC Works →**](/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii)
+A pre-approval from July is not accurate at 7.28%. On an $850,000 loan, principal and interest went from about $5,468 a month at 6.67% to about $5,816 at 7.28% — $348 more. If your July approval was already near your DTI ceiling, that gap can take a price point off the table.
 
-[See how the All In One Loan™ compares with a 30-year fixed](/first-lien-heloc-hawaii)
+**The move:** have your lender re-run your approval at 7.375% (a small buffer) and tell you the exact payment and the highest price that still qualifies. If the answer is lower than the homes you have been touring, you have four levers:
+
+1. **Target a lower price point.** On Oahu that often means a townhome instead of a single-family home, or Ewa and Kapolei instead of Kailua. The September numbers show single-family sellers are already negotiating.
+2. **Negotiate a seller-paid rate buydown.** A temporary 2-1 buydown or permanent points, paid from seller concessions, lowers your payment in the years that matter most. See [how to use seller concessions to buy down your rate in Hawaii](/knowledge-base/seller-concessions-rate-buydown-hawaii) and the [temporary buydown guide](/knowledge-base/temporary-buydown-guide).
+3. **Increase your down payment.** At 7.28%, every $10,000 of additional down payment lowers the payment by about $68 a month.
+4. **Run the loan types side by side.** VA buyers with full entitlement are not paying PMI at any price; FHA and conventional pricing differ by credit score. The [Advanced Mortgage Calculator](/advanced-calculator) compares conventional, FHA, VA, and jumbo at the same rate and price.
+
+### If You Are on the Sidelines: Understand the Cost of Waiting
+
+If you paused when rates crossed 7%, think about what happens if they fall. Oahu inventory is still thin. The buyers who stepped back at 7% step back in at 6.5%, competing for the same houses at the same time, and prices firm up again. You might save $300 to $400 a month on interest and pay $30,000 to $50,000 more for the house.
+
+The September data shows the other side of that trade: with fewer buyers competing, the single-family median slipped nearly 4% year over year. A buyer who can comfortably afford the payment at today's rate is buying at a softer price with less competition.
+
+**The move:** if you find a home that fits and the payment works at 7.28%, buy the house. If rates fall enough later, a refinance may lower the rate, if you qualify and the costs make sense. You can change your mortgage rate later. You cannot change your purchase price.
+
+---
+
+## A Structure That Does Not Depend on Guessing the Direction of Rates
+
+One option worth modeling in a volatile environment is a first-lien HELOC — CMG's version is the All In One Loan™. It carries a variable rate tied to the 30-day average SOFR index plus a fixed margin. It is not tied to the Fed funds rate, though SOFR tends to follow it, which means the September Fed increase does show up in it. When the index falls, the rate falls with it, with no refinance; when the index rises, the rate rises.
+
+The tradeoff is real, and so is the other half of the design. Because the loan is a line of credit with integrated checking, every deposit lowers the daily balance that interest is charged on. For a household with steady monthly surplus, that balance effect can offset a higher stated rate — and in the first year, interest on the line typically runs close to, or slightly above, a comparable fixed loan before the balance effect compounds. It can also cost more than a fixed loan if rates keep rising or the surplus disappears. The only fair test is a side-by-side simulation on your own numbers, with year-one interest shown first.
+
+[**How a first-lien HELOC works →**](/knowledge-base/first-lien-heloc-vs-traditional-mortgage-hawaii) · [**See the comparison →**](/first-lien-heloc-hawaii)
 
 ---
 
 ## The Bottom Line
 
-Mortgage rates are volatile, and the July spike to 6.67% is frustrating. But in Hawaii real estate, the math consistently favors action over hesitation — as long as you can afford the payment today.
+Rates crossed 7% for the first time since early 2025, and the October 1 reading of 7.28% is the highest in nearly three years. The Fed finally moved, but the bond market had already done most of the work, and it will set the next move too. Nobody can tell you where rates will be in December.
 
-Know your numbers. Negotiate aggressively for seller concessions. Focus on the price of the home, not just the cost of the money. And remember: every rate environment in history has eventually produced a refinance opportunity. The buyers who win in Hawaii are the ones who secure the asset first and optimize the financing later.
-
----
-
-[**Compare Loan Scenarios at Different Rates →**](/loan-compare)
-
-[**Get Pre-Approved at Today's Rates →**](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true)
+What you can control: know your exact payment at today's rate, lock if you are under contract, negotiate concessions aggressively while single-family sellers are giving ground, and focus on the price of the home rather than the price of the money. Every rate environment in history has eventually produced a refinance opportunity. The buyers who win in Hawaii secure the asset first and optimize the financing later.
 
 ---
 
-*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://jay-miller.com)*`,
+[**Compare loan types at today's rates →**](/advanced-calculator)
+
+[**Get pre-approved at today's rates →**](https://www.jay-miller.com)
+
+---
+
+*Sources: Freddie Mac Primary Mortgage Market Survey (October 1, 2026 release); Federal Reserve FOMC statement (September 16, 2026); Honolulu Board of Realtors September 2026 data as reported by the Honolulu Star-Advertiser (October 7, 2026); UHERO. Payment figures are principal and interest only on a 30-year fixed, for illustration — not a rate quote. Rates change daily; confirm current pricing with your lender.*
+
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://www.jay-miller.com). Educational content only — not a commitment to lend or an offer of credit. Equal Housing Lender.*
+
+*Last Updated: October 7, 2026*`,
   },
 ];
 /** All published (non-draft) articles — use this everywhere public-facing */
