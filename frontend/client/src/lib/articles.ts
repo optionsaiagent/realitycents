@@ -38,166 +38,147 @@ export const CATEGORIES = [
 const allArticles: Article[] = [
   {
     slug: "va-second-tier-entitlement-hawaii",
-    title: "The Second VA Loan Strategy: How to Buy Again Without Selling Your First Home",
-    excerpt: "Most Hawaii veterans believe they must sell their current home to use their VA loan again. The reality: Second-Tier Entitlement lets you hold two VA loans simultaneously — keeping your 2.75% rate as a rental while buying your next primary residence with minimal cash down.",
+    title: "Keep Your Current Home, Buy the Next One: VA Second-Tier Entitlement and Fannie Mae's New Departing-Residence Rule for Hawaii Move-Up Buyers",
+    excerpt: "You do not have to sell your low-rate Hawaii home to buy the next one. Two paths let you keep it as a rental and still qualify: VA second-tier entitlement (two VA loans at once, $0 down up to your remaining-entitlement ceiling) and Fannie Mae's September 2026 departing-residence rule (75% of market rent offsets the old payment, no lease required). The math for both, side by side.",
     category: "VA Loans",
-    readTime: "8 min",
+    readTime: "11 min read",
     date: "2026-08-10",
     featured: true,
-    lastUpdated: "2026-08-10",
+    lastUpdated: "2026-10-07",
     image: "/images/heroes/va-second-tier-entitlement-hawaii.webp",
-    content: `# The Second VA Loan Strategy: How to Buy Again Without Selling Your First Home
+    content: `*By Jay Miller — NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise](/zero-down-in-paradise) · Updated October 7, 2026*
 
-*By Jay Miller | Last Updated: August 2026*
+# Keep Your Current Home, Buy the Next One: Two Ways Hawaii Move-Up Buyers Do It
 
-**Most Hawaii veterans believe they must sell their current home to "unlock" their VA benefit for a new purchase. The reality is that Second-Tier Entitlement allows you to hold two VA loans simultaneously — a critical tool for families who want to keep their 2.75% rate on their first property while moving into a new one.**
+**You do not have to sell your current Hawaii home to buy the next one. There are two financing paths that let you keep it as a rental and still qualify: VA second-tier entitlement, which lets an eligible veteran hold two VA loans at once and buy the next home with little or no money down, and Fannie Mae's rewritten departing-residence rule (effective September 2, 2026), which lets a conventional buyer count 75% of documented market rent against the old payment with no signed lease required.** Which path fits depends on three things: whether you have VA entitlement, how much of it is still available, and whether 75% of your home's market rent covers its full payment. Here is the math for both, side by side.
 
-One of the most persistent myths in military real estate is the idea that the VA loan is a "one-and-done" benefit. If you own a home with a VA loan, conventional wisdom says you have to sell it, pay off the mortgage, and restore your entitlement before you can use the VA loan again.
+## Why selling the low-rate home is usually the expensive move
 
-In a market like Hawaii, where long-term real estate appreciation is a primary wealth-building tool, that advice can cost military families significant future equity.
+If you bought or refinanced on Oahu between 2019 and 2022, you are likely holding a mortgage in the high 2s or low 3s with a payment that today's rents comfortably exceed. Selling that home to buy the next one means giving up an asset with a historically low carrying cost, paying a commission and closing costs, and re-entering the market at today's rates on the whole purchase. Keeping it means your first home becomes a rental that someone else pays down while you move into the next one.
 
-If you bought a home near Schofield Barracks in 2021 and locked in a 2.75% interest rate, selling that home today just to free up your VA benefit is financially painful. You are giving up an asset with a historically low payment that could generate significant rental income for the rest of your life.
-
-The good news is: you do not have to sell it.
-
-Through a feature called **Second-Tier Entitlement** (also known as Bonus Entitlement), the Department of Veterans Affairs allows you to have more than one active VA loan at the same time. You can keep your first home, rent it out, and buy a new primary residence using your remaining VA entitlement — often with zero down payment.
-
-Here is exactly how the math works, the specific rules you must follow, and how Hawaii military families are using this strategy to build multi-property portfolios.
+The reason most people sell anyway is qualifying: carrying two full payments rarely fits a debt-to-income ratio. Both paths below exist to solve exactly that problem — one through the VA guaranty, one through how the rent on the departing home is counted.
 
 ---
 
-## How Second-Tier Entitlement Actually Works
+## Path 1: VA second-tier entitlement (keep the VA-financed home, buy again with $0 down)
 
-To understand how you can have two VA loans at once, you have to understand how the VA calculates your "entitlement."
+### How entitlement actually works
 
-Your entitlement is the dollar amount the VA guarantees to the lender if you default on the loan. For veterans with full entitlement (meaning you do not currently have an active VA loan), there is **no loan limit**. You can buy a $1.5 million home in Hawaii with zero down, provided you have the income and credit to qualify for the monthly payment.
+Your VA entitlement is the amount the VA guarantees to the lender. With **full entitlement** — no VA loan currently open — there is no VA loan limit: you can buy at any price a lender approves with no down payment. The moment a VA loan is open, you have **reduced entitlement**, and the county conforming limit comes back into play. The VA guarantees 25% of that limit; what you have left after your first loan is your **remaining entitlement**, and four times that figure is your $0-down ceiling on the next home.
 
-However, the moment you use a portion of your entitlement to buy a home, you fall into a different category: veterans with *reduced* entitlement.
-
-When you have reduced entitlement, the VA *does* enforce a loan limit. To figure out how much you can borrow with zero down on a second home, the VA looks at the conforming loan limit for the county where you are buying.
-
-For 2026, the Federal Housing Finance Agency (FHFA) sets Honolulu County's conforming loan limit at the Hawaii baseline of **$1,249,125** (1.5x the $832,750 national baseline). (Maui and Kalawao counties are higher at $1,299,500.)
-
-The VA guarantees 25% of that county limit — giving you your **Maximum Guaranty**:
-
-| County | 2026 Conforming Limit | VA Maximum Guaranty (25%) |
+| County | 2026 conforming limit | VA maximum guaranty (25%) |
 |---|---|---|
-| Honolulu | $1,249,125 | $312,281 |
-| Maui | $1,299,500 | $324,875 |
-| Kalawao | $1,299,500 | $324,875 |
-| Hawaii (Big Island) | $1,249,125 | $312,281 |
-| Kauai | $1,249,125 | $312,281 |
+| Honolulu (Oahu) | $1,249,125 | $312,281 |
+| Maui and Kalawao | $1,299,500 | $324,875 |
+| Kauai | $1,007,250 | $251,813 |
+| Hawaii (Big Island) | $862,500 | $215,625 |
 
-To find your remaining entitlement, the VA takes that Maximum Guaranty and subtracts the amount of entitlement you have already used on your first home.
+*FHFA 2026 limits; they reset each January. The [VA Remaining Eligibility Calculator](/va-eligibility-calculator) runs this math for each county.*
 
-### The Math: A Real Hawaii Scenario
+### A Hawaii example
 
-Let us look at a real-world example.
+In 2021 an active-duty family bought an Ewa Beach townhome for $450,000 with a VA loan at 2.75%. In 2026 they are reassigned from Tripler to Schofield Barracks and want a $950,000 single-family home in Mililani — while keeping Ewa Beach as a rental.
 
-In 2021, an active-duty family bought a townhome in Ewa Beach for $450,000 using their VA loan. They locked in a 2.75% interest rate. Their monthly payment is incredibly low, and they want to keep it as a rental property.
+1. **Entitlement used on home #1:** 25% × $450,000 = **$112,500**
+2. **Remaining entitlement:** $312,281 − $112,500 = **$199,781**
+3. **$0-down ceiling on home #2:** $199,781 × 4 = **$799,124**
 
-Now, in 2026, they have been transferred from Tripler AMC up to Schofield Barracks, and they want to buy a larger single-family home in Mililani for $950,000.
+Because the Mililani home costs more than the ceiling, they put down 25% of the *difference only*: ($950,000 − $799,124) × 25% = **$37,719** — about 4% of the price, with no PMI, while keeping the 2.75% rental.
 
-Can they buy the $950,000 home with zero down using their second-tier entitlement? Here is the math:
+**Worth knowing:** nudging that down payment to 5% ($47,500, about $9,800 more) drops the subsequent-use VA funding fee from 3.3% to 1.5% — on a $902,500 loan, more than $16,000 saved. Full tiers are on [the VA funding fee page](/knowledge-base/va-funding-fee-hawaii).
 
-**Step 1: Calculate Entitlement Used on Property #1**
-The VA guarantees 25% of the original loan amount.
-- Original loan: $450,000
-- Entitlement used (25%): **$112,500**
+### The VA rules that apply
 
-**Step 2: Calculate Remaining Entitlement**
-Take the Honolulu County Maximum Guaranty and subtract the entitlement already used.
-- Honolulu Max Guaranty: $312,281
-- Minus Entitlement Used: -$112,500
-- **Remaining Entitlement: $199,781**
+- **Occupancy.** You must intend to occupy the *new* home as your primary residence, generally within 60 days. The home you leave becomes the rental; second-tier entitlement cannot buy a pure investment property or a vacation home.
+- **The move has to make sense.** A new duty station, a longer commute, a family that outgrew a two-bedroom condo — lenders expect a reason. Buying a near-identical home down the street is a hard sell.
+- **Rental income on the departing home.** VA loans follow VA's own rules, not Fannie Mae's. Lenders typically document the rent with a signed lease, count 75% of it against the departing payment, and may look for landlord experience or reserves. Fannie Mae's new no-lease rule, below, does **not** apply here.
+- **Funding fee on subsequent use.** 3.3% with less than 5% down, 1.5% with 5%–9.99%, 1.25% with 10% or more; waived entirely for veterans receiving VA disability compensation.
 
-**Step 3: Calculate Maximum Zero-Down Purchase Price**
-Your remaining entitlement is the VA's 25% guarantee for your new loan. Multiply by 4 to find your zero-down ceiling.
-- $199,781 × 4 = **$799,124 maximum zero-down purchase**
-
-**The Result:** This family can buy a second home for up to **$799,124** with absolutely zero down payment, while keeping their first home.
-
-### What If the New Home Costs More Than the Limit?
-
-In our scenario, the family wants to buy a $950,000 home in Mililani, but their zero-down limit is $799,124. Does that mean they cannot buy the house?
-
-No. It means they make a down payment on the difference.
-
-The VA requires a down payment equal to **25% of the difference** between the purchase price and the zero-down limit.
-
-- Purchase Price: $950,000
-- Minus Zero-Down Limit: -$799,124
-- Difference: $150,876
-- **Required Down Payment (25% of difference): $37,719**
-
-By putting down $37,719 — roughly 4% of the total purchase price — they can buy the $950,000 home using their VA loan, secure a competitive VA interest rate, avoid Private Mortgage Insurance (PMI), and keep their 2.75% Ewa Beach property as a cash-flowing rental.
-
-**Pro tip:** By increasing the down payment slightly to 5% ($47,500 — only $9,781 more), they drop the VA Funding Fee from 3.3% to 1.5%. On a $902,500 loan amount, that saves over $16,200 in funding fee costs. A small increase in cash at closing can significantly reduce the overall cost of the loan.
-
-Compare that to a conventional loan on a primary residence, which would require 5% down ($47,500) plus PMI until you reach 20% equity. The second-tier VA strategy saves cash at closing and eliminates PMI entirely.
+A caution from experience: mainland lenders regularly miscalculate Hawaii's high-cost county limits when they work out remaining entitlement. Have the math run by someone who closes VA loans on Oahu.
 
 ---
 
-## The Rules You Must Follow
+## Path 2: Fannie Mae's new departing-residence rule (conventional, effective September 2, 2026)
 
-While second-tier entitlement is a useful tool, the VA has strict rules designed to ensure the benefit is used for primary housing, not purely for investment.
+### The old problem
 
-### 1. The Occupancy Requirement
-You must intend to personally occupy the new home as your primary residence within 60 days of closing. You cannot use your second-tier entitlement to buy a dedicated rental property or a vacation home. You are using it to buy your *next* primary residence. The home you are leaving behind (the one with your first VA loan) is the one that becomes the rental.
+Under the previous guideline, counting rent on the home you were leaving required a tenant with a signed lease before you closed on the new home — usually with a deposit or first month's rent in hand. Most people cannot hand over keys before they move out, and cannot move out before they close. So move-up buyers qualified carrying both full payments, sold first, or gave up.
 
-### 2. The Move Must Make Logical Sense
-Lenders and the VA will look at why you are buying a second home in the same general area. For example, you were assigned to Tripler AMC and have been transferred up to Schofield Barracks — the commute change is a valid reason. If your family has grown and you are moving from a 2-bedroom condo to a 4-bedroom house, that is also a valid reason. You generally cannot use second-tier entitlement to buy a nearly identical home right down the street from your current one.
+### What changed (Selling Guide B3-3.8-05)
 
-### 3. Qualifying with Two Mortgages
-To keep your first home and buy a second, you must prove to the lender that you can afford both mortgages. If you plan to rent out your first home, most lenders will allow you to use the projected rental income to offset that mortgage payment in your Debt-to-Income (DTI) ratio. Typically, the lender will require a signed lease agreement and will count 75% of the gross rent toward your qualifying income (the other 25% accounts for vacancies and maintenance). If the rental income covers the mortgage, the first home effectively "washes" out of your DTI.
+1. **No lease. Period.** Lease agreements are not permitted for a departing residence. The lender documents *market rent* instead: an appraisal with a market-rent addendum, a Single-Family Comparable Rent Schedule (Form 1007), or market tools such as the MLS, Zillow, or Redfin with at least three comparable rentals, from the same neighborhood or building when possible.
+2. **Rent is haircut to 75%**, then your full departing payment — principal, interest, taxes, insurance, and AOAO/HOA dues (PITIA) — is subtracted.
+3. **The result can only offset.** If 75% of rent covers the PITIA, that payment leaves your debt ratio. Any surplus does **not** count as extra income; any shortfall is added to your debts.
+4. **Reserves for first-time landlords.** With less than 12 months of property-management experience, you need six months of the departing home's PITIA in verified reserves, on top of other requirements.
+5. **Timing.** Optional for lenders now; mandatory for applications dated November 1, 2026 or later.
 
-### 4. The VA Funding Fee on Subsequent Use
-When you use your VA loan for the second time, the VA Funding Fee increases. For a subsequent use with less than 5% down (like the Mililani scenario above), the fee is 3.3% of the loan amount. With 5% to 9.99% down, the fee drops to 1.5%. With 10% or more down, it drops further to 1.25%. Veterans receiving VA disability compensation for a service-connected disability are completely exempt from the funding fee.
+### A Hawaii example
 
----
+*Illustrative only; your numbers will differ.* A Mililani townhome:
 
-## An Alternative Strategy: A First-Lien HELOC (All In One Loan™)
+| Item | Amount |
+|---|---|
+| Market rent (three MLS/Zillow comps) | $3,400 |
+| × 75% | $2,550 |
+| PITIA (P&I $1,600 + taxes $250 + insurance $100 + AOAO $350) | $2,300 |
+| Result | **+$250 — payment fully offset** |
 
-If you are keeping your first home as a rental, your primary goal on the *new* property is likely maximizing cash flow and managing your monthly obligations.
-
-While the second-tier VA loan is excellent, some Hawaii buyers with significant equity in their first home or strong cash reserves choose a different path for property number two: the **CMG All In One Loan™ (AIO), a first-lien HELOC**.
-
-The AIO is a mortgage product that replaces a traditional 30-year fixed loan with a primary-position Home Equity Line of Credit that also functions as your primary checking account. Instead of sending your paycheck to a traditional bank, your income is deposited directly into the AIO loan, immediately driving down the principal balance and reducing the daily interest calculation. When you need to pay bills, you draw from the available line of credit.
-
-There are three reasons a military family building a portfolio might choose the AIO for property number two instead of a second VA loan:
-
-**Interest Savings.** Because your idle cash sits against the loan principal 24/7, the AIO can reduce total interest compared to a traditional amortizing mortgage for households with steady surplus. It can also cost more if rates rise or surplus shrinks.
-
-**Flexibility.** Unlike a rigid 30-year fixed payment, the AIO allows you to pay down the principal aggressively when you have extra cash, but draw back on that equity instantly if you need funds for an emergency, a renovation, or another investment.
-
-**Preserving VA Entitlement.** By using an AIO for your new Hawaii home, you preserve your remaining VA entitlement for a future purchase — perhaps your forever home on the mainland when you eventually retire or PCS out of Hawaii.
-
-The AIO requires discipline — it is a tool for buyers who consistently spend less than they earn and want their idle cash to work for them. For military families building a multi-property portfolio, it is one alternative to traditional financing.
-
-All In One Loan™ is a trademark of CMG Financial.
-
-See [how the All In One Loan™ works in Hawaii](/first-lien-heloc-hawaii).
+Reserves if you have never been a landlord: 6 × $2,300 = **$13,800**, in addition to down payment and closing costs. Change one number — comps supporting only $2,800 — and 75% is $2,100, a **$200 shortfall** added to your debts. Still far better than carrying $2,300, but the comps drive everything. Two Hawaii-specific cautions: AOAO dues count in PITIA and tighten the math on condos, and six months of Honolulu PITIA is real money.
 
 ---
 
-## The Bottom Line
+## Which path — and can you combine them?
 
-Your VA loan is not a one-time ticket. It is a lifelong benefit designed to help you secure housing wherever the military — or your post-military career — takes you.
+| | VA second-tier | Fannie Mae departing residence |
+|---|---|---|
+| Who can use it | VA-eligible buyers with remaining entitlement | Any conventional borrower |
+| Down payment on the next home | $0 up to the entitlement ceiling; 25% of the amount above it | Typically 5%–20% |
+| Mortgage insurance | None; one-time funding fee (3.3% subsequent use, waived for disabled veterans) | PMI with less than 20% down |
+| How the old home's rent is counted | Signed lease, 75%, per VA and lender rules | Market-rent comps, 75%, no lease allowed |
+| Reserves | Lender-specific | Six months of departing PITIA if under 12 months of landlord experience |
+| Best fit | Military families keeping a VA-financed first home and buying the next primary with minimal cash | Civilian owners, or VA-eligible owners whose first home was financed conventionally or whose remaining entitlement is small |
 
-In Hawaii's high-cost market, selling a property with a 2.5% or 3% interest rate is rarely the best financial move. By understanding the math behind second-tier entitlement, you can leverage the county loan limits to keep your low-rate asset, generate rental income, and step into your next home with minimal cash out of pocket.
+They are not mutually exclusive. A VA-eligible owner whose first home carries a *conventional* loan has full entitlement and can buy the next home VA with $0 down at any price. An owner whose remaining entitlement caps the $0-down figure well below the target price may find a 5%-down conventional loan under the new rule cheaper overall than a large partial VA down payment plus a 3.3% fee. Run both.
 
-The math can be complex, and big-box mainland lenders frequently miscalculate Hawaii's high-cost county limits when determining remaining entitlement. If you are considering this strategy, work with a local professional who understands the specific mechanics of dual VA loans in the Honolulu market.
+## An alternative for the new home: the All In One Loan™
+
+Some buyers keeping a rental choose a different structure for the *next* home: a first-lien HELOC — CMG's All In One Loan™. It replaces the 30-year fixed with a line of credit that doubles as your checking account; deposits lower the daily balance that interest is charged on, and principal you pay down stays available to draw for the full 30-year term. The rate is variable, tied to the 30-day average SOFR index plus a fixed margin, so it moves in both directions. For a household with steady surplus it can reduce total interest compared with an amortizing loan; in year one, interest typically runs close to a comparable fixed loan before the balance effect compounds, and it can cost more if rates rise or the surplus shrinks. Using it on the new home also preserves remaining VA entitlement for a later purchase. The only fair test is a side-by-side simulation on your numbers: [see how it works](/first-lien-heloc-hawaii).
+
+## What I'd do in your shoes
+
+- **Pull your COE first** if you have ever had a VA loan. It shows exactly how much entitlement is open and settles Path 1 in minutes.
+- **Run the rent comps before you shop.** Three current rentals in your neighborhood or building. If 75% covers your PITIA, both paths open up; if not, you know the shortfall before you fall in love with a listing.
+- **Know your PITIA to the dollar** — mortgage statement, tax bill, insurance declarations, AOAO statement. Do not estimate.
+- **Count reserves without rounding up.** First-time landlord on the conventional path means six months of PITIA; VA lenders have their own view.
+- **Be a landlord for real.** Both paths assume the first home actually rents. If it does not, you are carrying two payments.
+- **Ask your lender which rule set it is on.** Until November 1 some conventional lenders are still on the old lease requirement.
+
+## Frequently asked questions
+
+**Can I have two VA loans at the same time?** Yes. With remaining entitlement you can keep a VA-financed home as a rental and buy a new primary residence with a second VA loan. Your $0-down ceiling is four times your remaining entitlement, based on the county's conforming limit.
+
+**Do I need a signed lease on my current home to qualify for the new one?** On a VA or FHA loan, usually yes. On a Fannie Mae conventional loan as of September 2, 2026, a lease is not allowed — the lender uses market-rent comps and counts 75%.
+
+**Did VA change its departing-residence rule in 2026?** No. The September 2 change was Fannie Mae's. VA's rental-income treatment did not change with that announcement.
+
+**What if 75% of the rent does not cover my current payment?** The shortfall is added to your monthly debts. That is still far better than carrying the whole payment, but it reduces what you qualify for on the next home.
+
+**Does the funding fee go up on a second VA loan?** Yes — 3.3% with less than 5% down on subsequent use, 1.5% with 5%–9.99%, 1.25% with 10% or more. Disabled veterans are exempt.
+
+**Can I buy the next home above my $0-down ceiling?** Yes. You put 25% down on the amount above the ceiling only, which is usually far less cash than people expect.
+
+*Related: [VA loans in Hawaii — the complete guide](/knowledge-base/va-loans-hawaii-military) · [VA loan limits in Hawaii for 2026](/knowledge-base/va-loan-limits-hawaii-2026) · [VA house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii) · [Fannie Mae's 2026 condo rules](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) · [Advanced Mortgage Calculator](/advanced-calculator)*
+
+Want the math run on your home? [Get pre-approved with Jay Miller](https://www.jay-miller.com) — the COE, the comps, and the PITIA together take about 15 minutes.
 
 ---
+*Sources: VA Pamphlet 26-7 (entitlement and guaranty); FHFA 2026 conforming loan limits; Fannie Mae Selling Guide Announcement SEL-2026-08 (September 2, 2026) and B3-3.8-05, Rental Income from Non-Subject Property: Departing Residence; B3-6-06, Qualifying Impact of Other Real Estate Owned. Examples are illustrative, not quotes.*
 
-### Related Articles
-- [VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military)
-- [VA Loan House Hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii)
-- [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers)
+*Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
----
+*Equal Housing Lender. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov, FHFA, and Fannie Mae. All In One Loan™ is a trademark of CMG Financial.*
 
-*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890 | [jay-miller.com](https://jay-miller.com)*`,
+*Last Updated: October 7, 2026*`,
   },
   {
     slug: "zero-down-home-buying-hawaii",
@@ -3428,117 +3409,6 @@ The data says the window is open. It doesn't say how long it stays open. If you'
 *Last Updated: May 2026*`,
   },
   {
-    slug: "fannie-mae-departing-residence-move-up-buyers-hawaii",
-    title: "Keep Your Current Home, Buy the Next One: Fannie Mae Just Changed the Rules for Hawaii Move-Up Buyers",
-    excerpt: "Fannie Mae's September 2, 2026 update ends the signed-lease requirement for departing residences. 75% of documented market rent can now offset your current housing payment — here is what changed, the Hawaii math, and the two numbers that decide whether it works.",
-    category: "Hawaii Specific",
-    readTime: "7 min read",
-    date: "2026-09-01",
-    lastUpdated: "2026-09-01",
-    image: "/images/heroes/fannie-mae-departing-residence-move-up-buyers-hawaii.webp",
-    featured: true,
-    draft: false,
-    content: `If you own a home on Oahu and you've thought about moving up, but the idea of selling your place with its low-rate mortgage made you wince, this one is for you.
-
-On September 2, 2026, Fannie Mae rewrote the rules for what lenders call a **departing residence**: the home you're leaving behind and converting to a rental when you buy your next primary home. The old approach leaned on a signed lease. The new approach doesn't allow one at all.
-
-Here's what changed, what it means for your numbers, and what I'd do in your shoes.
-
-## The Old Problem
-
-Under the previous guidelines, if you wanted the future rent on your current home to help you qualify for the new mortgage, you needed a tenant lined up with a signed lease before closing, and usually proof they'd paid a deposit or first month's rent.
-
-That created a timing trap. Most people can't hand a tenant the keys before they've moved out, and most people can't move out before they've closed on the new house. So many move-up buyers either had to qualify carrying both full payments, sell first and scramble, or walk away.
-
-## What Changed on September 2, 2026
-
-Fannie Mae's updated Selling Guide (Section B3-3.8-05) now works like this:
-
-**1. No lease. Period.**
-Lease agreements are not permitted for a departing residence. Not "optional" — not allowed. Instead, your lender documents *market rent* using one of these:
-- A full appraisal of your current home that includes market rents
-- A Single-Family Comparable Rent Schedule (Fannie Mae Form 1007)
-- Market analysis tools like Zillow, Redfin, or the MLS, with at least three comparable rentals, from the same neighborhood or building when possible
-
-**2. Rent is haircut to 75%.**
-The lender takes the documented market rent, multiplies it by 75% (a built-in vacancy and maintenance cushion), and subtracts your full housing payment on the departing home: principal, interest, taxes, insurance, and association dues (PITIA).
-
-**3. The result can only *offset* — it can't add income.**
-If 75% of rent covers your current PITIA, that payment effectively disappears from your debt-to-income ratio. But if there's money left over, it does **not** count as extra income to qualify for more house. If 75% of rent falls short, the gap is added to your debts.
-
-**4. Reserves, but only if you're new to this.**
-If you have less than 12 months of property management experience, you'll need six months of the departing home's PITIA in verified reserves, on top of any other reserve requirements. If you've been a landlord for a year or more, this specific requirement doesn't apply.
-
-**5. Timing.**
-Lenders may use the new rules now. They're mandatory for loan applications dated November 1, 2026 or later.
-
-## Why This Matters More in Hawaii Than Almost Anywhere
-
-Oahu rents are high. Many homeowners who bought or refinanced between 2019 and 2022 carry mortgages with very low rates and modest payments. Put those two facts together and the 75% haircut on a realistic rent comp often still covers the full payment — which is exactly what unlocks the move-up purchase without selling.
-
-Two Hawaii-specific things to watch:
-
-- **Association dues count.** PITIA includes your AOAO or HOA payment. On a condo or townhome, that can be $500 to $1,000+ per month, and it makes the math tighter.
-- **Six months of Honolulu PITIA is real money.** That reserve requirement — not the paperwork — is usually the gate for first-time landlords.
-
-## A Hypothetical Example
-
-*Illustrative only — not a quote or an offer. Your numbers will differ.*
-
-Say you own a Mililani townhome:
-
-| Item | Amount |
-|---|---|
-| Market rent (three Zillow/MLS comps) | $3,400 |
-| × 75% | $2,550 |
-| Your PITIA (P&I $1,600 + taxes $250 + insurance $100 + AOAO $350) | $2,300 |
-| Result | **+$250** |
-
-The departing payment is fully offset. Your $2,300 payment comes out of your debt ratio for the new purchase. The extra $250 does not count as income.
-
-Reserves if you've never been a landlord: 6 × $2,300 = **$13,800** in verified funds, in addition to your down payment, closing costs, and any other required reserves.
-
-Now change one number. Suppose comps only support $2,800 in rent:
-
-| Item | Amount |
-|---|---|
-| Market rent | $2,800 |
-| × 75% | $2,100 |
-| PITIA | $2,300 |
-| Result | **−$200** |
-
-The $200 shortfall gets added to your monthly debts. That's still far better than carrying the entire $2,300, but it's a reminder that the rent comps drive everything.
-
-## What I'd Do in Your Shoes
-
-- **Run the rent comps before you shop.** Pull three current rentals in your neighborhood or building. If 75% of that number covers your PITIA, you have a real path. If it doesn't, you'll know your shortfall before you fall in love with a listing.
-- **Know your PITIA to the dollar.** Pull your mortgage statement, property tax bill, insurance declarations page, and AOAO statement. Don't estimate.
-- **Count your reserves without rounding up.** If you'd be a first-time landlord, add six months of that PITIA to your cash-to-close planning. Retirement accounts may count toward reserves under Fannie Mae rules; confirm with your lender.
-- **Be a landlord for real.** This rule is built for people who intend to rent their home. If you qualify using market rent and then can't or don't rent it, you're carrying two payments. The 75% cushion helps, but it isn't a substitute for a plan.
-- **Ask which rule set your lender is using.** Until November 1, 2026, some lenders will still be on the old policy. Ask directly.
-
-## A Few Important Caveats
-
-- This is a **Fannie Mae conventional** change. Freddie Mac, FHA, and VA each have their own rules for departing residences, and they haven't changed with this announcement. If you're a veteran weighing a VA purchase, our [VA loans Hawaii guide](/knowledge-base/va-loans-hawaii-military) covers VA's requirements — and VA buyers have a separate path to keeping the first home through [second-tier entitlement](/knowledge-base/va-second-tier-entitlement-hawaii).
-- Individual lenders can layer on stricter requirements ("overlays"). Always confirm with the lender you're working with.
-- Everything above is educational, not a commitment to lend. Qualification depends on a complete application, credit, income, assets, and property review.
-
-## Bottom Line
-
-For the first time, a Hawaii homeowner can turn their current home into a rental on paper, using real market data instead of a signed lease, and qualify for the next home before the moving truck arrives. The rent comps and the six-month reserve are the two numbers that decide whether it works for you.
-
-To model the payment on the next home itself, run your scenario in the [Advanced Mortgage Calculator](/advanced-calculator). And if you're buying a condo, note that Fannie Mae's [condo project review rules are also changing in 2026](/knowledge-base/fannie-mae-condo-guidelines-2026-hawaii) — the two updates together reshape a lot of Oahu purchase plans.
-
-Want to see whether your current home clears the math? [Get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) (NMLS #657301, CMG Home Loans) — running the comps and the PITIA together takes about 15 minutes.
-
----
-*Sources: Fannie Mae Selling Guide Announcement SEL-2026-08 (September 2, 2026); Fannie Mae Selling Guide B3-3.8-05, Rental Income from Non-Subject Property: Departing Residence (09/02/2026); B3-3.8-01, General Rental Income Information (09/02/2026); B3-6-06, Qualifying Impact of Other Real Estate Owned.*
-
-*CMG Home Loans is an Equal Housing Opportunity lender. This article is for educational purposes only and does not constitute a loan approval or commitment to lend. All loans subject to credit approval and program guidelines. Rates, terms, and guidelines are subject to change without notice.*
-
-*Last Updated: September 2026*`,
-  },
-  {
     slug: "va-loan-limits-hawaii-2026",
     title: "VA Loan Limits in Hawaii for 2026: Why Full Entitlement Has No Limit (and What Reduced Entitlement Uses)",
     excerpt: "With full entitlement there is no VA loan limit in Hawaii. With reduced entitlement, the 2026 FHFA county limits apply \u2014 $1,249,125 on Oahu. Here is how each case works and how to find your own ceiling.",
@@ -4058,7 +3928,7 @@ I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loan
 
 ## 1. Fannie Mae's departing-residence rule changed on September 2 — VA's did not
 
-If a conventional buyer keeps their current home as a rental when they buy the next one, Fannie Mae no longer allows a lease to document the rent; the lender uses market-rent comps, takes 75%, and offsets the departing PITIA. It is optional now and mandatory for applications dated November 1, 2026 or later. The full breakdown with a Mililani example is in [Fannie Mae's new departing-residence rules for Hawaii move-up buyers](/knowledge-base/fannie-mae-departing-residence-move-up-buyers-hawaii).
+If a conventional buyer keeps their current home as a rental when they buy the next one, Fannie Mae no longer allows a lease to document the rent; the lender uses market-rent comps, takes 75%, and offsets the departing PITIA. It is optional now and mandatory for applications dated November 1, 2026 or later. The full breakdown with a Mililani example is in [Fannie Mae's new departing-residence rules for Hawaii move-up buyers](/knowledge-base/va-second-tier-entitlement-hawaii).
 
 **The VA angle:** this is a Fannie Mae conventional change. VA's treatment of rental income on a departing residence did not change with the announcement. For a VA-eligible owner, the more common Hawaii move is keeping the first home and buying again with remaining entitlement — see [the second VA loan strategy](/knowledge-base/va-second-tier-entitlement-hawaii) and the [VA Remaining Eligibility Calculator](/va-eligibility-calculator).
 

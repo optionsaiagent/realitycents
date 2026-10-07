@@ -159,6 +159,11 @@
       "statusCode": 301
     },
     {
+      "source": "/knowledge-base/fannie-mae-departing-residence-move-up-buyers-hawaii",
+      "destination": "/knowledge-base/va-second-tier-entitlement-hawaii",
+      "statusCode": 301
+    },
+    {
       "source": "/can-you-have-multiple-va-loans",
       "destination": "/knowledge-base/va-second-tier-entitlement-hawaii",
       "statusCode": 301

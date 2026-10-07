@@ -350,19 +350,22 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "What is the average HOA fee in Honolulu?", answer: "The median advertised HOA/AOAO fee in Honolulu was $882/month in February 2026, according to UHERO's analysis of real estate listings. Hawaii has the second-highest median HOA fee nationally at $470/month, and 42% of Hawaii homeowners pay HOA fees compared to 25% nationally. An $882/month HOA has the same DTI impact as adding $158,000 to your loan amount." },
     ],
   },
-  "fannie-mae-departing-residence-move-up-buyers-hawaii": {
-    wordCount: 1150,
-    keywords: "Fannie Mae departing residence 2026, departing residence rental income rules, convert home to rental buy new home Hawaii, move-up buyer Hawaii, keep current home buy next one, Fannie Mae B3-3.8-05, market rent 75 percent offset, departing residence reserves, SEL-2026-08, Oahu move-up buyer mortgage",
+  "va-second-tier-entitlement-hawaii": {
+    wordCount: 2300,
+    keywords: "keep current home buy next one Hawaii, VA second tier entitlement Hawaii, two VA loans at once, bonus entitlement Hawaii, Fannie Mae departing residence 2026, departing residence rental income rules, convert home to rental buy new home Hawaii, move-up buyer Hawaii, market rent 75 percent offset, Fannie Mae B3-3.8-05, SEL-2026-08, Oahu move-up buyer mortgage",
     about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
       { name: "Fannie Mae", sameAs: "https://en.wikipedia.org/wiki/Fannie_Mae" },
-      { name: "Mortgage loan", sameAs: "https://en.wikipedia.org/wiki/Mortgage_loan" },
       { name: "Debt-to-income ratio", sameAs: "https://en.wikipedia.org/wiki/Debt-to-income_ratio" },
       { name: "Renting", sameAs: "https://en.wikipedia.org/wiki/Renting" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
     ],
     faqSchema: [
-      { question: "Do I need a signed lease to count rent from my departing residence?", answer: "No — as of Fannie Mae's September 2, 2026 update (Selling Guide B3-3.8-05), lease agreements are not permitted for a departing residence. Instead, the lender documents market rent using an appraisal with market rents, a Single-Family Comparable Rent Schedule (Form 1007), or market analysis tools like Zillow, Redfin, or the MLS with at least three comparable rentals. The rules are mandatory for applications dated November 1, 2026 or later." },
-      { question: "How much of my home's market rent counts when I convert it to a rental?", answer: "75% of documented market rent, minus your full housing payment (PITIA — principal, interest, taxes, insurance, and association dues). If 75% of rent covers the PITIA, the payment is removed from your debt-to-income ratio; any surplus does not count as additional income, and any shortfall is added to your monthly debts." },
-      { question: "What reserves do I need to convert my Hawaii home to a rental and buy another?", answer: "If you have less than 12 months of property management experience, Fannie Mae requires six months of the departing home's full PITIA in verified reserves, on top of other reserve requirements. With a year or more of landlord experience, this specific requirement does not apply. On Oahu, six months of PITIA is commonly five figures, and AOAO/HOA dues count in the number." },
+      { question: "Can I have two VA loans at the same time?", answer: "Yes. With remaining entitlement you can keep a VA-financed home as a rental and buy a new primary residence with a second VA loan. Your $0-down ceiling is four times your remaining entitlement, based on the county conforming limit \u2014 $1,249,125 in Honolulu County for 2026. Above that ceiling you put 25% down on the difference only." },
+      { question: "Do I need a signed lease to count rent from my departing residence?", answer: "On a VA or FHA loan, usually yes. On a Fannie Mae conventional loan, as of September 2, 2026 (Selling Guide B3-3.8-05), a lease is not permitted \u2014 the lender documents market rent with comps or an appraisal rent schedule and counts 75% of it against the departing home's PITIA. The rule is mandatory for applications dated November 1, 2026 or later." },
+      { question: "Did the VA change its departing-residence rental income rule in 2026?", answer: "No. The September 2, 2026 change was Fannie Mae's and applies to conventional loans. VA's treatment of rental income on a departing residence did not change with that announcement." },
+      { question: "How much of my home's market rent counts under the Fannie Mae rule?", answer: "75% of documented market rent, minus the full PITIA (principal, interest, taxes, insurance, association dues). If it covers the payment, the payment leaves your debt-to-income ratio; surplus does not count as income; a shortfall is added to your debts. First-time landlords also need six months of the departing PITIA in reserves." },
+      { question: "Does the VA funding fee increase on a second VA loan?", answer: "Yes. On subsequent use the fee is 3.3% with less than 5% down, 1.5% with 5% to 9.99% down, and 1.25% with 10% or more. Veterans receiving VA disability compensation are exempt." },
     ],
   },
   "va-loan-limits-hawaii-2026": {
