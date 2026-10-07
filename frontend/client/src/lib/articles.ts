@@ -3928,9 +3928,9 @@ I am Jay Miller, a Sales Manager and Certified Mortgage Advisor at CMG Home Loan
 
 ## 1. Fannie Mae's departing-residence rule changed on September 2 — VA's did not
 
-If a conventional buyer keeps their current home as a rental when they buy the next one, Fannie Mae no longer allows a lease to document the rent; the lender uses market-rent comps, takes 75%, and offsets the departing PITIA. It is optional now and mandatory for applications dated November 1, 2026 or later. The full breakdown with a Mililani example is in [Fannie Mae's new departing-residence rules for Hawaii move-up buyers](/knowledge-base/va-second-tier-entitlement-hawaii).
+If a conventional buyer keeps their current home as a rental when they buy the next one, Fannie Mae no longer allows a lease to document the rent; the lender uses market-rent comps, takes 75%, and offsets the departing PITIA. It is optional now and mandatory for applications dated November 1, 2026 or later. The full breakdown with a Mililani example — alongside the VA second-tier path — is in [Keep Your Current Home, Buy the Next One: two ways Hawaii move-up buyers do it](/knowledge-base/va-second-tier-entitlement-hawaii).
 
-**The VA angle:** this is a Fannie Mae conventional change. VA's treatment of rental income on a departing residence did not change with the announcement. For a VA-eligible owner, the more common Hawaii move is keeping the first home and buying again with remaining entitlement — see [the second VA loan strategy](/knowledge-base/va-second-tier-entitlement-hawaii) and the [VA Remaining Eligibility Calculator](/va-eligibility-calculator).
+**The VA angle:** this is a Fannie Mae conventional change. VA's treatment of rental income on a departing residence did not change with the announcement. For a VA-eligible owner, the more common Hawaii move is keeping the first home and buying again with remaining entitlement — Path 1 in the same article, with the [VA Remaining Eligibility Calculator](/va-eligibility-calculator) to run your own ceiling.
 
 ## 2. CMG Home Loans is now an approved Hale Kamaʻāina lender
 
