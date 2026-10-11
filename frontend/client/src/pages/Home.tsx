@@ -476,7 +476,7 @@ export default function Home() {
                   Access our exclusive agent CRM, co-branded marketing materials, and dedicated support to grow your business.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/agents"
                   className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-navy px-5 py-2.5 rounded-md font-body font-semibold text-sm transition-all self-start"
                 >
                   Learn About Partnership <ArrowRight className="w-4 h-4" />
