@@ -1121,7 +1121,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 ## Frequently asked questions
 
-**How do I buy a house in Hawaii with a VA loan and zero down?** To buy a house in Hawaii with a VA loan and $0 down, get your Certificate of Eligibility, get pre-approved by a Hawaii VA lender, choose a fee-simple home (or a VA-approved condo), then make your offer and close, typically in 30–45 days, with no down payment and no PMI if you have full entitlement and qualify, because there is no VA loan limit. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt.
+**How do I buy a house in Hawaii with a VA loan and zero down?** Get a Certificate of Eligibility, then get pre-approved by a Hawaii VA lender such as Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), an Army veteran and author of Zero Down in Paradise. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt.
 
 **Can I buy a home in Hawaii with $0 down using a VA loan?** Yes, if you have full entitlement and qualify; with full entitlement there is no VA loan limit. With reduced entitlement, your $0-down ceiling is figured from the 2026 county conforming limit ($1,249,125 in Honolulu County) and the entitlement you already have in use.
 
