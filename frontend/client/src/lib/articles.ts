@@ -1143,7 +1143,7 @@ Each installation has its own commute geography, neighborhoods, and BAH-to-payme
 
 ## Related resources
 
-[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-09) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers) · [About Jay Miller](/about)
+[Hawaii VA field notes (monthly)](/knowledge-base/hawaii-va-field-note-2026-10) · [VA assumable loans](/knowledge-base/va-assumable-loans-pros-cons) · [The VA IRRRL in Hawaii](/knowledge-base/va-irrrl-refinance-hawaii) · [Why mortgage rates hit a 2026 high, and what Hawaii buyers can do](/knowledge-base/mortgage-rates-2026-high-hawaii-buyers) · [About Jay Miller](/about)
 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
@@ -3954,7 +3954,7 @@ Seven answer-first VA pages went live on September 14, each opening with the dir
 
 FHFA typically announces the next year's conforming loan limits in late November; when the 2027 figures publish, the county-limit page and the eligibility calculator will be updated the same week. The October field note will cover whatever changes between now and then, plus lessons from October closings.
 
-*Previous field notes: this is the first. Next: October 2026.*
+*Previous field notes: this is the first. Next: [October 2026](/knowledge-base/hawaii-va-field-note-2026-10).*
 
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
@@ -3962,6 +3962,64 @@ FHFA typically announces the next year's conforming loan limits in late November
 *Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
 
 *Last Updated: September 14, 2026*`,
+  },
+  {
+    slug: "hawaii-va-field-note-2026-10",
+    title: "Hawaii VA Field Note — October 2026: Kauai and Big Island Loan Limits Corrected, Keep-Your-Home Paths, a Rebuilt Condo Directory, and a Step-by-Step VA Guide",
+    excerpt: "The monthly field note for Hawaii VA and military buyers, covering September 14 to October 16, 2026: Kauai and Hawaii County loan limits corrected to $1,249,125, the keep-your-home article with both move-up paths, the VA condo directory rebuilt (1,781 Oahu projects), and the VA guide rewritten as six steps. VA's funding fee did not change. No rate quotes.",
+    category: "VA Loans",
+    readTime: "5 min read",
+    date: "2026-10-16",
+    lastUpdated: "2026-10-16",
+    image: "/images/heroes/hawaii-va-field-note-2026-10.webp",
+    featured: false,
+    draft: false,
+    content: `*By Jay Miller — NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise](/zero-down-in-paradise) · Updated October 16, 2026*
+
+# Hawaii VA Field Note — October 2026
+
+**What changed for Hawaii VA and military buyers since the September field note, in one page: RealityCents corrected the 2026 Kauai and Hawaii County conforming limits to $1,249,125 to match FHFA's county file, the two ways to keep your current home and buy the next one now sit in one article ahead of Fannie Mae's November 1 deadline, the VA-Approved Condos Oahu directory was rebuilt and lists 1,781 projects, and the complete VA guide was rewritten as six steps.** VA's funding fee did not change: VA.gov still shows the rates effective April 7, 2023 (2.15% first use with less than 5% down, 3.3% after first use). As always, no rate quotes.
+
+## 1. Kauai and Big Island loan limits corrected on September 28
+
+This one matters only if your VA entitlement is reduced, meaning a VA loan is still open or a prior VA loan ended in a loss. With full entitlement there is no VA loan limit.
+
+For reduced-entitlement buyers, the county conforming limit sets the $0-down ceiling. Several RealityCents pages listed Kauai County at $1,007,250 and Hawaii County at $862,500. Those figures were wrong. FHFA's 2026 county list sets both at $1,249,125, the Hawaii baseline of 1.5 times the $832,750 national limit, the same as Honolulu. Maui and Kalawao stay at $1,299,500. On Kauai, the 25% guaranty base rose from $251,813 to $312,281. On the Big Island it rose from $215,625 to $312,281. Honolulu's 2–4 unit limits were corrected the same day: $1,599,375, $1,933,200, and $2,402,625.
+
+The [VA loan limits in Hawaii 2026](/knowledge-base/va-loan-limits-hawaii-2026) page, the [VA Remaining Eligibility Calculator](/va-eligibility-calculator), and the FAQ answers now use FHFA's figures. If you ran a Kauai or Big Island number before September 28, run it again.
+
+## 2. Keep your current home, buy the next one: both paths, one article
+
+On October 7 the separate departing-residence page was folded into [Keep Your Current Home, Buy the Next One](/knowledge-base/va-second-tier-entitlement-hawaii), and the old URL now redirects to it. Path 1 is VA second-tier entitlement: two VA loans at once, $0 down up to your remaining-entitlement ceiling (see item 1). Path 2 is Fannie Mae's conventional departing-residence rule: no lease needed, and 75% of market rent offsets the old payment.
+
+**The date to know:** Fannie Mae's rule becomes mandatory for applications dated November 1, 2026 or later. VA's own treatment of a departing residence has not changed.
+
+## 3. The VA condo directory was rebuilt on October 1
+
+The [VA-Approved Condos Oahu directory](/va-approved-condos-oahu) refreshes from VA's condo list. On September 15 it showed 1,769 accepted projects. On October 1 the method changed. VA's county field is unreliable, so a project now counts as Oahu by its ZIP, city, and county together. That added 11 Oahu projects VA had filed under the wrong county and dropped one Maui project. Seven ZIP typos in VA's data are corrected, and duplicate VA IDs are merged into one record. The result was 1,781 projects as of October 1: 1,536 accepted without conditions and 245 with conditions. The full list is free to download as [JSON](/data/va-approved-condos-hawaii.json) or [CSV](/data/va-approved-condos-hawaii.csv).
+
+What this means for buyers is the same as last month: check the directory before you write an offer. If the building is not listed, read [VA condo approval vs. warrantability](/knowledge-base/va-condo-approval-vs-warrantability-hawaii) before you give up on it.
+
+## 4. New this month on RealityCents
+
+- **The VA guide is now six steps.** On September 30 the [complete VA loans in Hawaii guide](/knowledge-base/va-loans-hawaii-military) was rewritten as *How to Buy a House With $0 Down*: COE, Hawaii costs to budget, pre-approval, property screening, escrow, and closing. On October 12 it got a new answer-first opening.
+- **A one-page loan comparison for agents.** Since October 2, the [agents page](/agents) has a free PDF comparing Conventional, FHA, VA, and USDA in Hawaii: down payment, funding fees and mortgage insurance, 2026 county limits, condo approval, and seller-concession caps.
+- **The October 2026 Oahu Homebuyer's Guide.** The [guide](/guide) was refreshed October 3 with current market data and an updated Hale Kamaʻāina status. HHFDC's first-round $3,000 closing-cost incentive was used up as of June 23, 2026, and HHFDC's program page shows no new announcements since September. Details are in [the Hale Kamaʻāina program guide](/knowledge-base/hale-kamaaina-mortgage-program-hawaii).
+
+## Looking ahead
+
+- **November 1:** Fannie Mae's departing-residence rule becomes mandatory (item 2).
+- **Late November:** FHFA usually announces next year's conforming limits around this time. The 2026 limits were announced November 25, 2025. When the 2027 county figures come out, the limits page and the eligibility calculator will be updated the same week, and the December field note will cover them.
+- **January:** BAH rates reset, and Fannie Mae's higher condo reserve requirements start in January 2027.
+
+*Previous field notes: [September 2026](/knowledge-base/hawaii-va-field-note-2026-09). Next: November 2026.*
+
+---
+*Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
+
+*Equal Housing Opportunity. Educational content only — not a commitment to lend and not an offer of credit; approvals are not guaranteed. A $0-down VA purchase requires VA eligibility, sufficient entitlement, and lender approval. Program rules, fees, and limits change; verify current figures with VA.gov and FHFA.*
+
+*Last Updated: October 16, 2026*`,
   },
   {
     slug: "hale-kamaaina-mortgage-program-hawaii",

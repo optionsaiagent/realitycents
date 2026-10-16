@@ -488,6 +488,20 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "Does Hawaii COLA count toward VA loan qualifying?", answer: "At CMG Home Loans, yes — Hawaii COLA is counted in full in qualifying income with no request for evidence of continuance. Some lenders apply their own continuance tests, so results can differ between lenders." },
     ],
   },
+  "hawaii-va-field-note-2026-10": {
+    wordCount: 800,
+    keywords: "Hawaii VA field note October 2026, Hawaii VA loan news 2026, Kauai conforming loan limit 2026, Hawaii County conforming loan limit 2026, VA second-tier entitlement Hawaii, Fannie Mae departing residence November 1 2026, VA approved condos Oahu 2026",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "Conforming loan", sameAs: "https://en.wikipedia.org/wiki/Conforming_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "What are the 2026 conforming loan limits for Kauai and the Big Island?", answer: "FHFA's 2026 county list sets Kauai County and Hawaii County (Big Island) at $1,249,125 for a single-family home, the Hawaii baseline of 1.5 times the $832,750 national limit and the same as Honolulu. Maui and Kalawao are $1,299,500. The limits matter for VA buyers only when entitlement is reduced; RealityCents corrected its pages to these figures on September 28, 2026." },
+      { question: "When does Fannie Mae's new departing-residence rule become mandatory?", answer: "For conventional loan applications dated November 1, 2026 or later. The lender uses 75% of documented market rent, with no lease required, to offset the departing home's payment. VA's own treatment of a departing residence did not change; VA buyers can instead keep the first home and buy again with second-tier entitlement." },
+      { question: "How many VA-approved condo projects are on Oahu?", answer: "As of October 1, 2026, the RealityCents VA-Approved Condos Oahu directory listed 1,781 VA-accepted projects (1,536 without conditions, 245 with conditions), with Oahu decided by ZIP, city, and county and duplicate VA IDs merged. Approvals change; confirm current status on VA's condo report." },
+    ],
+  },
   "hale-kamaaina-mortgage-program-hawaii": {
     wordCount: 2800,
     keywords: "Hale Kamaaina mortgage program Hawaii, HHFDC first time homebuyer Hawaii, Hawaii mortgage revenue bond program, below market rate Hawaii mortgage, HHFDC mortgage rate Hawaii, Hula Mae program Hawaii, HHFDC Hale Kamaaina eligibility, Hawaii first time buyer program 2026, Hale Kamaaina income limits, Hale Kamaaina purchase price limits",
