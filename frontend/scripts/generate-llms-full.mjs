@@ -131,7 +131,24 @@ function generate() {
     console.error("Run: node scripts/extract-article-content.mjs first");
     process.exit(1);
   }
-  const articles = JSON.parse(fs.readFileSync(articleDataPath, "utf-8"));
+  const allRecords = JSON.parse(fs.readFileSync(articleDataPath, "utf-8"));
+  // Hub pages are not knowledge-base articles. Their text lives here so llms-full
+  // can include it under the real URL. Skip them in the article loop below.
+  const hubSupplements = allRecords.filter((record) => record && record.hubPath);
+  const articles = allRecords.filter((record) => !record || !record.hubPath);
+  const aioHub = hubSupplements.find((record) => record.hubPath === "/first-lien-heloc-hawaii");
+  if (!aioHub?.purchaseQa?.q || !aioHub?.purchaseQa?.a || !aioHub.content?.includes(aioHub.purchaseQa.a)) {
+    console.error("[llms-full] article-data-full.json is missing the first-lien-heloc-hawaii hub Q&A");
+    process.exit(1);
+  }
+  if (!aioHub.purchaseQa.a.includes("replace a purchase mortgage on all four islands")) {
+    console.error("[llms-full] first-lien HELOC purchase answer is missing the approved phrase");
+    process.exit(1);
+  }
+  if (aioHub.purchaseQa.a.includes("\u00AE") || aioHub.purchaseQa.q.includes("\u00AE")) {
+    console.error("[llms-full] first-lien HELOC purchase Q&A must use ™, not ®");
+    process.exit(1);
+  }
 
   // 2. Sort: newest lastUpdated first, then newest date, then alpha title
   const sorted = [...articles].sort((a, b) => {
@@ -323,7 +340,9 @@ function generate() {
   lines.push("");
   lines.push("## The All In One Loan™ in Hawaii");
   lines.push("URL: https://realitycents.com/first-lien-heloc-hawaii");
-  lines.push("Last updated: October 2, 2026");
+  lines.push(`Last updated: ${formatDate(aioHub.lastUpdated || "2026-10-19")}`);
+  lines.push("");
+  lines.push(processMarkdown(aioHub.content));
   lines.push("");
   lines.push("The CMG All In One Loan™ is a 30-year first-lien home equity line of credit (HELOC) that replaces a traditional mortgage and comes with a built-in sweep checking account: your deposits lower the loan balance right away, and the money stays available to spend. Interest is calculated on each day's balance at a variable rate, so the result depends on your cash flow and the rate path, not on the starting rate alone. It can fit households with steady monthly surplus and spending discipline; it does not fit anyone who needs a fixed payment or lives paycheck to paycheck.");
   lines.push("");
@@ -341,6 +360,10 @@ function generate() {
   lines.push("Eligibility, margins, and terms are subject to program guidelines and can change.");
   lines.push("");
   lines.push("### Frequently asked questions");
+  lines.push("");
+  lines.push(`**Q: ${aioHub.purchaseQa.q}**`);
+  lines.push("");
+  lines.push(aioHub.purchaseQa.a);
   lines.push("");
   lines.push("**Q: What is the CMG All In One Loan™?**");
   lines.push("");
