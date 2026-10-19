@@ -24,7 +24,14 @@ const PAGE_DESCRIPTION = `How the CMG ${AIO_NAME}, a 30-year first-lien HELOC wi
 const PAGE_KEYWORDS =
   "All In One Loan™ Hawaii, CMG All In One Loan™, first lien HELOC Hawaii, velocity banking vs HELOC, HELOC sweep account, Jay Miller NMLS 657301";
 
+// Jay approved 2026-10-19. Same words in the visible block, FAQ section, and FAQPage JSON-LD.
+const PURCHASE_QA = {
+  q: "Can I use a first-lien HELOC to buy a home in Hawaii?",
+  a: `Yes. CMG's ${AIO_NAME} is a first-lien HELOC that can replace a purchase mortgage on all four islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), sets it up.`,
+};
+
 const FAQ: { q: string; a: string }[] = [
+  PURCHASE_QA,
   {
     q: `What is the CMG ${AIO_NAME}?`,
     a: "It is a 30-year first-lien home equity line of credit with a built-in sweep checking account, offered by CMG Home Loans. It replaces a traditional mortgage on a purchase or refinance.",
@@ -197,6 +204,11 @@ export default function FirstLienHelocHawaii() {
         </header>
 
         <div className="container max-w-3xl py-12 lg:py-16">
+          <aside className="mb-8 rounded-xl border-l-4 border-teal bg-teal/5 p-5" aria-labelledby="heloc-purchase-q">
+            <h2 id="heloc-purchase-q" className="font-display text-2xl text-navy mb-3">{PURCHASE_QA.q}</h2>
+            <p className="font-body text-base leading-relaxed text-navy md:text-lg">{PURCHASE_QA.a}</p>
+          </aside>
+
           <p className="article-intro mb-6 font-body text-lg leading-relaxed text-navy md:text-xl">
             The CMG {AIO_NAME} is a 30-year first-lien home equity line of credit (HELOC) that replaces a traditional mortgage and comes with a built-in sweep checking account: your deposits lower the loan balance right away, and the money stays available to spend. Interest is calculated on each day's balance at a variable rate, so the result depends on your cash flow and the rate path, not on the starting rate alone. It can fit households with steady monthly surplus and spending discipline; it does not fit anyone who needs a fixed payment or lives paycheck to paycheck.
           </p>
