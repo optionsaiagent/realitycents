@@ -12,6 +12,7 @@ import articleEnhancementsJson from "@/lib/articleEnhancements.json";
 import { LENDER, PRE_APPROVAL_URL, IMAGES } from "@/lib/constants";
 import ContactActions from "@/components/ContactActions";
 import BookCallout from "@/components/BookCallout";
+import ArticleVideo, { type ArticleVideoConfig } from "@/components/ArticleVideo";
 import { useMemo } from "react";
 import { Streamdown } from "streamdown";
 // Removed rehype-harden and defaultRehypePlugins to fix runtime crash
@@ -60,6 +61,26 @@ const CALCULATOR_LINKS: Record<string, { href: string; title: string; excerpt: s
     title: "Temporary Buydown Calculator",
     excerpt: "Compare 1/1, 2/1, and 3/2/1 buydown structures side-by-side. Enter your loan amount and rate to see exact seller credit amounts and year-by-year payment tables.",
     label: "Try the Calculator",
+  },
+};
+
+// Articles with a companion video: the player replaces the hero image
+const ARTICLE_VIDEOS: Record<string, ArticleVideoConfig> = {
+  "all-in-one-loan-simulator-example-hawaii": {
+    youtubeId: "w3SdobExE4E",
+    title: "The All In One Loan™: a $700,000 condo, run two ways",
+    chapters: [
+      { at: 0, label: "The three questions" },
+      { at: 44, label: "The loan you already know" },
+      { at: 93, label: "The idea, and where it came from" },
+      { at: 147, label: "The sample condo" },
+      { at: 211, label: "How it works, in one screen" },
+      { at: 266, label: "A typical month" },
+      { at: 330, label: "Year one first" },
+      { at: 370, label: "The full projection" },
+      { at: 436, label: "Equity, and the reserve" },
+      { at: 505, label: "The rate, and 25 years of the index" },
+    ],
   },
 };
 
@@ -318,13 +339,17 @@ export default function Article() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-14">
             {/* Main content */}
             <div className="lg:col-span-3">
-              <div className="aspect-[2/1] rounded-xl overflow-hidden mb-8">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {ARTICLE_VIDEOS[article.slug] ? (
+                <ArticleVideo {...ARTICLE_VIDEOS[article.slug]} />
+              ) : (
+                <div className="aspect-[2/1] rounded-xl overflow-hidden mb-8">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
 
               {/* Author Byline — E-E-A-T Signal */}
               <div className="flex items-center gap-3 mb-8 pb-4 border-b border-border">

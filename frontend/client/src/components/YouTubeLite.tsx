@@ -25,6 +25,8 @@ export interface YouTubeLiteProps {
   start?: number;
   /** Extra classes for the outer wrapper. */
   className?: string;
+  /** Mount the iframe immediately, for a player the visitor already started (e.g. from a chapter link). */
+  initiallyActive?: boolean;
 }
 
 /** True when the ID still looks like an un-swapped placeholder. */
@@ -38,9 +40,10 @@ export default function YouTubeLite({
   poster,
   start,
   className = "",
+  initiallyActive = false,
 }: YouTubeLiteProps) {
-  const [active, setActive] = useState(false);
   const placeholder = isPlaceholderId(videoId);
+  const [active, setActive] = useState(initiallyActive && !placeholder);
 
   const activate = useCallback(() => {
     if (!placeholder) setActive(true);
