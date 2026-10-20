@@ -107,6 +107,54 @@
       }
     ]
   },
+  "all-in-one-loan-simulator-example-hawaii": {
+    "wordCount": 2300,
+    "keywords": "All In One Loan simulator, CMG Interactive Comparison Simulator, All In One Loan example Hawaii, first lien HELOC condo example, All In One Loan margin, All In One Loan breakeven rate, pay off mortgage in 11 years, All In One Loan worst case pricing, SOFR margin HELOC Hawaii",
+    "about": [
+      {
+        "name": "Home equity line of credit",
+        "sameAs": "https://en.wikipedia.org/wiki/Home_equity_line_of_credit"
+      },
+      {
+        "name": "Offset mortgage",
+        "sameAs": "https://en.wikipedia.org/wiki/Offset_mortgage"
+      },
+      {
+        "name": "SOFR",
+        "sameAs": "https://en.wikipedia.org/wiki/SOFR"
+      },
+      {
+        "name": "Amortization calculator",
+        "sameAs": "https://en.wikipedia.org/wiki/Amortization_calculator"
+      }
+    ],
+    "faqSchema": [
+      {
+        "question": "What is CMG's Interactive Comparison Simulator?",
+        "answer": "It's the tool CMG uses to run a side-by-side comparison between the All In One Loan™ and a traditional mortgage using a household's actual income, expenses, purchase price, and rate inputs. A saved simulator key code lets anyone reload a specific scenario at allinoneloan.com and change any input to see their own numbers."
+      },
+      {
+        "question": "Why did the video use CMG's highest margin instead of a lower one?",
+        "answer": "To show the floor, not the ceiling. A 4.000% margin is worst-case pricing for this product — if the math still works out favorably there, it only improves with a lower, bought-down margin."
+      },
+      {
+        "question": "Is the All In One Loan's rate ever fixed?",
+        "answer": "No — it's a variable rate, 30-day average SOFR plus a fixed margin, resetting monthly within a floor and a lifetime cap. The margin itself is fixed for the life of the loan once chosen; only the index component moves."
+      },
+      {
+        "question": "What happens if the index rises sharply and stays there?",
+        "answer": "Modeling the index returning to its 25-year high and staying there for the life of the loan still shows meaningfully less total interest than a comparable fixed-rate loan, though the payoff timeline stretches out. A lifetime cap sets the hard limit past which the rate cannot climb further."
+      },
+      {
+        "question": "Couldn't I get the same result by paying extra on a fixed-rate loan?",
+        "answer": "Possibly, if you send your entire monthly surplus to principal every month for more than a decade, and especially if your fixed rate is low. The trade-offs: money paid into a fixed loan can't be reached again without selling or taking out a new loan, a lower rate later requires a paid refinance, and the result depends on making a large extra payment every month rather than happening automatically as you earn and spend."
+      },
+      {
+        "question": "Who should not consider this loan?",
+        "answer": "Households without consistent positive monthly cash flow, anyone who would treat open credit access as spending money, and borrowers who need the absolute payment certainty of a fixed rate regardless of the math."
+      }
+    ]
+  },
   "seller-concessions-closing-costs-hawaii": {
     "wordCount": 2400,
     "keywords": "seller concessions Hawaii, seller credits closing costs Hawaii, VA loan seller pays closing costs, how to get seller to pay closing costs Hawaii, seller concession limits VA FHA conventional, zero out of pocket VA loan Hawaii, Oahu condo buyer market 2026, Hawaii closing costs negotiation, military buyer zero closing costs Hawaii",
