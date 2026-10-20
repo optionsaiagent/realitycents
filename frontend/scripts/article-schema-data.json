@@ -146,6 +146,10 @@
         "answer": "Modeling the index returning to its 25-year high and staying there for the life of the loan still shows meaningfully less total interest than a comparable fixed-rate loan, though the payoff timeline stretches out. A lifetime cap sets the hard limit past which the rate cannot climb further."
       },
       {
+        "question": "Couldn't I get the same result by paying extra on a fixed-rate loan?",
+        "answer": "Possibly, if you send your entire monthly surplus to principal every month for more than a decade, and especially if your fixed rate is low. The trade-offs: money paid into a fixed loan can't be reached again without selling or taking out a new loan, a lower rate later requires a paid refinance, and the result depends on making a large extra payment every month rather than happening automatically as you earn and spend."
+      },
+      {
         "question": "Who should not consider this loan?",
         "answer": "Households without consistent positive monthly cash flow, anyone who would treat open credit access as spending money, and borrowers who need the absolute payment certainty of a fixed rate regardless of the math."
       }
