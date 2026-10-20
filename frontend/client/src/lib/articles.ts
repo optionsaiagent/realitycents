@@ -584,7 +584,6 @@ Ask a licensed loan officer to run a side-by-side simulation using your actual b
     readTime: "13 min",
     date: "2026-10-20",
     featured: true,
-    lastUpdated: "October 2026",
     image: "/aio-explainer-poster.png",
     content: `# Why Haven't You Heard of the All In One Loan™? A $700,000 Condo, Priced at the Worst Rate CMG Offers
 
@@ -594,9 +593,7 @@ If you've never heard of this loan, you're in good company — most people in th
 
 A new explainer video walks through it using one sample scenario — a $700,000 Oahu condo, 20% down — run twice through CMG's own Interactive Comparison Simulator: once as a standard 30-year fixed mortgage, once as the All In One Loan™, priced at the highest margin CMG offers. That second choice is deliberate. The video isn't showing you a best-case sales pitch; it's showing you the floor.
 
-[![Watch: the All In One Loan™, explained with a $700,000 condo example](https://i.ytimg.com/vi/w3SdobExE4E/maxresdefault.jpg)](https://youtu.be/w3SdobExE4E)
-
-**[▶ Watch the full video on YouTube](https://youtu.be/w3SdobExE4E)** — then come back here for every number from it laid out in table form, with sourcing notes on which figures came from the simulator, which came from its CSV export, and which are arithmetic performed on the same inputs.
+The video is at the top of this page, and the chapter list under it jumps straight to each section. You can also [watch it on YouTube](https://youtu.be/w3SdobExE4E). Every number from it is laid out below in table form, with sourcing notes on which figures came from the simulator, which came from its CSV export, and which are arithmetic performed on the same inputs.
 
 ---
 
