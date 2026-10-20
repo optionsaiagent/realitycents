@@ -387,7 +387,9 @@ Here's what went into the simulator run behind the video:
 
 - **Purchase price:** $700,000 condo, 20% down ($140,000 down, $560,000 financed)
 - **Household income:** $12,000/month in
-- **Monthly expenses:** $4,932.22, including roughly $800/month combined for HOA dues, property taxes, and insurance — leaving, on the simulator's own accounting, about 20% of the month's inflow unspent and working against the balance
+- **HOA dues, property taxes, and insurance:** $800/month combined
+- **Living expenses:** $4,932.22/month
+- **Left unspent:** an estimated 20% of net income — roughly $2,400 a month — remains after all living expenses and the estimated housing payment, and stays in the account working against the balance
 - **Fixed-rate comparison:** 7.375%
 - **All In One Loan™ rate:** 7.746% — the 30-day average SOFR index at 3.746% plus a 4.000% margin
 
@@ -472,7 +474,7 @@ The 4.000% margin used throughout this example is the one CMG uses for worst-cas
 
 **Why haven't I heard of this?** Because it's a proprietary CMG product. Not every lender offers it, and loan officers who don't offer it generally don't bring it up — not out of concealment, just because it isn't in their product shelf.
 
-**What's in it for the lender?** CMG is paid the same way any lender is paid on a line of credit: interest on the outstanding nightly balance, at the index plus the margin. There's no hidden fee structure beyond that — the lender's interest and the borrower's interest in keeping the balance low point in the same direction, which is the whole mechanism this article just walked through.
+**What's in it for the lender?** CMG is paid the same way any lender is paid on a line of credit: interest on the outstanding nightly balance, at the index plus the margin.
 
 **Is this too good to be true?** The honest test is the one this entire article just ran: price it at the lender's worst margin, not the best one; hold both rates flat rather than assuming a rate cut bails out the comparison; show the breakeven point and how far above 25 years of history it sits; and hand over the simulator key so you — not a loan officer, not this article — can change any input and watch the output move. That's a different posture than "trust the brochure." Whether it's right for your household is still a real question, covered next.
 
