@@ -566,7 +566,7 @@ export default function AdvancedCalculator() {
         margin: [0.3, 0.4, 0.3, 0.4],
         filename: `RealityCents-${loanTypeLabels[inputs.loanType]}-Estimate.pdf`,
         image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, onclone: (doc: Document) => { const c = doc.getElementById("print-summary-content"); if (c) { c.style.position = "static"; c.style.left = "0"; } } },
+        html2canvas: { scale: 2, useCORS: true, onclone: (doc: Document) => { doc.querySelectorAll<HTMLElement>("#print-summary-content").forEach((c) => { c.style.position = "static"; c.style.left = "0"; }); } },
         jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
       }).from(el).save();
       el.style.display = "";
