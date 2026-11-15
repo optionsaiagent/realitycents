@@ -9,7 +9,7 @@
 const AIO_NAME = "All In One Loan™";
 const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
 /** Mirror of client/src/lib/constants.ts AIO_HUB_UPDATED. Change only at merge. */
-const AIO_HUB_UPDATED = "2026-10-02";
+const AIO_HUB_UPDATED = "2026-10-19";
 const PRE_APPROVAL_URL = "https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true";
 
 function aioHubUpdatedLabel(iso) {
@@ -683,6 +683,10 @@ export const STATIC_PAGE_BODIES = {
     <main>
       <h1>The ${AIO_NAME} in Hawaii: How a First-Lien HELOC With a Sweep Account Works</h1>
       <p><em>By Jay Miller, Sales Manager and Certified Mortgage Advisor, CMG Home Loans | NMLS #657301 | Last updated: ${aioHubUpdatedLabel(AIO_HUB_UPDATED)}</em></p>
+      <aside>
+        <h2>Can I use a first-lien HELOC to buy a home in Hawaii?</h2>
+        <p>Yes. CMG's ${AIO_NAME} is a first-lien HELOC that can replace a purchase mortgage on all four islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), sets it up.</p>
+      </aside>
       <p class="article-intro">The CMG ${AIO_NAME} is a 30-year first-lien home equity line of credit (HELOC) that replaces a traditional mortgage and comes with a built-in sweep checking account: your deposits lower the loan balance right away, and the money stays available to spend. Interest is calculated on each day's balance at a variable rate, so the result depends on your cash flow and the rate path, not on the starting rate alone. It can fit households with steady monthly surplus and spending discipline; it does not fit anyone who needs a fixed payment or lives paycheck to paycheck.</p>
       <aside class="key-takeaway">
         <p><strong>Key facts</strong></p>
@@ -825,6 +829,8 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section id="faq">
         <h2>Frequently asked questions</h2>
+        <h3>Can I use a first-lien HELOC to buy a home in Hawaii?</h3>
+        <p>Yes. CMG's ${AIO_NAME} is a first-lien HELOC that can replace a purchase mortgage on all four islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), sets it up.</p>
         <h3>What is the CMG ${AIO_NAME}?</h3>
         <p>It is a 30-year first-lien home equity line of credit with a built-in sweep checking account, offered by CMG Home Loans. It replaces a traditional mortgage on a purchase or refinance.</p>
         <h3>How does the sweep account in the ${AIO_NAME} work?</h3>

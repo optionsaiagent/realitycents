@@ -13,6 +13,7 @@ import { getStoredFile, resolveShortUrl } from "./db";
 
 async function startServer() {
   const app = express();
+  app.disable("x-powered-by");
   const server = createServer(app);
 
   // CORS — allow the Vercel frontend to call this API

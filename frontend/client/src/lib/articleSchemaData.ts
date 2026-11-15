@@ -56,6 +56,24 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "How do I find out if a first-lien HELOC makes sense for me?", answer: "Ask a licensed loan officer to run a side-by-side simulation using your actual balance, income, and spending \u2014 comparing total interest paid and payoff timeline against a traditional mortgage. That comparison, not the note rate, is the decision." },
     ],
   },
+  "all-in-one-loan-simulator-example-hawaii": {
+    wordCount: 2300,
+    keywords: "All In One Loan simulator, CMG Interactive Comparison Simulator, All In One Loan example Hawaii, first lien HELOC condo example, All In One Loan margin, All In One Loan breakeven rate, pay off mortgage in 11 years, All In One Loan worst case pricing, SOFR margin HELOC Hawaii",
+    about: [
+      { name: "Home equity line of credit", sameAs: "https://en.wikipedia.org/wiki/Home_equity_line_of_credit" },
+      { name: "Offset mortgage", sameAs: "https://en.wikipedia.org/wiki/Offset_mortgage" },
+      { name: "SOFR", sameAs: "https://en.wikipedia.org/wiki/SOFR" },
+      { name: "Amortization calculator", sameAs: "https://en.wikipedia.org/wiki/Amortization_calculator" },
+    ],
+    faqSchema: [
+      { question: "What is CMG's Interactive Comparison Simulator?", answer: "It's the tool CMG uses to run a side-by-side comparison between the All In One Loan™ and a traditional mortgage using a household's actual income, expenses, purchase price, and rate inputs. A saved simulator key code lets anyone reload a specific scenario at allinoneloan.com and change any input to see their own numbers." },
+      { question: "Why did the video use CMG's highest margin instead of a lower one?", answer: "To show the floor, not the ceiling. A 4.000% margin is worst-case pricing for this product — if the math still works out favorably there, it only improves with a lower, bought-down margin." },
+      { question: "Is the All In One Loan's rate ever fixed?", answer: "No — it's a variable rate, 30-day average SOFR plus a fixed margin, resetting monthly within a floor and a lifetime cap. The margin itself is fixed for the life of the loan once chosen; only the index component moves." },
+      { question: "What happens if the index rises sharply and stays there?", answer: "Modeling the index returning to its 25-year high and staying there for the life of the loan still shows meaningfully less total interest than a comparable fixed-rate loan, though the payoff timeline stretches out. A lifetime cap sets the hard limit past which the rate cannot climb further." },
+      { question: "Couldn't I get the same result by paying extra on a fixed-rate loan?", answer: "Possibly, if you send your entire monthly surplus to principal every month for more than a decade, and especially if your fixed rate is low. The trade-offs: money paid into a fixed loan can't be reached again without selling or taking out a new loan, a lower rate later requires a paid refinance, and the result depends on making a large extra payment every month rather than happening automatically as you earn and spend." },
+      { question: "Who should not consider this loan?", answer: "Households without consistent positive monthly cash flow, anyone who would treat open credit access as spending money, and borrowers who need the absolute payment certainty of a fixed rate regardless of the math." },
+    ],
+  },
   "seller-concessions-closing-costs-hawaii": {
     wordCount: 2400,
     keywords: "seller concessions Hawaii, seller credits closing costs Hawaii, VA loan seller pays closing costs, how to get seller to pay closing costs Hawaii, seller concession limits VA FHA conventional, zero out of pocket VA loan Hawaii, Oahu condo buyer market 2026, Hawaii closing costs negotiation, military buyer zero closing costs Hawaii",
@@ -109,7 +127,7 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { name: "United States Department of Veterans Affairs", sameAs: "https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" },
     ],
     faqSchema: [
-      { question: "How do I buy a house in Hawaii with a VA loan and zero down?", answer: "To buy a house in Hawaii with a VA loan and $0 down, get your Certificate of Eligibility, get pre-approved by a Hawaii VA lender, choose a fee-simple home (or a VA-approved condo), then make your offer and close, typically in 30–45 days, with no down payment and no PMI if you have full entitlement and qualify, because there is no VA loan limit. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt." },
+      { question: "How do I buy a house in Hawaii with a VA loan and zero down?", answer: "Get a Certificate of Eligibility, then get pre-approved by a Hawaii VA lender such as Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), an Army veteran and author of Zero Down in Paradise. Before you shop, build Hawaii's extra costs into your pre-approval: homeowners and hurricane insurance, flood insurance in a flood zone, lava-zone insurance for Big Island homes in lava zones 1 and 2, condo association (HOA/AOAO) dues, and the 2.15% first-use funding fee unless you're exempt." },
       { question: "Can I buy a home in Hawaii with $0 down using a VA loan?", answer: "Yes, if you have full entitlement and qualify; with full entitlement there is no VA loan limit. With reduced entitlement, your $0-down ceiling is figured from the 2026 county conforming limit ($1,249,125 in Honolulu County) and the entitlement you already have in use." },
       { question: "What extra costs should I budget for a VA purchase in Hawaii?", answer: "Homeowners and hurricane insurance, flood insurance if the home is in a FEMA flood zone, condo HOA/AOAO dues (which count in your debt-to-income ratio), property tax, closing costs, and the VA funding fee unless you are exempt. On the Big Island, homes in lava zones 1 and 2 also raise insurance and financing issues." },
       { question: "Is there PMI on a VA loan?", answer: "No. A one-time funding fee (2.15% on first use with $0 down) takes its place; it can be financed and is waived for veterans receiving VA disability compensation." },
@@ -486,6 +504,20 @@ export const articleSchemaData: Record<string, ArticleSchemaMeta> = {
       { question: "Did the VA change its departing-residence rental income rule in September 2026?", answer: "No. The September 2, 2026 change was Fannie Mae's (Selling Guide SEL-2026-08) and applies to conventional loans: no lease, 75% of documented market rent offsets the departing PITIA, mandatory for applications dated November 1, 2026 or later. VA's treatment of a departing residence did not change with that announcement." },
       { question: "Does CMG Home Loans offer the Hale Kamaʻāina program?", answer: "Yes. As of September 2026, CMG Home Loans is an approved participating lender for HHFDC's Hale Kamaʻāina Mortgage Program, the below-market fixed-rate program for eligible Hawaii first-time buyers. Posted rates reset with each bond issuance." },
       { question: "Does Hawaii COLA count toward VA loan qualifying?", answer: "At CMG Home Loans, yes — Hawaii COLA is counted in full in qualifying income with no request for evidence of continuance. Some lenders apply their own continuance tests, so results can differ between lenders." },
+    ],
+  },
+  "hawaii-va-field-note-2026-10": {
+    wordCount: 800,
+    keywords: "Hawaii VA field note October 2026, Hawaii VA loan news 2026, Kauai conforming loan limit 2026, Hawaii County conforming loan limit 2026, VA second-tier entitlement Hawaii, Fannie Mae departing residence November 1 2026, VA approved condos Oahu 2026",
+    about: [
+      { name: "VA loan", sameAs: "https://en.wikipedia.org/wiki/VA_loan" },
+      { name: "Conforming loan", sameAs: "https://en.wikipedia.org/wiki/Conforming_loan" },
+      { name: "Oahu", sameAs: "https://en.wikipedia.org/wiki/Oahu" },
+    ],
+    faqSchema: [
+      { question: "What are the 2026 conforming loan limits for Kauai and the Big Island?", answer: "FHFA's 2026 county list sets Kauai County and Hawaii County (Big Island) at $1,249,125 for a single-family home, the Hawaii baseline of 1.5 times the $832,750 national limit and the same as Honolulu. Maui and Kalawao are $1,299,500. The limits matter for VA buyers only when entitlement is reduced; RealityCents corrected its pages to these figures on September 28, 2026." },
+      { question: "When does Fannie Mae's new departing-residence rule become mandatory?", answer: "For conventional loan applications dated November 1, 2026 or later. The lender uses 75% of documented market rent, with no lease required, to offset the departing home's payment. VA's own treatment of a departing residence did not change; VA buyers can instead keep the first home and buy again with second-tier entitlement." },
+      { question: "How many VA-approved condo projects are on Oahu?", answer: "As of October 1, 2026, the RealityCents VA-Approved Condos Oahu directory listed 1,781 VA-accepted projects (1,536 without conditions, 245 with conditions), with Oahu decided by ZIP, city, and county and duplicate VA IDs merged. Approvals change; confirm current status on VA's condo report." },
     ],
   },
   "hale-kamaaina-mortgage-program-hawaii": {

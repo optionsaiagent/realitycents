@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-10-01",
+  "lastUpdated": "2026-10-15",
   "source": "VA LGY Hub (lgy.va.gov/lgyhub/condo-report)",
   "county": "HONOLULU",
   "state": "HI",
-  "totalApproved": 1781,
-  "withoutConditions": 1536,
+  "totalApproved": 1784,
+  "withoutConditions": 1539,
   "withConditions": 245,
   "neighborhoods": [
     "Aiea",
@@ -3506,6 +3506,20 @@
       "reviewDate": "2020-12-10",
       "approvalRequestDate": "2020-10-23",
       "neighborhood": "Kailua"
+    },
+    {
+      "id": 645578,
+      "vaId": "002438",
+      "name": "52 KUAHIWI AVENUE CONDOMINIUM",
+      "address": "52 KUAHIWI AVE",
+      "city": "WAHIAWA",
+      "state": "HI",
+      "zipCode": "96786",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-10-07",
+      "approvalRequestDate": "2026-10-05",
+      "neighborhood": "Wahiawa"
     },
     {
       "id": 640080,
@@ -18460,6 +18474,20 @@
       "neighborhood": "Mililani"
     },
     {
+      "id": 534952,
+      "vaId": "001269",
+      "name": "OLINO AT MEHANA",
+      "address": "801 KAKALA STREET",
+      "city": "KAPOLEI",
+      "state": "HI",
+      "zipCode": "96707",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2015-04-13",
+      "approvalRequestDate": "2015-03-23",
+      "neighborhood": "Kapolei"
+    },
+    {
       "id": 521067,
       "vaId": "001236",
       "name": "OLIVE AVENUE ESTATES",
@@ -24421,6 +24449,20 @@
       "status": "Accepted With Conditions",
       "reviewDate": "2022-08-11",
       "approvalRequestDate": "2022-07-30",
+      "neighborhood": "Waipahu"
+    },
+    {
+      "id": 645525,
+      "vaId": "002435",
+      "name": "WALEA II @ KOA RIDGE - PHASE 2",
+      "address": "KAMEHAMEHA HIGHWAY",
+      "city": "WAIPAHU",
+      "state": "HI",
+      "zipCode": "96797",
+      "county": "HONOLULU",
+      "status": "Accepted Without Conditions",
+      "reviewDate": "2026-10-07",
+      "approvalRequestDate": "2026-09-29",
       "neighborhood": "Waipahu"
     },
     {

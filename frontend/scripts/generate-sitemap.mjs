@@ -22,7 +22,7 @@ const outputPath = path.resolve(projectRoot, "client/public/sitemap.xml");
 const BASE_URL = "https://realitycents.com";
 const TODAY = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 /** Mirror of client/src/lib/constants.ts AIO_HUB_UPDATED. Change only at merge. */
-const AIO_HUB_UPDATED = "2026-10-02";
+const AIO_HUB_UPDATED = "2026-10-19";
 
 const MONTH_MAP = {
   January: "01", February: "02", March: "03", April: "04",

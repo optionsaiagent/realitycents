@@ -21,7 +21,7 @@ import { STATIC_PAGE_BODIES } from "./static-page-bodies.mjs";
 const AIO_NAME = "All In One Loan™";
 const AIO_TM_LINE = "All In One Loan™ is a trademark of CMG Financial.";
 /** Mirror of client/src/lib/constants.ts AIO_HUB_UPDATED. Change only at merge. */
-const AIO_HUB_UPDATED = "2026-10-02";
+const AIO_HUB_UPDATED = "2026-10-19";
 
 // Live condo data so prerendered SEO stays in sync with twice-monthly refreshes
 const CONDO_DATA = JSON.parse(
@@ -866,6 +866,11 @@ const STATIC_PAGES = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
+          {
+            "@type": "Question",
+            name: "Can I use a first-lien HELOC to buy a home in Hawaii?",
+            acceptedAnswer: { "@type": "Answer", text: `Yes. CMG's ${AIO_NAME} is a first-lien HELOC that can replace a purchase mortgage on all four islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), sets it up.` },
+          },
           {
             "@type": "Question",
             name: `What is the CMG ${AIO_NAME}?`,
