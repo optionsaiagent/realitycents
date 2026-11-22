@@ -5029,6 +5029,71 @@ What you can control: know your exact payment at today's rate, lock if you are u
 
 *Last Updated: October 7, 2026*`,
   },
+  {
+    slug: "oahu-homeowner-exemption-increase-2027",
+    title: "Oahu's Homeowner Tax Exemption Just Got Bigger for 2027 — Here's Who Actually Gets It",
+    excerpt: "Honolulu is raising its homeowner property tax exemption for the tax year starting July 1, 2027 — $120,000 to $140,000 for most owners, $160,000 to $180,000 for owners 65 and older. It is not automatic. Here is exactly who qualifies, when it actually shows up on a bill, and what to do if you bought this year and have not filed.",
+    category: "Hawaii Specific",
+    readTime: "7 min read",
+    date: "2026-11-22",
+    featured: false,
+    draft: true,
+    image: "/images/heroes/oahu-homeowner-exemption-increase-2027.webp",
+    content: `The City and County of Honolulu is raising the homeowner property tax exemption — the dollar amount knocked off your home's assessed value before the tax rate is applied. It is a real, already-passed ordinance, not a proposal. It is also smaller than it sounds, does not start for another year and a half, and does nothing at all for an owner who has not filed the underlying homeowner exemption claim. If you bought on Oahu this year, that last part is the one that can quietly cost you.
+
+## What actually changed
+
+Two ordinances — 25-42 and 25-43 — raise Honolulu's homeowner exemption amounts for the tax year beginning **July 1, 2027**:
+
+| Exemption | Current amount | New amount (starting 7/1/2027) |
+|---|---|---|
+| Standard homeowner exemption (under 65) | $120,000 | $140,000 |
+| Homeowner exemption, age 65 and older | $160,000 | $180,000 |
+
+The exemption works the same way it always has — it is subtracted from your home's net assessed value before the city applies the tax rate for your property's classification. A bigger exemption means a smaller taxable value, which means a smaller bill, all else equal.
+
+The city's own estimate puts the standard increase at roughly **$70 a year** in savings for a typical owner-occupied home — real money, but not the kind of number that changes anyone's budget. Owners 65 and older get a proportionally larger dollar exemption ($20,000 more, on top of an already-larger base), though the city has not published a specific savings example for that group. Either way, the honest framing is "a modest, permanent reduction," not a windfall.
+
+## The part that actually matters: it is not automatic
+
+Here is what gets missed in the headline version of this story. The bigger exemption does not show up on anyone's bill just because the ordinance passed. It only applies to a property that already has a **homeowner exemption claim on file** with the city — the same claim that exempts the first $120,000 (or $160,000) today.
+
+If you already have a homeowner exemption on your current home, you do not need to do anything. The increase applies automatically to your existing claim starting with the 2027–2028 tax year.
+
+If you bought a home this year and have not filed a homeowner exemption claim, you are not just missing out on the increase coming in 2027 — you are also paying tax on your home's full assessed value right now, with no exemption at all. That is the bigger, more urgent problem the bigger exemption can obscure.
+
+## The filing deadline that actually controls this
+
+Honolulu's real property tax office runs on a fixed annual cycle: a homeowner exemption claim approved by **September 30** of a given year takes effect for the tax year that begins the following July 1. File by September 30, 2026, and the exemption (at whatever amount is in force) applies starting July 1, 2027 — the same date the increase kicks in. Miss that date, and the earliest the exemption can apply is July 1, 2028.
+
+That September 30, 2026 deadline has already passed by the time this is published. If you missed it, the filing still matters — it just pushes your benefit out to the 2028–2029 tax year instead of 2027–2028. Filing now, rather than waiting, is still the right move: there is no advantage to delaying further, and every additional year without the claim on file means another year of paying tax on your home's full value.
+
+To check or file: [realproperty.honolulu.gov](https://realproperty.honolulu.gov/tax-relief-and-forms/exemptions/exemption-faq/). A first-time claim generally requires proof the property is your principal residence as of the assessment date — your driver's license address, voter registration, and the home's use all need to line up.
+
+## How this fits into actually buying a home
+
+Two honest caveats for anyone running numbers on a purchase right now:
+
+**It does not change what a lender uses to qualify you today.** A loan officer calculates your debt-to-income ratio using current property taxes on the specific home you are buying, not a projected 2027 exemption. The increase matters for your actual monthly budget once it takes effect — it does not loosen underwriting now.
+
+**It is Oahu only.** This is a City and County of Honolulu ordinance. Maui, Kauai, and Hawaii County set their own homeowner exemption amounts and schedules, on their own timelines, and none of them are affected by this change.
+
+## The one-sentence version
+
+If you own and already have a homeowner exemption filed, the increase happens to you automatically in July 2027 — no action needed. If you do not have one filed, file it now; the ordinance does not help you until you do, and every year you wait is another year of paying full freight.
+
+For the mechanics of what else lenders and escrow count toward your monthly housing payment in Hawaii — including property taxes, insurance, and HOA dues — see our guide to [understanding closing costs in Hawaii](/knowledge-base/understanding-closing-costs-hawaii). For buyers still shopping, our breakdown of [what income you actually need to buy a home in Hawaii in 2026](/knowledge-base/income-needed-buy-home-hawaii-2026) builds the full monthly payment, taxes included, at current Oahu price points.
+
+Whether you are buying this year or already own and just need to get the homeowner exemption filed correctly, [get pre-approved with Jay Miller](https://my.cmghomeloans.com/homehub/signup/jaym@cmghomeloans.com?from_mobile_share=true) (NMLS #657301, CMG Home Loans) for a payment picture that accounts for what you will actually owe — today and after 2027.
+
+---
+
+*Sources: City and County of Honolulu Real Property Assessment Division, Ordinances 25-42 and 25-43; Locations Hawaii, "Oahu Homeowners to See Property Tax Relief Starting in 2027"; Honolulu Star-Advertiser (September 2025); Hawaiʻi Public Radio. Figures reflect ordinances as enacted; confirm current exemption amounts and filing status directly with realproperty.honolulu.gov before relying on any number here.*
+
+*Jay Miller | NMLS# 657301 | CMG Home Loans | Branch NMLS# 2475890. Educational content only — not a commitment to lend or an offer of credit, and not tax advice. Equal Housing Lender.*
+
+*Last Updated: November 22, 2026*`,
+  },
 ];
 /** All published (non-draft) articles — use this everywhere public-facing */
 export const articles: Article[] = allArticles.filter((a) => !a.draft);
