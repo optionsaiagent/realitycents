@@ -112,7 +112,9 @@ function extractArticleAt(src, startBrace) {
 }
 
 function extractField(chunk, fieldName) {
-  const regex = new RegExp(`${fieldName}:\\s*"([^"]*(?:\\\\.[^"]*)*)"`, "s");
+  // (?:[^"\\]|\\.)* keeps an escaped quote inside the string. The old pattern
+  // treated \" as the closing quote and cut the field off there.
+  const regex = new RegExp(`${fieldName}:\\s*"((?:[^"\\\\]|\\\\.)*)"`, "s");
   const match = chunk.match(regex);
   return match ? match[1].replace(/\\"/g, '"') : "";
 }

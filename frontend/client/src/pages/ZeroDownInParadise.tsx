@@ -36,7 +36,7 @@ import {
 
 const ANSWER_PAGES = [
   { href: "/knowledge-base/va-loans-hawaii-military", title: "How to buy a house in Hawaii with a VA loan and $0 down", note: "$0 down with full entitlement, no PMI, the funding fee, condos, leasehold, BAH, Hawaii costs, and the steps: the pillar page." },
-  { href: "/knowledge-base/va-loan-limits-hawaii-2026", title: "VA loan limits in Hawaii for 2026", note: "Why there is no limit with full entitlement, and how Honolulu County's $1,249,125 conforming limit applies when entitlement is reduced." },
+  { href: "/knowledge-base/va-loan-limits-hawaii-2026", title: "VA loan limits in Hawaii for 2027", note: "Why there is no limit with full entitlement, and how Honolulu County's $1,283,100 conforming limit (from January 1, 2027) applies when entitlement is reduced." },
   { href: "/knowledge-base/does-bah-count-va-loan-hawaii", title: "Does BAH count for a VA loan in Hawaii?", note: "Yes — how BAH, BAS, and Hawaii COLA are counted, the tax-free gross-up, and what it does to buying power." },
   { href: "/knowledge-base/va-funding-fee-hawaii", title: "The VA funding fee in Hawaii", note: "2026 percentages, who is exempt, what it costs on a Hawaii price, and why it still beats PMI." },
   { href: "/knowledge-base/va-vs-conventional-loan-hawaii", title: "VA vs. conventional in Hawaii", note: "A side-by-side on down payment, PMI, funding fee, residual income, and condo friction — and when each wins." },

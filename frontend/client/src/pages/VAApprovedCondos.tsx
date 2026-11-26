@@ -173,6 +173,10 @@ export default function VAApprovedCondos() {
 
   const faqItems = [
     {
+      q: "Can I buy a condo in Hawaii with an FHA or VA loan?",
+      a: "Yes, if the project meets the program's project rules: VA approval for a VA loan, or HUD approval or a single-unit approval for an FHA loan. Search Oahu buildings on this page for VA status, then confirm the current record with VA. FHA project status is a separate HUD list.",
+    },
+    {
       q: "What does VA condo approval mean?",
       a: "VA condo approval means the Department of Veterans Affairs has reviewed a condominium project's legal documents, financials, and HOA governance and determined it meets VA lending standards. Without this approval, VA-eligible buyers cannot use their VA loan benefit to purchase a unit in that project. The approval applies to the entire project — once a project is approved, any unit within it is eligible for VA financing.",
     },
@@ -208,11 +212,15 @@ export default function VAApprovedCondos() {
       />
 
       <PageHero
-        title="VA-Approved Condos on Oahu"
-        subtitle={`${condoData.totalApproved.toLocaleString()} VA-accepted condo projects on Oahu from VA's condo list, last checked ${condoChecked}. Approvals change; confirm current status with VA.`}
+        title="Can I buy a condo in Hawaii with an FHA or VA loan?"
+        subtitle="Yes, if the building qualifies for the loan type. A VA loan needs a VA-approved project, and an FHA loan needs a project on HUD's approved condo list or a single-unit approval. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), publishes this Oahu lookup so you can check a building's VA status before you offer."
         image={IMAGES.heroGuide}
         compact
-      />
+      >
+        <p className="text-lg md:text-xl text-sand/80 leading-relaxed mb-6">
+          {condoData.totalApproved.toLocaleString()} VA-accepted condo projects on Oahu from VA's condo list, last checked {condoChecked}. Approvals change; confirm current status with VA.
+        </p>
+      </PageHero>
 
       {/* Stats Bar */}
       <section className="bg-navy text-white -mt-1 relative z-10">
