@@ -709,7 +709,6 @@ export const STATIC_PAGE_BODIES = {
       <section id="how-it-works">
         <h2>How the CMG ${AIO_NAME} works</h2>
         <p>The ${AIO_NAME} puts your mortgage and your checking in one first-lien account: each deposit lowers the loan balance the day it posts, and you pay bills from the same account. A traditional mortgage keeps those as two accounts, so your paycheck sits in checking until you send a once-a-month payment. The steps below show how the account runs day to day.</p>
-        <p>The ${AIO_NAME} puts both in one account.</p>
         <ol>
           <li><strong>Your income is deposited into the account.</strong> Each deposit is applied against the loan balance the day it posts.</li>
           <li><strong>You pay bills from the same account.</strong> Debit card, checks, online bill pay, and transfers draw on the line, the way a checking account would.</li>

@@ -188,7 +188,7 @@ Want the math run on your home? [Get pre-approved with Jay Miller](https://www.j
     readTime: "9 min",
     date: "2026-07-04",
     featured: true,
-    lastUpdated: "November 2026",
+    lastUpdated: "2026-11-26",
     image: "/images/heroes/zero-down-home-buying-hawaii.webp",
     content: `# Can I buy a house in Hawaii with zero down?
 
@@ -3710,8 +3710,10 @@ Your Certificate of Eligibility shows entitlement used and any open VA loans. A 
 **Does the limit change if I buy a duplex or fourplex?**
 Yes. FHFA publishes higher limits for two- to four-unit properties. In Honolulu County for 2027 they are $1,642,875 (two-unit), $1,985,850 (three-unit), and $2,468,025 (four-unit). When entitlement is reduced, VA uses the one-unit limit for the entitlement calculation (see the VA.gov link above). See [VA house hacking in Hawaii](/knowledge-base/va-loan-house-hacking-hawaii) for multi-unit purchases.
 
-**Can I combine reduced entitlement with a down payment to buy above the limit?**
+### Can I combine reduced entitlement with a down payment to buy above the limit?
+
 Yes. The 25% requirement applies only to the amount above your $0-down ceiling, which is why reduced-entitlement buyers often need far less cash than they assume. Read the full guide: [VA Loans in Hawaii](/knowledge-base/va-loans-hawaii-military).
+
 ---
 *Jay Miller · NMLS #657301 · Branch NMLS #2475890 · CMG Home Loans, Honolulu · U.S. Army veteran · author of [Zero Down in Paradise: The Hawaii VA Loan Playbook for Military Homebuyers](/zero-down-in-paradise) (ISBN 979-8-9963553-0-3, [Amazon](https://www.amazon.com/dp/B0H7P83W15)). [About Jay](/about) · [NMLS Consumer Access](https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/657301).*
 
