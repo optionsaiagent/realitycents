@@ -195,10 +195,13 @@ export default function FirstLienHelocHawaii() {
         <header className="bg-navy pt-28 pb-10 lg:pt-36 lg:pb-14">
           <div className="container max-w-3xl">
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-              The {AIO_NAME} in Hawaii: How a First-Lien HELOC With a Sweep Account Works
+              What is the {AIO_NAME} in Hawaii, and who offers it?
             </h1>
             <p className="mt-4 text-sm md:text-base text-sand/80 italic">
               By Jay Miller, {LENDER.title}, {LENDER.company} | NMLS #{LENDER.nmls} | Last updated: {HUB_UPDATED_LABEL}
+            </p>
+            <p className="mt-4 text-base md:text-lg text-sand/90 leading-relaxed">
+              The {AIO_NAME} from CMG Home Loans is a 30-year first-lien HELOC with a built-in sweep checking account that can replace a purchase mortgage on all four Hawaiian islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #{LENDER.nmls}), sets it up. Deposits lower the balance interest is charged on each day, and the rate is variable.
             </p>
           </div>
         </header>
@@ -235,7 +238,10 @@ export default function FirstLienHelocHawaii() {
           <section className="mt-12" id="how-it-works">
             <h2 className="font-display text-3xl text-navy mb-4">How the CMG {AIO_NAME} works</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              A traditional mortgage and a checking account are two separate things. Your paycheck lands in checking, and once a month you send a fixed payment to the lender. The {AIO_NAME} puts both in one account.
+              The {AIO_NAME} puts your mortgage and your checking in one first-lien account: each deposit lowers the loan balance the day it posts, and you pay bills from the same account. A traditional mortgage keeps those as two accounts, so your paycheck sits in checking until you send a once-a-month payment. The steps below show how the account runs day to day.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The {AIO_NAME} puts both in one account.
             </p>
             <ol className="list-decimal space-y-3 pl-5 text-muted-foreground leading-relaxed mb-6">
               <li><strong className="text-navy">Your income is deposited into the account.</strong> Each deposit is applied against the loan balance the day it posts.</li>
@@ -258,7 +264,7 @@ export default function FirstLienHelocHawaii() {
               Per CMG's current Important Terms disclosure, you can take advances up to your available credit limit for 360 months. The full credit limit is available for the first 120 billing periods (10 years). After that, the limit reduces by 1/240 of the original limit each month until it reaches zero at month 360, and the required payment includes whatever is needed to keep the balance at or below the reduced limit.
             </p>
 
-            <h3 className="font-display text-2xl text-navy mt-8 mb-3">Payments</h3>
+            <h3 className="font-display text-2xl text-navy mt-8 mb-3">How do payments work on the {AIO_NAME}?</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               There is no fixed principal-and-interest payment like a 30-year fixed loan has. Interest is charged monthly and principal is reduced by deposits. CMG's Important Terms disclosure explains the minimum payment requirements, how they change after year 10, and the fees; ask for it and read it before you apply.
             </p>
@@ -314,7 +320,9 @@ export default function FirstLienHelocHawaii() {
           <section className="mt-12" id="velocity-banking">
             <h2 className="font-display text-3xl text-navy mb-4">Velocity banking with a HELOC vs. the {AIO_NAME}</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-navy">Velocity banking is a cash-flow strategy, not a loan product.</strong>{" "}
+              Velocity banking is a cash-flow strategy, not a loan product: you keep a regular mortgage, open a separate HELOC, and move lump sums between them to try to pay principal down sooner. The {AIO_NAME} builds that idea into one first-lien account. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #{LENDER.nmls}), can set up the {AIO_NAME} and compare the two.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
               The usual version keeps a regular mortgage, opens a HELOC (often a second lien), uses the HELOC to make lump-sum "chunk" payments against the mortgage principal, then routes income into the HELOC to pay it back down, and repeats.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-3">What it can and can't do:</p>

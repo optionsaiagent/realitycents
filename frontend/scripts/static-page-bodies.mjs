@@ -369,7 +369,8 @@ export const STATIC_PAGE_BODIES = {
 
   "/va-approved-condos-oahu": `
     <main>
-      <h1>VA-Approved Condos on Oahu</h1>
+      <h1>Can I buy a condo in Hawaii with an FHA or VA loan?</h1>
+      <p>Yes, if the building qualifies for the loan type. A VA loan needs a VA-approved project, and an FHA loan needs a project on HUD's approved condo list or a single-unit approval. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), publishes this Oahu lookup so you can check a building's VA status before you offer.</p>
       <p>${CONDO_BLURB} Filter by neighborhood, approval status, and zip code.</p>
       <section>
         <h2>Approval Status Breakdown</h2>
@@ -383,6 +384,8 @@ export const STATIC_PAGE_BODIES = {
       <section>
         <h2>Frequently Asked Questions</h2>
         <dl>
+          <dt>Can I buy a condo in Hawaii with an FHA or VA loan?</dt>
+          <dd>Yes, if the project meets the program's project rules: VA approval for a VA loan, or HUD approval or a single-unit approval for an FHA loan. Search Oahu buildings on this page for VA status, then confirm the current record with VA. FHA project status is a separate HUD list.</dd>
           <dt>What does VA condo approval mean?</dt>
           <dd>VA condo approval means the Department of Veterans Affairs has reviewed a condominium project's legal documents, financials, and HOA governance and determined it meets VA lending standards. Without this approval, VA-eligible buyers cannot use their VA loan benefit to purchase a unit in that project.</dd>
           <dt>What if the condo I want is not on the VA-approved list?</dt>
@@ -462,7 +465,7 @@ export const STATIC_PAGE_BODIES = {
         <p>Free companion pages that give the direct answer first, with the Hawaii numbers, and link back to the chapter that covers the rest:</p>
         <ul>
           <li><a href="/knowledge-base/va-loans-hawaii-military">How to buy a house in Hawaii with a VA loan and $0 down</a>: the steps, Hawaii costs, $0 down with full entitlement, no PMI, the funding fee, condos, leasehold, and BAH.</li>
-          <li><a href="/knowledge-base/va-loan-limits-hawaii-2026">VA loan limits in Hawaii for 2026</a>: no limit with full entitlement; Honolulu County's $1,249,125 conforming limit with reduced entitlement.</li>
+          <li><a href="/knowledge-base/va-loan-limits-hawaii-2026">VA loan limits in Hawaii for 2027</a>: Why there is no limit with full entitlement, and how Honolulu County's $1,283,100 conforming limit (from January 1, 2027) applies when entitlement is reduced.</li>
           <li><a href="/knowledge-base/does-bah-count-va-loan-hawaii">Does BAH count for a VA loan in Hawaii?</a>: yes — how BAH, BAS, and COLA are counted and the tax-free gross-up.</li>
           <li><a href="/knowledge-base/va-funding-fee-hawaii">The VA funding fee in Hawaii</a>: 2026 percentages, exemptions, Oahu dollar examples, funding fee vs PMI.</li>
           <li><a href="/knowledge-base/va-vs-conventional-loan-hawaii">VA vs. conventional in Hawaii</a>: the side-by-side and when each wins.</li>
@@ -681,8 +684,9 @@ export const STATIC_PAGE_BODIES = {
 
   "/first-lien-heloc-hawaii": `
     <main>
-      <h1>The ${AIO_NAME} in Hawaii: How a First-Lien HELOC With a Sweep Account Works</h1>
+      <h1>What is the ${AIO_NAME} in Hawaii, and who offers it?</h1>
       <p><em>By Jay Miller, Sales Manager and Certified Mortgage Advisor, CMG Home Loans | NMLS #657301 | Last updated: ${aioHubUpdatedLabel(AIO_HUB_UPDATED)}</em></p>
+      <p>The ${AIO_NAME} from CMG Home Loans is a 30-year first-lien HELOC with a built-in sweep checking account that can replace a purchase mortgage on all four Hawaiian islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), sets it up. Deposits lower the balance interest is charged on each day, and the rate is variable.</p>
       <aside>
         <h2>Can I use a first-lien HELOC to buy a home in Hawaii?</h2>
         <p>Yes. CMG's ${AIO_NAME} is a first-lien HELOC that can replace a purchase mortgage on all four islands. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), sets it up.</p>
@@ -704,7 +708,8 @@ export const STATIC_PAGE_BODIES = {
       </aside>
       <section id="how-it-works">
         <h2>How the CMG ${AIO_NAME} works</h2>
-        <p>A traditional mortgage and a checking account are two separate things. Your paycheck lands in checking, and once a month you send a fixed payment to the lender. The ${AIO_NAME} puts both in one account.</p>
+        <p>The ${AIO_NAME} puts your mortgage and your checking in one first-lien account: each deposit lowers the loan balance the day it posts, and you pay bills from the same account. A traditional mortgage keeps those as two accounts, so your paycheck sits in checking until you send a once-a-month payment. The steps below show how the account runs day to day.</p>
+        <p>The ${AIO_NAME} puts both in one account.</p>
         <ol>
           <li><strong>Your income is deposited into the account.</strong> Each deposit is applied against the loan balance the day it posts.</li>
           <li><strong>You pay bills from the same account.</strong> Debit card, checks, online bill pay, and transfers draw on the line, the way a checking account would.</li>
@@ -716,7 +721,7 @@ export const STATIC_PAGE_BODIES = {
         </aside>
         <h3>The credit line over 30 years</h3>
         <p>Per CMG's current Important Terms disclosure, you can take advances up to your available credit limit for 360 months. The full credit limit is available for the first 120 billing periods (10 years). After that, the limit reduces by 1/240 of the original limit each month until it reaches zero at month 360, and the required payment includes whatever is needed to keep the balance at or below the reduced limit.</p>
-        <h3>Payments</h3>
+        <h3>How do payments work on the ${AIO_NAME}?</h3>
         <p>There is no fixed principal-and-interest payment like a 30-year fixed loan has. Interest is charged monthly and principal is reduced by deposits. CMG's Important Terms disclosure explains the minimum payment requirements, how they change after year 10, and the fees; ask for it and read it before you apply.</p>
       </section>
       <section id="vs-30-year-fixed">
@@ -779,7 +784,8 @@ export const STATIC_PAGE_BODIES = {
       </section>
       <section id="velocity-banking">
         <h2>Velocity banking with a HELOC vs. the ${AIO_NAME}</h2>
-        <p><strong>Velocity banking is a cash-flow strategy, not a loan product.</strong> The usual version keeps a regular mortgage, opens a HELOC (often a second lien), uses the HELOC to make lump-sum "chunk" payments against the mortgage principal, then routes income into the HELOC to pay it back down, and repeats.</p>
+        <p>Velocity banking is a cash-flow strategy, not a loan product: you keep a regular mortgage, open a separate HELOC, and move lump sums between them to try to pay principal down sooner. The ${AIO_NAME} builds that idea into one first-lien account. Jay Miller, Sales Manager and Certified Mortgage Advisor at CMG Home Loans in Honolulu (NMLS #657301), can set up the ${AIO_NAME} and compare the two.</p>
+        <p>The usual version keeps a regular mortgage, opens a HELOC (often a second lien), uses the HELOC to make lump-sum "chunk" payments against the mortgage principal, then routes income into the HELOC to pay it back down, and repeats.</p>
         <p>What it can and can't do:</p>
         <ul>
           <li>It reduces interest only to the extent your monthly surplus pays principal down sooner. Without surplus, it moves debt around and can add cost.</li>
