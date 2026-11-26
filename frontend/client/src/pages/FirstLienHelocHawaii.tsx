@@ -240,9 +240,6 @@ export default function FirstLienHelocHawaii() {
             <p className="text-muted-foreground leading-relaxed mb-4">
               The {AIO_NAME} puts your mortgage and your checking in one first-lien account: each deposit lowers the loan balance the day it posts, and you pay bills from the same account. A traditional mortgage keeps those as two accounts, so your paycheck sits in checking until you send a once-a-month payment. The steps below show how the account runs day to day.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              The {AIO_NAME} puts both in one account.
-            </p>
             <ol className="list-decimal space-y-3 pl-5 text-muted-foreground leading-relaxed mb-6">
               <li><strong className="text-navy">Your income is deposited into the account.</strong> Each deposit is applied against the loan balance the day it posts.</li>
               <li><strong className="text-navy">You pay bills from the same account.</strong> Debit card, checks, online bill pay, and transfers draw on the line, the way a checking account would.</li>
